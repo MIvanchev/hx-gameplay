@@ -132,7 +132,7 @@ class Main
             else
             {
                 copyDirectory(
-                        Std.format("templates/project"),
+                        Std.format("templates/Project"),
                         Std.format("${invocationPath}/${name}")
                     );
             }
