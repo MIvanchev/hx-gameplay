@@ -435,7 +435,7 @@ class Main
             if (system == Windows)
                 Sys.command(Std.format("xcopy /s /e /y \"${source}\" \"${destination}\""));
             else
-                Sys.command(Std.format("rsync -arE ${source}/ ${destination}"));
+                Sys.command(Std.format("rsync -rl --executability ${source}/ ${destination}"));
 
         return result == 0;
     }
