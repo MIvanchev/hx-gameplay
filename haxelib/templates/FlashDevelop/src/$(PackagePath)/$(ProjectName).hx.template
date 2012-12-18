@@ -9,7 +9,7 @@ $(CBI)* TODO
 $(CBI)*/
 class $(ProjectName) extends Game
 {
-    static function make() $(CSLB){
+    static function make():${ProjectName} $(CSLB){
         return new $(ProjectName)(Game.constructNativeObject, [ null ]);
     }
 
@@ -20,7 +20,7 @@ class $(ProjectName) extends Game
     /**
     $(CBI)* @inheritDoc
     $(CBI)*/
-    override function initialize() $(CSLB){
+    override function initialize():Void $(CSLB){
         // TODO:
         //
     }
@@ -28,7 +28,7 @@ class $(ProjectName) extends Game
     /**
     $(CBI)* @inheritDoc
     $(CBI)*/
-    override function finalize() $(CSLB){
+    override function finalize():Void $(CSLB){
         // TODO:
         //
     }
@@ -36,7 +36,7 @@ class $(ProjectName) extends Game
     /**
     $(CBI)* @inheritDoc
     $(CBI)*/
-    override function update(elapsedTime:Float) $(CSLB){
+    override function update(elapsedTime:Float):Void $(CSLB){
         // TODO:
         //
     }
@@ -44,7 +44,7 @@ class $(ProjectName) extends Game
     /**
     $(CBI)* @inheritDoc
     $(CBI)*/
-    override function render(elapsedTime:Float) $(CSLB){
+    override function render(elapsedTime:Float):Void $(CSLB){
         // TODO:
         //
     }
@@ -52,7 +52,7 @@ class $(ProjectName) extends Game
     /**
     $(CBI)* @inheritDoc
     $(CBI)*/
-    override public function keyEvent(evt:Int, key:Int) $(CSLB){
+    override public function keyEvent(evt:Int, key:Int):Void $(CSLB){
         // TODO:
         //
     }
@@ -60,16 +60,26 @@ class $(ProjectName) extends Game
     /**
     $(CBI)* @inheritDoc
     $(CBI)*/
-    override public function touchEvent(evt:Int, x:Int, y:Int, contactIndex:Int) $(CSLB){
+    override public function touchEvent(evt:Int, x:Int, y:Int, contactIndex:Int):Void $(CSLB){
         // TODO:
         //
+    }
+
+    /**
+    $(CBI)* @inheritDoc
+    $(CBI)*/
+    override public function mouseEvent(evt:Int, x:Int, y:Int, wheelDelta:Int):Bool $(CSLB){
+        // TODO:
+        //
+
+        return false;
     }
 
     /***************************************************************************
      * ENTRY POINT                                                             *
      **************************************************************************/
 
-	static function main() $(CSLB){
+	static function main():Void $(CSLB){
         Platform.create($(ProjectName).make()).enterMessagePump();
     }
 }
