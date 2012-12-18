@@ -1,2 +1,2 @@
-#!/bin/sh
-aoss platforms/linux-x86/bin/game
+#!/bin/bash
+platforms/linux-x86/bin/game

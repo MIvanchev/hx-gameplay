@@ -5,6 +5,8 @@ import sys.io.File;
 import neko.Lib;
 import neko.Sys;
 
+using StringTools;
+
 /**
  * TODO
  */
@@ -76,6 +78,7 @@ class Main
 		command = arguments[0];
 		switch (command)
 		{
+        case "install": installLibrary();
 		case "create-project": createProject();
 		case "add-target": addTarget();
         case "install-flashdevelop-template": processFlashDevelopTemplate(true);
@@ -91,7 +94,11 @@ class Main
 	{
 		Lib.println("Valid commands are:");
 		Lib.println("");
-		Lib.println("        create-project name -- creates a new empty gameplay project in the");
+		Lib.println("        install (no arguments) -- performs post-installational activities which");
+        Lib.println("        could potentially save you some effort; for example making the shell");
+        Lib.println("        scripts executable. This might require root privileges.");
+        Lib.println("");
+        Lib.println("        create-project name -- creates a new empty gameplay project in the");
         Lib.println("        current directory with the specified name.");
 		Lib.println("");
         Lib.println("        add-target target -- adds the specified target to the gameplay project.");
@@ -103,6 +110,57 @@ class Main
 		Lib.println("        FlashDevelop project template.");
 		Lib.println("");
 	}
+
+    /**
+     * TODO
+     */
+    static function installLibrary()
+    {
+        // Make all shell scripts executable.
+        //
+
+        if (system == Windows)
+            return;
+
+        var result = makeScriptsExecutable(FileSystem.fullPath("."));
+
+        Lib.println("");
+        Lib.println(
+                if (!result)
+                    Std.format("STATUS: Failed to install projet.")
+                else
+                    Std.format("STATUS: Project successfully installed.")
+            );
+        Lib.println("");
+
+        if (!result)
+            Sys.exit(EXIT_FAILURE);
+    }
+
+    /**
+     * TODO
+     */
+    static function makeScriptsExecutable(directory)
+    {
+        for (file in FileSystem.readDirectory(directory))
+        {
+            if (!FileSystem.exists(file))
+                continue;
+            else if (FileSystem.isDirectory(file))
+            {
+                if (!makeScriptsExecutable(file))
+                    return false;
+            }
+            else if (file.endsWith(".sh"))
+            {
+                var result = Sys.command(Std.format("chmod +x {file}"));
+                if (result != 0)
+                    return false;
+            }
+        }
+
+        return true;
+    }
 
     /**
      * TODO
@@ -248,7 +306,7 @@ class Main
             {
                 copyDirectory(
                         Std.format("templates/platforms/${target}"),
-                        Std.format("${invocationPath}/platforms")
+                        Std.format("${invocationPath}/platforms/${target}")
                     );
             }
 
