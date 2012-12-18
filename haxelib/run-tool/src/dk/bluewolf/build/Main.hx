@@ -91,7 +91,8 @@ class Main
 	{
 		Lib.println("Valid commands are:");
 		Lib.println("");
-		Lib.println("        create-project (no arguments) -- creates a new empty gameplay project.");
+		Lib.println("        create-project name -- creates a new empty gameplay project in the");
+        Lib.println("        current directory with the specified name.");
 		Lib.println("");
         Lib.println("        add-target target -- adds the specified target to the gameplay project.");
         Lib.println("");
@@ -108,8 +109,95 @@ class Main
      */
 	static function createProject()
 	{
-		// TODO:
-		//
+		if (arguments.length < 3)
+        {
+            Lib.println("The name of the projet to be added is not specified.");
+            Lib.println("");
+            showUsage();
+            Sys.exit(EXIT_FAILURE);
+        }
+
+        // Copy the projet directory.
+        //
+
+        var name = arguments[1];
+        var result =
+            if (system == Windows)
+            {
+                copyDirectory(
+                        Std.format("templates\\Project"),
+                        Std.format("${invocationPath}\\${name}")
+                    );
+            }
+            else
+            {
+                copyDirectory(
+                        Std.format("templates/project"),
+                        Std.format("${invocationPath}/${name}")
+                    );
+            }
+
+        // Copy a possibly required platform.
+        //
+
+        if (result)
+        {
+            if (system == Windows)
+            {
+                result =
+                    copyDirectory(
+                            Std.format("templates\\platforms\\windows-x86"),
+                            Std.format("${invocationPath}\\${name}\\platforms\\windows-x86")
+                        );
+
+                if (result)
+                {
+                    result =
+                        copyFile(
+                                "templates\\platforms\\*windows-x86*.*",
+                                Std.format("${invocationPath}\\${name}")
+                            );
+                }
+            }
+            else if (system == Linux)
+            {
+                result =
+                    copyDirectory(
+                            Std.format("templates/platforms/linux-x86"),
+                            Std.format("${invocationPath}/${name}/platforms/linux-x86")
+                        );
+
+                if (result)
+                {
+                    result =
+                        copyFile(
+                                "templates/platforms/*linux-x86*.*",
+                                Std.format("${invocationPath}/${name}")
+                            );
+                }
+            }
+            else
+            {
+                // TODO: probably MacOS.
+                //
+            }
+        }
+
+        // Output status.
+        //
+
+        Lib.println("");
+        Lib.println(
+                if (!result)
+                    Std.format("STATUS: Failed to create project \"${name}\".")
+                else
+                    Std.format("STATUS: Project \"${name}\" successfully created.")
+            );
+        Lib.println("");
+
+        if (!result)
+            Sys.exit(EXIT_FAILURE);
+
 	}
 
     /**
