@@ -1,0 +1,6 @@
+-cpp .cpp
+-cp src
+-main Main
+-lib hx-gameplay
+-D haxe3
+-D no-compilation

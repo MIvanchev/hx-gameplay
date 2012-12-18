@@ -9,7 +9,7 @@ $(CBI)* TODO
 $(CBI)*/
 class $(ProjectName) extends Game
 {
-    static function make():${ProjectName} $(CSLB){
+    static function make():$(ProjectName) $(CSLB){
         return new $(ProjectName)(Game.constructNativeObject, [ null ]);
     }
 
