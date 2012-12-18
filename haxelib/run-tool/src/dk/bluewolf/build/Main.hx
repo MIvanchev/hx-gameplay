@@ -144,6 +144,12 @@ class Main
     {
         for (file in FileSystem.readDirectory(directory))
         {
+            file =
+                if (system == Windows)
+                    Std.format("${directory}\\${file}");
+                else
+                    Std.format("${directory}/${file}");
+
             if (!FileSystem.exists(file))
                 continue;
             else if (FileSystem.isDirectory(file))
