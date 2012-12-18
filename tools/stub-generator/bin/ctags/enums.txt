@@ -1,0 +1,49 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Alignment	D:\Develop\Haxe\gameplay\gameplay\src\Control.h	/^    enum Alignment$/;"	g	class:gameplay::Control	access:public
+AutoBinding	D:\Develop\Haxe\gameplay\gameplay\src\RenderState.h	/^    enum AutoBinding$/;"	g	class:gameplay::RenderState	access:public
+Blend	D:\Develop\Haxe\gameplay\gameplay\src\RenderState.h	/^    enum Blend$/;"	g	class:gameplay::RenderState	access:public
+ButtonState	D:\Develop\Haxe\gameplay\gameplay\src\Gamepad.h	/^    enum ButtonState$/;"	g	class:gameplay::Gamepad	access:public
+ClearFlags	D:\Develop\Haxe\gameplay\gameplay\src\Game.h	/^    enum ClearFlags$/;"	g	class:gameplay::Game	access:public
+DebugFlags	D:\Develop\Haxe\gameplay\gameplay\src\Scene.h	/^    enum DebugFlags$/;"	g	class:gameplay::Scene	access:public
+EventType	D:\Develop\Haxe\gameplay\gameplay\src\AnimationClip.h	/^        enum EventType $/;"	g	class:gameplay::AnimationClip::Listener	access:public
+EventType	D:\Develop\Haxe\gameplay\gameplay\src\Control.h	/^        enum EventType$/;"	g	class:gameplay::Control::Listener	access:public
+EventType	D:\Develop\Haxe\gameplay\gameplay\src\PhysicsCollisionObject.h	/^        enum EventType$/;"	g	class:gameplay::PhysicsCollisionObject::CollisionListener	access:public
+EventType	D:\Develop\Haxe\gameplay\gameplay\src\PhysicsController.h	/^        enum EventType $/;"	g	class:gameplay::PhysicsController::Listener	access:public
+Filter	D:\Develop\Haxe\gameplay\gameplay\src\Texture.h	/^    enum Filter$/;"	g	class:gameplay::Texture	access:public
+Format	D:\Develop\Haxe\gameplay\gameplay\src\DepthStencilTarget.h	/^    enum Format$/;"	g	class:gameplay::DepthStencilTarget	access:public
+Format	D:\Develop\Haxe\gameplay\gameplay\src\Image.h	/^    enum Format$/;"	g	class:gameplay::Image	access:public
+Format	D:\Develop\Haxe\gameplay\gameplay\src\Texture.h	/^    enum Format$/;"	g	class:gameplay::Texture	access:public
+GamepadEvent	D:\Develop\Haxe\gameplay\gameplay\src\Gamepad.h	/^    enum GamepadEvent$/;"	g	class:gameplay::Gamepad	access:public
+GestureEvent	D:\Develop\Haxe\gameplay\gameplay\src\Gesture.h	/^    enum GestureEvent$/;"	g	class:gameplay::Gesture	access:public
+IndexFormat	D:\Develop\Haxe\gameplay\gameplay\src\Mesh.h	/^    enum IndexFormat$/;"	g	class:gameplay::Mesh	access:public
+InterpolationType	D:\Develop\Haxe\gameplay\gameplay\src\Curve.h	/^    enum InterpolationType$/;"	g	class:gameplay::Curve	access:public
+Justify	D:\Develop\Haxe\gameplay\gameplay\src\Font.h	/^    enum Justify$/;"	g	class:gameplay::Font	access:public
+Key	D:\Develop\Haxe\gameplay\gameplay\src\Keyboard.h	/^    enum Key$/;"	g	class:gameplay::Keyboard	access:public
+KeyEvent	D:\Develop\Haxe\gameplay\gameplay\src\Keyboard.h	/^    enum KeyEvent$/;"	g	class:gameplay::Keyboard	access:public
+Level	D:\Develop\Haxe\gameplay\gameplay\src\Logger.h	/^    enum Level$/;"	g	class:gameplay::Logger	access:public
+MouseEvent	D:\Develop\Haxe\gameplay\gameplay\src\Mouse.h	/^    enum MouseEvent$/;"	g	class:gameplay::Mouse	access:public
+ParameterType	D:\Develop\Haxe\gameplay\gameplay\src\AIMessage.h	/^    enum ParameterType$/;"	g	class:gameplay::AIMessage	access:public
+PrimitiveType	D:\Develop\Haxe\gameplay\gameplay\src\Mesh.h	/^    enum PrimitiveType$/;"	g	class:gameplay::Mesh	access:public
+Scroll	D:\Develop\Haxe\gameplay\gameplay\src\Container.h	/^    enum Scroll$/;"	g	class:gameplay::Container	access:public
+SkinArea	D:\Develop\Haxe\gameplay\gameplay\src\Theme.h	/^        enum SkinArea$/;"	g	class:gameplay::Theme::Skin	access:public
+State	D:\Develop\Haxe\gameplay\gameplay\src\AudioSource.h	/^    enum State$/;"	g	class:gameplay::AudioSource	access:public
+State	D:\Develop\Haxe\gameplay\gameplay\src\Control.h	/^    enum State$/;"	g	class:gameplay::Control	access:public
+State	D:\Develop\Haxe\gameplay\gameplay\src\Game.h	/^    enum State$/;"	g	class:gameplay::Game	access:public
+Style	D:\Develop\Haxe\gameplay\gameplay\src\Font.h	/^    enum Style$/;"	g	class:gameplay::Font	access:public
+TextureBlending	D:\Develop\Haxe\gameplay\gameplay\src\ParticleEmitter.h	/^    enum TextureBlending$/;"	g	class:gameplay::ParticleEmitter	access:public
+TouchEvent	D:\Develop\Haxe\gameplay\gameplay\src\Touch.h	/^    enum TouchEvent$/;"	g	class:gameplay::Touch	access:public
+Type	D:\Develop\Haxe\gameplay\gameplay\src\Camera.h	/^    enum Type$/;"	g	class:gameplay::Camera	access:public
+Type	D:\Develop\Haxe\gameplay\gameplay\src\Layout.h	/^    enum Type$/;"	g	class:gameplay::Layout	access:public
+Type	D:\Develop\Haxe\gameplay\gameplay\src\Light.h	/^    enum Type$/;"	g	class:gameplay::Light	access:public
+Type	D:\Develop\Haxe\gameplay\gameplay\src\Node.h	/^    enum Type$/;"	g	class:gameplay::Node	access:public
+Type	D:\Develop\Haxe\gameplay\gameplay\src\PhysicsCollisionObject.h	/^    enum Type$/;"	g	class:gameplay::PhysicsCollisionObject	access:public
+Type	D:\Develop\Haxe\gameplay\gameplay\src\PhysicsCollisionShape.h	/^    enum Type$/;"	g	class:gameplay::PhysicsCollisionShape	access:public
+Type	D:\Develop\Haxe\gameplay\gameplay\src\Properties.h	/^    enum Type$/;"	g	class:gameplay::Properties	access:public
+Type	D:\Develop\Haxe\gameplay\gameplay\src\SceneLoader.h	/^        enum Type$/;"	g	struct:gameplay::SceneLoader::SceneNodeProperty	access:public
+Usage	D:\Develop\Haxe\gameplay\gameplay\src\VertexFormat.h	/^    enum Usage$/;"	g	class:gameplay::VertexFormat	access:public
+Wrap	D:\Develop\Haxe\gameplay\gameplay\src\Texture.h	/^    enum Wrap$/;"	g	class:gameplay::Texture	access:public

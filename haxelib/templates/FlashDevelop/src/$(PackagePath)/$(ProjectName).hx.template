@@ -1,0 +1,75 @@
+package $(PackageName);
+
+import cpp.Lib;
+import org.gameplay3d.Game;
+import org.gameplay3d.Platform;
+
+/**
+$(CBI)* TODO
+$(CBI)*/
+class $(ProjectName) extends Game
+{
+    static function make() $(CSLB){
+        return new $(ProjectName)(Game.constructNativeObject, [ null ]);
+    }
+
+    /***************************************************************************
+     * MEMBERS                                                                 *
+     **************************************************************************/
+
+    /**
+    $(CBI)* @inheritDoc
+    $(CBI)*/
+    override function initialize() $(CSLB){
+        // TODO:
+        //
+    }
+
+    /**
+    $(CBI)* @inheritDoc
+    $(CBI)*/
+    override function finalize() $(CSLB){
+        // TODO:
+        //
+    }
+
+    /**
+    $(CBI)* @inheritDoc
+    $(CBI)*/
+    override function update(elapsedTime:Float) $(CSLB){
+        // TODO:
+        //
+    }
+
+    /**
+    $(CBI)* @inheritDoc
+    $(CBI)*/
+    override function render(elapsedTime:Float) $(CSLB){
+        // TODO:
+        //
+    }
+
+    /**
+    $(CBI)* @inheritDoc
+    $(CBI)*/
+    override public function keyEvent(evt:Int, key:Int) $(CSLB){
+        // TODO:
+        //
+    }
+
+    /**
+    $(CBI)* @inheritDoc
+    $(CBI)*/
+    override public function touchEvent(evt:Int, x:Int, y:Int, contactIndex:Int) $(CSLB){
+        // TODO:
+        //
+    }
+
+    /***************************************************************************
+     * ENTRY POINT                                                             *
+     **************************************************************************/
+
+	static function main() $(CSLB){
+        Platform.create($(ProjectName).make()).enterMessagePump();
+    }
+}

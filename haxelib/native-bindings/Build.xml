@@ -1,0 +1,318 @@
+<xml>
+
+    <!-- WARNING: The library will require msvcr100.dll at runtime. -->
+    <set name="ABI" value="/MD" if="windows"/>
+
+    <!-- Build file for the Haxe wrapper of gameplay3d -->
+    <!-- Install hxcpp and run with 'haxelib run hxcpp Build.xml' -->
+
+    <include name="${HXCPP}/build-tool/BuildCommon.xml"/>
+
+    <!-- Determine the output location for the NDLL -->
+
+    <set name="LIB_DIR" value="-L" unless="windows"/>
+    <set name="LIB_DIR" value="-libpath:" if="windows"/>
+    <section if="android">
+        <set name="LIB_PLATFORM" value="android"/>
+        <set name="LIB_CPU_TYPE" value="arm" unless="HXCPP_ARMV7"/>
+        <set name="LIB_CPU_TYPE" value="arm-7" if="HXCPP_ARMV7"/>    
+    </section>
+    <section if="linux">
+        <set name="LIB_PLATFORM" value="linux"/>
+        <set name="LIB_CPU_TYPE" value="x86" unless="HXCPP_M64"/>
+        <set name="LIB_CPU_TYPE" value="x64" if="HXCPP_M64"/>
+    </section>
+    <section if="windows">
+        <set name="LIB_PLATFORM" value="windows"/>
+        <set name="LIB_CPU_TYPE" value="x86" unless="HXCPP_M64"/>
+        <set name="LIB_CPU_TYPE" value="x64" if="HXCPP_M64"/>
+    </section>
+
+    <set name="LIB_SUFFIX" value="lib/${LIB_PLATFORM}/${LIB_CPU_TYPE}"/>
+
+    <!-- Set platform specific variables -->
+    
+    <set name="ANDROID_PLATFORM" value="android-9"/>
+    <set name="ANDROID_ARCH" value="arch-arm" unless="HXCPP_ARMV7"/>
+    <set name="ANDROID_ARCH" value="arch-armv7" if="HXCPP_ARMV7"/>
+    
+    <!-- Specify the list of files to be compiled and the compile options. -->
+
+    <set name="GAMEPLAY_DIR" value="../../../gameplay"/>
+
+    <files id="common">
+        <compilerflag value="-I${GAMEPLAY_DIR}/gameplay/src"/>
+        <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/bullet/include"/>
+        <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/detour/include"/>
+        <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/detourcrowd/include"/>
+        <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/glew/include"/>
+        <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/libpng/include"/>
+        <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/lua/include"/>
+        <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/oggvorbis/include"/>
+        <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/openal/include"/>
+        <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/openal/include/AL"/>
+        <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/pcre/include"/>
+        <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/recast/include"/>
+        <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/zlib/include"/>
+        <compilerflag value="-Iinclude"/>
+        <compilerflag value="-DWIN32" if="windows"/>
+        <compilerflag value="-std=c++0x" if="linux"/>
+        <compilerflag value="-std=gnu++0x" if="android"/>
+        
+        <file name="src/HaxeAPI.cpp"/>
+        <file name="src/Setup_android.cpp" if="android"/>
+        <file name="src/hx_AbsoluteLayout.cpp"/>
+        <file name="src/hx_AIAgent.cpp"/>
+        <file name="src/hx_AIAgent_Listener.cpp"/>
+        <file name="src/hx_AIController.cpp"/>
+        <file name="src/hx_AIMessage.cpp"/>
+        <file name="src/hx_AIState.cpp"/>
+        <file name="src/hx_AIStateMachine.cpp"/>
+        <file name="src/hx_AIState_Listener.cpp"/>
+        <file name="src/hx_Animation.cpp"/>
+        <file name="src/hx_AnimationClip.cpp"/>
+        <file name="src/hx_AnimationClip_Listener.cpp"/>
+        <file name="src/hx_AnimationController.cpp"/>
+        <file name="src/hx_AnimationTarget.cpp"/>
+        <file name="src/hx_AnimationValue.cpp"/>
+        <file name="src/hx_AudioBuffer.cpp"/>
+        <file name="src/hx_AudioController.cpp"/>
+        <file name="src/hx_AudioListener.cpp"/>
+        <file name="src/hx_AudioSource.cpp"/>
+        <file name="src/hx_BoundingBox.cpp"/>
+        <file name="src/hx_BoundingSphere.cpp"/>
+        <file name="src/hx_Bundle.cpp"/>
+        <file name="src/hx_Button.cpp"/>
+        <file name="src/hx_Camera.cpp"/>
+        <file name="src/hx_CheckBox.cpp"/>
+        <file name="src/hx_Container.cpp"/>
+        <file name="src/hx_Control.cpp"/>
+        <file name="src/hx_Control_Listener.cpp"/>
+        <file name="src/hx_Curve.cpp"/>
+        <file name="src/hx_DepthStencilTarget.cpp"/>
+        <file name="src/hx_Effect.cpp"/>
+        <file name="src/hx_FileSystem.cpp"/>
+        <file name="src/hx_FlowLayout.cpp"/>
+        <file name="src/hx_Font.cpp"/>
+        <file name="src/hx_Font_Text.cpp"/>
+        <file name="src/hx_Form.cpp"/>
+        <file name="src/hx_FrameBuffer.cpp"/>
+        <file name="src/hx_Frustum.cpp"/>
+        <file name="src/hx_Game.cpp"/>
+        <file name="src/hx_Gamepad.cpp"/>
+        <file name="src/hx_Gesture.cpp"/>
+        <file name="src/hx_Image.cpp"/>
+        <file name="src/hx_Joint.cpp"/>
+        <file name="src/hx_Joystick.cpp"/>
+        <file name="src/hx_Keyboard.cpp"/>
+        <file name="src/hx_Label.cpp"/>
+        <file name="src/hx_Layout.cpp"/>
+        <file name="src/hx_Light.cpp"/>
+        <file name="src/hx_Logger.cpp"/>
+        <file name="src/hx_Material.cpp"/>
+        <file name="src/hx_MaterialParameter.cpp"/>
+        <file name="src/hx_Matrix.cpp"/>
+        <file name="src/hx_Mesh.cpp"/>
+        <file name="src/hx_MeshBatch.cpp"/>
+        <file name="src/hx_MeshPart.cpp"/>
+        <file name="src/hx_MeshSkin.cpp"/>
+        <file name="src/hx_Model.cpp"/>
+        <file name="src/hx_Mouse.cpp"/>
+        <file name="src/hx_Node.cpp"/>
+        <file name="src/hx_NodeCloneContext.cpp"/>
+        <file name="src/hx_ParticleEmitter.cpp"/>
+        <file name="src/hx_Pass.cpp"/>
+        <file name="src/hx_PhysicsCharacter.cpp"/>
+        <file name="src/hx_PhysicsCollisionObject.cpp"/>
+        <file name="src/hx_PhysicsCollisionObject_CollisionListener.cpp"/>
+        <file name="src/hx_PhysicsCollisionObject_CollisionPair.cpp"/>
+        <file name="src/hx_PhysicsCollisionShape.cpp"/>
+        <file name="src/hx_PhysicsCollisionShape_Definition.cpp"/>
+        <file name="src/hx_PhysicsConstraint.cpp"/>
+        <file name="src/hx_PhysicsController.cpp"/>
+        <file name="src/hx_PhysicsController_HitFilter.cpp"/>
+        <file name="src/hx_PhysicsController_HitResult.cpp"/>
+        <file name="src/hx_PhysicsController_Listener.cpp"/>
+        <file name="src/hx_PhysicsFixedConstraint.cpp"/>
+        <file name="src/hx_PhysicsGenericConstraint.cpp"/>
+        <file name="src/hx_PhysicsGhostObject.cpp"/>
+        <file name="src/hx_PhysicsHingeConstraint.cpp"/>
+        <file name="src/hx_PhysicsRigidBody.cpp"/>
+        <file name="src/hx_PhysicsRigidBody_Parameters.cpp"/>
+        <file name="src/hx_PhysicsSocketConstraint.cpp"/>
+        <file name="src/hx_PhysicsSpringConstraint.cpp"/>
+        <file name="src/hx_PhysicsVehicle.cpp"/>
+        <file name="src/hx_PhysicsVehicleWheel.cpp"/>
+        <file name="src/hx_Plane.cpp"/>
+        <file name="src/hx_Platform.cpp"/>
+        <file name="src/hx_Properties.cpp"/>
+        <file name="src/hx_Quaternion.cpp"/>
+        <file name="src/hx_RadioButton.cpp"/>
+        <file name="src/hx_Ray.cpp"/>
+        <file name="src/hx_Rectangle.cpp"/>
+        <file name="src/hx_RenderState.cpp"/>
+        <file name="src/hx_RenderState_StateBlock.cpp"/>
+        <file name="src/hx_RenderTarget.cpp"/>
+        <file name="src/hx_Scene.cpp"/>
+        <file name="src/hx_SceneLoader.cpp"/>
+        <file name="src/hx_ScreenDisplayer.cpp"/>
+        <file name="src/hx_ScriptTarget.cpp"/>
+        <file name="src/hx_Slider.cpp"/>
+        <file name="src/hx_SpriteBatch.cpp"/>
+        <file name="src/hx_Stream.cpp"/>
+        <file name="src/hx_Technique.cpp"/>
+        <file name="src/hx_TextBox.cpp"/>
+        <file name="src/hx_Texture.cpp"/>
+        <file name="src/hx_Texture_Sampler.cpp"/>
+        <file name="src/hx_Theme.cpp"/>
+        <file name="src/hx_Theme_SideRegions.cpp"/>
+        <file name="src/hx_Theme_Style.cpp"/>
+        <file name="src/hx_Theme_ThemeImage.cpp"/>
+        <file name="src/hx_Theme_UVs.cpp"/>
+        <file name="src/hx_TimeListener.cpp"/>
+        <file name="src/hx_Touch.cpp"/>
+        <file name="src/hx_Transform.cpp"/>
+        <file name="src/hx_Transform_Listener.cpp"/>
+        <file name="src/hx_Uniform.cpp"/>
+        <file name="src/hx_Vector2.cpp"/>
+        <file name="src/hx_Vector3.cpp"/>
+        <file name="src/hx_Vector4.cpp"/>
+        <file name="src/hx_VertexAttributeBinding.cpp"/>
+        <file name="src/hx_VertexFormat.cpp"/>
+        <file name="src/hx_VertexFormat_Element.cpp"/>
+        <file name="src/hx_VerticalLayout.cpp"/>
+    </files>
+
+    <!-- Generate the NDLL. -->
+
+    <set name="configuration_type" value="dll" unless="iphone"/>
+    <set name="configuration_type" value="static_link" if="iphone"/>
+
+    <target id="gameplay-hx" output="gameplay" tool="linker" toolid="${configuration_type}">
+
+        <outdir name="bin/${LIB_SUFFIX}"/>
+        <ext value=".so" if="android"/>
+        <ext value=".so" if="linux"/>
+        <ext value=".ndll" if="windows"/>
+
+        <files id="common"/>
+
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/bullet/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/collada-dom/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/detour/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/detourcrowd/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/freetype2/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/glew/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/libpng/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/lua/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/oggvorbis/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/openal/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/pcre/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/recast/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/tinyxml2/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/zlib/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${LIB_SUFFIX}"/>
+
+        <!-------------------------------------------------------->
+        <!-- Static libraries for Gameplay and its dependencies -->
+        <!-------------------------------------------------------->
+
+        <lib name="-lgameplay" unless="windows"/>
+        <lib name="gameplay.lib" if="windows"/>
+
+        <lib name="-lbullet" if="android"/>
+        <lib name="-lbullet" if="blackberry"/>
+        <lib name="-lbullet" if="ios"/>
+        <lib name="-lbullet" if="macos"/>
+        <lib name="-lBulletDynamics" if="linux"/>
+        <lib name="-lBulletCollision" if="linux"/>
+        <lib name="-lLinearMath" if="linux"/>
+        <lib name="BulletDynamics.lib" if="windows"/>
+        <lib name="BulletCollision.lib" if="windows"/>
+        <lib name="LinearMath.lib" if="windows"/>
+
+        <lib name="-lDetour" if="android"/>
+        <lib name="-lDetour" if="blackberry"/>
+        <lib name="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/detour/lib/windows/detour.lib" if="windows"/>
+
+        <lib name="-lDetourCrowd" if="android"/>
+        <lib name="-lDetourCrowd" if="blackberry"/>
+        <lib name="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/detour/lib/windows/detourcrowd.lib" if="windows"/>
+
+        <lib name="-lGLEW" if="linux"/>
+        <lib name="glew32.lib" if="windows"/>
+
+        <lib name="-lpng" if="android"/>
+        <lib name="-lpng" if="ios"/>
+        <lib name="-lpng" if="linux"/>
+        <lib name="-lpng" if="macos"/>
+        <lib name="libpng14.lib" if="windows"/>
+
+        <lib name="-llua" if="android"/>
+        <lib name="-llua" if="blackberry"/>
+        <lib name="-llua" if="ios"/>
+        <lib name="-llua" if="linux"/>
+        <lib name="-llua" if="macos"/>
+        <lib name="lua.lib" if="windows"/>
+
+        <lib name="-lvorbis" if="android"/>
+        <lib name="-lvorbis" if="blackberry"/>
+        <lib name="-logg" if="ios"/>
+        <lib name="-lvorbis" if="ios"/>
+        <lib name="-lvorbisenc" if="ios"/>
+        <lib name="-lvorbisfile" if="ios"/>
+        <lib name="-logg" if="macos"/>
+        <lib name="-lvorbis" if="macos"/>
+        <lib name="-lvorbisenc" if="macos"/>
+        <lib name="-lvorbisfile" if="macos"/>
+        <lib name="-lvorbis" if="linux"/>
+        <lib name="-logg" if="linux"/>
+        <lib name="libogg.lib" if="windows"/>
+        <lib name="libvorbis.lib" if="windows"/>
+        <lib name="libvorbisfile.lib" if="windows"/>
+
+        <lib name="-lopenal" if="android"/>
+        <lib name="-lopenal" if="linux"/>
+        <lib name="openal32.lib" if="windows"/>
+
+        <lib name="-lpcre" if="macos"/>
+        <lib name="-lpcrecpp" if="macos"/>
+
+        <lib name="-lrecast" if="android"/>
+        <lib name="-lrecast" if="blackberry"/>
+        <lib name="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/recast/lib/windows/recast.lib" if="windows"/>
+
+        <lib name="-lzlib" if="android"/>
+        <lib name="-lz" if="linux"/>
+        <lib name="zlib.lib" if="windows"/>
+        
+        <!---------------------->
+        <!-- System libraries -->
+        <!---------------------->
+
+        <lib name="-ldl" if="linux"/>
+        <lib name="-lGL" if="linux"/>
+        <lib name="-lpthread" if="linux"/>
+        <lib name="-lrt" if="linux"/>
+        <lib name="-lX11" if="linux"/>
+
+        <lib name="-ldl" if="android"/>
+        <lib name="${ANDROID_NDK_ROOT}/platforms/${ANDROID_PLATFORM}/${ANDROID_ARCH}/usr/lib/libEGL.so" if="android"/>
+        <lib name="-lGLESv1_CM" if="android"/>
+        <lib name="-lGLESv2" if="android"/>
+        <lib name="-lz" if="android"/>
+        <lib name="${ANDROID_NDK_ROOT}/platforms/${ANDROID_PLATFORM}/${ANDROID_ARCH}/usr/lib/libOpenSLES.so" if="android"/>
+        <lib name="${ANDROID_NDK_ROOT}/platforms/${ANDROID_PLATFORM}/${ANDROID_ARCH}/usr/lib/libandroid.so" if="android"/>
+
+        <lib name="kernel32.lib" if="windows"/>
+        <lib name="gdi32.lib" if="windows"/>
+        <lib name="advapi32.lib" if="windows"/>
+        <lib name="shell32.lib" if="windows"/>
+        <lib name="user32.lib" if="windows"/>
+        <lib name="opengl32.lib" if="windows"/>
+    </target>
+
+    <target id="default">
+        <target id="gameplay-hx"/>
+    </target>
+</xml>

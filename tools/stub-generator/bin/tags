@@ -1,0 +1,14 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+VerticalLayout	../../../../gameplay/gameplay/src/VerticalLayout.h	/^    VerticalLayout();$/;"	p	line:48	class:gameplay::VerticalLayout	access:protected	signature:()
+VerticalLayout	../../../../gameplay/gameplay/src/VerticalLayout.h	/^    VerticalLayout(const VerticalLayout& copy);$/;"	p	line:77	class:gameplay::VerticalLayout	access:private	signature:(const VerticalLayout& copy)
+create	../../../../gameplay/gameplay/src/VerticalLayout.h	/^    static VerticalLayout* create();$/;"	p	line:84	class:gameplay::VerticalLayout	access:private	signature:()
+getBottomToTop	../../../../gameplay/gameplay/src/VerticalLayout.h	/^    bool getBottomToTop();$/;"	p	line:34	class:gameplay::VerticalLayout	access:public	signature:()
+getType	../../../../gameplay/gameplay/src/VerticalLayout.h	/^    Layout::Type getType();$/;"	p	line:41	class:gameplay::VerticalLayout	access:public	signature:()
+setBottomToTop	../../../../gameplay/gameplay/src/VerticalLayout.h	/^    void setBottomToTop(bool bottomToTop);$/;"	p	line:27	class:gameplay::VerticalLayout	access:public	signature:(bool bottomToTop)
+update	../../../../gameplay/gameplay/src/VerticalLayout.h	/^    void update(const Container* container, const Vector2& offset);$/;"	p	line:64	class:gameplay::VerticalLayout	access:protected	signature:(const Container* container, const Vector2& offset)
+~VerticalLayout	../../../../gameplay/gameplay/src/VerticalLayout.h	/^    virtual ~VerticalLayout();$/;"	p	line:53	class:gameplay::VerticalLayout	access:protected	signature:()

@@ -1,0 +1,13 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DebugVertex	D:\Develop\Haxe\gameplay\gameplay\src\PhysicsController.h	/^        struct DebugVertex : public GameplayObject$/;"	s	class:gameplay::PhysicsController::DebugDrawer	access:public
+Definition	D:\Develop\Haxe\gameplay\gameplay\src\Ph    ysicsCollisionShape.h	/^    struct Definition : public GameplayObject$/;"	s	class:gameplay::PhysicsCollisionShape	access:public
+HitResult	D:\Develop\Haxe\gameplay\gameplay\src\PhysicsController.h	/^    struct HitResult : public GameplayObject$/;"	s	class:gameplay::PhysicsController	access:public
+LuaObject	D:\Develop\Haxe\gameplay\gameplay\src\ScriptController.h	/^struct LuaObject : public GameplayObject$/;"	s	namespace:gameplay::ScriptUtil
+Parameters	D:\Develop\Haxe\gameplay\gameplay\src\PhysicsRigidBody.h	/^    struct Parameters : public GameplayObject$/;"	s	class:gameplay::PhysicsRigidBody	access:public
+SideRegions	D:\Develop\Haxe\gameplay\gameplay\src\Theme.h	/^    struct SideRegions : public GameplayObject$/;"	s	class:gameplay::Theme	access:public
+UVs	D:\Develop\Haxe\gameplay\gameplay\src\Theme.h	/^    struct UVs : public GameplayObject$/;"	s	class:gameplay::Theme	access:public

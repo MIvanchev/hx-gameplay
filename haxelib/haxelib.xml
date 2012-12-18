@@ -1,0 +1,9 @@
+<project name="hx-gameplay" url="http://myproject.org" license="GPL">
+    <user name="mivanchev"/>
+    <tag v="cross"/>
+	<tag v="cpp"/>
+	<tag v="game"/>
+    <description>This project provides Haxe bindings for the 3D engine Gameplay by Research In Motion.</description>
+    <version name="0.7">Alpha release, expect trouble.</version>
+	<depends name="hxcpp"/>
+</project>
