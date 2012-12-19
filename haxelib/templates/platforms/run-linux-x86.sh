@@ -1,2 +1,3 @@
 #!/bin/bash
-platforms/linux-x86/bin/game
+if [ "$1" == "debug" ]; then suffix=-debug; fi
+platforms/linux-x86/bin/game$suffix

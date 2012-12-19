@@ -119,17 +119,18 @@ class Main
         // Make all shell scripts executable.
         //
 
-        if (system == Windows)
-            return;
-
-        var result = makeScriptsExecutable(FileSystem.fullPath("."));
+        var result =
+            if (system == Windows)
+                true;
+            else
+                makeScriptsExecutable(FileSystem.fullPath("."));
 
         Lib.println("");
         Lib.println(
                 if (!result)
-                    Std.format("STATUS: Failed to install projet.")
+                    Std.format("STATUS: Failed to install library.")
                 else
-                    Std.format("STATUS: Project successfully installed.")
+                    Std.format("STATUS: Library successfully installed.")
             );
         Lib.println("");
 
@@ -420,50 +421,76 @@ class Main
      */
 	static function processBuildFiles()
 	{
-		var srcFilePath = invocationPath + "/.cpp/Build.xml";
-		var dstFilePath = invocationPath + "/platforms/.obj/Build.xml";
+		if (arguments.length < 3)
+		{
+            Lib.println("The build target is not specified.");
+            Lib.println("");
+            showUsage();
+            Sys.exit(EXIT_FAILURE);
+		}
 
-		var xml = Xml.parse(File.getContent(srcFilePath)).firstElement();
-
-        for (element in xml.elementsNamed("files"))
-        {
-            for (child in element.elements())
-            {
-                if (child.nodeName == "compilerflag")
-                    child.set("value", "-I../../.cpp/include");
-                else
-                {
-                    child.set("name", "../../.cpp/" + child.get("name"));
-                    for (dep in child.elementsNamed("depend"))
-                        dep.set("name", "../../.cpp/" + dep.get("name"));
-                }
-            }
-        }
-
-        for (element in xml.elementsNamed("set"))
-        {
-            if (element.get("name") == "HAXE_OUTPUT")
-                element.set("value", "game");
-        }
-
-		File.saveContent(dstFilePath, xml.toString());
-
-        // Copy Options.txt also.
+        // Create the output directory if it doesn't exist.
         //
 
-        if (system == Windows)
+        var target = arguments[1];
+        var srcPath =
+            if (system == Windows)
+                Std.format("${invocationPath}\\.cpp");
+            else
+                Std.format("${invocationPath}/.cpp");
+        var dstPath =
+            if (system == Windows)
+                Std.format("${invocationPath}\\platforms\\.obj\\${target}");
+            else
+                Std.format("${invocationPath}/platforms/.obj/${target}");
+
+        var result =
+            if (system == Windows)
+                Sys.command(Std.format("IF NOT EXIST \"${dstPath}\" mkdir \"${dstPath}\""));
+            else
+                Sys.command(Std.format("[ -d ${dstPath} ] || mkdir -p ${dstPath}"));
+
+        // Copy the source directory for the specified target.
+        //
+
+        if (result == 0)
         {
-            copyFile(
-                    invocationPath + "\\.cpp\\Options.txt",
-                    invocationPath + "\\platforms\\.obj\\Options.txt"
-                );
+            result =
+                if (system == Windows)
+                    Sys.command(Std.format("xcopy /s /e /h /d /y /q \"${srcPath}\" \"${dstPath}\""));
+                else
+                    Sys.command(Std.format("rsync -rlpuq ${srcPath}/ ${dstPath}"));
         }
-        else
+
+        if (result != 0)
+            Sys.exit(EXIT_FAILURE);
+
+        // Modify the build file.
+        //
+
+        var buildFile =
+            if (system == Windows)
+                Std.format("${dstPath}\\Build.xml");
+            else
+                Std.format("{dstPath}/Build.xml");
+
+        try
         {
-            copyFile(
-                    invocationPath + "/.cpp/Options.txt",
-                    invocationPath + "/platforms/.obj/Options.txt"
-                );
+            var xml = Xml.parse(File.getContent(buildFile)).firstElement();
+
+            for (element in xml.elementsNamed("set"))
+            {
+                if (element.get("name") == "HAXE_OUTPUT")
+                    element.set("value", "game");
+            }
+
+            File.saveContent(buildFile, xml.toString());
+        }
+        catch (error:Dynamic)
+        {
+            Sys.println("ERROR: Failed to modify build file..");
+            Sys.println("");
+            Sys.exit(EXIT_FAILURE);
         }
 	}
 
