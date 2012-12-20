@@ -1,25 +1,25 @@
 haxelib run hx-gameplay process-build-files windows-x64
-@ IF errorlevel 1 GOTO error
+@ IF errorlevel 1 call :error "failed to process build files" & exit /B 1
 
 cd platforms\.obj\windows-x64
-@ IF errorlevel 1 GOTO error
+@ IF errorlevel 1 call :error "failed to change current directory" & exit /B 1
 
 del /q game*.exe
-@ IF errorlevel 1 GOTO error-cd
+@ IF errorlevel 1 call :error-cd "failed to clean previous build files" & exit /B 1
 
 haxelib run hxcpp Build.xml -Dwindows -DHXCPP_M64 %1 %2 %3 %4 %5 %6 %7 %8 %9
-@ IF errorlevel 1 GOTO error-cd
+@ IF errorlevel 1 call :error-cd "failed to compile application source" & exit /B 1
 
 copy /y game*.exe ..\..\windows-x64\bin
-@ IF errorlevel 1 GOTO error-cd
+@ IF errorlevel 1 call :error-cd "failed to change back to project directory" & exit /B 1
 
 @ GOTO success
 
 :error-cd
 cd ..\..\..
 :error
-@ echo Buiild failed.
-@ exit /B 1
+@ echo Buiild error: %~1. 1>&2
+@ GOTO :eof
 
 :success
 cd ..\..\..
