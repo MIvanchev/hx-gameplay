@@ -80,7 +80,7 @@ class Main
 		{
         case "install": installLibrary();
 		case "create-project": createProject();
-		case "add-target": addTarget();
+		case "add-platform": addPlatform();
         case "install-flashdevelop-template": processFlashDevelopTemplate(true);
 		case "remove-flashdevelop-template": processFlashDevelopTemplate(false);
 		case "process-build-files": processBuildFiles();
@@ -101,7 +101,8 @@ class Main
         Lib.println("        create-project name -- creates a new empty gameplay project in the");
         Lib.println("        current directory with the specified name.");
 		Lib.println("");
-        Lib.println("        add-target target -- adds the specified target to the gameplay project.");
+        Lib.println("        add-platform platform -- adds the specified platform to the gameplay in");
+        Lib.println("        the current directory.");
         Lib.println("");
 		Lib.println("        install-flashdevelop-template (no arguments) -- installs the gameplay");
 		Lib.println("        FlashDevelop project template.");
@@ -160,7 +161,7 @@ class Main
             }
             else if (file.endsWith(".sh"))
             {
-                var result = Sys.command(Std.format("chmod +x {file}"));
+                var result = Sys.command(Std.format("chmod +x ${file}"));
                 if (result != 0)
                     return false;
             }
@@ -268,17 +269,17 @@ class Main
     /**
      * TODO
      */
-    static function addTarget()
+    static function addPlatform()
     {
         if (arguments.length < 3)
         {
-            Lib.println("The target to be added is not specified.");
+            Lib.println("The platform to be added is not specified.");
             Lib.println("");
             showUsage();
             Sys.exit(EXIT_FAILURE);
         }
 
-        var targets =
+        var platforms =
             [
                 "windows-x86",
                 "windows-x64",
@@ -288,13 +289,13 @@ class Main
                 "android-arm7"
             ];
 
-        var target = arguments[1];
-        if (!Lambda.has(targets, target))
+        var platform = arguments[1];
+        if (!Lambda.has(platforms, platform))
         {
-            Lib.println("Invalid target specified, must be one of:");
+            Lib.println("Invalid platform specified, must be one of:");
             Lib.println("");
-            for (target in targets)
-                Lib.println(Std.format("    $target"));
+            for (_platform in platforms)
+                Lib.println(Std.format("    $_platform"));
             Sys.exit(EXIT_FAILURE);
         }
 
@@ -305,15 +306,15 @@ class Main
             if (system == Windows)
             {
                 copyDirectory(
-                        Std.format("templates\\platforms\\${target}"),
-                        Std.format("${invocationPath}\\platforms\\${target}")
+                        Std.format("templates\\platforms\\${platform}"),
+                        Std.format("${invocationPath}\\platforms\\${platform}")
                     );
             }
             else
             {
                 copyDirectory(
-                        Std.format("templates/platforms/${target}"),
-                        Std.format("${invocationPath}/platforms/${target}")
+                        Std.format("templates/platforms/${platform}"),
+                        Std.format("${invocationPath}/platforms/${platform}")
                     );
             }
 
@@ -321,17 +322,17 @@ class Main
         {
             result =
                 if (system == Windows)
-                    copyFile(Std.format("templates\\platforms\\*${target}*.*"), invocationPath);
+                    copyFile(Std.format("templates\\platforms\\*${platform}*.*"), invocationPath);
                 else
-                    copyFile(Std.format("templates/platforms/*${target}*.*"), invocationPath);
+                    copyFile(Std.format("templates/platforms/*${platform}*.*"), invocationPath);
         }
 
         Sys.println("");
         Sys.println(
                 if (!result)
-                    "STATUS: Failed to add target."
+                    "STATUS: Failed to add platform."
                 else
-                    "STATUS: Target successfully added."
+                    "STATUS: Platform successfully added."
             );
         Sys.println("");
 
@@ -472,7 +473,7 @@ class Main
             if (system == Windows)
                 Std.format("${dstPath}\\Build.xml");
             else
-                Std.format("{dstPath}/Build.xml");
+                Std.format("${dstPath}/Build.xml");
 
         try
         {
