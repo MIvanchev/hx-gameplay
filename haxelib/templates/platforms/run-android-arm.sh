@@ -28,8 +28,8 @@ for arg in "$@"; do
 done
 
 cd platforms/android-arm || error "failed to change currect directory"
-mkdir -p libs || error "failed to create output directory"
-cp "out/$lib" libs/libapplication.so || error "failed to copy application shared object"
+mkdir -p libs/armeabi || error "failed to create output directory"
+cp "out/$lib" libs/armeabi/libapplication.so || error "failed to copy application shared object"
 rm -Rf gen || error "failed to delete directory with auto-generated files"
 ant $mode $args -Dsdk.dir=$ANDROID_HOME || error "failed to build application package"
 cd ..

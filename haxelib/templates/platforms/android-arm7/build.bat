@@ -10,7 +10,7 @@ del /q libgame*.so
 haxelib run hxcpp Build.xml -Dandroid -DNDKV7 -DHXCPP_ARMV7 -Dandroid-9 %1 %2 %3 %4 %5 %6 %7 %8 %9
 @ IF errorlevel 1 call :error-cd "failed to compile application source" & exit /B 1
 
-xcopy /y libgame-7.so ..\..\android-arm7\out\libgame-7.so || xcopy /y libgame-debug-7.so ..\..\android-arm7\out\libgame-debug-7.so
+echo FF | (xcopy /y libgame-7.so ..\..\android-arm7\out\libgame.so || xcopy /y libgame-debug-7.so ..\..\android-arm7\out\libgame-debug.so)
 @ IF errorlevel 1 call :error-cd "failed to copy application shared object" & exit /B 1
 
 @ GOTO success
