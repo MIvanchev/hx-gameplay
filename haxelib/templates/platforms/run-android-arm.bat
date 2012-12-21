@@ -20,7 +20,7 @@ cd platforms\android-arm
 @ IF errorlevel 1 call :error-cd "failed to change current directory" & exit /B 1
 
 copy out\%lib% libs\libapplication.so
-@ IF errorlevel 1 call :error-cd "failed to copy application shared object " & exit /B 1
+@ IF errorlevel 1 call :error-cd "failed to copy application shared object" & exit /B 1
 
 @IF NOT EXIST gen GOTO no-gen
 rmdir /s /q gen

@@ -318,13 +318,16 @@ class Main
                     );
             }
 
+        // Copy platform scripts.
+        //
+
         if (result)
         {
             result =
                 if (system == Windows)
-                    copyFile(Std.format("templates\\platforms\\*${platform}*.*"), invocationPath);
+                    copyFile(Std.format("templates\\platforms\\*${platform}.*"), invocationPath);
                 else
-                    copyFile(Std.format("templates/platforms/*${platform}*.*"), invocationPath);
+                    copyFile(Std.format("templates/platforms/*${platform}.*"), invocationPath);
         }
 
         Sys.println("");
