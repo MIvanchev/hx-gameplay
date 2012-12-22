@@ -15,7 +15,7 @@
     <section if="android">
         <set name="LIB_PLATFORM" value="android"/>
         <set name="LIB_CPU_TYPE" value="arm" unless="HXCPP_ARMV7"/>
-        <set name="LIB_CPU_TYPE" value="arm-7" if="HXCPP_ARMV7"/>    
+        <set name="LIB_CPU_TYPE" value="arm" if="HXCPP_ARMV7"/>
     </section>
     <section if="linux">
         <set name="LIB_PLATFORM" value="linux"/>
@@ -31,11 +31,11 @@
     <set name="LIB_SUFFIX" value="lib/${LIB_PLATFORM}/${LIB_CPU_TYPE}"/>
 
     <!-- Set platform specific variables -->
-    
+
     <set name="ANDROID_PLATFORM" value="android-9"/>
     <set name="ANDROID_ARCH" value="arch-arm" unless="HXCPP_ARMV7"/>
-    <set name="ANDROID_ARCH" value="arch-armv7" if="HXCPP_ARMV7"/>
-    
+    <set name="ANDROID_ARCH" value="arch-arm" if="HXCPP_ARMV7"/>
+
     <!-- Specify the list of files to be compiled and the compile options. -->
 
     <set name="GAMEPLAY_DIR" value="../../../gameplay"/>
