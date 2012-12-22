@@ -45,7 +45,7 @@
   <options>
     <option showHiddenPaths="False" />
     <option testMovie="Custom" />
-    <option testMovieCommand="exec &quot;platforms\windows-x86\build &amp;&amp; platforms\windows-x86\bin\game&quot;" />
+    <option testMovieCommand="exec windows-x86" />
   </options>
   <!-- Plugin storage -->
   <storage />
