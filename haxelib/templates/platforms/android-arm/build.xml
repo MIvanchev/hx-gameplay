@@ -71,6 +71,16 @@
                 <present present="srconly" targetdir="../../res"/>
             </fileset>
         </delete>
+
+        <antcall target="copy-config"/>
+    </target>
+
+    <condition property="config.exists">
+        <available file="../../game.config" type="file"/>
+    </condition>
+
+    <target name="copy-config" if="config.exists">
+        <copy file="../../game.config" todir="assets" verbose="true"/>
     </target>
 
     <target name="run">
