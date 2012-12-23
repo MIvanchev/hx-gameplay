@@ -73,6 +73,18 @@
         </delete>
     </target>
 
+    <target name="run">
+        <exec executable="adb">
+            <arg value="shell"/>
+            <arg value="am"/>
+            <arg value="start"/>
+            <arg value="-a"/>
+            <arg value="android.intent.action.MAIN"/>
+            <arg value="-n"/>
+            <arg value="app.gameplay.game/android.app.NativeActivity"/>
+        </exec>
+    </target>
+
     <!-- Import the actual build file.
 
          To customize existing targets, there are two options:

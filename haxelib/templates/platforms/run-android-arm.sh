@@ -12,7 +12,6 @@ error_cd()
     error $1
 }
 
-
 lib=libgame.so
 arg="$1"
 if [[ "$1" == "debug" ]]; then
