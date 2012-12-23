@@ -21,7 +21,7 @@ fi
 if [ "$1" == "release" ]; then arg=; fi
 
 cd platforms/linux-x86/bin || error "failed to change to platform directory"
-rsync -rlpuq --delete ../../../res/ . || || error-cd "failed to copy resource files"
+rsync -rlpuq --delete ../../../res/ res || error-cd "failed to copy resource files"
 cp ../../../game.config game.config || error-cd "failed to copy application config"
-game$suffix $arg $2 $3 $4 $5 $6 $7 $8 $9 || error-cd "application execution was unsuccessful"
+./game$suffix $arg $2 $3 $4 $5 $6 $7 $8 $9 || error-cd "application execution was unsuccessful"
 cd ../../..
