@@ -42,13 +42,13 @@ class Game extends GameplayObject
     }
 
     // DECL: void clear(ClearFlags flags, const Vector4& clearColor, float clearDepth, int clearStencil);
-    public function clear_ClrFlgs_V4_Flt_Int(flags:Int, clearColor:Vector4, clearDepth:Float, clearStencil:Int):Void
+    public function clear_Int_V4_Flt_Int(flags:Int, clearColor:Vector4, clearDepth:Float, clearStencil:Int):Void
     {
         hx_Game_clear_ClrFlgs_V4_Flt_Int(nativeObject, flags, clearColor.native(), clearDepth, clearStencil);
     }
 
     // DECL: void clear(ClearFlags flags, float red, float green, float blue, float alpha, float clearDepth, int clearStencil);
-    public function clear_ClrFlgs_FltX5_Int(flags:Int, red:Float, green:Float, blue:Float, alpha:Float, clearDepth:Float, clearStencil:Int):Void
+    public function clear_Int_FltX5_Int(flags:Int, red:Float, green:Float, blue:Float, alpha:Float, clearDepth:Float, clearStencil:Int):Void
     {
         hx_Game_clear_ClrFlgs_FltX5_Int(nativeObject, flags, red, green, blue, alpha, clearDepth, clearStencil);
     }

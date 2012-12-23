@@ -171,7 +171,7 @@ value hx_Game_canExit(value thisObj)
 DEFINE_PRIM(hx_Game_canExit, 1);
 
 // DECL: void clear(ClearFlags flags, const Vector4& clearColor, float clearDepth, int clearStencil);
-void hx_Game_clear_ClrFlgs_V4_Flt_Int(value thisObj, value flags, value clearColor, value clearDepth, value clearStencil)
+void hx_Game_clear_Int_V4_Flt_Int(value thisObj, value flags, value clearColor, value clearDepth, value clearStencil)
 {
     Game *_thisObj;
     Game::ClearFlags _flags;
@@ -183,10 +183,10 @@ void hx_Game_clear_ClrFlgs_V4_Flt_Int(value thisObj, value flags, value clearCol
     ValueToObject(clearColor, _clearColor);
     _thisObj->clear(_flags, *_clearColor, _clearDepth, _clearStencil);
 }
-DEFINE_PRIM(hx_Game_clear_ClrFlgs_V4_Flt_Int, 5);
+DEFINE_PRIM(hx_Game_clear_Int_V4_Flt_Int, 5);
 
 // DECL: void clear(ClearFlags flags, float red, float green, float blue, float alpha, float clearDepth, int clearStencil);
-void hx_Game_clear_ClrFlgs_FltX5_Int(value *args, int nargs)
+void hx_Game_clear_Int_FltX5_Int(value *args, int nargs)
 {
     const value& thisObj = *args++;
     const value& flags = *args++;
@@ -209,7 +209,7 @@ void hx_Game_clear_ClrFlgs_FltX5_Int(value *args, int nargs)
     ValueToEnum(flags, _flags);
     _thisObj->clear(_flags, _red, _green, _blue, _alpha, _clearDepth, _clearStencil);
 }
-DEFINE_PRIM_MULT(hx_Game_clear_ClrFlgs_FltX5_Int);
+DEFINE_PRIM_MULT(hx_Game_clear_Int_FltX5_Int);
 
 // DECL: inline void displayKeyboard(bool display);
 void hx_Game_displayKeyboard(value thisObj, value display)

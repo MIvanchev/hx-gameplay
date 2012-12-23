@@ -192,7 +192,7 @@
 
         <outdir name="bin/${LIB_SUFFIX}"/>
         <ext value=".so" if="android"/>
-        <ext value=".so" if="linux"/>
+        <ext value=".ndll" if="linux"/>
         <ext value=".ndll" if="windows"/>
 
         <files id="common"/>
