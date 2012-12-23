@@ -1,20 +1,9 @@
 @ SETLOCAL
-@ echo off
 
-set mode=debug
-FOR %%A IN (%*) DO IF "%%~A" == "release" set mode= & GOTO done-mode
-FOR %%A IN (%*) DO IF "%%~A" == "debug" set mode= & GOTO done-mode
-
-:done-mode
-
-set lib=libgame.so
-set args=
-FOR %%A IN (%*) DO IF NOT "%%~A" == "lib:debug" set args=%args% %%A
-FOR %%A IN (%*) DO IF "%%~A" == "lib:debug" set lib=libgame-debug.so & GOTO done
-
-:done
-
-@ echo on
+@ set lib=libgame.so
+@ set arg=%1
+@ IF "%~1" == "debug" set lib=libgame-debug.so && set arg=
+@ IF "%~1" == "release" set arg=
 
 cd platforms\android-arm
 @ IF errorlevel 1 call :error-cd "failed to change current directory" & exit /B 1
@@ -28,7 +17,7 @@ rmdir /s /q gen
 
 :no-gen
 
-ant %mode% %args% -Dsdk.dir=%ANDROID_HOME%
+ant %arg% %2 %3 %4 %5 %6 %7 %8 %9 -Dsdk.dir=%ANDROID_HOME%
 @ IF errorlevel 1 call :error-cd "failed to build application package" & exit /B 1
 
 @ GOTO success

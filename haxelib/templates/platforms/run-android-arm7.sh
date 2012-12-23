@@ -12,24 +12,17 @@ error_cd()
     error $1
 }
 
-mode=debug
 lib=libgame.so
-args=
-for arg in "$@"; do
-    if [[ "$arg" == "release" || "$arg" == "debug" ]]; then
-        mode=
-    fi
-
-    if [ "$arg" = "lib:debug" ]; then
-        lib=libgame-debug.so
-    else
-        args="$args $arg"
-    fi
-done
+arg="$1"
+if [[ "$1" == "debug" ]]; then
+    lib=libgame-debug.so
+    arg=
+fi
+if [[ "$1" == "release" ]]; then arg=; fi
 
 cd platforms/android-arm7 || error "failed to change currect directory"
 mkdir -p libs/armeabi-v7a || error "failed to create output directory"
 cp "out/$lib" libs/armeabi-v7a/libapplication.so || error "failed to copy application shared object"
 rm -Rf gen || error "failed to delete directory with auto-generated files"
-ant $mode $args -Dsdk.dir=$ANDROID_HOME || error "failed to build application package"
+ant $arg $2 $3 $4 $5 $6 $7 $8 $9 -Dsdk.dir=$ANDROID_HOME || error "failed to build application package"
 cd ..
