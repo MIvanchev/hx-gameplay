@@ -5,7 +5,7 @@
 @ IF "%~1" == "debug" set lib=libgame-debug.so && set arg=
 @ IF "%~1" == "release" set arg=
 
-cd platforms\android-arm7
+cd platforms\android-arm7\bin
 @ IF errorlevel 1 call :error-cd "failed to change current directory" & exit /B 1
 
 echo F | xcopy /y out\%lib% libs\armeabi-v7a\libapplication.so

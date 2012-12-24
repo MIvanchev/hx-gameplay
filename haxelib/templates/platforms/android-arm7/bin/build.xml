@@ -61,14 +61,18 @@
        Compiled code location: ${out.classes.absolute.dir}
        If this is not done in place, override ${out.dex.input.absolute.dir} */
        -->
+
+    <property name="game.res" value="../../../res"/>
+    <property name="game.cfg" value="../../../game.config"/>
+
     <target name="-post-compile">
         <copy todir="assets" verbose="true">
-            <fileset dir="../../res" includes="*"/>
+            <fileset dir="${game.res}" includes="*"/>
         </copy>
 
         <delete verbose="true">
             <fileset dir="assets">
-                <present present="srconly" targetdir="../../res"/>
+                <present present="srconly" targetdir="${game.res}"/>
             </fileset>
         </delete>
 
@@ -76,11 +80,11 @@
     </target>
 
     <condition property="config.exists">
-        <available file="../../game.config" type="file"/>
+        <available file="${game.cfg}" type="file"/>
     </condition>
 
     <target name="copy-config" if="config.exists">
-        <copy file="../../game.config" todir="assets" verbose="true"/>
+        <copy file="${game.cfg}" todir="assets" verbose="true"/>
     </target>
 
     <target name="run">

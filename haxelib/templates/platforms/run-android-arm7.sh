@@ -20,7 +20,7 @@ if [[ "$1" == "debug" ]]; then
 fi
 if [[ "$1" == "release" ]]; then arg=; fi
 
-cd platforms/android-arm7 || error "failed to change currect directory"
+cd platforms/android-arm7/bin || error "failed to change currect directory"
 mkdir -p libs/armeabi-v7a || error "failed to create output directory"
 cp "out/$lib" libs/armeabi-v7a/libapplication.so || error "failed to copy application shared object"
 rm -Rf gen || error "failed to delete directory with auto-generated files"
