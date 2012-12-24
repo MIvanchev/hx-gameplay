@@ -66,16 +66,11 @@
     <property name="game.cfg" value="../../../game.config"/>
 
     <target name="-post-compile">
-        <copy todir="assets" verbose="true">
-            <fileset dir="${game.res}" includes="*"/>
-        </copy>
+        <sync todir="assets/res" verbose="true">
+            <fileset dir="${game.res}" includes="**"/>
+        </sync>
 
-        <delete verbose="true">
-            <fileset dir="assets">
-                <present present="srconly" targetdir="${game.res}"/>
-            </fileset>
-        </delete>
-
+        <antcall target="remove-config"/>
         <antcall target="copy-config"/>
     </target>
 
@@ -85,6 +80,10 @@
 
     <target name="copy-config" if="config.exists">
         <copy file="${game.cfg}" todir="assets" verbose="true"/>
+    </target>
+
+    <target name="remove-config" unless="config.exists">
+        <delete file="game.config" dir="assets" quiet="true"/>
     </target>
 
     <target name="run">
