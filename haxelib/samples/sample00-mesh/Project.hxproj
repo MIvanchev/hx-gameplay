@@ -45,7 +45,7 @@
   <options>
     <option showHiddenPaths="False" />
     <option testMovie="Custom" />
-    <option testMovieCommand="exec android-arm release debug install run" />
+    <option testMovieCommand="exec windows-x86" />
   </options>
   <!-- Plugin storage -->
   <storage />
