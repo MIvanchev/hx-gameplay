@@ -20,14 +20,14 @@ if [ "$1" == "debug" ]; then
 fi
 if [ "$1" == "release" ]; then arg=; fi
 
-config= ../../../game.config
+config=../../../game.config
 
 cd platforms/linux-x64/bin || error "failed to change to platform directory"
 if [ -f $config ]; then
-    cp $config game.config || error-cd "failed to copy application config"
+    cp $config game.config || error_cd "failed to copy application config"
 else
-    rm -f $config || error-cd "failed to remove out-dated application config"
+    rm -f game.config || error_cd "failed to remove out-dated application config"
 fi
-rsync -rlpuq --delete ../../../res/ res || error-cd "failed to copy resource files"
-./game$suffix $arg $2 $3 $4 $5 $6 $7 $8 $9 || error-cd "application execution was unsuccessful"
+rsync -rlpuq --delete ../../../res/ res || error_cd "failed to copy resource files"
+./game$suffix $arg $2 $3 $4 $5 $6 $7 $8 $9 || error_cd "application execution was unsuccessful"
 cd ../../..
