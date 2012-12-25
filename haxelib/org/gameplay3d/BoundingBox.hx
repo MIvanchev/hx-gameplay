@@ -14,8 +14,8 @@ class BoundingBox extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var min(get, set):Vector3;
-    public var max(get, set):Vector3;
+    public var min(get_min, set_min):Vector3;
+    public var max(get_max, set_max):Vector3;
 
     /***************************************************************************
      * MEMBERS                                                                 *

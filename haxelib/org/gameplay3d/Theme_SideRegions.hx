@@ -14,10 +14,10 @@ class Theme_SideRegions extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var top(get, set):Float;
-    public var left(get, set):Float;
-    public var bottom(get, set):Float;
-    public var right(get, set):Float;
+    public var top(get_top, set_top):Float;
+    public var left(get_left, set_left):Float;
+    public var bottom(get_bottom, set_bottom):Float;
+    public var right(get_right, set_right):Float;
 
     /***************************************************************************
      * MEMBERS                                                                 *

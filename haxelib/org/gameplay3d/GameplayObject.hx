@@ -55,13 +55,13 @@ class GameplayObject extends NativeBinding
     @:access(org.gameplay3d)
     @:access(org.gameplat3d.impl)
     @:access(org.gameplay3d.util)
-    static inline function wrap<T : GameplayObject>(classObj:Class<T>, nativeObject:Dynamic):T
+    /** @private */ public static inline function wrap<T : GameplayObject>(classObj:Class<T>, nativeObject:Dynamic):T
     {
         return
             if (nativeObject == null)
                 null;
             else
-                new T(nativeObject, null);
+                Type.createInstance (classObj, [ nativeObject, null ]);
     }
 
     @:generic
@@ -71,7 +71,7 @@ class GameplayObject extends NativeBinding
         if (!Std.is(instance, Type.getClass(this)))
             throw "Invalid native conversion attempted.";
 
-        return new T(nativeObject, null);
+        return Type.createInstance (classObj, [ nativeObject, null ]);
     }
 }
 
