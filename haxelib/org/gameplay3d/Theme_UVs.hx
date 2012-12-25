@@ -10,10 +10,10 @@ class Theme_UVs extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var u1(get, set):Float;
-    public var v1(get, set):Float;
-    public var u2(get, set):Float;
-    public var v2(get, set):Float;
+    public var u1(get_u1, set_u1):Float;
+    public var v1(get_v1, set_v1):Float;
+    public var u2(get_u2, set_u2):Float;
+    public var v2(get_v2, set_v2):Float;
 
     /***************************************************************************
      * MEMBERS                                                                 *
