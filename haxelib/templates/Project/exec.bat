@@ -7,6 +7,6 @@
 @ set platform=%~1
 @ set platform=%platform: =%
 
-platforms\%platform%\build.bat %hxcpp_debug% && run-%platform%.bat %mode% %arg% %3 %4 %5 %6 %7 %8 %9
+call platforms\%platform%\build.bat %hxcpp_debug% && call run-%platform%.bat %mode% %arg% %3 %4 %5 %6 %7 %8 %9
 
 @ endlocal

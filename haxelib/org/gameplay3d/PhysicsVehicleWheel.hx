@@ -27,11 +27,9 @@ class PhysicsVehicleWheel extends PhysicsCollisionObject
     }
 
     // DECL: void getStrutConnectionOffset(Vector3* strutConnectionOffset) const;
-    public function getStrutConnectionOffset(strutConnectionOffset:OutParameter<Vector3>):Void
+    public function getStrutConnectionOffset(strutConnectionOffset:Vector3):Void
     {
-        var _strutConnectionOffset = new NativeOutParameter();
-        hx_PhysicsVehicleWheel_getStrutConnectionOffset(nativeObject, _strutConnectionOffset.native());
-        strutConnectionOffset.value = Vector3.wrap(_strutConnectionOffset.value);
+        hx_PhysicsVehicleWheel_getStrutConnectionOffset(nativeObject, strutConnectionOffset.native());
     }
 
     // DECL: float getStrutDampingCompression() const;
@@ -77,19 +75,15 @@ class PhysicsVehicleWheel extends PhysicsCollisionObject
     }
 
     // DECL: void getWheelAxle(Vector3* wheelAxle) const;
-    public function getWheelAxle(wheelAxle:OutParameter<Vector3>):Void
+    public function getWheelAxle(wheelAxle:Vector3):Void
     {
-        var _wheelAxle = new NativeOutParameter();
-        hx_PhysicsVehicleWheel_getWheelAxle(nativeObject, _wheelAxle.native());
-        wheelAxle.value = Vector3.wrap(_wheelAxle.value);
+        hx_PhysicsVehicleWheel_getWheelAxle(nativeObject, wheelAxle.native());
     }
 
     // DECL: void getWheelDirection(Vector3* wheelDirection) const;
-    public function getWheelDirection(wheelDirection:OutParameter<Vector3>):Void
+    public function getWheelDirection(wheelDirection:Vector3):Void
     {
-        var _wheelDirection = new NativeOutParameter();
-        hx_PhysicsVehicleWheel_getWheelDirection(nativeObject, _wheelDirection.native());
-        wheelDirection.value = Vector3.wrap(_wheelDirection.value);
+        hx_PhysicsVehicleWheel_getWheelDirection(nativeObject, wheelDirection.native());
     }
 
     // DECL: float getWheelRadius() const;

@@ -113,7 +113,7 @@ class MeshGame extends Game
         // Clear the color and depth buffers.
         //
 
-        clear_Int_FltX5_Int(Game_ClearFlags.CLEAR_COLOR_DEPTH, 0, 0, 0, 1, 1, 0);
+        clear_Int_FltX5_Int(Game_ClearFlags.CLEAR_COLOR_DEPTH, 1, 1, 1, 1, 1, 0);
 
         // Visit all the nodes in the scene, drawing the models/mesh.
         //
@@ -133,10 +133,8 @@ class MeshGame extends Game
     {
         if (evt == Keyboard_KeyEvent.KEY_PRESS)
         {
-            switch (key)
-            {
-            case Keyboard_Key.KEY_ESCAPE: exit();
-            }
+            if (key == Keyboard_Key.KEY_ESCAPE)
+                exit();
         }
     }
 

@@ -394,8 +394,8 @@ class Game extends GameplayObject
 
     static var hx_Game_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_Game_Construct", -1);
     static var hx_Game_canExit:Dynamic = cpp.Lib.load("gameplay", "hx_Game_canExit", 1);
-    static var hx_Game_clear_ClrFlgs_V4_Flt_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Game_clear_ClrFlgs_V4_Flt_Int", 5);
-    static var hx_Game_clear_ClrFlgs_FltX5_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Game_clear_ClrFlgs_FltX5_Int", -1);
+    static var hx_Game_clear_Int_V4_Flt_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Game_clear_Int_V4_Flt_Int", 5);
+    static var hx_Game_clear_Int_FltX5_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Game_clear_Int_FltX5_Int", -1);
     static var hx_Game_displayKeyboard:Dynamic = cpp.Lib.load("gameplay", "hx_Game_displayKeyboard", 2);
     static var hx_Game_exit:Dynamic = cpp.Lib.load("gameplay", "hx_Game_exit", 1);
     static var hx_Game_frame:Dynamic = cpp.Lib.load("gameplay", "hx_Game_frame", 1);

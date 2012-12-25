@@ -22,10 +22,10 @@ DEFINE_PRIM(hx_PhysicsVehicleWheel_getRollInfluence, 1);
 void hx_PhysicsVehicleWheel_getStrutConnectionOffset(value thisObj, value strutConnectionOffset)
 {
     PhysicsVehicleWheel *_thisObj;
-    Vector3 _strutConnectionOffset;
+    Vector3 *_strutConnectionOffset;
     ValueToObject(thisObj, _thisObj);
-    _thisObj->getStrutConnectionOffset(&_strutConnectionOffset);
-    SetOutParameterValue(strutConnectionOffset, ObjectToValue(new Vector3(_strutConnectionOffset)));
+    ValueToObject(strutConnectionOffset, _strutConnectionOffset);
+    _thisObj->getStrutConnectionOffset(_strutConnectionOffset);
 }
 DEFINE_PRIM(hx_PhysicsVehicleWheel_getStrutConnectionOffset, 2);
 
@@ -98,8 +98,8 @@ void hx_PhysicsVehicleWheel_getWheelAxle(value thisObj, value wheelAxle)
     PhysicsVehicleWheel *_thisObj;
     Vector3 _wheelAxle;
     ValueToObject(thisObj, _thisObj);
-    _thisObj->getWheelAxle(&_wheelAxle);
-    SetOutParameterValue(wheelAxle, ObjectToValue(new Vector3(_wheelAxle)));
+    ValueToObject(wheelAxle, _wheelAxle);
+    _thisObj->getWheelAxle(_wheelAxle);
 }
 DEFINE_PRIM(hx_PhysicsVehicleWheel_getWheelAxle, 2);
 
@@ -109,8 +109,8 @@ void hx_PhysicsVehicleWheel_getWheelDirection(value thisObj, value wheelDirectio
     PhysicsVehicleWheel *_thisObj;
     Vector3 _wheelDirection;
     ValueToObject(thisObj, _thisObj);
-    _thisObj->getWheelDirection(&_wheelDirection);
-    SetOutParameterValue(wheelDirection, ObjectToValue(new Vector3(_wheelDirection)));
+    ValueToObject(wheelDirection, _wheelDirection);
+    _thisObj->getWheelDirection(_wheelDirection);
 }
 DEFINE_PRIM(hx_PhysicsVehicleWheel_getWheelDirection, 2);
 
