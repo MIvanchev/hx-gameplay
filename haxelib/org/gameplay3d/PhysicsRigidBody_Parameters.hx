@@ -38,13 +38,13 @@ class PhysicsRigidBody_Parameters extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var mass(get, set):Float;
-    public var friction(get, set):Float;
-    public var restitution(get, set):Float;
-    public var linearDamping(get, set):Float;
-    public var angularDamping(get, set):Float;
-    public var kinematic(get, set):Bool;
-    public var anisotropicFriction(get, set):Vector3;
+    public var mass(get_mass, set_mass):Float;
+    public var friction(get_friction, set_friction):Float;
+    public var restitution(get_restitution, set_restitution):Float;
+    public var linearDamping(get_linearDamping, set_linearDamping):Float;
+    public var angularDamping(get_angularDamping, set_angularDamping):Float;
+    public var kinematic(get_kinematic, set_kinematic):Bool;
+    public var anisotropicFriction(get_anisotropicFriction, set_anisotropicFriction):Vector3;
 
     /***************************************************************************
      * PROPERTY ACCESSORS                                                      *

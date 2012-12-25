@@ -10,8 +10,8 @@ class VertexFormat_Element extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var usage(get, set):Int;
-    public var size(get, set):Int;
+    public var usage(get_usage, set_usage):Int;
+    public var size(get_size, set_size):Int;
 
     /***************************************************************************
      * MEMBERS                                                                 *

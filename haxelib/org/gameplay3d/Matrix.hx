@@ -10,7 +10,7 @@ class Matrix extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var m(get, set):Array<Float>;
+    public var m(get_m, set_m):Array<Float>;
 
     /***************************************************************************
      * MEMBERS                                                                 *

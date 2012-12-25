@@ -10,10 +10,10 @@ class Rectangle extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var x(get, set):Float;
-    public var y(get, set):Float;
-    public var width(get, set):Float;
-    public var height(get, set):Float;
+    public var x(get_x, set_x):Float;
+    public var y(get_y, set_y):Float;
+    public var width(get_width, set_width):Float;
+    public var height(get_height, set_height):Float;
 
     /***************************************************************************
      * MEMBERS                                                                 *

@@ -10,8 +10,8 @@ class BoundingSphere extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var center(get, set):Vector3;
-    public var radius(get, set):Float;
+    public var center(get_center, set_center):Vector3;
+    public var radius(get_radius, set_radius):Float;
 
     /***************************************************************************
      * MEMBERS                                                                 *

@@ -12,6 +12,8 @@ class GameplayObject extends NativeBinding
      * MEMBERS                                                                 *
      **************************************************************************/
 
+	static var args:Array<Dynamic> = [ null, null ];
+
      /**
       * Constructs an instance of this class by using the specified method to
       * construct the native object.
@@ -57,11 +59,13 @@ class GameplayObject extends NativeBinding
     @:allow(org.gameplay3d.util)
     static inline function wrap<T : GameplayObject>(classObj:Class<T>, nativeObject:Dynamic):T
     {
+        args[0] = nativeObject;
+
         return
             if (nativeObject == null)
                 null;
             else
-                new T(nativeObject, null);
+                Type.createInstance(classObj, args); // new T(nativeObject, null);
     }
 
     @:generic

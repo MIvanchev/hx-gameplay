@@ -2,7 +2,9 @@ package ;
 
 import cpp.Lib;
 import haxe.io.BytesOutput;
+import org.gameplay3d.BoundingBox;
 import org.gameplay3d.Bundle;
+import org.gameplay3d.Curve;
 import org.gameplay3d.Font;
 import org.gameplay3d.Game;
 import org.gameplay3d.Game_ClearFlags;
@@ -10,6 +12,7 @@ import org.gameplay3d.Keyboard_Key;
 import org.gameplay3d.Keyboard_KeyEvent;
 import org.gameplay3d.Mesh;
 import org.gameplay3d.Mesh_PrimitiveType;
+import org.gameplay3d.MeshBatch;
 import org.gameplay3d.Model;
 import org.gameplay3d.Node;
 import org.gameplay3d.Platform;
@@ -17,6 +20,9 @@ import org.gameplay3d.Scene;
 import org.gameplay3d.ScreenDisplayer;
 import org.gameplay3d.SpriteBatch;
 import org.gameplay3d.Touch_TouchEvent;
+import org.gameplay3d.util.INativeArray;
+import org.gameplay3d.util.Utilities;
+import org.gameplay3d.Vector2;
 import org.gameplay3d.Vector4;
 import org.gameplay3d.VertexFormat;
 import org.gameplay3d.VertexFormat_Element;
@@ -55,6 +61,16 @@ class MeshGame extends Game
 
         _font = Font.create("res/arial40.gpb");
         _fontColor = Vector4.make_FltX4(0, 0.5, 1, 1);
+
+        var array = Utilities.createObjectArray(Vector2, 10);
+        array.getAt(5).set_FltX2(4, 5);
+        trace(array.getAt(5).x);
+        trace(array.getAt(5).y);
+
+        var array2 = Utilities.createCharArray(20);
+        trace(array2.getAt(8));
+        array2.setAt(8, 120);
+        trace(array2.getAt(8));
 
         // Load mesh / scene from file.
         //
@@ -113,7 +129,7 @@ class MeshGame extends Game
         // Clear the color and depth buffers.
         //
 
-        clear_Int_FltX5_Int(Game_ClearFlags.CLEAR_COLOR_DEPTH, 1, 1, 1, 1, 1, 0);
+        clear_Int_FltX5_Int(Game_ClearFlags.CLEAR_COLOR_DEPTH, 0, 0, 0, 1, 1, 0);
 
         // Visit all the nodes in the scene, drawing the models/mesh.
         //
@@ -199,8 +215,7 @@ class MeshGame extends Game
         var pointCount = lineCount * 4;
         var verticesSize = pointCount * (3 + 3);  // (3 (position(xyz) + 3 color(rgb))
 
-        var vertices = new BytesOutput();
-        vertices.prepare(verticesSize * 4);
+        var vertices = Utilities.createFloatArray(verticesSize * 24);
 
         var gridLength:Float = Std.int(lineCount / 2);
         var value = -gridLength;
@@ -230,19 +245,19 @@ class MeshGame extends Game
             // Build the lines.
             //
 
-            vertices.writeFloat(value);
-            vertices.writeFloat(0.0);
-            vertices.writeFloat(-gridLength);
-            vertices.writeFloat(color.x);
-            vertices.writeFloat(color.y);
-            vertices.writeFloat(color.z);
+            vertices.setAt(i*24+0, value);
+            vertices.setAt(i*24+1, 0.0);
+            vertices.setAt(i*24+2, -gridLength);
+            vertices.setAt(i*24+3, color.x);
+            vertices.setAt(i*24+4, color.y);
+            vertices.setAt(i*24+5, color.z);
 
-            vertices.writeFloat(value);
-            vertices.writeFloat(0.0);
-            vertices.writeFloat(gridLength);
-            vertices.writeFloat(color.x);
-            vertices.writeFloat(color.y);
-            vertices.writeFloat(color.z);
+            vertices.setAt(i*24+6, value);
+            vertices.setAt(i*24+7, 0.0);
+            vertices.setAt(i*24+8, gridLength);
+            vertices.setAt(i*24+9, color.x);
+            vertices.setAt(i*24+10, color.y);
+            vertices.setAt(i*24+11, color.z);
 
             // The X axis is red.
             //
@@ -250,19 +265,19 @@ class MeshGame extends Game
             if (Math.abs(value) < 0.0001)
                 color.set_FltX4(0.7, 0.15, 0.15, 1.0);
 
-            vertices.writeFloat(-gridLength);
-            vertices.writeFloat(0.0);
-            vertices.writeFloat(value);
-            vertices.writeFloat(color.x);
-            vertices.writeFloat(color.y);
-            vertices.writeFloat(color.z);
+            vertices.setAt(i*24+12, -gridLength);
+            vertices.setAt(i*24+13, 0.0);
+            vertices.setAt(i*24+14, value);
+            vertices.setAt(i*24+15, color.x);
+            vertices.setAt(i*24+16, color.y);
+            vertices.setAt(i*24+17, color.z);
 
-            vertices.writeFloat(gridLength);
-            vertices.writeFloat(0.0);
-            vertices.writeFloat(value);
-            vertices.writeFloat(color.x);
-            vertices.writeFloat(color.y);
-            vertices.writeFloat(color.z);
+            vertices.setAt(i*24+18, gridLength);
+            vertices.setAt(i*24+19, 0.0);
+            vertices.setAt(i*24+20, value);
+            vertices.setAt(i*24+21, color.x);
+            vertices.setAt(i*24+22, color.y);
+            vertices.setAt(i*24+23, color.z);
 
             value += 1.0;
         }
@@ -279,7 +294,7 @@ class MeshGame extends Game
             return null;
         }
         mesh.setPrimitiveType(Mesh_PrimitiveType.LINES);
-        mesh.setVertexData(vertices.getBytes().getData(), 0, pointCount);
+        mesh.setVertexData(vertices, 0, pointCount);
 
         var model = Model.create(mesh);
         model.setMaterial_Str_Int("res/grid.material");

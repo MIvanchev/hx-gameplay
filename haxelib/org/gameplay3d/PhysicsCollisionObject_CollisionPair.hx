@@ -10,8 +10,8 @@ class PhysicsCollisionObject_CollisionPair extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var objectA(get, set):PhysicsCollisionObject;
-    public var objectB(get, set):PhysicsCollisionObject;
+    public var objectA(get_objectA, set_objectA):PhysicsCollisionObject;
+    public var objectB(get_objectB, set_objectB):PhysicsCollisionObject;
 
     /***************************************************************************
      * MEMBERS                                                                 *

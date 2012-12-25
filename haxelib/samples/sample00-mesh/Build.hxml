@@ -2,5 +2,4 @@
 -cp src
 -main MeshGame
 -lib hx-gameplay
--D haxe3
 -D no-compilation
