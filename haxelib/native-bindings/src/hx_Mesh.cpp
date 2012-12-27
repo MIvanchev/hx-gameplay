@@ -39,7 +39,7 @@ value hx_Mesh_static_createLines(value points, value pointCount)
 
     const value& result = ReferenceToValue(Mesh::createLines(_points, _pointCount));
 
-    delete [] _points;
+    SAFE_DELETE_ARRAY(_points);
 
     return result;
 }
@@ -191,7 +191,7 @@ value hx_Mesh_getVertexFormat(value thisObj)
 
     const value& result = ObjectToValue(new VertexFormat(elements, count));
 
-    delete [] elements;
+    SAFE_DELETE_ARRAY(elements);
 
     return result;
 }
@@ -256,7 +256,7 @@ void hx_Mesh_setVertexData(value thisObj, value vertexData, value vertexStart, v
     unsigned int _vertexStart = ValueToUint(vertexStart);
     unsigned int _vertexCount = ValueToUint(vertexCount);
     ValueToObject(thisObj, _thisObj);
-    ValueToBuffer(vertexData, _vertexData);
+    ValueToArray(vertexData, _vertexData);
     _thisObj->setVertexData(_vertexData, _vertexStart, _vertexCount);
 }
 DEFINE_PRIM(hx_Mesh_setVertexData, 4);

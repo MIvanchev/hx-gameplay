@@ -489,7 +489,7 @@ void hx_ParticleEmitter_setSpriteFrameCoords_Int_ArrRct(value thisObj, value fra
 
     _thisObj->setSpriteFrameCoords(_frameCount, _frameCoords);
 
-    delete [] _frameCoords;
+    SAFE_DELETE_ARRAY(_frameCoords);
 }
 DEFINE_PRIM(hx_ParticleEmitter_setSpriteFrameCoords_Int_ArrRct, 3);
 
@@ -549,7 +549,7 @@ void hx_ParticleEmitter_setSpriteTexCoords(value thisObj, value frameCount, valu
 
     _thisObj->setSpriteTexCoords(_frameCount, _texCoords);
 
-    delete [] _texCoords;
+    SAFE_DELETE_ARRAY(_texCoords);
 }
 DEFINE_PRIM(hx_ParticleEmitter_setSpriteTexCoords, 3);
 

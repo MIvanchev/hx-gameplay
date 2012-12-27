@@ -1,8 +1,9 @@
 package org.gameplay3d;
 
 import haxe.io.BytesData;
+import org.gameplay3d.util.Utilities;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class MeshBatch : public GameplayObject
@@ -13,9 +14,9 @@ class MeshBatch extends GameplayObject
      **************************************************************************/
 
     // DECL: void add(T* vertices, unsigned int vertexCount, unsigned short* indices = NULL, unsigned int indexCount = 0);
-    public function add(vertices:BytesData, vertexCount:Int, indices:Int = null, indexCount:Int = 0):Void
+    public function add(vertices:BytesData, vertexCount:Int, indices:NativeArrayUshort = null, indexCount:Int = 0):Void
     {
-        hx_MeshBatch_add(nativeObject, vertices, vertexCount, indices, indexCount);
+        hx_MeshBatch_add(nativeObject, vertices, vertexCount, indices.native(), indexCount);
     }
 
     // DECL: static MeshBatch* create(const VertexFormat& vertexFormat, Mesh::PrimitiveType primitiveType, Material* material, bool indexed, unsigned int initialCapacity = 1024, unsigned int growSize = 1024);

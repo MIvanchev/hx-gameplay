@@ -10,7 +10,7 @@ void hx_MeshBatch_add(value thisObj, value vertices, value vertexCount, value in
     unsigned int _indexCount = ValueToUint(indexCount);
     ValueToObject(thisObj, _thisObj);
     ValueToBuffer(vertices, _vertices);
-    ValueToBuffer(indices, _indices);
+    ValueToArray(indices, _indices);
     _thisObj->add(_vertices, _vertexCount, _indices, _indexCount);
 }
 DEFINE_PRIM(hx_MeshBatch_add, 5);

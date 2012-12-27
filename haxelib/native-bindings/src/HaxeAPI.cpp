@@ -185,6 +185,8 @@ NATIVE_ARRAY_FUNCTIONS_OBJECT(Vector3)
 NATIVE_ARRAY_FUNCTIONS_OBJECT(Vector4)
 NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(int, Int, alloc_int, val_get_int);
 NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(unsigned int, Uint, alloc_int, ValueToUint);
+NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(short, Short, alloc_int, ValueToShort);
+NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(unsigned short, Ushort, alloc_int, ValueToUshort);
 NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(char, Char, alloc_int, val_get_int);
 NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(unsigned char, Byte, alloc_int, val_get_int);
 NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(float, Float, alloc_float, ValueToFloat);
@@ -210,6 +212,18 @@ unsigned int ValueToUint(value _value)
 {
     int number = val_get_int(_value);
     return static_cast<unsigned int>(number);
+}
+
+short ValueToShort(value _value)
+{
+    int number = val_get_int(_value);
+    return static_cast<short>(number);
+}
+
+unsigned short ValueToUshort(value _value)
+{
+    int number = val_get_int(_value);
+    return static_cast<unsigned short>(number);
 }
 
 long ValueToLong(value _value)

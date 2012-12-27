@@ -18,7 +18,7 @@ value hx_VertexFormat_Construct(value elements, value elementCount)
 
     const value& result = ObjectToValue(new VertexFormat(_elements, _elementCount));
 
-    delete [] _elements;
+    SAFE_DELETE_ARRAY(_elements);
 
     return result;
 }

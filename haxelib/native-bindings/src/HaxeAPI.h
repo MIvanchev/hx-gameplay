@@ -114,6 +114,8 @@ void ValueToArray(value _value, TYPE*& _array)
 float ValueToFloat(value _value);
 double ValueToDouble(value _value);
 unsigned int ValueToUint(value _value);
+short ValueToShort(value _value);
+unsigned short ValueToUshort(value _value);
 long ValueToLong(value _value);
 unsigned long ValueToUlong(value _value);
 size_t ValueToSizeT(value _value);

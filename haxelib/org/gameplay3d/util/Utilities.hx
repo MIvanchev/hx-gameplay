@@ -6,6 +6,8 @@ import org.gameplay3d.intern.INativeBinding;
 
 typedef NativeArrayInt = IAssignableNativeArray<Int>;
 typedef NativeArrayUint = IAssignableNativeArray<Int>;
+typedef NativeArrayShort = IAssignableNativeArray<Int>;
+typedef NativeArrayUshort = IAssignableNativeArray<Int>;
 typedef NativeArrayChar = IAssignableNativeArray<Int>;
 typedef NativeArrayByte = IAssignableNativeArray<Int>;
 typedef NativeArrayFloat = IAssignableNativeArray<Float>;
@@ -49,6 +51,16 @@ class Utilities
     public static function createUintArray(length, reclaim = true):NativeArrayUint
     {
         return new PrimitiveArray("uint", length, reclaim);
+    }
+
+    public static function createShortArray(length, reclaim = true):NativeArrayShort
+    {
+        return new PrimitiveArray("short", length, reclaim);
+    }
+
+    public static function createUshortArray(length, reclaim = true):NativeArrayUshort
+    {
+        return new PrimitiveArray("ushort", length, reclaim);
     }
 
     public static function createCharArray(length, reclaim = true):NativeArrayChar

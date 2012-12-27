@@ -1,8 +1,6 @@
 package org.gameplay3d;
 
-import org.gameplay3d.intern.ConversionTools;
-import org.gameplay3d.intern.NativeOutParameter;
-import org.gameplay3d.util.OutParameter;
+import org.gameplay3d.util.Utilities;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -39,11 +37,9 @@ class Frustum extends GameplayObject
     }
 
     // DECL: void getCorners(Vector3* corners) const;
-    public function getCorners(corners:OutParameter<Array<Vector3>>):Void
+    public function getCorners(corners:NativeArrayFloat):Void
     {
-        var _corners = new NativeOutParameter();
-        hx_Frustum_getCorners(nativeObject, _corners.native());
-        corners.value = ConversionTools.extractVector3Array(_corners.value);
+        hx_Frustum_getCorners(nativeObject, corners.native());
     }
 
     // DECL: const Plane& getFar() const;

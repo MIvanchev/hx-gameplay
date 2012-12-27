@@ -3,6 +3,7 @@ package org.gameplay3d;
 import haxe.io.BytesData;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.util.Handle;
+import org.gameplay3d.util.Utilities;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -141,9 +142,9 @@ class Mesh extends GameplayObject, implements Ref
     }
 
     // DECL: void setVertexData(const float* vertexData, unsigned int vertexStart = 0, unsigned int vertexCount = 0);
-    public function setVertexData(vertexData:BytesData, vertexStart:Int = 0, vertexCount:Int = 0):Void
+    public function setVertexData(vertexData:NativeArrayFloat, vertexStart:Int = 0, vertexCount:Int = 0):Void
     {
-        hx_Mesh_setVertexData(nativeObject, vertexData, vertexStart, vertexCount);
+        hx_Mesh_setVertexData(nativeObject, vertexData.native(), vertexStart, vertexCount);
     }
 
     /***************************************************************************

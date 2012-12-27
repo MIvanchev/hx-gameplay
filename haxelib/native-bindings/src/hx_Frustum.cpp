@@ -38,16 +38,10 @@ DEFINE_PRIM(hx_Frustum_getBottom, 1);
 void hx_Frustum_getCorners(value thisObj, value corners)
 {
     Frustum *_thisObj;
+    Vector3 *_corners;
     ValueToObject(thisObj, _thisObj);
-
-    Vector3 points[8];
-    _thisObj->getCorners(points);
-
-    value _corners = alloc_array(8);
-    for (int index = 0; index < 8; index++)
-        val_array_set_i(_corners, index, ObjectToValue(new Vector3(points[index])));
-
-    SetOutParameterValue(corners, _corners);
+    ValueToArray(corners, _corners);
+    _thisObj->getCorners(_corners);
 }
 DEFINE_PRIM(hx_Frustum_getCorners, 2);
 
