@@ -337,26 +337,23 @@ class Node extends Transform, implements Ref
         hx_Node_setCamera(nativeObject, camera.native());
     }
 
-    // TODO:
     // DECL: PhysicsCollisionObject* setCollisionObject(PhysicsCollisionObject::Type type, const PhysicsCollisionShape::Definition& shape = PhysicsCollisionShape::box(),
-    //public function setCollisionObject(type:PhysicsCollisionObject::Type, shape:PhysicsCollisionShape::Definition, rigidBodyParameters:PhysicsRigidBody::Parameters):PhysicsCollisionObject
-    //{
-        //return hx_Node_setCollisionObject(nativeObject, type.native(), shape.native(), rigidBodyParameters.native());
-    //}
+    public function setCollisionObject_Int_Def_Param(type:Int, shape:PhysicsCollisionShape_Definition, rigidBodyParameters:PhysicsRigidBody_Parameters):PhysicsCollisionObject
+    {
+        return PhysicsCollisionObject.wrap(hx_Node_setCollisionObject_Int_Def_Param(nativeObject, type, shape.native(), rigidBodyParameters.native()));
+    }
 
-    // TODO:
     // DECL: PhysicsCollisionObject* setCollisionObject(Properties* properties);
-    //public function setCollisionObject(properties:Properties):PhysicsCollisionObject
-    //{
-        //return hx_Node_setCollisionObject(nativeObject, properties.native());
-    //}
+    public function setCollisionObject_Prop(properties:Properties):PhysicsCollisionObject
+    {
+        return PhysicsCollisionObject.wrap(hx_Node_setCollisionObject_Prop(nativeObject, properties.native()));
+    }
 
-    // TODO:
     // DECL: PhysicsCollisionObject* setCollisionObject(const char* url);
-    //public function setCollisionObject(url:String):PhysicsCollisionObject
-    //{
-        //return hx_Node_setCollisionObject(nativeObject, url);
-    //}
+    public function setCollisionObject_Str(url:String):PhysicsCollisionObject
+    {
+        return PhysicsCollisionObject.wrap(hx_Node_setCollisionObject_Str(nativeObject, url));
+    }
 
     // DECL: void setForm(Form* form);
     public function setForm(form:Form):Void
@@ -457,7 +454,7 @@ class Node extends Transform, implements Ref
     static var hx_Node_setAgent:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setAgent", 2);
     static var hx_Node_setAudioSource:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setAudioSource", 2);
     static var hx_Node_setCamera:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setCamera", 2);
-    static var hx_Node_setCollisionObject_Typ_Def_Param:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setCollisionObject_Typ_Def_Param", 4);
+    static var hx_Node_setCollisionObject_Int_Def_Param:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setCollisionObject_Int_Def_Param", 4);
     static var hx_Node_setCollisionObject_Prop:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setCollisionObject_Prop", 2);
     static var hx_Node_setCollisionObject_Str:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setCollisionObject_Str", 2);
     static var hx_Node_setForm:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setForm", 2);

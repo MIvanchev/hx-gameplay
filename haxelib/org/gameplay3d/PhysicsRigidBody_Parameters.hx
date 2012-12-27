@@ -1,11 +1,39 @@
 package org.gameplay3d;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
-// DECL: struct PhysicsController_HitResult : public GameplayObject
+// DECL: struct PhysicsRigidBody_Parameters : public GameplayObject
 class PhysicsRigidBody_Parameters extends GameplayObject
 {
+    /***************************************************************************
+     * MEMBERS                                                                 *
+     **************************************************************************/
+
+    // DECL: PhysicsRigidBody_Parameters();
+    public static function make():PhysicsRigidBody_Parameters
+    {
+        return new PhysicsRigidBody_Parameters(constructNativeObject());
+    }
+
+    // DECL: PhysicsRigidBody_Parameters(float mass, float friction=0.5f, float resititution=0.0f, float linearDamping=0.0f, float angularDamping=0.0f, bool kinematic=false, const Vector3 &anisotropicFriction=Vector3::one());
+    public static function make_FltX5_Bool_V3X3(mass:Float, friction:Float = 0.5, restitution:Float = 0.0, linearDamping:Float = 0.0, angularDamping:Float = 0.0, kinematic:Bool = false, anisotropicFiltering:Vector3):PhysicsRigidBody_Parameters
+    {
+        return new PhysicsRigidBody_Parameters(constructNativeObject_FltX5_Bool_V3X3(mass, friction, restitution, linearDamping, angularDamping, kinematic, anisotropicFiltering));
+    }
+
+    // DECL: PhysicsRigidBody_Parameters();
+    static function constructNativeObject():Dynamic
+    {
+        return hx_PhysicsRigidBody_Parameters_Construct();
+    }
+
+    // DECL: PhysicsRigidBody_Parameters(float mass, float friction=0.5f, float resititution=0.0f, float linearDamping=0.0f, float angularDamping=0.0f, bool kinematic=false, const Vector3 &anisotropicFriction=Vector3::one());
+    static function constructNativeObject_FltX5_Bool_V3X3(mass:Float, friction:Float, restitution:Float, linearDamping:Float, angularDamping:Float, kinematic:Bool, anisotropicFiltering:Vector3):PhysicsRigidBody_Parameters
+    {
+        return hx_PhysicsRigidBody_Parameters_Construct_FltX5_Bool_V3X3(mass, friction, restitution, linearDamping, angularDamping, kinematic, anisotropicFiltering);
+    }
+
     /***************************************************************************
      * PROPERTIES                                                              *
      **************************************************************************/

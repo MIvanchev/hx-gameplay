@@ -506,7 +506,7 @@ void hx_Node_setCamera(value thisObj, value camera)
 DEFINE_PRIM(hx_Node_setCamera, 2);
 
 // DECL: PhysicsCollisionObject* setCollisionObject(PhysicsCollisionObject::Type type, const PhysicsCollisionShape::Definition& shape = PhysicsCollisionShape::box(),
-value hx_Node_setCollisionObject_Typ_Def_Param(value thisObj, value type, value shape, value rigidBodyParameters)
+value hx_Node_setCollisionObject_Int_Def_Param(value thisObj, value type, value shape, value rigidBodyParameters)
 {
     Node *_thisObj;
     PhysicsCollisionObject::Type _type;
@@ -518,7 +518,7 @@ value hx_Node_setCollisionObject_Typ_Def_Param(value thisObj, value type, value 
     ValueToObject(rigidBodyParameters, _rigidBodyParameters);
     return ObjectToValue(_thisObj->setCollisionObject(_type, *_shape, _rigidBodyParameters), false);
 }
-DEFINE_PRIM(hx_Node_setCollisionObject_Typ_Def_Param, 4);
+DEFINE_PRIM(hx_Node_setCollisionObject_Int_Def_Param, 4);
 
 // DECL: PhysicsCollisionObject* setCollisionObject(Properties* properties);
 value hx_Node_setCollisionObject_Prop(value thisObj, value properties)

@@ -21,7 +21,7 @@
   <build>
     <option directives="no-compilation&#xA;haxe3" />
     <option flashStrict="False" />
-    <option mainClass="MeshGame" />
+    <option mainClass="LongboardGame" />
     <option enabledebug="False" />
     <option additional="" />
   </build>
