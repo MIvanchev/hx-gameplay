@@ -1,9 +1,9 @@
 package org.gameplay3d;
 
 import org.gameplay3d.impl.Transform_ListenerImpl;
-import org.gameplay3d.util.Utilities;
+import org.gameplay3d.intern.ConversionTools;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class MeshSkin : public Transform::Listener
@@ -46,7 +46,7 @@ class MeshSkin extends Transform_ListenerImpl
     // DECL: Vector4* getMatrixPalette() const;
     public function getMatrixPalette():Array<Vector4>
     {
-        return Utilities.extractVector4Array(hx_MeshSkin_getMatrixPalette(nativeObject));
+        return ConversionTools.extractVector4Array(hx_MeshSkin_getMatrixPalette(nativeObject));
     }
 
     // DECL: unsigned int getMatrixPaletteSize() const;

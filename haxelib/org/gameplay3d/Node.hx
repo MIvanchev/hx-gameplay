@@ -1,11 +1,11 @@
 package org.gameplay3d;
 
-import dk.bluewolf.gameplay.Handle;
-import dk.bluewolf.gameplay.NativeOutParameter;
+import org.gameplay3d.intern.ConversionTools;
+import org.gameplay3d.intern.NativeOutParameter;
+import org.gameplay3d.util.Handle;
 import org.gameplay3d.util.OutParameter;
-import org.gameplay3d.util.Utilities;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Node : public Transform, public Ref
@@ -50,7 +50,7 @@ class Node extends Transform, implements Ref
     {
         var _nodes = new NativeOutParameter();
         var result = hx_Node_findNodes(nativeObject, id, _nodes.native(), recursive, exactMatch);
-        nodes.value = Utilities.extractNodeArray(_nodes.value);
+        nodes.value = ConversionTools.extractNodeArray(_nodes.value);
         return result;
     }
 

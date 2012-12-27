@@ -1,8 +1,8 @@
 package org.gameplay3d;
 
-import org.gameplay3d.util.Utilities;
+import org.gameplay3d.intern.ConversionTools;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Container : public Control
@@ -63,7 +63,7 @@ class Container extends Control
     // DECL: const std::vector<Control*>& getControls() const;
     public function getControls():Array<Control>
     {
-        return Utilities.extractControlArray(hx_Container_getControls(nativeObject));
+        return ConversionTools.extractControlArray(hx_Container_getControls(nativeObject));
     }
 
     // DECL: Layout* getLayout();

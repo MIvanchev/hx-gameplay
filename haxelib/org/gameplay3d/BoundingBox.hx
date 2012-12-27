@@ -1,10 +1,10 @@
 package org.gameplay3d;
 
-import dk.bluewolf.gameplay.NativeOutParameter;
+import org.gameplay3d.intern.ConversionTools;
+import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.OutParameter;
-import org.gameplay3d.util.Utilities;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class BoundingBox : public GameplayObject
@@ -68,7 +68,7 @@ class BoundingBox extends GameplayObject
     {
         var _dst = new NativeOutParameter();
         hx_BoundingBox_getCorners(nativeObject, _dst.native());
-        dst.value = Utilities.extractVector3Array(_dst.value);
+        dst.value = ConversionTools.extractVector3Array(_dst.value);
     }
 
     // DECL: bool intersects(const BoundingBox& box) const;

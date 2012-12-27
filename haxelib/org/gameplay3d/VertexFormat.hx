@@ -1,8 +1,8 @@
 package org.gameplay3d;
 
-import org.gameplay3d.util.Utilities;
+import org.gameplay3d.intern.ConversionTools;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class VertexFormat : public GameplayObject
@@ -49,7 +49,7 @@ class VertexFormat extends GameplayObject
     // DECL: VertexFormat(const Element* elements, unsigned int elementCount);
     static function constructNativeObject(elements:Array<VertexFormat_Element>, elementCount:Int):Dynamic
     {
-        return hx_VertexFormat_Construct(Utilities.insertArray(elements), elementCount);
+        return hx_VertexFormat_Construct(ConversionTools.insertArray(elements), elementCount);
     }
 
     /***************************************************************************

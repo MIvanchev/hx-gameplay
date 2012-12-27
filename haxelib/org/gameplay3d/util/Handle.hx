@@ -1,4 +1,6 @@
-package dk.bluewolf.gameplay;
+package org.gameplay3d.util;
+
+import org.gameplay3d.intern.NativeBinding;
 
 /**
  * TODO

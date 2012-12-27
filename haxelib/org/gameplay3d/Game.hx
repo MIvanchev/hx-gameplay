@@ -1,11 +1,11 @@
 package org.gameplay3d;
 
 import cpp.Lib;
-import dk.bluewolf.gameplay.Handle;
-import dk.bluewolf.gameplay.NativeOutParameter;
+import org.gameplay3d.intern.NativeOutParameter;
+import org.gameplay3d.util.Handle;
 import org.gameplay3d.util.OutParameter;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Game : public GameplayObject
@@ -44,13 +44,13 @@ class Game extends GameplayObject
     // DECL: void clear(ClearFlags flags, const Vector4& clearColor, float clearDepth, int clearStencil);
     public function clear_Int_V4_Flt_Int(flags:Int, clearColor:Vector4, clearDepth:Float, clearStencil:Int):Void
     {
-        hx_Game_clear_ClrFlgs_V4_Flt_Int(nativeObject, flags, clearColor.native(), clearDepth, clearStencil);
+        hx_Game_clear_Int_V4_Flt_Int(nativeObject, flags, clearColor.native(), clearDepth, clearStencil);
     }
 
     // DECL: void clear(ClearFlags flags, float red, float green, float blue, float alpha, float clearDepth, int clearStencil);
     public function clear_Int_FltX5_Int(flags:Int, red:Float, green:Float, blue:Float, alpha:Float, clearDepth:Float, clearStencil:Int):Void
     {
-        hx_Game_clear_ClrFlgs_FltX5_Int(nativeObject, flags, red, green, blue, alpha, clearDepth, clearStencil);
+        hx_Game_clear_Int_FltX5_Int(nativeObject, flags, red, green, blue, alpha, clearDepth, clearStencil);
     }
 
     // DECL: inline void displayKeyboard(bool display);

@@ -7,7 +7,7 @@ import org.gameplay3d.AnimationValue;
 import org.gameplay3d.GameplayObject;
 import org.gameplay3d.Properties;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class AnimationTarget : public GameplayObject

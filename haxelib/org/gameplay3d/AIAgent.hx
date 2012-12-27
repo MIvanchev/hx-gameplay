@@ -2,7 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.impl.ScriptTargetImpl;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class AIAgent : public Ref, public ScriptTarget

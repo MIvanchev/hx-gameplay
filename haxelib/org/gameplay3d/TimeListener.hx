@@ -1,7 +1,7 @@
 package org.gameplay3d;
 
-import dk.bluewolf.gameplay.Handle;
-import dk.bluewolf.gameplay.INativeBinding;
+import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.util.Handle;
 
 // DECL: class TimeListener : public GameplayObject
 interface TimeListener implements INativeBinding

@@ -1,6 +1,6 @@
 package org.gameplay3d;
 
-import dk.bluewolf.gameplay.INativeBinding;
+import org.gameplay3d.intern.INativeBinding;
 
 // DECL: class Listener : public GameplayObject
 interface AIAgent_Listener implements INativeBinding

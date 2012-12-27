@@ -1,10 +1,10 @@
 package org.gameplay3d;
 
 import haxe.io.BytesData;
-import dk.bluewolf.gameplay.Handle;
-import org.gameplay3d.util.Utilities;
+import org.gameplay3d.intern.ConversionTools;
+import org.gameplay3d.util.Handle;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Mesh : public Ref
@@ -29,7 +29,7 @@ class Mesh extends GameplayObject, implements Ref
     // DECL: static Mesh* createLines(Vector3* points, unsigned int pointCount);
     public static function createLines(points:Array<Vector3>, pointCount:Int):Mesh
     {
-        return Mesh.wrap(hx_Mesh_static_createLines(Utilities.insertArray(points), pointCount));
+        return Mesh.wrap(hx_Mesh_static_createLines(ConversionTools.insertArray(points), pointCount));
     }
 
     // DECL: static Mesh* createMesh(const VertexFormat& vertexFormat, unsigned int vertexCount, bool dynamic = false);

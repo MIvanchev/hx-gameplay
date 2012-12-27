@@ -1,6 +1,6 @@
 package org.gameplay3d;
 
-import dk.bluewolf.gameplay.NativeBinding;
+import org.gameplay3d.intern.NativeBinding;
 
 /**
  * Encapsulates the root of gameplay's class hierarchy and provides the main
@@ -51,10 +51,10 @@ class GameplayObject extends NativeBinding
      * TODO
      */
     @:generic
-    @:access(dk.bluewolf.gameplay)
-    @:access(org.gameplay3d)
-    @:access(org.gameplat3d.impl)
-    @:access(org.gameplay3d.util)
+    @:allow(org.gameplay3d)
+    @:allow(org.gameplat3d.impl)
+    @:allow(org.gameplay3d.intern)
+    @:allow(org.gameplay3d.util)
     static inline function wrap<T : GameplayObject>(classObj:Class<T>, nativeObject:Dynamic):T
     {
         return

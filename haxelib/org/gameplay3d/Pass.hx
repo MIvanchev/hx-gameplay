@@ -1,6 +1,6 @@
 package org.gameplay3d;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Pass : public RenderState

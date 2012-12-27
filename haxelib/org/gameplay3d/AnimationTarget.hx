@@ -1,7 +1,7 @@
 package org.gameplay3d;
 
 import haxe.io.BytesData;
-import dk.bluewolf.gameplay.INativeBinding;
+import org.gameplay3d.intern.INativeBinding;
 
 // DECL: class AnimationTarget : public GameplayObject
 interface AnimationTarget implements INativeBinding

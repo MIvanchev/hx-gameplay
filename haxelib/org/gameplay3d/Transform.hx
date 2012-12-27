@@ -2,7 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.impl.AnimationTarget_ScriptTarget;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Transform : public AnimationTarget, public ScriptTarget

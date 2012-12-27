@@ -121,20 +121,11 @@ DEFINE_PRIM(hx_MaterialParameter_setValue_Mat, 2);
 void hx_MaterialParameter_setValue_ArrMat_Int(value thisObj, value values, value count)
 {
     MaterialParameter *_thisObj;
-    Matrix *_values, *_value;
+    Matrix *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
-
-    _values = new Matrix[_count];
-    for (int index = 0; index < _count; index++)
-    {
-        ValueToObject(val_array_i(values, index), _value);
-        _values[index].set(*_value);
-    }
-
+    ValueToArray(values, _values);
     _thisObj->setValue(_values, _count);
-
-    delete [] _values;
 }
 DEFINE_PRIM(hx_MaterialParameter_setValue_ArrMat_Int, 3);
 
@@ -164,20 +155,11 @@ DEFINE_PRIM(hx_MaterialParameter_setValue_V2, 2);
 void hx_MaterialParameter_setValue_ArrV2_Int(value thisObj, value values, value count)
 {
     MaterialParameter *_thisObj;
-    Vector2 *_values, *_value;
+    Vector2 *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
-
-    _values = new Vector2[_count];
-    for (int index = 0; index < _count; index++)
-    {
-        ValueToObject(val_array_i(values, index), _value);
-        _values[index].set(*_value);
-    }
-
+    ValueToArray(values, _values);
     _thisObj->setValue(_values, _count);
-
-    delete [] _values;
 }
 DEFINE_PRIM(hx_MaterialParameter_setValue_ArrV2_Int, 3);
 
@@ -196,20 +178,11 @@ DEFINE_PRIM(hx_MaterialParameter_setValue_V3, 2);
 void hx_MaterialParameter_setValue_ArrV3_Int(value thisObj, value values, value count)
 {
     MaterialParameter *_thisObj;
-    Vector3 *_values, *_value;
+    Vector3 *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
-
-    _values = new Vector3[_count];
-    for (int index = 0; index < _count; index++)
-    {
-        ValueToObject(val_array_i(values, index), _value);
-        _values[index].set(*_value);
-    }
-
+    ValueToArray(values, _values);
     _thisObj->setValue(_values, _count);
-
-    delete [] _values;
 }
 DEFINE_PRIM(hx_MaterialParameter_setValue_ArrV3_Int, 3);
 
@@ -228,20 +201,11 @@ DEFINE_PRIM(hx_MaterialParameter_setValue_V4, 2);
 void hx_MaterialParameter_setValue_ArrV4_Int(value thisObj, value values, value count)
 {
     MaterialParameter *_thisObj;
-    Vector4 *_values, *_value;
+    Vector4 *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
-
-    _values = new Vector4[_count];
-    for (int index = 0; index < _count; index++)
-    {
-        ValueToObject(val_array_i(values, index), _value);
-        _values[index].set(*_value);
-    }
-
+    ValueToArray(values, _values);
     _thisObj->setValue(_values, _count);
-
-    delete [] _values;
 }
 DEFINE_PRIM(hx_MaterialParameter_setValue_ArrV4_Int, 3);
 
@@ -252,14 +216,8 @@ void hx_MaterialParameter_setValue_ArrFlt_Int(value thisObj, value values, value
     float *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
-
-    _values = new float[_count];
-    for (int index = 0; index < _count; index++)
-        _values[index] = ValueToFloat(val_array_i(values, index));
-
+    ValueToArray(values, _values);
     _thisObj->setValue(_values, _count);
-
-    delete [] _values;
 }
 DEFINE_PRIM(hx_MaterialParameter_setValue_ArrFlt_Int, 3);
 
@@ -270,14 +228,8 @@ void hx_MaterialParameter_setValue_ArrInt_Int(value thisObj, value values, value
     int *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
-
-    _values = new int[_count];
-    for (int index = 0; index < _count; index++)
-        _values[index] = val_get_int(val_array_i(values, index));
-
+    ValueToArray(values, _values);
     _thisObj->setValue(_values, _count);
-
-    delete [] _values;
 }
 DEFINE_PRIM(hx_MaterialParameter_setValue_ArrInt_Int, 3);
 

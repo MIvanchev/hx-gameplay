@@ -1,10 +1,10 @@
 package org.gameplay3d;
 
-import dk.bluewolf.gameplay.NativeOutParameter;
+import org.gameplay3d.intern.ConversionTools;
+import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.OutParameter;
-import org.gameplay3d.util.Utilities;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Frustum : public GameplayObject
@@ -43,7 +43,7 @@ class Frustum extends GameplayObject
     {
         var _corners = new NativeOutParameter();
         hx_Frustum_getCorners(nativeObject, _corners.native());
-        corners.value = Utilities.extractVector3Array(_corners.value);
+        corners.value = ConversionTools.extractVector3Array(_corners.value);
     }
 
     // DECL: const Plane& getFar() const;

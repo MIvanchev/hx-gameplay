@@ -1,4 +1,4 @@
-package dk.bluewolf.gameplay;
+package org.gameplay3d.intern;
 
 /**
  * TODO

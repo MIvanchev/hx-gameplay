@@ -102,21 +102,12 @@ void hx_Effect_setValue_Unif_ArrMat_Int(value thisObj, value uniform, value valu
 {
     Effect *_thisObj;
     Uniform *_uniform;
-    Matrix *_values = NULL, *matrix;
+    Matrix *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
     ValueToObject(uniform, _uniform);
-
-    _values = new Matrix[_count];
-    for (int index = 0; index < _count; index++)
-    {
-        ValueToObject(val_array_i(values, index), matrix);
-        _values[index].set(*matrix);
-    }
-
+    ValueToArray(values, _values);
     _thisObj->setValue(_uniform, _values, _count);
-
-    delete [] _values;
 }
 DEFINE_PRIM(hx_Effect_setValue_Unif_ArrMat_Int, 4);
 
@@ -151,21 +142,12 @@ void hx_Effect_setValue_Unif_ArrV2_Int(value thisObj, value uniform, value value
 {
     Effect *_thisObj;
     Uniform *_uniform;
-    Vector2 *_values = NULL, *vector;
+    Vector2 *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
     ValueToObject(uniform, _uniform);
-
-    _values = new Vector2[_count];
-    for (int index = 0; index < _count; index++)
-    {
-        ValueToObject(val_array_i(values, index), vector);
-        _values[index].set(*vector);
-    }
-
+    ValueToArray(values, _values);
     _thisObj->setValue(_uniform, _values, _count);
-
-    delete [] _values;
 }
 DEFINE_PRIM(hx_Effect_setValue_Unif_ArrV2_Int, 4);
 
@@ -187,21 +169,12 @@ void hx_Effect_setValue_Unif_ArrV3_Int(value thisObj, value uniform, value value
 {
     Effect *_thisObj;
     Uniform *_uniform;
-    Vector3 *_values = NULL, *vector;
+    Vector3 *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
     ValueToObject(uniform, _uniform);
-
-    _values = new Vector3[_count];
-    for (int index = 0; index < _count; index++)
-    {
-        ValueToObject(val_array_i(values, index), vector);
-        _values[index].set(*vector);
-    }
-
+    ValueToArray(values, _values);
     _thisObj->setValue(_uniform, _values, _count);
-
-    delete [] _values;
 }
 DEFINE_PRIM(hx_Effect_setValue_Unif_ArrV3_Int, 4);
 
@@ -223,21 +196,12 @@ void hx_Effect_setValue_Unif_ArrV4_Int(value thisObj, value uniform, value value
 {
     Effect *_thisObj;
     Uniform *_uniform;
-    Vector4 *_values = NULL, *vector;
+    Vector4 *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
     ValueToObject(uniform, _uniform);
-
-    _values = new Vector4[_count];
-    for (int index = 0; index < _count; index++)
-    {
-        ValueToObject(val_array_i(values, index), vector);
-        _values[index].set(*vector);
-    }
-
+    ValueToArray(values, _values);
     _thisObj->setValue(_uniform, _values, _count);
-
-    delete [] _values;
 }
 DEFINE_PRIM(hx_Effect_setValue_Unif_ArrV4_Int, 4);
 
@@ -246,18 +210,12 @@ void hx_Effect_setValue_Unif_ArrFlt_Int(value thisObj, value uniform, value valu
 {
     Effect *_thisObj;
     Uniform *_uniform;
-    float *_values = NULL;;
+    float *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
     ValueToObject(uniform, _uniform);
-
-    _values = new float[_count];
-    for (int index = 0; index < _count; index++)
-        _values[index] = ValueToFloat(val_array_i(values, index));
-
+    ValueToArray(values, _values);
     _thisObj->setValue(_uniform, _values, _count);
-
-    delete [] _values;
 }
 DEFINE_PRIM(hx_Effect_setValue_Unif_ArrFlt_Int, 4);
 
@@ -266,18 +224,12 @@ void hx_Effect_setValue_Unif_ArrInt_Int(value thisObj, value uniform, value valu
 {
     Effect *_thisObj;
     Uniform *_uniform;
-    int *_values = NULL;;
+    int *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
     ValueToObject(uniform, _uniform);
-
-    _values = new int[_count];
-    for (int index = 0; index < _count; index++)
-        _values[index] = val_get_int(val_array_i(values, index));
-
+    ValueToArray(values, _values);
     _thisObj->setValue(_uniform, _values, _count);
-
-    delete [] _values;
 }
 DEFINE_PRIM(hx_Effect_setValue_Unif_ArrInt_Int, 4);
 

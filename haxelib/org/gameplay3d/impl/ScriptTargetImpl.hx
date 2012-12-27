@@ -3,7 +3,7 @@ package org.gameplay3d.impl;
 import org.gameplay3d.GameplayObject;
 import org.gameplay3d.ScriptTarget;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class ScriptTarget : public GameplayObject

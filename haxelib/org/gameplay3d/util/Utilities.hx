@@ -1,87 +1,130 @@
 package org.gameplay3d.util;
 
-import org.gameplay3d.Control;
-import org.gameplay3d.Matrix;
-import org.gameplay3d.Node;
-import org.gameplay3d.Vector2;
-import org.gameplay3d.Vector3;
-import org.gameplay3d.Vector4;
+import cpp.Lib;
+import org.gameplay3d.GameplayObject;
+import org.gameplay3d.intern.INativeBinding;
 
-using dk.bluewolf.gameplay.NativeBinding;
-using org.gameplay3d.GameplayObject;
+typedef NativeArrayInt = IAssignableNativeArray<Int>;
+typedef NativeArrayUint = IAssignableNativeArray<Int>;
+typedef NativeArrayChar = IAssignableNativeArray<Int>;
+typedef NativeArrayByte = IAssignableNativeArray<Int>;
+typedef NativeArrayFloat = IAssignableNativeArray<Float>;
+typedef NativeArrayDouble = IAssignableNativeArray<Float>;
 
 /**
  * TODO
  */
 class Utilities
 {
-    public static function extractVector2Array(array:Iterable<Dynamic>):Array<Vector2>
+    @:generic
+    public static function createObjectArray<T : GameplayObject>(classObj:Class<T>, length, reclaim = true):INativeArray<T>
     {
-        var result = [];
+        // Load the necessary native functions.
+        //
 
-        for (object in array)
-            result.push(Vector2.wrap(object));
+        var name = Type.getClassName(classObj);
+        var packageEnd = name.lastIndexOf(".");
+        if (packageEnd != -1)
+            name = name.substr(packageEnd + 1);
 
-        return result;
+        var constructor = Lib.load("gameplay", 'allocNativeArray$name', 2);
+        var getter = Lib.load("gameplay", 'getNativeArrayElement$name', 2);
+
+        // Construct the native array.
+        //
+
+        var nativeObject = constructor(length, reclaim);
+        var objects = [];
+        for (index in 0...length)
+            objects[index] = GameplayObject.wrap(classObj, getter(nativeObject, index));
+
+        return new GameplayArray<T>(nativeObject, objects);
     }
 
-    public static function extractVector3Array(array:Iterable<Dynamic>):Array<Vector3>
+    public static function createIntArray(length, reclaim = true):NativeArrayInt
     {
-        var result = [];
-
-        for (object in array)
-            result.push(Vector3.wrap(object));
-
-        return result;
+        return new PrimitiveArray("int", length, reclaim);
     }
 
-    public static function extractVector4Array(array:Iterable<Dynamic>):Array<Vector4>
+    public static function createUintArray(length, reclaim = true):NativeArrayUint
     {
-        var result = [];
-
-        for (object in array)
-            result.push(Vector4.wrap(object));
-
-        return result;
+        return new PrimitiveArray("uint", length, reclaim);
     }
 
-    public static function extractMatrixArray(array:Iterable<Dynamic>):Array<Matrix>
+    public static function createCharArray(length, reclaim = true):NativeArrayChar
     {
-        var result = [];
-
-        for (object in array)
-            result.push(Matrix.wrap(object));
-
-        return result;
+        return new PrimitiveArray("char", length, reclaim);
     }
 
-    public static function extractNodeArray(array:Iterable<Dynamic>):Array<Node>
+    public static function createByteArray(length, reclaim = true):NativeArrayByte
     {
-        var result = [];
-
-        for (object in array)
-            result.push(Node.wrap(object));
-
-        return result;
+        return new PrimitiveArray("byte", length, reclaim);
     }
 
-    public static function extractControlArray(array:Iterable<Dynamic>):Array<Control>
+    public static function createFloatArray(length, reclaim = true):NativeArrayFloat
     {
-        var result = [];
-
-        for (object in array)
-            result.push(Control.wrap(object));
-
-        return result;
+        return new PrimitiveArray("float", length, reclaim);
     }
 
-    public static function insertArray(array:Iterable<GameplayObject>):Array<Dynamic>
+    public static function createDoubleArray(length, reclaim = true):NativeArrayDouble
     {
-        var result = [];
+        return new PrimitiveArray("double", length, reclaim);
+    }
+}
 
-        for (object in array)
-            result.push(object.native());
+/**
+ * TODO
+ */
+private class GameplayArray<T : GameplayObject> implements INativeArray<T>, implements INativeBinding
+{
+    @:isVar public var nativeObject(default, null):Dynamic;
+    @:isVar public var length(default, null):Int;
 
-        return result;
+    var objects:Array<T>;
+
+    public function new(nativeObject, objects:Array<T>)
+    {
+        this.nativeObject = nativeObject;
+        this.length = objects.length;
+        this.objects = objects;
+    }
+
+    public function getAt(index:Int):T
+    {
+        return objects[index];
+    }
+}
+
+/**
+ * TODO
+ */
+private class PrimitiveArray<T> implements IAssignableNativeArray<T>, implements INativeBinding
+{
+    @:isVar public var nativeObject(default, null):Dynamic;
+    @:isVar public var length(default, null):Int;
+
+    var getter:Dynamic->Int->T;
+    var setter:Dynamic->Int->T->Void;
+
+    public function new(typeName:String, length:Int, reclaim:Bool)
+    {
+        var name = '$(typeName.charAt(0).toUpperCase())$(typeName.substr(1))';
+        var constructor = Lib.load("gameplay", 'allocNativeArray$name', 2);
+        getter = Lib.load("gameplay", 'getNativeArrayElement$name', 2);
+        setter = Lib.load("gameplay", 'setNativeArrayElement$name', 3);
+
+        nativeObject = constructor(length, reclaim);
+
+        this.length = length;
+    }
+
+    public function getAt(index:Int):T
+    {
+        return getter(nativeObject, index);
+    }
+
+    public function setAt(index:Int, value:T):Void
+    {
+        setter(nativeObject, index, value);
     }
 }

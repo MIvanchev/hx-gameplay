@@ -2,7 +2,7 @@ package org.gameplay3d;
 
 import haxe.io.BytesData;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Image : public Ref

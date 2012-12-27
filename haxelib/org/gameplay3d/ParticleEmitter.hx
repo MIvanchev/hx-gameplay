@@ -1,8 +1,8 @@
 package org.gameplay3d;
 
-import org.gameplay3d.util.Utilities;
+import org.gameplay3d.intern.ConversionTools;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class ParticleEmitter : public Ref
@@ -309,7 +309,7 @@ class ParticleEmitter extends GameplayObject, implements Ref
     // DECL: void setSpriteFrameCoords(unsigned int frameCount, Rectangle* frameCoords);
     public function setSpriteFrameCoords_Int_ArrRct(frameCount:Int, frameCoords:Array<Rectangle>):Void
     {
-        hx_ParticleEmitter_setSpriteFrameCoords_Int_ArrRct(nativeObject, frameCount, Utilities.insertArray(frameCoords));
+        hx_ParticleEmitter_setSpriteFrameCoords_Int_ArrRct(nativeObject, frameCount, ConversionTools.insertArray(frameCoords));
     }
 
     // DECL: void setSpriteFrameCoords(unsigned int frameCount, int width, int height);

@@ -1,9 +1,10 @@
 package org.gameplay3d;
 
 import org.gameplay3d.impl.AnimationTargetImpl;
+import org.gameplay3d.util.INativeArray;
 import org.gameplay3d.util.Utilities;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class MaterialParameter : public AnimationTarget, public Ref
@@ -80,9 +81,9 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
     }
 
     // DECL: void setValue(const Matrix* values, unsigned int count = 1);
-    public function setValue_ArrMat_Int(values:Array<Matrix>, count:Int = 1):Void
+    public function setValue_ArrMat_Int(values:INativeArray<Matrix>, count:Int = 1):Void
     {
-        hx_MaterialParameter_setValue_ArrMat_Int(nativeObject, Utilities.insertArray(values), count);
+        hx_MaterialParameter_setValue_ArrMat_Int(nativeObject, values.native(), count);
     }
 
     // DECL: void setValue(const Texture::Sampler* sampler);
@@ -98,9 +99,9 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
     }
 
     // DECL: void setValue(const Vector2* values, unsigned int count = 1);
-    public function setValue_ArrV2_Int(values:Array<Vector2>, count:Int = 1):Void
+    public function setValue_ArrV2_Int(values:INativeArray<Vector2>, count:Int = 1):Void
     {
-        hx_MaterialParameter_setValue_ArrV2_Int(nativeObject, Utilities.insertArray(values), count);
+        hx_MaterialParameter_setValue_ArrV2_Int(nativeObject, values.native(), count);
     }
 
     // DECL: void setValue(const Vector3& value);
@@ -110,9 +111,9 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
     }
 
     // DECL: void setValue(const Vector3* values, unsigned int count = 1);
-    public function setValue_ArrV3_Int(values:Array<Vector3>, count:Int = 1):Void
+    public function setValue_ArrV3_Int(values:INativeArray<Vector3>, count:Int = 1):Void
     {
-        hx_MaterialParameter_setValue_ArrV3_Int(nativeObject, Utilities.insertArray(values), count);
+        hx_MaterialParameter_setValue_ArrV3_Int(nativeObject, values.native(), count);
     }
 
     // DECL: void setValue(const Vector4& value);
@@ -122,21 +123,21 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
     }
 
     // DECL: void setValue(const Vector4* values, unsigned int count = 1);
-    public function setValue_ArrV4_Int(values:Array<Vector4>, count:Int = 1):Void
+    public function setValue_ArrV4_Int(values:INativeArray<Vector4>, count:Int = 1):Void
     {
-        hx_MaterialParameter_setValue_ArrV4_Int(nativeObject, Utilities.insertArray(values), count);
+        hx_MaterialParameter_setValue_ArrV4_Int(nativeObject, values.native(), count);
     }
 
     // DECL: void setValue(const float* values, unsigned int count = 1);
-    public function setValue_ArrFlt_Int(values:Array<Float>, count:Int = 1):Void
+    public function setValue_ArrFlt_Int(values:NativeArrayFloat, count:Int = 1):Void
     {
-        hx_MaterialParameter_setValue_ArrFlt_Int(nativeObject, values, count);
+        hx_MaterialParameter_setValue_ArrFlt_Int(nativeObject, values.native(), count);
     }
 
     // DECL: void setValue(const int* values, unsigned int count = 1);
-    public function setValue_ArrInt_Int(values:Array<Int>, count:Int = 1):Void
+    public function setValue_ArrInt_Int(values:NativeArrayInt, count:Int = 1):Void
     {
-        hx_MaterialParameter_setValue_ArrInt_Int(nativeObject, values, count);
+        hx_MaterialParameter_setValue_ArrInt_Int(nativeObject, values.native(), count);
     }
 
     // DECL: void setValue(float value);

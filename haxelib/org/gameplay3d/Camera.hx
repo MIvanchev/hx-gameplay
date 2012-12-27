@@ -1,10 +1,10 @@
 package org.gameplay3d;
 
-import dk.bluewolf.gameplay.NativeOutParameter;
 import org.gameplay3d.impl.Transform_ListenerImpl;
+import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.OutParameter;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Camera : public Ref, public Transform::Listener

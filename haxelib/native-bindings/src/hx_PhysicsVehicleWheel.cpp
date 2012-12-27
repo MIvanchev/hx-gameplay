@@ -96,7 +96,7 @@ DEFINE_PRIM(hx_PhysicsVehicleWheel_getType, 1);
 void hx_PhysicsVehicleWheel_getWheelAxle(value thisObj, value wheelAxle)
 {
     PhysicsVehicleWheel *_thisObj;
-    Vector3 _wheelAxle;
+    Vector3 *_wheelAxle;
     ValueToObject(thisObj, _thisObj);
     ValueToObject(wheelAxle, _wheelAxle);
     _thisObj->getWheelAxle(_wheelAxle);
@@ -107,7 +107,7 @@ DEFINE_PRIM(hx_PhysicsVehicleWheel_getWheelAxle, 2);
 void hx_PhysicsVehicleWheel_getWheelDirection(value thisObj, value wheelDirection)
 {
     PhysicsVehicleWheel *_thisObj;
-    Vector3 _wheelDirection;
+    Vector3 *_wheelDirection;
     ValueToObject(thisObj, _thisObj);
     ValueToObject(wheelDirection, _wheelDirection);
     _thisObj->getWheelDirection(_wheelDirection);

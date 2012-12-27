@@ -1,9 +1,9 @@
 package org.gameplay3d;
 
 import haxe.io.BytesData;
-import dk.bluewolf.gameplay.Handle;
+import org.gameplay3d.util.Handle;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Texture : public Ref

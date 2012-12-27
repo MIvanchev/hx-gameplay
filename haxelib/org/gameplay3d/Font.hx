@@ -1,10 +1,10 @@
 package org.gameplay3d;
 
-import dk.bluewolf.gameplay.NativeOutParameter;
+import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.OutParameter;
 
-using dk.bluewolf.gameplay.NativeBinding;
 using org.gameplay3d.GameplayObject;
+using org.gameplay3d.intern.NativeBinding;
 
 // DECL: class Font : public Ref
 class Font extends GameplayObject, implements Ref

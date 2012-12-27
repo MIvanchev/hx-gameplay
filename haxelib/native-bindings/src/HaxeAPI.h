@@ -26,6 +26,7 @@ using namespace gameplay;
 
 DECLARE_KIND(k_OutParameter);
 DECLARE_KIND(k_Handle);
+DECLARE_KIND(k_Array);
 DECLARE_KIND(k_Object);
 DECLARE_KIND(k_Object_AnimationTarget);
 DECLARE_KIND(k_Object_PhysicsCollisionObject);
@@ -88,6 +89,22 @@ bool ValueToHandle(value thisObj, T& _value)
     _value = handle->_value;
 
     return true;
+}
+
+/*******************************************************************************
+ * NATIVE ARRAYS                                                               *
+ ******************************************************************************/
+
+template<typename TYPE>
+void ValueToArray(value _value, TYPE*& _array)
+{
+    if (val_is_null(_value))
+        _array = NULL;
+    else
+    {
+        void *data = val_get_handle(_value, k_Array);
+        _array = static_cast<TYPE*>(data);
+    }
 }
 
 /*******************************************************************************

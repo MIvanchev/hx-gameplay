@@ -1,1 +1,1 @@
-package org.gameplay3d;import dk.bluewolf.gameplay.INativeBinding;/** * The Gameplay class Ref is interpreted as a marker interface in the Haxe * binding since the reference counting is meaningless on this level. */interface Ref implements INativeBinding{}
+package org.gameplay3d;import org.gameplay3d.intern.INativeBinding;/** * The Gameplay class Ref is interpreted as a marker interface in the Haxe * binding since the reference counting is meaningless on this level. */interface Ref implements INativeBinding{}

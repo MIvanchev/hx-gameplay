@@ -7,6 +7,7 @@
 
 DEFINE_KIND(k_OutParameter);
 DEFINE_KIND(k_Handle);
+DEFINE_KIND(k_Array);
 DEFINE_KIND(k_Object);
 DEFINE_KIND(k_Object_AnimationTarget);
 DEFINE_KIND(k_Object_PhysicsCollisionObject);
@@ -18,6 +19,7 @@ extern "C" void allocateKinds()
 {
     k_OutParameter = alloc_kind();
     k_Handle = alloc_kind();
+    k_Array = alloc_kind();
     k_Object = alloc_kind();
     k_Object_AnimationTarget = alloc_kind();
     k_Object_PhysicsCollisionObject = alloc_kind();
@@ -106,6 +108,87 @@ void FreeHandle(value object)
         free(handle);
     }
 }
+
+/*******************************************************************************
+ * NATIVE ARRAYS                                                               *
+ ******************************************************************************/
+
+template<typename T>
+void FreeArray(value object)
+{
+    val_gc(object, NULL);
+    if (!val_is_null(object))
+    {
+        void *data = val_get_handle(object, k_Array);
+        T* array = static_cast<T*>(data);
+        SAFE_DELETE_ARRAY(array);
+    }
+}
+
+#define NATIVE_ARRAY_CONSTRUCTOR(type, name)                \
+value allocNativeArray##name(value size, value reclaim)     \
+{                                                           \
+    unsigned int _size = ValueToUint(size);                 \
+    bool _reclaim = val_get_bool(reclaim);                  \
+    type *array = new type[_size];                          \
+    void *data = static_cast<void*>(array);                 \
+    const value& result = alloc_abstract(k_Array, data);    \
+    if (_reclaim)                                           \
+        val_gc(result, &FreeArray<type>);                   \
+    return result;                                          \
+}                                                           \
+DEFINE_PRIM(allocNativeArray##name, 2);
+
+#define NATIVE_ARRAY_GETTER_OBJECT(type, name)                  \
+value getNativeArrayElement##name(value thisObj, value index)   \
+{                                                               \
+    type* _thisObj;                                             \
+    unsigned int _index = ValueToUint(index);                   \
+    ValueToArray(thisObj, _thisObj);                            \
+    return ObjectToValue(&_thisObj[_index], false);             \
+}                                                               \
+DEFINE_PRIM(getNativeArrayElement##name, 2);
+
+#define NATIVE_ARRAY_GETTER_PRIMITIVE(type, name, converter)    \
+value getNativeArrayElement##name(value thisObj, value index)   \
+{                                                               \
+    type* _thisObj;                                             \
+    unsigned int _index = ValueToUint(index);                   \
+    ValueToArray(thisObj, _thisObj);                            \
+    return converter(_thisObj[_index]);                         \
+}                                                               \
+DEFINE_PRIM(getNativeArrayElement##name, 2);
+
+#define NATIVE_ARRAY_SETTER_PRIMITIVE(type, name, converter)                \
+void setNativeArrayElement##name(value thisObj, value index, value _val)    \
+{                                                                           \
+    type* _thisObj;                                                         \
+    unsigned int _index = ValueToUint(index);                               \
+    ValueToArray(thisObj, _thisObj);                                        \
+    _thisObj[_index] = converter(_val);                                     \
+}                                                                           \
+DEFINE_PRIM(setNativeArrayElement##name, 3)
+
+#define NATIVE_ARRAY_FUNCTIONS_OBJECT(type) \
+    NATIVE_ARRAY_CONSTRUCTOR(type, type)    \
+    NATIVE_ARRAY_GETTER_OBJECT(type, type)
+
+#define NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(type, name, from, to)  \
+    NATIVE_ARRAY_CONSTRUCTOR(type, name)                        \
+    NATIVE_ARRAY_GETTER_PRIMITIVE(type, name, from)             \
+    NATIVE_ARRAY_SETTER_PRIMITIVE(type, name, to)
+
+NATIVE_ARRAY_FUNCTIONS_OBJECT(Matrix)
+NATIVE_ARRAY_FUNCTIONS_OBJECT(Quaternion)
+NATIVE_ARRAY_FUNCTIONS_OBJECT(Vector2)
+NATIVE_ARRAY_FUNCTIONS_OBJECT(Vector3)
+NATIVE_ARRAY_FUNCTIONS_OBJECT(Vector4)
+NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(int, Int, alloc_int, val_get_int);
+NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(unsigned int, Uint, alloc_int, ValueToUint);
+NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(char, Char, alloc_int, val_get_int);
+NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(unsigned char, Byte, alloc_int, val_get_int);
+NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(float, Float, alloc_float, ValueToFloat);
+NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(double, Double, alloc_float, ValueToDouble);
 
 /*******************************************************************************
  * BOXING / UNBOXING FUNCTIONS                                                 *
@@ -201,83 +284,83 @@ void FreeReference(value object)
 
 static char *errorMsg = "Reference or object kind expected.";
 
-#define OBJECT_TO_VALUE(type, base_type, kind)                            \
-value ObjectToValue(type *pointer)                                        \
-{                                                                        \
-    if (pointer == NULL)                                                \
-        return alloc_null();                                            \
-                                                                        \
-    base_type *base = static_cast<base_type*>(pointer);                    \
-    void *handle = static_cast<void*>(base);                            \
-    const value& result =  alloc_abstract(kind, handle);                \
-                                                                        \
-    val_gc(result, &FreeObject<type, base_type>);                        \
-                                                                        \
-    return result;                                                        \
+#define OBJECT_TO_VALUE(type, base_type, kind)                  \
+value ObjectToValue(type *pointer)                              \
+{                                                               \
+    if (pointer == NULL)                                        \
+        return alloc_null();                                    \
+                                                                \
+    base_type *base = static_cast<base_type*>(pointer);         \
+    void *handle = static_cast<void*>(base);                    \
+    const value& result =  alloc_abstract(kind, handle);        \
+                                                                \
+    val_gc(result, &FreeObject<type, base_type>);               \
+                                                                \
+    return result;                                              \
 }
 
-#define OBJECT_TO_VALUE_(type, base_type, kind)                        \
-value ObjectToValue(type *pointer, bool dummy)                        \
-{                                                                    \
-    if (pointer == NULL)                                            \
-        return alloc_null();                                        \
-                                                                    \
-    base_type *base = static_cast<base_type*>(pointer);                \
-    void *handle = static_cast<void*>(base);                        \
-    const value& result =  alloc_abstract(kind, handle);            \
-                                                                    \
-    return result;                                                    \
+#define OBJECT_TO_VALUE_(type, base_type, kind)                 \
+value ObjectToValue(type *pointer, bool dummy)                  \
+{                                                               \
+    if (pointer == NULL)                                        \
+        return alloc_null();                                    \
+                                                                \
+    base_type *base = static_cast<base_type*>(pointer);         \
+    void *handle = static_cast<void*>(base);                    \
+    const value& result =  alloc_abstract(kind, handle);        \
+                                                                \
+    return result;                                              \
 }
 
 #define VALUE_TO_OBJECT(type, base_type)                                                        \
 void ValueToObject(value _value, type *&pointer)                                                \
-{                                                                                                \
+{                                                                                               \
     if (val_is_null(_value))                                                                    \
-        pointer = NULL;                                                                            \
-    else if (val_is_kind(_value, k_Object))                                                        \
-    {                                                                                            \
+        pointer = NULL;                                                                         \
+    else if (val_is_kind(_value, k_Object))                                                     \
+    {                                                                                           \
         base_type *base = static_cast<base_type*>(val_data(_value));                            \
         pointer = static_cast<type*>(base);                                                     \
-    }                                                                                            \
-    else if (val_is_kind(_value, k_Object_AnimationTarget))                                        \
-    {                                                                                            \
+    }                                                                                           \
+    else if (val_is_kind(_value, k_Object_AnimationTarget))                                     \
+    {                                                                                           \
         AnimationTarget *base = static_cast<AnimationTarget*>(val_data(_value));                \
         pointer = dynamic_cast<type*>(base);                                                    \
-    }                                                                                            \
-    else if (val_is_kind(_value, k_Object_PhysicsCollisionObject))                                \
-    {                                                                                            \
-        PhysicsCollisionObject *base = static_cast<PhysicsCollisionObject*>(val_data(_value));    \
+    }                                                                                           \
+    else if (val_is_kind(_value, k_Object_PhysicsCollisionObject))                              \
+    {                                                                                           \
+        PhysicsCollisionObject *base = static_cast<PhysicsCollisionObject*>(val_data(_value));  \
         pointer = dynamic_cast<type*>(base);                                                    \
-    }                                                                                            \
-    else if (val_is_kind(_value, k_Object_Ref))                                                    \
-    {                                                                                            \
+    }                                                                                           \
+    else if (val_is_kind(_value, k_Object_Ref))                                                 \
+    {                                                                                           \
         Ref *base = static_cast<Ref*>(val_data(_value));                                        \
         pointer = dynamic_cast<type*>(base);                                                    \
-    }                                                                                            \
+    }                                                                                           \
     else if (val_is_kind(_value, k_Object_ScriptTarget))                                        \
-    {                                                                                            \
-        ScriptTarget *base = static_cast<ScriptTarget*>(val_data(_value));                        \
+    {                                                                                           \
+        ScriptTarget *base = static_cast<ScriptTarget*>(val_data(_value));                      \
         pointer = dynamic_cast<type*>(base);                                                    \
-    }                                                                                            \
-    else if (val_is_kind(_value, k_Object_Transform_Listener))                                    \
-    {                                                                                            \
+    }                                                                                           \
+    else if (val_is_kind(_value, k_Object_Transform_Listener))                                  \
+    {                                                                                           \
         Transform::Listener *base = static_cast<Transform::Listener*>(val_data(_value));        \
         pointer = dynamic_cast<type*>(base);                                                    \
-    }                                                                                            \
+    }                                                                                           \
     else                                                                                        \
-        hx_failure(errorMsg);                                                                    \
+        hx_failure(errorMsg);                                                                   \
 }
 
 #define CONVERSION_FUNCTIONS_NO_FINALIZER(type, base_type, kind)    \
-    OBJECT_TO_VALUE_(type, base_type, kind)                            \
+    OBJECT_TO_VALUE_(type, base_type, kind)                         \
     VALUE_TO_OBJECT(type, base_type)
 
-#define CONVERSION_FUNCTIONS(type, base_type, kind)        \
-    OBJECT_TO_VALUE_(type, base_type, kind)                \
-    OBJECT_TO_VALUE(type, base_type, kind)                \
+#define CONVERSION_FUNCTIONS(type, base_type, kind) \
+    OBJECT_TO_VALUE_(type, base_type, kind)         \
+    OBJECT_TO_VALUE(type, base_type, kind)          \
     VALUE_TO_OBJECT(type, base_type)
 
-#define CONVERSION_FUNCTIONS_REF(type)    \
+#define CONVERSION_FUNCTIONS_REF(type)  \
     VALUE_TO_OBJECT(type, Ref)
 
 CONVERSION_FUNCTIONS_REF(AbsoluteLayout)
