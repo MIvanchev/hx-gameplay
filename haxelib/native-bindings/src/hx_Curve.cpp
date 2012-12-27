@@ -14,12 +14,10 @@ void hx_Curve_evaluate(value thisObj, value time, value dst)
 {
     Curve *_thisObj;
     float _time = ValueToFloat(time);
+    float *_dst;
     ValueToObject(thisObj, _thisObj);
-
-    const buffer& _dst = alloc_buffer_len(sizeof(float) * _thisObj->getComponentCount());
-    _thisObj->evaluate(_time, reinterpret_cast<float*>(buffer_data(_dst)));
-
-    SetOutParameterValue(dst, buffer_val(_dst));
+    ValueToArray(dst, _dst);
+    _thisObj->evaluate(_time, _dst);
 }
 DEFINE_PRIM(hx_Curve_evaluate, 3);
 
@@ -70,7 +68,7 @@ value hx_Curve_static_lerp(value t, value from, value to)
 DEFINE_PRIM(hx_Curve_static_lerp, 3);
 
 // DECL: void setPoint(unsigned int index, float time, float* value, InterpolationType type);
-void hx_Curve_setPoint_Int_Flt_Dat_Int(value thisObj, value index, value time, value val, value type)
+void hx_Curve_setPoint_Int_Flt_ArrFlt_Int(value thisObj, value index, value time, value val, value type)
 {
     Curve *_thisObj;
     unsigned int _index = ValueToUint(index);
@@ -78,14 +76,14 @@ void hx_Curve_setPoint_Int_Flt_Dat_Int(value thisObj, value index, value time, v
     float *_value;
     Curve::InterpolationType _type;
     ValueToObject(thisObj, _thisObj);
-    ValueToBuffer(val, _value);
+    ValueToArray(val, _value);
     ValueToEnum(type, _type);
     _thisObj->setPoint(_index, _time, _value, _type);
 }
-DEFINE_PRIM(hx_Curve_setPoint_Int_Flt_Dat_Int, 5);
+DEFINE_PRIM(hx_Curve_setPoint_Int_Flt_ArrFlt_Int, 5);
 
 // DECL: void setPoint(unsigned int index, float time, float* value, InterpolationType type, float* inValue, float* outValue);
-void hx_Curve_setPoint_Int_Flt_Dat_Int_DatX2(value *args, int nargs)
+void hx_Curve_setPoint_Int_Flt_ArrFlt_Int_ArrFltX2(value *args, int nargs)
 {
     const value& thisObj = *args++;
     const value& index = *args++;
@@ -103,13 +101,13 @@ void hx_Curve_setPoint_Int_Flt_Dat_Int_DatX2(value *args, int nargs)
     float *_inValue;
     float *_outValue;
     ValueToObject(thisObj, _thisObj);
-    ValueToBuffer(val, _value);
+    ValueToArray(val, _value);
     ValueToEnum(type, _type);
-    ValueToBuffer(inValue, _inValue);
-    ValueToBuffer(outValue, _outValue);
+    ValueToArray(inValue, _inValue);
+    ValueToArray(outValue, _outValue);
     _thisObj->setPoint(_index, _time, _value, _type, _inValue, _outValue);
 }
-DEFINE_PRIM_MULT(hx_Curve_setPoint_Int_Flt_Dat_Int_DatX2);
+DEFINE_PRIM_MULT(hx_Curve_setPoint_Int_Flt_ArrFlt_Int_ArrFltX2);
 
 // DECL: void setTangent(unsigned int index, InterpolationType type, float* inValue, float* outValue);
 void hx_Curve_setTangent(value thisObj, value index, value type, value inValue, value outValue)
@@ -121,8 +119,8 @@ void hx_Curve_setTangent(value thisObj, value index, value type, value inValue, 
     float *_outValue;
     ValueToObject(thisObj, _thisObj);
     ValueToEnum(type, _type);
-    ValueToBuffer(inValue, _inValue);
-    ValueToBuffer(outValue, _outValue);
+    ValueToArray(inValue, _inValue);
+    ValueToArray(outValue, _outValue);
     _thisObj->setTangent(_index, _type, _inValue, _outValue);
 }
 DEFINE_PRIM(hx_Curve_setTangent, 5);

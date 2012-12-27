@@ -7,6 +7,7 @@ import org.gameplay3d.AnimationTarget;
 import org.gameplay3d.GameplayObject;
 import org.gameplay3d.Properties;
 import org.gameplay3d.ScriptTarget;
+import org.gameplay3d.util.Utilities;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -33,27 +34,27 @@ class AnimationTarget_ScriptTarget extends GameplayObject, implements AnimationT
     }
 
     // DECL: Animation* createAnimation(const char* id, int propertyId, unsigned int keyCount, unsigned int* keyTimes, float* keyValues, Curve::InterpolationType type);
-    public function createAnimation_Str_IntX2_DatX2_Int(id:String, propertyId:Int, keyCount:Int, keyTimes:BytesData, keyValues:BytesData, type:Int):Animation
+    public function createAnimation_Str_IntX2_ArrInt_ArrFlt_Int(id:String, propertyId:Int, keyCount:Int, keyTimes:NativeArrayUint, keyValues:NativeArrayFloat, type:Int):Animation
     {
-        return Animation.wrap(hx_AnimationTarget_createAnimation_Str_IntX2_DatX2_Int(nativeObject, id, propertyId, keyCount, keyTimes, keyValues, type));
+        return Animation.wrap(hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFlt_Int(nativeObject, id, propertyId, keyCount, keyTimes.native(), keyValues.native(), type));
     }
 
     // DECL: Animation* createAnimation(const char* id, int propertyId, unsigned int keyCount, unsigned int* keyTimes, float* keyValues, float* keyInValue, float* keyOutValue, Curve::InterpolationType type);
-    public function createAnimation_Str_IntX2_DatX4_Int(id:String, propertyId:Int, keyCount:Int, keyTimes:BytesData, keyValues:BytesData, keyInValue:BytesData, keyOutValue:BytesData, type:Int):Animation
+    public function createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int(id:String, propertyId:Int, keyCount:Int, keyTimes:NativeArrayUint, keyValues:NativeArrayFloat, keyInValue:NativeArrayFloat, keyOutValue:NativeArrayFloat, type:Int):Animation
     {
-        return Animation.wrap(hx_AnimationTarget_createAnimation_Str_IntX2_DatX4_Int(nativeObject, id, propertyId, keyCount, keyTimes, keyValues, keyInValue, keyOutValue, type));
+        return Animation.wrap(hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int(nativeObject, id, propertyId, keyCount, keyTimes.native(), keyValues.native(), keyInValue.native(), keyOutValue.native(), type));
     }
 
     // DECL: Animation* createAnimationFromBy(const char* id, int propertyId, float* from, float* by, Curve::InterpolationType type, unsigned long duration);
-    public function createAnimationFromBy(id:String, propertyId:Int, from:BytesData, by:BytesData, type:Int, duration:Int):Animation
+    public function createAnimationFromBy(id:String, propertyId:Int, from:NativeArrayFloat, by:NativeArrayFloat, type:Int, duration:Int):Animation
     {
-        return Animation.wrap(hx_AnimationTarget_createAnimationFromBy(nativeObject, id, propertyId, from, by, type, duration));
+        return Animation.wrap(hx_AnimationTarget_createAnimationFromBy(nativeObject, id, propertyId, from.native(), by.native(), type, duration));
     }
 
     // DECL: Animation* createAnimationFromTo(const char* id, int propertyId, float* from, float* to, Curve::InterpolationType type, unsigned long duration);
-    public function createAnimationFromTo(id:String, propertyId:Int, from:BytesData, to:BytesData, type:Int, duration:Int):Animation
+    public function createAnimationFromTo(id:String, propertyId:Int, from:NativeArrayFloat, to:NativeArrayFloat, type:Int, duration:Int):Animation
     {
-        return Animation.wrap(hx_AnimationTarget_createAnimationFromTo(nativeObject, id, propertyId, from, to, type, duration));
+        return Animation.wrap(hx_AnimationTarget_createAnimationFromTo(nativeObject, id, propertyId, from.native(), to.native(), type, duration));
     }
 
     // DECL: void destroyAnimation(const char* id = NULL);
@@ -104,8 +105,8 @@ class AnimationTarget_ScriptTarget extends GameplayObject, implements AnimationT
 
     static var hx_AnimationTarget_createAnimation_Str_Prop:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_Prop", 3);
     static var hx_AnimationTarget_createAnimation_StrX2:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_StrX2", 3);
-    static var hx_AnimationTarget_createAnimation_Str_IntX2_DatX2_Int:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_IntX2_DatX2_Int", -1);
-    static var hx_AnimationTarget_createAnimation_Str_IntX2_DatX4_Int:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_IntX2_DatX4_Int", -1);
+    static var hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFlt_Int:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFlt_Int", -1);
+    static var hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int", -1);
     static var hx_AnimationTarget_createAnimationFromBy:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimationFromBy", -1);
     static var hx_AnimationTarget_createAnimationFromTo:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimationFromTo", -1);
     static var hx_AnimationTarget_destroyAnimation:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_destroyAnimation", 2);

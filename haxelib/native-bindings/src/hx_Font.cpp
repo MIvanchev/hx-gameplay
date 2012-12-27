@@ -51,7 +51,7 @@ void hx_Font_drawText_Txt(value thisObj, value text)
 DEFINE_PRIM(hx_Font_drawText_Txt, 2);
 
 // DECL: void drawText(const char* text, const Rectangle& area, const Vector4& color, unsigned int size = 0,
-void hx_Font_drawText_Str_Rct_V4_Int_Jstf_BoolX2_Rct(value *args, int nargs)
+void hx_Font_drawText_Str_Rct_V4_IntX2_BoolX2_Rct(value *args, int nargs)
 {
     const value& thisObj = *args++;
     const value& text = *args++;
@@ -78,7 +78,7 @@ void hx_Font_drawText_Str_Rct_V4_Int_Jstf_BoolX2_Rct(value *args, int nargs)
     ValueToObject(clip, _clip);
     _thisObj->drawText(_text, *_area, *_color, _size, _justify, _wrap, _rightToLeft, _clip);
 }
-DEFINE_PRIM_MULT(hx_Font_drawText_Str_Rct_V4_Int_Jstf_BoolX2_Rct);
+DEFINE_PRIM_MULT(hx_Font_drawText_Str_Rct_V4_IntX2_BoolX2_Rct);
 
 // DECL: void drawText(const char* text, int x, int y, const Vector4& color, unsigned int size = 0, bool rightToLeft = false);
 void hx_Font_drawText_Str_IntX2_V4_Int_Bool(value *args, int nargs)
@@ -229,7 +229,7 @@ value hx_Font_getSpriteBatch(value thisObj)
 DEFINE_PRIM(hx_Font_getSpriteBatch, 1);
 
 // DECL: void measureText(const char* text, const Rectangle& clip, unsigned int size, Rectangle* out,
-void hx_Font_measureText_Str_Rct_Int_Rct_Jstf_BoolX2(value *args, int nargs)
+void hx_Font_measureText_Str_Rct_Int_Rct_Int_BoolX2(value *args, int nargs)
 {
     const value& thisObj = *args++;
     const value& text = *args++;
@@ -253,7 +253,7 @@ void hx_Font_measureText_Str_Rct_Int_Rct_Jstf_BoolX2(value *args, int nargs)
     ValueToEnum(justify, _justify);
     _thisObj->measureText(_text, *_clip, _size, _out, _justify, _wrap, _ignoreClip);
 }
-DEFINE_PRIM_MULT(hx_Font_measureText_Str_Rct_Int_Rct_Jstf_BoolX2);
+DEFINE_PRIM_MULT(hx_Font_measureText_Str_Rct_Int_Rct_Int_BoolX2);
 
 // DECL: void measureText(const char* text, unsigned int size, unsigned int* widthOut, unsigned int* heightOut);
 void hx_Font_measureText_Str_Int_OutIntX2(value thisObj, value text, value size, value widthOut, value heightOut)

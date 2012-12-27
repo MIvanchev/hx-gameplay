@@ -1,8 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.util.Handle;
-import org.gameplay3d.util.INativeArray;
-import org.gameplay3d.util.Utilities;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -75,9 +74,9 @@ class Effect extends GameplayObject, implements Ref
     }
 
     // DECL: void setValue(Uniform* uniform, const Matrix* values, unsigned int count = 1);
-    public function setValue_Unif_ArrMat_Int(uniform:Uniform, values:INativeArray<Matrix>, count:Int = 1):Void
+    public function setValue_Unif_ArrMat_Int(uniform:Uniform, values:Array<Matrix>, count:Int = 1):Void
     {
-        hx_Effect_setValue_Unif_ArrMat_Int(nativeObject, uniform.native(), values.native(), count);
+        hx_Effect_setValue_Unif_ArrMat_Int(nativeObject, uniform.native(), ConversionTools.insertArray(values), count);
     }
 
     // DECL: void setValue(Uniform* uniform, const Texture::Sampler* sampler);
@@ -93,9 +92,9 @@ class Effect extends GameplayObject, implements Ref
     }
 
     // DECL: void setValue(Uniform* uniform, const Vector2* values, unsigned int count = 1);
-    public function setValue_Unif_ArrV2_Int(uniform:Uniform, values:INativeArray<Vector2>, count:Int = 1):Void
+    public function setValue_Unif_ArrV2_Int(uniform:Uniform, values:Array<Vector2>, count:Int = 1):Void
     {
-        hx_Effect_setValue_Unif_ArrV2_Int(nativeObject, uniform.native(), values.native(), count);
+        hx_Effect_setValue_Unif_ArrV2_Int(nativeObject, uniform.native(), ConversionTools.insertArray(values), count);
     }
 
     // DECL: void setValue(Uniform* uniform, const Vector3& value);
@@ -105,9 +104,9 @@ class Effect extends GameplayObject, implements Ref
     }
 
     // DECL: void setValue(Uniform* uniform, const Vector3* values, unsigned int count = 1);
-    public function setValue_Unif_ArrV3_Int(uniform:Uniform, values:INativeArray<Vector3>, count:Int = 1):Void
+    public function setValue_Unif_ArrV3_Int(uniform:Uniform, values:Array<Vector3>, count:Int = 1):Void
     {
-        hx_Effect_setValue_Unif_ArrV3_Int(nativeObject, uniform.native(), values.native(), count);
+        hx_Effect_setValue_Unif_ArrV3_Int(nativeObject, uniform.native(), ConversionTools.insertArray(values), count);
     }
 
     // DECL: void setValue(Uniform* uniform, const Vector4& value);
@@ -117,21 +116,21 @@ class Effect extends GameplayObject, implements Ref
     }
 
     // DECL: void setValue(Uniform* uniform, const Vector4* values, unsigned int count = 1);
-    public function setValue_Unif_ArrV4_Int(uniform:Uniform, values:INativeArray<Vector4>, count:Int = 1):Void
+    public function setValue_Unif_ArrV4_Int(uniform:Uniform, values:Array<Vector4>, count:Int = 1):Void
     {
-        hx_Effect_setValue_Unif_ArrV4_Int(nativeObject, uniform.native(), values.native(), count);
+        hx_Effect_setValue_Unif_ArrV4_Int(nativeObject, uniform.native(), ConversionTools.insertArray(values), count);
     }
 
     // DECL: void setValue(Uniform* uniform, const float* values, unsigned int count = 1);
-    public function setValue_Unif_ArrFlt_Int(uniform:Uniform, values:NativeArrayFloat, count:Int = 1):Void
+    public function setValue_Unif_ArrFlt_Int(uniform:Uniform, values:Array<Float>, count:Int = 1):Void
     {
-        hx_Effect_setValue_Unif_ArrFlt_Int(nativeObject, uniform.native(), values.native(), count);
+        hx_Effect_setValue_Unif_ArrFlt_Int(nativeObject, uniform.native(), values, count);
     }
 
     // DECL: void setValue(Uniform* uniform, const int* values, unsigned int count = 1);
-    public function setValue_Unif_ArrInt_Int(uniform:Uniform, values:NativeArrayInt, count:Int = 1):Void
+    public function setValue_Unif_ArrInt_Int(uniform:Uniform, values:Array<Int>, count:Int = 1):Void
     {
-        hx_Effect_setValue_Unif_ArrInt_Int(nativeObject, uniform.native(), values.native(), count);
+        hx_Effect_setValue_Unif_ArrInt_Int(nativeObject, uniform.native(), values, count);
     }
 
     // DECL: void setValue(Uniform* uniform, float value);

@@ -77,16 +77,10 @@ DEFINE_PRIM(hx_BoundingBox_getCenter_V3, 2);
 void hx_BoundingBox_getCorners(value thisObj, value dst)
 {
     BoundingBox *_thisObj;
+    Vector3 *_dst;
     ValueToObject(thisObj, _thisObj);
-
-    Vector3 points[8];
-    _thisObj->getCorners(points);
-
-    value _dst = alloc_array(8);
-    for (int index = 0; index < 8; index++)
-        val_array_set_i(_dst, index, ObjectToValue(new Vector3(points[index])));
-
-    SetOutParameterValue(dst, _dst);
+    ValueToArray(dst, _dst);
+    _thisObj->getCorners(_dst);
 }
 DEFINE_PRIM(hx_BoundingBox_getCorners, 2);
 

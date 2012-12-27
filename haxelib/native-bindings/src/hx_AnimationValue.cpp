@@ -18,13 +18,8 @@ void hx_AnimationValue_getFloats(value thisObj, value index, value values, value
     float *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
-
-    const buffer& buf = alloc_buffer_len(_count * sizeof(float));
-    _values = reinterpret_cast<float *>(buffer_data(buf));
-
+    ValueToArray(values, _values);
     _thisObj->getFloats(_index, _values, _count);
-
-    SetOutParameterValue(values, buffer_val(buf));
 }
 DEFINE_PRIM(hx_AnimationValue_getFloats, 4);
 
@@ -47,7 +42,7 @@ void hx_AnimationValue_setFloats(value thisObj, value index, value values, value
     float *_values;
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
-    ValueToBuffer(values, _values);
+    ValueToArray(values, _values);
     _thisObj->setFloats(_index, _values, _count);
 }
 DEFINE_PRIM(hx_AnimationValue_setFloats, 4);

@@ -32,9 +32,9 @@ class Font extends GameplayObject, implements Ref
     }
 
     // DECL: void drawText(const char* text, const Rectangle& area, const Vector4& color, unsigned int size = 0,
-    public function drawText_Str_Rct_V4_Int_Jstf_BoolX2_Rct(text:String, area:Rectangle, color:Vector4, size:Int = 0, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, rightToLeft:Bool = false, clip:Rectangle = null):Void
+    public function drawText_Str_Rct_V4_IntX2_BoolX2_Rct(text:String, area:Rectangle, color:Vector4, size:Int = 0, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, rightToLeft:Bool = false, clip:Rectangle = null):Void
     {
-        hx_Font_drawText_Str_Rct_V4_Int_Jstf_BoolX2_Rct(nativeObject, text, area.native(), color.native(), size, justify, wrap, rightToLeft, clip.native());
+        hx_Font_drawText_Str_Rct_V4_IntX2_BoolX2_Rct(nativeObject, text, area.native(), color.native(), size, justify, wrap, rightToLeft, clip.native());
     }
 
     // DECL: void drawText(const char* text, int x, int y, const Vector4& color, unsigned int size = 0, bool rightToLeft = false);
@@ -86,9 +86,9 @@ class Font extends GameplayObject, implements Ref
     }
 
     // DECL: void measureText(const char* text, const Rectangle& clip, unsigned int size, Rectangle* out,
-    public function measureText_Str_Rct_Int_Rct_Jstf_BoolX2(text:String, clip:Rectangle, size:Int, out:Rectangle, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, ignoreClip:Bool = false):Void
+    public function measureText_Str_Rct_Int_Rct_Int_BoolX2(text:String, clip:Rectangle, size:Int, out:Rectangle, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, ignoreClip:Bool = false):Void
     {
-        hx_Font_measureText_Str_Rct_Int_Rct_Jstf_BoolX2(nativeObject, text, clip.native(), size, out.native(), justify, wrap, ignoreClip);
+        hx_Font_measureText_Str_Rct_Int_Rct_Int_BoolX2(nativeObject, text, clip.native(), size, out.native(), justify, wrap, ignoreClip);
     }
 
     // DECL: void measureText(const char* text, unsigned int size, unsigned int* widthOut, unsigned int* heightOut);
@@ -114,7 +114,7 @@ class Font extends GameplayObject, implements Ref
     static var hx_Font_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Font_static_create", 2);
     static var hx_Font_createText:Dynamic = cpp.Lib.load("gameplay", "hx_Font_createText", -1);
     static var hx_Font_drawText_Txt:Dynamic = cpp.Lib.load("gameplay", "hx_Font_drawText_Txt", 2);
-    static var hx_Font_drawText_Str_Rct_V4_Int_Jstf_BoolX2_Rct:Dynamic = cpp.Lib.load("gameplay", "hx_Font_drawText_Str_Rct_V4_Int_Jstf_BoolX2_Rct", -1);
+    static var hx_Font_drawText_Str_Rct_V4_IntX2_BoolX2_Rct:Dynamic = cpp.Lib.load("gameplay", "hx_Font_drawText_Str_Rct_V4_IntX2_BoolX2_Rct", -1);
     static var hx_Font_drawText_Str_IntX2_V4_Int_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_Font_drawText_Str_IntX2_V4_Int_Bool", -1);
     static var hx_Font_drawText_Str_IntX2_FltX4_Int_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_Font_drawText_Str_IntX2_FltX4_Int_Bool", -1);
     static var hx_Font_finish:Dynamic = cpp.Lib.load("gameplay", "hx_Font_finish", 1);
@@ -123,7 +123,7 @@ class Font extends GameplayObject, implements Ref
     static var hx_Font_getLocationAtIndex:Dynamic = cpp.Lib.load("gameplay", "hx_Font_getLocationAtIndex", -1);
     static var hx_Font_getSize:Dynamic = cpp.Lib.load("gameplay", "hx_Font_getSize", 1);
     static var hx_Font_getSpriteBatch:Dynamic = cpp.Lib.load("gameplay", "hx_Font_getSpriteBatch", 1);
-    static var hx_Font_measureText_Str_Rct_Int_Rct_Jstf_BoolX2:Dynamic = cpp.Lib.load("gameplay", "hx_Font_measureText_Str_Rct_Int_Rct_Jstf_BoolX2", -1);
+    static var hx_Font_measureText_Str_Rct_Int_Rct_Int_BoolX2:Dynamic = cpp.Lib.load("gameplay", "hx_Font_measureText_Str_Rct_Int_Rct_Int_BoolX2", -1);
     static var hx_Font_measureText_Str_Int_OutIntX2:Dynamic = cpp.Lib.load("gameplay", "hx_Font_measureText_Str_Int_OutIntX2", 5);
     static var hx_Font_start:Dynamic = cpp.Lib.load("gameplay", "hx_Font_start", 1);
 }

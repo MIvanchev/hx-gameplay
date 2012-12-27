@@ -1,10 +1,10 @@
 package org.gameplay3d;
 
-import haxe.io.BytesData;
-import dk.bluewolf.gameplay.NativeOutParameter;
+import org.gameplay3d.util.INativeArray;
 import org.gameplay3d.util.OutParameter;
+import org.gameplay3d.util.Utilities;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Curve : public Ref
@@ -21,11 +21,9 @@ class Curve extends GameplayObject, implements Ref
     }
 
     // DECL: void evaluate(float time, float* dst) const;
-    public function evaluate(time:Float, dst:OutParameter<BytesData>):Void
+    public function evaluate(time:Float, dst:NativeArrayFloat):Void
     {
-        var _dst = new NativeOutParameter();
-        hx_Curve_evaluate(nativeObject, time, _dst.native());
-        dst.value = _dst.value;
+        hx_Curve_evaluate(nativeObject, time, dst.native());
     }
 
     // DECL: unsigned int getComponentCount() const;
@@ -59,21 +57,21 @@ class Curve extends GameplayObject, implements Ref
     }
 
     // DECL: void setPoint(unsigned int index, float time, float* value, InterpolationType type);
-    public function setPoint_Int_Flt_Dat_Int(index:Int, time:Float, value:BytesData, type:Int):Void
+    public function setPoint_Int_Flt_ArrFlt_Int(index:Int, time:Float, value:NativeArrayFloat, type:Int):Void
     {
-        hx_Curve_setPoint_Int_Flt_Dat_Int(nativeObject, index, time, value, type);
+        hx_Curve_setPoint_Int_Flt_ArrFlt_Int(nativeObject, index, time, value.native(), type);
     }
 
     // DECL: void setPoint(unsigned int index, float time, float* value, InterpolationType type, float* inValue, float* outValue);
-    public function setPoint_Int_Flt_Dat_Int_DatX2(index:Int, time:BytesData, value:Float, type:Int, inValue:BytesData, outValue:BytesData):Void
+    public function setPoint_Int_Flt_ArrFlt_Int_ArrFltX2(index:Int, time:Float, value:NativeArrayFloat, type:Int, inValue:NativeArrayFloat, outValue:NativeArrayFloat):Void
     {
-        hx_Curve_setPoint_Int_Flt_Dat_Int_DatX2(nativeObject, index, time, value, type, inValue, outValue);
+        hx_Curve_setPoint_Int_Flt_ArrFlt_Int_ArrFltX2(nativeObject, index, time, value.native(), type, inValue.native(), outValue.native());
     }
 
     // DECL: void setTangent(unsigned int index, InterpolationType type, float* inValue, float* outValue);
-    public function setTangent(index:Int, type:Int, inValue:BytesData, outValue:BytesData):Void
+    public function setTangent(index:Int, type:Int, inValue:NativeArrayFloat, outValue:NativeArrayFloat):Void
     {
-        hx_Curve_setTangent(nativeObject, index, type, inValue, outValue);
+        hx_Curve_setTangent(nativeObject, index, type, inValue.native(), outValue.native());
     }
 
     /***************************************************************************
@@ -87,8 +85,8 @@ class Curve extends GameplayObject, implements Ref
     static var hx_Curve_getPointCount:Dynamic = cpp.Lib.load("gameplay", "hx_Curve_getPointCount", 1);
     static var hx_Curve_getStartTime:Dynamic = cpp.Lib.load("gameplay", "hx_Curve_getStartTime", 1);
     static var hx_Curve_static_lerp:Dynamic = cpp.Lib.load("gameplay", "hx_Curve_static_lerp", 3);
-    static var hx_Curve_setPoint_Int_Flt_Dat_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Curve_setPoint_Int_Flt_Dat_Int", 5);
-    static var hx_Curve_setPoint_Int_Flt_Dat_Int_DatX2:Dynamic = cpp.Lib.load("gameplay", "hx_Curve_setPoint_Int_Flt_Dat_Int_DatX2", -1);
+    static var hx_Curve_setPoint_Int_Flt_ArrFlt_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Curve_setPoint_Int_Flt_ArrFlt_Int", 5);
+    static var hx_Curve_setPoint_Int_Flt_ArrFlt_Int_ArrFltX2:Dynamic = cpp.Lib.load("gameplay", "hx_Curve_setPoint_Int_Flt_ArrFlt_Int_ArrFltX2", -1);
     static var hx_Curve_setTangent:Dynamic = cpp.Lib.load("gameplay", "hx_Curve_setTangent", 5);
 }
 

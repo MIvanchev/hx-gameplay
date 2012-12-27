@@ -1,8 +1,7 @@
 package org.gameplay3d;
 
-import haxe.io.BytesData;
-import org.gameplay3d.intern.NativeOutParameter;
-import org.gameplay3d.util.OutParameter;
+import org.gameplay3d.util.INativeArray;
+import org.gameplay3d.util.Utilities;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -21,11 +20,9 @@ class AnimationValue extends GameplayObject
     }
 
     // DECL: void getFloats(unsigned int index, float* values, unsigned int count) const;
-    public function getFloats(index:Int, values:OutParameter<BytesData>, count:Int):Void
+    public function getFloats(index:Int, values:NativeArrayFloat, count:Int):Void
     {
-        var _values = new NativeOutParameter();
-        hx_AnimationValue_getFloats(nativeObject, index, _values.native(), count);
-        values.value = _values.value;
+        hx_AnimationValue_getFloats(nativeObject, index, values.native(), count);
     }
 
     // DECL: void setFloat(unsigned int index, float value);
@@ -35,9 +32,9 @@ class AnimationValue extends GameplayObject
     }
 
     // DECL: void setFloats(unsigned int index, float* values, unsigned int count);
-    public function setFloats(index:Int, values:BytesData, count:Int):Void
+    public function setFloats(index:Int, values:NativeArrayFloat, count:Int):Void
     {
-        hx_AnimationValue_setFloats(nativeObject, index, values, count);
+        hx_AnimationValue_setFloats(nativeObject, index, values.native(), count);
     }
 
     /***************************************************************************

@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import haxe.io.BytesData;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.util.Utilities;
 
 // DECL: class AnimationTarget : public GameplayObject
 interface AnimationTarget implements INativeBinding
@@ -17,16 +18,16 @@ interface AnimationTarget implements INativeBinding
     public function createAnimation_StrX2(id:String, url:String):Animation;
 
     // DECL: Animation* createAnimation(const char* id, int propertyId, unsigned int keyCount, unsigned int* keyTimes, float* keyValues, Curve::InterpolationType type);
-    public function createAnimation_Str_IntX2_DatX2_Int(id:String, propertyId:Int, keyCount:Int, keyTimes:BytesData, keyValues:BytesData, type:Int):Animation;
+    public function createAnimation_Str_IntX2_ArrInt_ArrFlt_Int(id:String, propertyId:Int, keyCount:Int, keyTimes:NativeArrayUint, keyValues:NativeArrayFloat, type:Int):Animation;
 
     // DECL: Animation* createAnimation(const char* id, int propertyId, unsigned int keyCount, unsigned int* keyTimes, float* keyValues, float* keyInValue, float* keyOutValue, Curve::InterpolationType type);
-    public function createAnimation_Str_IntX2_DatX4_Int(id:String, propertyId:Int, keyCount:Int, keyTimes:BytesData, keyValues:BytesData, keyInValue:BytesData, keyOutValue:BytesData, type:Int):Animation;
+    public function createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int(id:String, propertyId:Int, keyCount:Int, keyTimes:NativeArrayUint, keyValues:NativeArrayFloat, keyInValue:NativeArrayFloat, keyOutValue:NativeArrayFloat, type:Int):Animation;
 
     // DECL: Animation* createAnimationFromBy(const char* id, int propertyId, float* from, float* by, Curve::InterpolationType type, unsigned long duration);
-    public function createAnimationFromBy(id:String, propertyId:Int, from:BytesData, by:BytesData, type:Int, duration:Int):Animation;
+    public function createAnimationFromBy(id:String, propertyId:Int, from:NativeArrayFloat, by:NativeArrayFloat, type:Int, duration:Int):Animation;
 
     // DECL: Animation* createAnimationFromTo(const char* id, int propertyId, float* from, float* to, Curve::InterpolationType type, unsigned long duration);
-    public function createAnimationFromTo(id:String, propertyId:Int, from:BytesData, to:BytesData, type:Int, duration:Int):Animation;
+    public function createAnimationFromTo(id:String, propertyId:Int, from:NativeArrayFloat, to:NativeArrayFloat, type:Int, duration:Int):Animation;
 
     // DECL: void destroyAnimation(const char* id = NULL);
     public function destroyAnimation(id:String = null):Void;

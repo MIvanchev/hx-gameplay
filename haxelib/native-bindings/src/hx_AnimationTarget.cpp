@@ -24,7 +24,7 @@ value hx_AnimationTarget_createAnimation_StrX2(value thisObj, value id, value ur
 DEFINE_PRIM(hx_AnimationTarget_createAnimation_StrX2, 3);
 
 // DECL: Animation* createAnimation(const char* id, int propertyId, unsigned int keyCount, unsigned int* keyTimes, float* keyValues, Curve::InterpolationType type);
-value hx_AnimationTarget_createAnimation_Str_IntX2_DatX2_Int(value *args, int nargs)
+value hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFlt_Int(value *args, int nargs)
 {
     const value& thisObj = *args++;
     const value& id = *args++;
@@ -42,15 +42,15 @@ value hx_AnimationTarget_createAnimation_Str_IntX2_DatX2_Int(value *args, int na
     float *_keyValues;
     Curve::InterpolationType _type;
     ValueToObject(thisObj, _thisObj);
-    ValueToBuffer(keyTimes, _keyTimes);
-    ValueToBuffer(keyValues, _keyValues);
+    ValueToArray(keyTimes, _keyTimes);
+    ValueToArray(keyValues, _keyValues);
     ValueToEnum(type, _type);
     return ReferenceToValue(_thisObj->createAnimation(_id, _propertyId, _keyCount, _keyTimes, _keyValues, _type));
 }
-DEFINE_PRIM_MULT(hx_AnimationTarget_createAnimation_Str_IntX2_DatX2_Int);
+DEFINE_PRIM_MULT(hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFlt_Int);
 
 // DECL: Animation* createAnimation(const char* id, int propertyId, unsigned int keyCount, unsigned int* keyTimes, float* keyValues, float* keyInValue, float* keyOutValue, Curve::InterpolationType type);
-value hx_AnimationTarget_createAnimation_Str_IntX2_DatX4_Int(value *args, int nargs)
+value hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int(value *args, int nargs)
 {
     const value& thisObj = *args++;
     const value& id = *args++;
@@ -72,14 +72,14 @@ value hx_AnimationTarget_createAnimation_Str_IntX2_DatX4_Int(value *args, int na
     float *_keyOutValue;
     Curve::InterpolationType _type;
     ValueToObject(thisObj, _thisObj);
-    ValueToBuffer(keyTimes, _keyTimes);
-    ValueToBuffer(keyValues, _keyValues);
-    ValueToBuffer(keyInValue, _keyInValue);
-    ValueToBuffer(keyOutValue, _keyOutValue);
+    ValueToArray(keyTimes, _keyTimes);
+    ValueToArray(keyValues, _keyValues);
+    ValueToArray(keyInValue, _keyInValue);
+    ValueToArray(keyOutValue, _keyOutValue);
     ValueToEnum(type, _type);
     return ReferenceToValue(_thisObj->createAnimation(_id, _propertyId, _keyCount, _keyTimes, _keyValues, _keyInValue, _keyOutValue, _type));
 }
-DEFINE_PRIM_MULT(hx_AnimationTarget_createAnimation_Str_IntX2_DatX4_Int);
+DEFINE_PRIM_MULT(hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int);
 
 // DECL: Animation* createAnimationFromBy(const char* id, int propertyId, float* from, float* by, Curve::InterpolationType type, unsigned long duration);
 value hx_AnimationTarget_createAnimationFromBy(value *args, int nargs)
@@ -100,8 +100,8 @@ value hx_AnimationTarget_createAnimationFromBy(value *args, int nargs)
     Curve::InterpolationType _type;
     unsigned long _duration = ValueToUlong(duration);
     ValueToObject(thisObj, _thisObj);
-    ValueToBuffer(from, _from);
-    ValueToBuffer(by, _by);
+    ValueToArray(from, _from);
+    ValueToArray(by, _by);
     ValueToEnum(type, _type);
     return ReferenceToValue(_thisObj->createAnimationFromBy(_id, _propertyId, _from, _by, _type, _duration));
 }
@@ -126,8 +126,8 @@ value hx_AnimationTarget_createAnimationFromTo(value *args, int nargs)
     Curve::InterpolationType _type;
     unsigned long _duration = ValueToUlong(duration);
     ValueToObject(thisObj, _thisObj);
-    ValueToBuffer(from, _from);
-    ValueToBuffer(to, _to);
+    ValueToArray(from, _from);
+    ValueToArray(to, _to);
     ValueToEnum(type, _type);
     return ReferenceToValue(_thisObj->createAnimationFromTo(_id, _propertyId, _from, _to, _type, _duration));
 }

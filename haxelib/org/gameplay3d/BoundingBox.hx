@@ -1,8 +1,6 @@
 package org.gameplay3d;
 
-import org.gameplay3d.intern.ConversionTools;
-import org.gameplay3d.intern.NativeOutParameter;
-import org.gameplay3d.util.OutParameter;
+import org.gameplay3d.util.INativeArray;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -64,11 +62,9 @@ class BoundingBox extends GameplayObject
     }
 
     // DECL: void getCorners(Vector3* dst) const;
-    public function getCorners(dst:OutParameter<Array<Vector3>>):Void
+    public function getCorners(dst:INativeArray<Vector3>):Void
     {
-        var _dst = new NativeOutParameter();
-        hx_BoundingBox_getCorners(nativeObject, _dst.native());
-        dst.value = ConversionTools.extractVector3Array(_dst.value);
+        hx_BoundingBox_getCorners(nativeObject, dst.native());
     }
 
     // DECL: bool intersects(const BoundingBox& box) const;
