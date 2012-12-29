@@ -142,7 +142,7 @@ class Scene extends GameplayObject, implements Ref
     public function visit_Func_Int(visitMethod:Node->Int->Bool, cookie:Int):Void
     {
         clbkVisitMethod_Node_Int = visitMethod;
-        hx_Scene_visit_Func_Int(nativeObject, visitMethod, cookie);
+        hx_Scene_visit_Func_Int(nativeObject, visitMethod_Node_Int, cookie);
     }
 
     /***************************************************************************

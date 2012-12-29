@@ -1,11 +1,32 @@
 package org.gameplay3d;
+import cpp.Lib;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: struct PhysicsController_HitResult : public GameplayObject
 class PhysicsController_HitResult extends GameplayObject
 {
+    /***************************************************************************
+     * FUNCTIONS                                                               *
+     **************************************************************************/
+
+    // DECL:
+    public static function make():PhysicsController_HitResult
+    {
+        return new PhysicsController_HitResult(constructNativeObject());
+    }
+
+    /***************************************************************************
+     * NATIVE OBJECT CONSTRUCTORS                                              *
+     **************************************************************************/
+
+    // DECL:
+    static function constructNativeObject():Dynamic
+    {
+        return hx_PhysicsController_HitResult_Construct();
+    }
+
     /***************************************************************************
      * PROPERTIES                                                              *
      **************************************************************************/
@@ -63,6 +84,7 @@ class PhysicsController_HitResult extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
+    static var hx_PhysicsController_HitResult_Construct = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_Construct", 0);
     static var hx_PhysicsController_HitResult_property_object_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_object_get", 1);
     static var hx_PhysicsController_HitResult_property_object_set:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_object_set", 2);
     static var hx_PhysicsController_HitResult_property_point_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_point_get", 1);

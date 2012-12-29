@@ -2,7 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.impl.ScriptTargetImpl;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class PhysicsController : public ScriptTarget
@@ -79,7 +79,7 @@ class PhysicsController extends ScriptTargetImpl
     }
 
     // DECL: bool rayTest(const Ray& ray, float distance, PhysicsController::HitResult* result = NULL, PhysicsController::HitFilter* filter = NULL);
-    public function rayTest(ray:Ray, distance:Float, result:PhysicsController_HitResult, filter:PhysicsController_HitFilter):Bool
+    public function rayTest(ray:Ray, distance:Float, result:PhysicsController_HitResult = null, filter:PhysicsController_HitFilter = null):Bool
     {
         return hx_PhysicsController_rayTest(nativeObject, ray.native(), distance, result.native(), filter.native());
     }
@@ -97,7 +97,7 @@ class PhysicsController extends ScriptTargetImpl
     }
 
     // DECL: bool sweepTest(PhysicsCollisionObject* object, const Vector3& endPosition, PhysicsController::HitResult* result = NULL, PhysicsController::HitFilter* filter = NULL);
-    public function sweepTest(object:PhysicsCollisionObject, endPosition:Vector3, result:PhysicsController_HitResult, filter:PhysicsController_HitFilter):Bool
+    public function sweepTest(object:PhysicsCollisionObject, endPosition:Vector3, result:PhysicsController_HitResult = null, filter:PhysicsController_HitFilter = null):Bool
     {
         return hx_PhysicsController_sweepTest(nativeObject, object.native(), endPosition.native(), result.native(), filter.native());
     }

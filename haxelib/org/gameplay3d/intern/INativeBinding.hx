@@ -14,4 +14,9 @@ interface INativeBinding
      * construction methods which the specific classes provide.</p>
      */
     @:isVar public var nativeObject(default, null):Dynamic;
+
+    /**
+     * TODO
+     */
+    public function isEquivalentTo(object:INativeBinding):Bool;
 }

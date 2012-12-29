@@ -159,7 +159,7 @@ class Game extends GameplayObject
     // DECL: inline Gamepad* getGamepad(unsigned int index) const;
     public function getGamepad(index:Int):Gamepad
     {
-        return hx_Game_getGamepad(nativeObject, index);
+        return Gamepad.wrap(hx_Game_getGamepad(nativeObject, index));
     }
 
     // DECL: inline unsigned int getGamepadCount() const;
@@ -186,12 +186,11 @@ class Game extends GameplayObject
         return Game.wrap(hx_Game_static_getInstance());
     }
 
-    //TODO
     // DECL: inline PhysicsController* getPhysicsController() const;
-    //public function getPhysicsController():PhysicsController
-    //{
-        //return hx_Game_getPhysicsController(nativeObject);
-    //}
+    public function getPhysicsController():PhysicsController
+    {
+        return PhysicsController.wrap(hx_Game_getPhysicsController(nativeObject));
+    }
 
     //TODO
     // DECL: inline ScriptController* getScriptController() const;

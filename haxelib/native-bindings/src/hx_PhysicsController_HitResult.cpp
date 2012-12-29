@@ -1,5 +1,11 @@
 #include "HaxeAPI.h"
 
+value hx_PhysicsController_HitResult_Construct()
+{
+    return ObjectToValue(new PhysicsController::HitResult());
+}
+DEFINE_PRIM(hx_PhysicsController_HitResult_Construct, 0);
+
 /*******************************************************************************
  * PROPERTIES                                                                  *
  ******************************************************************************/

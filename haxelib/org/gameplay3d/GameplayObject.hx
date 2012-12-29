@@ -67,11 +67,21 @@ class GameplayObject extends NativeBinding
     @:generic
     public function castTo<T : GameplayObject>(classObj:Class<T>):T
     {
-        var instance:T = null;
-        if (!Std.is(instance, Type.getClass(this)))
-            throw "Invalid native conversion attempted.";
+        // FIXME:
+        //var instance:T;
+        //if (!Std.is(instance, Type.getClass(this)))
+        //{
+            //var nameSrc = Type.getClassName(Type.getClass(instance));
+            //var nameDst = Type.getClassName(classObj);
+            //throw 'Invalid native conversion from "$nameSrc" to "$nameDst" attempted."';
+        //}
 
-        return new T(nativeObject, null);
+       var nameSrc = Type.getClassName(Type.getClass(this));
+       var nameDst = Type.getClassName(classObj);
+
+       trace('INFO: Native conversion from "$nameSrc" to "$nameDst".');
+
+       return wrap(classObj, nativeObject);
     }
 }
 

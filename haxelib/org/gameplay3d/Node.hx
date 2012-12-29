@@ -108,12 +108,11 @@ class Node extends Transform, implements Ref
         return hx_Node_getChildCount(nativeObject);
     }
 
-    // TODO:
     // DECL: PhysicsCollisionObject* getCollisionObject() const;
-    //public function getCollisionObject():PhysicsCollisionObject
-    //{
-        //return hx_Node_getCollisionObject(nativeObject);
-    //}
+    public function getCollisionObject():PhysicsCollisionObject
+    {
+        return PhysicsCollisionObject.wrap(hx_Node_getCollisionObject(nativeObject));
+    }
 
     // DECL: Node* getFirstChild() const;
     public function getFirstChild():Node

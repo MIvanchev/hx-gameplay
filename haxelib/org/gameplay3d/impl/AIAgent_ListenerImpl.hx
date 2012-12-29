@@ -11,10 +11,27 @@ class AIAgent_ListenerImpl extends GameplayObject, implements AIAgent_Listener
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var listener:AIAgent_Listener;
+
+    function new(
+            listener:AIAgent_Listener,
+            nativeObject:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObject, nativeObjectInitializerParams);
+        this.listener = listener;
+    }
+
+    public static function make(listener:AIAgent_Listener):Void
+    {
+        return new AIAgent_ListenerImpl(listener, constructNativeObject, [ null ]);
+    }
+
     // DECL: virtual bool messageReceived(AIMessage* message) = 0;
     public function messageReceived(message:AIMessage):Bool
     {
-        return false;
+        return listener.messageReceived(message);
     }
 
     /***************************************************************************

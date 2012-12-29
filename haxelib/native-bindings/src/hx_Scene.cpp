@@ -36,7 +36,7 @@ public:
                         *clbkVisitMethod,
                         ReferenceToValue(node, true, true)
                     ));
-        return true;
+        return result;
     }
 
     bool visitWrapper(Node *node, long cookie)

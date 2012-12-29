@@ -4,7 +4,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Pass : public RenderState
-class Pass extends GameplayObject // TODO: RenderState
+class Pass extends RenderState
 {
     /***************************************************************************
      * MEMBERS                                                                 *

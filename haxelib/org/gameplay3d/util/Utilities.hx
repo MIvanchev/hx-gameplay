@@ -1,8 +1,8 @@
 package org.gameplay3d.util;
 
 import cpp.Lib;
-import org.gameplay3d.GameplayObject;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.NativeBinding;
 
 typedef NativeArrayInt = IAssignableNativeArray<Int>;
 typedef NativeArrayUint = IAssignableNativeArray<Int>;
@@ -87,9 +87,10 @@ class Utilities
 /**
  * TODO
  */
-private class GameplayArray<T : GameplayObject> implements INativeArray<T>, implements INativeBinding
+private class GameplayArray<T : GameplayObject> extends NativeBinding,
+        implements INativeArray<T>,
+        implements INativeBinding
 {
-    @:isVar public var nativeObject(default, null):Dynamic;
     @:isVar public var length(default, null):Int;
 
     var objects:Array<T>;
@@ -110,9 +111,10 @@ private class GameplayArray<T : GameplayObject> implements INativeArray<T>, impl
 /**
  * TODO
  */
-private class PrimitiveArray<T> implements IAssignableNativeArray<T>, implements INativeBinding
+private class PrimitiveArray<T> extends NativeBinding,
+        implements IAssignableNativeArray<T>,
+        implements INativeBinding
 {
-    @:isVar public var nativeObject(default, null):Dynamic;
     @:isVar public var length(default, null):Int;
 
     var getter:Dynamic->Int->T;
