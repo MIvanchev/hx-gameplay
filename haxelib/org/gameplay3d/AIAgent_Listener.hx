@@ -1,9 +1,7 @@
 package org.gameplay3d;
 
-import org.gameplay3d.intern.INativeBinding;
-
-// DECL: class Listener : public GameplayObject
-interface AIAgent_Listener implements INativeBinding
+// DECL: class Listener
+interface AIAgent_Listener
 {
     /***************************************************************************
      * MEMBERS                                                                 *

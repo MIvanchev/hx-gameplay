@@ -1,47 +1,54 @@
-package org.gameplay3d.impl;
+package org.gameplay3d.wrapper;
 
 import org.gameplay3d.AIAgent_Listener;
 import org.gameplay3d.AIMessage;
 import org.gameplay3d.GameplayObject;
 
+using org.gameplay3d.GameplayObject;
+
 // DECL: class Listener : public GameplayObject
-class AIAgent_ListenerImpl extends GameplayObject, implements AIAgent_Listener
+class AIAgent_ListenerWrapper extends GameplayObject, implements AIAgent_Listener
 {
+    /***************************************************************************
+     * PROPERTIES                                                              *
+     **************************************************************************/
+
+    public var target(default, null):AIAgent_Listener;
+
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    var listener:AIAgent_Listener;
-
-    function new(
-            listener:AIAgent_Listener,
-            nativeObject:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    function new(target, nativeObject, nativeObjectInitializerParams)
     {
         super(nativeObject, nativeObjectInitializerParams);
-        this.listener = listener;
+        this.target = target;
     }
 
-    public static function make(listener:AIAgent_Listener):Void
+    public static function make(target)
     {
-        return new AIAgent_ListenerImpl(listener, constructNativeObject, [ null ]);
+        return new AIAgent_ListenerWrapper(target, constructNativeObject, [ null ]);
     }
 
     // DECL: virtual bool messageReceived(AIMessage* message) = 0;
     public function messageReceived(message:AIMessage):Bool
     {
-        return listener.messageReceived(message);
+        return target.messageReceived(message);
     }
 
     /***************************************************************************
      * NATIVE OBJECT CONSTRUCTORS                                              *
      **************************************************************************/
 
-    // DECL: (none)
-    static function constructNativeObject(thisObj:AIAgent_ListenerImpl):Dynamic
+    function messageReceivedWrapper(message)
     {
-        return hx_AIAgent_Listener_Construct(thisObj.messageReceived);
+        messageReceived(AIMessage.wrap(message));
+    }
+
+    // DECL: (none)
+    static function constructNativeObject(thisObj:AIAgent_ListenerWrapper):Dynamic
+    {
+        return hx_AIAgent_Listener_Construct(thisObj.messageReceivedWrapper);
     }
 
     /***************************************************************************

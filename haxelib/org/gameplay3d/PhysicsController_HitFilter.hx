@@ -1,36 +1,17 @@
 package org.gameplay3d;
 
-using org.gameplay3d.intern.NativeBinding;
-using org.gameplay3d.GameplayObject;
-
 // DECL: class HitFilter
-class PhysicsController_HitFilter extends GameplayObject
+interface PhysicsController_HitFilter
 {
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    // DECL: HitFilter();
-    public static function make():PhysicsController_HitFilter
-    {
-        return new PhysicsController_HitFilter(constructNativeObject());
-    }
+    // DECL: virtual bool filter(PhysicsCollisionObject* object);
+    public function filter(object:PhysicsCollisionObject):Bool;
 
-    /***************************************************************************
-     * NATIVE OBJECT CONSTRUCTORS                                              *
-     **************************************************************************/
-
-    // DECL: HitFilter();
-    static function constructNativeObject():Dynamic
-    {
-        return hx_PhysicsController_HitFilter_Construct();
-    }
-
-    /***************************************************************************
-     * NATIVE INTERFACE                                                        *
-     **************************************************************************/
-
-    static var hx_PhysicsController_HitFilter_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_HitFilter_Construct", 0);
+    // DECL: virtual bool hit(const HitResult& result);
+    public function hit(result:PhysicsController_HitResult):Bool;
 }
 
 // END

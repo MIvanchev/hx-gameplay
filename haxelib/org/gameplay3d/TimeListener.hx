@@ -1,10 +1,9 @@
 package org.gameplay3d;
 
-import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.util.Handle;
 
 // DECL: class TimeListener : public GameplayObject
-interface TimeListener implements INativeBinding
+interface TimeListener
 {
     /***************************************************************************
      * MEMBERS                                                                 *

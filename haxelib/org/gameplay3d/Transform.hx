@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.impl.AnimationTarget_ScriptTarget;
+import org.gameplay3d.wrapper.Transform_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -56,7 +57,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void addListener(Transform::Listener* listener, long cookie = 0);
-    public function addListener(listener:Transform_Listener, cookie:Int = 0):Void
+    public function addListener(listener:Transform_ListenerWrapper, cookie:Int = 0):Void
     {
         hx_Transform_addListener(nativeObject, listener.native(), cookie);
     }
@@ -242,7 +243,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void removeListener(Transform::Listener* listener);
-    public function removeListener(listener:Transform_Listener):Void
+    public function removeListener(listener:Transform_ListenerWrapper):Void
     {
         hx_Transform_removeListener(nativeObject, listener.native());
     }

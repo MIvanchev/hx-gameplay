@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.impl.AnimationTarget_ScriptTarget;
 import org.gameplay3d.Theme_SideRegions;
+import org.gameplay3d.wrapper.Control_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -27,7 +28,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
      **************************************************************************/
 
     // DECL: virtual void addListener(Control::Listener* listener, int eventFlags);
-    public function addListener(listener:Control_Listener, eventFlags:Int):Void
+    public function addListener(listener:Control_ListenerWrapper, eventFlags:Int):Void
     {
         hx_Control_addListener(nativeObject, listener.native(), eventFlags);
     }

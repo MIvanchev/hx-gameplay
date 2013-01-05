@@ -1,4 +1,4 @@
-package org.gameplay3d.impl;
+package org.gameplay3d.wrapper;
 
 import org.gameplay3d.AnimationClip;
 import org.gameplay3d.AnimationClip_Listener;
@@ -7,46 +7,46 @@ import org.gameplay3d.GameplayObject;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Listener : public GameplayObject
-class AnimationClip_ListenerImpl extends GameplayObject, implements AnimationClip_Listener
+class AnimationClip_ListenerWrapper extends GameplayObject, implements AnimationClip_Listener
 {
+    /***************************************************************************
+     * PROPERTIES                                                              *
+     **************************************************************************/
+
+    public var target(default, null):AnimationClip_Listener;
+
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    var listener:AnimationClip_Listener;
-
-    function new(
-            listener:AnimationClip_Listener,
-            nativeObject:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    function new(target, nativeObject, nativeObjectInitializerParams)
     {
         super(nativeObject, nativeObjectInitializerParams);
-        this.listener = listener;
+        this.target = target;
     }
 
-    public static function make(listener:AnimationClip_Listener):AnimationClip_ListenerImpl
+    public static function make(target)
     {
-        return new AnimationClip_ListenerImpl(listener, constructNativeObject, [ null ]);
+        return new AnimationClip_ListenerWrapper(target, constructNativeObject, [ null ]);
     }
 
     // DECL: virtual void animationEvent(AnimationClip* clip, EventType type) = 0;
     public function animationEvent(clip:AnimationClip, type:Int):Void
     {
-        listener.animationEvent(clip, type);
+        target.animationEvent(clip, type);
     }
 
     /***************************************************************************
      * NATIVE OBJECT CONSTRUCTORS                                              *
      **************************************************************************/
 
-    function animationEventWrapper(clip:Dynamic, type:Int):Void
+    function animationEventWrapper(clip, type)
     {
         animationEvent(AnimationClip.wrap(clip), type);
     }
 
     // DECL: (none)
-    static function constructNativeObject(thisObj:AnimationClip_ListenerImpl):Dynamic
+    static function constructNativeObject(thisObj:AnimationClip_ListenerWrapper):Dynamic
     {
         return hx_AnimationClip_Listener_Construct(thisObj.animationEventWrapper);
     }

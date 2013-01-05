@@ -1,9 +1,7 @@
 package org.gameplay3d;
 
-import org.gameplay3d.intern.INativeBinding;
-
 // DECL: class CollisionListener
-interface PhysicsCollisionObject_CollisionListener implements INativeBinding
+interface PhysicsCollisionObject_CollisionListener
 {
     /***************************************************************************
      * MEMBERS                                                                 *

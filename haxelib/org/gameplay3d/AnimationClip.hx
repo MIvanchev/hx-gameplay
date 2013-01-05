@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.wrapper.AnimationClip_ListenerWrapper;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -17,7 +19,7 @@ class AnimationClip extends GameplayObject, implements Ref
      **************************************************************************/
 
     // DECL: void addBeginListener(AnimationClip::Listener* listener);
-    public function addBeginListener(listener:AnimationClip_Listener):Void
+    public function addBeginListener(listener:AnimationClip_ListenerWrapper):Void
     {
         hx_AnimationClip_addBeginListener_Lsnr(nativeObject, listener.native());
     }
@@ -29,7 +31,7 @@ class AnimationClip extends GameplayObject, implements Ref
     }
 
     // DECL: void addEndListener(AnimationClip::Listener* listener);
-    public function addEndListener_Lsnr(listener:AnimationClip_Listener):Void
+    public function addEndListener_Lsnr(listener:AnimationClip_ListenerWrapper):Void
     {
         hx_AnimationClip_addEndListener_Lsnr(nativeObject, listener.native());
     }
@@ -41,7 +43,7 @@ class AnimationClip extends GameplayObject, implements Ref
     }
 
     // DECL: void addListener(AnimationClip::Listener* listener, unsigned long eventTime);
-    public function addListener_Lsnr_Int(listener:AnimationClip_Listener, eventTime:Int):Void
+    public function addListener_Lsnr_Int(listener:AnimationClip_ListenerWrapper, eventTime:Int):Void
     {
         hx_AnimationClip_addListener_Lsnr_Int(nativeObject, listener.native(), eventTime);
     }

@@ -1,51 +1,53 @@
-package org.gameplay3d.impl;
+package org.gameplay3d.wrapper;
 
 import org.gameplay3d.GameplayObject;
 import org.gameplay3d.PhysicsCollisionObject_CollisionListener;
+import org.gameplay3d.PhysicsCollisionObject_CollisionPair;
+import org.gameplay3d.Vector3;
 
 using org.gameplay3d.GameplayObject;
 
 // DECL: class CollisionListener
-class PhysicsCollisionObject_CollisionListenerImpl extends GameplayObject, implements PhysicsCollisionObject_CollisionListener
+class PhysicsCollisionObject_CollisionListenerWrapper extends GameplayObject, implements PhysicsCollisionObject_CollisionListener
 {
+    /***************************************************************************
+     * PROPERTIES                                                              *
+     **************************************************************************/
+
+    public var target(default, null):PhysicsCollisionObject_CollisionListener;
+
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    var listener:PhysicsCollisionObject_CollisionListener;
-
-    function new(
-            listener:PhysicsCollisionObject_CollisionListener,
-            nativeObject:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    function new(target, nativeObject, nativeObjectInitializerParams)
     {
         super(nativeObject, nativeObjectInitializerParams);
-        this.listener = listener;
+        this.target = target;
     }
 
-    public static function make(listener:PhysicsCollisionObject_CollisionListener):PhysicsCollisionObject_CollisionListenerImpl
+    public static function make(target)
     {
-        return new PhysicsCollisionObject_CollisionListenerImpl(listener, constructNativeObject, [ null ]);
+        return new PhysicsCollisionObject_CollisionListenerWrapper(target, constructNativeObject, [ null ]);
     }
 
     // DECL: virtual void collisionEvent(PhysicsCollisionObject::CollisionListener::EventType type,
     public function collisionEvent(type:Int, collisionPair:PhysicsCollisionObject_CollisionPair, contactPointA:Vector3, contactPointB:Vector3):Void
     {
-        listener.collisionEvent(type, collisionPair, contactPointA, contactPointB);
+        target.collisionEvent(type, collisionPair, contactPointA, contactPointB);
     }
 
     /***************************************************************************
      * NATIVE OBJECT CONSTRUCTORS                                              *
      **************************************************************************/
 
-    function collisionEventWrapper(type:Int, collisionPair:Dynamic, contactPointA:Dynamic, contactPointB:Dynamic)
+    function collisionEventWrapper(type, collisionPair, contactPointA, contactPointB)
     {
         collisionEvent(type, PhysicsCollisionObject_CollisionPair.wrap(collisionPair), Vector3.wrap(contactPointA), Vector3.wrap(contactPointB));
     }
 
     // DECL: (none)
-    static function constructNativeObject(thisObj:PhysicsCollisionObject_CollisionListenerImpl):Dynamic
+    static function constructNativeObject(thisObj:PhysicsCollisionObject_CollisionListenerWrapper):Dynamic
     {
         return hx_PhysicsCollisionObject_CollisionListener_Construct(thisObj.collisionEventWrapper);
     }

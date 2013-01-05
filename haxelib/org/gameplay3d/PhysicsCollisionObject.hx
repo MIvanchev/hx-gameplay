@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.wrapper.PhysicsCollisionObject_CollisionListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -11,7 +12,7 @@ class PhysicsCollisionObject extends GameplayObject
      **************************************************************************/
 
     // DECL: void addCollisionListener(CollisionListener* listener, PhysicsCollisionObject* object = NULL);
-    public function addCollisionListener_Lsnr_ColObj(listener:PhysicsCollisionObject_CollisionListener, object:PhysicsCollisionObject = null):Void
+    public function addCollisionListener_Lsnr_ColObj(listener:PhysicsCollisionObject_CollisionListenerWrapper, object:PhysicsCollisionObject = null):Void
     {
         hx_PhysicsCollisionObject_addCollisionListener_Lsnr_ColObj(nativeObject, listener.native(), object.native());
     }
@@ -71,7 +72,7 @@ class PhysicsCollisionObject extends GameplayObject
     }
 
     // DECL: void removeCollisionListener(CollisionListener* listener, PhysicsCollisionObject* object = NULL);
-    public function removeCollisionListener_Lsnr_ColObj(listener:PhysicsCollisionObject_CollisionListener, object:PhysicsCollisionObject = null):Void
+    public function removeCollisionListener_Lsnr_ColObj(listener:PhysicsCollisionObject_CollisionListenerWrapper, object:PhysicsCollisionObject = null):Void
     {
         hx_PhysicsCollisionObject_removeCollisionListener_Lsnr_ColObj(nativeObject, listener.native(), object.native());
     }

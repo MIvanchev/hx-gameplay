@@ -1,6 +1,8 @@
 package org.gameplay3d;
 
 import org.gameplay3d.impl.ScriptTargetImpl;
+import org.gameplay3d.wrapper.PhysicsController_HitFilterWrapper;
+import org.gameplay3d.wrapper.PhysicsController_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -13,7 +15,7 @@ class PhysicsController extends ScriptTargetImpl
      **************************************************************************/
 
     // DECL: void addStatusListener(PhysicsController::Listener* listener);
-    public function addStatusListener(listener:PhysicsController_Listener):Void
+    public function addStatusListener(listener:PhysicsController_ListenerWrapper):Void
     {
         hx_PhysicsController_addStatusListener(nativeObject, listener.native());
     }
@@ -79,13 +81,13 @@ class PhysicsController extends ScriptTargetImpl
     }
 
     // DECL: bool rayTest(const Ray& ray, float distance, PhysicsController::HitResult* result = NULL, PhysicsController::HitFilter* filter = NULL);
-    public function rayTest(ray:Ray, distance:Float, result:PhysicsController_HitResult = null, filter:PhysicsController_HitFilter = null):Bool
+    public function rayTest(ray:Ray, distance:Float, result:PhysicsController_HitResult = null, filter:PhysicsController_HitFilterWrapper = null):Bool
     {
         return hx_PhysicsController_rayTest(nativeObject, ray.native(), distance, result.native(), filter.native());
     }
 
     // DECL: void removeStatusListener(Listener* listener);
-    public function removeStatusListener(listener:PhysicsController_Listener):Void
+    public function removeStatusListener(listener:PhysicsController_ListenerWrapper):Void
     {
         hx_PhysicsController_removeStatusListener(nativeObject, listener.native());
     }
@@ -97,7 +99,7 @@ class PhysicsController extends ScriptTargetImpl
     }
 
     // DECL: bool sweepTest(PhysicsCollisionObject* object, const Vector3& endPosition, PhysicsController::HitResult* result = NULL, PhysicsController::HitFilter* filter = NULL);
-    public function sweepTest(object:PhysicsCollisionObject, endPosition:Vector3, result:PhysicsController_HitResult = null, filter:PhysicsController_HitFilter = null):Bool
+    public function sweepTest(object:PhysicsCollisionObject, endPosition:Vector3, result:PhysicsController_HitResult = null, filter:PhysicsController_HitFilterWrapper = null):Bool
     {
         return hx_PhysicsController_sweepTest(nativeObject, object.native(), endPosition.native(), result.native(), filter.native());
     }

@@ -14,22 +14,6 @@ class Transform_ListenerImpl extends GameplayObject, implements Transform_Listen
     public function transformChanged(transform:Transform, cookie:Int):Void
     {
     }
-
-    /***************************************************************************
-     * NATIVE OBJECT CONSTRUCTORS                                              *
-     **************************************************************************/
-
-    // DECL: (none)
-    static function constructNativeObject(thisObj:Transform_ListenerImpl):Dynamic
-    {
-        return hx_Transform_Listener_Construct(thisObj.transformChanged);
-    }
-
-    /***************************************************************************
-     * NATIVE INTERFACE                                                        *
-     **************************************************************************/
-
-    static var hx_Transform_Listener_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_Transform_Listener_Construct", 1);
 }
 
 // END

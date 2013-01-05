@@ -1,9 +1,7 @@
 package org.gameplay3d;
 
-import org.gameplay3d.intern.INativeBinding;
-
 // DECL: class Listener
-interface PhysicsController_Listener implements INativeBinding
+interface PhysicsController_Listener
 {
     /***************************************************************************
      * MEMBERS                                                                 *

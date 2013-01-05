@@ -4,6 +4,7 @@ import cpp.Lib;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.Handle;
 import org.gameplay3d.util.OutParameter;
+import org.gameplay3d.wrapper.TimeListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -312,7 +313,7 @@ class Game extends GameplayObject
     }
 
     // DECL: void schedule(float timeOffset, TimeListener* timeListener, void* cookie = 0);
-    public function schedule_Flt_Lsnr_Hndl(timeOffset:Float, timeListener:TimeListener, cookie:Handle = null):Void
+    public function schedule_Flt_Lsnr_Hndl(timeOffset:Float, timeListener:TimeListenerWrapper, cookie:Handle = null):Void
     {
         hx_Game_schedule_Flt_Lsnr_Hndl(nativeObject, timeOffset, timeListener.native(), cookie.native());
     }

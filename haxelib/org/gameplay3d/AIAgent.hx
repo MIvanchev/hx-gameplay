@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.impl.ScriptTargetImpl;
+import org.gameplay3d.wrapper.AIAgent_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -50,7 +51,7 @@ class AIAgent extends ScriptTargetImpl, implements Ref
     }
 
     // DECL: void setListener(Listener* listener);
-    public function setListener(listener:AIAgent_Listener):Void
+    public function setListener(listener:AIAgent_ListenerWrapper):Void
     {
         hx_AIAgent_setListener(nativeObject, listener.native());
     }

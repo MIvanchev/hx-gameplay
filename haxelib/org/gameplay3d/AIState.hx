@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.impl.ScriptTargetImpl;
+import org.gameplay3d.wrapper.AIState_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -26,7 +27,7 @@ class AIState extends ScriptTargetImpl, implements Ref
     }
 
     // DECL: void setListener(Listener* listener);
-    public function setListener(listener:AIState_Listener):Void
+    public function setListener(listener:AIState_ListenerWrapper):Void
     {
         hx_AIState_setListener(nativeObject, listener.native());
     }
