@@ -12,8 +12,8 @@ class BoundingBox extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var min(get_min, set_min):Vector3;
-    public var max(get_max, set_max):Vector3;
+    public var min(get_min, never):Vector3;
+    public var max(get_max, never):Vector3;
 
     /***************************************************************************
      * MEMBERS                                                                 *
@@ -182,19 +182,9 @@ class BoundingBox extends GameplayObject
         return Vector3.wrap(hx_BoundingBox_property_min_get(nativeObject));
     }
 
-    function set_min(value:Vector3):Vector3
-    {
-        return Vector3.wrap(hx_BoundingBox_property_min_set(nativeObject, value));
-    }
-
     function get_max():Vector3
     {
         return Vector3.wrap(hx_BoundingBox_property_max_get(nativeObject));
-    }
-
-    function set_max(value:Vector3):Vector3
-    {
-        return Vector3.wrap(hx_BoundingBox_property_max_set(nativeObject, value));
     }
 
     /***************************************************************************
@@ -223,9 +213,7 @@ class BoundingBox extends GameplayObject
     static var hx_BoundingBox_set_FltX6:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_set_FltX6", -1);
     static var hx_BoundingBox_transform:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_transform", 2);
     static var hx_BoundingBox_property_min_get:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_property_min_get", 1);
-    static var hx_BoundingBox_property_min_set:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_property_min_set", 2);
     static var hx_BoundingBox_property_max_get:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_property_max_get", 1);
-    static var hx_BoundingBox_property_max_set:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_property_max_set", 2);
 }
 
 // END

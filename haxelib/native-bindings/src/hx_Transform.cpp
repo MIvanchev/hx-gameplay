@@ -230,7 +230,7 @@ value hx_Transform_getScale(value thisObj)
 {
     Transform *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getScale()));
+    return ObjectToValue(&_thisObj->getScale(), false);
 }
 DEFINE_PRIM(hx_Transform_getScale, 1);
 
@@ -277,7 +277,7 @@ value hx_Transform_getTranslation(value thisObj)
 {
     Transform *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getTranslation()));
+    return ObjectToValue(&_thisObj->getTranslation(), false);
 }
 DEFINE_PRIM(hx_Transform_getTranslation, 1);
 

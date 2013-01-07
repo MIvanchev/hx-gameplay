@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.util.OutParameter;
@@ -66,7 +67,7 @@ class Scene extends GameplayObject, implements Ref
     }
 
     // DECL: const Vector3& getAmbientColor() const;
-    public function getAmbientColor():Vector3
+    public function getAmbientColor():IVector3
     {
         return Vector3.wrap(hx_Scene_getAmbientColor(nativeObject));
     }

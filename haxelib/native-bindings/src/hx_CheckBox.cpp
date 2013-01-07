@@ -27,7 +27,7 @@ value hx_CheckBox_getImageSize(value thisObj)
 {
     CheckBox *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector2(_thisObj->getImageSize()));
+    return ObjectToValue(&_thisObj->getImageSize(), false);
 }
 DEFINE_PRIM(hx_CheckBox_getImageSize, 1);
 

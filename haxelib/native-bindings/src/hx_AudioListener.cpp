@@ -47,7 +47,7 @@ value hx_AudioListener_getOrientationForward(value thisObj)
 {
     AudioListener *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getOrientationForward()));
+    return ObjectToValue(&_thisObj->getOrientationForward(), false);
 }
 DEFINE_PRIM(hx_AudioListener_getOrientationForward, 1);
 
@@ -56,7 +56,7 @@ value hx_AudioListener_getOrientationUp(value thisObj)
 {
     AudioListener *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getOrientationUp()));
+    return ObjectToValue(&_thisObj->getOrientationUp(), false);
 }
 DEFINE_PRIM(hx_AudioListener_getOrientationUp, 1);
 
@@ -65,7 +65,7 @@ value hx_AudioListener_getPosition(value thisObj)
 {
     AudioListener *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getPosition()));
+    return ObjectToValue(&_thisObj->getPosition(), false);
 }
 DEFINE_PRIM(hx_AudioListener_getPosition, 1);
 
@@ -74,7 +74,7 @@ value hx_AudioListener_getVelocity(value thisObj)
 {
     AudioListener *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getVelocity()));
+    return ObjectToValue(&_thisObj->getVelocity(), false);
 }
 DEFINE_PRIM(hx_AudioListener_getVelocity, 1);
 

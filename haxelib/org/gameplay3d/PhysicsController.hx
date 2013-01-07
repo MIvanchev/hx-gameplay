@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
-import org.gameplay3d.impl.ScriptTargetImpl;
+import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.impl.ScriptTargetImpl;
 import org.gameplay3d.wrapper.PhysicsController_HitFilterWrapper;
 import org.gameplay3d.wrapper.PhysicsController_ListenerWrapper;
 
@@ -75,7 +76,7 @@ class PhysicsController extends ScriptTargetImpl
     }
 
     // DECL: const Vector3& getGravity() const;
-    public function getGravity():Vector3
+    public function getGravity():IVector3
     {
         return Vector3.wrap(hx_PhysicsController_getGravity(nativeObject));
     }

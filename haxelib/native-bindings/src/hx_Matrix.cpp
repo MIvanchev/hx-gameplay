@@ -1017,22 +1017,9 @@ value hx_Matrix_property_m_get(value thisObj)
 {
     Matrix *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    value result = alloc_array(16);
-    for (int index = 0; index < 16; index++)
-        val_array_set_i(result, index, alloc_float(_thisObj->m[index]));
-    return result;
+    return alloc_abstract(k_Array, _thisObj->m);
 }
 DEFINE_PRIM(hx_Matrix_property_m_get, 1);
-
-value hx_Matrix_property_m_set(value thisObj, value _value)
-{
-    Matrix *_thisObj;
-    ValueToObject(thisObj, _thisObj);
-    for (int index = 0; index < 16; index++)
-        _thisObj->m[index] = ValueToFloat(val_array_i(_value, index));
-    return _value;
-}
-DEFINE_PRIM(hx_Matrix_property_m_set, 2);
 
 // END
 //

@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector2;
+
 using dk.bluewolf.gameplay.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -23,13 +25,13 @@ class Joystick extends Control
     }
 
     // DECL: inline const Vector2& getInnerRegionSize() const;
-    public function getInnerRegionSize():Vector2
+    public function getInnerRegionSize():IVector2
     {
         return Vector2.wrap(hx_Joystick_getInnerRegionSize(nativeObject));
     }
 
     // DECL: inline const Vector2& getOuterRegionSize() const;
-    public function getOuterRegionSize():Vector2
+    public function getOuterRegionSize():IVector2
     {
         return Vector2.wrap(hx_Joystick_getOuterRegionSize(nativeObject));
     }
@@ -41,7 +43,7 @@ class Joystick extends Control
     }
 
     // DECL: inline const Vector2& getValue() const;
-    public function getValue():Vector2
+    public function getValue():IVector2
     {
         return Vector2.wrap(hx_Joystick_getValue(nativeObject));
     }

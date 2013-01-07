@@ -1,11 +1,11 @@
-package org.gameplay3d.impl;
+package org.gameplay3d.intern.impl;
 
 import org.gameplay3d.Animation;
 import org.gameplay3d.AnimationTarget;
 import org.gameplay3d.AnimationValue;
 import org.gameplay3d.GameplayObject;
 import org.gameplay3d.Properties;
-import org.gameplay3d.util.Utilities;
+import org.gameplay3d.util.PrimitiveArray;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;

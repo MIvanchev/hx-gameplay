@@ -1,10 +1,12 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector4;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
-// DECL: class Vector4 : public GameplayObject
-class Vector4 extends GameplayObject
+// DECL: class Vector4
+class Vector4 extends GameplayObject, implements IVector4
 {
     /***************************************************************************
      * PROPERTIES                                                              *

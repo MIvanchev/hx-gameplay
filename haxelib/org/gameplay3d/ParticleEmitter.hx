@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.ConversionTools;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -43,13 +44,13 @@ class ParticleEmitter extends GameplayObject, implements Ref
     }
 
     // DECL: const Vector3& getAcceleration() const;
-    public function getAcceleration():Vector3
+    public function getAcceleration():IVector3
     {
         return Vector3.wrap(hx_ParticleEmitter_getAcceleration(nativeObject));
     }
 
     // DECL: const Vector3& getAccelerationVariance() const;
-    public function getAccelerationVariance():Vector3
+    public function getAccelerationVariance():IVector3
     {
         return Vector3.wrap(hx_ParticleEmitter_getAccelerationVariance(nativeObject));
     }
@@ -109,25 +110,25 @@ class ParticleEmitter extends GameplayObject, implements Ref
     }
 
     // DECL: const Vector3& getPosition() const;
-    public function getPosition():Vector3
+    public function getPosition():IVector3
     {
         return Vector3.wrap(hx_ParticleEmitter_getPosition(nativeObject));
     }
 
     // DECL: const Vector3& getPositionVariance() const;
-    public function getPositionVariance():Vector3
+    public function getPositionVariance():IVector3
     {
         return Vector3.wrap(hx_ParticleEmitter_getPositionVariance(nativeObject));
     }
 
     // DECL: const Vector3& getRotationAxis() const;
-    public function getRotationAxis():Vector3
+    public function getRotationAxis():IVector3
     {
         return Vector3.wrap(hx_ParticleEmitter_getRotationAxis(nativeObject));
     }
 
     // DECL: const Vector3& getRotationAxisVariance() const;
-    public function getRotationAxisVariance():Vector3
+    public function getRotationAxisVariance():IVector3
     {
         return Vector3.wrap(hx_ParticleEmitter_getRotationAxisVariance(nativeObject));
     }
@@ -199,13 +200,13 @@ class ParticleEmitter extends GameplayObject, implements Ref
     }
 
     // DECL: const Vector3& getVelocity() const;
-    public function getVelocity():Vector3
+    public function getVelocity():IVector3
     {
         return Vector3.wrap(hx_ParticleEmitter_getVelocity(nativeObject));
     }
 
     // DECL: const Vector3& getVelocityVariance() const;
-    public function getVelocityVariance():Vector3
+    public function getVelocityVariance():IVector3
     {
         return Vector3.wrap(hx_ParticleEmitter_getVelocityVariance(nativeObject));
     }

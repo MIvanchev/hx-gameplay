@@ -151,7 +151,7 @@ value hx_Scene_getAmbientColor(value thisObj)
 {
     Scene *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getAmbientColor()));
+    return ObjectToValue(&_thisObj->getAmbientColor(), false);
 }
 DEFINE_PRIM(hx_Scene_getAmbientColor, 1);
 

@@ -51,7 +51,7 @@ value hx_Ray_getDirection(value thisObj)
 {
     Ray *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getDirection()));
+    return ObjectToValue(&_thisObj->getDirection(), false);
 }
 DEFINE_PRIM(hx_Ray_getDirection, 1);
 
@@ -60,7 +60,7 @@ value hx_Ray_getOrigin(value thisObj)
 {
     Ray *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getOrigin()));
+    return ObjectToValue(&_thisObj->getOrigin(), false);
 }
 DEFINE_PRIM(hx_Ray_getOrigin, 1);
 

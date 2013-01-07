@@ -33,20 +33,9 @@ value hx_PhysicsController_HitResult_property_point_get(value thisObj)
 {
     PhysicsController::HitResult *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->point));
+    return ObjectToValue(&_thisObj->point, false);
 }
 DEFINE_PRIM(hx_PhysicsController_HitResult_property_point_get, 1);
-
-value hx_PhysicsController_HitResult_property_point_set(value thisObj, value _value)
-{
-    PhysicsController::HitResult *_thisObj;
-    Vector3 *point;
-    ValueToObject(thisObj, _thisObj);
-    ValueToObject(_value, point);
-    _thisObj->point.set(*point);
-    return _value;
-}
-DEFINE_PRIM(hx_PhysicsController_HitResult_property_point_set, 2);
 
 value hx_PhysicsController_HitResult_property_fraction_get(value thisObj)
 {
@@ -70,20 +59,9 @@ value hx_PhysicsController_HitResult_property_normal_get(value thisObj)
 {
     PhysicsController::HitResult *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->normal));
+    return ObjectToValue(&_thisObj->normal, false);
 }
 DEFINE_PRIM(hx_PhysicsController_HitResult_property_normal_get, 1);
-
-value hx_PhysicsController_HitResult_property_normal_set(value thisObj, value _value)
-{
-    PhysicsController::HitResult *_thisObj;
-    Vector3 *normal;
-    ValueToObject(thisObj, _thisObj);
-    ValueToObject(_value, normal);
-    _thisObj->normal.set(*normal);
-    return _value;
-}
-DEFINE_PRIM(hx_PhysicsController_HitResult_property_normal_set, 2);
 
 // END
 //

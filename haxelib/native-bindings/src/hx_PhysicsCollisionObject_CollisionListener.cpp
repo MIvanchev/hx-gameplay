@@ -32,8 +32,8 @@ public:
                                 collisionPair.objectB
                             )
                     ),
-                ObjectToValue(new Vector3(contactPointA)),
-                ObjectToValue(new Vector3(contactPointB))
+                ObjectToValue(&contactPointA, false),
+                ObjectToValue(&contactPointB, false)
             };
 
         val_callN(clbkCollisionEvent.get(), args, 4);

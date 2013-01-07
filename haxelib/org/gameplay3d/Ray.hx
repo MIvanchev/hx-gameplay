@@ -1,9 +1,11 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
-// DECL: class Ray : public GameplayObject
+// DECL: class Ray
 class Ray extends GameplayObject
 {
     /***************************************************************************
@@ -41,13 +43,13 @@ class Ray extends GameplayObject
     }
 
     // DECL: const Vector3& getDirection() const;
-    public function getDirection():Vector3
+    public function getDirection():IVector3
     {
         return Vector3.wrap(hx_Ray_getDirection(nativeObject));
     }
 
     // DECL: const Vector3& getOrigin() const;
-    public function getOrigin():Vector3
+    public function getOrigin():IVector3
     {
         return Vector3.wrap(hx_Ray_getOrigin(nativeObject));
     }

@@ -168,7 +168,7 @@ value hx_PhysicsController_getGravity(value thisObj)
 {
     PhysicsController *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getGravity()));
+    return ObjectToValue(&_thisObj->getGravity(), false);
 }
 DEFINE_PRIM(hx_PhysicsController_getGravity, 1);
 

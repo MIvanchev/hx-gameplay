@@ -52,7 +52,7 @@ value hx_ParticleEmitter_getAcceleration(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getAcceleration()));
+    return ObjectToValue(&_thisObj->getAcceleration(), false);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getAcceleration, 1);
 
@@ -61,7 +61,7 @@ value hx_ParticleEmitter_getAccelerationVariance(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getAccelerationVariance()));
+    return ObjectToValue(&_thisObj->getAccelerationVariance(), false);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getAccelerationVariance, 1);
 
@@ -151,7 +151,7 @@ value hx_ParticleEmitter_getPosition(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getPosition()));
+    return ObjectToValue(&_thisObj->getPosition(), false);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getPosition, 1);
 
@@ -160,7 +160,7 @@ value hx_ParticleEmitter_getPositionVariance(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getPositionVariance()));
+    return ObjectToValue(&_thisObj->getPositionVariance(), false);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getPositionVariance, 1);
 
@@ -169,7 +169,7 @@ value hx_ParticleEmitter_getRotationAxis(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getRotationAxis()));
+    return ObjectToValue(&_thisObj->getRotationAxis(), false);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getRotationAxis, 1);
 
@@ -178,7 +178,7 @@ value hx_ParticleEmitter_getRotationAxisVariance(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getRotationAxisVariance()));
+    return ObjectToValue(&_thisObj->getRotationAxisVariance(), false);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getRotationAxisVariance, 1);
 
@@ -285,7 +285,7 @@ value hx_ParticleEmitter_getVelocity(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getVelocity()));
+    return ObjectToValue(&_thisObj->getVelocity(), false);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getVelocity, 1);
 
@@ -294,7 +294,7 @@ value hx_ParticleEmitter_getVelocityVariance(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getVelocityVariance()));
+    return ObjectToValue(&_thisObj->getVelocityVariance(), false);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getVelocityVariance, 1);
 

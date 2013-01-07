@@ -2,7 +2,7 @@ package org.gameplay3d;
 
 import haxe.io.BytesData;
 import org.gameplay3d.intern.INativeBinding;
-import org.gameplay3d.util.Utilities;
+import org.gameplay3d.util.PrimitiveArray;
 
 // DECL: class AnimationTarget : public GameplayObject
 interface AnimationTarget implements INativeBinding

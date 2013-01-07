@@ -1,6 +1,7 @@
 package org.gameplay3d.wrapper;
 
 import org.gameplay3d.GameplayObject;
+import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.PhysicsCollisionObject_CollisionListener;
 import org.gameplay3d.PhysicsCollisionObject_CollisionPair;
 import org.gameplay3d.Vector3;
@@ -32,7 +33,7 @@ class PhysicsCollisionObject_CollisionListenerWrapper extends GameplayObject, im
     }
 
     // DECL: virtual void collisionEvent(PhysicsCollisionObject::CollisionListener::EventType type,
-    public function collisionEvent(type:Int, collisionPair:PhysicsCollisionObject_CollisionPair, contactPointA:Vector3, contactPointB:Vector3):Void
+    public function collisionEvent(type:Int, collisionPair:PhysicsCollisionObject_CollisionPair, contactPointA:IVector3, contactPointB:IVector3):Void
     {
         target.collisionEvent(type, collisionPair, contactPointA, contactPointB);
     }

@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.immutable.IVector3;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -47,7 +48,7 @@ class Light extends GameplayObject, implements Ref
     }
 
     // DECL: const Vector3& getColor() const;
-    public function getColor():Vector3
+    public function getColor():IVector3
     {
         return Vector3.wrap(hx_Light_getColor(nativeObject));
     }

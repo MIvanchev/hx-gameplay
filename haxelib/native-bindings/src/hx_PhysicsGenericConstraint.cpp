@@ -23,7 +23,7 @@ value hx_PhysicsGenericConstraint_getTranslationOffsetA(value thisObj)
 {
     PhysicsGenericConstraint *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getTranslationOffsetA()));
+    return ObjectToValue(&_thisObj->getTranslationOffsetA(), false);
 }
 DEFINE_PRIM(hx_PhysicsGenericConstraint_getTranslationOffsetA, 1);
 
@@ -32,7 +32,7 @@ value hx_PhysicsGenericConstraint_getTranslationOffsetB(value thisObj)
 {
     PhysicsGenericConstraint *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getTranslationOffsetB()));
+    return ObjectToValue(&_thisObj->getTranslationOffsetB(), false);
 }
 DEFINE_PRIM(hx_PhysicsGenericConstraint_getTranslationOffsetB, 1);
 

@@ -27,7 +27,7 @@ value hx_Joystick_getInnerRegionSize(value thisObj)
 {
     Joystick *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector2(_thisObj->getInnerRegionSize()));
+    return ObjectToValue(&_thisObj->getInnerRegionSize(), false);
 }
 DEFINE_PRIM(hx_Joystick_getInnerRegionSize, 1);
 
@@ -36,7 +36,7 @@ value hx_Joystick_getOuterRegionSize(value thisObj)
 {
     Joystick *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector2(_thisObj->getOuterRegionSize()));
+    return ObjectToValue(&_thisObj->getOuterRegionSize(), false);
 }
 DEFINE_PRIM(hx_Joystick_getOuterRegionSize, 1);
 
@@ -54,7 +54,7 @@ value hx_Joystick_getValue(value thisObj)
 {
     Joystick *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector2(_thisObj->getValue()));
+    return ObjectToValue(&_thisObj->getValue(), false);
 }
 DEFINE_PRIM(hx_Joystick_getValue, 1);
 

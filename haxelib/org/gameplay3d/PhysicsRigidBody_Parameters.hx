@@ -44,7 +44,9 @@ class PhysicsRigidBody_Parameters extends GameplayObject
     public var linearDamping(get_linearDamping, set_linearDamping):Float;
     public var angularDamping(get_angularDamping, set_angularDamping):Float;
     public var kinematic(get_kinematic, set_kinematic):Bool;
-    public var anisotropicFriction(get_anisotropicFriction, set_anisotropicFriction):Vector3;
+    public var anisotropicFriction(get_anisotropicFriction, never):Vector3;
+    public var linearFactor(get_linearFactor, never):Vector3;
+    public var angularFactor(get_angularFactor, never):Vector3;
 
     /***************************************************************************
      * PROPERTY ACCESSORS                                                      *
@@ -115,9 +117,14 @@ class PhysicsRigidBody_Parameters extends GameplayObject
         return Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get(nativeObject));
     }
 
-    function set_anisotropicFriction(value:Vector3):Vector3
+    function get_linearFactor():Vector3
     {
-        return Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_set(nativeObject, value.native()));
+        return Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_linearFactor_get(nativeObject));
+    }
+
+    function get_angularFactor():Vector3
+    {
+        return Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_angularFactor_get(nativeObject));
     }
 
     /***************************************************************************
@@ -139,11 +146,8 @@ class PhysicsRigidBody_Parameters extends GameplayObject
     static var hx_PhysicsRigidBody_Parameters_property_kinematic_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_kinematic_get", 1);
     static var hx_PhysicsRigidBody_Parameters_property_kinematic_set:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_kinematic_set", 2);
     static var hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get", 1);
-    static var hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_set:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_set", 2);
     static var hx_PhysicsRigidBody_Parameters_property_linearFactor_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_linearFactor_get", 1);
-    static var hx_PhysicsRigidBody_Parameters_property_linearFactor_set:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_linearFactor_set", 2);
     static var hx_PhysicsRigidBody_Parameters_property_angularFactor_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_angularFactor_get", 1);
-    static var hx_PhysicsRigidBody_Parameters_property_angularFactor_set:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_angularFactor_set", 2);
 }
 
 // END

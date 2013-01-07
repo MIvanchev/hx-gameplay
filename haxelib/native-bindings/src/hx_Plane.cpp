@@ -62,7 +62,7 @@ value hx_Plane_getNormal(value thisObj)
 {
     Plane *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getNormal()));
+    return ObjectToValue(&_thisObj->getNormal(), false);
 }
 DEFINE_PRIM(hx_Plane_getNormal, 1);
 

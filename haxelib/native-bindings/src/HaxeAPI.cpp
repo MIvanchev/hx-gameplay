@@ -397,32 +397,32 @@ void FreeReference(value object)
 
 static char *errorMsg = "Reference or object kind expected.";
 
-#define OBJECT_TO_VALUE(type, base_type, kind)                  \
-value ObjectToValue(type *pointer)                              \
-{                                                               \
-    if (pointer == NULL)                                        \
-        return alloc_null();                                    \
-                                                                \
-    base_type *base = static_cast<base_type*>(pointer);         \
-    void *handle = static_cast<void*>(base);                    \
-    const value& result =  alloc_abstract(kind, handle);        \
-                                                                \
-    val_gc(result, &FreeObject<type, base_type>);               \
-                                                                \
-    return result;                                              \
+#define OBJECT_TO_VALUE(type, base_type, kind)                  					\
+value ObjectToValue(const type *pointer)                        					\
+{                                                               					\
+    if (pointer == NULL)                                        					\
+        return alloc_null();                                    					\
+																					\
+    const base_type *base = static_cast<const base_type*>(pointer);         		\
+    const void *handle = static_cast<const void*>(base);                    		\
+    const value& result =  alloc_abstract(kind, const_cast<void*>(handle));			\
+																					\
+    val_gc(result, &FreeObject<type, base_type>);               					\
+																					\
+    return result;                                              					\
 }
 
-#define OBJECT_TO_VALUE_(type, base_type, kind)                 \
-value ObjectToValue(type *pointer, bool dummy)                  \
-{                                                               \
-    if (pointer == NULL)                                        \
-        return alloc_null();                                    \
-                                                                \
-    base_type *base = static_cast<base_type*>(pointer);         \
-    void *handle = static_cast<void*>(base);                    \
-    const value& result =  alloc_abstract(kind, handle);        \
-                                                                \
-    return result;                                              \
+#define OBJECT_TO_VALUE_(type, base_type, kind)                 					\
+value ObjectToValue(const type *pointer, bool dummy)            					\
+{                                                               					\
+    if (pointer == NULL)                                        					\
+        return alloc_null();                                    					\
+																					\
+    const base_type *base = static_cast<const base_type*>(pointer);         		\
+    const void *handle = static_cast<const void*>(base);                    		\
+    const value& result =  alloc_abstract(kind, const_cast<void*>(handle));			\
+																					\
+    return result;                                              					\
 }
 
 #define VALUE_TO_OBJECT(type, base_type)                                                        \

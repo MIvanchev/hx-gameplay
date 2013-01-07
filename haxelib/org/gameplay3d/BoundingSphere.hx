@@ -10,7 +10,7 @@ class BoundingSphere extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var center(get_center, set_center):Vector3;
+    public var center(get_center, never):Vector3;
     public var radius(get_radius, set_radius):Float;
 
     /***************************************************************************
@@ -144,11 +144,6 @@ class BoundingSphere extends GameplayObject
         return Vector3.wrap(hx_BoundingSphere_property_center_get(nativeObject));
     }
 
-    function set_center(value:Vector3):Vector3
-    {
-        return Vector3.wrap(hx_BoundingSphere_property_center_set(nativeObject, value));
-    }
-
     function get_radius():Float
     {
         return hx_BoundingSphere_property_radius_get(nativeObject);
@@ -180,7 +175,6 @@ class BoundingSphere extends GameplayObject
     static var hx_BoundingSphere_set_V3_Flt:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingSphere_set_V3_Flt", 3);
     static var hx_BoundingSphere_transform:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingSphere_transform", 2);
     static var hx_BoundingSphere_property_center_get:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingSphere_property_center_get", 1);
-    static var hx_BoundingSphere_property_center_set:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingSphere_property_center_set", 2);
     static var hx_BoundingSphere_property_radius_get:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingSphere_property_radius_get", 1);
     static var hx_BoundingSphere_property_radius_set:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingSphere_property_radius_set", 2);
 }

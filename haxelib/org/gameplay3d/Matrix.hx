@@ -1,20 +1,33 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
+import org.gameplay3d.util.IMutableNativeArray;
+import org.gameplay3d.util.INativeArray;
+import org.gameplay3d.util.PrimitiveArray;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
-// DECL: class Matrix : public GameplayObject
-class Matrix extends GameplayObject
+// DECL: class Matrix
+class Matrix extends GameplayObject, implements IMatrix
 {
     /***************************************************************************
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var m(get_m, set_m):Array<Float>;
+    public var m_immutable(default, null):INativeArray<Float>;
+    public var m(default, null):NativeArrayFloat;
 
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
+
+    function new(nativeObject, nativeObjectInitializerParams = null)
+    {
+        super(nativeObject, nativeObjectInitializerParams);
+        m = new MatrixEntries(hx_Matrix_property_m_get(nativeObject));
+        m_immutable = m;
+    }
 
     // DECL: Matrix();
     public static function make():Matrix
@@ -534,14 +547,14 @@ class Matrix extends GameplayObject
      * PROPERTY ACCESSORS                                                      *
      **************************************************************************/
 
-    function get_m():Array<Float>
+    function get_m_immutable():INativeArray<Float>
     {
-        return hx_Matrix_property_m_get(nativeObject);
+        return null;
     }
 
-    function set_m(value:Array<Float>):Array<Float>
+    function get_m():NativeArrayFloat
     {
-        return hx_Matrix_property_m_set(nativeObject, value);
+        return null;
     }
 
     /***************************************************************************
@@ -630,7 +643,19 @@ class Matrix extends GameplayObject
     static var hx_Matrix_transpose_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_transpose_Mat", 2);
     static var hx_Matrix_static_zero:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_zero", 0);
     static var hx_Matrix_property_m_get:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_property_m_get", 1);
-    static var hx_Matrix_property_m_set:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_property_m_set", 2);
 }
 
 // END
+
+private class MatrixEntries extends PrimitiveArray<Float>
+{
+    public function new(nativeObject)
+    {
+        super(
+            nativeObject,
+            PrimitiveArray.getNativeArrayElementFloat,
+            PrimitiveArray.setNativeArrayElementFloat,
+            16
+            );
+    }
+}

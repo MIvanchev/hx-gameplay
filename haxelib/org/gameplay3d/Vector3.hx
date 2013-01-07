@@ -1,9 +1,11 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
-class Vector3 extends GameplayObject
+class Vector3 extends GameplayObject, implements IVector3
 {
     /***************************************************************************
      * PROPERTIES                                                              *
@@ -24,13 +26,13 @@ class Vector3 extends GameplayObject
     }
 
     // DECL: Vector3(const Vector3& copy);
-    public static function make_V3(copy:Vector3):Vector3
+    public static function make_V3(copy:IVector3):Vector3
     {
         return new Vector3(constructNativeObject_V3(copy));
     }
 
     // DECL: Vector3(const Vector3& p1, const Vector3& p2);
-    public static function make_V3X2(p1:Vector3, p2:Vector3):Vector3
+    public static function make_V3X2(p1:IVector3, p2:IVector3):Vector3
     {
         return new Vector3(constructNativeObject_V3X2(p1, p2));
     }
@@ -48,67 +50,67 @@ class Vector3 extends GameplayObject
     }
 
     // DECL: static void add(const Vector3& v1, const Vector3& v2, Vector3* dst);
-    public static function add_V3X3(v1:Vector3, v2:Vector3, dst:Vector3):Void
+    public static function add_V3X3(v1:IVector3, v2:IVector3, dst:Vector3):Void
     {
         hx_Vector3_static_add(v1.native(), v2.native(), dst.native());
     }
 
     // DECL: void add(const Vector3& v);
-    public function add_V3(v:Vector3):Void
+    public function add_V3(v:IVector3):Void
     {
         hx_Vector3_add(nativeObject, v.native());
     }
 
     // DECL: static float angle(const Vector3& v1, const Vector3& v2);
-    public static function angle(v1:Vector3, v2:Vector3):Float
+    public static function angle(v1:IVector3, v2:IVector3):Float
     {
         return hx_Vector3_static_angle(v1.native(), v2.native());
     }
 
     // DECL: static void clamp(const Vector3& v, const Vector3& min, const Vector3& max, Vector3* dst);
-    public static function clamp_V3X4(v:Vector3, min:Vector3, max:Vector3, dst:Vector3):Void
+    public static function clamp_V3X4(v:IVector3, min:IVector3, max:IVector3, dst:Vector3):Void
     {
         hx_Vector3_static_clamp(v.native(), min.native(), max.native(), dst.native());
     }
 
     // DECL: void clamp(const Vector3& min, const Vector3& max);
-    public function clamp_V3X2(min:Vector3, max:Vector3):Void
+    public function clamp_V3X2(min:IVector3, max:IVector3):Void
     {
         hx_Vector3_clamp(nativeObject, min.native(), max.native());
     }
 
     // DECL: static void cross(const Vector3& v1, const Vector3& v2, Vector3* dst);
-    public static function cross_V3X3(v1:Vector3, v2:Vector3, dst:Vector3):Void
+    public static function cross_V3X3(v1:IVector3, v2:IVector3, dst:Vector3):Void
     {
         hx_Vector3_static_cross(v1.native(), v2.native(), dst.native());
     }
 
     // DECL: void cross(const Vector3& v);
-    public function cross_V3(v:Vector3):Void
+    public function cross_V3(v:IVector3):Void
     {
         hx_Vector3_cross(nativeObject, v.native());
     }
 
     // DECL: float distance(const Vector3& v) const;
-    public function distance(v:Vector3):Float
+    public function distance(v:IVector3):Float
     {
         return hx_Vector3_distance(nativeObject, v.native());
     }
 
     // DECL: float distanceSquared(const Vector3& v) const;
-    public function distanceSquared(v:Vector3):Float
+    public function distanceSquared(v:IVector3):Float
     {
         return hx_Vector3_distanceSquared(nativeObject, v.native());
     }
 
     // DECL: float dot(const Vector3& v) const;
-    public function dot_V3(v:Vector3):Float
+    public function dot_V3(v:IVector3):Float
     {
         return hx_Vector3_dot(nativeObject, v.native());
     }
 
     // DECL: static float dot(const Vector3& v1, const Vector3& v2);
-    public static function dot_V3X2(v1:Vector3, v2:Vector3):Float
+    public static function dot_V3X2(v1:IVector3, v2:IVector3):Float
     {
         return hx_Vector3_static_dot(v1.native(), v2.native());
     }
@@ -162,7 +164,7 @@ class Vector3 extends GameplayObject
     }
 
     // DECL: static const Vector3& one();
-    public static function one():Vector3
+    public static function one():IVector3
     {
         return Vector3.wrap(hx_Vector3_static_one());
     }
@@ -174,13 +176,13 @@ class Vector3 extends GameplayObject
     }
 
     // DECL: void set(const Vector3& p1, const Vector3& p2);
-    public function set_V3X2(p1:Vector3, p2:Vector3):Void
+    public function set_V3X2(p1:IVector3, p2:IVector3):Void
     {
         hx_Vector3_set_V3X2(nativeObject, p1.native(), p2.native());
     }
 
     // DECL: void set(const Vector3& v);
-    public function set_V3(v:Vector3):Void
+    public function set_V3(v:IVector3):Void
     {
         hx_Vector3_set_V3(nativeObject, v.native());
     }
@@ -198,43 +200,43 @@ class Vector3 extends GameplayObject
     }
 
     // DECL: void smooth(const Vector3& target, float elapsedTime, float responseTime);
-    public function smooth(target:Vector3, elapsedTime:Float, responseTime:Float):Void
+    public function smooth(target:IVector3, elapsedTime:Float, responseTime:Float):Void
     {
         hx_Vector3_smooth(nativeObject, target.native(), elapsedTime, responseTime);
     }
 
     // DECL: static void subtract(const Vector3& v1, const Vector3& v2, Vector3* dst);
-    public static function subtract_V3X3(v1:Vector3, v2:Vector3, dst:Vector3):Void
+    public static function subtract_V3X3(v1:IVector3, v2:IVector3, dst:Vector3):Void
     {
         hx_Vector3_static_subtract(v1.native(), v2.native(), dst.native());
     }
 
     // DECL: void subtract(const Vector3& v);
-    public function subtract_V3(v:Vector3):Void
+    public function subtract_V3(v:IVector3):Void
     {
         hx_Vector3_subtract(nativeObject, v.native());
     }
 
     // DECL: static const Vector3& unitX();
-    public static function unitX():Vector3
+    public static function unitX():IVector3
     {
         return Vector3.wrap(hx_Vector3_static_unitX());
     }
 
     // DECL: static const Vector3& unitY();
-    public static function unitY():Vector3
+    public static function unitY():IVector3
     {
         return Vector3.wrap(hx_Vector3_static_unitY());
     }
 
     // DECL: static const Vector3& unitZ();
-    public static function unitZ():Vector3
+    public static function unitZ():IVector3
     {
         return Vector3.wrap(hx_Vector3_static_unitZ());
     }
 
     // DECL: static const Vector3& zero();
-    public static function zero():Vector3
+    public static function zero():IVector3
     {
         return Vector3.wrap(hx_Vector3_static_zero());
     }
@@ -248,12 +250,12 @@ class Vector3 extends GameplayObject
         return hx_Vector3_Construct();
     }
 
-    static function constructNativeObject_V3(copy:Vector3):Dynamic
+    static function constructNativeObject_V3(copy:IVector3):Dynamic
     {
         return hx_Vector3_Construct_V3(copy.native());
     }
 
-    static function constructNativeObject_V3X2(p1:Vector3, p2:Vector3):Dynamic
+    static function constructNativeObject_V3X2(p1:IVector3, p2:IVector3):Dynamic
     {
         return hx_Vector3_Construct_V3X2(p1.native(), p2.native());
     }

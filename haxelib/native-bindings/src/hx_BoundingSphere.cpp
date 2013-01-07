@@ -169,20 +169,9 @@ value hx_BoundingSphere_property_center_get(value thisObj)
 {
     BoundingSphere *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->center));
+    return ObjectToValue(&_thisObj->center, false);
 }
 DEFINE_PRIM(hx_BoundingSphere_property_center_get, 1);
-
-value hx_BoundingSphere_property_center_set(value thisObj, value _value)
-{
-    BoundingSphere *_thisObj;
-    Vector3 *_val;
-    ValueToObject(thisObj, _thisObj);
-    ValueToObject(_value, _val);
-    _thisObj->center.set(*_val);
-    return _value;
-}
-DEFINE_PRIM(hx_BoundingSphere_property_center_set, 2);
 
 value hx_BoundingSphere_property_radius_get(value thisObj)
 {

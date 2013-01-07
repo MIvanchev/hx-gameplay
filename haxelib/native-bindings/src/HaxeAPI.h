@@ -95,7 +95,7 @@ bool ValueToHandle(value thisObj, T& _value)
  * NATIVE ARRAYS                                                               *
  ******************************************************************************/
 
-template<typename TYPE>
+ template<typename TYPE>
 void ValueToArray(value _value, TYPE*& _array)
 {
     if (val_is_null(_value))
@@ -213,12 +213,12 @@ void FreeObject(value object)
 }
 
 #define CONVERSION_PROTOTYPES(type)                        \
-    value ObjectToValue(type *pointer);                    \
-    value ObjectToValue(type *pointer, bool dummy);        \
+    value ObjectToValue(const type *pointer);                    \
+    value ObjectToValue(const type *pointer, bool dummy);        \
     void ValueToObject(value _value, type *&pointer);    \
 
 #define CONVERSION_PROTOTYPES_NO_FINALIZER(type)        \
-    value ObjectToValue(type *pointer, bool dummy);        \
+    value ObjectToValue(const type *pointer, bool dummy);        \
     void ValueToObject(value _value, type *&pointer);
 
 #define CONVERSION_PROTOTYPES_REF(type)    \

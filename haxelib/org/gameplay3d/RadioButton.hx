@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector2;
+
 using dk.bluewolf.gameplay.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -29,7 +31,7 @@ class RadioButton extends Button
     }
 
     // DECL: const Vector2& getImageSize() const;
-    public function getImageSize():Vector2
+    public function getImageSize():IVector2
     {
         return Vector2.wrap(hx_RadioButton_getImageSize(nativeObject));
     }

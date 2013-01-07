@@ -3,7 +3,7 @@ package org.gameplay3d.util;
 /**
  * TODO
  */
-interface IAssignableNativeArray<T> implements INativeArray<T>
+interface IMutableNativeArray<T> implements INativeArray<T>
 {
     /***************************************************************************
      * MEMBERS                                                                 *

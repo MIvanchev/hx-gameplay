@@ -3,7 +3,7 @@ package org.gameplay3d;
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
-// DECL: class Element : public GameplayObject
+// DECL: class Element
 class VertexFormat_Element extends GameplayObject
 {
     /***************************************************************************

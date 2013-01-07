@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
-import org.gameplay3d.impl.Transform_ListenerImpl;
+import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -49,7 +50,7 @@ class AudioSource extends Transform_ListenerImpl, implements Ref
     }
 
     // DECL: const Vector3& getVelocity() const;
-    public function getVelocity():Vector3
+    public function getVelocity():IVector3
     {
         return Vector3.wrap(hx_AudioSource_getVelocity(nativeObject));
     }

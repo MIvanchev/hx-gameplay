@@ -240,7 +240,7 @@ DEFINE_PRIM(hx_Vector3_normalize_V3, 2);
 // DECL: static const Vector3& one();
 value hx_Vector3_static_one()
 {
-    return ObjectToValue(new Vector3(Vector3::one()));
+    return ObjectToValue(&Vector3::one(), false);
 }
 DEFINE_PRIM(hx_Vector3_static_one, 0);
 
@@ -344,21 +344,21 @@ DEFINE_PRIM(hx_Vector3_static_unitX, 0);
 // DECL: static const Vector3& unitY();
 value hx_Vector3_static_unitY()
 {
-    return ObjectToValue(new Vector3(Vector3::unitY()));
+    return ObjectToValue(&Vector3::unitY(), false);
 }
 DEFINE_PRIM(hx_Vector3_static_unitY, 0);
 
 // DECL: static const Vector3& unitZ();
 value hx_Vector3_static_unitZ()
 {
-    return ObjectToValue(new Vector3(Vector3::unitZ()));
+    return ObjectToValue(&Vector3::unitZ(), false);
 }
 DEFINE_PRIM(hx_Vector3_static_unitZ, 0);
 
 // DECL: static const Vector3& zero();
 value hx_Vector3_static_zero()
 {
-    return ObjectToValue(new Vector3(Vector3::zero()));
+    return ObjectToValue(&Vector3::zero(), false);
 }
 DEFINE_PRIM(hx_Vector3_static_zero, 0);
 

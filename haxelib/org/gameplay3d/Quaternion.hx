@@ -1,10 +1,12 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IQuaternion;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
-// DECL: class Quaternion : public GameplayObject
-class Quaternion extends GameplayObject
+// DECL: class Quaternion
+class Quaternion extends GameplayObject, implements IQuaternion
 {
     /***************************************************************************
      * PROPERTIES                                                              *

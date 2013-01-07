@@ -3,7 +3,7 @@ package org.gameplay3d;
 import haxe.io.BytesData;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.util.Handle;
-import org.gameplay3d.util.Utilities;
+import org.gameplay3d.util.PrimitiveArray;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;

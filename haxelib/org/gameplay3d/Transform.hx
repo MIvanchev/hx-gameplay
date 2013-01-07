@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
-import org.gameplay3d.impl.AnimationTarget_ScriptTarget;
+import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.impl.AnimationTarget_ScriptTarget;
 import org.gameplay3d.wrapper.Transform_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -165,7 +166,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: const Vector3& getScale() const;
-    public function getScale():Vector3
+    public function getScale():IVector3
     {
         return Vector3.wrap(hx_Transform_getScale(nativeObject));
     }
@@ -195,7 +196,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: const Vector3& getTranslation() const;
-    public function getTranslation():Vector3
+    public function getTranslation():IVector3
     {
         return Vector3.wrap(hx_Transform_getTranslation(nativeObject));
     }

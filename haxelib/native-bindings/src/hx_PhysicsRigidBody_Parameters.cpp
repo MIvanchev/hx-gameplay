@@ -150,58 +150,25 @@ value hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get(value this
 {
     PhysicsRigidBody::Parameters *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->anisotropicFriction));
+    return ObjectToValue(&_thisObj->anisotropicFriction, false);
 }
 DEFINE_PRIM(hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get, 1);
-
-value hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_set(value thisObj, value _value)
-{
-    PhysicsRigidBody::Parameters *_thisObj;
-    Vector3 *vec;
-    ValueToObject(thisObj, _thisObj);
-    ValueToObject(_value, vec);
-    _thisObj->anisotropicFriction.set(*vec);
-    return _value;
-}
-DEFINE_PRIM(hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_set, 2);
 
 value hx_PhysicsRigidBody_Parameters_property_linearFactor_get(value thisObj)
 {
     PhysicsRigidBody::Parameters *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->linearFactor));
+    return ObjectToValue(&_thisObj->linearFactor, false);
 }
 DEFINE_PRIM(hx_PhysicsRigidBody_Parameters_property_linearFactor_get, 1);
-
-value hx_PhysicsRigidBody_Parameters_property_linearFactor_set(value thisObj, value _value)
-{
-    PhysicsRigidBody::Parameters *_thisObj;
-    Vector3 *vec;
-    ValueToObject(thisObj, _thisObj);
-    ValueToObject(_value, vec);
-    _thisObj->linearFactor.set(*vec);
-    return _value;
-}
-DEFINE_PRIM(hx_PhysicsRigidBody_Parameters_property_linearFactor_set, 2);
 
 value hx_PhysicsRigidBody_Parameters_property_angularFactor_get(value thisObj)
 {
     PhysicsRigidBody::Parameters *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->angularFactor));
+    return ObjectToValue(&_thisObj->angularFactor, false);
 }
 DEFINE_PRIM(hx_PhysicsRigidBody_Parameters_property_angularFactor_get, 1);
-
-value hx_PhysicsRigidBody_Parameters_property_angularFactor_set(value thisObj, value _value)
-{
-    PhysicsRigidBody::Parameters *_thisObj;
-    Vector3 *vec;
-    ValueToObject(thisObj, _thisObj);
-    ValueToObject(_value, vec);
-    _thisObj->angularFactor.set(*vec);
-    return _value;
-}
-DEFINE_PRIM(hx_PhysicsRigidBody_Parameters_property_angularFactor_set, 2);
 
 // END
 //

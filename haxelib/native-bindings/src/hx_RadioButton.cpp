@@ -36,7 +36,7 @@ value hx_RadioButton_getImageSize(value thisObj)
 {
     RadioButton *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector2(_thisObj->getImageSize()));
+    return ObjectToValue(&_thisObj->getImageSize(), false);
 }
 DEFINE_PRIM(hx_RadioButton_getImageSize, 1);
 

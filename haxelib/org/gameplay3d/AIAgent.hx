@@ -1,6 +1,6 @@
 package org.gameplay3d;
 
-import org.gameplay3d.impl.ScriptTargetImpl;
+import org.gameplay3d.intern.impl.ScriptTargetImpl;
 import org.gameplay3d.wrapper.AIAgent_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;

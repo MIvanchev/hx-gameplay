@@ -5,7 +5,7 @@ import org.gameplay3d.intern.ConversionTools;
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
-// DECL: class VertexFormat : public GameplayObject
+// DECL: class VertexFormat
 class VertexFormat extends GameplayObject
 {
     /***************************************************************************

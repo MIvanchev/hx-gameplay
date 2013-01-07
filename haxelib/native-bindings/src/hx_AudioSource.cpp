@@ -58,7 +58,7 @@ value hx_AudioSource_getVelocity(value thisObj)
 {
     AudioSource *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getVelocity()));
+    return ObjectToValue(&_thisObj->getVelocity(), false);
 }
 DEFINE_PRIM(hx_AudioSource_getVelocity, 1);
 

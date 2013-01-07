@@ -77,7 +77,7 @@ value hx_Light_getColor(value thisObj)
 {
     Light *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getColor()));
+    return ObjectToValue(&_thisObj->getColor(), false);
 }
 DEFINE_PRIM(hx_Light_getColor, 1);
 

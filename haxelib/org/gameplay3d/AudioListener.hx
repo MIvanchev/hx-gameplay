@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
-import org.gameplay3d.impl.Transform_ListenerImpl;
+import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -37,25 +38,25 @@ class AudioListener extends Transform_ListenerImpl
     }
 
     // DECL: const Vector3& getOrientationForward() const;
-    public function getOrientationForward():Vector3
+    public function getOrientationForward():IVector3
     {
         return Vector3.wrap(hx_AudioListener_getOrientationForward(nativeObject));
     }
 
     // DECL: const Vector3& getOrientationUp() const;
-    public function getOrientationUp():Vector3
+    public function getOrientationUp():IVector3
     {
         return Vector3.wrap(hx_AudioListener_getOrientationUp(nativeObject));
     }
 
     // DECL: const Vector3& getPosition() const;
-    public function getPosition():Vector3
+    public function getPosition():IVector3
     {
         return Vector3.wrap(hx_AudioListener_getPosition(nativeObject));
     }
 
     // DECL: const Vector3& getVelocity() const;
-    public function getVelocity():Vector3
+    public function getVelocity():IVector3
     {
         return Vector3.wrap(hx_AudioListener_getVelocity(nativeObject));
     }

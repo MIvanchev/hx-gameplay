@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -55,7 +57,7 @@ class Plane extends GameplayObject
     }
 
     // DECL: const Vector3& getNormal() const;
-    public function getNormal():Vector3
+    public function getNormal():IVector3
     {
         return Vector3.wrap(hx_Plane_getNormal(nativeObject));
     }

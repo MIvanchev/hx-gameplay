@@ -1,10 +1,12 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector2;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
-// DECL: class Vector2 : public GameplayObject
-class Vector2 extends GameplayObject
+// DECL: class Vector2
+class Vector2 extends GameplayObject, implements IVector2
 {
     /***************************************************************************
      * PROPERTIES                                                              *
@@ -24,13 +26,13 @@ class Vector2 extends GameplayObject
     }
 
     // DECL: Vector2(const Vector2& copy);
-    public static function make_V2(copy:Vector2):Vector2
+    public static function make_V2(copy:IVector2):Vector2
     {
         return new Vector2(constructNativeObject_V2(copy));
     }
 
     // DECL: Vector2(const Vector2& p1, const Vector2& p2);
-    public static function make_V2X2(p1:Vector2, p2:Vector2):Vector2
+    public static function make_V2X2(p1:IVector2, p2:IVector2):Vector2
     {
         return new Vector2(constructNativeObject_V2X2(p1, p2));
     }
@@ -48,55 +50,55 @@ class Vector2 extends GameplayObject
     }
 
     // DECL: static void add(const Vector2& v1, const Vector2& v2, Vector2* dst);
-    public static function add_V2X3(v1:Vector2, v2:Vector2, dst:Vector2):Void
+    public static function add_V2X3(v1:IVector2, v2:IVector2, dst:Vector2):Void
     {
         hx_Vector2_static_add(v1.native(), v2.native(), dst.native());
     }
 
     // DECL: void add(const Vector2& v);
-    public function add_V2(v:Vector2):Void
+    public function add_V2(v:IVector2):Void
     {
         hx_Vector2_add(nativeObject, v.native());
     }
 
     // DECL: static float angle(const Vector2& v1, const Vector2& v2);
-    public static function angle(v1:Vector2, v2:Vector2):Float
+    public static function angle(v1:IVector2, v2:IVector2):Float
     {
         return hx_Vector2_static_angle(v1.native(), v2.native());
     }
 
     // DECL: static void clamp(const Vector2& v, const Vector2& min, const Vector2& max, Vector2* dst);
-    public static function clamp_V2X4(v:Vector2, min:Vector2, max:Vector2, dst:Vector2):Void
+    public static function clamp_V2X4(v:IVector2, min:IVector2, max:IVector2, dst:Vector2):Void
     {
         hx_Vector2_static_clamp(v.native(), min.native(), max.native(), dst.native());
     }
 
     // DECL: void clamp(const Vector2& min, const Vector2& max);
-    public function clamp_V2X2(min:Vector2, max:Vector2):Void
+    public function clamp_V2X2(min:IVector2, max:IVector2):Void
     {
         hx_Vector2_clamp(nativeObject, min.native(), max.native());
     }
 
     // DECL: float distance(const Vector2& v) const;
-    public function distance(v:Vector2):Float
+    public function distance(v:IVector2):Float
     {
         return hx_Vector2_distance(nativeObject, v.native());
     }
 
     // DECL: float distanceSquared(const Vector2& v) const;
-    public function distanceSquared(v:Vector2):Float
+    public function distanceSquared(v:IVector2):Float
     {
         return hx_Vector2_distanceSquared(nativeObject, v.native());
     }
 
     // DECL: float dot(const Vector2& v) const;
-    public function dot_V2(v:Vector2):Float
+    public function dot_V2(v:IVector2):Float
     {
         return hx_Vector2_dot(nativeObject, v.native());
     }
 
     // DECL: static float dot(const Vector2& v1, const Vector2& v2);
-    public static function dot_V2X2(v1:Vector2, v2:Vector2):Float
+    public static function dot_V2X2(v1:IVector2, v2:IVector2):Float
     {
         return hx_Vector2_static_dot(v1.native(), v2.native());
     }
@@ -144,19 +146,19 @@ class Vector2 extends GameplayObject
     }
 
     // DECL: static const Vector2& one();
-    public static function one():Vector2
+    public static function one():IVector2
     {
         return Vector2.wrap(hx_Vector2_static_one());
     }
 
     // DECL: void rotate(const Vector2& point, float angle);
-    public function rotate(point:Vector2, angle:Float):Void
+    public function rotate(point:IVector2, angle:Float):Void
     {
         hx_Vector2_rotate(nativeObject, point.native(), angle);
     }
 
     // DECL: void scale(const Vector2& scale);
-    public function scale_V2(scale:Vector2):Void
+    public function scale_V2(scale:IVector2):Void
     {
         hx_Vector2_scale_V2(nativeObject, scale.native());
     }
@@ -168,13 +170,13 @@ class Vector2 extends GameplayObject
     }
 
     // DECL: void set(const Vector2& p1, const Vector2& p2);
-    public function set_V2X2(p1:Vector2, p2:Vector2):Void
+    public function set_V2X2(p1:IVector2, p2:IVector2):Void
     {
         hx_Vector2_set_V2X2(nativeObject, p1.native(), p2.native());
     }
 
     // DECL: void set(const Vector2& v);
-    public function set_V2(v:Vector2):Void
+    public function set_V2(v:IVector2):Void
     {
         hx_Vector2_set_V2(nativeObject, v.native());
     }
@@ -192,37 +194,37 @@ class Vector2 extends GameplayObject
     }
 
     // DECL: void smooth(const Vector2& target, float elapsedTime, float responseTime);
-    public function smooth(target:Vector2, elapsedTime:Float, responseTime:Float):Void
+    public function smooth(target:IVector2, elapsedTime:Float, responseTime:Float):Void
     {
         hx_Vector2_smooth(nativeObject, target.native(), elapsedTime, responseTime);
     }
 
     // DECL: static void subtract(const Vector2& v1, const Vector2& v2, Vector2* dst);
-    public static function subtract_V2X3(v1:Vector2, v2:Vector2, dst:Vector2):Void
+    public static function subtract_V2X3(v1:IVector2, v2:IVector2, dst:Vector2):Void
     {
         hx_Vector2_static_subtract(v1.native(), v2.native(), dst.native());
     }
 
     // DECL: void subtract(const Vector2& v);
-    public function subtract_V2(v:Vector2):Void
+    public function subtract_V2(v:IVector2):Void
     {
         hx_Vector2_subtract(nativeObject, v.native());
     }
 
     // DECL: static const Vector2& unitX();
-    public static function unitX():Vector2
+    public static function unitX():IVector2
     {
         return Vector2.wrap(hx_Vector2_static_unitX());
     }
 
     // DECL: static const Vector2& unitY();
-    public static function unitY():Vector2
+    public static function unitY():IVector2
     {
         return Vector2.wrap(hx_Vector2_static_unitY());
     }
 
     // DECL: static const Vector2& zero();
-    public static function zero():Vector2
+    public static function zero():IVector2
     {
         return Vector2.wrap(hx_Vector2_static_zero());
     }
@@ -238,13 +240,13 @@ class Vector2 extends GameplayObject
     }
 
     // DECL: Vector2(const Vector2& copy);
-    static function constructNativeObject_V2(copy:Vector2):Dynamic
+    static function constructNativeObject_V2(copy:IVector2):Dynamic
     {
         return hx_Vector2_Construct_V2(copy.native());
     }
 
     // DECL: Vector2(const Vector2& p1, const Vector2& p2);
-    static function constructNativeObject_V2X2(p1:Vector2, p2:Vector2):Dynamic
+    static function constructNativeObject_V2X2(p1:IVector2, p2:IVector2):Dynamic
     {
         return hx_Vector2_Construct_V2X2(p1.native(), p2.native());
     }

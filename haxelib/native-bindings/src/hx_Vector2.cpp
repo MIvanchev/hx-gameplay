@@ -209,7 +209,7 @@ DEFINE_PRIM(hx_Vector2_normalize_V2, 2);
 // DECL: static const Vector2& one();
 value hx_Vector2_static_one()
 {
-    return ObjectToValue(new Vector2(Vector2::one()));
+    return ObjectToValue(&Vector2::one(), false);
 }
 DEFINE_PRIM(hx_Vector2_static_one, 0);
 
@@ -326,21 +326,21 @@ DEFINE_PRIM(hx_Vector2_subtract, 2);
 // DECL: static const Vector2& unitX();
 value hx_Vector2_static_unitX()
 {
-    return ObjectToValue(new Vector2(Vector2::unitX()));
+    return ObjectToValue(&Vector2::unitX(), false);
 }
 DEFINE_PRIM(hx_Vector2_static_unitX, 0);
 
 // DECL: static const Vector2& unitY();
 value hx_Vector2_static_unitY()
 {
-    return ObjectToValue(new Vector2(Vector2::unitY()));
+    return ObjectToValue(&Vector2::unitY(), false);
 }
 DEFINE_PRIM(hx_Vector2_static_unitY, 0);
 
 // DECL: static const Vector2& zero();
 value hx_Vector2_static_zero()
 {
-    return ObjectToValue(new Vector2(Vector2::zero()));
+    return ObjectToValue(&Vector2::zero(), false);
 }
 DEFINE_PRIM(hx_Vector2_static_zero, 0);
 

@@ -1,4 +1,4 @@
-package org.gameplay3d.impl;
+package org.gameplay3d.intern.impl;
 
 import org.gameplay3d.GameplayObject;
 import org.gameplay3d.ScriptTarget;

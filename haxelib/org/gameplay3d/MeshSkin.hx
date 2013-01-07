@@ -1,6 +1,6 @@
 package org.gameplay3d;
 
-import org.gameplay3d.impl.Transform_ListenerImpl;
+import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.ConversionTools;
 
 using org.gameplay3d.intern.NativeBinding;

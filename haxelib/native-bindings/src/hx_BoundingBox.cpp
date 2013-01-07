@@ -243,39 +243,17 @@ value hx_BoundingBox_property_min_get(value thisObj)
 {
     BoundingBox *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->min));
+    return ObjectToValue(&_thisObj->min, false);
 }
 DEFINE_PRIM(hx_BoundingBox_property_min_get, 1);
-
-value hx_BoundingBox_property_min_set(value thisObj, value _value)
-{
-    BoundingBox *_thisObj;
-    Vector3 *_val;
-    ValueToObject(thisObj, _thisObj);
-    ValueToObject(_value, _val);
-    _thisObj->min.set(*_val);
-    return _value;
-}
-DEFINE_PRIM(hx_BoundingBox_property_min_set, 2);
 
 value hx_BoundingBox_property_max_get(value thisObj)
 {
     BoundingBox *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->max));
+    return ObjectToValue(&_thisObj->max, false);
 }
 DEFINE_PRIM(hx_BoundingBox_property_max_get, 1);
-
-value hx_BoundingBox_property_max_set(value thisObj, value _value)
-{
-    BoundingBox *_thisObj;
-    Vector3 *_val;
-    ValueToObject(thisObj, _thisObj);
-    ValueToObject(_value, _val);
-    _thisObj->max.set(*_val);
-    return _value;
-}
-DEFINE_PRIM(hx_BoundingBox_property_max_set, 2);
 
 // END
 //

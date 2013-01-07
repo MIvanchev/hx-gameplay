@@ -1,6 +1,6 @@
 package org.gameplay3d;
 
-import org.gameplay3d.impl.AnimationTarget_ScriptTarget;
+import org.gameplay3d.intern.impl.AnimationTarget_ScriptTarget;
 import org.gameplay3d.Theme_SideRegions;
 import org.gameplay3d.wrapper.Control_ListenerWrapper;
 

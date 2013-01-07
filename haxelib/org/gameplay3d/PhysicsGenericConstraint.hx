@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.immutable.IVector3;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -23,13 +24,13 @@ class PhysicsGenericConstraint extends PhysicsConstraint
     }
 
     // DECL: inline const Vector3& getTranslationOffsetA() const;
-    public function getTranslationOffsetA():Vector3
+    public function getTranslationOffsetA():IVector3
     {
         return Vector3.wrap(hx_PhysicsGenericConstraint_getTranslationOffsetA(nativeObject));
     }
 
     // DECL: inline const Vector3& getTranslationOffsetB() const;
-    public function getTranslationOffsetB():Vector3
+    public function getTranslationOffsetB():IVector3
     {
         return Vector3.wrap(hx_PhysicsGenericConstraint_getTranslationOffsetB(nativeObject));
     }
