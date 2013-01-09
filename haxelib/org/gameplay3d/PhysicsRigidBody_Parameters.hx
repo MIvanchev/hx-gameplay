@@ -9,8 +9,33 @@ using org.gameplay3d.GameplayObject;
 class PhysicsRigidBody_Parameters extends GameplayObject
 {
     /***************************************************************************
+     * PROPERTIES                                                              *
+     **************************************************************************/
+
+    public var mass(get_mass, set_mass):Float;
+    public var friction(get_friction, set_friction):Float;
+    public var restitution(get_restitution, set_restitution):Float;
+    public var linearDamping(get_linearDamping, set_linearDamping):Float;
+    public var angularDamping(get_angularDamping, set_angularDamping):Float;
+    public var kinematic(get_kinematic, set_kinematic):Bool;
+    public var anisotropicFriction(default, null):Vector3;
+    public var linearFactor(default, null):Vector3;
+    public var angularFactor(default, null):Vector3;
+
+    /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        anisotropicFriction = Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get(nativeObject));
+        linearFactor = Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_linearFactor_get(nativeObject));
+        angularFactor = Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_angularFactor_get(nativeObject));
+    }
 
     // DECL: PhysicsRigidBody_Parameters();
     public static function make():PhysicsRigidBody_Parameters
@@ -35,20 +60,6 @@ class PhysicsRigidBody_Parameters extends GameplayObject
     {
         return hx_PhysicsRigidBody_Parameters_Construct_FltX5_Bool_V3X3(mass, friction, restitution, linearDamping, angularDamping, kinematic, anisotropicFiltering);
     }
-
-    /***************************************************************************
-     * PROPERTIES                                                              *
-     **************************************************************************/
-
-    public var mass(get_mass, set_mass):Float;
-    public var friction(get_friction, set_friction):Float;
-    public var restitution(get_restitution, set_restitution):Float;
-    public var linearDamping(get_linearDamping, set_linearDamping):Float;
-    public var angularDamping(get_angularDamping, set_angularDamping):Float;
-    public var kinematic(get_kinematic, set_kinematic):Bool;
-    public var anisotropicFriction(get_anisotropicFriction, null):Vector3;
-    public var linearFactor(get_linearFactor, null):Vector3;
-    public var angularFactor(get_angularFactor, null):Vector3;
 
     /***************************************************************************
      * PROPERTY ACCESSORS                                                      *
@@ -112,21 +123,6 @@ class PhysicsRigidBody_Parameters extends GameplayObject
     function set_kinematic(value:Bool):Bool
     {
         return hx_PhysicsRigidBody_Parameters_property_kinematic_set(nativeObject, value);
-    }
-
-    function get_anisotropicFriction():Vector3
-    {
-        return Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get(nativeObject));
-    }
-
-    function get_linearFactor():Vector3
-    {
-        return Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_linearFactor_get(nativeObject));
-    }
-
-    function get_angularFactor():Vector3
-    {
-        return Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_angularFactor_get(nativeObject));
     }
 
     /***************************************************************************

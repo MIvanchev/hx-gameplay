@@ -18,17 +18,6 @@ value hx_PhysicsController_HitResult_property_object_get(value thisObj)
 }
 DEFINE_PRIM(hx_PhysicsController_HitResult_property_object_get, 1);
 
-value hx_PhysicsController_HitResult_property_object_set(value thisObj, value _value)
-{
-    PhysicsController::HitResult *_thisObj;
-    PhysicsCollisionObject *object;
-    ValueToObject(thisObj, _thisObj);
-    ValueToObject(_value, object);
-    _thisObj->object = object;
-    return _value;
-}
-DEFINE_PRIM(hx_PhysicsController_HitResult_property_object_set, 2);
-
 value hx_PhysicsController_HitResult_property_point_get(value thisObj)
 {
     PhysicsController::HitResult *_thisObj;

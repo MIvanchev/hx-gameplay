@@ -9,8 +9,28 @@ using org.gameplay3d.GameplayObject;
 class PhysicsController_HitResult extends GameplayObject
 {
     /***************************************************************************
+     * PROPERTIES                                                              *
+     **************************************************************************/
+
+    public var object(default, null):PhysicsCollisionObject;
+    public var point(default, null):Vector3;
+    public var fraction(get_fraction, set_fraction):Float;
+    public var normal(default, null):Vector3;
+
+    /***************************************************************************
      * FUNCTIONS                                                               *
      **************************************************************************/
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        object = PhysicsCollisionObject.wrap(hx_PhysicsController_HitResult_property_object_get(nativeObject));
+        point = Vector3.wrap(hx_PhysicsController_HitResult_property_point_get(nativeObject));
+        normal = Vector3.wrap(hx_PhysicsController_HitResult_property_normal_get(nativeObject));
+    }
 
     // DECL:
     public static function make():PhysicsController_HitResult
@@ -29,32 +49,8 @@ class PhysicsController_HitResult extends GameplayObject
     }
 
     /***************************************************************************
-     * PROPERTIES                                                              *
-     **************************************************************************/
-
-    public var object(get_object, set_object):PhysicsCollisionObject;
-    public var point(get_point, null):Vector3;
-    public var fraction(get_fraction, set_fraction):Float;
-    public var normal(get_normal, null):Vector3;
-
-    /***************************************************************************
      * PROPERTY ACCESSORS                                                      *
      **************************************************************************/
-
-    function get_object():PhysicsCollisionObject
-    {
-        return PhysicsCollisionObject.wrap(hx_PhysicsController_HitResult_property_object_get(nativeObject));
-    }
-
-    function set_object(value:PhysicsCollisionObject):PhysicsCollisionObject
-    {
-        return PhysicsCollisionObject.wrap(hx_PhysicsController_HitResult_property_object_set(nativeObject, value.native()));
-    }
-
-    function get_point():Vector3
-    {
-        return Vector3.wrap(hx_PhysicsController_HitResult_property_point_get(nativeObject));
-    }
 
     function get_fraction():Float
     {
@@ -65,12 +61,6 @@ class PhysicsController_HitResult extends GameplayObject
     {
         return hx_PhysicsController_HitResult_property_fraction_set(nativeObject, value);
     }
-
-    function get_normal():Vector3
-    {
-        return Vector3.wrap(hx_PhysicsController_HitResult_property_normal_get(nativeObject));
-    }
-
 
     /***************************************************************************
      * NATIVE INTERFACE                                                        *
