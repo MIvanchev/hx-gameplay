@@ -1,6 +1,7 @@
 package org.gameplay3d.immutable;
 
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.immutable.IVector4;
 
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.util.INativeArray;
@@ -105,7 +106,7 @@ interface IMatrix implements INativeBinding
     public function transformVector_V3X2(vector:IVector3, dst:Vector3):Void;
 
     // DECL: void transformVector(const Vector4& vector, Vector4* dst) const;
-    public function transformVector_V4X2(vector:Vector4, dst:Vector4):Void;
+    public function transformVector_V4X2(vector:IVector4, dst:Vector4):Void;
 
     // DECL: void transformVector(float x, float y, float z, float w, Vector3* dst) const;
     public function transformVector_FltX4_V3(x:Float, y:Float, z:Float, w:Float, dst:Vector3):Void;

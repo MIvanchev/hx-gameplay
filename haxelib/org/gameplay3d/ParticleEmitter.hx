@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.ConversionTools;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -56,25 +57,25 @@ class ParticleEmitter extends GameplayObject, implements Ref
     }
 
     // DECL: const Vector4& getColorEnd() const;
-    public function getColorEnd():Vector4
+    public function getColorEnd():IVector4
     {
         return Vector4.wrap(hx_ParticleEmitter_getColorEnd(nativeObject));
     }
 
     // DECL: const Vector4& getColorEndVariance() const;
-    public function getColorEndVariance():Vector4
+    public function getColorEndVariance():IVector4
     {
         return Vector4.wrap(hx_ParticleEmitter_getColorEndVariance(nativeObject));
     }
 
     // DECL: const Vector4& getColorStart() const;
-    public function getColorStart():Vector4
+    public function getColorStart():IVector4
     {
         return Vector4.wrap(hx_ParticleEmitter_getColorStart(nativeObject));
     }
 
     // DECL: const Vector4& getColorStartVariance() const;
-    public function getColorStartVariance():Vector4
+    public function getColorStartVariance():IVector4
     {
         return Vector4.wrap(hx_ParticleEmitter_getColorStartVariance(nativeObject));
     }
@@ -248,7 +249,7 @@ class ParticleEmitter extends GameplayObject, implements Ref
     }
 
     // DECL: void setColor(const Vector4& start, const Vector4& startVariance, const Vector4& end, const Vector4& endVariance);
-    public function setColor(start:Vector4, startVariance:Vector4, end:Vector4, endVariance:Vector4):Void
+    public function setColor(start:IVector4, startVariance:IVector4, end:IVector4, endVariance:IVector4):Void
     {
         hx_ParticleEmitter_setColor(nativeObject, start.native(), startVariance.native(), end.native(), endVariance.native());
     }

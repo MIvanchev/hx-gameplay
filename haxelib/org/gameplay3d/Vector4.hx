@@ -28,13 +28,13 @@ class Vector4 extends GameplayObject, implements IVector4
     }
 
     // DECL: Vector4(const Vector4& copy);
-    public static function make_V4(copy:Vector4):Vector4
+    public static function make_V4(copy:IVector4):Vector4
     {
         return new Vector4(constructNativeObject_V4(copy));
     }
 
     // DECL: Vector4(const Vector4& p1, const Vector4& p2);
-    public static function make_V4X2(p1:Vector4, p2:Vector4):Vector4
+    public static function make_V4X2(p1:IVector4, p2:IVector4):Vector4
     {
         return new Vector4(constructNativeObject_V4X2(p1, p2));
     }
@@ -52,55 +52,55 @@ class Vector4 extends GameplayObject, implements IVector4
     }
 
     // DECL: static void add(const Vector4& v1, const Vector4& v2, Vector4* dst);
-    public static function add_V4X3(v1:Vector4, v2:Vector4, dst:Vector4):Void
+    public static function add_V4X3(v1:IVector4, v2:IVector4, dst:Vector4):Void
     {
         hx_Vector4_static_add(v1.native(), v2.native(), dst.native());
     }
 
     // DECL: void add(const Vector4& v);
-    public function add_V4(v:Vector4):Void
+    public function add_V4(v:IVector4):Void
     {
         hx_Vector4_add(nativeObject, v.native());
     }
 
     // DECL: static float angle(const Vector4& v1, const Vector4& v2);
-    public static function angle(v1:Vector4, v2:Vector4):Float
+    public static function angle(v1:IVector4, v2:IVector4):Float
     {
         return hx_Vector4_static_angle(v1.native(), v2.native());
     }
 
     // DECL: static void clamp(const Vector4& v, const Vector4& min, const Vector4& max, Vector4* dst);
-    public static function clamp_V4X4(v:Vector4, min:Vector4, max:Vector4, dst:Vector4):Void
+    public static function clamp_V4X4(v:IVector4, min:IVector4, max:IVector4, dst:Vector4):Void
     {
         hx_Vector4_static_clamp(v.native(), min.native(), max.native(), dst.native());
     }
 
     // DECL: void clamp(const Vector4& min, const Vector4& max);
-    public function clamp_V4X2(min:Vector4, max:Vector4):Void
+    public function clamp_V4X2(min:IVector4, max:IVector4):Void
     {
         hx_Vector4_clamp(nativeObject, min.native(), max.native());
     }
 
     // DECL: float distance(const Vector4& v) const;
-    public function distance(v:Vector4):Float
+    public function distance(v:IVector4):Float
     {
         return hx_Vector4_distance(nativeObject, v.native());
     }
 
     // DECL: float distanceSquared(const Vector4& v) const;
-    public function distanceSquared(v:Vector4):Float
+    public function distanceSquared(v:IVector4):Float
     {
         return hx_Vector4_distanceSquared(nativeObject, v.native());
     }
 
     // DECL: float dot(const Vector4& v) const;
-    public function dot_V4(v:Vector4):Float
+    public function dot_V4(v:IVector4):Float
     {
         return hx_Vector4_dot(nativeObject, v.native());
     }
 
     // DECL: static float dot(const Vector4& v1, const Vector4& v2);
-    public static function dot_V4X2(v1:Vector4, v2:Vector4):Float
+    public static function dot_V4X2(v1:IVector4, v2:IVector4):Float
     {
         return hx_Vector4_static_dot(v1.native(), v2.native());
     }
@@ -154,7 +154,7 @@ class Vector4 extends GameplayObject, implements IVector4
     }
 
     // DECL: static const Vector4& one();
-    public static function one():Vector4
+    public static function one():IVector4
     {
         return Vector4.wrap(hx_Vector4_static_one());
     }
@@ -166,13 +166,13 @@ class Vector4 extends GameplayObject, implements IVector4
     }
 
     // DECL: void set(const Vector4& p1, const Vector4& p2);
-    public function set_V4X2(p1:Vector4, p2:Vector4):Void
+    public function set_V4X2(p1:IVector4, p2:IVector4):Void
     {
         hx_Vector4_set_V4X2(nativeObject, p1.native(), p2.native());
     }
 
     // DECL: void set(const Vector4& v);
-    public function set_V4(v:Vector4):Void
+    public function set_V4(v:IVector4):Void
     {
         hx_Vector4_set_V4(nativeObject, v.native());
     }
@@ -190,43 +190,43 @@ class Vector4 extends GameplayObject, implements IVector4
     }
 
     // DECL: static void subtract(const Vector4& v1, const Vector4& v2, Vector4* dst);
-    public static function subtract_V4X3(v1:Vector4, v2:Vector4, dst:Vector4):Void
+    public static function subtract_V4X3(v1:IVector4, v2:IVector4, dst:Vector4):Void
     {
         hx_Vector4_static_subtract(v1.native(), v2.native(), dst.native());
     }
 
     // DECL: void subtract(const Vector4& v);
-    public function subtract_V4(v:Vector4):Void
+    public function subtract_V4(v:IVector4):Void
     {
         hx_Vector4_subtract(nativeObject, v.native());
     }
 
     // DECL: static const Vector4& unitW();
-    public static function unitW():Vector4
+    public static function unitW():IVector4
     {
         return Vector4.wrap(hx_Vector4_static_unitW());
     }
 
     // DECL: static const Vector4& unitX();
-    public static function unitX():Vector4
+    public static function unitX():IVector4
     {
         return Vector4.wrap(hx_Vector4_static_unitX());
     }
 
     // DECL: static const Vector4& unitY();
-    public static function unitY():Vector4
+    public static function unitY():IVector4
     {
         return Vector4.wrap(hx_Vector4_static_unitY());
     }
 
     // DECL: static const Vector4& unitZ();
-    public static function unitZ():Vector4
+    public static function unitZ():IVector4
     {
         return Vector4.wrap(hx_Vector4_static_unitZ());
     }
 
     // DECL: static const Vector4& zero();
-    public static function zero():Vector4
+    public static function zero():IVector4
     {
         return Vector4.wrap(hx_Vector4_static_zero());
     }
@@ -242,12 +242,12 @@ class Vector4 extends GameplayObject, implements IVector4
     }
 
     // DECL: Vector4(const Vector4& copy);
-    static function constructNativeObject_V4(copy:Vector4):Dynamic
+    static function constructNativeObject_V4(copy:IVector4):Dynamic
     {
         return hx_Vector4_Construct_V4(copy.native());
     }
 
-    // DECL: Vector4(const Vector4& p1, const Vector4& p2);
+    // DECL: Vector4(const IVector4& p1, const IVector4& p2);
     static function constructNativeObject_V4X2(p1:Vector4, p2:Vector4):Dynamic
     {
         return hx_Vector4_Construct_V4X2(p1.native(), p2.native());

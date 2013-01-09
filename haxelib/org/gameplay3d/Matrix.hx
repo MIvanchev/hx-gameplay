@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.util.IMutableNativeArray;
 import org.gameplay3d.util.INativeArray;
 import org.gameplay3d.util.PrimitiveArray;
@@ -463,7 +464,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: void transformVector(const Vector4& vector, Vector4* dst) const;
-    public function transformVector_V4X2(vector:Vector4, dst:Vector4):Void
+    public function transformVector_V4X2(vector:IVector4, dst:Vector4):Void
     {
         hx_Matrix_transformVector_V4X2(nativeObject, vector.native(), dst.native());
     }

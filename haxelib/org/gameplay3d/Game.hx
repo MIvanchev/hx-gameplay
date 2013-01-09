@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import cpp.Lib;
+import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.Handle;
 import org.gameplay3d.util.OutParameter;
@@ -43,7 +44,7 @@ class Game extends GameplayObject
     }
 
     // DECL: void clear(ClearFlags flags, const Vector4& clearColor, float clearDepth, int clearStencil);
-    public function clear_Int_V4_Flt_Int(flags:Int, clearColor:Vector4, clearDepth:Float, clearStencil:Int):Void
+    public function clear_Int_V4_Flt_Int(flags:Int, clearColor:IVector4, clearDepth:Float, clearStencil:Int):Void
     {
         hx_Game_clear_Int_V4_Flt_Int(nativeObject, flags, clearColor.native(), clearDepth, clearStencil);
     }

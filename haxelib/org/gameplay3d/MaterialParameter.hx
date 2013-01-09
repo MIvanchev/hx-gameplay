@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.impl.AnimationTargetImpl;
 import org.gameplay3d.util.INativeArray;
 import org.gameplay3d.util.PrimitiveArray;
@@ -117,7 +118,7 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
     }
 
     // DECL: void setValue(const Vector4& value);
-    public function setValue_V4(value:Vector4):Void
+    public function setValue_V4(value:IVector4):Void
     {
         hx_MaterialParameter_setValue_V4(nativeObject, value.native());
     }

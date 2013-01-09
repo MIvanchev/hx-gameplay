@@ -21,13 +21,13 @@ interface IVector4 implements INativeBinding
      **************************************************************************/
 
     // DECL: float distance(const Vector4& v) const;
-    public function distance(v:Vector4):Float;
+    public function distance(v:IVector4):Float;
 
     // DECL: float distanceSquared(const Vector4& v) const;
-    public function distanceSquared(v:Vector4):Float;
+    public function distanceSquared(v:IVector4):Float;
 
     // DECL: float dot(const Vector4& v) const;
-    public function dot_V4(v:Vector4):Float;
+    public function dot_V4(v:IVector4):Float;
 
     // DECL: bool isOne() const;
     public function isOne():Bool;

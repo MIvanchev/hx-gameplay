@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.impl.AnimationTarget_ScriptTarget;
 import org.gameplay3d.Theme_SideRegions;
 import org.gameplay3d.wrapper.Control_ListenerWrapper;
@@ -100,7 +101,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: const Vector4& getCursorColor(State state);
-    public function getCursorColor(state:Int):Vector4
+    public function getCursorColor(state:Int):IVector4
     {
         return Vector4.wrap(hx_Control_getCursorColor(nativeObject, state));
     }
@@ -148,7 +149,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: const Vector4& getImageColor(const char* id, State state) const;
-    public function getImageColor(id:String, state:Int):Vector4
+    public function getImageColor(id:String, state:Int):IVector4
     {
         return Vector4.wrap(hx_Control_getImageColor(nativeObject, id, state));
     }
@@ -184,7 +185,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: const Vector4& getSkinColor(State state = NORMAL) const;
-    public function getSkinColor(state:Int = Control_State.NORMAL):Vector4
+    public function getSkinColor(state:Int = Control_State.NORMAL):IVector4
     {
         return Vector4.wrap(hx_Control_getSkinColor(nativeObject, state));
     }
@@ -214,7 +215,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: const Vector4& getTextColor(State state = NORMAL) const;
-    public function getTextColor(state:Int = Control_State.NORMAL):Vector4
+    public function getTextColor(state:Int = Control_State.NORMAL):IVector4
     {
         return Vector4.wrap(hx_Control_getTextColor(nativeObject, state));
     }
@@ -310,7 +311,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: void setCursorColor(const Vector4& color, unsigned char states);
-    public function setCursorColor(color:Vector4, states:Int):Void
+    public function setCursorColor(color:IVector4, states:Int):Void
     {
         hx_Control_setCursorColor(nativeObject, color.native(), states);
     }
@@ -346,7 +347,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: void setImageColor(const char* id, const Vector4& color, unsigned char states = STATE_ALL);
-    public function setImageColor(id:String, color:Vector4, states:Int = STATE_ALL):Void
+    public function setImageColor(id:String, color:IVector4, states:Int = STATE_ALL):Void
     {
         hx_Control_setImageColor(nativeObject, id, color.native(), states);
     }
@@ -400,7 +401,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: void setSkinColor(const Vector4& color, unsigned char states = STATE_ALL);
-    public function setSkinColor(color:Vector4, states:Int = STATE_ALL):Void
+    public function setSkinColor(color:IVector4, states:Int = STATE_ALL):Void
     {
         hx_Control_setSkinColor(nativeObject, color.native(), states);
     }
@@ -430,7 +431,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: void setTextColor(const Vector4& color, unsigned char states = STATE_ALL);
-    public function setTextColor(color:Vector4, states:Int = STATE_ALL):Void
+    public function setTextColor(color:IVector4, states:Int = STATE_ALL):Void
     {
         hx_Control_setTextColor(nativeObject, color.native(), states);
     }
