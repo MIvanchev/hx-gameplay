@@ -55,13 +55,13 @@ class Joystick extends Control
     }
 
     // DECL: inline void setInnerRegionSize(const Vector2& size);
-    public function setInnerRegionSize(size:Vector2):Void
+    public function setInnerRegionSize(size:IVector2):Void
     {
         hx_Joystick_setInnerRegionSize(nativeObject, size.native());
     }
 
     // DECL: inline void setOuterRegionSize(const Vector2& size);
-    public function setOuterRegionSize(size:Vector2):Void
+    public function setOuterRegionSize(size:IVector2):Void
     {
         hx_Joystick_setOuterRegionSize(nativeObject, size.native());
     }

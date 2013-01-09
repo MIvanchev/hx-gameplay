@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector2;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.OutParameter;
 
@@ -56,7 +57,7 @@ class Font extends GameplayObject, implements Ref
     }
 
     // DECL: int getIndexAtLocation(const char* text, const Rectangle& clip, unsigned int size, const Vector2& inLocation, Vector2* outLocation,
-    public function getIndexAtLocation(text:String, clip:Rectangle, size:Int, inLocation:Vector2, outLocation:Vector2, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, rightToLeft:Bool = false):Int
+    public function getIndexAtLocation(text:String, clip:Rectangle, size:Int, inLocation:IVector2, outLocation:Vector2, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, rightToLeft:Bool = false):Int
     {
         return hx_Font_getIndexAtLocation(nativeObject, text, clip.native(), size, inLocation.native(), outLocation.native(), justify, wrap, rightToLeft);
     }

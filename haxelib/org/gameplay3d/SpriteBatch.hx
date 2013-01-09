@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector2;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -29,25 +31,25 @@ class SpriteBatch extends GameplayObject
     }
 
     // DECL: void draw(const Vector3& dst, const Rectangle& src, const Vector2& scale, const Vector4& color = Vector4::one());
-    public function draw_V3_Rct_V2_V4(dst:Vector3, src:Rectangle, scale:Vector2, color:Vector4):Void
+    public function draw_V3_Rct_V2_V4(dst:Vector3, src:Rectangle, scale:IVector2, color:Vector4):Void
     {
         hx_SpriteBatch_draw_V3_Rct_V2_V4(nativeObject, dst.native(), src.native(), scale.native(), color.native());
     }
 
     // DECL: void draw(const Vector3& dst, const Rectangle& src, const Vector2& scale, const Vector4& color,
-    public function draw_V3_Rct_V2_V4_V2_Flt(dst:Vector3, src:Rectangle, scale:Vector2, color:Vector4, rotationPoint:Vector2, rotationAngle:Float):Void
+    public function draw_V3_Rct_V2_V4_V2_Flt(dst:Vector3, src:Rectangle, scale:IVector2, color:Vector4, rotationPoint:IVector2, rotationAngle:Float):Void
     {
         hx_SpriteBatch_draw_V3_Rct_V2_V4_V2_Flt(nativeObject, dst.native(), src.native(), scale.native(), color.native(), rotationPoint.native(), rotationAngle);
     }
 
     // DECL: void draw(const Vector3& dst, float width, float height, float u1, float v1, float u2, float v2, const Vector4& color,
-    public function draw_V3_FltX6_V4_V2_Flt_Bool(dst:Vector3, width:Float, height:Float, u1:Float, v1:Float, u2:Float, v2:Float, color:Vector4, rotationPoint:Vector2, rotationAngle:Float, positionIsCenter:Bool = false):Void
+    public function draw_V3_FltX6_V4_V2_Flt_Bool(dst:Vector3, width:Float, height:Float, u1:Float, v1:Float, u2:Float, v2:Float, color:Vector4, rotationPoint:IVector2, rotationAngle:Float, positionIsCenter:Bool = false):Void
     {
         hx_SpriteBatch_draw_V3_FltX6_V4_V2_Flt_Bool(nativeObject, dst.native(), width, height, u1, v1, u2, v2, color.native(), rotationPoint.native(), rotationAngle, positionIsCenter);
     }
 
     // DECL: void draw(const Vector3& position, const Vector3& right, const Vector3& forward, float width, float height,
-    public function draw_V3X3_FltX6_V4_V2_Flt(position:Vector3, right:Vector3, forward:Vector3, width:Float, height:Float, u1:Float, v1:Float, u2:Float, v2:Float, color:Vector4, rotationPoint:Vector2, rotationAngle:Float):Void
+    public function draw_V3X3_FltX6_V4_V2_Flt(position:Vector3, right:Vector3, forward:Vector3, width:Float, height:Float, u1:Float, v1:Float, u2:Float, v2:Float, color:Vector4, rotationPoint:IVector2, rotationAngle:Float):Void
     {
         hx_SpriteBatch_draw_V3X3_FltX6_V4_V2_Flt(nativeObject, position.native(), right.native(), forward.native(), width, height, u1, v1, u2, v2, color.native(), rotationPoint.native(), rotationAngle);
     }
@@ -71,7 +73,7 @@ class SpriteBatch extends GameplayObject
     }
 
     // DECL: void draw(float x, float y, float z, float width, float height, float u1, float v1, float u2, float v2, const Vector4& color,
-    public function draw_FltX9_V4_V2_Flt_Bool(x:Float, y:Float, z:Float, width:Float, height:Float, u1:Float, v1:Float, u2:Float, v2:Float, color:Vector4, rotationPoint:Vector2, rotationAngle:Float, positionIsCenter:Bool = false):Void
+    public function draw_FltX9_V4_V2_Flt_Bool(x:Float, y:Float, z:Float, width:Float, height:Float, u1:Float, v1:Float, u2:Float, v2:Float, color:Vector4, rotationPoint:IVector2, rotationAngle:Float, positionIsCenter:Bool = false):Void
     {
         hx_SpriteBatch_draw_FltX9_V4_V2_Flt_Bool(nativeObject, x, y, z, width, height, u1, v1, u2, v2, color.native(), rotationPoint.native(), rotationAngle, positionIsCenter);
     }

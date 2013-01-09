@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector2;
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
