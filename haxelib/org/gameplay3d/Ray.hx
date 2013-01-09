@@ -31,7 +31,7 @@ class Ray extends GameplayObject
     }
 
     // DECL: Ray(const Vector3& origin, const Vector3& direction);
-    public static function make_V3X2(origin:Vector3, direction:Vector3):Ray
+    public static function make_V3X2(origin:IVector3, direction:IVector3):Ray
     {
         return new Ray(constructNativeObject_V3X2(origin, direction));
     }
@@ -85,13 +85,13 @@ class Ray extends GameplayObject
     }
 
     // DECL: void set(const Vector3& origin, const Vector3& direction);
-    public function set_V3X2(origin:Vector3, direction:Vector3):Void
+    public function set_V3X2(origin:IVector3, direction:IVector3):Void
     {
         hx_Ray_set_V3X2(nativeObject, origin.native(), direction.native());
     }
 
     // DECL: void setDirection(const Vector3& direction);
-    public function setDirection_V3(direction:Vector3):Void
+    public function setDirection_V3(direction:IVector3):Void
     {
         hx_Ray_setDirection_V3(nativeObject, direction.native());
     }
@@ -103,7 +103,7 @@ class Ray extends GameplayObject
     }
 
     // DECL: void setOrigin(const Vector3& origin);
-    public function setOrigin_V3(origin:Vector3):Void
+    public function setOrigin_V3(origin:IVector3):Void
     {
         hx_Ray_setOrigin_V3(nativeObject, origin.native());
     }
@@ -137,7 +137,7 @@ class Ray extends GameplayObject
     }
 
     // DECL: Ray(const Vector3& origin, const Vector3& direction);
-    static function constructNativeObject_V3X2(origin:Vector3, direction:Vector3):Dynamic
+    static function constructNativeObject_V3X2(origin:IVector3, direction:IVector3):Dynamic
     {
         return hx_Ray_Construct_V3X2(origin.native(), direction.native());
     }

@@ -46,13 +46,13 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: Transform(const Vector3& scale, const Matrix& rotation, const Vector3& translation);
-    public static function make_V3_Mat_V3(scale:Vector3, rotation:Matrix, translation:Vector3):Transform
+    public static function make_V3_Mat_V3(scale:IVector3, rotation:Matrix, translation:IVector3):Transform
     {
         return new Transform(constructNativeObject_V3_Mat_V3(scale, rotation, translation));
     }
 
     // DECL: Transform(const Vector3& scale, const Quaternion& rotation, const Vector3& translation);
-    public static function make_V3_Qtrn_V3(scale:Vector3, rotation:Quaternion, translation:Vector3):Transform
+    public static function make_V3_Qtrn_V3(scale:IVector3, rotation:Quaternion, translation:IVector3):Transform
     {
         return new Transform(constructNativeObject_V3_Qtrn_V3(scale, rotation, translation));
     }
@@ -268,7 +268,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void rotate(const Vector3& axis, float angle);
-    public function rotate_V3_Flt(axis:Vector3, angle:Float):Void
+    public function rotate_V3_Flt(axis:IVector3, angle:Float):Void
     {
         hx_Transform_rotate_V3_Flt(nativeObject, axis.native(), angle);
     }
@@ -298,7 +298,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void scale(const Vector3& scale);
-    public function scale_V3(scale:Vector3):Void
+    public function scale_V3(scale:IVector3):Void
     {
         hx_Transform_scale_V3(nativeObject, scale.native());
     }
@@ -340,19 +340,19 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void set(const Vector3& scale, const Matrix& rotation, const Vector3& translation);
-    public function set_V3_Mat_V3(scale:Vector3, rotation:Matrix, translation:Vector3):Void
+    public function set_V3_Mat_V3(scale:IVector3, rotation:Matrix, translation:IVector3):Void
     {
         hx_Transform_set_V3_Mat_V3(nativeObject, scale.native(), rotation.native(), translation.native());
     }
 
     // DECL: void set(const Vector3& scale, const Quaternion& rotation, const Vector3& translation);
-    public function set_V3_Qtrn_V3(scale:Vector3, rotation:Quaternion, translation:Vector3):Void
+    public function set_V3_Qtrn_V3(scale:IVector3, rotation:Quaternion, translation:IVector3):Void
     {
         hx_Transform_set_V3_Qtrn_V3(nativeObject, scale.native(), rotation.native(), translation.native());
     }
 
     // DECL: void set(const Vector3& scale, const Vector3& axis, float angle, const Vector3& translation);
-    public function set_V3X2_Flt_V3(scale:Vector3, axis:Vector3, angle:Float, translation:Vector3):Void
+    public function set_V3X2_Flt_V3(scale:IVector3, axis:IVector3, angle:Float, translation:IVector3):Void
     {
         hx_Transform_set_V3X2_Flt_V3(nativeObject, scale.native(), axis.native(), angle, translation.native());
     }
@@ -382,7 +382,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void setRotation(const Vector3& axis, float angle);
-    public function setRotation_V3_Flt(axis:Vector3, angle:Float):Void
+    public function setRotation_V3_Flt(axis:IVector3, angle:Float):Void
     {
         hx_Transform_setRotation_V3_Flt(nativeObject, axis.native(), angle);
     }
@@ -394,7 +394,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void setScale(const Vector3& scale);
-    public function setScale_V3(scale:Vector3):Void
+    public function setScale_V3(scale:IVector3):Void
     {
         hx_Transform_setScale_V3(nativeObject, scale.native());
     }
@@ -430,7 +430,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void setTranslation(const Vector3& translation);
-    public function setTranslation_V3(translation:Vector3):Void
+    public function setTranslation_V3(translation:IVector3):Void
     {
         hx_Transform_setTranslation_V3(nativeObject, translation.native());
     }
@@ -472,7 +472,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void transformPoint(const Vector3& point, Vector3* dst);
-    public function transformPoint_V3X2(point:Vector3, dst:Vector3):Void
+    public function transformPoint_V3X2(point:IVector3, dst:Vector3):Void
     {
         hx_Transform_transformPoint_V3X2(nativeObject, point.native(), dst.native());
     }
@@ -484,7 +484,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void transformVector(const Vector3& transformVector, Vector3* dst);
-    public function transformVector_V3X2(transformVector:Vector3, dst:Vector3):Void
+    public function transformVector_V3X2(transformVector:IVector3, dst:Vector3):Void
     {
         hx_Transform_transformVector_V3X2(nativeObject, transformVector.native(), dst.native());
     }
@@ -496,7 +496,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void translate(const Vector3& translation);
-    public function translate_V3(translation:Vector3):Void
+    public function translate_V3(translation:IVector3):Void
     {
         hx_Transform_translate_V3(nativeObject, translation.native());
     }
@@ -520,7 +520,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void translateSmooth(const Vector3& target, float elapsedTime, float responseTime);
-    public function translateSmooth(target:Vector3, elapsedTime:Float, responseTime:Float):Void
+    public function translateSmooth(target:IVector3, elapsedTime:Float, responseTime:Float):Void
     {
         hx_Transform_translateSmooth(nativeObject, target.native(), elapsedTime, responseTime);
     }
@@ -566,13 +566,13 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: Transform(const Vector3& scale, const Matrix& rotation, const Vector3& translation);
-    static function constructNativeObject_V3_Mat_V3(scale:Vector3, rotation:Matrix, translation:Vector3):Dynamic
+    static function constructNativeObject_V3_Mat_V3(scale:IVector3, rotation:Matrix, translation:IVector3):Dynamic
     {
         return hx_Transform_Construct_V3_Mat_V3(scale.nativeObject, rotation.nativeObject, translation.nativeObject);
     }
 
     // DECL: Transform(const Vector3& scale, const Quaternion& rotation, const Vector3& translation);
-    static function constructNativeObject_V3_Qtrn_V3(scale:Vector3, rotation:Quaternion, translation:Vector3):Dynamic
+    static function constructNativeObject_V3_Qtrn_V3(scale:IVector3, rotation:Quaternion, translation:IVector3):Dynamic
     {
         return hx_Transform_Construct_V3_Qtrn_V3(scale.nativeObject, rotation.nativeObject, translation.nativeObject);
     }

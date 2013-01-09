@@ -242,7 +242,7 @@ class ParticleEmitter extends GameplayObject, implements Ref
     }
 
     // DECL: void setAcceleration(const Vector3& acceleration, const Vector3& accelerationVariance);
-    public function setAcceleration(acceleration:Vector3, accelerationVariance:Vector3):Void
+    public function setAcceleration(acceleration:IVector3, accelerationVariance:IVector3):Void
     {
         hx_ParticleEmitter_setAcceleration(nativeObject, acceleration.native(), accelerationVariance.native());
     }
@@ -278,13 +278,13 @@ class ParticleEmitter extends GameplayObject, implements Ref
     }
 
     // DECL: void setPosition(const Vector3& position, const Vector3& positionVariance);
-    public function setPosition(position:Vector3, positionVariance:Vector3):Void
+    public function setPosition(position:IVector3, positionVariance:IVector3):Void
     {
         hx_ParticleEmitter_setPosition(nativeObject, position.native(), positionVariance.native());
     }
 
     // DECL: void setRotation(float speedMin, float speedMax, const Vector3& axis, const Vector3& axisVariance);
-    public function setRotation(speedMin:Float, speedMax:Float, axis:Vector3, axisVariance:Vector3):Void
+    public function setRotation(speedMin:Float, speedMax:Float, axis:IVector3, axisVariance:IVector3):Void
     {
         hx_ParticleEmitter_setRotation(nativeObject, speedMin, speedMax, axis.native(), axisVariance.native());
     }
@@ -350,7 +350,7 @@ class ParticleEmitter extends GameplayObject, implements Ref
     }
 
     // DECL: void setVelocity(const Vector3& velocity, const Vector3& velocityVariance);
-    public function setVelocity(velocity:Vector3, velocityVariance:Vector3):Void
+    public function setVelocity(velocity:IVector3, velocityVariance:IVector3):Void
     {
         hx_ParticleEmitter_setVelocity(nativeObject, velocity.native(), velocityVariance.native());
     }

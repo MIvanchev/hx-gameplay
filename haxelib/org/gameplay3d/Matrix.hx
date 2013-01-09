@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
+import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.util.IMutableNativeArray;
 import org.gameplay3d.util.INativeArray;
 import org.gameplay3d.util.PrimitiveArray;
@@ -78,7 +79,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: static void createLookAt(const Vector3& eyePosition, const Vector3& targetPosition, const Vector3& up, Matrix* dst);
-    public static function createLookAt_V3X3_Mat(eyePosition:Vector3, targetPosition:Vector3, up:Vector3, dst:Matrix):Void
+    public static function createLookAt_V3X3_Mat(eyePosition:IVector3, targetPosition:IVector3, up:IVector3, dst:Matrix):Void
     {
         hx_Matrix_static_createLookAt_V3X3_Mat(eyePosition.native(), targetPosition.native(), up.native(), dst.native());
     }
@@ -114,7 +115,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: static void createRotation(const Vector3& axis, float angle, Matrix* dst);
-    public static function createRotation_V3_Flt_Mat(axis:Vector3, angle:Float, dst:Matrix):Void
+    public static function createRotation_V3_Flt_Mat(axis:IVector3, angle:Float, dst:Matrix):Void
     {
         hx_Matrix_static_createRotation_V3_Flt_Mat(axis.native(), angle, dst.native());
     }
@@ -138,7 +139,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: static void createScale(const Vector3& scale, Matrix* dst);
-    public static function createScale_V3_Mat(scale:Vector3, dst:Matrix):Void
+    public static function createScale_V3_Mat(scale:IVector3, dst:Matrix):Void
     {
         hx_Matrix_static_createScale_V3_Mat(scale.native(), dst.native());
     }
@@ -150,7 +151,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: static void createTranslation(const Vector3& translation, Matrix* dst);
-    public static function createTranslation_V3_Mat(translation:Vector3, dst:Matrix):Void
+    public static function createTranslation_V3_Mat(translation:IVector3, dst:Matrix):Void
     {
         hx_Matrix_static_createTranslation_V3_Mat(translation.native(), dst.native());
     }
@@ -306,13 +307,13 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: void rotate(const Vector3& axis, float angle);
-    public function rotate_V3_Flt(axis:Vector3, angle:Float):Void
+    public function rotate_V3_Flt(axis:IVector3, angle:Float):Void
     {
         hx_Matrix_rotate_V3_Flt(nativeObject, axis.native(), angle);
     }
 
     // DECL: void rotate(const Vector3& axis, float angle, Matrix* dst) const;
-    public function rotate_V3_Flt_Mat(axis:Vector3, angle:Float, dst:Matrix):Void
+    public function rotate_V3_Flt_Mat(axis:IVector3, angle:Float, dst:Matrix):Void
     {
         hx_Matrix_rotate_V3_Flt_Mat(nativeObject, axis.native(), angle, dst.native());
     }
@@ -354,13 +355,13 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: void scale(const Vector3& s);
-    public function scale_V3(s:Vector3):Void
+    public function scale_V3(s:IVector3):Void
     {
         hx_Matrix_scale_V3(nativeObject, s.native());
     }
 
     // DECL: void scale(const Vector3& s, Matrix* dst) const;
-    public function scale_V3_Mat(s:Vector3, dst:Matrix):Void
+    public function scale_V3_Mat(s:IVector3, dst:Matrix):Void
     {
         hx_Matrix_scale_V3_Mat(nativeObject, s.native(), dst.native());
     }
@@ -438,7 +439,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: void transformPoint(const Vector3& point, Vector3* dst) const;
-    public function transformPoint_V3X2(point:Vector3, dst:Vector3):Void
+    public function transformPoint_V3X2(point:IVector3, dst:Vector3):Void
     {
         hx_Matrix_transformPoint_V3X2(nativeObject, point.native(), dst.native());
     }
@@ -456,7 +457,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: void transformVector(const Vector3& vector, Vector3* dst) const;
-    public function transformVector_V3X2(vector:Vector3, dst:Vector3):Void
+    public function transformVector_V3X2(vector:IVector3, dst:Vector3):Void
     {
         hx_Matrix_transformVector_V3X2(nativeObject, vector.native(), dst.native());
     }
@@ -474,13 +475,13 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: void translate(const Vector3& t);
-    public function translate_V3(t:Vector3):Void
+    public function translate_V3(t:IVector3):Void
     {
         hx_Matrix_translate_V3(nativeObject, t.native());
     }
 
     // DECL: void translate(const Vector3& t, Matrix* dst) const;
-    public function translate_V3_Mat(t:Vector3, dst:Matrix):Void
+    public function translate_V3_Mat(t:IVector3, dst:Matrix):Void
     {
         hx_Matrix_translate_V3_Mat(nativeObject, t.native(), dst.native());
     }

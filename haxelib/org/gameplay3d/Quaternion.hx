@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IQuaternion;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -40,7 +41,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: Quaternion(const Vector3& axis, float angle);
-    public static function make_V3_Flt(axis:Vector3, angle:Float):Quaternion
+    public static function make_V3_Flt(axis:IVector3, angle:Float):Quaternion
     {
         return new Quaternion(constructNativeObject_V3_Flt(axis, angle));
     }
@@ -70,7 +71,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: static void createFromAxisAngle(const Vector3& axis, float angle, Quaternion* dst);
-    public static function createFromAxisAngle(axis:Vector3, angle:Float, dst:Quaternion):Void
+    public static function createFromAxisAngle(axis:IVector3, angle:Float, dst:Quaternion):Void
     {
         hx_Quaternion_static_createFromAxisAngle(axis.native(), angle, dst.native());
     }
@@ -154,7 +155,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: void set(const Vector3& axis, float angle);
-    public function set_V3_Flt(axis:Vector3, angle:Float):Void
+    public function set_V3_Flt(axis:IVector3, angle:Float):Void
     {
         hx_Quaternion_set_V3_Flt(nativeObject, axis.native(), angle);
     }
@@ -224,7 +225,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: Quaternion(const Vector3& axis, float angle);
-    static function constructNativeObject_V3_Flt(axis:Vector3, angle:Float):Dynamic
+    static function constructNativeObject_V3_Flt(axis:IVector3, angle:Float):Dynamic
     {
         return hx_Quaternion_Construct_V3_Flt(axis.native(), angle);
     }

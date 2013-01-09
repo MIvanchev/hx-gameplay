@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -11,25 +13,25 @@ class PhysicsRigidBody extends PhysicsCollisionObject
      **************************************************************************/
 
     // DECL: void applyForce(const Vector3& force, const Vector3* relativePosition = NULL);
-    public function applyForce(force:Vector3, relativePosition:Vector3 = null):Void
+    public function applyForce(force:IVector3, relativePosition:Vector3 = null):Void
     {
         hx_PhysicsRigidBody_applyForce(nativeObject, force.native(), relativePosition.native());
     }
 
     // DECL: void applyImpulse(const Vector3& impulse, const Vector3* relativePosition = NULL);
-    public function applyImpulse(impulse:Vector3, relativePosition:Vector3 = null):Void
+    public function applyImpulse(impulse:IVector3, relativePosition:Vector3 = null):Void
     {
         hx_PhysicsRigidBody_applyImpulse(nativeObject, impulse.native(), relativePosition.native());
     }
 
     // DECL: void applyTorque(const Vector3& torque);
-    public function applyTorque(torque:Vector3):Void
+    public function applyTorque(torque:IVector3):Void
     {
         hx_PhysicsRigidBody_applyTorque(nativeObject, torque.native());
     }
 
     // DECL: void applyTorqueImpulse(const Vector3& torque);
-    public function applyTorqueImpulse(torque:Vector3):Void
+    public function applyTorqueImpulse(torque:IVector3):Void
     {
         hx_PhysicsRigidBody_applyTorqueImpulse(nativeObject, torque.native());
     }
@@ -119,7 +121,7 @@ class PhysicsRigidBody extends PhysicsCollisionObject
     }
 
     // DECL: inline void setAngularFactor(const Vector3& angularFactor);
-    public function setAngularFactor_V3(angularFactor:Vector3):Void
+    public function setAngularFactor_V3(angularFactor:IVector3):Void
     {
         hx_PhysicsRigidBody_setAngularFactor_V3(nativeObject, angularFactor.native());
     }
@@ -131,7 +133,7 @@ class PhysicsRigidBody extends PhysicsCollisionObject
     }
 
     // DECL: inline void setAngularVelocity(const Vector3& velocity);
-    public function setAngularVelocity_V3(velocity:Vector3):Void
+    public function setAngularVelocity_V3(velocity:IVector3):Void
     {
         hx_PhysicsRigidBody_setAngularVelocity_V3(nativeObject, velocity.native());
     }
@@ -143,7 +145,7 @@ class PhysicsRigidBody extends PhysicsCollisionObject
     }
 
     // DECL: inline void setAnisotropicFriction(const Vector3& friction);
-    public function setAnisotropicFriction_V3(friction:Vector3):Void
+    public function setAnisotropicFriction_V3(friction:IVector3):Void
     {
         hx_PhysicsRigidBody_setAnisotropicFriction_V3(nativeObject, friction.native());
     }
@@ -173,7 +175,7 @@ class PhysicsRigidBody extends PhysicsCollisionObject
     }
 
     // DECL: inline void setGravity(const Vector3& gravity);
-    public function setGravity_V3(gravity:Vector3):Void
+    public function setGravity_V3(gravity:IVector3):Void
     {
         hx_PhysicsRigidBody_setGravity_V3(nativeObject, gravity.native());
     }
@@ -191,7 +193,7 @@ class PhysicsRigidBody extends PhysicsCollisionObject
     }
 
     // DECL: inline void setLinearFactor(const Vector3& linearFactor);
-    public function setLinearFactor_V3(linearFactor:Vector3):Void
+    public function setLinearFactor_V3(linearFactor:IVector3):Void
     {
         hx_PhysicsRigidBody_setLinearFactor_V3(nativeObject, linearFactor.native());
     }
@@ -203,7 +205,7 @@ class PhysicsRigidBody extends PhysicsCollisionObject
     }
 
     // DECL: inline void setLinearVelocity(const Vector3& velocity);
-    public function setLinearVelocity_V3(velocity:Vector3):Void
+    public function setLinearVelocity_V3(velocity:IVector3):Void
     {
         hx_PhysicsRigidBody_setLinearVelocity_V3(nativeObject, velocity.native());
     }

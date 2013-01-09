@@ -32,7 +32,7 @@ class BoundingBox extends GameplayObject
     }
 
     // DECL: BoundingBox(const Vector3& min, const Vector3& max);
-    public static function make_V3X2(min:Vector3, max:Vector3):BoundingBox
+    public static function make_V3X2(min:IVector3, max:IVector3):BoundingBox
     {
         return new BoundingBox(constructNativeObject_V3X2(min, max));
     }
@@ -128,7 +128,7 @@ class BoundingBox extends GameplayObject
     }
 
     // DECL: void set(const Vector3& min, const Vector3& max);
-    public function set_V3X2(min:Vector3, max:Vector3):Void
+    public function set_V3X2(min:IVector3, max:IVector3):Void
     {
         hx_BoundingBox_set_V3X2(nativeObject, min.native(), max.native());
     }
@@ -162,7 +162,7 @@ class BoundingBox extends GameplayObject
     }
 
     // DECL: BoundingBox(const Vector3& min, const Vector3& max);
-    static function constructNativeObject_V3X2(min:Vector3, max:Vector3):Dynamic
+    static function constructNativeObject_V3X2(min:IVector3, max:IVector3):Dynamic
     {
         return hx_BoundingBox_Construct_V3X2(min.native(), max.native());
     }

@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -30,7 +32,7 @@ class BoundingSphere extends GameplayObject
     }
 
     // DECL: BoundingSphere(const Vector3& center, float radius);
-    public static function make_V3_Flt(center:Vector3, radius:Float):BoundingSphere
+    public static function make_V3_Flt(center:IVector3, radius:Float):BoundingSphere
     {
         return new BoundingSphere(constructNativeObject_V3_Flt(center, radius));
     }
@@ -102,7 +104,7 @@ class BoundingSphere extends GameplayObject
     }
 
     // DECL: void set(const Vector3& center, float radius);
-    public function set_V3_Flt(center:Vector3, radius:Float):Void
+    public function set_V3_Flt(center:IVector3, radius:Float):Void
     {
         hx_BoundingSphere_set_V3_Flt(nativeObject, center.native(), radius);
     }
@@ -130,7 +132,7 @@ class BoundingSphere extends GameplayObject
     }
 
     // DECL: BoundingSphere(const Vector3& center, float radius);
-    static function constructNativeObject_V3_Flt(center:Vector3, radius:Float):Dynamic
+    static function constructNativeObject_V3_Flt(center:IVector3, radius:Float):Dynamic
     {
         return hx_BoundingSphere_Construct_V3_Flt(center.native(), radius);
     }

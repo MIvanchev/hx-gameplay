@@ -1,10 +1,11 @@
 package org.gameplay3d;
 
-import dk.bluewolf.gameplay.NativeOutParameter;
+import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.OutParameter;
 import org.gameplay3d.util.OutParameter;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class PhysicsVehicleWheel : public PhysicsCollisionObject
@@ -123,7 +124,7 @@ class PhysicsVehicleWheel extends PhysicsCollisionObject
     }
 
     // DECL: void setStrutConnectionOffset(const Vector3& strutConnectionOffset);
-    public function setStrutConnectionOffset(strutConnectionOffset:Vector3):Void
+    public function setStrutConnectionOffset(strutConnectionOffset:IVector3):Void
     {
         hx_PhysicsVehicleWheel_setStrutConnectionOffset(nativeObject, strutConnectionOffset.native());
     }
@@ -165,13 +166,13 @@ class PhysicsVehicleWheel extends PhysicsCollisionObject
     }
 
     // DECL: void setWheelAxle(const Vector3& wheelAxle);
-    public function setWheelAxle(wheelAxle:Vector3):Void
+    public function setWheelAxle(wheelAxle:IVector3):Void
     {
         hx_PhysicsVehicleWheel_setWheelAxle(nativeObject, wheelAxle.native());
     }
 
     // DECL: void setWheelDirection(const Vector3& wheelDirection);
-    public function setWheelDirection(wheelDirection:Vector3):Void
+    public function setWheelDirection(wheelDirection:IVector3):Void
     {
         hx_PhysicsVehicleWheel_setWheelDirection(nativeObject, wheelDirection.native());
     }

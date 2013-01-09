@@ -1,4 +1,5 @@
 package org.gameplay3d;
+
 import org.gameplay3d.immutable.IVector3;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -36,25 +37,25 @@ class PhysicsGenericConstraint extends PhysicsConstraint
     }
 
     // DECL: inline void setAngularLowerLimit(const Vector3& limits);
-    public function setAngularLowerLimit(limits:Vector3):Void
+    public function setAngularLowerLimit(limits:IVector3):Void
     {
         hx_PhysicsGenericConstraint_setAngularLowerLimit(nativeObject, limits.native());
     }
 
     // DECL: inline void setAngularUpperLimit(const Vector3& limits);
-    public function setAngularUpperLimit(limits:Vector3):Void
+    public function setAngularUpperLimit(limits:IVector3):Void
     {
         hx_PhysicsGenericConstraint_setAngularUpperLimit(nativeObject, limits.native());
     }
 
     // DECL: inline void setLinearLowerLimit(const Vector3& limits);
-    public function setLinearLowerLimit(limits:Vector3):Void
+    public function setLinearLowerLimit(limits:IVector3):Void
     {
         hx_PhysicsGenericConstraint_setLinearLowerLimit(nativeObject, limits.native());
     }
 
     // DECL: inline void setLinearUpperLimit(const Vector3& limits);
-    public function setLinearUpperLimit(limits:Vector3):Void
+    public function setLinearUpperLimit(limits:IVector3):Void
     {
         hx_PhysicsGenericConstraint_setLinearUpperLimit(nativeObject, limits.native());
     }
@@ -72,13 +73,13 @@ class PhysicsGenericConstraint extends PhysicsConstraint
     }
 
     // DECL: inline void setTranslationOffsetA(const Vector3& translationOffset);
-    public function setTranslationOffsetA(translationOffset:Vector3):Void
+    public function setTranslationOffsetA(translationOffset:IVector3):Void
     {
         hx_PhysicsGenericConstraint_setTranslationOffsetA(nativeObject, translationOffset.native());
     }
 
     // DECL: inline void setTranslationOffsetB(const Vector3& translationOffset);
-    public function setTranslationOffsetB(translationOffset:Vector3):Void
+    public function setTranslationOffsetB(translationOffset:IVector3):Void
     {
         hx_PhysicsGenericConstraint_setTranslationOffsetB(nativeObject, translationOffset.native());
     }

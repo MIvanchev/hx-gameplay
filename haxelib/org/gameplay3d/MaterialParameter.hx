@@ -105,7 +105,7 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
     }
 
     // DECL: void setValue(const Vector3& value);
-    public function setValue_V3(value:Vector3):Void
+    public function setValue_V3(value:IVector3):Void
     {
         hx_MaterialParameter_setValue_V3(nativeObject, value.native());
     }

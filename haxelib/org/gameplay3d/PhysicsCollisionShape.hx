@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -17,7 +19,7 @@ class PhysicsCollisionShape extends GameplayObject, implements Ref
     }
 
     // DECL: static PhysicsCollisionShape::Definition box(const Vector3& extents, const Vector3& center = Vector3::zero(), bool absolute = false);
-    public static function box_V3X2_Bool(extents:Vector3, center:Vector3, absolute:Bool = false):PhysicsCollisionShape_Definition
+    public static function box_V3X2_Bool(extents:IVector3, center:IVector3, absolute:Bool = false):PhysicsCollisionShape_Definition
     {
         return PhysicsCollisionShape_Definition.wrap(hx_PhysicsCollisionShape_static_box_V3X2_Bool(extents.native(), center.native(), absolute));
     }
@@ -29,7 +31,7 @@ class PhysicsCollisionShape extends GameplayObject, implements Ref
     }
 
     // DECL: static PhysicsCollisionShape::Definition capsule(float radius, float height, const Vector3& center = Vector3::zero(), bool absolute = false);
-    public static function capsule_FltX2_V3_Bool(radius:Float, height:Float, center:Vector3, absolute:Bool = false):PhysicsCollisionShape_Definition
+    public static function capsule_FltX2_V3_Bool(radius:Float, height:Float, center:IVector3, absolute:Bool = false):PhysicsCollisionShape_Definition
     {
         return PhysicsCollisionShape_Definition.wrap(hx_PhysicsCollisionShape_static_capsule_FltX2_V3_Bool(radius, height, center.native(), absolute));
     }
@@ -59,7 +61,7 @@ class PhysicsCollisionShape extends GameplayObject, implements Ref
     }
 
     // DECL: static PhysicsCollisionShape::Definition sphere(float radius, const Vector3& center = Vector3::zero(), bool absolute = false);
-    public static function sphere_Flt_V3_Bool(radius:Float, center:Vector3, absolute:Bool = false):PhysicsCollisionShape_Definition
+    public static function sphere_Flt_V3_Bool(radius:Float, center:IVector3, absolute:Bool = false):PhysicsCollisionShape_Definition
     {
         return PhysicsCollisionShape_Definition.wrap(hx_PhysicsCollisionShape_static_sphere_Flt_V3_Bool(radius, center.native(), absolute));
     }

@@ -1,5 +1,7 @@
 package org.gameplay3d.immutable;
 
+import org.gameplay3d.immutable.IVector3;
+
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.util.INativeArray;
 
@@ -67,7 +69,7 @@ interface IMatrix implements INativeBinding
     public function rotate_Qtrn_Mat(q:Quaternion, dst:Matrix):Void;
 
     // DECL: void rotate(const Vector3& axis, float angle, Matrix* dst) const;
-    public function rotate_V3_Flt_Mat(axis:Vector3, angle:Float, dst:Matrix):Void;
+    public function rotate_V3_Flt_Mat(axis:IVector3, angle:Float, dst:Matrix):Void;
 
     // DECL: void rotateX(float angle, Matrix* dst) const;
     public function rotateX_Flt_Mat(angle:Float, dst:Matrix):Void;
@@ -79,7 +81,7 @@ interface IMatrix implements INativeBinding
     public function rotateZ_Flt_Mat(angle:Float, dst:Matrix):Void;
 
     // DECL: void scale(const Vector3& s, Matrix* dst) const;
-    public function scale_V3_Mat(s:Vector3, dst:Matrix):Void;
+    public function scale_V3_Mat(s:IVector3, dst:Matrix):Void;
 
     // DECL: void scale(float value, Matrix* dst) const;
     public function scale_Flt_Mat(value:Float, dst:Matrix):Void;
@@ -91,7 +93,7 @@ interface IMatrix implements INativeBinding
     public function transformPoint_V3(point:Vector3):Void;
 
     // DECL: void transformPoint(const Vector3& point, Vector3* dst) const;
-    public function transformPoint_V3X2(point:Vector3, dst:Vector3):Void;
+    public function transformPoint_V3X2(point:IVector3, dst:Vector3):Void;
 
     // DECL: void transformVector(Vector3* vector) const;
     public function transformVector_V3(vector:Vector3):Void;
@@ -100,7 +102,7 @@ interface IMatrix implements INativeBinding
     public function transformVector_V4(vector:Vector4):Void;
 
     // DECL: void transformVector(const Vector3& vector, Vector3* dst) const;
-    public function transformVector_V3X2(vector:Vector3, dst:Vector3):Void;
+    public function transformVector_V3X2(vector:IVector3, dst:Vector3):Void;
 
     // DECL: void transformVector(const Vector4& vector, Vector4* dst) const;
     public function transformVector_V4X2(vector:Vector4, dst:Vector4):Void;
@@ -109,7 +111,7 @@ interface IMatrix implements INativeBinding
     public function transformVector_FltX4_V3(x:Float, y:Float, z:Float, w:Float, dst:Vector3):Void;
 
     // DECL: void translate(const Vector3& t, Matrix* dst) const;
-    public function translate_V3_Mat(t:Vector3, dst:Matrix):Void;
+    public function translate_V3_Mat(t:IVector3, dst:Matrix):Void;
 
     // DECL: void translate(float x, float y, float z, Matrix* dst) const;
     public function translate_FltX3_Mat(x:Float, y:Float, z:Float, dst:Matrix):Void;

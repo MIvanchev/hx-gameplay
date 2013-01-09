@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -23,13 +25,13 @@ class PhysicsConstraint extends GameplayObject
     }
 
     // DECL: static Quaternion getRotationOffset(const Node* node, const Vector3& point);
-    public static function getRotationOffset(node:Node, point:Vector3):Quaternion
+    public static function getRotationOffset(node:Node, point:IVector3):Quaternion
     {
         return Quaternion.wrap(hx_PhysicsConstraint_static_getRotationOffset(node.native(), point.native()));
     }
 
     // DECL: static Vector3 getTranslationOffset(const Node* node, const Vector3& point);
-    public static function getTranslationOffset(node:Node, point:Vector3):Vector3
+    public static function getTranslationOffset(node:Node, point:IVector3):Vector3
     {
         return Vector3.wrap(hx_PhysicsConstraint_static_getTranslationOffset(node.native(), point.native()));
     }

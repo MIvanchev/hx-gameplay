@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import haxe.io.BytesData;
+import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.util.Handle;
 import org.gameplay3d.util.PrimitiveArray;
@@ -40,7 +41,7 @@ class Mesh extends GameplayObject, implements Ref
     }
 
     // DECL: static Mesh* createQuad(const Vector3& p1, const Vector3& p2, const Vector3& p3, const Vector3& p4);
-    public static function createQuad_V3X4(p1:Vector3, p2:Vector3, p3:Vector3, p4:Vector3):Mesh
+    public static function createQuad_V3X4(p1:IVector3, p2:IVector3, p3:IVector3, p4:IVector3):Mesh
     {
         return Mesh.wrap(hx_Mesh_static_createQuad_V3X4(p1.native(), p2.native(), p3.native(), p4.native()));
     }

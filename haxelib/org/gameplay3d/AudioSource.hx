@@ -104,7 +104,7 @@ class AudioSource extends Transform_ListenerImpl, implements Ref
     }
 
     // DECL: void setVelocity(const Vector3& velocity);
-    public function setVelocity_V3(velocity:Vector3):Void
+    public function setVelocity_V3(velocity:IVector3):Void
     {
         hx_AudioSource_setVelocity_V3(nativeObject, velocity.native());
     }

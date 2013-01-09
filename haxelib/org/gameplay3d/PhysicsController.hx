@@ -34,13 +34,13 @@ class PhysicsController extends ScriptTargetImpl
     }
 
     // DECL: PhysicsGenericConstraint* createGenericConstraint(PhysicsRigidBody* a, const Quaternion& rotationOffsetA, const Vector3& translationOffsetA,
-    public function createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3(a:PhysicsRigidBody, rotationOffsetA:Quaternion, translationOffsetA:Vector3, b:PhysicsRigidBody = null, rotationOffsetB:Quaternion, translationOffsetB:Vector3):PhysicsGenericConstraint
+    public function createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3(a:PhysicsRigidBody, rotationOffsetA:Quaternion, translationOffsetA:IVector3, b:PhysicsRigidBody = null, rotationOffsetB:Quaternion, translationOffsetB:IVector3):PhysicsGenericConstraint
     {
         return PhysicsGenericConstraint.wrap(hx_PhysicsController_createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3(nativeObject, a.native(), rotationOffsetA.native(), translationOffsetA.native(), b.native(), rotationOffsetB.native(), translationOffsetB.native()));
     }
 
     // DECL: PhysicsHingeConstraint* createHingeConstraint(PhysicsRigidBody* a, const Quaternion& rotationOffsetA, const Vector3& translationOffsetA,
-    public function createHingeConstraint(a:PhysicsRigidBody, rotationOffsetA:Quaternion, translationOffsetA:Vector3, b:PhysicsRigidBody = null, rotationOffsetB:Quaternion, translationOffsetB:Vector3):PhysicsHingeConstraint
+    public function createHingeConstraint(a:PhysicsRigidBody, rotationOffsetA:Quaternion, translationOffsetA:IVector3, b:PhysicsRigidBody = null, rotationOffsetB:Quaternion, translationOffsetB:IVector3):PhysicsHingeConstraint
     {
         return PhysicsHingeConstraint.wrap(hx_PhysicsController_createHingeConstraint(nativeObject, a.native(), rotationOffsetA.native(), translationOffsetA.native(), b.native(), rotationOffsetB.native(), translationOffsetB.native()));
     }
@@ -52,7 +52,7 @@ class PhysicsController extends ScriptTargetImpl
     }
 
     // DECL: PhysicsSocketConstraint* createSocketConstraint(PhysicsRigidBody* a, const Vector3& translationOffsetA,
-    public function createSocketConstraint_RgdBody_Qtrn_V3_RgdBody_V3(a:PhysicsRigidBody, translationOffsetA:Vector3, b:PhysicsRigidBody = null, translationOffsetB:Vector3):PhysicsSocketConstraint
+    public function createSocketConstraint_RgdBody_Qtrn_V3_RgdBody_V3(a:PhysicsRigidBody, translationOffsetA:IVector3, b:PhysicsRigidBody = null, translationOffsetB:IVector3):PhysicsSocketConstraint
     {
         return PhysicsSocketConstraint.wrap(hx_PhysicsController_createSocketConstraint_RgdBody_V3_RgdBody_V3(nativeObject, a.native(), translationOffsetA.native(), b.native(), translationOffsetB.native()));
     }
@@ -64,7 +64,7 @@ class PhysicsController extends ScriptTargetImpl
     }
 
     // DECL: PhysicsSpringConstraint* createSpringConstraint(PhysicsRigidBody* a, const Quaternion& rotationOffsetA, const Vector3& translationOffsetA,
-    public function createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3(a:PhysicsRigidBody, rotationOffsetA:Quaternion, translationOffsetA:Vector3, b:PhysicsRigidBody, rotationOffsetB:Quaternion, translationOffsetB:Vector3):PhysicsSpringConstraint
+    public function createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3(a:PhysicsRigidBody, rotationOffsetA:Quaternion, translationOffsetA:IVector3, b:PhysicsRigidBody, rotationOffsetB:Quaternion, translationOffsetB:IVector3):PhysicsSpringConstraint
     {
         return PhysicsSpringConstraint.wrap(hx_PhysicsController_createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3(nativeObject, a.native(), rotationOffsetA.native(), translationOffsetA.native(), b.native(), rotationOffsetB.native(), translationOffsetB.native()));
     }
@@ -94,13 +94,13 @@ class PhysicsController extends ScriptTargetImpl
     }
 
     // DECL: void setGravity(const Vector3& gravity);
-    public function setGravity(gravity:Vector3):Void
+    public function setGravity(gravity:IVector3):Void
     {
         hx_PhysicsController_setGravity(nativeObject, gravity.native());
     }
 
     // DECL: bool sweepTest(PhysicsCollisionObject* object, const Vector3& endPosition, PhysicsController::HitResult* result = NULL, PhysicsController::HitFilter* filter = NULL);
-    public function sweepTest(object:PhysicsCollisionObject, endPosition:Vector3, result:PhysicsController_HitResult = null, filter:PhysicsController_HitFilterWrapper = null):Bool
+    public function sweepTest(object:PhysicsCollisionObject, endPosition:IVector3, result:PhysicsController_HitResult = null, filter:PhysicsController_HitFilterWrapper = null):Bool
     {
         return hx_PhysicsController_sweepTest(nativeObject, object.native(), endPosition.native(), result.native(), filter.native());
     }

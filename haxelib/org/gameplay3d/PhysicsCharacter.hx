@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -53,7 +55,7 @@ class PhysicsCharacter extends PhysicsGhostObject
     }
 
     // DECL: void rotate(const Vector3& axis, float angle);
-    public function rotate_V3_Flt(axis:Vector3, angle:Float):Void
+    public function rotate_V3_Flt(axis:IVector3, angle:Float):Void
     {
         hx_PhysicsCharacter_rotate_V3_Flt(nativeObject, axis.native(), angle);
     }
@@ -95,13 +97,13 @@ class PhysicsCharacter extends PhysicsGhostObject
     }
 
     // DECL: void setRotation(const Vector3& axis, float angle);
-    public function setRotation_V3_Flt(axis:Vector3, angle:Float):Void
+    public function setRotation_V3_Flt(axis:IVector3, angle:Float):Void
     {
         hx_PhysicsCharacter_setRotation_V3_Flt(nativeObject, axis.native(), angle);
     }
 
     // DECL: void setVelocity(const Vector3& velocity);
-    public function setVelocity_V3(velocity:Vector3):Void
+    public function setVelocity_V3(velocity:IVector3):Void
     {
         hx_PhysicsCharacter_setVelocity_V3(nativeObject, velocity.native());
     }

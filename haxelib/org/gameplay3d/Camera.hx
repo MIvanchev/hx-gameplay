@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.OutParameter;
@@ -117,7 +118,7 @@ class Camera extends Transform_ListenerImpl, implements Ref
     }
 
     // DECL: void project(const Rectangle& viewport, const Vector3& position, float* x, float* y, float* depth = NULL) const;
-    public function project(viewport:Rectangle, position:Vector3, x:OutParameter<Float>, y:OutParameter<Float>, depth:OutParameter<Float> = null):Void
+    public function project(viewport:Rectangle, position:IVector3, x:OutParameter<Float>, y:OutParameter<Float>, depth:OutParameter<Float> = null):Void
     {
         var _x = new NativeOutParameter();
         var _y = new NativeOutParameter();

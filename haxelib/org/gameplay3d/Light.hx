@@ -1,4 +1,5 @@
 package org.gameplay3d;
+
 import org.gameplay3d.immutable.IVector3;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -12,7 +13,7 @@ class Light extends GameplayObject, implements Ref
      **************************************************************************/
 
     // DECL: static Light* createDirectional(const Vector3& color);
-    public static function createDirectional_V3(color:Vector3):Light
+    public static function createDirectional_V3(color:IVector3):Light
     {
         return Light.wrap(hx_Light_static_createDirectional_V3(color.native()));
     }
@@ -24,7 +25,7 @@ class Light extends GameplayObject, implements Ref
     }
 
     // DECL: static Light* createPoint(const Vector3& color, float range);
-    public static function createPoint_V3_Flt(color:Vector3, range:Float):Light
+    public static function createPoint_V3_Flt(color:IVector3, range:Float):Light
     {
         return Light.wrap(hx_Light_static_createPoint_V3_Flt(color.native(), range));
     }
@@ -36,7 +37,7 @@ class Light extends GameplayObject, implements Ref
     }
 
     // DECL: static Light* createSpot(const Vector3& color, float range, float innerAngle, float outerAngle);
-    public static function createSpot_V3_FltX3(color:Vector3, range:Float, innerAngle:Float, outerAngle:Float):Light
+    public static function createSpot_V3_FltX3(color:IVector3, range:Float, innerAngle:Float, outerAngle:Float):Light
     {
         return Light.wrap(hx_Light_static_createSpot_V3_FltX3(color.native(), range, innerAngle, outerAngle));
     }
@@ -102,7 +103,7 @@ class Light extends GameplayObject, implements Ref
     }
 
     // DECL: void setColor(const Vector3& color);
-    public function setColor_V3(color:Vector3):Void
+    public function setColor_V3(color:IVector3):Void
     {
         hx_Light_setColor_V3(nativeObject, color.native());
     }

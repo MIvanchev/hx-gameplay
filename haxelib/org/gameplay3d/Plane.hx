@@ -33,7 +33,7 @@ class Plane extends GameplayObject
     }
 
     // DECL: Plane(const Vector3& normal, float distance);
-    public static function make_V3_Flt(normal:Vector3, distance:Float):Plane
+    public static function make_V3_Flt(normal:IVector3, distance:Float):Plane
     {
         return new Plane(constructNativeObject_V3_Flt(normal, distance));
     }
@@ -45,7 +45,7 @@ class Plane extends GameplayObject
     }
 
     // DECL: float distance(const Vector3& point) const;
-    public function distance(point:Vector3):Float
+    public function distance(point:IVector3):Float
     {
         return hx_Plane_distance(nativeObject, point.native());
     }
@@ -111,7 +111,7 @@ class Plane extends GameplayObject
     }
 
     // DECL: void set(const Vector3& normal, float distance);
-    public function set_V3_Flt(normal:Vector3, distance:Float):Void
+    public function set_V3_Flt(normal:IVector3, distance:Float):Void
     {
         hx_Plane_set_V3_Flt(nativeObject, normal.native(), distance);
     }
@@ -123,7 +123,7 @@ class Plane extends GameplayObject
     }
 
     // DECL: void setNormal(const Vector3& normal);
-    public function setNormal_V3(normal:Vector3):Void
+    public function setNormal_V3(normal:IVector3):Void
     {
         hx_Plane_setNormal_V3(nativeObject, normal.native());
     }
@@ -157,7 +157,7 @@ class Plane extends GameplayObject
     }
 
     // DECL: Plane(const Vector3& normal, float distance);
-    static function constructNativeObject_V3_Flt(normal:Vector3, distance:Float):Dynamic
+    static function constructNativeObject_V3_Flt(normal:IVector3, distance:Float):Dynamic
     {
         return hx_Plane_Construct_V3_Flt(normal.native(), distance);
     }

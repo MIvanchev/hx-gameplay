@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.util.PrimitiveArray;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -91,7 +92,7 @@ class Frustum extends GameplayObject
     }
 
     // DECL: bool intersects(const Vector3& point) const;
-    public function intersects_V3(point:Vector3):Bool
+    public function intersects_V3(point:IVector3):Bool
     {
         return hx_Frustum_intersects_V3(nativeObject, point.native());
     }

@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector2;
+import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.util.Handle;
 
@@ -99,7 +100,7 @@ class Effect extends GameplayObject, implements Ref
     }
 
     // DECL: void setValue(Uniform* uniform, const Vector3& value);
-    public function setValue_Unif_V3(uniform:Uniform, value:Vector3):Void
+    public function setValue_Unif_V3(uniform:Uniform, value:IVector3):Void
     {
         hx_Effect_setValue_Unif_V3(nativeObject, uniform.native(), value.native());
     }
