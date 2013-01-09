@@ -79,7 +79,7 @@ value hx_Transform_getBackVector(value thisObj)
 {
     Transform *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getBackVector()));
+    return CopyOutsideScope(_thisObj->getBackVector());
 }
 DEFINE_PRIM(hx_Transform_getBackVector, 1);
 
@@ -99,7 +99,7 @@ value hx_Transform_getDownVector(value thisObj)
 {
     Transform *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getDownVector()));
+    return CopyOutsideScope(_thisObj->getDownVector());
 }
 DEFINE_PRIM(hx_Transform_getDownVector, 1);
 
@@ -119,7 +119,7 @@ value hx_Transform_getForwardVector(value thisObj)
 {
     Transform *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getForwardVector()));
+    return CopyOutsideScope(_thisObj->getForwardVector());
 }
 DEFINE_PRIM(hx_Transform_getForwardVector, 1);
 
@@ -139,7 +139,7 @@ value hx_Transform_getLeftVector(value thisObj)
 {
     Transform *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getLeftVector()));
+    return CopyOutsideScope(_thisObj->getLeftVector());
 }
 DEFINE_PRIM(hx_Transform_getLeftVector, 1);
 
@@ -168,7 +168,7 @@ value hx_Transform_getRightVector(value thisObj)
 {
     Transform *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getRightVector()));
+    return CopyOutsideScope(_thisObj->getRightVector());
 }
 DEFINE_PRIM(hx_Transform_getRightVector, 1);
 
@@ -324,7 +324,7 @@ value hx_Transform_getUpVector(value thisObj)
 {
     Transform *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getUpVector()));
+    return CopyOutsideScope(_thisObj->getUpVector());
 }
 DEFINE_PRIM(hx_Transform_getUpVector, 1);
 

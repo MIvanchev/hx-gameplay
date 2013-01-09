@@ -22,17 +22,17 @@ class BoundingBox extends GameplayObject
      * MEMBERS                                                                 *
      **************************************************************************/
 
-	var _center:Vector3;
+    var _center:Vector3;
 
-	function new(
+    function new(
             nativeObjectInitializer:Dynamic,
             nativeObjectInitializerParams:Array<Dynamic> = null
         )
     {
-		super(nativeObjectInitializer, nativeObjectInitializerParams);
-		min = Vector3.wrap(hx_BoundingBox_property_min_get(nativeObject));
-		max = Vector3.wrap(hx_BoundingBox_property_max_get(nativeObject));
-		_center = Vector3.make();
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        min = Vector3.wrap(hx_BoundingBox_property_min_get(nativeObject));
+        max = Vector3.wrap(hx_BoundingBox_property_max_get(nativeObject));
+        _center = Vector3.make();
     }
 
     // DECL: BoundingBox();

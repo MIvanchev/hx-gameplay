@@ -26,12 +26,12 @@ class Node extends Transform, implements Ref
     var _translationWorld:Vector3;
     var _upVectorWorld:Vector3;
 
-	function new(
+    function new(
             nativeObjectInitializer:Dynamic,
             nativeObjectInitializerParams:Array<Dynamic> = null
         )
     {
-		super(nativeObjectInitializer, nativeObjectInitializerParams);
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
         _activeCameraTranslationView = Vector3.make();
         _activeCameraTranslationWorld = Vector3.make();
         _forwardVectorView = Vector3.make();

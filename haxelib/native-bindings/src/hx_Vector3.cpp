@@ -337,7 +337,7 @@ DEFINE_PRIM(hx_Vector3_subtract, 2);
 // DECL: static const Vector3& unitX();
 value hx_Vector3_static_unitX()
 {
-    return ObjectToValue(new Vector3(Vector3::unitX()));
+    return ObjectToValue(&Vector3::unitX(), false);
 }
 DEFINE_PRIM(hx_Vector3_static_unitX, 0);
 

@@ -12,7 +12,7 @@ class GameplayObject extends NativeBinding
      * MEMBERS                                                                 *
      **************************************************************************/
 
-	static var args:Array<Dynamic> = [ null, null ];
+    static var args:Array<Dynamic> = [ null, null ];
 
      /**
       * Constructs an instance of this class by using the specified method to

@@ -20,13 +20,13 @@ class BoundingSphere extends GameplayObject
      * MEMBERS                                                                 *
      **************************************************************************/
 
-	function new(
+    function new(
             nativeObjectInitializer:Dynamic,
             nativeObjectInitializerParams:Array<Dynamic> = null
         )
     {
-		super(nativeObjectInitializer, nativeObjectInitializerParams);
-		center = Vector3.wrap(hx_BoundingSphere_property_center_get(nativeObject));
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        center = Vector3.wrap(hx_BoundingSphere_property_center_get(nativeObject));
     }
 
     // DECL: BoundingSphere();

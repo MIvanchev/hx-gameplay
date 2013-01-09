@@ -20,7 +20,7 @@ class PhysicsCharacter extends PhysicsGhostObject
             nativeObjectInitializerParams:Array<Dynamic> = null
         )
     {
-		super(nativeObjectInitializer, nativeObjectInitializerParams);
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
         _currentVelocity = Vector3.make();
     }
 

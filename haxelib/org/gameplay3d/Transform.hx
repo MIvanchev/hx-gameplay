@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.AnimationTarget_ScriptTarget;
+import org.gameplay3d.shared.SharedVector3;
 import org.gameplay3d.wrapper.Transform_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -33,6 +34,27 @@ class Transform extends AnimationTarget_ScriptTarget
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
+
+    var _backVector:Vector3;
+    var _downVector:Vector3;
+    var _forwardVector:Vector3;
+    var _leftVector:Vector3;
+    var _rightVector:Vector3;
+    var _upVector:Vector3;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _backVector = Vector3.make();
+        _downVector = Vector3.make();
+        _forwardVector = Vector3.make();
+        _leftVector = Vector3.make();
+        _rightVector = Vector3.make();
+        _upVector = Vector3.make();
+    }
 
     // DECL: Transform();
     public static function make():Transform
@@ -77,9 +99,9 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: Vector3 getBackVector() const;
-    public function getBackVector():Vector3
+    public function getBackVector():SharedVector3
     {
-        return Vector3.wrap(hx_Transform_getBackVector(nativeObject));
+        return _backVector.impersonate(hx_Transform_getBackVector(nativeObject));
     }
 
     // DECL: void getBackVector(Vector3* dst) const;
@@ -89,9 +111,9 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: Vector3 getDownVector() const;
-    public function getDownVector():Vector3
+    public function getDownVector():SharedVector3
     {
-        return Vector3.wrap(hx_Transform_getDownVector(nativeObject));
+        return _downVector.impersonate(hx_Transform_getDownVector(nativeObject));
     }
 
     // DECL: void getDownVector(Vector3* dst) const;
@@ -101,9 +123,9 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: Vector3 getForwardVector() const;
-    public function getForwardVector():Vector3
+    public function getForwardVector():SharedVector3
     {
-        return Vector3.wrap(hx_Transform_getForwardVector(nativeObject));
+        return _forwardVector.impersonate(hx_Transform_getForwardVector(nativeObject));
     }
 
     // DECL: void getForwardVector(Vector3* dst) const;
@@ -113,9 +135,9 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: Vector3 getLeftVector() const;
-    public function getLeftVector():Vector3
+    public function getLeftVector():SharedVector3
     {
-        return Vector3.wrap(hx_Transform_getLeftVector(nativeObject));
+        return _leftVector.impersonate(hx_Transform_getLeftVector(nativeObject));
     }
 
     // DECL: void getLeftVector(Vector3* dst) const;
@@ -131,9 +153,9 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: Vector3 getRightVector() const;
-    public function getRightVector():Vector3
+    public function getRightVector():SharedVector3
     {
-        return Vector3.wrap(hx_Transform_getRightVector(nativeObject));
+        return _rightVector.impersonate(hx_Transform_getRightVector(nativeObject));
     }
 
     // DECL: void getRightVector(Vector3* dst) const;
@@ -227,9 +249,9 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: Vector3 getUpVector() const;
-    public function getUpVector():Vector3
+    public function getUpVector():SharedVector3
     {
-        return Vector3.wrap(hx_Transform_getUpVector(nativeObject));
+        return _upVector.impersonate(hx_Transform_getUpVector(nativeObject));
     }
 
     // DECL: void getUpVector(Vector3* dst) const;
