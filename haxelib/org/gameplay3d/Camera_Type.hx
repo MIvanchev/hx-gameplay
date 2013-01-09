@@ -7,4 +7,3 @@ class Camera_Type
 }
 
 // END
-z

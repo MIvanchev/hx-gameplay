@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.impl.AnimationTarget_ScriptTarget;
 import org.gameplay3d.Theme_SideRegions;
@@ -77,19 +78,19 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: const Rectangle& getBounds() const;
-    public function getBounds():Rectangle
+    public function getBounds():IRectangle
     {
         return Rectangle.wrap(hx_Control_getBounds(nativeObject));
     }
 
     // DECL: const Rectangle& getClip() const;
-    public function getClip():Rectangle
+    public function getClip():IRectangle
     {
         return Rectangle.wrap(hx_Control_getClip(nativeObject));
     }
 
     // DECL: const Rectangle& getClipBounds() const;
-    public function getClipBounds():Rectangle
+    public function getClipBounds():IRectangle
     {
         return Rectangle.wrap(hx_Control_getClipBounds(nativeObject));
     }
@@ -107,7 +108,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: const Rectangle& getCursorRegion(State state) const;
-    public function getCursorRegion(state:Int):Rectangle
+    public function getCursorRegion(state:Int):IRectangle
     {
         return Rectangle.wrap(hx_Control_getCursorRegion(nativeObject, state));
     }
@@ -155,7 +156,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: const Rectangle& getImageRegion(const char* id, State state) const;
-    public function getImageRegion(id:String, state:Int):Rectangle
+    public function getImageRegion(id:String, state:Int):IRectangle
     {
         return Rectangle.wrap(hx_Control_getImageRegion(nativeObject, id, state));
     }
@@ -191,7 +192,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: const Rectangle& getSkinRegion(State state = NORMAL) const;
-    public function getSkinRegion(state:Int = Control_State.NORMAL):Rectangle
+    public function getSkinRegion(state:Int = Control_State.NORMAL):IRectangle
     {
         return Rectangle.wrap(hx_Control_getSkinRegion(nativeObject, state));
     }
@@ -299,7 +300,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: virtual void setBounds(const Rectangle& bounds);
-    public function setBounds(bounds:Rectangle):Void
+    public function setBounds(bounds:IRectangle):Void
     {
         hx_Control_setBounds(nativeObject, bounds.native());
     }
@@ -317,7 +318,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: void setCursorRegion(const Rectangle& region, unsigned char states);
-    public function setCursorRegion(region:Rectangle, states:Int):Void
+    public function setCursorRegion(region:IRectangle, states:Int):Void
     {
         hx_Control_setCursorRegion(nativeObject, region.native(), states);
     }
@@ -353,7 +354,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: void setImageRegion(const char* id, const Rectangle& region, unsigned char states = STATE_ALL);
-    public function setImageRegion(id:String, region:Rectangle, states:Int = STATE_ALL):Void
+    public function setImageRegion(id:String, region:IRectangle, states:Int = STATE_ALL):Void
     {
         hx_Control_setImageRegion(nativeObject, id, region.native(), states);
     }
@@ -407,7 +408,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: void setSkinRegion(const Rectangle& region, unsigned char states = STATE_ALL);
-    public function setSkinRegion(region:Rectangle, states:Int = STATE_ALL):Void
+    public function setSkinRegion(region:IRectangle, states:Int = STATE_ALL):Void
     {
         hx_Control_setSkinRegion(nativeObject, region.native(), states);
     }

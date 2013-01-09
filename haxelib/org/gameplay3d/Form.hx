@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IRectangle;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -59,7 +61,7 @@ class Form extends Container
     }
 
     // DECL: virtual void setBounds(const Rectangle& bounds);
-    override public function setBounds(bounds:Rectangle):Void
+    override public function setBounds(bounds:IRectangle):Void
     {
         hx_Form_setBounds(nativeObject, bounds.native());
     }

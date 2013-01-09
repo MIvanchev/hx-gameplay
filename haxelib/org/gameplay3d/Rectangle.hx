@@ -1,10 +1,12 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IRectangle;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Rectangle : public GameplayObject
-class Rectangle extends GameplayObject
+class Rectangle extends GameplayObject, implements IRectangle
 {
     /***************************************************************************
      * PROPERTIES                                                              *
@@ -26,7 +28,7 @@ class Rectangle extends GameplayObject
     }
 
     // DECL: Rectangle(const Rectangle& copy);
-    public static function make_Rct(copy:Rectangle):Rectangle
+    public static function make_Rct(copy:IRectangle):Rectangle
     {
         return new Rectangle(constructNativeObject_Rct(copy));
     }
@@ -50,13 +52,13 @@ class Rectangle extends GameplayObject
     }
 
     // DECL: static void combine(const Rectangle& r1, const Rectangle& r2, Rectangle* dst);
-    public static function combine(r1:Rectangle, r2:Rectangle, dst:Rectangle):Void
+    public static function combine(r1:IRectangle, r2:IRectangle, dst:Rectangle):Void
     {
         hx_Rectangle_static_combine(r1.native(), r2.native(), dst.native());
     }
 
     // DECL: bool contains(const Rectangle& r) const;
-    public function contains_Rct(r:Rectangle):Bool
+    public function contains_Rct(r:IRectangle):Bool
     {
         return hx_Rectangle_contains_Rct(nativeObject, r.native());
     }
@@ -74,7 +76,7 @@ class Rectangle extends GameplayObject
     }
 
     // DECL: static const Rectangle& empty();
-    public static function empty():Rectangle
+    public static function empty():IRectangle
     {
         return Rectangle.wrap(hx_Rectangle_static_empty());
     }
@@ -86,7 +88,7 @@ class Rectangle extends GameplayObject
     }
 
     // DECL: bool intersects(const Rectangle& r) const;
-    public function intersects_Rct(r:Rectangle):Bool
+    public function intersects_Rct(r:IRectangle):Bool
     {
         return hx_Rectangle_intersects_Rct(nativeObject, r.native());
     }
@@ -116,7 +118,7 @@ class Rectangle extends GameplayObject
     }
 
     // DECL: void set(const Rectangle& r);
-    public function set_Rct(r:Rectangle):Void
+    public function set_Rct(r:IRectangle):Void
     {
         hx_Rectangle_set_Rct(nativeObject, r.native());
     }
@@ -150,7 +152,7 @@ class Rectangle extends GameplayObject
     }
 
     // DECL: Rectangle(const Rectangle& copy);
-    static function constructNativeObject_Rct(copy:Rectangle):Dynamic
+    static function constructNativeObject_Rct(copy:IRectangle):Dynamic
     {
         return hx_Rectangle_Construct_Rct(copy.native());
     }

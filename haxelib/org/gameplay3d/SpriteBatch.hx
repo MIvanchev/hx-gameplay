@@ -28,19 +28,19 @@ class SpriteBatch extends GameplayObject
     }
 
     // DECL: void draw(const Rectangle& dst, const Rectangle& src, const Vector4& color = Vector4::one());
-    public function draw_RctX2_V4(dst:Rectangle, src:Rectangle, color:IVector4):Void
+    public function draw_RctX2_V4(dst:IRectangle, src:IRectangle, color:IVector4):Void
     {
         hx_SpriteBatch_draw_RctX2_V4(nativeObject, dst.native(), src.native(), color.native());
     }
 
     // DECL: void draw(const Vector3& dst, const Rectangle& src, const Vector2& scale, const Vector4& color = Vector4::one());
-    public function draw_V3_Rct_V2_V4(dst:IVector3, src:Rectangle, scale:IVector2, color:IVector4):Void
+    public function draw_V3_Rct_V2_V4(dst:IVector3, src:IRectangle, scale:IVector2, color:IVector4):Void
     {
         hx_SpriteBatch_draw_V3_Rct_V2_V4(nativeObject, dst.native(), src.native(), scale.native(), color.native());
     }
 
     // DECL: void draw(const Vector3& dst, const Rectangle& src, const Vector2& scale, const Vector4& color,
-    public function draw_V3_Rct_V2_V4_V2_Flt(dst:IVector3, src:Rectangle, scale:IVector2, color:IVector4, rotationPoint:IVector2, rotationAngle:Float):Void
+    public function draw_V3_Rct_V2_V4_V2_Flt(dst:IVector3, src:IRectangle, scale:IVector2, color:IVector4, rotationPoint:IVector2, rotationAngle:Float):Void
     {
         hx_SpriteBatch_draw_V3_Rct_V2_V4_V2_Flt(nativeObject, dst.native(), src.native(), scale.native(), color.native(), rotationPoint.native(), rotationAngle);
     }
@@ -64,7 +64,7 @@ class SpriteBatch extends GameplayObject
     }
 
     // DECL: void draw(float x, float y, float width, float height, float u1, float v1, float u2, float v2, const Vector4& color, const Rectangle& clip);
-    public function draw_FltX8_V4_Rct(x:Float, y:Float, width:Float, height:Float, u1:Float, v1:Float, u2:Float, v2:Float, color:IVector4, clip:Rectangle):Void
+    public function draw_FltX8_V4_Rct(x:Float, y:Float, width:Float, height:Float, u1:Float, v1:Float, u2:Float, v2:Float, color:IVector4, clip:IRectangle):Void
     {
         hx_SpriteBatch_draw_FltX8_V4_Rct(nativeObject, x, y, width, height, u1, v1, u2, v2, color.native(), clip.native());
     }

@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector2;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.NativeOutParameter;
@@ -22,7 +23,7 @@ class Font extends GameplayObject, implements Ref
     }
 
     // DECL: Text* createText(const char* text, const Rectangle& area, const Vector4& color, unsigned int size = 0,
-    public function createText(text:String, area:Rectangle, color:IVector4, size:Int = 0, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, rightToLeft:Bool = false, clip:Rectangle = null):Font_Text
+    public function createText(text:String, area:IRectangle, color:IVector4, size:Int = 0, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, rightToLeft:Bool = false, clip:Rectangle = null):Font_Text
     {
         return Font_Text.wrap(hx_Font_createText(nativeObject, text, area.native(), color.native(), size, justify, wrap, rightToLeft, clip.native()));
     }
@@ -34,7 +35,7 @@ class Font extends GameplayObject, implements Ref
     }
 
     // DECL: void drawText(const char* text, const Rectangle& area, const Vector4& color, unsigned int size = 0,
-    public function drawText_Str_Rct_V4_IntX2_BoolX2_Rct(text:String, area:Rectangle, color:IVector4, size:Int = 0, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, rightToLeft:Bool = false, clip:Rectangle = null):Void
+    public function drawText_Str_Rct_V4_IntX2_BoolX2_Rct(text:String, area:IRectangle, color:IVector4, size:Int = 0, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, rightToLeft:Bool = false, clip:Rectangle = null):Void
     {
         hx_Font_drawText_Str_Rct_V4_IntX2_BoolX2_Rct(nativeObject, text, area.native(), color.native(), size, justify, wrap, rightToLeft, clip.native());
     }
@@ -58,7 +59,7 @@ class Font extends GameplayObject, implements Ref
     }
 
     // DECL: int getIndexAtLocation(const char* text, const Rectangle& clip, unsigned int size, const Vector2& inLocation, Vector2* outLocation,
-    public function getIndexAtLocation(text:String, clip:Rectangle, size:Int, inLocation:IVector2, outLocation:Vector2, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, rightToLeft:Bool = false):Int
+    public function getIndexAtLocation(text:String, clip:IRectangle, size:Int, inLocation:IVector2, outLocation:Vector2, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, rightToLeft:Bool = false):Int
     {
         return hx_Font_getIndexAtLocation(nativeObject, text, clip.native(), size, inLocation.native(), outLocation.native(), justify, wrap, rightToLeft);
     }
@@ -70,7 +71,7 @@ class Font extends GameplayObject, implements Ref
     }
 
     // DECL: void getLocationAtIndex(const char* text, const Rectangle& clip, unsigned int size, Vector2* outLocation, const unsigned int destIndex,
-    public function getLocationAtIndex(text:String, clip:Rectangle, size:Int, outLocation:Vector2, destIndex:Int, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, rightToLeft:Bool = false):Void
+    public function getLocationAtIndex(text:String, clip:IRectangle, size:Int, outLocation:Vector2, destIndex:Int, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, rightToLeft:Bool = false):Void
     {
         hx_Font_getLocationAtIndex(nativeObject, text, clip.native(), size, outLocation.native(), destIndex, justify, wrap, rightToLeft);
     }
@@ -88,7 +89,7 @@ class Font extends GameplayObject, implements Ref
     }
 
     // DECL: void measureText(const char* text, const Rectangle& clip, unsigned int size, Rectangle* out,
-    public function measureText_Str_Rct_Int_Rct_Int_BoolX2(text:String, clip:Rectangle, size:Int, out:Rectangle, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, ignoreClip:Bool = false):Void
+    public function measureText_Str_Rct_Int_Rct_Int_BoolX2(text:String, clip:IRectangle, size:Int, out:Rectangle, justify:Int = Font_Justify.ALIGN_TOP_LEFT, wrap:Bool = true, ignoreClip:Bool = false):Void
     {
         hx_Font_measureText_Str_Rct_Int_Rct_Int_BoolX2(nativeObject, text, clip.native(), size, out.native(), justify, wrap, ignoreClip);
     }

@@ -59,7 +59,7 @@ class PrimitiveArray<T> extends NativeBinding,
      * FACTORY METHODS                                                         *
      **************************************************************************/
 
-    public static function constructIntArray(length, reclaim = true):NativeArrayInt
+    public static function constructIntArray(length = 1, reclaim = true):NativeArrayInt
     {
         return
             new PrimitiveArray(
@@ -71,7 +71,7 @@ class PrimitiveArray<T> extends NativeBinding,
 
     }
 
-    public static function constructUintArray(length, reclaim):NativeArrayUint
+    public static function constructUintArray(length = 1, reclaim = true):NativeArrayUint
     {
         return
             new PrimitiveArray(
@@ -83,7 +83,7 @@ class PrimitiveArray<T> extends NativeBinding,
 
     }
 
-    public static function constructShortArray(length, reclaim):NativeArrayShort
+    public static function constructShortArray(length = 1, reclaim = true):NativeArrayShort
     {
         return
             new PrimitiveArray(
@@ -95,7 +95,7 @@ class PrimitiveArray<T> extends NativeBinding,
 
     }
 
-    public static function constructUshortArray(length, reclaim):NativeArrayUshort
+    public static function constructUshortArray(length = 1, reclaim = true):NativeArrayUshort
     {
         return
             new PrimitiveArray(
@@ -107,7 +107,7 @@ class PrimitiveArray<T> extends NativeBinding,
 
     }
 
-    public static function constructCharArray(length, reclaim):NativeArrayChar
+    public static function constructCharArray(length = 1, reclaim = true):NativeArrayChar
     {
         return
             new PrimitiveArray(
@@ -119,7 +119,7 @@ class PrimitiveArray<T> extends NativeBinding,
 
     }
 
-    public static function constructByteArray(length, reclaim):NativeArrayByte
+    public static function constructByteArray(length = 1, reclaim = true):NativeArrayByte
     {
         return
             new PrimitiveArray(
@@ -131,7 +131,7 @@ class PrimitiveArray<T> extends NativeBinding,
 
     }
 
-    public static function constructFloatArray(length, reclaim):NativeArrayFloat
+    public static function constructFloatArray(length = 1, reclaim = true):NativeArrayFloat
     {
         return
             new PrimitiveArray(
@@ -143,7 +143,7 @@ class PrimitiveArray<T> extends NativeBinding,
 
     }
 
-    public static function constructDoubleArray(length, reclaim):NativeArrayDouble
+    public static function constructDoubleArray(length = 1, reclaim = true):NativeArrayDouble
     {
         return
             new PrimitiveArray(

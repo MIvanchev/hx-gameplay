@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import cpp.Lib;
+import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.Handle;
@@ -208,7 +209,7 @@ class Game extends GameplayObject
     }
 
     // DECL: inline const Rectangle& getViewport() const;
-    public function getViewport():Rectangle
+    public function getViewport():IRectangle
     {
         return Rectangle.wrap(hx_Game_getViewport(nativeObject));
     }
@@ -344,7 +345,7 @@ class Game extends GameplayObject
     }
 
     // DECL: void setViewport(const Rectangle& viewport);
-    public function setViewport(viewport:Rectangle):Void
+    public function setViewport(viewport:IRectangle):Void
     {
         hx_Game_setViewport(nativeObject, viewport.native());
     }

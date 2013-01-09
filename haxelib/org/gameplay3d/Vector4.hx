@@ -248,7 +248,7 @@ class Vector4 extends GameplayObject, implements IVector4
     }
 
     // DECL: Vector4(const IVector4& p1, const IVector4& p2);
-    static function constructNativeObject_V4X2(p1:Vector4, p2:Vector4):Dynamic
+    static function constructNativeObject_V4X2(p1:IVector4, p2:IVector4):Dynamic
     {
         return hx_Vector4_Construct_V4X2(p1.native(), p2.native());
     }
