@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.AnimationTarget_ScriptTarget;
 import org.gameplay3d.wrapper.Transform_ListenerWrapper;
 
@@ -53,7 +54,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: Transform(const Vector3& scale, const Quaternion& rotation, const Vector3& translation);
-    public static function make_V3_Qtrn_V3(scale:IVector3, rotation:Quaternion, translation:IVector3):Transform
+    public static function make_V3_Qtrn_V3(scale:IVector3, rotation:IQuaternion, translation:IVector3):Transform
     {
         return new Transform(constructNativeObject_V3_Qtrn_V3(scale, rotation, translation));
     }
@@ -143,7 +144,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: const Quaternion& getRotation() const;
-    public function getRotation():Quaternion
+    public function getRotation():IQuaternion
     {
         return Quaternion.wrap(hx_Transform_getRotation(nativeObject));
     }
@@ -263,7 +264,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void rotate(const Quaternion& rotation);
-    public function rotate_Qtrn(rotation:Quaternion):Void
+    public function rotate_Qtrn(rotation:IQuaternion):Void
     {
         hx_Transform_rotate_Qtrn(nativeObject, rotation.native());
     }
@@ -347,7 +348,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void set(const Vector3& scale, const Quaternion& rotation, const Vector3& translation);
-    public function set_V3_Qtrn_V3(scale:IVector3, rotation:Quaternion, translation:IVector3):Void
+    public function set_V3_Qtrn_V3(scale:IVector3, rotation:IQuaternion, translation:IVector3):Void
     {
         hx_Transform_set_V3_Qtrn_V3(nativeObject, scale.native(), rotation.native(), translation.native());
     }
@@ -377,7 +378,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void setRotation(const Quaternion& rotation);
-    public function setRotation_Qtrn(rotation:Quaternion):Void
+    public function setRotation_Qtrn(rotation:IQuaternion):Void
     {
         hx_Transform_setRotation_Qtrn(nativeObject, rotation.native());
     }
@@ -573,7 +574,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: Transform(const Vector3& scale, const Quaternion& rotation, const Vector3& translation);
-    static function constructNativeObject_V3_Qtrn_V3(scale:IVector3, rotation:Quaternion, translation:IVector3):Dynamic
+    static function constructNativeObject_V3_Qtrn_V3(scale:IVector3, rotation:IQuaternion, translation:IVector3):Dynamic
     {
         return hx_Transform_Construct_V3_Qtrn_V3(scale.nativeObject, rotation.nativeObject, translation.nativeObject);
     }

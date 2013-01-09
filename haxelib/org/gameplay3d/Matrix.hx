@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
+import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.util.IMutableNativeArray;
@@ -110,7 +111,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: static void createRotation(const Quaternion& quat, Matrix* dst);
-    public static function createRotation_Qtrn_Mat(quat:Quaternion, dst:Matrix):Void
+    public static function createRotation_Qtrn_Mat(quat:IQuaternion, dst:Matrix):Void
     {
         hx_Matrix_static_createRotation_Qtrn_Mat(quat.native(), dst.native());
     }
@@ -296,13 +297,13 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: void rotate(const Quaternion& q);
-    public function rotate_Qtrn(q:Quaternion):Void
+    public function rotate_Qtrn(q:IQuaternion):Void
     {
         hx_Matrix_rotate_Qtrn(nativeObject, q.native());
     }
 
     // DECL: void rotate(const Quaternion& q, Matrix* dst) const;
-    public function rotate_Qtrn_Mat(q:Quaternion, dst:Matrix):Void
+    public function rotate_Qtrn_Mat(q:IQuaternion, dst:Matrix):Void
     {
         hx_Matrix_rotate_Qtrn_Mat(nativeObject, q.native(), dst.native());
     }

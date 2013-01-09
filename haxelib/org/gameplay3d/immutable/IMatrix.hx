@@ -1,5 +1,6 @@
 package org.gameplay3d.immutable;
 
+import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
 
@@ -67,7 +68,7 @@ interface IMatrix implements INativeBinding
     public function negate_Mat(dst:Matrix):Void;
 
     // DECL: void rotate(const Quaternion& q, Matrix* dst) const;
-    public function rotate_Qtrn_Mat(q:Quaternion, dst:Matrix):Void;
+    public function rotate_Qtrn_Mat(q:IQuaternion, dst:Matrix):Void;
 
     // DECL: void rotate(const Vector3& axis, float angle, Matrix* dst) const;
     public function rotate_V3_Flt_Mat(axis:IVector3, angle:Float, dst:Matrix):Void;

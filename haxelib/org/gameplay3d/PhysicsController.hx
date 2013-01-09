@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
+import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.ScriptTargetImpl;
 import org.gameplay3d.wrapper.PhysicsController_HitFilterWrapper;
@@ -35,13 +36,13 @@ class PhysicsController extends ScriptTargetImpl
     }
 
     // DECL: PhysicsGenericConstraint* createGenericConstraint(PhysicsRigidBody* a, const Quaternion& rotationOffsetA, const Vector3& translationOffsetA,
-    public function createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3(a:PhysicsRigidBody, rotationOffsetA:Quaternion, translationOffsetA:IVector3, b:PhysicsRigidBody = null, rotationOffsetB:Quaternion, translationOffsetB:IVector3):PhysicsGenericConstraint
+    public function createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3(a:PhysicsRigidBody, rotationOffsetA:IQuaternion, translationOffsetA:IVector3, b:PhysicsRigidBody = null, rotationOffsetB:IQuaternion, translationOffsetB:IVector3):PhysicsGenericConstraint
     {
         return PhysicsGenericConstraint.wrap(hx_PhysicsController_createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3(nativeObject, a.native(), rotationOffsetA.native(), translationOffsetA.native(), b.native(), rotationOffsetB.native(), translationOffsetB.native()));
     }
 
     // DECL: PhysicsHingeConstraint* createHingeConstraint(PhysicsRigidBody* a, const Quaternion& rotationOffsetA, const Vector3& translationOffsetA,
-    public function createHingeConstraint(a:PhysicsRigidBody, rotationOffsetA:Quaternion, translationOffsetA:IVector3, b:PhysicsRigidBody = null, rotationOffsetB:Quaternion, translationOffsetB:IVector3):PhysicsHingeConstraint
+    public function createHingeConstraint(a:PhysicsRigidBody, rotationOffsetA:IQuaternion, translationOffsetA:IVector3, b:PhysicsRigidBody = null, rotationOffsetB:IQuaternion, translationOffsetB:IVector3):PhysicsHingeConstraint
     {
         return PhysicsHingeConstraint.wrap(hx_PhysicsController_createHingeConstraint(nativeObject, a.native(), rotationOffsetA.native(), translationOffsetA.native(), b.native(), rotationOffsetB.native(), translationOffsetB.native()));
     }
@@ -65,7 +66,7 @@ class PhysicsController extends ScriptTargetImpl
     }
 
     // DECL: PhysicsSpringConstraint* createSpringConstraint(PhysicsRigidBody* a, const Quaternion& rotationOffsetA, const Vector3& translationOffsetA,
-    public function createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3(a:PhysicsRigidBody, rotationOffsetA:Quaternion, translationOffsetA:IVector3, b:PhysicsRigidBody, rotationOffsetB:Quaternion, translationOffsetB:IVector3):PhysicsSpringConstraint
+    public function createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3(a:PhysicsRigidBody, rotationOffsetA:IQuaternion, translationOffsetA:IVector3, b:PhysicsRigidBody, rotationOffsetB:IQuaternion, translationOffsetB:IVector3):PhysicsSpringConstraint
     {
         return PhysicsSpringConstraint.wrap(hx_PhysicsController_createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3(nativeObject, a.native(), rotationOffsetA.native(), translationOffsetA.native(), b.native(), rotationOffsetB.native(), translationOffsetB.native()));
     }

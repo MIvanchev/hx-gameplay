@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -13,13 +14,13 @@ class PhysicsGenericConstraint extends PhysicsConstraint
      **************************************************************************/
 
     // DECL: inline const Quaternion& getRotationOffsetA() const;
-    public function getRotationOffsetA():Quaternion
+    public function getRotationOffsetA():IQuaternion
     {
         return Quaternion.wrap(hx_PhysicsGenericConstraint_getRotationOffsetA(nativeObject));
     }
 
     // DECL: inline const Quaternion& getRotationOffsetB() const;
-    public function getRotationOffsetB():Quaternion
+    public function getRotationOffsetB():IQuaternion
     {
         return Quaternion.wrap(hx_PhysicsGenericConstraint_getRotationOffsetB(nativeObject));
     }
@@ -61,13 +62,13 @@ class PhysicsGenericConstraint extends PhysicsConstraint
     }
 
     // DECL: inline void setRotationOffsetA(const Quaternion& rotationOffset);
-    public function setRotationOffsetA(rotationOffset:Quaternion):Void
+    public function setRotationOffsetA(rotationOffset:IQuaternion):Void
     {
         hx_PhysicsGenericConstraint_setRotationOffsetA(nativeObject, rotationOffset.native());
     }
 
     // DECL: inline void setRotationOffsetB(const Quaternion& rotationOffset);
-    public function setRotationOffsetB(rotationOffset:Quaternion):Void
+    public function setRotationOffsetB(rotationOffset:IQuaternion):Void
     {
         hx_PhysicsGenericConstraint_setRotationOffsetB(nativeObject, rotationOffset.native());
     }

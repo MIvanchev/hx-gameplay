@@ -1,8 +1,8 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
-import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IQuaternion;
+import org.gameplay3d.immutable.IVector3;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -36,7 +36,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: Quaternion(const Quaternion& copy);
-    public static function make_Qtrn(copy:Quaternion):Quaternion
+    public static function make_Qtrn(copy:IQuaternion):Quaternion
     {
         return new Quaternion(constructNativeObject_Qtrn(copy));
     }
@@ -84,7 +84,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: static const Quaternion& identity();
-    public static function identity():Quaternion
+    public static function identity():IQuaternion
     {
         return Quaternion.wrap(hx_Quaternion_static_identity());
     }
@@ -114,19 +114,19 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: static void lerp(const Quaternion& q1, const Quaternion& q2, float t, Quaternion* dst);
-    public static function lerp(q1:Quaternion, q2:Quaternion, t:Float, dst:Quaternion):Void
+    public static function lerp(q1:IQuaternion, q2:IQuaternion, t:Float, dst:Quaternion):Void
     {
         hx_Quaternion_static_lerp(q1.native(), q2.native(), t, dst.native());
     }
 
     // DECL: static void multiply(const Quaternion& q1, const Quaternion& q2, Quaternion* dst);
-    public static function multiply_QtrnX3(q1:Quaternion, q2:Quaternion, dst:Quaternion):Void
+    public static function multiply_QtrnX3(q1:IQuaternion, q2:IQuaternion, dst:Quaternion):Void
     {
         hx_Quaternion_static_multiply(q1.native(), q2.native(), dst.native());
     }
 
     // DECL: void multiply(const Quaternion& q);
-    public function multiply_Qtrn(q:Quaternion):Void
+    public function multiply_Qtrn(q:IQuaternion):Void
     {
         hx_Quaternion_multiply(nativeObject, q.native());
     }
@@ -150,7 +150,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: void set(const Quaternion& q);
-    public function set_Qtrn(q:Quaternion):Void
+    public function set_Qtrn(q:IQuaternion):Void
     {
         hx_Quaternion_set_Qtrn(nativeObject, q.native());
     }
@@ -180,13 +180,13 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: static void slerp(const Quaternion& q1, const Quaternion& q2, float t, Quaternion* dst);
-    public static function slerp(q1:Quaternion, q2:Quaternion, t:Float, dst:Quaternion):Void
+    public static function slerp(q1:IQuaternion, q2:IQuaternion, t:Float, dst:Quaternion):Void
     {
         hx_Quaternion_static_slerp(q1.native(), q2.native(), t, dst.native());
     }
 
     // DECL: static void squad(const Quaternion& q1, const Quaternion& q2, const Quaternion& s1, const Quaternion& s2, float t, Quaternion* dst);
-    public static function squad(q1:Quaternion, q2:Quaternion, s1:Quaternion, s2:Quaternion, t:Float, dst:Quaternion):Void
+    public static function squad(q1:IQuaternion, q2:IQuaternion, s1:IQuaternion, s2:IQuaternion, t:Float, dst:Quaternion):Void
     {
         hx_Quaternion_static_squad(q1.native(), q2.native(), s1.native(), s2.native(), t, dst.native());
     }
@@ -198,7 +198,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: static const Quaternion& zero();
-    public static function zero():Quaternion
+    public static function zero():IQuaternion
     {
         return Quaternion.wrap(hx_Quaternion_static_zero());
     }
@@ -220,7 +220,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: Quaternion(const Quaternion& copy);
-    static function constructNativeObject_Qtrn(copy:Quaternion):Dynamic
+    static function constructNativeObject_Qtrn(copy:IQuaternion):Dynamic
     {
         return hx_Quaternion_Construct_Qtrn(copy.native());
     }

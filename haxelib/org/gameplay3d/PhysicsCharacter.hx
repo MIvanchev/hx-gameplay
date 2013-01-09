@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -49,7 +50,7 @@ class PhysicsCharacter extends PhysicsGhostObject
     }
 
     // DECL: void rotate(const Quaternion& rotation);
-    public function rotate_Qtrn(rotation:Quaternion):Void
+    public function rotate_Qtrn(rotation:IQuaternion):Void
     {
         hx_PhysicsCharacter_rotate_Qtrn(nativeObject, rotation.native());
     }
@@ -91,7 +92,7 @@ class PhysicsCharacter extends PhysicsGhostObject
     }
 
     // DECL: void setRotation(const Quaternion& rotation);
-    public function setRotation_Qtrn(rotation:Quaternion):Void
+    public function setRotation_Qtrn(rotation:IQuaternion):Void
     {
         hx_PhysicsCharacter_setRotation_Qtrn(nativeObject, rotation.native());
     }
