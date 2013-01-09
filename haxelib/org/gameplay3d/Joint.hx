@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -11,7 +13,7 @@ class Joint extends Node
      **************************************************************************/
 
     // DECL: const Matrix& getInverseBindPose() const;
-    public function getInverseBindPose():Matrix
+    public function getInverseBindPose():IMatrix
     {
         return Matrix.wrap(hx_Joint_getInverseBindPose(nativeObject));
     }

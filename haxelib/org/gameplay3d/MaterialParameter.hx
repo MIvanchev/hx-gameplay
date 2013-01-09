@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.impl.AnimationTargetImpl;
 import org.gameplay3d.util.INativeArray;
@@ -76,7 +77,7 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
     }
 
     // DECL: void setValue(const Matrix& value);
-    public function setValue_Mat(value:Matrix):Void
+    public function setValue_Mat(value:IMatrix):Void
     {
         hx_MaterialParameter_setValue_Mat(nativeObject, value.native());
     }

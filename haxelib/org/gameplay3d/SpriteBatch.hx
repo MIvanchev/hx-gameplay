@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector2;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
@@ -93,7 +94,7 @@ class SpriteBatch extends GameplayObject
     }
 
     // DECL: const Matrix& getProjectionMatrix() const;
-    public function getProjectionMatrix():Matrix
+    public function getProjectionMatrix():IMatrix
     {
         return Matrix.wrap(hx_SpriteBatch_getProjectionMatrix(nativeObject));
     }
@@ -111,7 +112,7 @@ class SpriteBatch extends GameplayObject
     }
 
     // DECL: void setProjectionMatrix(const Matrix& matrix);
-    public function setProjectionMatrix(matrix:Matrix):Void
+    public function setProjectionMatrix(matrix:IMatrix):Void
     {
         hx_SpriteBatch_setProjectionMatrix(nativeObject, matrix.native());
     }

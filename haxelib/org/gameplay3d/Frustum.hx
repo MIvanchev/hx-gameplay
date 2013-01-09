@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.util.PrimitiveArray;
 
@@ -26,7 +27,7 @@ class Frustum extends GameplayObject
     }
 
     // DECL: Frustum(const Matrix& matrix);
-    public static function make_Mat(matrix:Matrix):Frustum
+    public static function make_Mat(matrix:IMatrix):Frustum
     {
         return new Frustum(constructNativeObject_Mat(matrix));
     }
@@ -122,7 +123,7 @@ class Frustum extends GameplayObject
     }
 
     // DECL: void set(const Matrix& matrix);
-    public function set_Mat(matrix:Matrix):Void
+    public function set_Mat(matrix:IMatrix):Void
     {
         hx_Frustum_set_Mat(nativeObject, matrix.native());
     }
@@ -144,7 +145,7 @@ class Frustum extends GameplayObject
     }
 
     // DECL: Frustum(const Matrix& matrix);
-    static function constructNativeObject_Mat(matrix:Matrix):Dynamic
+    static function constructNativeObject_Mat(matrix:IMatrix):Dynamic
     {
         return hx_Frustum_Construct_Mat(matrix.native());
     }

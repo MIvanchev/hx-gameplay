@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -110,7 +111,7 @@ class BoundingSphere extends GameplayObject
     }
 
     // DECL: void transform(const Matrix& matrix);
-    public function transform(matrix:Matrix):Void
+    public function transform(matrix:IMatrix):Void
     {
         hx_BoundingSphere_transform(nativeObject, matrix.native());
     }

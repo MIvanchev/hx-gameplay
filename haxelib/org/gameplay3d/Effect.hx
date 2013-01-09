@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector2;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
@@ -71,7 +72,7 @@ class Effect extends GameplayObject, implements Ref
     }
 
     // DECL: void setValue(Uniform* uniform, const Matrix& value);
-    public function setValue_Unif_Mat(uniform:Uniform, value:Matrix):Void
+    public function setValue_Unif_Mat(uniform:Uniform, value:IMatrix):Void
     {
         hx_Effect_setValue_Unif_Mat(nativeObject, uniform.native(), value.native());
     }

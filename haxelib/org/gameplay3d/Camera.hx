@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.NativeOutParameter;
@@ -58,13 +59,13 @@ class Camera extends Transform_ListenerImpl, implements Ref
     }
 
     // DECL: const Matrix& getInverseViewMatrix() const;
-    public function getInverseViewMatrix():Matrix
+    public function getInverseViewMatrix():IMatrix
     {
         return Matrix.wrap(hx_Camera_getInverseViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getInverseViewProjectionMatrix() const;
-    public function getInverseViewProjectionMatrix():Matrix
+    public function getInverseViewProjectionMatrix():IMatrix
     {
         return Matrix.wrap(hx_Camera_getInverseViewProjectionMatrix(nativeObject));
     }
@@ -82,19 +83,19 @@ class Camera extends Transform_ListenerImpl, implements Ref
     }
 
     // DECL: const Matrix& getProjectionMatrix() const;
-    public function getProjectionMatrix():Matrix
+    public function getProjectionMatrix():IMatrix
     {
         return Matrix.wrap(hx_Camera_getProjectionMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getViewMatrix() const;
-    public function getViewMatrix():Matrix
+    public function getViewMatrix():IMatrix
     {
         return Matrix.wrap(hx_Camera_getViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getViewProjectionMatrix() const;
-    public function getViewProjectionMatrix():Matrix
+    public function getViewProjectionMatrix():IMatrix
     {
         return Matrix.wrap(hx_Camera_getViewProjectionMatrix(nativeObject));
     }

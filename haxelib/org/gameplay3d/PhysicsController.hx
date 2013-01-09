@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.ScriptTargetImpl;
 import org.gameplay3d.wrapper.PhysicsController_HitFilterWrapper;
@@ -70,7 +71,7 @@ class PhysicsController extends ScriptTargetImpl
     }
 
     // DECL: void drawDebug(const Matrix& viewProjection);
-    public function drawDebug(viewProjection:Matrix):Void
+    public function drawDebug(viewProjection:IMatrix):Void
     {
         hx_PhysicsController_drawDebug(nativeObject, viewProjection.native());
     }

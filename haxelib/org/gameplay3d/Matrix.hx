@@ -38,7 +38,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: Matrix(const Matrix& copy);
-    public static function make_Mat(copy:Matrix):Matrix
+    public static function make_Mat(copy:IMatrix):Matrix
     {
         return new Matrix(constructNativeObject_Mat(copy));
     }
@@ -56,13 +56,13 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: static void add(const Matrix& m1, const Matrix& m2, Matrix* dst);
-    public static function add_MatX3(m1:Matrix, m2:Matrix, dst:Matrix):Void
+    public static function add_MatX3(m1:IMatrix, m2:IMatrix, dst:Matrix):Void
     {
         hx_Matrix_static_add(m1.native(), m2.native(), dst.native());
     }
 
     // DECL: void add(const Matrix& m);
-    public function add_Mat(m:Matrix):Void
+    public function add_Mat(m:IMatrix):Void
     {
         hx_Matrix_add_Mat(nativeObject, m.native());
     }
@@ -230,7 +230,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: static const Matrix& identity();
-    public static function identity():Matrix
+    public static function identity():IMatrix
     {
         return Matrix.wrap(hx_Matrix_static_identity());
     }
@@ -254,19 +254,19 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: static void multiply(const Matrix& m, float scalar, Matrix* dst);
-    public static function multiply_Mat_Flt_Mat(m:Matrix, scalar:Float, dst:Matrix):Void
+    public static function multiply_Mat_Flt_Mat(m:IMatrix, scalar:Float, dst:Matrix):Void
     {
         hx_Matrix_static_multiply_Mat_Flt_Mat(m.native(), scalar, dst.native());
     }
 
     // DECL: static void multiply(const Matrix& m1, const Matrix& m2, Matrix* dst);
-    public static function multiply_MatX3(m1:Matrix, m2:Matrix, dst:Matrix):Void
+    public static function multiply_MatX3(m1:IMatrix, m2:IMatrix, dst:Matrix):Void
     {
         hx_Matrix_static_multiply_MatX3(m1.native(), m2.native(), dst.native());
     }
 
     // DECL: void multiply(const Matrix& m);
-    public function multiply_Mat(m:Matrix):Void
+    public function multiply_Mat(m:IMatrix):Void
     {
         hx_Matrix_multiply_Mat(nativeObject, m.native());
     }
@@ -392,7 +392,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: void set(const Matrix& m);
-    public function set_Mat(m:Matrix):Void
+    public function set_Mat(m:IMatrix):Void
     {
         hx_Matrix_set_Mat(nativeObject, m.native());
     }
@@ -422,13 +422,13 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: static void subtract(const Matrix& m1, const Matrix& m2, Matrix* dst);
-    public static function subtract_MatX3(m1:Matrix, m2:Matrix, dst:Matrix):Void
+    public static function subtract_MatX3(m1:IMatrix, m2:IMatrix, dst:Matrix):Void
     {
         hx_Matrix_static_subtract(m1.native(), m2.native(), dst.native());
     }
 
     // DECL: void subtract(const Matrix& m);
-    public function subtract_Mat(m:Matrix):Void
+    public function subtract_Mat(m:IMatrix):Void
     {
         hx_Matrix_subtract(nativeObject, m.native());
     }
@@ -512,7 +512,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: static const Matrix& zero();
-    public static function zero():Matrix
+    public static function zero():IMatrix
     {
         return Matrix.wrap(hx_Matrix_static_zero());
     }
@@ -528,7 +528,7 @@ class Matrix extends GameplayObject, implements IMatrix
     }
 
     // DECL: Matrix(const Matrix& copy);
-    static function constructNativeObject_Mat(copy:Matrix):Dynamic
+    static function constructNativeObject_Mat(copy:IMatrix):Dynamic
     {
         return hx_Matrix_Construct_Mat(copy.native());
     }

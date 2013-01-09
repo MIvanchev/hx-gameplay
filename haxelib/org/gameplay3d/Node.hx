@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.Handle;
@@ -145,25 +146,25 @@ class Node extends Transform, implements Ref
     }
 
     // DECL: const Matrix& getInverseTransposeWorldMatrix() const;
-    public function getInverseTransposeWorldMatrix():Matrix
+    public function getInverseTransposeWorldMatrix():IMatrix
     {
         return Matrix.wrap(hx_Node_getInverseTransposeWorldMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getInverseTransposeWorldViewMatrix() const;
-    public function getInverseTransposeWorldViewMatrix():Matrix
+    public function getInverseTransposeWorldViewMatrix():IMatrix
     {
         return Matrix.wrap(hx_Node_getInverseTransposeWorldViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getInverseViewMatrix() const;
-    public function getInverseViewMatrix():Matrix
+    public function getInverseViewMatrix():IMatrix
     {
         return Matrix.wrap(hx_Node_getInverseViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getInverseViewProjectionMatrix() const;
-    public function getInverseViewProjectionMatrix():Matrix
+    public function getInverseViewProjectionMatrix():IMatrix
     {
         return Matrix.wrap(hx_Node_getInverseViewProjectionMatrix(nativeObject));
     }
@@ -211,7 +212,7 @@ class Node extends Transform, implements Ref
     }
 
     // DECL: const Matrix& getProjectionMatrix() const;
-    public function getProjectionMatrix():Matrix
+    public function getProjectionMatrix():IMatrix
     {
         return Matrix.wrap(hx_Node_getProjectionMatrix(nativeObject));
     }
@@ -271,31 +272,31 @@ class Node extends Transform, implements Ref
     }
 
     // DECL: const Matrix& getViewMatrix() const;
-    public function getViewMatrix():Matrix
+    public function getViewMatrix():IMatrix
     {
         return Matrix.wrap(hx_Node_getViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getViewProjectionMatrix() const;
-    public function getViewProjectionMatrix():Matrix
+    public function getViewProjectionMatrix():IMatrix
     {
         return Matrix.wrap(hx_Node_getViewProjectionMatrix(nativeObject));
     }
 
     // DECL: virtual const Matrix& getWorldMatrix() const;
-    public function getWorldMatrix():Matrix
+    public function getWorldMatrix():IMatrix
     {
         return Matrix.wrap(hx_Node_getWorldMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getWorldViewMatrix() const;
-    public function getWorldViewMatrix():Matrix
+    public function getWorldViewMatrix():IMatrix
     {
         return Matrix.wrap(hx_Node_getWorldViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getWorldViewProjectionMatrix() const;
-    public function getWorldViewProjectionMatrix():Matrix
+    public function getWorldViewProjectionMatrix():IMatrix
     {
         return Matrix.wrap(hx_Node_getWorldViewProjectionMatrix(nativeObject));
     }

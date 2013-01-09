@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.ConversionTools;
 
@@ -14,7 +15,7 @@ class MeshSkin extends Transform_ListenerImpl
      **************************************************************************/
 
     // DECL: const Matrix& getBindShape() const;
-    public function getBindShape():Matrix
+    public function getBindShape():IMatrix
     {
         return Matrix.wrap(hx_MeshSkin_getBindShape(nativeObject));
     }

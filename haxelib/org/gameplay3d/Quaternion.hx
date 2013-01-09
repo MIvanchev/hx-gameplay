@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IQuaternion;
 
@@ -29,7 +30,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: Quaternion(const Matrix& m);
-    public static function make_Mat(m:Matrix):Quaternion
+    public static function make_Mat(m:IMatrix):Quaternion
     {
         return new Quaternion(constructNativeObject_Mat(m));
     }
@@ -77,7 +78,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: static void createFromRotationMatrix(const Matrix& m, Quaternion* dst);
-    public static function createFromRotationMatrix(m:Matrix, dst:Quaternion):Void
+    public static function createFromRotationMatrix(m:IMatrix, dst:Quaternion):Void
     {
         hx_Quaternion_static_createFromRotationMatrix(m.native(), dst.native());
     }
@@ -143,7 +144,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: void set(const Matrix& m);
-    public function set_Mat(m:Matrix):Void
+    public function set_Mat(m:IMatrix):Void
     {
         hx_Quaternion_set_Mat(nativeObject, m.native());
     }
@@ -213,7 +214,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     }
 
     // DECL: Quaternion(const Matrix& m);
-    static function constructNativeObject_Mat(m:Matrix):Dynamic
+    static function constructNativeObject_Mat(m:IMatrix):Dynamic
     {
         return hx_Quaternion_Construct_Mat(m.native());
     }

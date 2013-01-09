@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.AnimationTarget_ScriptTarget;
 import org.gameplay3d.wrapper.Transform_ListenerWrapper;
@@ -46,7 +47,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: Transform(const Vector3& scale, const Matrix& rotation, const Vector3& translation);
-    public static function make_V3_Mat_V3(scale:IVector3, rotation:Matrix, translation:IVector3):Transform
+    public static function make_V3_Mat_V3(scale:IVector3, rotation:IMatrix, translation:IVector3):Transform
     {
         return new Transform(constructNativeObject_V3_Mat_V3(scale, rotation, translation));
     }
@@ -124,7 +125,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: const Matrix& getMatrix() const;
-    public function getMatrix():Matrix
+    public function getMatrix():IMatrix
     {
         return Matrix.wrap(hx_Transform_getMatrix(nativeObject));
     }
@@ -256,7 +257,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void rotate(const Matrix& rotation);
-    public function rotate_Mat(rotation:Matrix):Void
+    public function rotate_Mat(rotation:IMatrix):Void
     {
         hx_Transform_rotate_Mat(nativeObject, rotation.native());
     }
@@ -340,7 +341,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void set(const Vector3& scale, const Matrix& rotation, const Vector3& translation);
-    public function set_V3_Mat_V3(scale:IVector3, rotation:Matrix, translation:IVector3):Void
+    public function set_V3_Mat_V3(scale:IVector3, rotation:IMatrix, translation:IVector3):Void
     {
         hx_Transform_set_V3_Mat_V3(nativeObject, scale.native(), rotation.native(), translation.native());
     }
@@ -370,7 +371,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: void setRotation(const Matrix& rotation);
-    public function setRotation_Mat(rotation:Matrix):Void
+    public function setRotation_Mat(rotation:IMatrix):Void
     {
         hx_Transform_setRotation_Mat(nativeObject, rotation.native());
     }
@@ -566,7 +567,7 @@ class Transform extends AnimationTarget_ScriptTarget
     }
 
     // DECL: Transform(const Vector3& scale, const Matrix& rotation, const Vector3& translation);
-    static function constructNativeObject_V3_Mat_V3(scale:IVector3, rotation:Matrix, translation:IVector3):Dynamic
+    static function constructNativeObject_V3_Mat_V3(scale:IVector3, rotation:IMatrix, translation:IVector3):Dynamic
     {
         return hx_Transform_Construct_V3_Mat_V3(scale.nativeObject, rotation.nativeObject, translation.nativeObject);
     }
