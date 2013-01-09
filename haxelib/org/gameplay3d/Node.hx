@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.intern.NativeOutParameter;
+import org.gameplay3d.shared.SharedVector3;
 import org.gameplay3d.util.Handle;
 import org.gameplay3d.util.OutParameter;
 
@@ -15,6 +16,31 @@ class Node extends Transform, implements Ref
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
+
+    var _activeCameraTranslationView:Vector3;
+    var _activeCameraTranslationWorld:Vector3;
+    var _forwardVectorView:Vector3;
+    var _forwardVectorWorld:Vector3;
+    var _rightVectorWorld:Vector3;
+    var _translationView:Vector3;
+    var _translationWorld:Vector3;
+    var _upVectorWorld:Vector3;
+
+	function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+		super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _activeCameraTranslationView = Vector3.make();
+        _activeCameraTranslationWorld = Vector3.make();
+        _forwardVectorView = Vector3.make();
+        _forwardVectorWorld = Vector3.make();
+        _rightVectorWorld = Vector3.make();
+        _translationView = Vector3.make();
+        _translationWorld = Vector3.make();
+        _upVectorWorld = Vector3.make();
+    }
 
     // DECL: void addAdvertisedDescendant(Node* node);
     public function addAdvertisedDescendant(node:Node):Void
@@ -56,15 +82,15 @@ class Node extends Transform, implements Ref
     }
 
     // DECL: Vector3 getActiveCameraTranslationView() const;
-    public function getActiveCameraTranslationView():Vector3
+    public function getActiveCameraTranslationView():SharedVector3
     {
-        return Vector3.wrap(hx_Node_getActiveCameraTranslationView(nativeObject));
+        return _activeCameraTranslationView.impersonate(hx_Node_getActiveCameraTranslationView(nativeObject));
     }
 
     // DECL: Vector3 getActiveCameraTranslationWorld() const;
-    public function getActiveCameraTranslationWorld():Vector3
+    public function getActiveCameraTranslationWorld():SharedVector3
     {
-        return Vector3.wrap(hx_Node_getActiveCameraTranslationWorld(nativeObject));
+        return _activeCameraTranslationWorld.impersonate(hx_Node_getActiveCameraTranslationWorld(nativeObject));
     }
 
     // DECL: Node* getAdvertisedDescendant(unsigned int i) const;
@@ -128,15 +154,15 @@ class Node extends Transform, implements Ref
     }
 
     // DECL: Vector3 getForwardVectorView() const;
-    public function getForwardVectorView():Vector3
+    public function getForwardVectorView():SharedVector3
     {
-        return Vector3.wrap(hx_Node_getForwardVectorView(nativeObject));
+        return _forwardVectorView.impersonate(hx_Node_getForwardVectorView(nativeObject));
     }
 
     // DECL: Vector3 getForwardVectorWorld() const;
-    public function getForwardVectorWorld():Vector3
+    public function getForwardVectorWorld():SharedVector3
     {
-        return Vector3.wrap(hx_Node_getForwardVectorWorld(nativeObject));
+        return _forwardVectorWorld.impersonate(hx_Node_getForwardVectorWorld(nativeObject));
     }
 
     // DECL: const char* getId() const;
@@ -218,9 +244,9 @@ class Node extends Transform, implements Ref
     }
 
     // DECL: Vector3 getRightVectorWorld() const;
-    public function getRightVectorWorld():Vector3
+    public function getRightVectorWorld():SharedVector3
     {
-        return Vector3.wrap(hx_Node_getRightVectorWorld(nativeObject));
+        return _rightVectorWorld.impersonate(hx_Node_getRightVectorWorld(nativeObject));
     }
 
     // DECL: Node* getRootNode() const;
@@ -242,15 +268,15 @@ class Node extends Transform, implements Ref
     }
 
     // DECL: Vector3 getTranslationView() const;
-    public function getTranslationView():Vector3
+    public function getTranslationView():SharedVector3
     {
-        return Vector3.wrap(hx_Node_getTranslationView(nativeObject));
+        return _translationView.impersonate(hx_Node_getTranslationView(nativeObject));
     }
 
     // DECL: Vector3 getTranslationWorld() const;
-    public function getTranslationWorld():Vector3
+    public function getTranslationWorld():SharedVector3
     {
-        return Vector3.wrap(hx_Node_getTranslationWorld(nativeObject));
+        return _translationWorld.impersonate(hx_Node_getTranslationWorld(nativeObject));
     }
 
     // DECL: virtual Node::Type getType() const;
@@ -260,9 +286,9 @@ class Node extends Transform, implements Ref
     }
 
     // DECL: Vector3 getUpVectorWorld() const;
-    public function getUpVectorWorld():Vector3
+    public function getUpVectorWorld():SharedVector3
     {
-        return Vector3.wrap(hx_Node_getUpVectorWorld(nativeObject));
+        return _upVectorWorld.impersonate(hx_Node_getUpVectorWorld(nativeObject));
     }
 
     // DECL: void* getUserPointer() const;

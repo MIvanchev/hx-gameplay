@@ -46,9 +46,9 @@ class PhysicsRigidBody_Parameters extends GameplayObject
     public var linearDamping(get_linearDamping, set_linearDamping):Float;
     public var angularDamping(get_angularDamping, set_angularDamping):Float;
     public var kinematic(get_kinematic, set_kinematic):Bool;
-    public var anisotropicFriction(get_anisotropicFriction, never):Vector3;
-    public var linearFactor(get_linearFactor, never):Vector3;
-    public var angularFactor(get_angularFactor, never):Vector3;
+    public var anisotropicFriction(get_anisotropicFriction, null):Vector3;
+    public var linearFactor(get_linearFactor, null):Vector3;
+    public var angularFactor(get_angularFactor, null):Vector3;
 
     /***************************************************************************
      * PROPERTY ACCESSORS                                                      *

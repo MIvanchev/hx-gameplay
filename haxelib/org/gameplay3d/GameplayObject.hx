@@ -54,9 +54,12 @@ class GameplayObject extends NativeBinding
      */
     @:generic
     @:allow(org.gameplay3d)
-    @:allow(org.gameplat3d.impl)
+    @:allow(org.gameplat3d.immutable)
     @:allow(org.gameplay3d.intern)
+    @:allow(org.gameplat3d.intern.impl)
+    @:allow(org.gameplat3d.shared)
     @:allow(org.gameplay3d.util)
+    @:allow(org.gameplat3d.wrapper)
     static inline function wrap<T : GameplayObject>(classObj:Class<T>, nativeObject:Dynamic):T
     {
         args[0] = nativeObject;
@@ -66,6 +69,23 @@ class GameplayObject extends NativeBinding
                 null;
             else
                 Type.createInstance(classObj, args); // new T(nativeObject, null);
+    }
+
+    /**
+     * TODO
+     */
+    @:generic
+    @:allow(org.gameplay3d)
+    @:allow(org.gameplat3d.immutable)
+    @:allow(org.gameplay3d.intern)
+    @:allow(org.gameplat3d.intern.impl)
+    @:allow(org.gameplat3d.shared)
+    @:allow(org.gameplay3d.util)
+    @:allow(org.gameplat3d.wrapper)
+    static inline function impersonate<T : GameplayObject>(object:T, nativeObject:Dynamic):T
+    {
+        object.nativeObject = nativeObject;
+        return object;
     }
 
     @:generic

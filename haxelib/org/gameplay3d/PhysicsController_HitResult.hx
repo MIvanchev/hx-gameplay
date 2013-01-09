@@ -33,9 +33,9 @@ class PhysicsController_HitResult extends GameplayObject
      **************************************************************************/
 
     public var object(get_object, set_object):PhysicsCollisionObject;
-    public var point(get_point, never):Vector3;
+    public var point(get_point, null):Vector3;
     public var fraction(get_fraction, set_fraction):Float;
-    public var normal(get_normal, never):Vector3;
+    public var normal(get_normal, null):Vector3;
 
     /***************************************************************************
      * PROPERTY ACCESSORS                                                      *

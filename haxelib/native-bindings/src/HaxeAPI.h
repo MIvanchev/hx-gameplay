@@ -360,8 +360,12 @@ void FreeReference(value object);
  * (TODO)                                                                      *
  ******************************************************************************/
 
-Vector2& SaveFromScopeDeath(const Vector2& obj);
-Vector3& SaveFromScopeDeath(const Vector3& obj);
-Vector4& SaveFromScopeDeath(const Vector4& obj);
+#define COPY_OUTSIDE_SCOPE_PROTOTYPE(type) const value& CopyOutsideScope(const gameplay::type& obj);
+
+COPY_OUTSIDE_SCOPE_PROTOTYPE(Matrix)
+COPY_OUTSIDE_SCOPE_PROTOTYPE(Quaternion)
+COPY_OUTSIDE_SCOPE_PROTOTYPE(Vector2)
+COPY_OUTSIDE_SCOPE_PROTOTYPE(Vector3)
+COPY_OUTSIDE_SCOPE_PROTOTYPE(Vector4)
 
 #endif /* __HAXEAPI_H__ */

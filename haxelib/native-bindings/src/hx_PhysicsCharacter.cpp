@@ -5,7 +5,7 @@ value hx_PhysicsCharacter_getCurrentVelocity(value thisObj)
 {
     PhysicsCharacter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getCurrentVelocity()));
+    return CopyOutsideScope(_thisObj->getCurrentVelocity());
 }
 DEFINE_PRIM(hx_PhysicsCharacter_getCurrentVelocity, 1);
 
