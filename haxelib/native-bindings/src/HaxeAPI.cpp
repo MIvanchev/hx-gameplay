@@ -604,3 +604,28 @@ CONVERSION_FUNCTIONS_REF(VertexAttributeBinding)
 CONVERSION_FUNCTIONS(VertexFormat, VertexFormat, k_Object)
 CONVERSION_FUNCTIONS(VertexFormat::Element, VertexFormat::Element, k_Object)
 CONVERSION_FUNCTIONS_REF(VerticalLayout)
+
+/*******************************************************************************
+ * (TODO)                                                                      *
+ ******************************************************************************/
+
+static Vector2 objVector2;
+Vector2& SaveFromScopeDeath(const Vector2& obj)
+{
+	objVector2.set(obj);
+	return objVector2;
+}
+
+static Vector3 objVector3;
+Vector3& SaveFromScopeDeath(const Vector3& obj)
+{
+	objVector3.set(obj);
+	return objVector3;
+}
+
+static Vector4 objVector4;
+Vector4& SaveFromScopeDeath(const Vector4& obj)
+{
+	objVector4.set(obj);
+	return objVector4;
+}

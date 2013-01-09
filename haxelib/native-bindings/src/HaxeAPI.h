@@ -356,4 +356,12 @@ CONVERSION_PROTOTYPES_REF(VerticalLayout)
 value ReferenceToValue(Ref *pointer, bool free = true, bool increaseRefCount = false);
 void FreeReference(value object);
 
+/*******************************************************************************
+ * (TODO)                                                                      *
+ ******************************************************************************/
+
+Vector2 *SaveFromScopeDeath(const Vector2& obj);
+Vector3 *SaveFromScopeDeath(const Vector3& obj);
+Vector4 *SaveFromScopeDeath(const Vector4& obj);
+
 #endif /* __HAXEAPI_H__ */
