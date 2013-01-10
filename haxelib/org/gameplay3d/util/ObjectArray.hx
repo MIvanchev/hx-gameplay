@@ -7,6 +7,7 @@ import org.gameplay3d.intern.INativeBinding;
 /**
  * TODO
  */
+@:generic
 class ObjectArray<T : GameplayObject> extends NativeBinding,
         implements INativeArray<T>,
         implements INativeBinding
@@ -23,11 +24,24 @@ class ObjectArray<T : GameplayObject> extends NativeBinding,
 
     var objects:Array<T>;
 
-    public function new(nativeObject, objects:Array<T>)
+    function new(classObj:Class<T>, nativeObject, length, reclaim)
     {
         this.nativeObject = nativeObject;
-        this.length = objects.length;
-        this.objects = objects;
+        this.length = length;
+
+        // Extract the array elements.
+        //
+
+        var name = Type.getClassName(classObj);
+        var packageEnd = name.lastIndexOf(".");
+        if (packageEnd != -1)
+            name = name.substr(packageEnd + 1);
+
+        var getter = Lib.load("gameplay", 'getNativeArrayElement$name', 2);
+
+        objects = [];
+        for (index in 0...length)
+            objects.push(GameplayObject.wrap(classObj, getter(index));
     }
 
     public inline function getAt(index:Int):T
@@ -40,7 +54,7 @@ class ObjectArray<T : GameplayObject> extends NativeBinding,
      **************************************************************************/
 
     @:generic
-    public static function constructArray<T : GameplayObject>(classObj:Class<T>, length, reclaim = true):INativeArray<T>
+    public static function constructArray<T : GameplayObject>(classObj:Class<T>, length = 1, reclaim = true):INativeArray<T>
     {
         // Load the necessary native functions.
         //
@@ -51,16 +65,10 @@ class ObjectArray<T : GameplayObject> extends NativeBinding,
             name = name.substr(packageEnd + 1);
 
         var constructor = Lib.load("gameplay", 'allocNativeArray$name', 2);
-        var getter = Lib.load("gameplay", 'getNativeArrayElement$name', 2);
 
-        // Construct the native array.
+        // Construct the array.
         //
 
-        var nativeObject = constructor(length, reclaim);
-        var objects = [];
-        for (index in 0...length)
-            objects[index] = GameplayObject.wrap(classObj, getter(nativeObject, index));
-
-        return new ObjectArray<T>(nativeObject, objects);
+        return new ObjectArray<T>(classObj, constructor(length, reclaim), length);
     }
 }

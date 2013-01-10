@@ -70,7 +70,7 @@ value hx_ParticleEmitter_getColorEnd(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector4(_thisObj->getColorEnd()));
+    return CopyOutsideScope(_thisObj->getColorEnd());
 }
 DEFINE_PRIM(hx_ParticleEmitter_getColorEnd, 1);
 
@@ -79,7 +79,7 @@ value hx_ParticleEmitter_getColorEndVariance(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector4(_thisObj->getColorEndVariance()));
+    return CopyOutsideScope(_thisObj->getColorEndVariance());
 }
 DEFINE_PRIM(hx_ParticleEmitter_getColorEndVariance, 1);
 
@@ -88,7 +88,7 @@ value hx_ParticleEmitter_getColorStart(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector4(_thisObj->getColorStart()));
+    return CopyOutsideScope(_thisObj->getColorStart());
 }
 DEFINE_PRIM(hx_ParticleEmitter_getColorStart, 1);
 
@@ -97,7 +97,7 @@ value hx_ParticleEmitter_getColorStartVariance(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector4(_thisObj->getColorStartVariance()));
+    return CopyOutsideScope(_thisObj->getColorStartVariance());
 }
 DEFINE_PRIM(hx_ParticleEmitter_getColorStartVariance, 1);
 

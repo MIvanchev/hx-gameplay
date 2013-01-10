@@ -1017,7 +1017,7 @@ value hx_Matrix_property_m_get(value thisObj)
 {
     Matrix *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return alloc_abstract(k_Array, _thisObj->m);
+    return ArrayToValue(_thisObj->m);
 }
 DEFINE_PRIM(hx_Matrix_property_m_get, 1);
 

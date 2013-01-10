@@ -54,20 +54,7 @@ value hx_MeshSkin_getMatrixPalette(value thisObj)
 {
     MeshSkin *_thisObj;
     ValueToObject(thisObj, _thisObj);
-
-    Vector4 *palette = _thisObj->getMatrixPalette();
-
-    // FIXME:
-    //
-    // * 3 might be a bug.
-    //
-
-    unsigned int size = _thisObj->getMatrixPaletteSize() * 3;
-    const value& result = alloc_array(size);
-    for (int index = 0; index < size; index++)
-        val_array_set_i(result, index, ObjectToValue(new Vector4(palette[index])));
-
-    return result;
+    return ArrayToValue(_thisObj->getMatrixPalette());
 }
 DEFINE_PRIM(hx_MeshSkin_getMatrixPalette, 1);
 

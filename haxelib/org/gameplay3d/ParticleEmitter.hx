@@ -22,6 +22,10 @@ class ParticleEmitter extends GameplayObject, implements Ref
     var _rotationAxisVariance:Vector3;
     var _velocity:Vector3;
     var _velocityVariance:Vector3;
+    var _colorEnd:Vector4;
+    var _colorEndVariance:Vector4;
+    var _colorStart:Vector4;
+    var _colorStartVariance:Vector4;
 
     function new(
             nativeObjectInitializer:Dynamic,
@@ -37,6 +41,10 @@ class ParticleEmitter extends GameplayObject, implements Ref
         _rotationAxisVariance = Vector3.make();
         _velocity = Vector3.make();
         _velocityVariance = Vector3.make();
+        _colorEnd = Vector4.make();
+        _colorEndVariance = Vector4.make();
+        _colorStart = Vector4.make();
+        _colorStartVariance = Vector4.make();
     }
 
     // DECL: static ParticleEmitter* create(Properties* properties);
@@ -84,25 +92,25 @@ class ParticleEmitter extends GameplayObject, implements Ref
     // DECL: const Vector4& getColorEnd() const;
     public function getColorEnd():IVector4
     {
-        return Vector4.wrap(hx_ParticleEmitter_getColorEnd(nativeObject));
+        return _colorEnd.impersonate(hx_ParticleEmitter_getColorEnd(nativeObject));
     }
 
     // DECL: const Vector4& getColorEndVariance() const;
     public function getColorEndVariance():IVector4
     {
-        return Vector4.wrap(hx_ParticleEmitter_getColorEndVariance(nativeObject));
+        return _colorEndVariance.impersonate(hx_ParticleEmitter_getColorEndVariance(nativeObject));
     }
 
     // DECL: const Vector4& getColorStart() const;
     public function getColorStart():IVector4
     {
-        return Vector4.wrap(hx_ParticleEmitter_getColorStart(nativeObject));
+        return _colorStart.impersonate(hx_ParticleEmitter_getColorStart(nativeObject));
     }
 
     // DECL: const Vector4& getColorStartVariance() const;
     public function getColorStartVariance():IVector4
     {
-        return Vector4.wrap(hx_ParticleEmitter_getColorStartVariance(nativeObject));
+        return _colorStartVariance.impersonate(hx_ParticleEmitter_getColorStartVariance(nativeObject));
     }
 
     // DECL: unsigned int getEmissionRate() const;

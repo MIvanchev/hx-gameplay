@@ -212,18 +212,6 @@ void FreeHandle(value object)
  * NATIVE ARRAYS                                                               *
  ******************************************************************************/
 
-template<typename T>
-void FreeArray(value object)
-{
-    val_gc(object, NULL);
-    if (!val_is_null(object))
-    {
-        void *data = val_get_handle(object, k_Array);
-        T* array = static_cast<T*>(data);
-        SAFE_DELETE_ARRAY(array);
-    }
-}
-
 #define NATIVE_ARRAY_CONSTRUCTOR(type, name)                \
 value allocNativeArray##name(value size, value reclaim)     \
 {                                                           \

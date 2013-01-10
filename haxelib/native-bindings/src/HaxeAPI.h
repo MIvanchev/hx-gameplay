@@ -95,7 +95,19 @@ bool ValueToHandle(value thisObj, T& _value)
  * NATIVE ARRAYS                                                               *
  ******************************************************************************/
 
- template<typename TYPE>
+template<typename T>
+void FreeArray(value object)
+{
+    val_gc(object, NULL);
+    if (!val_is_null(object))
+    {
+        void *data = val_get_handle(object, k_Array);
+        T* array = static_cast<T*>(data);
+        SAFE_DELETE_ARRAY(array);
+    }
+}
+
+template<typename TYPE>
 void ValueToArray(value _value, TYPE*& _array)
 {
     if (val_is_null(_value))
@@ -105,6 +117,15 @@ void ValueToArray(value _value, TYPE*& _array)
         void *data = val_get_handle(_value, k_Array);
         _array = static_cast<TYPE*>(data);
     }
+}
+
+template<typename TYPE>
+void ArrayToValue(const TYPE* _array, bool reclaim = false)
+{
+	const value& result = alloc_abstract(k_Array, _array);
+	if (reclaim)
+		val_gc(result, &FreeArray<TYPE>);
+	return result;
 }
 
 /*******************************************************************************

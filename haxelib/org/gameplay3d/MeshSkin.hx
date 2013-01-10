@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.ConversionTools;
+import org.gameplay3d.util.ObjectArray;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -45,9 +46,9 @@ class MeshSkin extends Transform_ListenerImpl
     }
 
     // DECL: Vector4* getMatrixPalette() const;
-    public function getMatrixPalette():Array<Vector4>
+    public function getMatrixPalette():ObjectArray<Vector4>
     {
-        return ConversionTools.extractVector4Array(hx_MeshSkin_getMatrixPalette(nativeObject));
+        return new MatrixPalette(hx_MeshSkin_getMatrixPalette(nativeObject), getMatrixPaletteSize());
     }
 
     // DECL: unsigned int getMatrixPaletteSize() const;
@@ -98,3 +99,9 @@ class MeshSkin extends Transform_ListenerImpl
 }
 
 // END
+
+private class MatrixPaletete extends ObjectArray<Vector4>
+{
+    public function new(nativeObject, length)
+    { super(Vector4, nativeObject, length); }
+}

@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector2;
+import org.gameplay3d.shared.SharedVector2;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -18,6 +19,25 @@ class Vector2 extends GameplayObject, implements IVector2
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
+
+    var _one:Vector2;
+    var _unitX:Vector2;
+    var _unitY:Vector2;
+    var _zero:Vector2;
+    var _normalized:Vector2;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _one = Vector2.make();
+        _unitX = Vector2.make();
+        _unitY = Vector2.make();
+        _zero = Vector2.make();
+        _normalized = Vector2.make();
+    }
 
     // DECL: Vector2();
     public static function make():Vector2
@@ -134,9 +154,9 @@ class Vector2 extends GameplayObject, implements IVector2
     }
 
     // DECL: Vector2& normalize();
-    public function normalize():Vector2
+    public function normalize():SharedVector2
     {
-        return Vector2.wrap(hx_Vector2_normalize(nativeObject));
+        return _normalized.impersonate(hx_Vector2_normalize(nativeObject));
     }
 
     // DECL: void normalize(Vector2* dst);
@@ -148,7 +168,7 @@ class Vector2 extends GameplayObject, implements IVector2
     // DECL: static const Vector2& one();
     public static function one():IVector2
     {
-        return Vector2.wrap(hx_Vector2_static_one());
+        return _one.impersonate(hx_Vector2_static_one());
     }
 
     // DECL: void rotate(const Vector2& point, float angle);
@@ -214,19 +234,19 @@ class Vector2 extends GameplayObject, implements IVector2
     // DECL: static const Vector2& unitX();
     public static function unitX():IVector2
     {
-        return Vector2.wrap(hx_Vector2_static_unitX());
+        return _unitX.impersonate(hx_Vector2_static_unitX());
     }
 
     // DECL: static const Vector2& unitY();
     public static function unitY():IVector2
     {
-        return Vector2.wrap(hx_Vector2_static_unitY());
+        return _unitY.impersonate(hx_Vector2_static_unitY());
     }
 
     // DECL: static const Vector2& zero();
     public static function zero():IVector2
     {
-        return Vector2.wrap(hx_Vector2_static_zero());
+        return _zero.impersonate(hx_Vector2_static_zero());
     }
 
     /***************************************************************************

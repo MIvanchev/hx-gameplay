@@ -29,6 +29,23 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _cursorColor:Vector4;
+    var _imageColor:Vector4;
+    var _skinColor:Vector4;
+    var _textColor:Vector4;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _cursorColor = Vector4.make();
+        _imageColor = Vector4.make();
+        _skinColor = Vector4.make();
+        _textColor = Vector4.make();
+    }
+
     // DECL: virtual void addListener(Control::Listener* listener, int eventFlags);
     public function addListener(listener:Control_ListenerWrapper, eventFlags:Int):Void
     {
@@ -104,7 +121,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Vector4& getCursorColor(State state);
     public function getCursorColor(state:Int):IVector4
     {
-        return Vector4.wrap(hx_Control_getCursorColor(nativeObject, state));
+        return _cursorColor.implersonate(hx_Control_getCursorColor(nativeObject, state));
     }
 
     // DECL: const Rectangle& getCursorRegion(State state) const;
@@ -152,7 +169,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Vector4& getImageColor(const char* id, State state) const;
     public function getImageColor(id:String, state:Int):IVector4
     {
-        return Vector4.wrap(hx_Control_getImageColor(nativeObject, id, state));
+        return _imageColor.impersonate(hx_Control_getImageColor(nativeObject, id, state));
     }
 
     // DECL: const Rectangle& getImageRegion(const char* id, State state) const;
@@ -188,7 +205,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Vector4& getSkinColor(State state = NORMAL) const;
     public function getSkinColor(state:Int = Control_State.NORMAL):IVector4
     {
-        return Vector4.wrap(hx_Control_getSkinColor(nativeObject, state));
+        return _skinColor.impersonate(hx_Control_getSkinColor(nativeObject, state));
     }
 
     // DECL: const Rectangle& getSkinRegion(State state = NORMAL) const;
@@ -218,7 +235,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Vector4& getTextColor(State state = NORMAL) const;
     public function getTextColor(state:Int = Control_State.NORMAL):IVector4
     {
-        return Vector4.wrap(hx_Control_getTextColor(nativeObject, state));
+        return _textColor.impersonate(hx_Control_getTextColor(nativeObject, state));
     }
 
     // DECL: bool getTextRightToLeft(State state = NORMAL) const;
