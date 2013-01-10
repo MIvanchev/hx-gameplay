@@ -13,12 +13,21 @@ class BoundingSphere extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var center(get_center, never):Vector3;
+    public var center(default, null):Vector3;
     public var radius(get_radius, set_radius):Float;
 
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        center = Vector3.wrap(hx_BoundingSphere_property_center_get(nativeObject));
+    }
 
     // DECL: BoundingSphere();
     public static function make():BoundingSphere
@@ -141,11 +150,6 @@ class BoundingSphere extends GameplayObject
     /***************************************************************************
      * PROPERTY ACCESSORS                                                      *
      **************************************************************************/
-
-    function get_center():Vector3
-    {
-        return Vector3.wrap(hx_BoundingSphere_property_center_get(nativeObject));
-    }
 
     function get_radius():Float
     {

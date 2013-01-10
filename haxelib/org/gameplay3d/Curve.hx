@@ -2,7 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.util.INativeArray;
 import org.gameplay3d.util.OutParameter;
-import org.gameplay3d.util.Utilities;
+import org.gameplay3d.util.PrimitiveArray;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;

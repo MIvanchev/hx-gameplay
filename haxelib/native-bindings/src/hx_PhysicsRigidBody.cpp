@@ -60,7 +60,7 @@ value hx_PhysicsRigidBody_getAngularFactor(value thisObj)
 {
     PhysicsRigidBody *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getAngularFactor()));
+    return CopyOutsideScope(_thisObj->getAngularFactor());
 }
 DEFINE_PRIM(hx_PhysicsRigidBody_getAngularFactor, 1);
 
@@ -69,7 +69,7 @@ value hx_PhysicsRigidBody_getAngularVelocity(value thisObj)
 {
     PhysicsRigidBody *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getAngularVelocity()));
+    return CopyOutsideScope(_thisObj->getAngularVelocity());
 }
 DEFINE_PRIM(hx_PhysicsRigidBody_getAngularVelocity, 1);
 
@@ -78,7 +78,7 @@ value hx_PhysicsRigidBody_getAnisotropicFriction(value thisObj)
 {
     PhysicsRigidBody *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getAnisotropicFriction()));
+    return CopyOutsideScope(_thisObj->getAnisotropicFriction());
 }
 DEFINE_PRIM(hx_PhysicsRigidBody_getAnisotropicFriction, 1);
 
@@ -96,7 +96,7 @@ value hx_PhysicsRigidBody_getGravity(value thisObj)
 {
     PhysicsRigidBody *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getGravity()));
+    return CopyOutsideScope(_thisObj->getGravity());
 }
 DEFINE_PRIM(hx_PhysicsRigidBody_getGravity, 1);
 
@@ -127,7 +127,7 @@ value hx_PhysicsRigidBody_getLinearFactor(value thisObj)
 {
     PhysicsRigidBody *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getLinearFactor()));
+    return CopyOutsideScope(_thisObj->getLinearFactor());
 }
 DEFINE_PRIM(hx_PhysicsRigidBody_getLinearFactor, 1);
 
@@ -136,7 +136,7 @@ value hx_PhysicsRigidBody_getLinearVelocity(value thisObj)
 {
     PhysicsRigidBody *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getLinearVelocity()));
+    return CopyOutsideScope(_thisObj->getLinearVelocity());
 }
 DEFINE_PRIM(hx_PhysicsRigidBody_getLinearVelocity, 1);
 

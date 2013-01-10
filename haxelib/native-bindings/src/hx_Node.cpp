@@ -76,7 +76,7 @@ value hx_Node_getActiveCameraTranslationView(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getActiveCameraTranslationView()));
+    return CopyOutsideScope(_thisObj->getActiveCameraTranslationView());
 }
 DEFINE_PRIM(hx_Node_getActiveCameraTranslationView, 1);
 
@@ -85,7 +85,7 @@ value hx_Node_getActiveCameraTranslationWorld(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getActiveCameraTranslationWorld()));
+    return CopyOutsideScope(_thisObj->getActiveCameraTranslationWorld());
 }
 DEFINE_PRIM(hx_Node_getActiveCameraTranslationWorld, 1);
 
@@ -186,7 +186,7 @@ value hx_Node_getForwardVectorView(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getForwardVectorView()));
+    return CopyOutsideScope(_thisObj->getForwardVectorView());
 }
 DEFINE_PRIM(hx_Node_getForwardVectorView, 1);
 
@@ -195,7 +195,7 @@ value hx_Node_getForwardVectorWorld(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getForwardVectorWorld()));
+    return CopyOutsideScope(_thisObj->getForwardVectorWorld());
 }
 DEFINE_PRIM(hx_Node_getForwardVectorWorld, 1);
 
@@ -321,7 +321,7 @@ value hx_Node_getRightVectorWorld(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getRightVectorWorld()));
+    return CopyOutsideScope(_thisObj->getRightVectorWorld());
 }
 DEFINE_PRIM(hx_Node_getRightVectorWorld, 1);
 
@@ -358,7 +358,7 @@ value hx_Node_getTranslationView(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getTranslationView()));
+    return CopyOutsideScope(_thisObj->getTranslationView());
 }
 DEFINE_PRIM(hx_Node_getTranslationView, 1);
 
@@ -367,7 +367,7 @@ value hx_Node_getTranslationWorld(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getTranslationWorld()));
+    return CopyOutsideScope(_thisObj->getTranslationWorld());
 }
 DEFINE_PRIM(hx_Node_getTranslationWorld, 1);
 
@@ -385,7 +385,7 @@ value hx_Node_getUpVectorWorld(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getUpVectorWorld()));
+    return CopyOutsideScope(_thisObj->getUpVectorWorld());
 }
 DEFINE_PRIM(hx_Node_getUpVectorWorld, 1);
 

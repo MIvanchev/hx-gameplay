@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.shared.SharedVector3;
 import org.gameplay3d.util.INativeArray;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -14,12 +15,25 @@ class BoundingBox extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var min(get_min, never):Vector3;
-    public var max(get_max, never):Vector3;
+    @:isVar public var min(default, null):Vector3;
+    @:isVar public var max(default, null):Vector3;
 
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
+
+    var _center:Vector3;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        min = Vector3.wrap(hx_BoundingBox_property_min_get(nativeObject));
+        max = Vector3.wrap(hx_BoundingBox_property_max_get(nativeObject));
+        _center = Vector3.make();
+    }
 
     // DECL: BoundingBox();
     public static function make():BoundingBox
@@ -52,9 +66,9 @@ class BoundingBox extends GameplayObject
     }
 
     // DECL: Vector3 getCenter() const;
-    public function getCenter():Vector3
+    public function getCenter():SharedVector3
     {
-        return Vector3.wrap(hx_BoundingBox_getCenter(nativeObject));
+        return _center.impersonate(hx_BoundingBox_getCenter(nativeObject));
     }
 
     // DECL: void getCenter(Vector3* dst) const;
@@ -173,20 +187,6 @@ class BoundingBox extends GameplayObject
     static function constructNativeObject_FltX6(minX:Float, minY:Float, minZ:Float, maxX:Float, maxY:Float, maxZ:Float):Dynamic
     {
         return hx_BoundingBox_Construct_FltX6(minX, minY, minZ, maxX, maxY, maxZ);
-    }
-
-    /***************************************************************************
-     * PROPERTY ACCESSORS                                                      *
-     **************************************************************************/
-
-    function get_min():Vector3
-    {
-        return Vector3.wrap(hx_BoundingBox_property_min_get(nativeObject));
-    }
-
-    function get_max():Vector3
-    {
-        return Vector3.wrap(hx_BoundingBox_property_max_get(nativeObject));
     }
 
     /***************************************************************************

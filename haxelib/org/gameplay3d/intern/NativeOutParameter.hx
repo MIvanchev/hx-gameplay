@@ -13,7 +13,7 @@ class NativeOutParameter extends NativeBinding
     /**
      * TODO
      */
-    public var value(get_value, never):Dynamic;
+    public var value(get_value, null):Dynamic;
 
     /***************************************************************************
      * MEMBERS                                                                 *

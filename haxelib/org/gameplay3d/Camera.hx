@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
+import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.NativeOutParameter;
@@ -113,13 +114,13 @@ class Camera extends Transform_ListenerImpl, implements Ref
     }
 
     // DECL: void pickRay(const Rectangle& viewport, float x, float y, Ray* dst) const;
-    public function pickRay(viewport:Rectangle, x:Float, y:Float, dst:Ray):Void
+    public function pickRay(viewport:IRectangle, x:Float, y:Float, dst:Ray):Void
     {
         hx_Camera_pickRay(nativeObject, viewport.native(), x, y, dst.native());
     }
 
     // DECL: void project(const Rectangle& viewport, const Vector3& position, float* x, float* y, float* depth = NULL) const;
-    public function project(viewport:Rectangle, position:IVector3, x:OutParameter<Float>, y:OutParameter<Float>, depth:OutParameter<Float> = null):Void
+    public function project(viewport:IRectangle, position:IVector3, x:OutParameter<Float>, y:OutParameter<Float>, depth:OutParameter<Float> = null):Void
     {
         var _x = new NativeOutParameter();
         var _y = new NativeOutParameter();
@@ -172,7 +173,7 @@ class Camera extends Transform_ListenerImpl, implements Ref
     }
 
     // DECL: void unproject(const Rectangle& viewport, float x, float y, float depth, Vector3* dst) const;
-    public function unproject(viewport:Rectangle, x:Float, y:Float, depth:Float, dst:Vector3):Void
+    public function unproject(viewport:IRectangle, x:Float, y:Float, depth:Float, dst:Vector3):Void
     {
         hx_Camera_unproject(nativeObject, viewport.native(), x, y, depth, dst.native());
     }

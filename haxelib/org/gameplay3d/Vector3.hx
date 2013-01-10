@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.shared.SharedVector3;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -18,6 +19,17 @@ class Vector3 extends GameplayObject, implements IVector3
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
+
+    var _normalized:Vector3;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _normalized = Vector3.make();
+    }
 
     // DECL: Vector3();
     public static function make():Vector3
@@ -152,9 +164,9 @@ class Vector3 extends GameplayObject, implements IVector3
     }
 
     // DECL: Vector3& normalize();
-    public function normalize():Vector3
+    public function normalize():SharedVector3
     {
-        return Vector3.wrap(hx_Vector3_normalize(nativeObject));
+        return _normalized.impersonate(hx_Vector3_normalize(nativeObject));
     }
 
     // DECL: void normalize(Vector3* dst) const;

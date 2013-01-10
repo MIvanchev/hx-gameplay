@@ -58,7 +58,7 @@ value hx_BoundingBox_getCenter(value thisObj)
 {
     BoundingBox *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Vector3(_thisObj->getCenter()));
+    return CopyOutsideScope(_thisObj->getCenter());
 }
 DEFINE_PRIM(hx_BoundingBox_getCenter, 1);
 

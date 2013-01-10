@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.shared.SharedVector3;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -13,10 +14,21 @@ class PhysicsCharacter extends PhysicsGhostObject
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    // DECL: Vector3 getCurrentVelocity() const;
-    public function getCurrentVelocity():Vector3
+    var _currentVelocity:Vector3;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
     {
-        return Vector3.wrap(hx_PhysicsCharacter_getCurrentVelocity(nativeObject));
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _currentVelocity = Vector3.make();
+    }
+
+    // DECL: Vector3 getCurrentVelocity() const;
+    public function getCurrentVelocity():SharedVector3
+    {
+        return _currentVelocity.impersonate(hx_PhysicsCharacter_getCurrentVelocity(nativeObject));
     }
 
     // DECL: float getMaxSlopeAngle() const;
