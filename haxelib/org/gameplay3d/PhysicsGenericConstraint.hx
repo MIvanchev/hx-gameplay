@@ -15,6 +15,8 @@ class PhysicsGenericConstraint extends PhysicsConstraint
 
     var _translationOffsetA:Vector3;
     var _translationOffsetB:Vector3;
+    var _rotationOffsetA:Quaternion;
+    var _rotationOffsetB:Quaternion;
 
     function new(
             nativeObjectInitializer:Dynamic,
@@ -24,18 +26,20 @@ class PhysicsGenericConstraint extends PhysicsConstraint
         super(nativeObjectInitializer, nativeObjectInitializerParams);
         _translationOffsetA = Vector3.make();
         _translationOffsetB = Vector3.make();
+        _rotationOffsetA = Quaternion.make();
+        _rotationOffsetB = Quaternion.make();
     }
 
     // DECL: inline const Quaternion& getRotationOffsetA() const;
     public function getRotationOffsetA():IQuaternion
     {
-        return Quaternion.wrap(hx_PhysicsGenericConstraint_getRotationOffsetA(nativeObject));
+        return _rotationOffsetA.impersonate(hx_PhysicsGenericConstraint_getRotationOffsetA(nativeObject));
     }
 
     // DECL: inline const Quaternion& getRotationOffsetB() const;
     public function getRotationOffsetB():IQuaternion
     {
-        return Quaternion.wrap(hx_PhysicsGenericConstraint_getRotationOffsetB(nativeObject));
+        return _rotationOffsetB.impersonate(hx_PhysicsGenericConstraint_getRotationOffsetB(nativeObject));
     }
 
     // DECL: inline const Vector3& getTranslationOffsetA() const;

@@ -5,7 +5,7 @@ value hx_PhysicsGenericConstraint_getRotationOffsetA(value thisObj)
 {
     PhysicsGenericConstraint *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Quaternion(_thisObj->getRotationOffsetA()));
+    return ObjectToValue(&_thisObj->getRotationOffsetA(), false);
 }
 DEFINE_PRIM(hx_PhysicsGenericConstraint_getRotationOffsetA, 1);
 
@@ -14,7 +14,7 @@ value hx_PhysicsGenericConstraint_getRotationOffsetB(value thisObj)
 {
     PhysicsGenericConstraint *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Quaternion(_thisObj->getRotationOffsetB()));
+    return ObjectToValue(&_thisObj->getRotationOffsetB(), false);
 }
 DEFINE_PRIM(hx_PhysicsGenericConstraint_getRotationOffsetB, 1);
 

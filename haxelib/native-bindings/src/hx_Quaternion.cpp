@@ -105,7 +105,7 @@ DEFINE_PRIM(hx_Quaternion_static_createFromRotationMatrix, 2);
 // DECL: static const Quaternion& identity();
 value hx_Quaternion_static_identity()
 {
-    return ObjectToValue(new Quaternion(Quaternion::identity()));
+    return ObjectToValue(&Quaternion::identity(), false);
 }
 DEFINE_PRIM(hx_Quaternion_static_identity, 0);
 
@@ -316,7 +316,7 @@ DEFINE_PRIM(hx_Quaternion_toAxisAngle, 2);
 // DECL: static const Quaternion& zero();
 value hx_Quaternion_static_zero()
 {
-    return ObjectToValue(new Quaternion(Quaternion::zero()));
+    return ObjectToValue(&Quaternion::zero(), false);
 }
 DEFINE_PRIM(hx_Quaternion_static_zero, 0);
 

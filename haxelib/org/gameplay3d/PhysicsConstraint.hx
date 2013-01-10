@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.shared.SharedQuaternion;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -11,6 +12,17 @@ class PhysicsConstraint extends GameplayObject
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
+
+    var _rotationOffset:Quaternion;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _rotationOffset = Quaternion.make();
+    }
 
     // DECL: static Vector3 centerOfMassMidpoint(const Node* a, const Node* b);
     public static function centerOfMassMidpoint(a:Node, b:Node):Vector3
@@ -25,9 +37,9 @@ class PhysicsConstraint extends GameplayObject
     }
 
     // DECL: static Quaternion getRotationOffset(const Node* node, const Vector3& point);
-    public static function getRotationOffset(node:Node, point:IVector3):Quaternion
+    public static function getRotationOffset(node:Node, point:IVector3):SharedQuaternion
     {
-        return Quaternion.wrap(hx_PhysicsConstraint_static_getRotationOffset(node.native(), point.native()));
+        return _rotationOffset.impersonate(hx_PhysicsConstraint_static_getRotationOffset(node.native(), point.native()));
     }
 
     // DECL: static Vector3 getTranslationOffset(const Node* node, const Vector3& point);

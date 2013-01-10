@@ -45,6 +45,7 @@ class Transform extends AnimationTarget_ScriptTarget
     var _rightVector:Vector3;
     var _upVector:Vector3;
     var _matrix:Matrix;
+    var _rotation:Quaternion;
 
     function new(
             nativeObjectInitializer:Dynamic,
@@ -61,6 +62,7 @@ class Transform extends AnimationTarget_ScriptTarget
         _rightVector = Vector3.make();
         _upVector = Vector3.make();
         _matrix = Matrix.make();
+        _rotation = Quaternion.make();
     }
 
     // DECL: Transform();
@@ -174,7 +176,7 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: const Quaternion& getRotation() const;
     public function getRotation():IQuaternion
     {
-        return Quaternion.wrap(hx_Transform_getRotation(nativeObject));
+        return _rotation.impersonate(hx_Transform_getRotation(nativeObject));
     }
 
     // DECL: float getRotation(Vector3* axis) const;

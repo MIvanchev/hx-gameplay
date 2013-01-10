@@ -188,7 +188,7 @@ value hx_Transform_getRotation(value thisObj)
 {
     Transform *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Quaternion(_thisObj->getRotation()));
+    return ObjectToValue(&_thisObj->getRotation(), false);
 }
 DEFINE_PRIM(hx_Transform_getRotation, 1);
 

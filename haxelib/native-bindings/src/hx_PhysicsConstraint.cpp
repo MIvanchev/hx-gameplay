@@ -26,7 +26,7 @@ value hx_PhysicsConstraint_static_getRotationOffset(value node, value point)
     Vector3 *_point;
     ValueToObject(node, _node);
     ValueToObject(point, _point);
-    return ObjectToValue(new Quaternion(PhysicsConstraint::getRotationOffset(_node, *_point)));
+    return CopyOutsideScope(PhysicsConstraint::getRotationOffset(_node, *_point));
 }
 DEFINE_PRIM(hx_PhysicsConstraint_static_getRotationOffset, 2);
 
