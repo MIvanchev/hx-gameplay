@@ -17,6 +17,17 @@ class PhysicsController extends ScriptTargetImpl
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _gravity:Vector3;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _gravity = Vector3.make();
+    }
+
     // DECL: void addStatusListener(PhysicsController::Listener* listener);
     public function addStatusListener(listener:PhysicsController_ListenerWrapper):Void
     {
@@ -80,7 +91,7 @@ class PhysicsController extends ScriptTargetImpl
     // DECL: const Vector3& getGravity() const;
     public function getGravity():IVector3
     {
-        return Vector3.wrap(hx_PhysicsController_getGravity(nativeObject));
+        return _gravity.impersonate(hx_PhysicsController_getGravity(nativeObject));
     }
 
     // DECL: bool rayTest(const Ray& ray, float distance, PhysicsController::HitResult* result = NULL, PhysicsController::HitFilter* filter = NULL);

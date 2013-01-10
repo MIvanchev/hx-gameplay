@@ -13,6 +13,23 @@ class AudioListener extends Transform_ListenerImpl
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _oientationForward:Vector3;
+    var _orientationUp:Vector3;
+    var _position:Vector3;
+    var _velocity:Vector3;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _oientationForward = Vector3.make();
+        _orientationUp = Vector3.make();
+        _position = Vector3.make();
+        _velocity = Vector3.make();
+    }
+
     // DECL: Camera* getCamera() const;
     public function getCamera():Camera
     {
@@ -40,25 +57,25 @@ class AudioListener extends Transform_ListenerImpl
     // DECL: const Vector3& getOrientationForward() const;
     public function getOrientationForward():IVector3
     {
-        return Vector3.wrap(hx_AudioListener_getOrientationForward(nativeObject));
+        return _orientationForward.impersonate(hx_AudioListener_getOrientationForward(nativeObject));
     }
 
     // DECL: const Vector3& getOrientationUp() const;
     public function getOrientationUp():IVector3
     {
-        return Vector3.wrap(hx_AudioListener_getOrientationUp(nativeObject));
+        return _orientationUp.impersonate(hx_AudioListener_getOrientationUp(nativeObject));
     }
 
     // DECL: const Vector3& getPosition() const;
     public function getPosition():IVector3
     {
-        return Vector3.wrap(hx_AudioListener_getPosition(nativeObject));
+        return _position.impersonate(hx_AudioListener_getPosition(nativeObject));
     }
 
     // DECL: const Vector3& getVelocity() const;
     public function getVelocity():IVector3
     {
-        return Vector3.wrap(hx_AudioListener_getVelocity(nativeObject));
+        return _velocity.impersonate(hx_AudioListener_getVelocity(nativeObject));
     }
 
     // DECL: void setCamera(Camera* camera);

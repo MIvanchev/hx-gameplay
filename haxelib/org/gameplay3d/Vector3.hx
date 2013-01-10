@@ -20,6 +20,11 @@ class Vector3 extends GameplayObject, implements IVector3
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _one:Vector3;
+    var _unitX:Vector3;
+    var _unitY:Vector3;
+    var _unitZ:Vector3;
+    var _zero:Vector3;
     var _normalized:Vector3;
 
     function new(
@@ -28,6 +33,11 @@ class Vector3 extends GameplayObject, implements IVector3
         )
     {
         super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _one = Vector3.make();
+        _unitX = Vector3.make();
+        _unitY = Vector3.make();
+        _unitZ = Vector3.make();
+        _zero = Vector3.make();
         _normalized = Vector3.make();
     }
 
@@ -178,7 +188,7 @@ class Vector3 extends GameplayObject, implements IVector3
     // DECL: static const Vector3& one();
     public static function one():IVector3
     {
-        return Vector3.wrap(hx_Vector3_static_one());
+        return _one.impersonate(hx_Vector3_static_one());
     }
 
     // DECL: void scale(float scalar);
@@ -232,25 +242,25 @@ class Vector3 extends GameplayObject, implements IVector3
     // DECL: static const Vector3& unitX();
     public static function unitX():IVector3
     {
-        return Vector3.wrap(hx_Vector3_static_unitX());
+        return _unitX.impersonate(hx_Vector3_static_unitX());
     }
 
     // DECL: static const Vector3& unitY();
     public static function unitY():IVector3
     {
-        return Vector3.wrap(hx_Vector3_static_unitY());
+        return _unitY.impersonate(hx_Vector3_static_unitY());
     }
 
     // DECL: static const Vector3& unitZ();
     public static function unitZ():IVector3
     {
-        return Vector3.wrap(hx_Vector3_static_unitZ());
+        return _unitZ.impersonate(hx_Vector3_static_unitZ());
     }
 
     // DECL: static const Vector3& zero();
     public static function zero():IVector3
     {
-        return Vector3.wrap(hx_Vector3_static_zero());
+        return _zero.impersonate(hx_Vector3_static_zero());
     }
 
     /***************************************************************************

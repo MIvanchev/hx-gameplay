@@ -12,6 +12,17 @@ class Light extends GameplayObject, implements Ref
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _color:Vector3;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _color = Vector3.make();
+    }
+
     // DECL: static Light* createDirectional(const Vector3& color);
     public static function createDirectional_V3(color:IVector3):Light
     {
@@ -51,7 +62,7 @@ class Light extends GameplayObject, implements Ref
     // DECL: const Vector3& getColor() const;
     public function getColor():IVector3
     {
-        return Vector3.wrap(hx_Light_getColor(nativeObject));
+        return _color.impersonate(hx_Light_getColor(nativeObject));
     }
 
     // DECL: float getInnerAngle() const;

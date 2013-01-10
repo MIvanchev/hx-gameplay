@@ -36,6 +36,8 @@ class Transform extends AnimationTarget_ScriptTarget
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _scale:Vector3;
+    var _transform:Vector3;
     var _backVector:Vector3;
     var _downVector:Vector3;
     var _forwardVector:Vector3;
@@ -49,6 +51,8 @@ class Transform extends AnimationTarget_ScriptTarget
         )
     {
         super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _scale = Vector3.make();
+        _transform = Vector3.make();
         _backVector = Vector3.make();
         _downVector = Vector3.make();
         _forwardVector = Vector3.make();
@@ -192,7 +196,7 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: const Vector3& getScale() const;
     public function getScale():IVector3
     {
-        return Vector3.wrap(hx_Transform_getScale(nativeObject));
+        return _scale.impersonate(hx_Transform_getScale(nativeObject));
     }
 
     // DECL: void getScale(Vector3* scale) const;
@@ -222,7 +226,7 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: const Vector3& getTranslation() const;
     public function getTranslation():IVector3
     {
-        return Vector3.wrap(hx_Transform_getTranslation(nativeObject));
+        return _translation.impersonate(hx_Transform_getTranslation(nativeObject));
     }
 
     // DECL: void getTranslation(Vector3* translation) const;

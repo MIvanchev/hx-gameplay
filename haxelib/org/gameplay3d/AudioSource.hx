@@ -13,6 +13,17 @@ class AudioSource extends Transform_ListenerImpl, implements Ref
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _velocity:Vector3;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _velocity = Vector3.make();
+    }
+
     // DECL: static AudioSource* create(Properties* properties);
     public static function create_Prop(properties:Properties):AudioSource
     {
@@ -52,7 +63,7 @@ class AudioSource extends Transform_ListenerImpl, implements Ref
     // DECL: const Vector3& getVelocity() const;
     public function getVelocity():IVector3
     {
-        return Vector3.wrap(hx_AudioSource_getVelocity(nativeObject));
+        return _velocity.impersonate(hx_AudioSource_getVelocity(nativeObject));
     }
 
     // DECL: bool isLooped() const;

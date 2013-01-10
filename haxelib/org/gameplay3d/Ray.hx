@@ -19,6 +19,19 @@ class Ray extends GameplayObject
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _direction:Vector3;
+    var _origin:Vector3;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _direction = Vector3.make();
+        _origin = Vector3.make();
+    }
+
     // DECL: Ray();
     public static function make():Ray
     {
@@ -46,13 +59,13 @@ class Ray extends GameplayObject
     // DECL: const Vector3& getDirection() const;
     public function getDirection():IVector3
     {
-        return Vector3.wrap(hx_Ray_getDirection(nativeObject));
+        return _direction.impersonate(hx_Ray_getDirection(nativeObject));
     }
 
     // DECL: const Vector3& getOrigin() const;
     public function getOrigin():IVector3
     {
-        return Vector3.wrap(hx_Ray_getOrigin(nativeObject));
+        return _origin.impersonate(hx_Ray_getOrigin(nativeObject));
     }
 
     // DECL: float intersects(const BoundingBox& box) const;

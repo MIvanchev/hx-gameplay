@@ -13,6 +13,19 @@ class PhysicsGenericConstraint extends PhysicsConstraint
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _translationOffsetA:Vector3;
+    var _translationOffsetB:Vector3;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _translationOffsetA = Vector3.make();
+        _translationOffsetB = Vector3.make();
+    }
+
     // DECL: inline const Quaternion& getRotationOffsetA() const;
     public function getRotationOffsetA():IQuaternion
     {
@@ -28,13 +41,13 @@ class PhysicsGenericConstraint extends PhysicsConstraint
     // DECL: inline const Vector3& getTranslationOffsetA() const;
     public function getTranslationOffsetA():IVector3
     {
-        return Vector3.wrap(hx_PhysicsGenericConstraint_getTranslationOffsetA(nativeObject));
+        return _translationOffsetA.impersonate(hx_PhysicsGenericConstraint_getTranslationOffsetA(nativeObject));
     }
 
     // DECL: inline const Vector3& getTranslationOffsetB() const;
     public function getTranslationOffsetB():IVector3
     {
-        return Vector3.wrap(hx_PhysicsGenericConstraint_getTranslationOffsetB(nativeObject));
+        return _translationOffsetB(hx_PhysicsGenericConstraint_getTranslationOffsetB(nativeObject));
     }
 
     // DECL: inline void setAngularLowerLimit(const Vector3& limits);

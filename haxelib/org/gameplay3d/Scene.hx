@@ -15,6 +15,18 @@ class Scene extends GameplayObject, implements Ref
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _ambientColor:Vector3;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _ambientColor = Vector3.make();
+    }
+
+
     // DECL: Node* addNode(const char* id = NULL);
     public function addNode_Str(id:String = null):Node
     {
@@ -69,7 +81,7 @@ class Scene extends GameplayObject, implements Ref
     // DECL: const Vector3& getAmbientColor() const;
     public function getAmbientColor():IVector3
     {
-        return Vector3.wrap(hx_Scene_getAmbientColor(nativeObject));
+        return _ambientColor.impersonate(hx_Scene_getAmbientColor(nativeObject));
     }
 
     // DECL: Node* getFirstNode() const;

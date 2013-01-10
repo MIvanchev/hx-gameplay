@@ -10,12 +10,22 @@ class PhysicsCollisionObject_CollisionPair extends GameplayObject
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var objectA(get_objectA, set_objectA):PhysicsCollisionObject;
-    public var objectB(get_objectB, set_objectB):PhysicsCollisionObject;
+    public var objectA(default, null):PhysicsCollisionObject;
+    public var objectB(default, null):PhysicsCollisionObject;
 
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        objectA = PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectA_get(nativeObject));
+        objectB = PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectB_get(nativeObject));
+    }
 
     // DECL: CollisionPair(PhysicsCollisionObject* objectA, PhysicsCollisionObject* objectB);
     public static function make(objectA:PhysicsCollisionObject, objectB:PhysicsCollisionObject):PhysicsCollisionObject_CollisionPair
@@ -34,38 +44,12 @@ class PhysicsCollisionObject_CollisionPair extends GameplayObject
     }
 
     /***************************************************************************
-     * PROPERTY ACCESSORS                                                      *
-     **************************************************************************/
-
-    function get_objectA():PhysicsCollisionObject
-    {
-        return PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectA_get(nativeObject));
-    }
-
-    function set_objectA(value:PhysicsCollisionObject):PhysicsCollisionObject
-    {
-        return PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectA_set(nativeObject, value.native()));
-    }
-
-    function get_objectB():PhysicsCollisionObject
-    {
-        return PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectB_get(nativeObject));
-    }
-
-    function set_objectB(value:PhysicsCollisionObject):PhysicsCollisionObject
-    {
-        return PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectB_set(nativeObject, value.native()));
-    }
-
-    /***************************************************************************
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
     static var hx_PhysicsCollisionObject_CollisionPair_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_Construct", 2);
     static var hx_PhysicsCollisionObject_CollisionPair_property_objectA_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_property_objectA_get", 1);
-    static var hx_PhysicsCollisionObject_CollisionPair_property_objectA_set:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_property_objectA_set", 2);
     static var hx_PhysicsCollisionObject_CollisionPair_property_objectB_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_property_objectB_get", 1);
-    static var hx_PhysicsCollisionObject_CollisionPair_property_objectB_set:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_property_objectB_set", 2);
 }
 
 // END

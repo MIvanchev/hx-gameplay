@@ -21,6 +21,17 @@ class Plane extends GameplayObject
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _normal:Vector3;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _normal = Vector3.make();
+    }
+
     // DECL: Plane();
     public static function make():Plane
     {
@@ -60,7 +71,7 @@ class Plane extends GameplayObject
     // DECL: const Vector3& getNormal() const;
     public function getNormal():IVector3
     {
-        return Vector3.wrap(hx_Plane_getNormal(nativeObject));
+        return _normal.impersonate(hx_Plane_getNormal(nativeObject));
     }
 
     // DECL: static void intersection(const Plane& p1, const Plane& p2, const Plane& p3, Vector3* point);
