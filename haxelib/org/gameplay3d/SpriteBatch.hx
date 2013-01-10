@@ -16,6 +16,17 @@ class SpriteBatch extends GameplayObject
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _projectionMatrix:Matrix;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _projectionMatrix = Matrix.make();
+    }
+
     // DECL: static SpriteBatch* create(Texture* texture, Effect* effect = NULL, unsigned int initialCapacity = 0);
     public static function create_Tex_Eff_Int(texture:Texture, effect:Effect = null, initialCapacity:Int = 0):SpriteBatch
     {
@@ -97,7 +108,7 @@ class SpriteBatch extends GameplayObject
     // DECL: const Matrix& getProjectionMatrix() const;
     public function getProjectionMatrix():IMatrix
     {
-        return Matrix.wrap(hx_SpriteBatch_getProjectionMatrix(nativeObject));
+        return _projectionMatrix.impersonate(hx_SpriteBatch_getProjectionMatrix(nativeObject));
     }
 
     // DECL: Texture::Sampler* getSampler() const;

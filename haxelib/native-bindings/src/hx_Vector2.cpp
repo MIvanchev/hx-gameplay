@@ -196,7 +196,7 @@ value hx_Vector2_normalize(value thisObj)
 }
 DEFINE_PRIM(hx_Vector2_normalize, 1);
 
-// DECL: void normalize(Vector2* dst);
+// DECL: void normalize(Vector2* dst) const;
 void hx_Vector2_normalize_V2(value thisObj, value dst)
 {
     Vector2 *_thisObj, *_dst;

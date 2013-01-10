@@ -5,7 +5,7 @@ value hx_Theme_ThemeImage_getColor(value thisObj)
 {
     Theme::ThemeImage *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return CopyOutsideScope(_thisObj->getColor());
+    return ObjectToValue(&_thisObj->getColor(), false);
 }
 DEFINE_PRIM(hx_Theme_ThemeImage_getColor, 1);
 

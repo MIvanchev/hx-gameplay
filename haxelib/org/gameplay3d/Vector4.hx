@@ -171,7 +171,7 @@ class Vector4 extends GameplayObject, implements IVector4
         return _normalized.impersonate(hx_Vector4_normalize(nativeObject));
     }
 
-    // DECL: void normalize(Vector4* dst);
+    // DECL: void normalize(Vector4* dst) const;
     public function normalize_V4(dst:Vector4):Void
     {
         hx_Vector4_normalize_V4(nativeObject, dst.native());

@@ -17,6 +17,25 @@ class Camera extends Transform_ListenerImpl, implements Ref
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _inverseViewMatrix:Matrix;
+    var _inverseViewProjectionMatrix:Matrix;
+    var _projectionMatrix:Matrix;
+    var _viewMatrix:Matrix;
+    var _viewProjectionMatrix:Matrix;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _inverseViewMatrix = Matrix.make();
+        _inverseViewProjectionMatrix = Matrix.make();
+        _projectionMatrix = Matrix.make();
+        _viewMatrix = Matrix.make();
+        _viewProjectionMatrix = Matrix.make();
+    }
+
     // DECL: static Camera* createOrthographic(float zoomX, float zoomY, float aspectRatio, float nearPlane, float farPlane);
     public static function createOrthographic(zoomX:Float, zoomY:Float, aspectRatio:Float, nearPlane:Float, farPlane:Float):Camera
     {
@@ -62,13 +81,13 @@ class Camera extends Transform_ListenerImpl, implements Ref
     // DECL: const Matrix& getInverseViewMatrix() const;
     public function getInverseViewMatrix():IMatrix
     {
-        return Matrix.wrap(hx_Camera_getInverseViewMatrix(nativeObject));
+        return _inverseViewMatrix.impersonate(hx_Camera_getInverseViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getInverseViewProjectionMatrix() const;
     public function getInverseViewProjectionMatrix():IMatrix
     {
-        return Matrix.wrap(hx_Camera_getInverseViewProjectionMatrix(nativeObject));
+        return _inverseViewProjectionMatrix.impersonate(hx_Camera_getInverseViewProjectionMatrix(nativeObject));
     }
 
     // DECL: float getNearPlane() const;
@@ -86,19 +105,19 @@ class Camera extends Transform_ListenerImpl, implements Ref
     // DECL: const Matrix& getProjectionMatrix() const;
     public function getProjectionMatrix():IMatrix
     {
-        return Matrix.wrap(hx_Camera_getProjectionMatrix(nativeObject));
+        return _projectionMatrix.impersonate(hx_Camera_getProjectionMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getViewMatrix() const;
     public function getViewMatrix():IMatrix
     {
-        return Matrix.wrap(hx_Camera_getViewMatrix(nativeObject));
+        return _viewMatrix.impersonate(hx_Camera_getViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getViewProjectionMatrix() const;
     public function getViewProjectionMatrix():IMatrix
     {
-        return Matrix.wrap(hx_Camera_getViewProjectionMatrix(nativeObject));
+        return _viewProjectionMatrix.impersonate(hx_Camera_getViewProjectionMatrix(nativeObject));
     }
 
     // DECL: float getZoomX() const;

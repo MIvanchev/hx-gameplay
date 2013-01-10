@@ -442,7 +442,7 @@ DEFINE_PRIM(hx_Matrix_getUpVector, 2);
 // DECL: static const Matrix& identity();
 value hx_Matrix_static_identity()
 {
-    return ObjectToValue(new Matrix(Matrix::identity()));
+    return ObjectToValue(&Matrix::identity(), false);
 }
 DEFINE_PRIM(hx_Matrix_static_identity, 0);
 
@@ -1005,7 +1005,7 @@ DEFINE_PRIM(hx_Matrix_transpose_Mat, 2);
 // DECL: static const Matrix& zero();
 value hx_Matrix_static_zero()
 {
-    return ObjectToValue(new Matrix(Matrix::zero()));
+    return ObjectToValue(&Matrix::zero(), false);
 }
 DEFINE_PRIM(hx_Matrix_static_zero, 0);
 

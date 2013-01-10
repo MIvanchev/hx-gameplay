@@ -129,7 +129,7 @@ value hx_Control_getCursorColor(value thisObj, value state)
     Control::State _state;
     ValueToObject(thisObj, _thisObj);
     ValueToEnum(state, _state);
-    return CopyOutsideScope(_thisObj->getCursorColor(_state));
+    return ObjectToValue(&_thisObj->getCursorColor(_state), false);
 }
 DEFINE_PRIM(hx_Control_getCursorColor, 2);
 
@@ -216,7 +216,7 @@ value hx_Control_getImageColor(value thisObj, value id, value state)
     Control::State _state;
     ValueToObject(thisObj, _thisObj);
     ValueToEnum(state, _state);
-    return CopyOutsideScope(_thisObj->getImageColor(_id, _state));
+    return ObjectToValue(&_thisObj->getImageColor(_id, _state), false);
 }
 DEFINE_PRIM(hx_Control_getImageColor, 3);
 
@@ -292,7 +292,7 @@ value hx_Control_getSkinColor(value thisObj, value state)
     Control::State _state;
     ValueToObject(thisObj, _thisObj);
     ValueToEnum(state, _state);
-    return CopyOutsideScope(_thisObj->getSkinColor(_state));
+    return ObjectToValue(&_thisObj->getSkinColor(_state), false);
 }
 DEFINE_PRIM(hx_Control_getSkinColor, 2);
 
@@ -343,7 +343,7 @@ value hx_Control_getTextColor(value thisObj, value state)
     Control::State _state;
     ValueToObject(thisObj, _thisObj);
     ValueToEnum(state, _state);
-    return CopyOutsideScope(_thisObj->getTextColor(_state));
+    return ObjectToValue(&_thisObj->getTextColor(_state), false);
 }
 DEFINE_PRIM(hx_Control_getTextColor, 2);
 

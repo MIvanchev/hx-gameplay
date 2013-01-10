@@ -208,7 +208,7 @@ value hx_Vector4_normalize(value thisObj)
 }
 DEFINE_PRIM(hx_Vector4_normalize, 1);
 
-// DECL: void normalize(Vector4* dst);
+// DECL: void normalize(Vector4* dst) const;
 void hx_Vector4_normalize_V4(value thisObj, value dst)
 {
     Vector4 *_thisObj, *_dst;
@@ -221,7 +221,7 @@ DEFINE_PRIM(hx_Vector4_normalize_V4, 2);
 // DECL: static const Vector4& one();
 value hx_Vector4_static_one()
 {
-    return CopyOutsideScope(Vector4::one());
+    return ObjectToValue(&Vector4::one(), false);
 }
 DEFINE_PRIM(hx_Vector4_static_one, 0);
 
@@ -309,35 +309,35 @@ DEFINE_PRIM(hx_Vector4_subtract, 2);
 // DECL: static const Vector4& unitW();
 value hx_Vector4_static_unitW()
 {
-    return CopyOutsideScope(Vector4::unitW());
+    return ObjectToValue(&Vector4::unitW(), false);
 }
 DEFINE_PRIM(hx_Vector4_static_unitW, 0);
 
 // DECL: static const Vector4& unitX();
 value hx_Vector4_static_unitX()
 {
-    return CopyOutsideScope(Vector4::unitX());
+    return ObjectToValue(&Vector4::unitX(), false);
 }
 DEFINE_PRIM(hx_Vector4_static_unitX, 0);
 
 // DECL: static const Vector4& unitY();
 value hx_Vector4_static_unitY()
 {
-    return ObjectToValue(new Vector4(Vector4::unitY()));
+    return ObjectToValue(&Vector4::unitY(), false);
 }
 DEFINE_PRIM(hx_Vector4_static_unitY, 0);
 
 // DECL: static const Vector4& unitZ();
 value hx_Vector4_static_unitZ()
 {
-    return CopyOutsideScope(Vector4::unitZ());
+    return ObjectToValue(&Vector4::unitZ(), false);
 }
 DEFINE_PRIM(hx_Vector4_static_unitZ, 0);
 
 // DECL: static const Vector4& zero();
 value hx_Vector4_static_zero()
 {
-    return CopyOutsideScope(Vector4::zero());
+    return ObjectToValue(&Vector4::zero(), false);
 }
 DEFINE_PRIM(hx_Vector4_static_zero, 0);
 

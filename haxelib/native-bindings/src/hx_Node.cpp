@@ -213,7 +213,7 @@ value hx_Node_getInverseTransposeWorldMatrix(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getInverseTransposeWorldMatrix()));
+    return ObjectToValue(&_thisObj->getInverseTransposeWorldMatrix(), false);
 }
 DEFINE_PRIM(hx_Node_getInverseTransposeWorldMatrix, 1);
 
@@ -222,7 +222,7 @@ value hx_Node_getInverseTransposeWorldViewMatrix(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getInverseTransposeWorldViewMatrix()));
+    return ObjectToValue(&_thisObj->getInverseTransposeWorldViewMatrix(), false);
 }
 DEFINE_PRIM(hx_Node_getInverseTransposeWorldViewMatrix, 1);
 
@@ -231,7 +231,7 @@ value hx_Node_getInverseViewMatrix(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getInverseViewMatrix()));
+    return ObjectToValue(&_thisObj->getInverseViewMatrix(), false);
 }
 DEFINE_PRIM(hx_Node_getInverseViewMatrix, 1);
 
@@ -240,7 +240,7 @@ value hx_Node_getInverseViewProjectionMatrix(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getInverseViewProjectionMatrix()));
+    return ObjectToValue(&_thisObj->getInverseViewProjectionMatrix(), false);
 }
 DEFINE_PRIM(hx_Node_getInverseViewProjectionMatrix, 1);
 
@@ -312,7 +312,7 @@ value hx_Node_getProjectionMatrix(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getProjectionMatrix()));
+    return ObjectToValue(&_thisObj->getProjectionMatrix(), false);
 }
 DEFINE_PRIM(hx_Node_getProjectionMatrix, 1);
 
@@ -403,7 +403,7 @@ value hx_Node_getViewMatrix(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getViewMatrix()));
+    return ObjectToValue(&_thisObj->getViewMatrix(), false);
 }
 DEFINE_PRIM(hx_Node_getViewMatrix, 1);
 
@@ -412,7 +412,7 @@ value hx_Node_getViewProjectionMatrix(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getViewProjectionMatrix()));
+    return ObjectToValue(&_thisObj->getViewProjectionMatrix(), false);
 }
 DEFINE_PRIM(hx_Node_getViewProjectionMatrix, 1);
 
@@ -421,7 +421,7 @@ value hx_Node_getWorldMatrix(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getWorldMatrix()));
+    return ObjectToValue(&_thisObj->getWorldMatrix(), false);
 }
 DEFINE_PRIM(hx_Node_getWorldMatrix, 1);
 
@@ -430,7 +430,7 @@ value hx_Node_getWorldViewMatrix(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getWorldViewMatrix()));
+    return ObjectToValue(&_thisObj->getWorldViewMatrix(), false);
 }
 DEFINE_PRIM(hx_Node_getWorldViewMatrix, 1);
 
@@ -439,7 +439,7 @@ value hx_Node_getWorldViewProjectionMatrix(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getWorldViewProjectionMatrix()));
+    return ObjectToValue(&_thisObj->getWorldViewProjectionMatrix(), false);
 }
 DEFINE_PRIM(hx_Node_getWorldViewProjectionMatrix, 1);
 

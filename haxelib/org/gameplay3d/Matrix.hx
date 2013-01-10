@@ -25,9 +25,14 @@ class Matrix extends GameplayObject, implements IMatrix
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _identity:Matrix;
+    var _zero:Matrix;
+
     function new(nativeObject, nativeObjectInitializerParams = null)
     {
         super(nativeObject, nativeObjectInitializerParams);
+        _identity = Matrix.make();
+        _zero = Matrix.make();
         m = new MatrixEntries(hx_Matrix_property_m_get(nativeObject));
         m_immutable = m;
     }
@@ -233,7 +238,7 @@ class Matrix extends GameplayObject, implements IMatrix
     // DECL: static const Matrix& identity();
     public static function identity():IMatrix
     {
-        return Matrix.wrap(hx_Matrix_static_identity());
+        return _identity.impersonate(hx_Matrix_static_identity());
     }
 
     // DECL: bool invert();
@@ -515,7 +520,7 @@ class Matrix extends GameplayObject, implements IMatrix
     // DECL: static const Matrix& zero();
     public static function zero():IMatrix
     {
-        return Matrix.wrap(hx_Matrix_static_zero());
+        return _zero.impersonate(hx_Matrix_static_zero());
     }
 
     /***************************************************************************

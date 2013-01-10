@@ -38,4 +38,7 @@ interface IVector2 implements INativeBinding
 
     // DECL: float lengthSquared() const;
     public function lengthSquared():Float;
+
+    // DECL: void normalize(Vector2* dst) const;
+    public function normalize_V2(dst:Vector2):Void;
 }

@@ -40,4 +40,7 @@ interface IVector4 implements INativeBinding
 
     // DECL: float lengthSquared() const;
     public function lengthSquared():Float;
+
+    // DECL: void normalize(Vector4* dst) const;
+    public function normalize_V4(dst:Vector4):Void;
 }

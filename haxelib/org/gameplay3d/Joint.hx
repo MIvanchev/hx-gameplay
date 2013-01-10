@@ -12,10 +12,21 @@ class Joint extends Node
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _inverseBindPose:Matrix;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _inverseBindPose = Matrix.make();
+    }
+
     // DECL: const Matrix& getInverseBindPose() const;
     public function getInverseBindPose():IMatrix
     {
-        return Matrix.wrap(hx_Joint_getInverseBindPose(nativeObject));
+        return _inverseBindPose.impersonate(hx_Joint_getInverseBindPose(nativeObject));
     }
 
     // DECL: Node::Type getType() const;

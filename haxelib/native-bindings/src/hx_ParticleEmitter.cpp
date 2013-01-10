@@ -70,7 +70,7 @@ value hx_ParticleEmitter_getColorEnd(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return CopyOutsideScope(_thisObj->getColorEnd());
+    return ObjectToValue(&_thisObj->getColorEnd(), false);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getColorEnd, 1);
 
@@ -79,7 +79,7 @@ value hx_ParticleEmitter_getColorEndVariance(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return CopyOutsideScope(_thisObj->getColorEndVariance());
+    return ObjectToValue(&_thisObj->getColorEndVariance(), false);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getColorEndVariance, 1);
 
@@ -88,7 +88,7 @@ value hx_ParticleEmitter_getColorStart(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return CopyOutsideScope(_thisObj->getColorStart());
+    return ObjectToValue(&_thisObj->getColorStart(), false);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getColorStart, 1);
 
@@ -97,7 +97,7 @@ value hx_ParticleEmitter_getColorStartVariance(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return CopyOutsideScope(_thisObj->getColorStartVariance());
+    return ObjectToValue(&_thisObj->getColorStartVariance(), false);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getColorStartVariance, 1);
 

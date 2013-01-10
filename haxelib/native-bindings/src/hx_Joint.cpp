@@ -5,7 +5,7 @@ value hx_Joint_getInverseBindPose(value thisObj)
 {
     Joint *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getInverseBindPose()));
+    return ObjectToValue(&_thisObj->getInverseBindPose(), false);
 }
 DEFINE_PRIM(hx_Joint_getInverseBindPose, 1);
 

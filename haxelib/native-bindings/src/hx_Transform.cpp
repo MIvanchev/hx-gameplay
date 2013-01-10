@@ -159,7 +159,7 @@ value hx_Transform_getMatrix(value thisObj)
 {
     Transform *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getMatrix()));
+    return ObjectToValue(&_thisObj->getMatrix(), false);
 }
 DEFINE_PRIM(hx_Transform_getMatrix, 1);
 

@@ -15,10 +15,21 @@ class MeshSkin extends Transform_ListenerImpl
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _bindShape:Matrix;
+
+    function new(
+            nativeObjectInitializer:Dynamic,
+            nativeObjectInitializerParams:Array<Dynamic> = null
+        )
+    {
+        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        _bindShape = Matrix.make();
+    }
+
     // DECL: const Matrix& getBindShape() const;
     public function getBindShape():IMatrix
     {
-        return Matrix.wrap(hx_MeshSkin_getBindShape(nativeObject));
+        return _bindShape.impersonate(hx_MeshSkin_getBindShape(nativeObject));
     }
 
     // DECL: Joint* getJoint(const char* id) const;

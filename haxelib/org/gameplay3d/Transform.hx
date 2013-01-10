@@ -44,6 +44,7 @@ class Transform extends AnimationTarget_ScriptTarget
     var _leftVector:Vector3;
     var _rightVector:Vector3;
     var _upVector:Vector3;
+    var _matrix:Matrix;
 
     function new(
             nativeObjectInitializer:Dynamic,
@@ -59,6 +60,7 @@ class Transform extends AnimationTarget_ScriptTarget
         _leftVector = Vector3.make();
         _rightVector = Vector3.make();
         _upVector = Vector3.make();
+        _matrix = Matrix.make();
     }
 
     // DECL: Transform();
@@ -154,7 +156,7 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: const Matrix& getMatrix() const;
     public function getMatrix():IMatrix
     {
-        return Matrix.wrap(hx_Transform_getMatrix(nativeObject));
+        return _matrix.impersonate(hx_Transform_getMatrix(nativeObject));
     }
 
     // DECL: Vector3 getRightVector() const;

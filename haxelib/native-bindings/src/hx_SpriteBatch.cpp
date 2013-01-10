@@ -314,7 +314,7 @@ value hx_SpriteBatch_getProjectionMatrix(value thisObj)
 {
     SpriteBatch *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getProjectionMatrix()));
+    return ObjectToValue(&_thisObj->getProjectionMatrix(), false);
 }
 DEFINE_PRIM(hx_SpriteBatch_getProjectionMatrix, 1);
 

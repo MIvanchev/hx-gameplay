@@ -159,7 +159,7 @@ class Vector2 extends GameplayObject, implements IVector2
         return _normalized.impersonate(hx_Vector2_normalize(nativeObject));
     }
 
-    // DECL: void normalize(Vector2* dst);
+    // DECL: void normalize(Vector2* dst) const;
     public function normalize_V2(dst:Vector2):Void
     {
         hx_Vector2_normalize_V2(nativeObject, dst.native());

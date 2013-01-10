@@ -5,7 +5,7 @@ value hx_MeshSkin_getBindShape(value thisObj)
 {
     MeshSkin *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getBindShape()));
+    return ObjectToValue(&_thisObj->getBindShape(), false);
 }
 DEFINE_PRIM(hx_MeshSkin_getBindShape, 1);
 

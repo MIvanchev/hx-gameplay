@@ -73,7 +73,7 @@ value hx_Camera_getInverseViewMatrix(value thisObj)
 {
     Camera *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getInverseViewMatrix()));
+    return ObjectToValue(&_thisObj->getInverseViewMatrix(), false);
 }
 DEFINE_PRIM(hx_Camera_getInverseViewMatrix, 1);
 
@@ -82,7 +82,7 @@ value hx_Camera_getInverseViewProjectionMatrix(value thisObj)
 {
     Camera *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getInverseViewProjectionMatrix()));
+    return ObjectToValue(&_thisObj->getInverseViewProjectionMatrix(), false);
 }
 DEFINE_PRIM(hx_Camera_getInverseViewProjectionMatrix, 1);
 
@@ -109,7 +109,7 @@ value hx_Camera_getProjectionMatrix(value thisObj)
 {
     Camera *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getProjectionMatrix()));
+    return ObjectToValue(&_thisObj->getProjectionMatrix(), false);
 }
 DEFINE_PRIM(hx_Camera_getProjectionMatrix, 1);
 
@@ -118,7 +118,7 @@ value hx_Camera_getViewMatrix(value thisObj)
 {
     Camera *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getViewMatrix()));
+    return ObjectToValue(&_thisObj->getViewMatrix(), false);
 }
 DEFINE_PRIM(hx_Camera_getViewMatrix, 1);
 
@@ -127,7 +127,7 @@ value hx_Camera_getViewProjectionMatrix(value thisObj)
 {
     Camera *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Matrix(_thisObj->getViewProjectionMatrix()));
+    return ObjectToValue(&_thisObj->getViewProjectionMatrix(), false);
 }
 DEFINE_PRIM(hx_Camera_getViewProjectionMatrix, 1);
 
