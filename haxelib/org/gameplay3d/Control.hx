@@ -34,6 +34,12 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     var _imageColor:Vector4;
     var _skinColor:Vector4;
     var _textColor:Vector4;
+    var _bounds:Rectangle;
+    var _clip:Rectangle;
+    var _clipBounds:Rectangle;
+    var _cursorRegion:Rectangle;
+    var _imageRegion:Rectangle;
+    var _skinRegion:Rectangle;
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
@@ -43,6 +49,12 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
             _imageColor = Vector4.make();
             _skinColor = Vector4.make();
             _textColor = Vector4.make();
+            _bounds = Rectangle.make();
+            _clip = Rectangle.make();
+            _clipBounds = Rectangle.make();
+            _cursorRegion = Rectangle.make();
+            _imageRegion = Rectangle.make();
+            _skinRegion = Rectangle.make();
         }
         return super.impersonate(nativeObject);
     }
@@ -104,13 +116,13 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Rectangle& getClip() const;
     public function getClip():IRectangle
     {
-        return Rectangle.wrap(hx_Control_getClip(nativeObject));
+        return _clip.impersonate(hx_Control_getClip(nativeObject));
     }
 
     // DECL: const Rectangle& getClipBounds() const;
     public function getClipBounds():IRectangle
     {
-        return Rectangle.wrap(hx_Control_getClipBounds(nativeObject));
+        return _clipBounds.impersonate(hx_Control_getClipBounds(nativeObject));
     }
 
     // DECL: bool getConsumeInputEvents();
@@ -128,7 +140,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Rectangle& getCursorRegion(State state) const;
     public function getCursorRegion(state:Int):IRectangle
     {
-        return Rectangle.wrap(hx_Control_getCursorRegion(nativeObject, state));
+        return _cursorRegion.impersonate(hx_Control_getCursorRegion(nativeObject, state));
     }
 
     // DECL: const Theme::UVs& getCursorUVs(State state);
@@ -176,7 +188,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Rectangle& getImageRegion(const char* id, State state) const;
     public function getImageRegion(id:String, state:Int):IRectangle
     {
-        return Rectangle.wrap(hx_Control_getImageRegion(nativeObject, id, state));
+        return _imageRegion.impersonate(hx_Control_getImageRegion(nativeObject, id, state));
     }
 
     // DECL: const Theme::UVs& getImageUVs(const char* id, State state) const;
@@ -212,7 +224,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Rectangle& getSkinRegion(State state = NORMAL) const;
     public function getSkinRegion(state:Int = Control_State.NORMAL):IRectangle
     {
-        return Rectangle.wrap(hx_Control_getSkinRegion(nativeObject, state));
+        return _skinRegion.impersonate(hx_Control_getSkinRegion(nativeObject, state));
     }
 
     // DECL: State getState() const;

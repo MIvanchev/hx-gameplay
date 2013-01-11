@@ -23,7 +23,7 @@ value hx_Theme_ThemeImage_getRegion(value thisObj)
 {
     Theme::ThemeImage *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Rectangle(_thisObj->getRegion()));
+    return ObjectToValue(&_thisObj->getRegion(), false);
 }
 DEFINE_PRIM(hx_Theme_ThemeImage_getRegion, 1);
 

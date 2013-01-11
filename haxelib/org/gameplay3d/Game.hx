@@ -3,6 +3,7 @@ package org.gameplay3d;
 import cpp.Lib;
 import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector4;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.Handle;
 import org.gameplay3d.util.OutParameter;
@@ -17,6 +18,17 @@ class Game extends GameplayObject
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
+
+     var _viewport:Rectangle;
+
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
+    {
+        if (this.nativeObject == null)
+        {
+            _viewport = Rectangle.make();
+        }
+        return super.impersonate(nativeObject);
+    }
 
     // DECL: (none)
     function initialize():Void
@@ -211,7 +223,7 @@ class Game extends GameplayObject
     // DECL: inline const Rectangle& getViewport() const;
     public function getViewport():IRectangle
     {
-        return Rectangle.wrap(hx_Game_getViewport(nativeObject));
+        return _viewport.impersonate(hx_Game_getViewport(nativeObject));
     }
 
     // DECL: inline unsigned int getWidth() const;

@@ -93,7 +93,7 @@ DEFINE_PRIM(hx_Rectangle_contains_FltX4, 5);
 // DECL: static const Rectangle& empty();
 value hx_Rectangle_static_empty()
 {
-    return ObjectToValue(new Rectangle(Rectangle::empty()));
+    return ObjectToValue(&Rectangle::empty(), false);
 }
 DEFINE_PRIM(hx_Rectangle_static_empty, 0);
 

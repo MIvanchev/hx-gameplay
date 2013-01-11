@@ -21,6 +21,8 @@ class Rectangle extends GameplayObject, implements IRectangle
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    static var _empty:Rectangle;
+
     // DECL: Rectangle();
     public static function make():Rectangle
     {
@@ -78,7 +80,9 @@ class Rectangle extends GameplayObject, implements IRectangle
     // DECL: static const Rectangle& empty();
     public static function empty():IRectangle
     {
-        return Rectangle.wrap(hx_Rectangle_static_empty());
+        if (_empty == null)
+            _empty = Rectangle.make();
+        return _empty.impersonate(hx_Rectangle_static_empty());
     }
 
     // DECL: void inflate(float horizontalAmount, float verticalAmount);

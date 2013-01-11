@@ -91,7 +91,7 @@ value hx_Control_getBounds(value thisObj)
 {
     Control *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Rectangle(_thisObj->getBounds()));
+    return ObjectToValue(&_thisObj->getBounds(), false);
 }
 DEFINE_PRIM(hx_Control_getBounds, 1);
 
@@ -100,7 +100,7 @@ value hx_Control_getClip(value thisObj)
 {
     Control *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Rectangle(_thisObj->getClip()));
+    return ObjectToValue(&_thisObj->getClip(), false);
 }
 DEFINE_PRIM(hx_Control_getClip, 1);
 
@@ -109,7 +109,7 @@ value hx_Control_getClipBounds(value thisObj)
 {
     Control *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Rectangle(_thisObj->getClipBounds()));
+    return ObjectToValue(&_thisObj->getClipBounds(), false);
 }
 DEFINE_PRIM(hx_Control_getClipBounds, 1);
 
@@ -140,7 +140,7 @@ value hx_Control_getCursorRegion(value thisObj, value state)
     Control::State _state;
     ValueToObject(thisObj, _thisObj);
     ValueToEnum(state, _state);
-    return ObjectToValue(new Rectangle(_thisObj->getCursorRegion(_state)));
+    return ObjectToValue(&_thisObj->getCursorRegion(_state), false);
 }
 DEFINE_PRIM(hx_Control_getCursorRegion, 2);
 
@@ -228,7 +228,7 @@ value hx_Control_getImageRegion(value thisObj, value id, value state)
     Control::State _state;
     ValueToObject(thisObj, _thisObj);
     ValueToEnum(state, _state);
-    return ObjectToValue(new Rectangle(_thisObj->getImageRegion(_id, _state)));
+    return ObjectToValue(&_thisObj->getImageRegion(_id, _state), false);
 }
 DEFINE_PRIM(hx_Control_getImageRegion, 3);
 
@@ -303,7 +303,7 @@ value hx_Control_getSkinRegion(value thisObj, value state)
     Control::State _state;
     ValueToObject(thisObj, _thisObj);
     ValueToEnum(state, _state);
-    return ObjectToValue(new Rectangle(_thisObj->getSkinRegion(_state)));
+    return ObjectToValue(&_thisObj->getSkinRegion(_state), false);
 }
 DEFINE_PRIM(hx_Control_getSkinRegion, 2);
 

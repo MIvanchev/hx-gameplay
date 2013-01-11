@@ -453,7 +453,7 @@ value hx_Game_getViewport(value thisObj)
 {
     Game *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Rectangle(_thisObj->getViewport()));
+    return ObjectToValue(&_thisObj->getViewport(), false);
 }
 DEFINE_PRIM(hx_Game_getViewport, 1);
 
