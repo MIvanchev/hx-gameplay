@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.INativeBinding;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -20,13 +21,11 @@ class BoundingSphere extends GameplayObject
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        super.impersonate(nativeObject);
         center = Vector3.wrap(hx_BoundingSphere_property_center_get(nativeObject));
+        return cast(this);
     }
 
     // DECL: BoundingSphere();

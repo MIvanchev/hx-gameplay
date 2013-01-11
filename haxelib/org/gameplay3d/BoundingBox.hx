@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.shared.SharedVector3;
 import org.gameplay3d.util.INativeArray;
 
@@ -24,15 +25,16 @@ class BoundingBox extends GameplayObject
 
     var _center:Vector3;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        if (this.nativeObject == null)
+        {
+            _center = Vector3.make();
+        }
+        super.impersonate(nativeObject);
         min = Vector3.wrap(hx_BoundingBox_property_min_get(nativeObject));
         max = Vector3.wrap(hx_BoundingBox_property_max_get(nativeObject));
-        _center = Vector3.make();
+        return cast(this);
     }
 
     // DECL: BoundingBox();

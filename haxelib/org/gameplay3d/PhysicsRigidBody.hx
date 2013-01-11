@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.shared.SharedVector3;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -20,18 +21,18 @@ class PhysicsRigidBody extends PhysicsCollisionObject
     var _linearFactor:Vector3;
     var _linearVelocity:Vector3;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _angularFactor = Vector3.make();
-        _angularVelocity = Vector3.make();
-        _anisotropicFriction = Vector3.make();
-        _gravity = Vector3.make();
-        _linearFactor = Vector3.make();
-        _linearVelocity = Vector3.make();
+        if (this.nativeObject == null)
+        {
+            _angularFactor = Vector3.make();
+            _angularVelocity = Vector3.make();
+            _anisotropicFriction = Vector3.make();
+            _gravity = Vector3.make();
+            _linearFactor = Vector3.make();
+            _linearVelocity = Vector3.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: void applyForce(const Vector3& force, const Vector3* relativePosition = NULL);

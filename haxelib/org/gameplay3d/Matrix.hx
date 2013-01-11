@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.util.IMutableNativeArray;
 import org.gameplay3d.util.INativeArray;
 import org.gameplay3d.util.PrimitiveArray;
@@ -18,23 +19,27 @@ class Matrix extends GameplayObject, implements IMatrix
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var m_immutable(default, null):INativeArray<Float>;
+    public var mat(default, null):INativeArray<Float>;
     public var m(default, null):NativeArrayFloat;
 
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    var _identity:Matrix;
-    var _zero:Matrix;
+    static var _identity:Matrix;
+    static var _zero:Matrix;
 
-    function new(nativeObject, nativeObjectInitializerParams = null)
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObject, nativeObjectInitializerParams);
-        _identity = Matrix.make();
-        _zero = Matrix.make();
-        m = new MatrixEntries(hx_Matrix_property_m_get(nativeObject));
-        m_immutable = m;
+        super.impersonate(nativeObject);
+        if (m == null)
+        {
+            m = new MatrixEntries(hx_Matrix_property_m_get(nativeObject));
+            mat = m;
+        }
+        else
+            cast(m, MatrixEntries).impersonate(hx_Matrix_property_m_get(nativeObject));
+        return cast(this);
     }
 
     // DECL: Matrix();
@@ -238,6 +243,8 @@ class Matrix extends GameplayObject, implements IMatrix
     // DECL: static const Matrix& identity();
     public static function identity():IMatrix
     {
+        if (_identity == null)
+            _identity = Matrix.make();
         return _identity.impersonate(hx_Matrix_static_identity());
     }
 
@@ -520,6 +527,8 @@ class Matrix extends GameplayObject, implements IMatrix
     // DECL: static const Matrix& zero();
     public static function zero():IMatrix
     {
+        if (_zero == null)
+            _zero = Matrix.make();
         return _zero.impersonate(hx_Matrix_static_zero());
     }
 

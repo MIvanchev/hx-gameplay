@@ -1,6 +1,6 @@
 package org.gameplay3d;
 
-class Mesh_PrimitiveType
+class Curve_InterpolationType
 {
     public static inline var BEZIER = 0;
     public static inline var BSPLINE = 1;

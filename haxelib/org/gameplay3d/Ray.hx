@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.INativeBinding;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -22,14 +23,14 @@ class Ray extends GameplayObject
     var _direction:Vector3;
     var _origin:Vector3;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _direction = Vector3.make();
-        _origin = Vector3.make();
+        if (this.nativeObject == null)
+        {
+            _direction = Vector3.make();
+            _origin = Vector3.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: Ray();

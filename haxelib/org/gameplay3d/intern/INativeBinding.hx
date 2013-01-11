@@ -13,7 +13,7 @@ interface INativeBinding
      * <p>The native object is initialized at construction time using
      * construction methods which the specific classes provide.</p>
      */
-    @:isVar public var nativeObject(default, null):Dynamic;
+    public var nativeObject(default, null):Dynamic;
 
     /**
      * TODO

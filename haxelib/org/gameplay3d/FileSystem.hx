@@ -1,10 +1,10 @@
 package org.gameplay3d;
 
-import dk.bluewolf.gameplay.Handle;
-import dk.bluewolf.gameplay.NativeOutParameter;
+import org.gameplay3d.intern.NativeOutParameter;
+import org.gameplay3d.util.Handle;
 import org.gameplay3d.util.OutParameter;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class FileSystem : public GameplayObject

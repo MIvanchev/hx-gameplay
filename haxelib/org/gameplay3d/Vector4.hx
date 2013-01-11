@@ -1,7 +1,6 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector4;
-import org.gameplay3d.shared.SharedVector4;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -22,28 +21,12 @@ class Vector4 extends GameplayObject, implements IVector4
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    var _one:Vector4;
-    var _unitX:Vector4;
-    var _unitY:Vector4;
-    var _unitZ:Vector4;
-    var _unitW:Vector4;
-    var _zero:Vector4;
-    var _normalized:Vector4;
-
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
-    {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _one = Vector4.make();
-        _unitX = Vector4.make();
-        _unitY = Vector4.make();
-        _unitZ = Vector4.make();
-        _unitW = Vector4.make();
-        _zero = Vector4.make();
-        _normalized = Vector4.make();
-    }
+    static var _one:Vector4;
+    static var _unitX:Vector4;
+    static var _unitY:Vector4;
+    static var _unitZ:Vector4;
+    static var _unitW:Vector4;
+    static var _zero:Vector4;
 
     // DECL: Vector4();
     public static function make():Vector4
@@ -166,9 +149,10 @@ class Vector4 extends GameplayObject, implements IVector4
     }
 
     // DECL: Vector4& normalize();
-    public function normalize():SharedVector4
+    public function normalize():Vector4
     {
-        return _normalized.impersonate(hx_Vector4_normalize(nativeObject));
+        hx_Vector4_normalize(nativeObject);
+        return this;
     }
 
     // DECL: void normalize(Vector4* dst) const;
@@ -180,6 +164,8 @@ class Vector4 extends GameplayObject, implements IVector4
     // DECL: static const Vector4& one();
     public static function one():IVector4
     {
+        if (_one == null)
+            _one = Vector4.make();
         return _one.impersonate(hx_Vector4_static_one());
     }
 
@@ -228,30 +214,40 @@ class Vector4 extends GameplayObject, implements IVector4
     // DECL: static const Vector4& unitW();
     public static function unitW():IVector4
     {
+        if (_unitW == null)
+            _unitW = Vector4.make();
         return _unitW.impersonate(hx_Vector4_static_unitW());
     }
 
     // DECL: static const Vector4& unitX();
     public static function unitX():IVector4
     {
+        if (_unitX == null)
+            _unitX = Vector4.make();
         return _unitX.impersonate(hx_Vector4_static_unitX());
     }
 
     // DECL: static const Vector4& unitY();
     public static function unitY():IVector4
     {
+        if (_unitY == null)
+            _unitY = Vector4.make();
         return _unitY.impersonate(hx_Vector4_static_unitY());
     }
 
     // DECL: static const Vector4& unitZ();
     public static function unitZ():IVector4
     {
+        if (_unitZ == null)
+            _unitZ = Vector4.make();
         return _unitZ.impersonate(hx_Vector4_static_unitZ());
     }
 
     // DECL: static const Vector4& zero();
     public static function zero():IVector4
     {
+        if (_zero == null)
+            _zero = Vector4.make();
         return _zero.impersonate(hx_Vector4_static_zero());
     }
 

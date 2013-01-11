@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.INativeBinding;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -14,13 +15,13 @@ class Light extends GameplayObject, implements Ref
 
     var _color:Vector3;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _color = Vector3.make();
+        if (this.nativeObject == null)
+        {
+            _color = Vector3.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: static Light* createDirectional(const Vector3& color);

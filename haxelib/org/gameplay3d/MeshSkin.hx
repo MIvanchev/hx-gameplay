@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.ConversionTools;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.util.ObjectArray;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -17,13 +18,13 @@ class MeshSkin extends Transform_ListenerImpl
 
     var _bindShape:Matrix;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _bindShape = Matrix.make();
+        if (this.nativeObject == null)
+        {
+            _bindShape = Matrix.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: const Matrix& getBindShape() const;
@@ -111,7 +112,7 @@ class MeshSkin extends Transform_ListenerImpl
 
 // END
 
-private class MatrixPaletete extends ObjectArray<Vector4>
+private class MatrixPalette extends ObjectArray<Vector4>
 {
     public function new(nativeObject, length)
     { super(Vector4, nativeObject, length); }

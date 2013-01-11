@@ -1,7 +1,6 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
-import org.gameplay3d.shared.SharedVector3;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -20,12 +19,11 @@ class Vector3 extends GameplayObject, implements IVector3
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    var _one:Vector3;
-    var _unitX:Vector3;
-    var _unitY:Vector3;
-    var _unitZ:Vector3;
-    var _zero:Vector3;
-    var _normalized:Vector3;
+    static var _one:Vector3;
+    static var _unitX:Vector3;
+    static var _unitY:Vector3;
+    static var _unitZ:Vector3;
+    static var _zero:Vector3;
 
     function new(
             nativeObjectInitializer:Dynamic,
@@ -33,12 +31,6 @@ class Vector3 extends GameplayObject, implements IVector3
         )
     {
         super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _one = Vector3.make();
-        _unitX = Vector3.make();
-        _unitY = Vector3.make();
-        _unitZ = Vector3.make();
-        _zero = Vector3.make();
-        _normalized = Vector3.make();
     }
 
     // DECL: Vector3();
@@ -174,9 +166,10 @@ class Vector3 extends GameplayObject, implements IVector3
     }
 
     // DECL: Vector3& normalize();
-    public function normalize():SharedVector3
+    public function normalize():Vector3
     {
-        return _normalized.impersonate(hx_Vector3_normalize(nativeObject));
+        hx_Vector3_normalize(nativeObject);
+        return this;
     }
 
     // DECL: void normalize(Vector3* dst) const;
@@ -188,6 +181,8 @@ class Vector3 extends GameplayObject, implements IVector3
     // DECL: static const Vector3& one();
     public static function one():IVector3
     {
+        if (_one == null)
+            _one = Vector3.make();
         return _one.impersonate(hx_Vector3_static_one());
     }
 
@@ -242,24 +237,32 @@ class Vector3 extends GameplayObject, implements IVector3
     // DECL: static const Vector3& unitX();
     public static function unitX():IVector3
     {
+        if (_unitX == null)
+            _unitX = Vector3.make();
         return _unitX.impersonate(hx_Vector3_static_unitX());
     }
 
     // DECL: static const Vector3& unitY();
     public static function unitY():IVector3
     {
+        if (_unitY == null)
+            _unitY = Vector3.make();
         return _unitY.impersonate(hx_Vector3_static_unitY());
     }
 
     // DECL: static const Vector3& unitZ();
     public static function unitZ():IVector3
     {
+        if (_unitZ == null)
+            _unitZ = Vector3.make();
         return _unitZ.impersonate(hx_Vector3_static_unitZ());
     }
 
     // DECL: static const Vector3& zero();
     public static function zero():IVector3
     {
+        if (_zero == null)
+            _zero = Vector3.make();
         return _zero.impersonate(hx_Vector3_static_zero());
     }
 

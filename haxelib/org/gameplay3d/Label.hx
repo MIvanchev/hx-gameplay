@@ -1,6 +1,7 @@
 package org.gameplay3d;
+import org.gameplay3d.wrapper.Control_ListenerWrapper;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Label : public Control
@@ -11,7 +12,7 @@ class Label extends Control
      **************************************************************************/
 
     // DECL: virtual void addListener(Control::Listener* listener, int eventFlags);
-    override public function addListener(listener:Control_Listener, eventFlags:Int):Void
+    override public function addListener(listener:Control_ListenerWrapper, eventFlags:Int):Void
     {
         hx_Label_addListener(nativeObject, listener.native(), eventFlags);
     }

@@ -5,6 +5,7 @@ import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector2;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
+import org.gameplay3d.intern.INativeBinding;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -18,13 +19,13 @@ class SpriteBatch extends GameplayObject
 
     var _projectionMatrix:Matrix;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _projectionMatrix = Matrix.make();
+        if (this.nativeObject == null)
+        {
+            _projectionMatrix = Matrix.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: static SpriteBatch* create(Texture* texture, Effect* effect = NULL, unsigned int initialCapacity = 0);

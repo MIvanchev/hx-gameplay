@@ -36,15 +36,17 @@ class GameplayObject extends NativeBinding
         )
     {
         if (nativeObjectInitializerParams == null)
-            nativeObject = nativeObjectInitializer;
+            impersonate(nativeObjectInitializer);
         else
         {
             nativeObjectInitializerParams[0] = this;
-            nativeObject = Reflect.callMethod(
-                                        null,
-                                        nativeObjectInitializer,
-                                        nativeObjectInitializerParams
-                                    );
+            impersonate(
+                    Reflect.callMethod(
+                                    null,
+                                    nativeObjectInitializer,
+                                    nativeObjectInitializerParams
+                                )
+                );
             nativeObjectInitializerParams[0] = null;
         }
     }
@@ -71,39 +73,15 @@ class GameplayObject extends NativeBinding
                 Type.createInstance(classObj, args); // new T(nativeObject, null);
     }
 
-    /**
-     * TODO
-     */
-    @:generic
-    @:allow(org.gameplay3d)
-    @:allow(org.gameplat3d.immutable)
-    @:allow(org.gameplay3d.intern)
-    @:allow(org.gameplat3d.intern.impl)
-    @:allow(org.gameplat3d.shared)
-    @:allow(org.gameplay3d.util)
-    @:allow(org.gameplat3d.wrapper)
-    static inline function impersonate<T : GameplayObject>(object:T, nativeObject:Dynamic):T
-    {
-        object.nativeObject = nativeObject;
-        return object;
-    }
-
     @:generic
     public function castTo<T : GameplayObject>(classObj:Class<T>):T
     {
-        // FIXME:
-        //var instance:T;
-        //if (!Std.is(instance, Type.getClass(this)))
-        //{
-            //var nameSrc = Type.getClassName(Type.getClass(instance));
-            //var nameDst = Type.getClassName(classObj);
-            //throw 'Invalid native conversion from "$nameSrc" to "$nameDst" attempted."';
-        //}
-
        var nameSrc = Type.getClassName(Type.getClass(this));
        var nameDst = Type.getClassName(classObj);
 
-       trace('INFO: Native conversion from "$nameSrc" to "$nameDst".');
+#if debug
+       trace('DEBUG: Native conversion from "$nameSrc" to "$nameDst".');
+#end
 
        return wrap(classObj, nativeObject);
     }

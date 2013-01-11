@@ -1,4 +1,4 @@
-package org;gameplay3d;
+package org.gameplay3d;
 
 class SceneLoader_SceneNodeProperty_Type
 {

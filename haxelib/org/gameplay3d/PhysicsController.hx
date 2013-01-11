@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.ScriptTargetImpl;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.wrapper.PhysicsController_HitFilterWrapper;
 import org.gameplay3d.wrapper.PhysicsController_ListenerWrapper;
 
@@ -19,13 +20,13 @@ class PhysicsController extends ScriptTargetImpl
 
     var _gravity:Vector3;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _gravity = Vector3.make();
+        if (this.nativeObject == null)
+        {
+            _gravity = Vector3.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: void addStatusListener(PhysicsController::Listener* listener);

@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.intern.ConversionTools;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.shared.SharedVector3;
 import org.gameplay3d.util.Handle;
@@ -36,12 +37,9 @@ class Node extends Transform, implements Ref
     var _worldViewMatrix:Matrix;
     var _worldViewProjectionMatrix:Matrix;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        super.impersonate(nativeObject);
         _activeCameraTranslationView = Vector3.make();
         _activeCameraTranslationWorld = Vector3.make();
         _forwardVectorView = Vector3.make();
@@ -60,6 +58,7 @@ class Node extends Transform, implements Ref
         _worldMatrix = Matrix.make();
         _worldViewMatrix = Matrix.make();
         _worldViewProjectionMatrix = Matrix.make();
+        return cast(this);
     }
 
     // DECL: void addAdvertisedDescendant(Node* node);

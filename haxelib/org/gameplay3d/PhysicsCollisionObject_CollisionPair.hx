@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.intern.INativeBinding;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -17,14 +18,12 @@ class PhysicsCollisionObject_CollisionPair extends GameplayObject
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
+        super.impersonate(nativeObject);
         objectA = PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectA_get(nativeObject));
         objectB = PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectB_get(nativeObject));
+        return cast(this);
     }
 
     // DECL: CollisionPair(PhysicsCollisionObject* objectA, PhysicsCollisionObject* objectB);

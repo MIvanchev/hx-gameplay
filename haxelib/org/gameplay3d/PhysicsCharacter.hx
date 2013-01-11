@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.shared.SharedVector3;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -16,13 +17,13 @@ class PhysicsCharacter extends PhysicsGhostObject
 
     var _currentVelocity:Vector3;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _currentVelocity = Vector3.make();
+        if (this.nativeObject == null)
+        {
+            _currentVelocity = Vector3.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: Vector3 getCurrentVelocity() const;

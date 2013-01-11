@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.INativeBinding;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -18,16 +19,16 @@ class PhysicsGenericConstraint extends PhysicsConstraint
     var _rotationOffsetA:Quaternion;
     var _rotationOffsetB:Quaternion;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _translationOffsetA = Vector3.make();
-        _translationOffsetB = Vector3.make();
-        _rotationOffsetA = Quaternion.make();
-        _rotationOffsetB = Quaternion.make();
+        if (this.nativeObject == null)
+        {
+            _translationOffsetA = Vector3.make();
+            _translationOffsetB = Vector3.make();
+            _rotationOffsetA = Quaternion.make();
+            _rotationOffsetB = Quaternion.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: inline const Quaternion& getRotationOffsetA() const;
@@ -51,7 +52,7 @@ class PhysicsGenericConstraint extends PhysicsConstraint
     // DECL: inline const Vector3& getTranslationOffsetB() const;
     public function getTranslationOffsetB():IVector3
     {
-        return _translationOffsetB(hx_PhysicsGenericConstraint_getTranslationOffsetB(nativeObject));
+        return _translationOffsetB.impersonate(hx_PhysicsGenericConstraint_getTranslationOffsetB(nativeObject));
     }
 
     // DECL: inline void setAngularLowerLimit(const Vector3& limits);

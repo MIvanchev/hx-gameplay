@@ -120,9 +120,10 @@ void ValueToArray(value _value, TYPE*& _array)
 }
 
 template<typename TYPE>
-void ArrayToValue(const TYPE* _array, bool reclaim = false)
+const value& ArrayToValue(const TYPE* _array, bool reclaim = false)
 {
-	const value& result = alloc_abstract(k_Array, _array);
+	const void *data = static_cast<const void*>(_array);
+	const value& result = alloc_abstract(k_Array, const_cast<void*>(data));
 	if (reclaim)
 		val_gc(result, &FreeArray<TYPE>);
 	return result;

@@ -1,8 +1,9 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector2;
+import org.gameplay3d.wrapper.Control_ListenerWrapper;
 
-using dk.bluewolf.gameplay.NativeBinding;
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class RadioButton : public Button
@@ -13,7 +14,7 @@ class RadioButton extends Button
      **************************************************************************/
 
     // DECL: virtual void addListener(Control::Listener* listener, int eventFlags);
-    override public function addListener(listener:Control_Listener, eventFlags:Int):Void
+    override public function addListener(listener:Control_ListenerWrapper, eventFlags:Int):Void
     {
         hx_RadioButton_addListener(nativeObject, listener.native(), eventFlags);
     }

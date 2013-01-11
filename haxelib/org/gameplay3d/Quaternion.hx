@@ -23,18 +23,8 @@ class Quaternion extends GameplayObject, implements IQuaternion
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    var identity:Quaternion;
-    var zero:Quaternion;
-
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
-    {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _identity = Quaternion.make();
-        _zero = Quaternion.make();
-    }
+    static var _identity:Quaternion;
+    static var _zero:Quaternion;
 
     // DECL: Quaternion();
     public static function make():Quaternion
@@ -99,6 +89,8 @@ class Quaternion extends GameplayObject, implements IQuaternion
     // DECL: static const Quaternion& identity();
     public static function identity():IQuaternion
     {
+        if (_identity == null)
+            _identity = Quaternion.make();
         return _identity.impersonate(hx_Quaternion_static_identity());
     }
 
@@ -213,6 +205,8 @@ class Quaternion extends GameplayObject, implements IQuaternion
     // DECL: static const Quaternion& zero();
     public static function zero():IQuaternion
     {
+        if (_zero == null)
+            _zero = Quaternion.make();
         return _zero.impersonate(hx_Quaternion_static_zero());
     }
 

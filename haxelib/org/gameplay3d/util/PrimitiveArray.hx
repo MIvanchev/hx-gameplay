@@ -39,7 +39,7 @@ class PrimitiveArray<T> extends NativeBinding,
             length:Int
         )
     {
-        this.nativeObject = nativeObject;
+        impersonate(nativeObject);
         this.getter = getter;
         this.setter = setter;
         this.length = length;

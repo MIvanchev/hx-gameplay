@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.impl.AnimationTarget_ScriptTarget;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.Theme_SideRegions;
 import org.gameplay3d.wrapper.Control_ListenerWrapper;
 
@@ -34,16 +35,16 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     var _skinColor:Vector4;
     var _textColor:Vector4;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _cursorColor = Vector4.make();
-        _imageColor = Vector4.make();
-        _skinColor = Vector4.make();
-        _textColor = Vector4.make();
+        if (this.nativeObject == null)
+        {
+            _cursorColor = Vector4.make();
+            _imageColor = Vector4.make();
+            _skinColor = Vector4.make();
+            _textColor = Vector4.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: virtual void addListener(Control::Listener* listener, int eventFlags);
@@ -121,7 +122,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Vector4& getCursorColor(State state);
     public function getCursorColor(state:Int):IVector4
     {
-        return _cursorColor.implersonate(hx_Control_getCursorColor(nativeObject, state));
+        return _cursorColor.impersonate(hx_Control_getCursorColor(nativeObject, state));
     }
 
     // DECL: const Rectangle& getCursorRegion(State state) const;

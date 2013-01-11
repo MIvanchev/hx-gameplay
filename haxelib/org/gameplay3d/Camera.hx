@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.OutParameter;
 
@@ -23,17 +24,17 @@ class Camera extends Transform_ListenerImpl, implements Ref
     var _viewMatrix:Matrix;
     var _viewProjectionMatrix:Matrix;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _inverseViewMatrix = Matrix.make();
-        _inverseViewProjectionMatrix = Matrix.make();
-        _projectionMatrix = Matrix.make();
-        _viewMatrix = Matrix.make();
-        _viewProjectionMatrix = Matrix.make();
+        if (this.nativeObject == null)
+        {
+            _inverseViewMatrix = Matrix.make();
+            _inverseViewProjectionMatrix = Matrix.make();
+            _projectionMatrix = Matrix.make();
+            _viewMatrix = Matrix.make();
+            _viewProjectionMatrix = Matrix.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: static Camera* createOrthographic(float zoomX, float zoomY, float aspectRatio, float nearPlane, float farPlane);

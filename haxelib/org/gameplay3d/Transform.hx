@@ -1,9 +1,11 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
+import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.AnimationTarget_ScriptTarget;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.shared.SharedVector3;
 import org.gameplay3d.wrapper.Transform_ListenerWrapper;
 
@@ -37,7 +39,7 @@ class Transform extends AnimationTarget_ScriptTarget
      **************************************************************************/
 
     var _scale:Vector3;
-    var _transform:Vector3;
+    var _translation:Vector3;
     var _backVector:Vector3;
     var _downVector:Vector3;
     var _forwardVector:Vector3;
@@ -47,22 +49,22 @@ class Transform extends AnimationTarget_ScriptTarget
     var _matrix:Matrix;
     var _rotation:Quaternion;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _scale = Vector3.make();
-        _transform = Vector3.make();
-        _backVector = Vector3.make();
-        _downVector = Vector3.make();
-        _forwardVector = Vector3.make();
-        _leftVector = Vector3.make();
-        _rightVector = Vector3.make();
-        _upVector = Vector3.make();
-        _matrix = Matrix.make();
-        _rotation = Quaternion.make();
+        if (this.nativeObject == null)
+        {
+            _scale = Vector3.make();
+            _translation = Vector3.make();
+            _backVector = Vector3.make();
+            _downVector = Vector3.make();
+            _forwardVector = Vector3.make();
+            _leftVector = Vector3.make();
+            _rightVector = Vector3.make();
+            _upVector = Vector3.make();
+            _matrix = Matrix.make();
+            _rotation = Quaternion.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: Transform();

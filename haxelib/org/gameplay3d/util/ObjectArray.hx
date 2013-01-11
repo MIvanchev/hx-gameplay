@@ -7,7 +7,7 @@ import org.gameplay3d.intern.INativeBinding;
 /**
  * TODO
  */
-@:generic
+
 class ObjectArray<T : GameplayObject> extends NativeBinding,
         implements INativeArray<T>,
         implements INativeBinding
@@ -24,7 +24,7 @@ class ObjectArray<T : GameplayObject> extends NativeBinding,
 
     var objects:Array<T>;
 
-    function new(classObj:Class<T>, nativeObject, length, reclaim)
+    function new(classObj:Class<T>, nativeObject, length)
     {
         this.nativeObject = nativeObject;
         this.length = length;
@@ -41,7 +41,7 @@ class ObjectArray<T : GameplayObject> extends NativeBinding,
 
         objects = [];
         for (index in 0...length)
-            objects.push(GameplayObject.wrap(classObj, getter(index));
+            objects.push(GameplayObject.wrap(classObj, getter(index)));
     }
 
     public inline function getAt(index:Int):T

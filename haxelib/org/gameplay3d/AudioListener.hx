@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
+import org.gameplay3d.intern.INativeBinding;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -13,21 +14,21 @@ class AudioListener extends Transform_ListenerImpl
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    var _oientationForward:Vector3;
+    var _orientationForward:Vector3;
     var _orientationUp:Vector3;
     var _position:Vector3;
     var _velocity:Vector3;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _oientationForward = Vector3.make();
-        _orientationUp = Vector3.make();
-        _position = Vector3.make();
-        _velocity = Vector3.make();
+        if (this.nativeObject == null)
+        {
+            _orientationForward = Vector3.make();
+            _orientationUp = Vector3.make();
+            _position = Vector3.make();
+            _velocity = Vector3.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: Camera* getCamera() const;

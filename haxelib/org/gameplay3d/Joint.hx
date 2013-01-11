@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IMatrix;
+import org.gameplay3d.intern.INativeBinding;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -14,13 +15,13 @@ class Joint extends Node
 
     var _inverseBindPose:Matrix;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _inverseBindPose = Matrix.make();
+        if (this.nativeObject == null)
+        {
+            _inverseBindPose = Matrix.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: const Matrix& getInverseBindPose() const;

@@ -16,7 +16,7 @@ interface IMatrix implements INativeBinding
      * PROPERTIES                                                              *
      **************************************************************************/
 
-    public var m_immutable(default, null):INativeArray<Float>;
+    public var mat(default, null):INativeArray<Float>;
 
     /***************************************************************************
      * MEMBERS                                                                 *

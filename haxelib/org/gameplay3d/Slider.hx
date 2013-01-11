@@ -1,6 +1,8 @@
 package org.gameplay3d;
 
-using dk.bluewolf.gameplay.NativeBinding;
+import org.gameplay3d.wrapper.Control_ListenerWrapper;
+
+using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Slider : public Label
@@ -11,7 +13,7 @@ class Slider extends Label
      **************************************************************************/
 
     // DECL: void addListener(Control::Listener* listener, int eventFlags);
-    override public function addListener(listener:Control_Listener, eventFlags:Int):Void
+    override public function addListener(listener:Control_ListenerWrapper, eventFlags:Int):Void
     {
         hx_Slider_addListener(nativeObject, listener.native(), eventFlags);
     }

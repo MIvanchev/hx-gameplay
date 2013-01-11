@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.ConversionTools;
+import org.gameplay3d.intern.INativeBinding;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -27,24 +28,24 @@ class ParticleEmitter extends GameplayObject, implements Ref
     var _colorStart:Vector4;
     var _colorStartVariance:Vector4;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-        _acceleration = Vector3.make();
-        _accelerationVariance = Vector3.make();
-        _position = Vector3.make();
-        _positionVariance = Vector3.make();
-        _rotationAxis = Vector3.make();
-        _rotationAxisVariance = Vector3.make();
-        _velocity = Vector3.make();
-        _velocityVariance = Vector3.make();
-        _colorEnd = Vector4.make();
-        _colorEndVariance = Vector4.make();
-        _colorStart = Vector4.make();
-        _colorStartVariance = Vector4.make();
+        if (this.nativeObject == null)
+        {
+            _acceleration = Vector3.make();
+            _accelerationVariance = Vector3.make();
+            _position = Vector3.make();
+            _positionVariance = Vector3.make();
+            _rotationAxis = Vector3.make();
+            _rotationAxisVariance = Vector3.make();
+            _velocity = Vector3.make();
+            _velocityVariance = Vector3.make();
+            _colorEnd = Vector4.make();
+            _colorEndVariance = Vector4.make();
+            _colorStart = Vector4.make();
+            _colorStartVariance = Vector4.make();
+        }
+        return super.impersonate(nativeObject);
     }
 
     // DECL: static ParticleEmitter* create(Properties* properties);
