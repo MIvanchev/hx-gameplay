@@ -1,6 +1,8 @@
 package org.gameplay3d;
 
 import haxe.io.BytesData;
+import org.gameplay3d.immutable.IBoundingBox;
+import org.gameplay3d.immutable.IBoundingSphere;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.util.Handle;
@@ -23,7 +25,7 @@ class Mesh extends GameplayObject, implements Ref
     }
 
     // DECL: static Mesh* createBoundingBox(const BoundingBox& box);
-    public static function createBoundingBox(box:BoundingBox):Mesh
+    public static function createBoundingBox(box:IBoundingBox):Mesh
     {
         return Mesh.wrap(hx_Mesh_static_createBoundingBox(box.native()));
     }
@@ -125,13 +127,13 @@ class Mesh extends GameplayObject, implements Ref
     }
 
     // DECL: void setBoundingBox(const BoundingBox& box);
-    public function setBoundingBox(box:BoundingBox):Void
+    public function setBoundingBox(box:IBoundingBox):Void
     {
         hx_Mesh_setBoundingBox(nativeObject, box.native());
     }
 
     // DECL: void setBoundingSphere(const BoundingSphere& sphere);
-    public function setBoundingSphere(sphere:BoundingSphere):Void
+    public function setBoundingSphere(sphere:IBoundingSphere):Void
     {
         hx_Mesh_setBoundingSphere(nativeObject, sphere.native());
     }

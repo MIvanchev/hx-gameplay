@@ -1,6 +1,10 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IBoundingBox;
+import org.gameplay3d.immutable.IBoundingSphere;
+import org.gameplay3d.immutable.IFrustum;
 import org.gameplay3d.immutable.IMatrix;
+import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 
@@ -40,7 +44,7 @@ class Plane extends GameplayObject
     }
 
     // DECL: Plane(const Plane& copy);
-    public static function make_Plane(copy:Plane):Plane
+    public static function make_Plane(copy:IPlane):Plane
     {
         return new Plane(constructNativeObject_Plane(copy));
     }
@@ -76,31 +80,31 @@ class Plane extends GameplayObject
     }
 
     // DECL: static void intersection(const Plane& p1, const Plane& p2, const Plane& p3, Vector3* point);
-    public static function intersection(p1:Plane, p2:Plane, p3:Plane, point:Vector3):Void
+    public static function intersection(p1:IPlane, p2:IPlane, p3:IPlane, point:Vector3):Void
     {
         hx_Plane_static_intersection(p1.native(), p2.native(), p3.native(), point.native());
     }
 
     // DECL: float intersects(const BoundingBox& box) const;
-    public function intersects_BBox(box:BoundingBox):Float
+    public function intersects_BBox(box:IBoundingBox):Float
     {
         return hx_Plane_intersects_BBox(nativeObject, box.native());
     }
 
     // DECL: float intersects(const BoundingSphere& sphere) const;
-    public function intersects_BSphr(sphere:BoundingSphere):Float
+    public function intersects_BSphr(sphere:IBoundingSphere):Float
     {
         return hx_Plane_intersects_BSphr(nativeObject, sphere.native());
     }
 
     // DECL: float intersects(const Frustum& frustum) const;
-    public function intersects_Frstm(frustum:Frustum):Float
+    public function intersects_Frstm(frustum:IFrustum):Float
     {
         return hx_Plane_intersects_Frstm(nativeObject, frustum.native());
     }
 
     // DECL: float intersects(const Plane& plane) const;
-    public function intersects_Plane(plane:Plane):Float
+    public function intersects_Plane(plane:IPlane):Float
     {
         return hx_Plane_intersects_Plane(nativeObject, plane.native());
     }
@@ -112,13 +116,13 @@ class Plane extends GameplayObject
     }
 
     // DECL: bool isParallel(const Plane& plane) const;
-    public function isParallel(plane:Plane):Bool
+    public function isParallel(plane:IPlane):Bool
     {
         return hx_Plane_isParallel(nativeObject, plane.native());
     }
 
     // DECL: void set(const Plane& plane);
-    public function set_Plane(plane:Plane):Void
+    public function set_Plane(plane:IPlane):Void
     {
         hx_Plane_set_Plane(nativeObject, plane.native());
     }
@@ -164,7 +168,7 @@ class Plane extends GameplayObject
     }
 
     // DECL: Plane(const Plane& copy);
-    static function constructNativeObject_Plane(copy:Plane):Dynamic
+    static function constructNativeObject_Plane(copy:IPlane):Dynamic
     {
         return hx_Plane_Construct_Plane(copy.native());
     }

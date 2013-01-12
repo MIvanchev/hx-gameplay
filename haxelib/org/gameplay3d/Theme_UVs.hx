@@ -1,10 +1,12 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.ITheme_UVs;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: struct UVs : public GameplayObject
-class Theme_UVs extends GameplayObject
+class Theme_UVs extends GameplayObject, implements ITheme_UVs
 {
     /***************************************************************************
      * PROPERTIES                                                              *

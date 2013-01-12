@@ -1,6 +1,10 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IBoundingBox;
+import org.gameplay3d.immutable.IBoundingSphere;
+import org.gameplay3d.immutable.IFrustum;
 import org.gameplay3d.immutable.IMatrix;
+import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 
@@ -70,25 +74,25 @@ class Ray extends GameplayObject
     }
 
     // DECL: float intersects(const BoundingBox& box) const;
-    public function intersects_BBox(box:BoundingBox):Float
+    public function intersects_BBox(box:IBoundingBox):Float
     {
         return hx_Ray_intersects_BBox(nativeObject, box.native());
     }
 
     // DECL: float intersects(const BoundingSphere& sphere) const;
-    public function intersects_BSphr(sphere:BoundingSphere):Float
+    public function intersects_BSphr(sphere:IBoundingSphere):Float
     {
         return hx_Ray_intersects_BSphr(nativeObject, sphere.native());
     }
 
     // DECL: float intersects(const Frustum& frustum) const;
-    public function intersects_Frstm(frustum:Frustum):Float
+    public function intersects_Frstm(frustum:IFrustum):Float
     {
         return hx_Ray_intersects_Frstm(nativeObject, frustum.native());
     }
 
     // DECL: float intersects(const Plane& plane) const;
-    public function intersects_Plane(plane:Plane):Float
+    public function intersects_Plane(plane:IPlane):Float
     {
         return hx_Ray_intersects_Plane(nativeObject, plane.native());
     }

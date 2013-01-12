@@ -1,6 +1,10 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IBoundingBox;
+import org.gameplay3d.immutable.IBoundingSphere;
+import org.gameplay3d.immutable.IFrustum;
 import org.gameplay3d.immutable.IMatrix;
+import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.shared.SharedVector3;
@@ -10,7 +14,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class BoundingBox : public GameplayObject
-class BoundingBox extends GameplayObject
+class BoundingBox extends GameplayObject, implements IBoundingBox
 {
     /***************************************************************************
      * PROPERTIES                                                              *
@@ -44,7 +48,7 @@ class BoundingBox extends GameplayObject
     }
 
     // DECL: BoundingBox(const BoundingBox& copy);
-    public static function make_BBox(copy:BoundingBox):BoundingBox
+    public static function make_BBox(copy:IBoundingBox):BoundingBox
     {
         return new BoundingBox(constructNativeObject_BBox(copy));
     }
@@ -86,25 +90,25 @@ class BoundingBox extends GameplayObject
     }
 
     // DECL: bool intersects(const BoundingBox& box) const;
-    public function intersects_BBox(box:BoundingBox):Bool
+    public function intersects_BBox(box:IBoundingBox):Bool
     {
         return hx_BoundingBox_intersects_BBox(nativeObject, box.native());
     }
 
     // DECL: bool intersects(const BoundingSphere& sphere) const;
-    public function intersects_BSphr(sphere:BoundingSphere):Bool
+    public function intersects_BSphr(sphere:IBoundingSphere):Bool
     {
         return hx_BoundingBox_intersects_BSphr(nativeObject, sphere.native());
     }
 
     // DECL: bool intersects(const Frustum& frustum) const;
-    public function intersects_Frstm(frustum:Frustum):Bool
+    public function intersects_Frstm(frustum:IFrustum):Bool
     {
         return hx_BoundingBox_intersects_Frstm(nativeObject, frustum.native());
     }
 
     // DECL: float intersects(const Plane& plane) const;
-    public function intersects_Plane(plane:Plane):Float
+    public function intersects_Plane(plane:IPlane):Float
     {
         return hx_BoundingBox_intersects_Plane(nativeObject, plane.native());
     }
@@ -122,25 +126,25 @@ class BoundingBox extends GameplayObject
     }
 
     // DECL: void merge(const BoundingBox& box);
-    public function merge_BBox(box:BoundingBox):Void
+    public function merge_BBox(box:IBoundingBox):Void
     {
         hx_BoundingBox_merge_BBox(nativeObject, box.native());
     }
 
     // DECL: void merge(const BoundingSphere& sphere);
-    public function merge_BSphr(sphere:BoundingSphere):Void
+    public function merge_BSphr(sphere:IBoundingSphere):Void
     {
         hx_BoundingBox_merge_BSphr(nativeObject, sphere.native());
     }
 
     // DECL: void set(const BoundingBox& box);
-    public function set_BBox(box:BoundingBox):Void
+    public function set_BBox(box:IBoundingBox):Void
     {
         hx_BoundingBox_set_BBox(nativeObject, box.native());
     }
 
     // DECL: void set(const BoundingSphere& sphere);
-    public function set_BSphr(sphere:BoundingSphere):Void
+    public function set_BSphr(sphere:IBoundingSphere):Void
     {
         hx_BoundingBox_set_BSphr(nativeObject, sphere.native());
     }
@@ -174,7 +178,7 @@ class BoundingBox extends GameplayObject
     }
 
     // DECL: BoundingBox(const BoundingBox& copy);
-    static function constructNativeObject_BBox(copy:BoundingBox):Dynamic
+    static function constructNativeObject_BBox(copy:IBoundingBox):Dynamic
     {
         return hx_BoundingBox_Construct_BBox(copy.native());
     }

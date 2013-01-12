@@ -1,6 +1,10 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IBoundingBox;
+import org.gameplay3d.immutable.IBoundingSphere;
+import org.gameplay3d.immutable.IFrustum;
 import org.gameplay3d.immutable.IMatrix;
+import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.util.PrimitiveArray;
 
@@ -21,7 +25,7 @@ class Frustum extends GameplayObject
     }
 
     // DECL: Frustum(const Frustum& frustum);
-    public static function make_Frstm(frustum:Frustum):Frustum
+    public static function make_Frstm(frustum:IFrustum):Frustum
     {
         return new Frustum(constructNativeObject_Frstm(frustum));
     }
@@ -81,13 +85,13 @@ class Frustum extends GameplayObject
     }
 
     // DECL: bool intersects(const BoundingBox& box) const;
-    public function intersects_BBox(box:BoundingBox):Bool
+    public function intersects_BBox(box:IBoundingBox):Bool
     {
         return hx_Frustum_intersects_BBox(nativeObject, box.native());
     }
 
     // DECL: bool intersects(const BoundingSphere& sphere) const;
-    public function intersects_BSphr(sphere:BoundingSphere):Bool
+    public function intersects_BSphr(sphere:IBoundingSphere):Bool
     {
         return hx_Frustum_intersects_BSphr(nativeObject, sphere.native());
     }
@@ -105,7 +109,7 @@ class Frustum extends GameplayObject
     }
 
     // DECL: float intersects(const Plane& plane) const;
-    public function intersects_Plane(plane:Plane):Float
+    public function intersects_Plane(plane:IPlane):Float
     {
         return hx_Frustum_intersects_Plane(nativeObject, plane.native());
     }
@@ -117,7 +121,7 @@ class Frustum extends GameplayObject
     }
 
     // DECL: void set(const Frustum& frustum);
-    public function set_Frstm(frustum:Frustum):Void
+    public function set_Frstm(frustum:IFrustum):Void
     {
         hx_Frustum_set_Frstm(nativeObject, frustum.native());
     }
@@ -139,7 +143,7 @@ class Frustum extends GameplayObject
     }
 
     // DECL: Frustum(const Frustum& frustum);
-    static function constructNativeObject_Frstm(frustum:Frustum):Dynamic
+    static function constructNativeObject_Frstm(frustum:IFrustum):Dynamic
     {
         return hx_Frustum_Construct_Frstm(frustum.native());
     }
