@@ -1,3 +1,4 @@
+#include <uthash/uthash.h>
 #define IMPLEMENT_API
 #include "HaxeAPI.h"
 
@@ -351,6 +352,58 @@ value StringToValue(const char *str)
  * GAMEPLAY OBJECT PASSING                                                     *
  ******************************************************************************/
 
+struct WrappedReference
+{
+	Ref *key;
+	value& wrapper;
+	UT_hash_handle hh;
+};
+
+struct WrappedReference *referenceHash = NULL;
+
+void _FreeReference(value object)
+{
+#ifdef DEBUG
+    printf("DEBUG: Releasing reference-counted object.\n");
+#endif
+
+    val_gc(object, NULL);
+    if (!val_is_null(object))
+    {
+        void *handle = val_get_handle(object, k_Object_Ref);
+        struct WrappedReference *wrappedReference = static_cast<struct WrappedReference*>(handle);
+		HASH_DEL(referenceHash, wrappedReference);
+		SAFE_RELEASE(wrappedReference->key);
+		free(wrappedReference);
+    }
+}
+
+#define REFERENCE_TO_VALUE(type, name)																		\
+static AutoGCRoot refConstructor ## name (alloc_null());													\
+value Referene ## name ## ToValue (type *object, bool increaseRefCount, bool reclaim)						\
+{																											\
+	struct WrappedReference *wrappedReference;																\
+	Ref *key = static_cast<Ref*>(object);																	\
+	HASH_FIND_PTR(referenceHash, &key, wrappedReference);													\
+	if (wrappedReference == NULL)																			\
+	{																										\
+		wrappedReference = (struct WrappedReference*) malloc(sizeof(struct WrappedReference));				\
+		const value& nativeObject = alloc_abstract(k_Object_Ref, static_cast<void*>(wrappedReference));		\
+		const value& wrapper = val_call1(refConstructor ## name .get(), nativeObject);						\
+		wrappedReference->key = key;																		\
+		wrappedReference->wrapper = const_cast<value&>(wrapper);											\
+		HASH_ADD_PTR(referenceHash, key, wrappedReference);													\
+																											\
+		if (reclaim)																						\
+			val_gc(nativeObject, _FreeReference);															\
+	}																										\
+																											\
+	if (increaseRefCount)																					\
+		object->addRef();																					\
+																											\
+	return wrappedReference->wrapper;																		\
+}
+
 value ReferenceToValue(Ref *pointer, bool free, bool increaseRefCount)
 {
     if (pointer == NULL)
@@ -461,76 +514,43 @@ void ValueToObject(value _value, type *&pointer)                                
     OBJECT_TO_VALUE(type, base_type, kind)          \
     VALUE_TO_OBJECT(type, base_type)
 
-#define CONVERSION_FUNCTIONS_REF(type)  \
+#define CONVERSION_FUNCTIONS_REF(type, name)  \
+	REFERENCE_TO_VALUE(type, name)					\
     VALUE_TO_OBJECT(type, Ref)
 
-CONVERSION_FUNCTIONS_REF(AbsoluteLayout)
-CONVERSION_FUNCTIONS_REF(AIAgent)
 CONVERSION_FUNCTIONS(AIAgent::Listener, AIAgent::Listener, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(AIController, AIController, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(AIMessage, AIMessage, k_Object)
-CONVERSION_FUNCTIONS_REF(AIState)
 CONVERSION_FUNCTIONS(AIState::Listener, AIState::Listener, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(AIStateMachine, AIStateMachine, k_Object)
-CONVERSION_FUNCTIONS_REF(Animation)
-CONVERSION_FUNCTIONS_REF(AnimationClip)
 CONVERSION_FUNCTIONS(AnimationClip::Listener, AnimationClip::Listener, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(AnimationController, AnimationController, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(AnimationTarget, AnimationTarget, k_Object_AnimationTarget)
 CONVERSION_FUNCTIONS_NO_FINALIZER(AnimationValue, AnimationValue, k_Object)
-CONVERSION_FUNCTIONS_REF(AudioBuffer)
 CONVERSION_FUNCTIONS(AudioController, AudioController, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(AudioListener, Transform::Listener, k_Object_Transform_Listener)
-CONVERSION_FUNCTIONS_REF(AudioSource)
 CONVERSION_FUNCTIONS(BoundingBox, BoundingBox, k_Object)
 CONVERSION_FUNCTIONS(BoundingSphere, BoundingSphere, k_Object)
-CONVERSION_FUNCTIONS_REF(Bundle)
-CONVERSION_FUNCTIONS_REF(Button)
-CONVERSION_FUNCTIONS_REF(Camera)
-CONVERSION_FUNCTIONS_REF(CheckBox)
-CONVERSION_FUNCTIONS_REF(Container)
-CONVERSION_FUNCTIONS_REF(Control)
 CONVERSION_FUNCTIONS(Control::Listener, Control::Listener, k_Object)
-CONVERSION_FUNCTIONS_REF(Curve)
-CONVERSION_FUNCTIONS_REF(DepthStencilTarget)
-CONVERSION_FUNCTIONS_REF(Effect)
 CONVERSION_FUNCTIONS(FileSystem, FileSystem, k_Object)
-CONVERSION_FUNCTIONS_REF(FlowLayout)
-CONVERSION_FUNCTIONS_REF(Font)
 CONVERSION_FUNCTIONS(Font::Text, Font::Text, k_Object)
-CONVERSION_FUNCTIONS_REF(Form)
-CONVERSION_FUNCTIONS_REF(FrameBuffer)
 CONVERSION_FUNCTIONS(Frustum, Frustum, k_Object)
 CONVERSION_FUNCTIONS(Game, Game, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(Gamepad, Gamepad, k_Object)
 CONVERSION_FUNCTIONS(Gesture, Gesture, k_Object)
-CONVERSION_FUNCTIONS_REF(Image)
-CONVERSION_FUNCTIONS_REF(Joint)
-CONVERSION_FUNCTIONS_REF(Joystick)
 CONVERSION_FUNCTIONS(Keyboard, Keyboard, k_Object)
-CONVERSION_FUNCTIONS_REF(Label)
-CONVERSION_FUNCTIONS_REF(Layout)
-CONVERSION_FUNCTIONS_REF(Light)
 CONVERSION_FUNCTIONS_NO_FINALIZER(Logger, Logger, k_Object)
-CONVERSION_FUNCTIONS_REF(Material)
-CONVERSION_FUNCTIONS_REF(MaterialParameter)
 CONVERSION_FUNCTIONS(Matrix, Matrix, k_Object)
-CONVERSION_FUNCTIONS_REF(Mesh)
 CONVERSION_FUNCTIONS(MeshBatch, MeshBatch, k_Object)
 CONVERSION_FUNCTIONS(MeshPart, MeshPart, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(MeshSkin, Transform::Listener, k_Object_Transform_Listener)
-CONVERSION_FUNCTIONS_REF(Model)
 CONVERSION_FUNCTIONS(Mouse, Mouse, k_Object)
-CONVERSION_FUNCTIONS_REF(Node)
 //CONVERSION_FUNCTIONS(Node::UserData, Node::UserData, k_Object)
 CONVERSION_FUNCTIONS(NodeCloneContext, NodeCloneContext, k_Object)
-CONVERSION_FUNCTIONS_REF(ParticleEmitter)
-CONVERSION_FUNCTIONS_REF(Pass)
 CONVERSION_FUNCTIONS_NO_FINALIZER(PhysicsCharacter, PhysicsCollisionObject, k_Object_PhysicsCollisionObject)
 CONVERSION_FUNCTIONS(PhysicsCollisionObject, PhysicsCollisionObject, k_Object_PhysicsCollisionObject)
 CONVERSION_FUNCTIONS(PhysicsCollisionObject::CollisionListener, PhysicsCollisionObject::CollisionListener, k_Object)
 CONVERSION_FUNCTIONS(PhysicsCollisionObject::CollisionPair, PhysicsCollisionObject::CollisionPair, k_Object)
-CONVERSION_FUNCTIONS_REF(PhysicsCollisionShape)
 CONVERSION_FUNCTIONS(PhysicsCollisionShape::Definition, PhysicsCollisionShape::Definition, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(PhysicsConstraint, PhysicsConstraint, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(PhysicsController, ScriptTarget, k_Object_ScriptTarget)
@@ -554,30 +574,17 @@ CONVERSION_FUNCTIONS(Plane, Plane, k_Object)
 CONVERSION_FUNCTIONS(Platform, Platform, k_Object)
 CONVERSION_FUNCTIONS(Properties, Properties, k_Object)
 CONVERSION_FUNCTIONS(Quaternion, Quaternion, k_Object)
-CONVERSION_FUNCTIONS_REF(RadioButton)
 CONVERSION_FUNCTIONS(Ray, Ray, k_Object)
 CONVERSION_FUNCTIONS(gameplay::Rectangle, gameplay::Rectangle, k_Object)
-CONVERSION_FUNCTIONS_REF(Ref)
-CONVERSION_FUNCTIONS_REF(RenderState)
-CONVERSION_FUNCTIONS_REF(RenderState::StateBlock)
-CONVERSION_FUNCTIONS_REF(RenderTarget)
-CONVERSION_FUNCTIONS_REF(Scene)
 //CONVERSION_FUNCTIONS(SceneLoader, SceneLoader, k_Object)
 //CONVERSION_FUNCTIONS(ScreenDisplayer, ScreenDisplayer, k_Object)
 CONVERSION_FUNCTIONS(HaxeScreenDisplayer, HaxeScreenDisplayer, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(ScriptController, ScriptController, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(ScriptTarget, ScriptTarget, k_Object_ScriptTarget)
-CONVERSION_FUNCTIONS_REF(Slider)
 CONVERSION_FUNCTIONS(SpriteBatch, SpriteBatch, k_Object)
 CONVERSION_FUNCTIONS(Stream, Stream, k_Object)
-CONVERSION_FUNCTIONS_REF(Technique)
-CONVERSION_FUNCTIONS_REF(TextBox)
-CONVERSION_FUNCTIONS_REF(Texture)
-CONVERSION_FUNCTIONS_REF(Texture::Sampler)
-CONVERSION_FUNCTIONS_REF(Theme)
 CONVERSION_FUNCTIONS(Theme::SideRegions, Theme::SideRegions, k_Object)
 CONVERSION_FUNCTIONS_NO_FINALIZER(Theme::Style, Theme::Style, k_Object)
-CONVERSION_FUNCTIONS_REF(Theme::ThemeImage)
 CONVERSION_FUNCTIONS(Theme::UVs, Theme::UVs, k_Object)
 CONVERSION_FUNCTIONS(TimeListener, TimeListener, k_Object)
 CONVERSION_FUNCTIONS(Touch, Touch, k_Object)
@@ -588,10 +595,118 @@ CONVERSION_FUNCTIONS_NO_FINALIZER(Uniform, Uniform, k_Object)
 CONVERSION_FUNCTIONS(Vector2, Vector2, k_Object)
 CONVERSION_FUNCTIONS(Vector3, Vector3, k_Object)
 CONVERSION_FUNCTIONS(Vector4, Vector4, k_Object)
-CONVERSION_FUNCTIONS_REF(VertexAttributeBinding)
+CONVERSION_FUNCTIONS_REF(VertexAttributeBinding, VertexAttributeBinding)
 CONVERSION_FUNCTIONS(VertexFormat, VertexFormat, k_Object)
 CONVERSION_FUNCTIONS(VertexFormat::Element, VertexFormat::Element, k_Object)
-CONVERSION_FUNCTIONS_REF(VerticalLayout)
+
+CONVERSION_FUNCTIONS_REF(AbsoluteLayout, AbsoluteLayout)
+CONVERSION_FUNCTIONS_REF(AIAgent, AIAgent)
+CONVERSION_FUNCTIONS_REF(AIState, AIState)
+CONVERSION_FUNCTIONS_REF(Animation, Animation)
+CONVERSION_FUNCTIONS_REF(AnimationClip, AnimationClip)
+CONVERSION_FUNCTIONS_REF(AudioBuffer, AudioBuffer)
+CONVERSION_FUNCTIONS_REF(AudioSource, AudioSource)
+CONVERSION_FUNCTIONS_REF(Bundle, Bundle)
+CONVERSION_FUNCTIONS_REF(Button, Button)
+CONVERSION_FUNCTIONS_REF(Camera, Camera)
+CONVERSION_FUNCTIONS_REF(CheckBox, CheckBox)
+CONVERSION_FUNCTIONS_REF(Container, Container)
+CONVERSION_FUNCTIONS_REF(Control, Control)
+CONVERSION_FUNCTIONS_REF(Curve, Curve)
+CONVERSION_FUNCTIONS_REF(DepthStencilTarget, DepthStencilTarget)
+CONVERSION_FUNCTIONS_REF(Effect, Effect)
+CONVERSION_FUNCTIONS_REF(FlowLayout, FlowLayout)
+CONVERSION_FUNCTIONS_REF(Font, Font)
+CONVERSION_FUNCTIONS_REF(Form, Form)
+CONVERSION_FUNCTIONS_REF(FrameBuffer, FrameBuffer)
+CONVERSION_FUNCTIONS_REF(Image, Image)
+CONVERSION_FUNCTIONS_REF(Joint, Joint)
+CONVERSION_FUNCTIONS_REF(Joystick, Joystick)
+CONVERSION_FUNCTIONS_REF(Label, Label)
+CONVERSION_FUNCTIONS_REF(Layout, Layout)
+CONVERSION_FUNCTIONS_REF(Light, Light)
+CONVERSION_FUNCTIONS_REF(Material, Material)
+CONVERSION_FUNCTIONS_REF(MaterialParameter, MaterialParameter)
+CONVERSION_FUNCTIONS_REF(Mesh, Mesh)
+CONVERSION_FUNCTIONS_REF(Model, Model)
+CONVERSION_FUNCTIONS_REF(Node, Node)
+CONVERSION_FUNCTIONS_REF(ParticleEmitter, ParticleEmitter)
+CONVERSION_FUNCTIONS_REF(Pass, Pass)
+CONVERSION_FUNCTIONS_REF(PhysicsCollisionShape, PhysicsCollisionShape)
+CONVERSION_FUNCTIONS_REF(RadioButton, RadioButton)
+CONVERSION_FUNCTIONS_REF(Ref, Ref)
+CONVERSION_FUNCTIONS_REF(RenderState, RenderState)
+CONVERSION_FUNCTIONS_REF(RenderState::StateBlock, RenderState_StateBlock)
+CONVERSION_FUNCTIONS_REF(RenderTarget, RenderTarget)
+CONVERSION_FUNCTIONS_REF(Scene, Scene)
+CONVERSION_FUNCTIONS_REF(Slider, Slider)
+CONVERSION_FUNCTIONS_REF(Technique, Technique)
+CONVERSION_FUNCTIONS_REF(TextBox, TextBox)
+CONVERSION_FUNCTIONS_REF(Texture, Texture)
+CONVERSION_FUNCTIONS_REF(Texture::Sampler, Texture_Sampler)
+CONVERSION_FUNCTIONS_REF(Theme, Theme)
+CONVERSION_FUNCTIONS_REF(Theme::ThemeImage, Theme_ThemeImage)
+CONVERSION_FUNCTIONS_REF(VerticalLayout, VerticalLayout)
+
+void setReferenceConstructor(value name, value constructor)
+{
+	const char *_name = ValueToString(name);
+#define APPLY_CONSTRUCTOR(type)							\
+	if (!strcmp(_name, #type))							\
+	{													\
+		refConstructor ## type .set(constructor);		\
+		return;											\
+	}
+	APPLY_CONSTRUCTOR(AbsoluteLayout)
+	APPLY_CONSTRUCTOR(AIAgent)
+	APPLY_CONSTRUCTOR(AIState)
+	APPLY_CONSTRUCTOR(Animation)
+	APPLY_CONSTRUCTOR(AnimationClip)
+	APPLY_CONSTRUCTOR(AudioBuffer)
+	APPLY_CONSTRUCTOR(Bundle)
+	APPLY_CONSTRUCTOR(Button)
+	APPLY_CONSTRUCTOR(Camera)
+	APPLY_CONSTRUCTOR(CheckBox)
+	APPLY_CONSTRUCTOR(Container)
+	APPLY_CONSTRUCTOR(Control)
+	APPLY_CONSTRUCTOR(Curve)
+	APPLY_CONSTRUCTOR(DepthStencilTarget)
+	APPLY_CONSTRUCTOR(Effect)
+	APPLY_CONSTRUCTOR(FlowLayout)
+	APPLY_CONSTRUCTOR(Font)
+	APPLY_CONSTRUCTOR(Form)
+	APPLY_CONSTRUCTOR(FrameBuffer)
+	APPLY_CONSTRUCTOR(Image)
+	APPLY_CONSTRUCTOR(Joint)
+	APPLY_CONSTRUCTOR(Joystick)
+	APPLY_CONSTRUCTOR(Label)
+	APPLY_CONSTRUCTOR(Layout)
+	APPLY_CONSTRUCTOR(Light)
+	APPLY_CONSTRUCTOR(Material)
+	APPLY_CONSTRUCTOR(MaterialParameter)
+	APPLY_CONSTRUCTOR(Model)
+	APPLY_CONSTRUCTOR(Node)
+	APPLY_CONSTRUCTOR(ParticleEmitter)
+	APPLY_CONSTRUCTOR(Pass)
+	APPLY_CONSTRUCTOR(PhysicsCollisionShape)
+	APPLY_CONSTRUCTOR(RadioButton)
+	APPLY_CONSTRUCTOR(RenderState)
+	APPLY_CONSTRUCTOR(RenderState_StateBlock)
+	APPLY_CONSTRUCTOR(RenderTarget)
+	APPLY_CONSTRUCTOR(Scene)
+	APPLY_CONSTRUCTOR(Slider)
+	APPLY_CONSTRUCTOR(Technique)
+	APPLY_CONSTRUCTOR(TextBox)
+	APPLY_CONSTRUCTOR(Texture)
+	APPLY_CONSTRUCTOR(Texture_Sampler)
+	APPLY_CONSTRUCTOR(Theme)
+	APPLY_CONSTRUCTOR(Theme_ThemeImage)
+	APPLY_CONSTRUCTOR(VertexAttributeBinding)
+	APPLY_CONSTRUCTOR(VerticalLayout)
+
+	hx_failure("Invalid class specified.");
+}
+DEFINE_PRIM(setReferenceConstructor, 2)
 
 /*******************************************************************************
  * (TODO)                                                                      *

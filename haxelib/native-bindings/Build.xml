@@ -41,6 +41,7 @@
     <set name="GAMEPLAY_DIR" value="../../../gameplay"/>
 
     <files id="common">
+        <compilerflag value="-Iinclude"/>
         <compilerflag value="-I${GAMEPLAY_DIR}/gameplay/src"/>
         <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/bullet/include"/>
         <compilerflag value="-I${GAMEPLAY_DIR}/external-deps/detour/include"/>
