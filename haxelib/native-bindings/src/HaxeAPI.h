@@ -31,6 +31,7 @@ DECLARE_KIND(k_Object);
 DECLARE_KIND(k_Object_AnimationTarget);
 DECLARE_KIND(k_Object_PhysicsCollisionObject);
 DECLARE_KIND(k_Object_Ref);
+DECLARE_KIND(k_Object_Ref_Hash);
 DECLARE_KIND(k_Object_ScriptTarget);
 DECLARE_KIND(k_Object_Transform_Listener);
 
@@ -48,9 +49,9 @@ struct OutParameter
     }
 };
 
-value CreateOutParameter();
-value SetOutParameterValue(const value& thisObj, const value& _value);
-value GetOutParameterValue(const value& thisObj);
+const value& CreateOutParameter();
+const value& SetOutParameterValue(const value& thisObj, const value& _value);
+const value& GetOutParameterValue(const value& thisObj);
 
 /*******************************************************************************
  * HANDLE PASSING                                                              *
@@ -68,7 +69,7 @@ struct Handle
     ( ((_value) == (nullExpr)) ? alloc_null() : HandleToValue(_value) )
 
 template <typename T>
-value HandleToValue(const T& _value)
+const value& HandleToValue(const T& _value)
 {
     void *data = malloc(sizeof(Handle<T>));
     Handle<T> *handle = static_cast<Handle<T> *>(data);
@@ -160,10 +161,10 @@ void ValueToEnum(value _value, TYPE &_enumVal)
     _enumVal = static_cast<TYPE>(val_get_int(_value));
 }
 
-value StringToValue(const char *str);
+const value& StringToValue(const char *str);
 
 template<typename TYPE>
-value BufferToValue(const TYPE *data, unsigned long size)
+const value& BufferToValue(const TYPE *data, unsigned long size)
 {
     if (data == NULL)
         return alloc_null();
@@ -175,7 +176,7 @@ value BufferToValue(const TYPE *data, unsigned long size)
 }
 
 template<typename TYPE>
-value EnumToValue(TYPE _enumVal)
+const value& EnumToValue(TYPE _enumVal)
 {
     return alloc_int(_enumVal);
 }
@@ -234,18 +235,18 @@ void FreeObject(value object)
     }
 }
 
-#define CONVERSION_PROTOTYPES(type)                        \
-    value ObjectToValue(const type *pointer);                    \
-    value ObjectToValue(const type *pointer, bool dummy);        \
-    void ValueToObject(value _value, type *&pointer);    \
-
-#define CONVERSION_PROTOTYPES_NO_FINALIZER(type)        \
-    value ObjectToValue(const type *pointer, bool dummy);        \
+#define CONVERSION_PROTOTYPES(type)                               \
+    const value& ObjectToValue(const type *pointer);              \
+    const value& ObjectToValue(const type *pointer, bool dummy);  \
     void ValueToObject(value _value, type *&pointer);
 
-#define CONVERSION_PROTOTYPES_REF(type, name)    \
-    void ValueToObject(value _value, type *&pointer); \
-	value Reference ## name ## ToValue(type *object, bool increaseRefCount = false, bool reclaim = true);
+#define CONVERSION_PROTOTYPES_NO_FINALIZER(type)                    \
+    const value& ObjectToValue(const type *pointer, bool dummy);    \
+    void ValueToObject(value _value, type *&pointer);
+
+#define CONVERSION_PROTOTYPES_REF(type, name)                                               \
+    void ValueToObject(value _value, type *&pointer);                                       \
+	const value& Reference ## name ## ToValue(type *object, bool increaseRefCount = true);
 
 CONVERSION_PROTOTYPES(AIAgent::Listener)
 CONVERSION_PROTOTYPES_NO_FINALIZER(AIController)
@@ -377,8 +378,7 @@ CONVERSION_PROTOTYPES_REF(Theme::ThemeImage, Theme_ThemeImage)
 CONVERSION_PROTOTYPES_REF(VertexAttributeBinding, VertexAttributeBinding)
 CONVERSION_PROTOTYPES_REF(VerticalLayout, VerticalLayout)
 
-value ReferenceToValue(Ref *pointer, bool free = true, bool increaseRefCount = false);
-void FreeReference(value object);
+const value& ReferenceToValue(Ref *pointer, bool free = true, bool increaseRefCount = false);
 
 /*******************************************************************************
  * (TODO)                                                                      *

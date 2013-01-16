@@ -57,14 +57,32 @@ using org.gameplay3d.GameplayObject;
  */
 class NativeInterface
 {
+    /***************************************************************************
+     * MEMBERS                                                                 *
+     **************************************************************************/
+
+    /**
+     * The native method used to pass the wrapper factory methods to the CFFI
+     * layer.
+     */
     static var setReferenceConstructor:Dynamic;
+
+    /**
+     * The list of factory methods used to construct Haxe wrappers for reference
+     * counted classes.
+     *
+     * It is absolutely necessary that every factory method is stored in this list
+     * for the whole execution time of the application, i.e. not be reclaimed by
+     * the garbage collector.
+     */
+    static var factories:List<Dynamic->Ref> = new List();
 
     /**
      * TODO
      */
     public static function initialie()
     {
-        var setReferenceConstructor = Lib.load("gameplay", "setReferenceConstructor", 2);
+        setReferenceConstructor = Lib.load("gameplay", "setReferenceConstructor", 2);
         registerClass(AbsoluteLayout);
         registerClass(AIAgent);
         registerClass(AIState);
@@ -113,6 +131,9 @@ class NativeInterface
         registerClass(VerticalLayout);
     }
 
+    /**
+     * TODO
+     */
     @:generic
     static function registerClass<T : (GameplayObject, Ref)>(classObj:Class<T>)
     {
@@ -127,12 +148,13 @@ class NativeInterface
         // Set a constructor for the class and make it known to the hxcpp layer.
         //
 
-        var constructor =
-            function(nativeObject:Dynamic):T
-            {
-                return classObj.wrap(nativeObject);
-            }
+        factories.push(
+                function(nativeObject:Dynamic):T
+                {
+                    return classObj.wrap(nativeObject);
+                }
+            );
 
-        setReferenceConstructor(name, constructor);
+        setReferenceConstructor(name, factories.first());
     }
 }

@@ -13,6 +13,7 @@ DEFINE_KIND(k_Object);
 DEFINE_KIND(k_Object_AnimationTarget);
 DEFINE_KIND(k_Object_PhysicsCollisionObject);
 DEFINE_KIND(k_Object_Ref);
+DEFINE_KIND(k_Object_Ref_Hash);
 DEFINE_KIND(k_Object_ScriptTarget);
 DEFINE_KIND(k_Object_Transform_Listener);
 
@@ -25,6 +26,7 @@ extern "C" void allocateKinds()
     k_Object_AnimationTarget = alloc_kind();
     k_Object_PhysicsCollisionObject = alloc_kind();
     k_Object_Ref = alloc_kind();
+    k_Object_Ref_Hash = alloc_kind();
     k_Object_ScriptTarget = alloc_kind();
     k_Object_Transform_Listener = alloc_kind();
 
@@ -75,7 +77,7 @@ bool TestEquivalence(T* objectA,  const value& objectB)
     return false;
 }
 
-value testEquivalence(value objectA, value objectB)
+const value& testEquivalence(value objectA, value objectB)
 {
     if (val_is_null(objectA))
     {
@@ -153,21 +155,21 @@ void FreeOutParameter(value object)
     }
 }
 
-value CreateOutParameter()
+const value& CreateOutParameter()
 {
-    value result = alloc_abstract(k_OutParameter, new OutParameter());
+    const value& result = alloc_abstract(k_OutParameter, new OutParameter());
     val_gc(result, FreeOutParameter);
     return result;
 }
 
-value SetOutParameterValue(const value& thisObj, const value& _value)
+const value& SetOutParameterValue(const value& thisObj, const value& _value)
 {
     void *handle = val_get_handle(thisObj, k_OutParameter);
     static_cast<OutParameter*>(handle)->_value.set(_value);
     return _value;
 }
 
-value GetOutParameterValue(const value& thisObj)
+const value& GetOutParameterValue(const value& thisObj)
 {
     void *handle = val_get_handle(thisObj, k_OutParameter);
     return static_cast<OutParameter*>(handle)->_value.get();
@@ -340,7 +342,7 @@ const char *ValueToString(value _value)
     return val_get_string(_value);
 }
 
-value StringToValue(const char *str)
+const value& StringToValue(const char *str)
 {
     if (str == NULL)
         return alloc_null();
@@ -354,12 +356,12 @@ value StringToValue(const char *str)
 
 struct WrappedReference
 {
-	Ref *key;
-	value& wrapper;
-	UT_hash_handle hh;
+    Ref *key;
+    value wrapper;
+    UT_hash_handle hh;
 };
 
-struct WrappedReference *referenceHash = NULL;
+WrappedReference *referenceHash = NULL;
 
 void _FreeReference(value object)
 {
@@ -370,55 +372,40 @@ void _FreeReference(value object)
     val_gc(object, NULL);
     if (!val_is_null(object))
     {
-        void *handle = val_get_handle(object, k_Object_Ref);
-        struct WrappedReference *wrappedReference = static_cast<struct WrappedReference*>(handle);
-		HASH_DEL(referenceHash, wrappedReference);
-		SAFE_RELEASE(wrappedReference->key);
-		free(wrappedReference);
+        void *handle = val_get_handle(object, k_Object_Ref_Hash);
+        WrappedReference *wrappedReference = static_cast<WrappedReference*>(handle);
+        HASH_DEL(referenceHash, wrappedReference);
+        SAFE_RELEASE(wrappedReference->key);
+        free(wrappedReference);
     }
 }
 
-#define REFERENCE_TO_VALUE(type, name)																		\
-static AutoGCRoot refConstructor ## name (alloc_null());													\
-value Referene ## name ## ToValue (type *object, bool increaseRefCount, bool reclaim)						\
-{																											\
-	struct WrappedReference *wrappedReference;																\
-	Ref *key = static_cast<Ref*>(object);																	\
-	HASH_FIND_PTR(referenceHash, &key, wrappedReference);													\
-	if (wrappedReference == NULL)																			\
-	{																										\
-		wrappedReference = (struct WrappedReference*) malloc(sizeof(struct WrappedReference));				\
-		const value& nativeObject = alloc_abstract(k_Object_Ref, static_cast<void*>(wrappedReference));		\
-		const value& wrapper = val_call1(refConstructor ## name .get(), nativeObject);						\
-		wrappedReference->key = key;																		\
-		wrappedReference->wrapper = const_cast<value&>(wrapper);											\
-		HASH_ADD_PTR(referenceHash, key, wrappedReference);													\
-																											\
-		if (reclaim)																						\
-			val_gc(nativeObject, _FreeReference);															\
-	}																										\
-																											\
-	if (increaseRefCount)																					\
-		object->addRef();																					\
-																											\
-	return wrappedReference->wrapper;																		\
-}
-
-value ReferenceToValue(Ref *pointer, bool free, bool increaseRefCount)
-{
-    if (pointer == NULL)
-        return alloc_null();
-
-    void *handle = static_cast<void*>(pointer);
-    const value& result = alloc_abstract(k_Object_Ref, handle);
-
-    if (free)
-        val_gc(result, &FreeReference);
-
-    if (increaseRefCount)
-        pointer->addRef();
-
-    return result;
+#define REFERENCE_TO_VALUE(type, name)                                                                      \
+static value refConstructor ## name;                                                                        \
+const value& Reference ## name ## ToValue (type *object, bool increaseRefCount)                             \
+{                                                                                                           \
+    if (object == NULL)                                                                                     \
+        return alloc_null();                                                                                \
+                                                                                                            \
+    WrappedReference *wrappedReference;                                                                     \
+    Ref *key = static_cast<Ref*>(object);                                                                   \
+    HASH_FIND_PTR(referenceHash, &key, wrappedReference);                                                   \
+    if (wrappedReference == NULL)                                                                           \
+    {                                                                                                       \
+        wrappedReference = (WrappedReference*) malloc(sizeof(WrappedReference));                            \
+        const value& nativeObject = alloc_abstract(k_Object_Ref_Hash, static_cast<void*>(wrappedReference));    \
+        const value& wrapper = val_call1(refConstructor ## name, nativeObject);                             \
+        wrappedReference->key = key;                                                                        \
+        wrappedReference->wrapper = const_cast<value&>(wrapper);                                            \
+        HASH_ADD_PTR(referenceHash, key, wrappedReference);                                                 \
+                                                                                                            \
+        if (increaseRefCount)                                                                               \
+            object->addRef();                                                                               \
+                                                                                                            \
+        val_gc(nativeObject, _FreeReference);                                                               \
+    }                                                                                                       \
+                                                                                                            \
+    return wrappedReference->wrapper;                                                                       \
 }
 
 void FreeReference(value object)
@@ -436,10 +423,27 @@ void FreeReference(value object)
     }
 }
 
+const value& ReferenceToValue(Ref *pointer, bool free, bool increaseRefCount)
+{
+    if (pointer == NULL)
+        return alloc_null();
+
+    void *handle = static_cast<void*>(pointer);
+    const value& result = alloc_abstract(k_Object_Ref, handle);
+
+    if (free)
+        val_gc(result, &FreeReference);
+
+    if (increaseRefCount)
+        pointer->addRef();
+
+    return result;
+}
+
 static char *errorMsg = "Reference or object kind expected.";
 
 #define OBJECT_TO_VALUE(type, base_type, kind)                                      \
-value ObjectToValue(const type *pointer)                                            \
+const value& ObjectToValue(const type *pointer)                                     \
 {                                                                                   \
     if (pointer == NULL)                                                            \
         return alloc_null();                                                        \
@@ -454,7 +458,7 @@ value ObjectToValue(const type *pointer)                                        
 }
 
 #define OBJECT_TO_VALUE_(type, base_type, kind)                                     \
-value ObjectToValue(const type *pointer, bool dummy)                                \
+const value& ObjectToValue(const type *pointer, bool dummy)                         \
 {                                                                                   \
     if (pointer == NULL)                                                            \
         return alloc_null();                                                        \
@@ -491,6 +495,11 @@ void ValueToObject(value _value, type *&pointer)                                
         Ref *base = static_cast<Ref*>(val_data(_value));                                        \
         pointer = dynamic_cast<type*>(base);                                                    \
     }                                                                                           \
+    else if (val_is_kind(_value, k_Object_Ref_Hash))                                            \
+    {                                                                                           \
+        WrappedReference *wrappedReference = static_cast<WrappedReference*>(val_data(_value));  \
+        pointer = dynamic_cast<type*>(wrappedReference->key);                                   \
+    }                                                                                           \
     else if (val_is_kind(_value, k_Object_ScriptTarget))                                        \
     {                                                                                           \
         ScriptTarget *base = static_cast<ScriptTarget*>(val_data(_value));                      \
@@ -514,8 +523,8 @@ void ValueToObject(value _value, type *&pointer)                                
     OBJECT_TO_VALUE(type, base_type, kind)          \
     VALUE_TO_OBJECT(type, base_type)
 
-#define CONVERSION_FUNCTIONS_REF(type, name)  \
-	REFERENCE_TO_VALUE(type, name)					\
+#define CONVERSION_FUNCTIONS_REF(type, name)    \
+    REFERENCE_TO_VALUE(type, name)              \
     VALUE_TO_OBJECT(type, Ref)
 
 CONVERSION_FUNCTIONS(AIAgent::Listener, AIAgent::Listener, k_Object)
@@ -595,7 +604,6 @@ CONVERSION_FUNCTIONS_NO_FINALIZER(Uniform, Uniform, k_Object)
 CONVERSION_FUNCTIONS(Vector2, Vector2, k_Object)
 CONVERSION_FUNCTIONS(Vector3, Vector3, k_Object)
 CONVERSION_FUNCTIONS(Vector4, Vector4, k_Object)
-CONVERSION_FUNCTIONS_REF(VertexAttributeBinding, VertexAttributeBinding)
 CONVERSION_FUNCTIONS(VertexFormat, VertexFormat, k_Object)
 CONVERSION_FUNCTIONS(VertexFormat::Element, VertexFormat::Element, k_Object)
 
@@ -646,80 +654,89 @@ CONVERSION_FUNCTIONS_REF(Texture, Texture)
 CONVERSION_FUNCTIONS_REF(Texture::Sampler, Texture_Sampler)
 CONVERSION_FUNCTIONS_REF(Theme, Theme)
 CONVERSION_FUNCTIONS_REF(Theme::ThemeImage, Theme_ThemeImage)
+CONVERSION_FUNCTIONS_REF(VertexAttributeBinding, VertexAttributeBinding)
 CONVERSION_FUNCTIONS_REF(VerticalLayout, VerticalLayout)
 
 void setReferenceConstructor(value name, value constructor)
 {
-	const char *_name = ValueToString(name);
-#define APPLY_CONSTRUCTOR(type)							\
-	if (!strcmp(_name, #type))							\
-	{													\
-		refConstructor ## type .set(constructor);		\
-		return;											\
-	}
-	APPLY_CONSTRUCTOR(AbsoluteLayout)
-	APPLY_CONSTRUCTOR(AIAgent)
-	APPLY_CONSTRUCTOR(AIState)
-	APPLY_CONSTRUCTOR(Animation)
-	APPLY_CONSTRUCTOR(AnimationClip)
-	APPLY_CONSTRUCTOR(AudioBuffer)
-	APPLY_CONSTRUCTOR(Bundle)
-	APPLY_CONSTRUCTOR(Button)
-	APPLY_CONSTRUCTOR(Camera)
-	APPLY_CONSTRUCTOR(CheckBox)
-	APPLY_CONSTRUCTOR(Container)
-	APPLY_CONSTRUCTOR(Control)
-	APPLY_CONSTRUCTOR(Curve)
-	APPLY_CONSTRUCTOR(DepthStencilTarget)
-	APPLY_CONSTRUCTOR(Effect)
-	APPLY_CONSTRUCTOR(FlowLayout)
-	APPLY_CONSTRUCTOR(Font)
-	APPLY_CONSTRUCTOR(Form)
-	APPLY_CONSTRUCTOR(FrameBuffer)
-	APPLY_CONSTRUCTOR(Image)
-	APPLY_CONSTRUCTOR(Joint)
-	APPLY_CONSTRUCTOR(Joystick)
-	APPLY_CONSTRUCTOR(Label)
-	APPLY_CONSTRUCTOR(Layout)
-	APPLY_CONSTRUCTOR(Light)
-	APPLY_CONSTRUCTOR(Material)
-	APPLY_CONSTRUCTOR(MaterialParameter)
-	APPLY_CONSTRUCTOR(Model)
-	APPLY_CONSTRUCTOR(Node)
-	APPLY_CONSTRUCTOR(ParticleEmitter)
-	APPLY_CONSTRUCTOR(Pass)
-	APPLY_CONSTRUCTOR(PhysicsCollisionShape)
-	APPLY_CONSTRUCTOR(RadioButton)
-	APPLY_CONSTRUCTOR(RenderState)
-	APPLY_CONSTRUCTOR(RenderState_StateBlock)
-	APPLY_CONSTRUCTOR(RenderTarget)
-	APPLY_CONSTRUCTOR(Scene)
-	APPLY_CONSTRUCTOR(Slider)
-	APPLY_CONSTRUCTOR(Technique)
-	APPLY_CONSTRUCTOR(TextBox)
-	APPLY_CONSTRUCTOR(Texture)
-	APPLY_CONSTRUCTOR(Texture_Sampler)
-	APPLY_CONSTRUCTOR(Theme)
-	APPLY_CONSTRUCTOR(Theme_ThemeImage)
-	APPLY_CONSTRUCTOR(VertexAttributeBinding)
-	APPLY_CONSTRUCTOR(VerticalLayout)
+    const char *_name = ValueToString(name);
+#define APPLY_CONSTRUCTOR(type)                \
+    if (!strcmp(_name, #type))                 \
+    {                                          \
+        refConstructor ## type = constructor;  \
+        return;                                \
+    }
+    APPLY_CONSTRUCTOR(AbsoluteLayout)
+    APPLY_CONSTRUCTOR(AIAgent)
+    APPLY_CONSTRUCTOR(AIState)
+    APPLY_CONSTRUCTOR(Animation)
+    APPLY_CONSTRUCTOR(AnimationClip)
+    APPLY_CONSTRUCTOR(AudioBuffer)
+    APPLY_CONSTRUCTOR(Bundle)
+    APPLY_CONSTRUCTOR(Button)
+    APPLY_CONSTRUCTOR(Camera)
+    APPLY_CONSTRUCTOR(CheckBox)
+    APPLY_CONSTRUCTOR(Container)
+    APPLY_CONSTRUCTOR(Control)
+    APPLY_CONSTRUCTOR(Curve)
+    APPLY_CONSTRUCTOR(DepthStencilTarget)
+    APPLY_CONSTRUCTOR(Effect)
+    APPLY_CONSTRUCTOR(FlowLayout)
+    APPLY_CONSTRUCTOR(Font)
+    APPLY_CONSTRUCTOR(Form)
+    APPLY_CONSTRUCTOR(FrameBuffer)
+    APPLY_CONSTRUCTOR(Image)
+    APPLY_CONSTRUCTOR(Joint)
+    APPLY_CONSTRUCTOR(Joystick)
+    APPLY_CONSTRUCTOR(Label)
+    APPLY_CONSTRUCTOR(Layout)
+    APPLY_CONSTRUCTOR(Light)
+    APPLY_CONSTRUCTOR(Material)
+    APPLY_CONSTRUCTOR(MaterialParameter)
+    APPLY_CONSTRUCTOR(Model)
+    APPLY_CONSTRUCTOR(Node)
+    APPLY_CONSTRUCTOR(ParticleEmitter)
+    APPLY_CONSTRUCTOR(Pass)
+    APPLY_CONSTRUCTOR(PhysicsCollisionShape)
+    APPLY_CONSTRUCTOR(RadioButton)
+    APPLY_CONSTRUCTOR(RenderState)
+    APPLY_CONSTRUCTOR(RenderState_StateBlock)
+    APPLY_CONSTRUCTOR(RenderTarget)
+    APPLY_CONSTRUCTOR(Scene)
+    APPLY_CONSTRUCTOR(Slider)
+    APPLY_CONSTRUCTOR(Technique)
+    APPLY_CONSTRUCTOR(TextBox)
+    APPLY_CONSTRUCTOR(Texture)
+    APPLY_CONSTRUCTOR(Texture_Sampler)
+    APPLY_CONSTRUCTOR(Theme)
+    APPLY_CONSTRUCTOR(Theme_ThemeImage)
+    APPLY_CONSTRUCTOR(VertexAttributeBinding)
+    APPLY_CONSTRUCTOR(VerticalLayout)
 
-	hx_failure("Invalid class specified.");
+    hx_failure("Invalid class specified.");
 }
 DEFINE_PRIM(setReferenceConstructor, 2)
+
+void updateReference(value refWrapper, value wrapper)
+{
+    void *data = val_get_handle(refWrapper, k_Object_Ref);
+    WrappedReference *_refWrapper = static_cast<WrappedReference*>(data);
+    _refWrapper->wrapper = wrapper;
+}
+DEFINE_PRIM(updateReference, 2)
 
 /*******************************************************************************
  * (TODO)                                                                      *
  ******************************************************************************/
 
-#define BEGIN_COPY_OUTSIDE_SCOPE(type)                    \
-static gameplay::type obj ## type;                        \
-const value& CopyOutsideScope(const gameplay::type& obj)  \
-{                                                         \
+#define BEGIN_COPY_OUTSIDE_SCOPE(type)                      \
+static gameplay::type obj ## type;                          \
+const value& CopyOutsideScope(const gameplay::type& obj)    \
+{                                                           \
     gameplay::type& copy = obj ## type;
 
-#define END_COPY_OUTSIDE_SCOPE        	\
-	return ObjectToValue(&copy, false); \
+#define END_COPY_OUTSIDE_SCOPE          \
+    return ObjectToValue(&copy, false); \
 }
 
 BEGIN_COPY_OUTSIDE_SCOPE(Matrix)
