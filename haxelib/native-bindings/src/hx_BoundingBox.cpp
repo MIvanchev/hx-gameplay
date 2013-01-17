@@ -49,7 +49,7 @@ DEFINE_PRIM_MULT(hx_BoundingBox_Construct_FltX6);
 // DECL: static const BoundingBox& empty();
 value hx_BoundingBox_static_empty()
 {
-    return ObjectToValue(new BoundingBox(BoundingBox::empty()));
+    return ObjectToValue(&BoundingBox::empty(), false);
 }
 DEFINE_PRIM(hx_BoundingBox_static_empty, 0);
 

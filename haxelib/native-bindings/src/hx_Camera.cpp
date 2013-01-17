@@ -64,7 +64,7 @@ value hx_Camera_getFrustum(value thisObj)
 {
     Camera *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Frustum(_thisObj->getFrustum()));
+    return ObjectToValue(&_thisObj->getFrustum(), false);
 }
 DEFINE_PRIM(hx_Camera_getFrustum, 1);
 

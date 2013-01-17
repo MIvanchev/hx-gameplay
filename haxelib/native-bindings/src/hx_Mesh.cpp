@@ -104,7 +104,7 @@ value hx_Mesh_getBoundingBox(value thisObj)
 {
     Mesh *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new BoundingBox(_thisObj->getBoundingBox()));
+    return ObjectToValue(&_thisObj->getBoundingBox(), false);
 }
 DEFINE_PRIM(hx_Mesh_getBoundingBox, 1);
 
@@ -113,7 +113,7 @@ value hx_Mesh_getBoundingSphere(value thisObj)
 {
     Mesh *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new BoundingSphere(_thisObj->getBoundingSphere()));
+    return ObjectToValue(&_thisObj->getBoundingSphere(), false);
 }
 DEFINE_PRIM(hx_Mesh_getBoundingSphere, 1);
 

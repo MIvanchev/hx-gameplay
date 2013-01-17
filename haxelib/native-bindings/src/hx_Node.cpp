@@ -132,7 +132,7 @@ value hx_Node_getBoundingSphere(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new BoundingSphere(_thisObj->getBoundingSphere()));
+    return ObjectToValue(&_thisObj->getBoundingSphere(), false);
 }
 DEFINE_PRIM(hx_Node_getBoundingSphere, 1);
 

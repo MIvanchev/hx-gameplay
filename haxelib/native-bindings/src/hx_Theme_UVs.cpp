@@ -21,9 +21,7 @@ DEFINE_PRIM(hx_Theme_UVs_Construct_FltX4, 4);
 // DECL: static const UVs& empty();
 value hx_Theme_UVs_static_empty()
 {
-    Theme::UVs *_result = new Theme::UVs();
-    *_result = Theme::UVs::empty();
-    return ObjectToValue(_result);
+    return ObjectToValue(&Theme::UVs::empty(), false);
 }
 DEFINE_PRIM(hx_Theme_UVs_static_empty, 0);
 

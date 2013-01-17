@@ -29,7 +29,7 @@ DEFINE_PRIM(hx_BoundingSphere_Construct_V3_Flt, 2);
 // DECL: static const BoundingSphere& empty();
 value hx_BoundingSphere_static_empty()
 {
-    return ObjectToValue(new BoundingSphere(BoundingSphere::empty()));
+    return ObjectToValue(&BoundingSphere::empty(), false);
 }
 DEFINE_PRIM(hx_BoundingSphere_static_empty, 0);
 

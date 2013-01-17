@@ -30,7 +30,7 @@ value hx_Frustum_getBottom(value thisObj)
 {
     Frustum *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Plane(_thisObj->getBottom()));
+    return ObjectToValue(&_thisObj->getBottom(), false);
 }
 DEFINE_PRIM(hx_Frustum_getBottom, 1);
 
@@ -50,7 +50,7 @@ value hx_Frustum_getFar(value thisObj)
 {
     Frustum *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Plane(_thisObj->getFar()));
+    return ObjectToValue(&_thisObj->getFar(), false);
 }
 DEFINE_PRIM(hx_Frustum_getFar, 1);
 
@@ -59,7 +59,7 @@ value hx_Frustum_getLeft(value thisObj)
 {
     Frustum *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Plane(_thisObj->getLeft()));
+    return ObjectToValue(&_thisObj->getLeft(), false);
 }
 DEFINE_PRIM(hx_Frustum_getLeft, 1);
 
@@ -79,7 +79,7 @@ value hx_Frustum_getNear(value thisObj)
 {
     Frustum *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Plane(_thisObj->getNear()));
+    return ObjectToValue(&_thisObj->getNear(), false);
 }
 DEFINE_PRIM(hx_Frustum_getNear, 1);
 
@@ -88,7 +88,7 @@ value hx_Frustum_getRight(value thisObj)
 {
     Frustum *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Plane(_thisObj->getRight()));
+    return ObjectToValue(&_thisObj->getRight(), false);
 }
 DEFINE_PRIM(hx_Frustum_getRight, 1);
 
@@ -97,7 +97,7 @@ value hx_Frustum_getTop(value thisObj)
 {
     Frustum *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ObjectToValue(new Plane(_thisObj->getTop()));
+    return ObjectToValue(&_thisObj->getTop(), false);
 }
 DEFINE_PRIM(hx_Frustum_getTop, 1);
 
