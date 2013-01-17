@@ -205,10 +205,7 @@ void FreeHandle(value object)
 
     val_gc(object, NULL);
     if (!val_is_null(object))
-    {
-        void *handle = val_get_handle(object, k_Handle);
-        free(handle);
-    }
+		free(val_get_handle(object, k_Handle));
 }
 
 /*******************************************************************************
