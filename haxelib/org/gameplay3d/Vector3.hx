@@ -25,14 +25,6 @@ class Vector3 extends GameplayObject, implements IVector3
     static var _unitZ:Vector3;
     static var _zero:Vector3;
 
-    function new(
-            nativeObjectInitializer:Dynamic,
-            nativeObjectInitializerParams:Array<Dynamic> = null
-        )
-    {
-        super(nativeObjectInitializer, nativeObjectInitializerParams);
-    }
-
     // DECL: Vector3();
     public static function make():Vector3
     {

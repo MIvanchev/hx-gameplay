@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IBoundingSphere;
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.intern.INativeBinding;
@@ -36,6 +37,7 @@ class Node extends Transform, implements Ref
     var _worldMatrix:Matrix;
     var _worldViewMatrix:Matrix;
     var _worldViewProjectionMatrix:Matrix;
+    var _boundingSphere:BoundingSphere;
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
@@ -61,6 +63,7 @@ class Node extends Transform, implements Ref
             _worldMatrix = Matrix.make();
             _worldViewMatrix = Matrix.make();
             _worldViewProjectionMatrix = Matrix.make();
+            _boundingSphere = BoundingSphere.make();
         }
         return cast(this);
     }
@@ -141,9 +144,9 @@ class Node extends Transform, implements Ref
     }
 
     // DECL: const BoundingSphere& getBoundingSphere() const;
-    public function getBoundingSphere():BoundingSphere
+    public function getBoundingSphere():IBoundingSphere
     {
-        return BoundingSphere.wrap(hx_Node_getBoundingSphere(nativeObject));
+        return _boundingSphere.impersonate(hx_Node_getBoundingSphere(nativeObject));
     }
 
     // DECL: Camera* getCamera() const;

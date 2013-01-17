@@ -5,6 +5,7 @@ import org.gameplay3d.immutable.IBoundingBox;
 import org.gameplay3d.immutable.IBoundingSphere;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.ConversionTools;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.util.Handle;
 import org.gameplay3d.util.PrimitiveArray;
 
@@ -17,6 +18,21 @@ class Mesh extends GameplayObject, implements Ref
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
+
+    var _boundingBox:BoundingBox;
+    var _boundingSphere:BoundingSphere;
+
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
+    {
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
+        {
+            _boundingBox = BoundingBox.make();
+            _boundingSphere = BoundingSphere.make();
+        }
+        return cast(this);
+    }
 
     // DECL: MeshPart* addPart(PrimitiveType primitiveType, Mesh::IndexFormat indexFormat, unsigned int indexCount, bool dynamic = false);
     public function addPart(primitiveType:Int, indexFormat:Int, indexCount:Int, _dynamic:Bool = false):MeshPart
@@ -61,15 +77,15 @@ class Mesh extends GameplayObject, implements Ref
     }
 
     // DECL: const BoundingBox& getBoundingBox() const;
-    public function getBoundingBox():BoundingBox
+    public function getBoundingBox():IBoundingBox
     {
-        return BoundingBox.wrap(hx_Mesh_getBoundingBox(nativeObject));
+        return _boundingBox.impersonate(hx_Mesh_getBoundingBox(nativeObject));
     }
 
     // DECL: const BoundingSphere& getBoundingSphere() const;
-    public function getBoundingSphere():BoundingSphere
+    public function getBoundingSphere():IBoundingSphere
     {
-        return BoundingSphere.wrap(hx_Mesh_getBoundingSphere(nativeObject));
+        return _boundingSphere.impersonate(hx_Mesh_getBoundingSphere(nativeObject));
     }
 
     // DECL: MeshPart* getPart(unsigned int index);

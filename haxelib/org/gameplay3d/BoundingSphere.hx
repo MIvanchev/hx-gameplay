@@ -25,6 +25,8 @@ class BoundingSphere extends GameplayObject
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    static var _empty:BoundingSphere;
+
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
         var initialized = this.nativeObject != null;
@@ -59,9 +61,11 @@ class BoundingSphere extends GameplayObject
     }
 
     // DECL: static const BoundingSphere& empty();
-    public static function empty():BoundingSphere
+    public static function empty():IBoundingSphere
     {
-        return BoundingSphere.wrap(hx_BoundingSphere_static_empty());
+        if (_empty == null)
+            _empty = BoundingSphere.make();
+        return _empty.impersonate(hx_BoundingSphere_static_empty());
     }
 
     // DECL: bool intersects(const BoundingBox& box) const;

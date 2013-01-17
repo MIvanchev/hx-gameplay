@@ -18,6 +18,29 @@ class Frustum extends GameplayObject
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _top:Plane;
+    var _bottom:Plane;
+    var _left:Plane;
+    var _right:Plane;
+    var _far:Plane;
+    var _near:Plane;
+
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
+    {
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
+        {
+            _top = Plane.make();
+            _bottom = Plane.make();
+            _left = Plane.make();
+            _right = Plane.make();
+            _far = Plane.make();
+            _near = Plane.make();
+        }
+        return cast(this);
+    }
+
     // DECL: Frustum();
     public static function make():Frustum
     {
@@ -37,9 +60,9 @@ class Frustum extends GameplayObject
     }
 
     // DECL: const Plane& getBottom() const;
-    public function getBottom():Plane
+    public function getBottom():IPlane
     {
-        return Plane.wrap(hx_Frustum_getBottom(nativeObject));
+        return _bottom.impersonate(hx_Frustum_getBottom(nativeObject));
     }
 
     // DECL: void getCorners(Vector3* corners) const;
@@ -49,15 +72,15 @@ class Frustum extends GameplayObject
     }
 
     // DECL: const Plane& getFar() const;
-    public function getFar():Plane
+    public function getFar():IPlane
     {
-        return Plane.wrap(hx_Frustum_getFar(nativeObject));
+        return _far.impersonate(hx_Frustum_getFar(nativeObject));
     }
 
     // DECL: const Plane& getLeft() const;
-    public function getLeft():Plane
+    public function getLeft():IPlane
     {
-        return Plane.wrap(hx_Frustum_getLeft(nativeObject));
+        return _left.impersonate(hx_Frustum_getLeft(nativeObject));
     }
 
     // DECL: void getMatrix(Matrix* dst) const;
@@ -67,21 +90,21 @@ class Frustum extends GameplayObject
     }
 
     // DECL: const Plane& getNear() const;
-    public function getNear():Plane
+    public function getNear():IPlane
     {
-        return Plane.wrap(hx_Frustum_getNear(nativeObject));
+        return _near.impersonate(hx_Frustum_getNear(nativeObject));
     }
 
     // DECL: const Plane& getRight() const;
-    public function getRight():Plane
+    public function getRight():IPlane
     {
-        return Plane.wrap(hx_Frustum_getRight(nativeObject));
+        return _right.impersonate(hx_Frustum_getRight(nativeObject));
     }
 
     // DECL: const Plane& getTop() const;
-    public function getTop():Plane
+    public function getTop():IPlane
     {
-        return Plane.wrap(hx_Frustum_getTop(nativeObject));
+        return _top.impersonate(hx_Frustum_getTop(nativeObject));
     }
 
     // DECL: bool intersects(const BoundingBox& box) const;

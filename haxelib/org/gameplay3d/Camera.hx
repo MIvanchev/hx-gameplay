@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.immutable.IFrustum;
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector3;
@@ -23,6 +24,7 @@ class Camera extends Transform_ListenerImpl, implements Ref
     var _projectionMatrix:Matrix;
     var _viewMatrix:Matrix;
     var _viewProjectionMatrix:Matrix;
+    var _frustum:Frustum;
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
@@ -35,6 +37,7 @@ class Camera extends Transform_ListenerImpl, implements Ref
             _projectionMatrix = Matrix.make();
             _viewMatrix = Matrix.make();
             _viewProjectionMatrix = Matrix.make();
+            _frustum = Frustum.make();
         }
         return cast(this);
     }
@@ -76,9 +79,9 @@ class Camera extends Transform_ListenerImpl, implements Ref
     }
 
     // DECL: const Frustum& getFrustum() const;
-    public function getFrustum():Frustum
+    public function getFrustum():IFrustum
     {
-        return Frustum.wrap(hx_Camera_getFrustum(nativeObject));
+        return _frustum.impersonate(hx_Camera_getFrustum(nativeObject));
     }
 
     // DECL: const Matrix& getInverseViewMatrix() const;

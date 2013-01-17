@@ -27,6 +27,7 @@ class BoundingBox extends GameplayObject, implements IBoundingBox
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    static var _empty:BoundingBox;
     var _center:Vector3;
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
@@ -72,9 +73,11 @@ class BoundingBox extends GameplayObject, implements IBoundingBox
     }
 
     // DECL: static const BoundingBox& empty();
-    public static function empty():BoundingBox
+    public static function empty():IBoundingBox
     {
-        return BoundingBox.wrap(hx_BoundingBox_static_empty());
+        if (_empty == null)
+            _empty = BoundingBox.make();
+        return _empty.impersonate(hx_BoundingBox_static_empty());
     }
 
     // DECL: Vector3 getCenter() const;
