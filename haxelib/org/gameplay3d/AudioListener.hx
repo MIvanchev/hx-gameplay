@@ -21,14 +21,16 @@ class AudioListener extends Transform_ListenerImpl
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        if (this.nativeObject == null)
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
         {
             _orientationForward = Vector3.make();
             _orientationUp = Vector3.make();
             _position = Vector3.make();
             _velocity = Vector3.make();
         }
-        return super.impersonate(nativeObject);
+        return cast(this);
     }
 
     // DECL: Camera* getCamera() const;

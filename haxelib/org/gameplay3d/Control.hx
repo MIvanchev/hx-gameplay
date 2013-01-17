@@ -43,7 +43,9 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        if (this.nativeObject == null)
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
         {
             _cursorColor = Vector4.make();
             _imageColor = Vector4.make();
@@ -56,7 +58,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
             _imageRegion = Rectangle.make();
             _skinRegion = Rectangle.make();
         }
-        return super.impersonate(nativeObject);
+        return cast(this);
     }
 
     // DECL: virtual void addListener(Control::Listener* listener, int eventFlags);

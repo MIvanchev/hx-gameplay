@@ -29,12 +29,14 @@ class Ray extends GameplayObject
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        if (this.nativeObject == null)
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
         {
             _direction = Vector3.make();
             _origin = Vector3.make();
         }
-        return super.impersonate(nativeObject);
+        return cast(this);
     }
 
     // DECL: Ray();

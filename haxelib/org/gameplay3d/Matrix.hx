@@ -31,14 +31,17 @@ class Matrix extends GameplayObject, implements IMatrix
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
+        var initialized = this.nativeObject != null;
         super.impersonate(nativeObject);
-        if (m == null)
+        if (!initialized)
         {
             m = new MatrixEntries(hx_Matrix_property_m_get(nativeObject));
             mat = m;
         }
         else
+        {
             cast(m, MatrixEntries).impersonate(hx_Matrix_property_m_get(nativeObject));
+        }
         return cast(this);
     }
 

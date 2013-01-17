@@ -20,9 +20,18 @@ class PhysicsCollisionObject_CollisionPair extends GameplayObject
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
+        var initialized = this.nativeObject != null;
         super.impersonate(nativeObject);
-        objectA = PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectA_get(nativeObject));
-        objectB = PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectB_get(nativeObject));
+        if (!initialized)
+        {
+            objectA = PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectA_get(nativeObject));
+            objectB = PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectB_get(nativeObject));
+        }
+        else
+        {
+            objectA.impersonate(hx_PhysicsCollisionObject_CollisionPair_property_objectA_get(nativeObject));
+            objectB.impersonate(hx_PhysicsCollisionObject_CollisionPair_property_objectB_get(nativeObject));
+        }
         return cast(this);
     }
 

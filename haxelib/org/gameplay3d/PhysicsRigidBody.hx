@@ -23,7 +23,9 @@ class PhysicsRigidBody extends PhysicsCollisionObject
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        if (this.nativeObject == null)
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
         {
             _angularFactor = Vector3.make();
             _angularVelocity = Vector3.make();
@@ -32,7 +34,7 @@ class PhysicsRigidBody extends PhysicsCollisionObject
             _linearFactor = Vector3.make();
             _linearVelocity = Vector3.make();
         }
-        return super.impersonate(nativeObject);
+        return cast(this);
     }
 
     // DECL: void applyForce(const Vector3& force, const Vector3* relativePosition = NULL);

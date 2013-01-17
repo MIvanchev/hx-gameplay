@@ -26,7 +26,9 @@ class Camera extends Transform_ListenerImpl, implements Ref
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        if (this.nativeObject == null)
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
         {
             _inverseViewMatrix = Matrix.make();
             _inverseViewProjectionMatrix = Matrix.make();
@@ -34,7 +36,7 @@ class Camera extends Transform_ListenerImpl, implements Ref
             _viewMatrix = Matrix.make();
             _viewProjectionMatrix = Matrix.make();
         }
-        return super.impersonate(nativeObject);
+        return cast(this);
     }
 
     // DECL: static Camera* createOrthographic(float zoomX, float zoomY, float aspectRatio, float nearPlane, float farPlane);

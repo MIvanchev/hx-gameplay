@@ -51,7 +51,9 @@ class Transform extends AnimationTarget_ScriptTarget
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        if (this.nativeObject == null)
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
         {
             _scale = Vector3.make();
             _translation = Vector3.make();
@@ -64,7 +66,7 @@ class Transform extends AnimationTarget_ScriptTarget
             _matrix = Matrix.make();
             _rotation = Quaternion.make();
         }
-        return super.impersonate(nativeObject);
+        return cast(this);
     }
 
     // DECL: Transform();

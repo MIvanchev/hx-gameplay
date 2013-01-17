@@ -18,8 +18,12 @@ class AudioSource extends Transform_ListenerImpl, implements Ref
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
+        var initialized = this.nativeObject != null;
         super.impersonate(nativeObject);
-        _velocity = Vector3.make();
+        if (!initialized)
+        {
+            _velocity = Vector3.make();
+        }
         return cast(this);
     }
 

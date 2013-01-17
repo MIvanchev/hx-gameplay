@@ -39,25 +39,29 @@ class Node extends Transform, implements Ref
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
+        var initialized = this.nativeObject != null;
         super.impersonate(nativeObject);
-        _activeCameraTranslationView = Vector3.make();
-        _activeCameraTranslationWorld = Vector3.make();
-        _forwardVectorView = Vector3.make();
-        _forwardVectorWorld = Vector3.make();
-        _rightVectorWorld = Vector3.make();
-        _translationView = Vector3.make();
-        _translationWorld = Vector3.make();
-        _upVectorWorld = Vector3.make();
-        _inverseTransposeWorldMatrix = Matrix.make();
-        _inverseTransposeWorldViewMatrix = Matrix.make();
-        _inverseViewMatrix = Matrix.make();
-        _inverseViewProjectionMatrix = Matrix.make();
-        _projectionMatrix = Matrix.make();
-        _viewMatrix = Matrix.make();
-        _viewProjectionMatrix = Matrix.make();
-        _worldMatrix = Matrix.make();
-        _worldViewMatrix = Matrix.make();
-        _worldViewProjectionMatrix = Matrix.make();
+        if (!initialized)
+        {
+            _activeCameraTranslationView = Vector3.make();
+            _activeCameraTranslationWorld = Vector3.make();
+            _forwardVectorView = Vector3.make();
+            _forwardVectorWorld = Vector3.make();
+            _rightVectorWorld = Vector3.make();
+            _translationView = Vector3.make();
+            _translationWorld = Vector3.make();
+            _upVectorWorld = Vector3.make();
+            _inverseTransposeWorldMatrix = Matrix.make();
+            _inverseTransposeWorldViewMatrix = Matrix.make();
+            _inverseViewMatrix = Matrix.make();
+            _inverseViewProjectionMatrix = Matrix.make();
+            _projectionMatrix = Matrix.make();
+            _viewMatrix = Matrix.make();
+            _viewProjectionMatrix = Matrix.make();
+            _worldMatrix = Matrix.make();
+            _worldViewMatrix = Matrix.make();
+            _worldViewProjectionMatrix = Matrix.make();
+        }
         return cast(this);
     }
 

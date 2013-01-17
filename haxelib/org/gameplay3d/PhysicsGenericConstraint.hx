@@ -21,14 +21,16 @@ class PhysicsGenericConstraint extends PhysicsConstraint
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        if (this.nativeObject == null)
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
         {
             _translationOffsetA = Vector3.make();
             _translationOffsetB = Vector3.make();
             _rotationOffsetA = Quaternion.make();
             _rotationOffsetB = Quaternion.make();
         }
-        return super.impersonate(nativeObject);
+        return cast(this);
     }
 
     // DECL: inline const Quaternion& getRotationOffsetA() const;

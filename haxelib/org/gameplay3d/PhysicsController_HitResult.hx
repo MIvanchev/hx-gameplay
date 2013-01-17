@@ -24,10 +24,20 @@ class PhysicsController_HitResult extends GameplayObject
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
+        var initialized = this.nativeObject != null;
         super.impersonate(nativeObject);
-        object = PhysicsCollisionObject.wrap(hx_PhysicsController_HitResult_property_object_get(nativeObject));
-        point = Vector3.wrap(hx_PhysicsController_HitResult_property_point_get(nativeObject));
-        normal = Vector3.wrap(hx_PhysicsController_HitResult_property_normal_get(nativeObject));
+        if (!initialized)
+        {
+            object = PhysicsCollisionObject.wrap(hx_PhysicsController_HitResult_property_object_get(nativeObject));
+            point = Vector3.wrap(hx_PhysicsController_HitResult_property_point_get(nativeObject));
+            normal = Vector3.wrap(hx_PhysicsController_HitResult_property_normal_get(nativeObject));
+        }
+        else
+        {
+            object.impersonate(hx_PhysicsController_HitResult_property_object_get(nativeObject));
+            point.impersonate(hx_PhysicsController_HitResult_property_point_get(nativeObject));
+            normal.impersonate(hx_PhysicsController_HitResult_property_normal_get(nativeObject));
+        }
         return cast(this);
     }
 

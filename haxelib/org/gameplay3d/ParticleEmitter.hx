@@ -30,7 +30,9 @@ class ParticleEmitter extends GameplayObject, implements Ref
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        if (this.nativeObject == null)
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
         {
             _acceleration = Vector3.make();
             _accelerationVariance = Vector3.make();
@@ -45,7 +47,7 @@ class ParticleEmitter extends GameplayObject, implements Ref
             _colorStart = Vector4.make();
             _colorStartVariance = Vector4.make();
         }
-        return super.impersonate(nativeObject);
+        return cast(this);
     }
 
     // DECL: static ParticleEmitter* create(Properties* properties);

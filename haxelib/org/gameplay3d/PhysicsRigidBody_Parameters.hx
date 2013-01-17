@@ -29,10 +29,20 @@ class PhysicsRigidBody_Parameters extends GameplayObject
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
+        var initialized = this.nativeObject != null;
         super.impersonate(nativeObject);
-        anisotropicFriction = Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get(nativeObject));
-        linearFactor = Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_linearFactor_get(nativeObject));
-        angularFactor = Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_angularFactor_get(nativeObject));
+        if (!initialized)
+        {
+            anisotropicFriction = Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get(nativeObject));
+            linearFactor = Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_linearFactor_get(nativeObject));
+            angularFactor = Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_angularFactor_get(nativeObject));
+        }
+        else
+        {
+            anisotropicFriction.impersonate(hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get(nativeObject));
+            linearFactor.impersonate(hx_PhysicsRigidBody_Parameters_property_linearFactor_get(nativeObject));
+            angularFactor.impersonate(hx_PhysicsRigidBody_Parameters_property_angularFactor_get(nativeObject));
+        }
         return cast(this);
     }
 

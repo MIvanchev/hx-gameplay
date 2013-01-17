@@ -27,8 +27,16 @@ class BoundingSphere extends GameplayObject
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
+        var initialized = this.nativeObject != null;
         super.impersonate(nativeObject);
-        center = Vector3.wrap(hx_BoundingSphere_property_center_get(nativeObject));
+        if (!initialized)
+        {
+            center = Vector3.wrap(hx_BoundingSphere_property_center_get(nativeObject));
+        }
+        else
+        {
+            center.impersonate(hx_BoundingSphere_property_center_get(nativeObject));
+        }
         return cast(this);
     }
 

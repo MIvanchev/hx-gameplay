@@ -19,11 +19,13 @@ class PhysicsCharacter extends PhysicsGhostObject
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        if (this.nativeObject == null)
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
         {
             _currentVelocity = Vector3.make();
         }
-        return super.impersonate(nativeObject);
+        return cast(this);
     }
 
     // DECL: Vector3 getCurrentVelocity() const;

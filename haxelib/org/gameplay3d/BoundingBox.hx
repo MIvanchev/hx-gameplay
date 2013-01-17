@@ -31,13 +31,19 @@ class BoundingBox extends GameplayObject, implements IBoundingBox
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        if (this.nativeObject == null)
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
         {
             _center = Vector3.make();
+            min = Vector3.wrap(hx_BoundingBox_property_min_get(nativeObject));
+            max = Vector3.wrap(hx_BoundingBox_property_max_get(nativeObject));
         }
-        super.impersonate(nativeObject);
-        min = Vector3.wrap(hx_BoundingBox_property_min_get(nativeObject));
-        max = Vector3.wrap(hx_BoundingBox_property_max_get(nativeObject));
+        else
+        {
+            min.impersonate(hx_BoundingBox_property_min_get(nativeObject));
+            max.impersonate(hx_BoundingBox_property_max_get(nativeObject));
+        }
         return cast(this);
     }
 

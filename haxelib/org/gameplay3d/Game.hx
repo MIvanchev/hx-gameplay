@@ -23,11 +23,13 @@ class Game extends GameplayObject
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        if (this.nativeObject == null)
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        if (!initialized)
         {
             _viewport = Rectangle.make();
         }
-        return super.impersonate(nativeObject);
+        return cast(this);
     }
 
     // DECL: (none)
