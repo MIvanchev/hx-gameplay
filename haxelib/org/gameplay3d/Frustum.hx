@@ -6,6 +6,7 @@ import org.gameplay3d.immutable.IFrustum;
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.util.PrimitiveArray;
 
 using org.gameplay3d.intern.NativeBinding;

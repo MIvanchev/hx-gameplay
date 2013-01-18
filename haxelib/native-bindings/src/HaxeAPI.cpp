@@ -77,7 +77,7 @@ bool TestEquivalence(T* objectA,  const value& objectB)
     return false;
 }
 
-const value& testEquivalence(value objectA, value objectB)
+value testEquivalence(value objectA, value objectB)
 {
     if (val_is_null(objectA))
     {
@@ -155,21 +155,21 @@ void FreeOutParameter(value object)
     }
 }
 
-const value& CreateOutParameter()
+value CreateOutParameter()
 {
     const value& result = alloc_abstract(k_OutParameter, new OutParameter());
     val_gc(result, FreeOutParameter);
     return result;
 }
 
-const value& SetOutParameterValue(const value& thisObj, const value& _value)
+value SetOutParameterValue(const value& thisObj, const value& _value)
 {
     void *handle = val_get_handle(thisObj, k_OutParameter);
     static_cast<OutParameter*>(handle)->_value.set(_value);
     return _value;
 }
 
-const value& GetOutParameterValue(const value& thisObj)
+value GetOutParameterValue(const value& thisObj)
 {
     void *handle = val_get_handle(thisObj, k_OutParameter);
     return static_cast<OutParameter*>(handle)->_value.get();
@@ -339,7 +339,7 @@ const char *ValueToString(value _value)
     return val_get_string(_value);
 }
 
-const value& StringToValue(const char *str)
+value StringToValue(const char *str)
 {
     if (str == NULL)
         return alloc_null();
@@ -379,7 +379,7 @@ void _FreeReference(value object)
 
 #define REFERENCE_TO_VALUE(type, name)                                                                      \
 static value refConstructor ## name;                                                                        \
-const value& Reference ## name ## ToValue (type *object, bool increaseRefCount)                             \
+value Reference ## name ## ToValue (type *object, bool increaseRefCount)                             \
 {                                                                                                           \
     if (object == NULL)                                                                                     \
         return alloc_null();                                                                                \
@@ -420,7 +420,7 @@ void FreeReference(value object)
     }
 }
 
-const value& ReferenceToValue(Ref *pointer, bool free, bool increaseRefCount)
+value ReferenceToValue(Ref *pointer, bool free, bool increaseRefCount)
 {
     if (pointer == NULL)
         return alloc_null();
@@ -440,7 +440,7 @@ const value& ReferenceToValue(Ref *pointer, bool free, bool increaseRefCount)
 static char *errorMsg = "Reference or object kind expected.";
 
 #define OBJECT_TO_VALUE(type, base_type, kind)                                      \
-const value& ObjectToValue(const type *pointer)                                     \
+value ObjectToValue(const type *pointer)                                     \
 {                                                                                   \
     if (pointer == NULL)                                                            \
         return alloc_null();                                                        \
@@ -455,7 +455,7 @@ const value& ObjectToValue(const type *pointer)                                 
 }
 
 #define OBJECT_TO_VALUE_(type, base_type, kind)                                     \
-const value& ObjectToValue(const type *pointer, bool dummy)                         \
+value ObjectToValue(const type *pointer, bool dummy)                         \
 {                                                                                   \
     if (pointer == NULL)                                                            \
         return alloc_null();                                                        \
@@ -728,7 +728,7 @@ DEFINE_PRIM(updateReference, 2)
 
 #define BEGIN_COPY_OUTSIDE_SCOPE(type)                      \
 static gameplay::type obj ## type;                          \
-const value& CopyOutsideScope(const gameplay::type& obj)    \
+value CopyOutsideScope(const gameplay::type& obj)    \
 {                                                           \
     gameplay::type& copy = obj ## type;
 

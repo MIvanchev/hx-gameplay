@@ -49,9 +49,9 @@ struct OutParameter
     }
 };
 
-const value& CreateOutParameter();
-const value& SetOutParameterValue(const value& thisObj, const value& _value);
-const value& GetOutParameterValue(const value& thisObj);
+value CreateOutParameter();
+value SetOutParameterValue(const value& thisObj, const value& _value);
+value GetOutParameterValue(const value& thisObj);
 
 /*******************************************************************************
  * HANDLE PASSING                                                              *
@@ -69,7 +69,7 @@ struct Handle
     ( ((_value) == (nullExpr)) ? alloc_null() : HandleToValue(_value) )
 
 template <typename T>
-const value& HandleToValue(const T& _value)
+value HandleToValue(const T& _value)
 {
     void *data = malloc(sizeof(Handle<T>));
     Handle<T> *handle = static_cast<Handle<T> *>(data);
@@ -121,7 +121,7 @@ void ValueToArray(value _value, TYPE*& _array)
 }
 
 template<typename TYPE>
-const value& ArrayToValue(const TYPE* _array, bool reclaim = false)
+value ArrayToValue(const TYPE* _array, bool reclaim = false)
 {
 	const void *data = static_cast<const void*>(_array);
 	const value& result = alloc_abstract(k_Array, const_cast<void*>(data));
@@ -161,10 +161,10 @@ void ValueToEnum(value _value, TYPE &_enumVal)
     _enumVal = static_cast<TYPE>(val_get_int(_value));
 }
 
-const value& StringToValue(const char *str);
+value StringToValue(const char *str);
 
 template<typename TYPE>
-const value& BufferToValue(const TYPE *data, unsigned long size)
+value BufferToValue(const TYPE *data, unsigned long size)
 {
     if (data == NULL)
         return alloc_null();
@@ -176,7 +176,7 @@ const value& BufferToValue(const TYPE *data, unsigned long size)
 }
 
 template<typename TYPE>
-const value& EnumToValue(TYPE _enumVal)
+value EnumToValue(TYPE _enumVal)
 {
     return alloc_int(_enumVal);
 }
@@ -236,17 +236,17 @@ void FreeObject(value object)
 }
 
 #define CONVERSION_PROTOTYPES(type)                               \
-    const value& ObjectToValue(const type *pointer);              \
-    const value& ObjectToValue(const type *pointer, bool dummy);  \
+    value ObjectToValue(const type *pointer);              \
+    value ObjectToValue(const type *pointer, bool dummy);  \
     void ValueToObject(value _value, type *&pointer);
 
 #define CONVERSION_PROTOTYPES_NO_FINALIZER(type)                    \
-    const value& ObjectToValue(const type *pointer, bool dummy);    \
+    value ObjectToValue(const type *pointer, bool dummy);    \
     void ValueToObject(value _value, type *&pointer);
 
 #define CONVERSION_PROTOTYPES_REF(type, name)                                               \
     void ValueToObject(value _value, type *&pointer);                                       \
-	const value& Reference ## name ## ToValue(type *object, bool increaseRefCount = true);
+	value Reference ## name ## ToValue(type *object, bool increaseRefCount = true);
 
 CONVERSION_PROTOTYPES(AIAgent::Listener)
 CONVERSION_PROTOTYPES_NO_FINALIZER(AIController)
@@ -378,13 +378,13 @@ CONVERSION_PROTOTYPES_REF(Theme::ThemeImage, Theme_ThemeImage)
 CONVERSION_PROTOTYPES_REF(VertexAttributeBinding, VertexAttributeBinding)
 CONVERSION_PROTOTYPES_REF(VerticalLayout, VerticalLayout)
 
-const value& ReferenceToValue(Ref *pointer, bool free = true, bool increaseRefCount = false);
+value ReferenceToValue(Ref *pointer, bool free = true, bool increaseRefCount = false);
 
 /*******************************************************************************
  * (TODO)                                                                      *
  ******************************************************************************/
 
-#define COPY_OUTSIDE_SCOPE_PROTOTYPE(type) const value& CopyOutsideScope(const gameplay::type& obj);
+#define COPY_OUTSIDE_SCOPE_PROTOTYPE(type) value CopyOutsideScope(const gameplay::type& obj);
 
 COPY_OUTSIDE_SCOPE_PROTOTYPE(Matrix)
 COPY_OUTSIDE_SCOPE_PROTOTYPE(Quaternion)
