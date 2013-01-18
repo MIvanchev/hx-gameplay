@@ -121,6 +121,33 @@ void hx_Matrix_add_Flt_Mat(value thisObj, value scalar, value dst)
 }
 DEFINE_PRIM(hx_Matrix_add_Flt_Mat, 3);
 
+// DECL: static void createBillboard(const Vector3& objectPosition, const Vector3& cameraPosition,
+void hx_Matrix_static_createBillboard_V3X3_Mat(value objectPosition, value cameraPosition, value cameraUpVector, value dst)
+{
+    Vector3 *_objectPosition, *_cameraPosition, *_cameraUpVector;
+    Matrix *_dst;
+    ValueToObject(objectPosition, _objectPosition);
+    ValueToObject(cameraPosition, _cameraPosition);
+    ValueToObject(cameraUpVector, _cameraUpVector);
+    ValueToObject(dst, _dst);
+    Matrix::createBillboard(*_objectPosition, *_cameraPosition, *_cameraUpVector, _dst);
+}
+DEFINE_PRIM(hx_Matrix_static_createBillboard_V3X3_Mat, 4);
+
+// DECL: static void createBillboard(const Vector3& objectPosition, const Vector3& cameraPosition,
+void hx_Matrix_static_createBillboard_V3X4_Mat(value objectPosition, value cameraPosition, value cameraUpVector, value cameraForwardVector, value dst)
+{
+    Vector3 *_objectPosition, *_cameraPosition, *_cameraUpVector, *_cameraForwardVector;
+    Matrix *_dst;
+    ValueToObject(objectPosition, _objectPosition);
+    ValueToObject(cameraPosition, _cameraPosition);
+    ValueToObject(cameraUpVector, _cameraUpVector);
+    ValueToObject(cameraForwardVector, _cameraForwardVector);
+    ValueToObject(dst, _dst);
+    Matrix::createBillboard(*_objectPosition, *_cameraPosition, *_cameraUpVector, *_cameraForwardVector, _dst);
+}
+DEFINE_PRIM(hx_Matrix_static_createBillboard_V3X4_Mat, 5);
+
 // DECL: static void createLookAt(const Vector3& eyePosition, const Vector3& targetPosition, const Vector3& up, Matrix* dst);
 void hx_Matrix_static_createLookAt_V3X3_Mat(value eyePosition, value targetPosition, value up, value dst)
 {
@@ -216,6 +243,17 @@ void hx_Matrix_static_createPerspective(value fieldOfView, value aspectRatio, va
     Matrix::createPerspective(_fieldOfView, _aspectRatio, _zNearPlane, _zFarPlane, _dst);
 }
 DEFINE_PRIM(hx_Matrix_static_createPerspective, 5);
+
+// DECL: static void createReflection(const Plane& plane, Matrix* dst);
+void hx_Matrix_static_createReflection(value plane, value dst)
+{
+    Plane *_plane;
+    Matrix *_dst;
+    ValueToObject(plane, _plane);
+    ValueToObject(dst, _dst);
+    Matrix::createReflection(*_plane, _dst);
+}
+DEFINE_PRIM(hx_Matrix_static_createReflection, 2);
 
 // DECL: static void createRotation(const Quaternion& quat, Matrix* dst);
 void hx_Matrix_static_createRotation_Qtrn_Mat(value quat, value dst)

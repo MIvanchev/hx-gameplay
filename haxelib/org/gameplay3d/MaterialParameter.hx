@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector2;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
+import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.intern.impl.AnimationTargetImpl;
 import org.gameplay3d.util.INativeArray;
 import org.gameplay3d.util.PrimitiveArray;
@@ -60,8 +61,8 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
         return hx_MaterialParameter_getName(nativeObject);
     }
 
-    // DECL: Texture::Sampler* getSampler() const;
-    public function getSampler():Texture_Sampler
+    // DECL: Texture::Sampler* getSampler(unsigned int index = 0) const;
+    public function getSampler(index:Int = 0):Texture_Sampler
     {
         return Texture_Sampler.wrap(hx_MaterialParameter_getSampler(nativeObject));
     }
@@ -94,6 +95,12 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
     public function setValue_Smplr(sampler:Texture_Sampler):Void
     {
         hx_MaterialParameter_setValue_Smplr(nativeObject, sampler.native());
+    }
+
+    // DECL: void setValue(const Texture::Sampler** samplers, unsigned int count);
+    public function setValue_ArrSmplr_Int(samplers:Array<Texture_Sampler>, count:Int = 1):Void
+    {
+        hx_MaterialParameter_setValue_ArrSmplr_Int(nativeObject, ConversionTools.insertArray(samplers), count);
     }
 
     // DECL: void setValue(const Vector2& value);
@@ -164,12 +171,13 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
     static var hx_MaterialParameter_getAnimationPropertyComponentCount:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_getAnimationPropertyComponentCount", 2);
     static var hx_MaterialParameter_getAnimationPropertyValue:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_getAnimationPropertyValue", 3);
     static var hx_MaterialParameter_getName:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_getName", 1);
-    static var hx_MaterialParameter_getSampler:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_getSampler", 1);
+    static var hx_MaterialParameter_getSampler:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_getSampler", 2);
     static var hx_MaterialParameter_setAnimationPropertyValue:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setAnimationPropertyValue", 4);
     static var hx_MaterialParameter_setValue_Str_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Str_Bool", 3);
     static var hx_MaterialParameter_setValue_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Mat", 2);
     static var hx_MaterialParameter_setValue_ArrMat_Int:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrMat_Int", 3);
     static var hx_MaterialParameter_setValue_Smplr:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Smplr", 2);
+    static var hx_MaterialParameter_setValue_ArrSmplr_Int:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrSmplr_Int", 3);
     static var hx_MaterialParameter_setValue_V2:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_V2", 2);
     static var hx_MaterialParameter_setValue_ArrV2_Int:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrV2_Int", 3);
     static var hx_MaterialParameter_setValue_V3:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_V3", 2);

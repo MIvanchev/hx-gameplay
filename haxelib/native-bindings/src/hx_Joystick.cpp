@@ -22,6 +22,15 @@ value hx_Joystick_static_create(value id, value style)
 }
 DEFINE_PRIM(hx_Joystick_static_create, 2);
 
+// DECL: inline const unsigned int getIndex() const;
+value hx_Joystick_getIndex(value thisObj)
+{
+    Joystick *_thisObj;
+    ValueToObject(thisObj, _thisObj);
+    return alloc_int(_thisObj->getIndex());
+}
+DEFINE_PRIM(hx_Joystick_getIndex, 1);
+
 // DECL: inline const Vector2& getInnerRegionSize() const;
 value hx_Joystick_getInnerRegionSize(value thisObj)
 {

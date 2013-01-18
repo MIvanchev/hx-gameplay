@@ -93,6 +93,18 @@ class Matrix extends GameplayObject, implements IMatrix
         hx_Matrix_add_Flt_Mat(nativeObject, scalar, dst.native());
     }
 
+    // DECL: static void createBillboard(const Vector3& objectPosition, const Vector3& cameraPosition,
+    public static function createBillboard_V3X3_Mat(objectPosition:Vector3, cameraPosition:Vector3, cameraUpVector:Vector3, dst:Matrix):Void
+    {
+        hx_Matrix_static_createBillboard_V3X3_Mat(objectPosition.native(), cameraPosition.native(), cameraUpVector.native(), dst.native());
+    }
+
+    // DECL: static void createBillboard(const Vector3& objectPosition, const Vector3& cameraPosition,
+    public static function createBillboard_V3X4_Mat(objectPosition:Vector3, cameraPosition:Vector3, cameraUpVector:Vector3, cameraForwardVector:Vector3, dst:Matrix):Void
+    {
+        hx_Matrix_static_createBillboard_V3X4_Mat(objectPosition.native(), cameraPosition.native(), cameraUpVector.native(), cameraForwardVector.native(), dst.native());
+    }
+
     // DECL: static void createLookAt(const Vector3& eyePosition, const Vector3& targetPosition, const Vector3& up, Matrix* dst);
     public static function createLookAt_V3X3_Mat(eyePosition:IVector3, targetPosition:IVector3, up:IVector3, dst:Matrix):Void
     {
@@ -121,6 +133,12 @@ class Matrix extends GameplayObject, implements IMatrix
     public static function createPerspective(fieldOfView:Float, aspectRatio:Float, zNearPlane:Float, zFarPlane:Float, dst:Matrix):Void
     {
         hx_Matrix_static_createPerspective(fieldOfView, aspectRatio, zNearPlane, zFarPlane, dst.native());
+    }
+
+    // DECL: static void createReflection(const Plane& plane, Matrix* dst);
+    public static function createReflection(plane:Plane, dst:Matrix):Void
+    {
+        hx_Matrix_static_createReflection(plane.native(), dst.native());
     }
 
     // DECL: static void createRotation(const Quaternion& quat, Matrix* dst);
@@ -589,13 +607,16 @@ class Matrix extends GameplayObject, implements IMatrix
     static var hx_Matrix_add_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_add_Mat", 2);
     static var hx_Matrix_add_Flt:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_add_Flt", 2);
     static var hx_Matrix_add_Flt_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_add_Flt_Mat", 3);
+    static var hx_Matrix_static_createBillboard_V3X3_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createBillboard_V3X3_Mat", 4);
+    static var hx_Matrix_static_createBillboard_V3X4_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createBillboard_V3X4_Mat", 5);
     static var hx_Matrix_static_createLookAt_V3X3_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createLookAt_V3X3_Mat", 4);
     static var hx_Matrix_static_createLookAt_FltX9_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createLookAt_FltX9_Mat", -1);
     static var hx_Matrix_static_createOrthographic:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createOrthographic", 5);
     static var hx_Matrix_static_createOrthographicOffCenter:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createOrthographicOffCenter", -1);
     static var hx_Matrix_static_createPerspective:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createPerspective", 5);
+    static var hx_Matrix_static_createReflection:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createPerspective", 5);
     static var hx_Matrix_static_createRotation_Qtrn_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createRotation_Qtrn_Mat", 2);
-    static var hx_Matrix_static_createRotation_V3_Flt_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createRotation_V3_Flt_Mat", 3);
+    static var hx_Matrix_static_createRotation_V3_Flt_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createReflection", 2);
     static var hx_Matrix_static_createRotationX:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createRotationX", 2);
     static var hx_Matrix_static_createRotationY:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createRotationY", 2);
     static var hx_Matrix_static_createRotationZ:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createRotationZ", 2);

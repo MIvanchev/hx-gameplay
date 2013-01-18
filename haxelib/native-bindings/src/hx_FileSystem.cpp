@@ -16,6 +16,14 @@ value hx_FileSystem_static_fileExists(value filePath)
 }
 DEFINE_PRIM(hx_FileSystem_static_fileExists, 1);
 
+// DECL: static std::string getExtension(const char* path);
+value hx_FileSystem_static_getExtension(value path)
+{
+    const char *_path = ValueToString(path);
+    return StringToValue(FileSystem::getExtension(_path).c_str());
+}
+DEFINE_PRIM(hx_FileSystem_static_getExtension, 1);
+
 // DECL: static const char* getResourcePath();
 value hx_FileSystem_static_getResourcePath()
 {

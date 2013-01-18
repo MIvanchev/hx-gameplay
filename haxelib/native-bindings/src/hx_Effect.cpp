@@ -133,6 +133,29 @@ void hx_Effect_setValue_Unif_Smplr(value thisObj, value uniform, value sampler)
 }
 DEFINE_PRIM(hx_Effect_setValue_Unif_Smplr, 3);
 
+// DECL: void setValue(Uniform* uniform, const Texture::Sampler** values, unsigned int count);
+void hx_Effect_setValue_Unif_ArrSmplr_Int(value thisObj, value uniform, value values, value count)
+{
+    Effect *_thisObj;
+    Uniform *_uniform;
+    Texture::Sampler **_values = NULL, *sampler;
+    unsigned int _count = ValueToUint(count);
+    ValueToObject(thisObj, _thisObj);
+    ValueToObject(uniform, _uniform);
+
+	_values = new Texture::Sampler*[_count];
+	for (int index = 0; index < _count; index++)
+	{
+		ValueToObject(val_array_i(values, index), sampler);
+		_values[index] = sampler;
+	}
+
+    _thisObj->setValue(_uniform, const_cast<const Texture::Sampler**>(_values), _count);
+
+	SAFE_DELETE_ARRAY(_values);
+}
+DEFINE_PRIM(hx_Effect_setValue_Unif_ArrSmplr_Int, 4);
+
 // DECL: void setValue(Uniform* uniform, const Vector2& value);
 void hx_Effect_setValue_Unif_V2(value thisObj, value uniform, value value)
 {

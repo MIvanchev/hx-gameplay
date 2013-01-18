@@ -76,6 +76,12 @@ class Model extends GameplayObject, implements Ref
         hx_Model_setMaterial_Mtrl_Int(nativeObject, material.native(), partIndex);
     }
 
+    // DECL: void setNode(Node* node);
+    public function setNode(node:Node):Void
+    {
+        hx_Model_setNode(nativeObject, node.native());
+    }
+
     /***************************************************************************
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
@@ -91,6 +97,7 @@ class Model extends GameplayObject, implements Ref
     static var hx_Model_setMaterial_Str_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Model_setMaterial_Str_Int", 3);
     static var hx_Model_setMaterial_StrX3_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Model_setMaterial_StrX3_Int", 5);
     static var hx_Model_setMaterial_Mtrl_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Model_setMaterial_Mtrl_Int", 3);
+    static var hx_Model_setNode:Dynamic = cpp.Lib.load("gameplay", "hx_Model_setNode", 2);
 }
 
 // END

@@ -185,12 +185,6 @@ class Game extends GameplayObject
         return hx_Game_getGamepadCount(nativeObject);
     }
 
-    // DECL: inline unsigned int getGamepadsConnected();
-    public function getGamepadsConnected():Int
-    {
-        return hx_Game_getGamepadsConnected(nativeObject);
-    }
-
     // DECL: inline unsigned int getHeight() const;
     public function getHeight():Int
     {
@@ -427,7 +421,6 @@ class Game extends GameplayObject
     static var hx_Game_static_getGameTime:Dynamic = cpp.Lib.load("gameplay", "hx_Game_static_getGameTime", 0);
     static var hx_Game_getGamepad:Dynamic = cpp.Lib.load("gameplay", "hx_Game_getGamepad", 2);
     static var hx_Game_getGamepadCount:Dynamic = cpp.Lib.load("gameplay", "hx_Game_getGamepadCount", 1);
-    static var hx_Game_getGamepadsConnected:Dynamic = cpp.Lib.load("gameplay", "hx_Game_getGamepadsConnected", 1);
     static var hx_Game_getHeight:Dynamic = cpp.Lib.load("gameplay", "hx_Game_getHeight", 1);
     static var hx_Game_static_getInstance:Dynamic = cpp.Lib.load("gameplay", "hx_Game_static_getInstance", 0);
     static var hx_Game_getPhysicsController:Dynamic = cpp.Lib.load("gameplay", "hx_Game_getPhysicsController", 1);

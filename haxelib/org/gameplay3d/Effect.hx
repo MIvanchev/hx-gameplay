@@ -89,6 +89,12 @@ class Effect extends GameplayObject, implements Ref
         hx_Effect_setValue_Unif_Smplr(nativeObject, uniform.native(), sampler.native());
     }
 
+    // DECL: void setValue(Uniform* uniform, const Texture::Sampler** values, unsigned int count);
+    public function setValue(uniform:Uniform, values:Array<Texture_Sampler>, count:Int):Void
+    {
+        hx_Effect_setValue_Unif_ArrSmplr_Int(nativeObject, uniform.native(), ConversionTools.insertArray(values), count);
+    }
+
     // DECL: void setValue(Uniform* uniform, const Vector2& value);
     public function setValue_Unif_V2(uniform:Uniform, value:IVector2):Void
     {
@@ -165,6 +171,7 @@ class Effect extends GameplayObject, implements Ref
     static var hx_Effect_setValue_Unif_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Mat", 3);
     static var hx_Effect_setValue_Unif_ArrMat_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrMat_Int", 4);
     static var hx_Effect_setValue_Unif_Smplr:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Smplr", 3);
+    static var hx_Effect_setValue_Unif_ArrSmplr_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrSmplr_Int", 4);
     static var hx_Effect_setValue_Unif_V2:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_V2", 3);
     static var hx_Effect_setValue_Unif_ArrV2_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrV2_Int", 4);
     static var hx_Effect_setValue_Unif_V3:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_V3", 3);

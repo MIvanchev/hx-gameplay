@@ -42,6 +42,12 @@ class Camera extends Transform_ListenerImpl, implements Ref
         return cast(this);
     }
 
+    // DECL: static Camera* create(Properties* properties);
+    public static function create(properties:Properties):Camera
+    {
+        return Camera.wrap(hx_Camera_static_create(properties.native()));
+    }
+
     // DECL: static Camera* createOrthographic(float zoomX, float zoomY, float aspectRatio, float nearPlane, float farPlane);
     public static function createOrthographic(zoomX:Float, zoomY:Float, aspectRatio:Float, nearPlane:Float, farPlane:Float):Camera
     {
@@ -207,6 +213,7 @@ class Camera extends Transform_ListenerImpl, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
+    static var hx_Camera_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_static_create", 1);
     static var hx_Camera_static_createOrthographic:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_static_createOrthographic", 5);
     static var hx_Camera_static_createPerspective:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_static_createPerspective", 4);
     static var hx_Camera_getAspectRatio:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getAspectRatio", 1);

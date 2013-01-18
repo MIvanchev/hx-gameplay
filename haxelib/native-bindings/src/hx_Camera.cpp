@@ -1,5 +1,14 @@
 #include "HaxeAPI.h"
 
+// DECL: static Camera* create(Properties* properties);
+value hx_Camera_static_create(value properties)
+{
+    Properties *_properties;
+    ValueToObject(properties, _properties);
+    return ReferenceToValue(Camera::create(_properties));
+}
+DEFINE_PRIM(hx_Camera_static_create, 1);
+
 // DECL: static Camera* createOrthographic(float zoomX, float zoomY, float aspectRatio, float nearPlane, float farPlane);
 value hx_Camera_static_createOrthographic(value zoomX, value zoomY, value aspectRatio, value nearPlane, value farPlane)
 {

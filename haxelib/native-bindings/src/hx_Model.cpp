@@ -111,5 +111,16 @@ void hx_Model_setMaterial_Mtrl_Int(value thisObj, value material, value partInde
 }
 DEFINE_PRIM(hx_Model_setMaterial_Mtrl_Int, 3);
 
+// DECL: void setNode(Node* node);
+void hx_Model_setNode(value thisObj, value node)
+{
+    Model *_thisObj;
+    Node *_node;
+    ValueToObject(thisObj, _thisObj);
+    ValueToObject(node, _node);
+    _thisObj->setNode(_node);
+}
+DEFINE_PRIM(hx_Model_setNode, 2);
+
 // END
 //

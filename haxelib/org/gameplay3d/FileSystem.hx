@@ -26,6 +26,12 @@ class FileSystem extends GameplayObject
         return hx_FileSystem_static_fileExists(filePath);
     }
 
+    // DECL: static std::string getExtension(const char* path);
+    public static function getExtension(path:String):String
+    {
+        return hx_FileSystem_static_getExtension(path);
+    }
+
     // DECL: static const char* getResourcePath();
     public static function getResourcePath():String
     {
@@ -104,6 +110,7 @@ class FileSystem extends GameplayObject
 
     static var hx_FileSystem_static_createFileFromAsset:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_createFileFromAsset", 1);
     static var hx_FileSystem_static_fileExists:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_fileExists", 1);
+    static var hx_FileSystem_static_getExtension:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_getExtension", 1);
     static var hx_FileSystem_static_getResourcePath:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_getResourcePath", 0);
     static var hx_FileSystem_static_isAbsolutePath:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_isAbsolutePath", 1);
     static var hx_FileSystem_static_listFiles:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_listFiles", 2);

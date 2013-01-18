@@ -73,14 +73,15 @@ value hx_MaterialParameter_getName(value thisObj)
 }
 DEFINE_PRIM(hx_MaterialParameter_getName, 1);
 
-// DECL: Texture::Sampler* getSampler() const;
-value hx_MaterialParameter_getSampler(value thisObj)
+// DECL: Texture::Sampler* getSampler(unsigned int index = 0) const;
+value hx_MaterialParameter_getSampler(value thisObj, value index)
 {
     MaterialParameter *_thisObj;
+    unsigned int _index = ValueToUint(index);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getSampler(), true, true);
+    return ReferenceToValue(_thisObj->getSampler(_index), true, true);
 }
-DEFINE_PRIM(hx_MaterialParameter_getSampler, 1);
+DEFINE_PRIM(hx_MaterialParameter_getSampler, 2);
 
 // DECL: void setAnimationPropertyValue(int propertyId, AnimationValue* value, float blendWeight = 1.0f);
 void hx_MaterialParameter_setAnimationPropertyValue(value thisObj, value propertyId, value val, value blendWeight)
@@ -139,6 +140,25 @@ void hx_MaterialParameter_setValue_Smplr(value thisObj, value sampler)
     _thisObj->setValue(_sampler);
 }
 DEFINE_PRIM(hx_MaterialParameter_setValue_Smplr, 2);
+
+// DECL: void setValue(const Texture::Sampler** samplers, unsigned int count);
+void hx_MaterialParameter_setValue_ArrSmplr_Int(value thisObj, value samplers, value count)
+{
+    MaterialParameter *_thisObj;
+    Texture::Sampler **_samplers = NULL, *sampler;
+    unsigned int _count = ValueToUint(count);
+    ValueToObject(thisObj, _thisObj);
+
+	_samplers = new Texture::Sampler*[_count];
+	for (int index = 0; index < _count; index++)
+	{
+		ValueToObject(val_array_i(samplers, index), sampler);
+		_samplers[index] = sampler;
+	}
+
+    _thisObj->setValue(const_cast<const Texture::Sampler**>(_samplers), _count);
+}
+DEFINE_PRIM(hx_MaterialParameter_setValue_ArrSmplr_Int, 3);
 
 // DECL: void setValue(const Vector2& value);
 void hx_MaterialParameter_setValue_V2(value thisObj, value value)

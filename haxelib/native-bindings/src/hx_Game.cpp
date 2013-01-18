@@ -396,15 +396,6 @@ value hx_Game_getGamepadCount(value thisObj)
 }
 DEFINE_PRIM(hx_Game_getGamepadCount, 1);
 
-// DECL: inline unsigned int getGamepadsConnected();
-value hx_Game_getGamepadsConnected(value thisObj)
-{
-    Game *_thisObj;
-    ValueToObject(thisObj, _thisObj);
-    return alloc_int(_thisObj->getGamepadsConnected());
-}
-DEFINE_PRIM(hx_Game_getGamepadsConnected, 1);
-
 // DECL: inline unsigned int getHeight() const;
 value hx_Game_getHeight(value thisObj)
 {

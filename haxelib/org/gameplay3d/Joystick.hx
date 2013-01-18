@@ -25,6 +25,12 @@ class Joystick extends Control
         return Joystick.wrap(hx_Joystick_static_create(id, style.native()));
     }
 
+    // DECL: inline const unsigned int getIndex() const;
+    public function getIndex():Int
+    {
+        return hx_Joystick_getIndex(nativeObject);
+    }
+
     // DECL: inline const Vector2& getInnerRegionSize() const;
     public function getInnerRegionSize():IVector2
     {
@@ -79,6 +85,7 @@ class Joystick extends Control
 
     static var hx_Joystick_addListener:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_addListener", 3);
     static var hx_Joystick_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_static_create", 2);
+    static var hx_Joystick_getIndex:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_getIndex", 1);
     static var hx_Joystick_getInnerRegionSize:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_getInnerRegionSize", 1);
     static var hx_Joystick_getOuterRegionSize:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_getOuterRegionSize", 1);
     static var hx_Joystick_getType:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_getType", 1);
