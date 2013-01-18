@@ -123,11 +123,11 @@ void ValueToArray(value _value, TYPE*& _array)
 template<typename TYPE>
 value ArrayToValue(const TYPE* _array, bool reclaim = false)
 {
-	const void *data = static_cast<const void*>(_array);
-	const value& result = alloc_abstract(k_Array, const_cast<void*>(data));
-	if (reclaim)
-		val_gc(result, &FreeArray<TYPE>);
-	return result;
+    const void *data = static_cast<const void*>(_array);
+    const value& result = alloc_abstract(k_Array, const_cast<void*>(data));
+    if (reclaim)
+        val_gc(result, &FreeArray<TYPE>);
+    return result;
 }
 
 /*******************************************************************************
@@ -235,18 +235,18 @@ void FreeObject(value object)
     }
 }
 
-#define CONVERSION_PROTOTYPES(type)                               \
-    value ObjectToValue(const type *pointer);              \
-    value ObjectToValue(const type *pointer, bool dummy);  \
+#define CONVERSION_PROTOTYPES(type)                         \
+    value ObjectToValue(const type *pointer);               \
+    value ObjectToValue(const type *pointer, bool dummy);   \
     void ValueToObject(value _value, type *&pointer);
 
-#define CONVERSION_PROTOTYPES_NO_FINALIZER(type)                    \
-    value ObjectToValue(const type *pointer, bool dummy);    \
+#define CONVERSION_PROTOTYPES_NO_FINALIZER(type)            \
+    value ObjectToValue(const type *pointer, bool dummy);   \
     void ValueToObject(value _value, type *&pointer);
 
-#define CONVERSION_PROTOTYPES_REF(type, name)                                               \
-    void ValueToObject(value _value, type *&pointer);                                       \
-	value Reference ## name ## ToValue(type *object, bool increaseRefCount = true);
+#define CONVERSION_PROTOTYPES_REF(type, name)                                       \
+    void ValueToObject(value _value, type *&pointer);                               \
+    value Reference ## name ## ToValue(type *object, bool increaseRefCount = true);
 
 CONVERSION_PROTOTYPES(AIAgent::Listener)
 CONVERSION_PROTOTYPES_NO_FINALIZER(AIController)

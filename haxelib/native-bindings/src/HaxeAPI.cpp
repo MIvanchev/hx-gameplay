@@ -205,7 +205,7 @@ void FreeHandle(value object)
 
     val_gc(object, NULL);
     if (!val_is_null(object))
-		free(val_get_handle(object, k_Handle));
+        free(val_get_handle(object, k_Handle));
 }
 
 /*******************************************************************************
@@ -379,7 +379,7 @@ void _FreeReference(value object)
 
 #define REFERENCE_TO_VALUE(type, name)                                                                      \
 static value refConstructor ## name;                                                                        \
-value Reference ## name ## ToValue (type *object, bool increaseRefCount)                             \
+value Reference ## name ## ToValue (type *object, bool increaseRefCount)                                    \
 {                                                                                                           \
     if (object == NULL)                                                                                     \
         return alloc_null();                                                                                \
@@ -440,7 +440,7 @@ value ReferenceToValue(Ref *pointer, bool free, bool increaseRefCount)
 static char *errorMsg = "Reference or object kind expected.";
 
 #define OBJECT_TO_VALUE(type, base_type, kind)                                      \
-value ObjectToValue(const type *pointer)                                     \
+value ObjectToValue(const type *pointer)                                            \
 {                                                                                   \
     if (pointer == NULL)                                                            \
         return alloc_null();                                                        \
@@ -455,16 +455,15 @@ value ObjectToValue(const type *pointer)                                     \
 }
 
 #define OBJECT_TO_VALUE_(type, base_type, kind)                                     \
-value ObjectToValue(const type *pointer, bool dummy)                         \
+value ObjectToValue(const type *pointer, bool dummy)                                \
 {                                                                                   \
     if (pointer == NULL)                                                            \
         return alloc_null();                                                        \
                                                                                     \
     const base_type *base = static_cast<const base_type*>(pointer);                 \
     const void *handle = static_cast<const void*>(base);                            \
-    const value& result =  alloc_abstract(kind, const_cast<void*>(handle));         \
-                                                                                    \
-    return result;                                                                  \
+    uintptr_t storage = reinterpret_cast<uintptr_t>(handle);                        \
+    return alloc_float(static_cast<double>(storage));                               \
 }
 
 #define VALUE_TO_OBJECT(type, base_type)                                                        \
@@ -472,6 +471,13 @@ void ValueToObject(value _value, type *&pointer)                                
 {                                                                                               \
     if (val_is_null(_value))                                                                    \
         pointer = NULL;                                                                         \
+    else if (val_is_float(_value))                                                              \
+    {                                                                                           \
+        double storage = ValueToDouble(_value);                                                 \
+        uintptr_t ptr = static_cast<uintptr_t>(storage);                                        \
+        base_type *base = reinterpret_cast<base_type*>(ptr);                                    \
+        pointer = dynamic_cast<type*>(base);                                                    \
+    }                                                                                           \
     else if (val_is_kind(_value, k_Object))                                                     \
     {                                                                                           \
         base_type *base = static_cast<base_type*>(val_data(_value));                            \
@@ -726,10 +732,10 @@ DEFINE_PRIM(updateReference, 2)
  * (TODO)                                                                      *
  ******************************************************************************/
 
-#define BEGIN_COPY_OUTSIDE_SCOPE(type)                      \
-static gameplay::type obj ## type;                          \
-value CopyOutsideScope(const gameplay::type& obj)    \
-{                                                           \
+#define BEGIN_COPY_OUTSIDE_SCOPE(type)              \
+static gameplay::type obj ## type;                  \
+value CopyOutsideScope(const gameplay::type& obj)	\
+{                                                   \
     gameplay::type& copy = obj ## type;
 
 #define END_COPY_OUTSIDE_SCOPE          \
