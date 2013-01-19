@@ -14,6 +14,9 @@ class RenderState_AutoBinding
     public static inline var CAMERA_WORLD_POSITION = 9;
     public static inline var CAMERA_VIEW_POSITION = 10;
     public static inline var MATRIX_PALETTE = 11;
+    public static inline var SCENE_AMBIENT_COLOR = 12;
+    public static inline var SCENE_LIGHT_COLOR = 13;
+    public static inline var SCENE_LIGHT_DIRECTION = 14;
 }
 
 // END

@@ -97,10 +97,10 @@ class PhysicsRigidBody extends PhysicsCollisionObject
         return _gravity.impersonate(hx_PhysicsRigidBody_getGravity(nativeObject));
     }
 
-    // DECL: float getHeight(float x, float y, Vector3* normal = NULL) const;
-    public function getHeight(x:Float, y:Float, normal:Vector3 = null):Float
+    // DECL: float getHeight(float x, float z) const;
+    public function getHeight(x:Float, z:Float):Float
     {
-        return hx_PhysicsRigidBody_getHeight(nativeObject, x, y, normal.native());
+        return hx_PhysicsRigidBody_getHeight(nativeObject, x, z);
     }
 
     // DECL: inline float getLinearDamping() const;
@@ -261,7 +261,7 @@ class PhysicsRigidBody extends PhysicsCollisionObject
     static var hx_PhysicsRigidBody_getAnisotropicFriction:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getAnisotropicFriction", 1);
     static var hx_PhysicsRigidBody_getFriction:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getFriction", 1);
     static var hx_PhysicsRigidBody_getGravity:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getGravity", 1);
-    static var hx_PhysicsRigidBody_getHeight:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getHeight", 4);
+    static var hx_PhysicsRigidBody_getHeight:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getHeight", 3);
     static var hx_PhysicsRigidBody_getLinearDamping:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getLinearDamping", 1);
     static var hx_PhysicsRigidBody_getLinearFactor:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getLinearFactor", 1);
     static var hx_PhysicsRigidBody_getLinearVelocity:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getLinearVelocity", 1);

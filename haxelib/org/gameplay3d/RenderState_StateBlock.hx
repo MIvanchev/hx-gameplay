@@ -58,6 +58,12 @@ class RenderState_StateBlock extends GameplayObject, implements Ref
         hx_RenderState_StateBlock_setDepthWrite(nativeObject, enabled);
     }
 
+    // DECL: void setDepthFunction(DepthFunction func);
+    public function setDepthFunction(func:Int):Void
+    {
+        hx_RenderState_StateBlock_setDepthFunction(nativeObject, func);
+    }
+
     // DECL: void setState(const char* name, const char* value);
     public function setState(name:String, value:String):Void
     {
@@ -76,6 +82,7 @@ class RenderState_StateBlock extends GameplayObject, implements Ref
     static var hx_RenderState_StateBlock_setCullFace:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setCullFace", 2);
     static var hx_RenderState_StateBlock_setDepthTest:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setDepthTest", 2);
     static var hx_RenderState_StateBlock_setDepthWrite:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setDepthWrite", 2);
+    static var hx_RenderState_StateBlock_setDepthFunction:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setDepthFunction", 2);
     static var hx_RenderState_StateBlock_setState:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setState", 3);
 }
 

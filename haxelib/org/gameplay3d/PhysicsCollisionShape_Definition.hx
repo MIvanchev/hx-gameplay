@@ -22,6 +22,12 @@ class PhysicsCollisionShape_Definition extends GameplayObject
         return new PhysicsCollisionShape_Definition(constructNativeObject_ColShpDef(definition));
     }
 
+    // DECL: bool isEmpty() const;
+    public function isEmpty():Bool
+    {
+        return hx_PhysicsCollisionShape_Definition_isEmpty();
+    }
+
     /***************************************************************************
      * NATIVE OBJECT CONSTRUCTORS                                              *
      **************************************************************************/
@@ -44,6 +50,7 @@ class PhysicsCollisionShape_Definition extends GameplayObject
 
     static var hx_PhysicsCollisionShape_Definition_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_Definition_Construct", 0);
     static var hx_PhysicsCollisionShape_Definition_Construct_ColShpDef:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_Definition_Construct_ColShpDef", 1);
+    static var hx_PhysicsCollisionShape_Definition_isEmpty:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_Definition_isEmpty", 1);
 }
 
 // END

@@ -101,17 +101,15 @@ value hx_PhysicsRigidBody_getGravity(value thisObj)
 DEFINE_PRIM(hx_PhysicsRigidBody_getGravity, 1);
 
 // DECL: float getHeight(float x, float y, Vector3* normal = NULL) const;
-value hx_PhysicsRigidBody_getHeight(value thisObj, value x, value y, value normal)
+value hx_PhysicsRigidBody_getHeight(value thisObj, value x, value z)
 {
     PhysicsRigidBody *_thisObj;
     float _x = ValueToFloat(x);
-    float _y = ValueToFloat(y);
-    Vector3 *_normal;
+    float _z = ValueToFloat(z);
     ValueToObject(thisObj, _thisObj);
-    ValueToObject(normal, _normal);
-    return alloc_float(_thisObj->getHeight(_x, _y, _normal));
+    return alloc_float(_thisObj->getHeight(_x, _z));
 }
-DEFINE_PRIM(hx_PhysicsRigidBody_getHeight, 4);
+DEFINE_PRIM(hx_PhysicsRigidBody_getHeight, 3);
 
 // DECL: inline float getLinearDamping() const;
 value hx_PhysicsRigidBody_getLinearDamping(value thisObj)

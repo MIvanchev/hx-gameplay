@@ -42,10 +42,16 @@ class PhysicsCollisionShape extends GameplayObject, implements Ref
         return hx_PhysicsCollisionShape_getType(nativeObject);
     }
 
-    // DECL: static PhysicsCollisionShape::Definition heightfield(Image* image);
-    public static function heightfield(image:Image):PhysicsCollisionShape_Definition
+    // DECL: static PhysicsCollisionShape::Definition heightfield();
+    public static function heightfield():PhysicsCollisionShape_Definition
     {
-        return PhysicsCollisionShape_Definition.wrap(hx_PhysicsCollisionShape_static_heightfield(image.native()));
+        return PhysicsCollisionShape_Definition.wrap(hx_PhysicsCollisionShape_static_heightfield());
+    }
+
+    // DECL: static PhysicsCollisionShape::Definition heightfield(HeightField* heightfield);
+    public static function heightfield_HghtFld(heightfield:HeightField):PhysicsCollisionShape_Definition
+    {
+        return PhysicsCollisionShape_Definition.wrap(hx_PhysicsCollisionShape_static_heightfield_HghtFld(heightfield.native()));
     }
 
     // DECL: static PhysicsCollisionShape::Definition mesh(Mesh* mesh);
@@ -75,7 +81,8 @@ class PhysicsCollisionShape extends GameplayObject, implements Ref
     static var hx_PhysicsCollisionShape_static_capsule:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_static_capsule", 0);
     static var hx_PhysicsCollisionShape_static_capsule_FltX2_V3_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_static_capsule_FltX2_V3_Bool", 4);
     static var hx_PhysicsCollisionShape_getType:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_getType", 1);
-    static var hx_PhysicsCollisionShape_static_heightfield:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_static_heightfield", 1);
+    static var hx_PhysicsCollisionShape_static_heightfield:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_static_heightfield", 0);
+    static var hx_PhysicsCollisionShape_static_heightfield_HghtFld:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_static_heightfield_HghtFld", 1);
     static var hx_PhysicsCollisionShape_static_mesh:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_static_mesh", 1);
     static var hx_PhysicsCollisionShape_static_sphere:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_static_sphere", 0);
     static var hx_PhysicsCollisionShape_static_sphere_Flt_V3_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_static_sphere_Flt_V3_Bool", 3);

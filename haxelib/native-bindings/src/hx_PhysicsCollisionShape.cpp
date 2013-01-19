@@ -46,14 +46,21 @@ value hx_PhysicsCollisionShape_getType(value thisObj)
 }
 DEFINE_PRIM(hx_PhysicsCollisionShape_getType, 1);
 
-// DECL: static PhysicsCollisionShape::Definition heightfield(Image* image);
-value hx_PhysicsCollisionShape_static_heightfield(value image)
+// DECL: static PhysicsCollisionShape::Definition heightfield();
+value hx_PhysicsCollisionShape_static_heightfield()
 {
-    Image *_image;
-    ValueToObject(image, _image);
-    return ObjectToValue(new PhysicsCollisionShape::Definition(PhysicsCollisionShape::heightfield(_image)));
+    return ObjectToValue(new PhysicsCollisionShape::Definition(PhysicsCollisionShape::heightfield()));
 }
-DEFINE_PRIM(hx_PhysicsCollisionShape_static_heightfield, 1);
+DEFINE_PRIM(hx_PhysicsCollisionShape_static_heightfield, 0);
+
+// DECL: static PhysicsCollisionShape::Definition heightfield(HeightField* heightfield);
+value hx_PhysicsCollisionShape_static_heightfield_HghtFld(value heightfield)
+{
+    HeightField *_heightfield;
+    ValueToObject(heightfield, _heightfield);
+    return ObjectToValue(new PhysicsCollisionShape::Definition(PhysicsCollisionShape::heightfield(_heightfield)));
+}
+DEFINE_PRIM(hx_PhysicsCollisionShape_static_heightfield_HghtFld, 1);
 
 // DECL: static PhysicsCollisionShape::Definition mesh(Mesh* mesh);
 value hx_PhysicsCollisionShape_static_mesh(value mesh)
