@@ -82,6 +82,15 @@ value hx_Texture_getHeight(value thisObj)
 }
 DEFINE_PRIM(hx_Texture_getHeight, 1);
 
+// DECL: const char* getPath() const;
+value hx_Texture_getPath(value thisObj)
+{
+    Texture *_thisObj;
+    ValueToObject(thisObj, _thisObj);
+    return StringToValue(_thisObj->getPath());
+}
+DEFINE_PRIM(hx_Texture_getPath, 1);
+
 // DECL: unsigned int getWidth() const;
 value hx_Texture_getWidth(value thisObj)
 {

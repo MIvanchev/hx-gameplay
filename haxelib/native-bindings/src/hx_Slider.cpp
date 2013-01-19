@@ -22,7 +22,7 @@ value hx_Slider_static_create(value id, value style)
 }
 DEFINE_PRIM(hx_Slider_static_create, 2);
 
-// DECL: float getMax();
+// DECL: float getMax() const;
 value hx_Slider_getMax(value thisObj)
 {
     Slider *_thisObj;
@@ -31,7 +31,7 @@ value hx_Slider_getMax(value thisObj)
 }
 DEFINE_PRIM(hx_Slider_getMax, 1);
 
-// DECL: float getMin();
+// DECL: float getMin() const;
 value hx_Slider_getMin(value thisObj)
 {
     Slider *_thisObj;
@@ -40,7 +40,7 @@ value hx_Slider_getMin(value thisObj)
 }
 DEFINE_PRIM(hx_Slider_getMin, 1);
 
-// DECL: float getStep();
+// DECL: float getStep() const;
 value hx_Slider_getStep(value thisObj)
 {
     Slider *_thisObj;
@@ -58,7 +58,7 @@ value hx_Slider_getType(value thisObj)
 }
 DEFINE_PRIM(hx_Slider_getType, 1);
 
-// DECL: float getValue();
+// DECL: float getValue() const;
 value hx_Slider_getValue(value thisObj)
 {
     Slider *_thisObj;
@@ -66,6 +66,33 @@ value hx_Slider_getValue(value thisObj)
     return alloc_float(_thisObj->getValue());
 }
 DEFINE_PRIM(hx_Slider_getValue, 1);
+
+// DECL: Font::Justify getValueTextAlignment() const;
+value hx_Slider_getValueTextAlignment(value thisObj)
+{
+    Slider *_thisObj;
+    ValueToObject(thisObj, _thisObj);
+    return EnumToValue(_thisObj->getValueTextAlignment());
+}
+DEFINE_PRIM(hx_Slider_getValueTextAlignment, 1);
+
+// DECL: unsigned int getValueTextPrecision() const;
+value hx_Slider_getValueTextPrecision(value thisObj)
+{
+    Slider *_thisObj;
+    ValueToObject(thisObj, _thisObj);
+    return alloc_int(_thisObj->getValueTextPrecision());
+}
+DEFINE_PRIM(hx_Slider_getValueTextPrecision, 1);
+
+// DECL: bool isValueTextVisible() const;
+value hx_Slider_isValueTextVisible(value thisObj)
+{
+    Slider *_thisObj;
+    ValueToObject(thisObj, _thisObj);
+    return alloc_bool(_thisObj->isValueTextVisible());
+}
+DEFINE_PRIM(hx_Slider_isValueTextVisible, 1);
 
 // DECL: void setMax(float max);
 void hx_Slider_setMax(value thisObj, value max)
@@ -106,6 +133,37 @@ void hx_Slider_setValue(value thisObj, value value)
     _thisObj->setValue(_value);
 }
 DEFINE_PRIM(hx_Slider_setValue, 2);
+
+// DECL: void setValueTextAlignment(Font::Justify alignment);
+void hx_Slider_setValueTextAlignment(value thisObj, value alignment)
+{
+    Slider *_thisObj;
+    Font::Justify _alignment;
+    ValueToObject(thisObj, _thisObj);
+    ValueToEnum(alignment, _alignment);
+    _thisObj->setValueTextAlignment(_alignment);
+}
+DEFINE_PRIM(hx_Slider_setValueTextAlignment, 2);
+
+// DECL: void setValueTextPrecision(unsigned int precision);
+void hx_Slider_setValueTextPrecision(value thisObj, value precision)
+{
+    Slider *_thisObj;
+    unsigned int _precision = ValueToUint(precision);
+    ValueToObject(thisObj, _thisObj);
+    _thisObj->setValueTextPrecision(_precision);
+}
+DEFINE_PRIM(hx_Slider_setValueTextPrecision, 2);
+
+// DECL: void setValueTextVisible(bool visible);
+void hx_Slider_setValueTextVisible(value thisObj, value visible)
+{
+    Slider *_thisObj;
+    bool _visible = val_get_bool(visible);
+    ValueToObject(thisObj, _thisObj);
+    _thisObj->setValueTextVisible(_visible);
+}
+DEFINE_PRIM(hx_Slider_setValueTextVisible, 2);
 
 // END
 //

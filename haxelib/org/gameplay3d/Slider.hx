@@ -24,19 +24,19 @@ class Slider extends Label
         return Slider.wrap(hx_Slider_static_create(id, style.native()));
     }
 
-    // DECL: float getMax();
+    // DECL: float getMax() const;
     public function getMax():Float
     {
         return hx_Slider_getMax(nativeObject);
     }
 
-    // DECL: float getMin();
+    // DECL: float getMin() const;
     public function getMin():Float
     {
         return hx_Slider_getMin(nativeObject);
     }
 
-    // DECL: float getStep();
+    // DECL: float getStep() const;
     public function getStep():Float
     {
         return hx_Slider_getStep(nativeObject);
@@ -48,10 +48,28 @@ class Slider extends Label
         return hx_Slider_getType(nativeObject);
     }
 
-    // DECL: float getValue();
+    // DECL: float getValue() const;
     public function getValue():Float
     {
         return hx_Slider_getValue(nativeObject);
+    }
+
+    // DECL: Font::Justify getValueTextAlignment() const;
+    public function getValueTextAlignment():Int
+    {
+        return hx_Slider_getValueTextAlignment(nativeObject);
+    }
+
+    // DECL: unsigned int getValueTextPrecision() const;
+    public function getValueTextPrecision():Int
+    {
+        return hx_Slider_getValueTextPrecision(nativeObject);
+    }
+
+    // DECL: bool isValueTextVisible() const;
+    public function isValueTextVisible():Bool
+    {
+        return hx_Slider_isValueTextVisible(nativeObject);
     }
 
     // DECL: void setMax(float max);
@@ -78,6 +96,24 @@ class Slider extends Label
         hx_Slider_setValue(nativeObject, value);
     }
 
+    // DECL: void setValueTextAlignment(Font::Justify alignment);
+    public function setValueTextAlignment(alignment:Int):Void
+    {
+        hx_Slider_setValueTextAlignment(nativeObject, alignment);
+    }
+
+    // DECL: void setValueTextPrecision(unsigned int precision);
+    public function setValueTextPrecision(precision:Int):Void
+    {
+        hx_Slider_setValueTextPrecision(nativeObject, precision);
+    }
+
+    // DECL: void setValueTextVisible(bool visible);
+    public function setValueTextVisible(visible:Bool):Void
+    {
+        hx_Slider_setValueTextVisible(nativeObject, visible);
+    }
+
     /***************************************************************************
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
@@ -89,10 +125,16 @@ class Slider extends Label
     static var hx_Slider_getStep:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_getStep", 1);
     static var hx_Slider_getType:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_getType", 1);
     static var hx_Slider_getValue:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_getValue", 1);
+    static var hx_Slider_getValueTextAlignment:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_getValueTextAlignment", 1);
+    static var hx_Slider_getValueTextPrecision:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_getValueTextPrecision", 1);
+    static var hx_Slider_isValueTextVisible:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_isValueTextVisible", 1);
     static var hx_Slider_setMax:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setMax", 2);
     static var hx_Slider_setMin:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setMin", 2);
     static var hx_Slider_setStep:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setStep", 2);
     static var hx_Slider_setValue:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setValue", 2);
+    static var hx_Slider_setValueTextAlignment:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setValueTextAlignment", 2);
+    static var hx_Slider_setValueTextPrecision:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setValueTextPrecision", 2);
+    static var hx_Slider_setValueTextVisible:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setValueTextVisible", 2);
 }
 
 // END

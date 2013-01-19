@@ -149,12 +149,12 @@ void hx_MaterialParameter_setValue_ArrSmplr_Int(value thisObj, value samplers, v
     unsigned int _count = ValueToUint(count);
     ValueToObject(thisObj, _thisObj);
 
-	_samplers = new Texture::Sampler*[_count];
-	for (int index = 0; index < _count; index++)
-	{
-		ValueToObject(val_array_i(samplers, index), sampler);
-		_samplers[index] = sampler;
-	}
+    _samplers = new Texture::Sampler*[_count];
+    for (int index = 0; index < _count; index++)
+    {
+        ValueToObject(val_array_i(samplers, index), sampler);
+        _samplers[index] = sampler;
+    }
 
     _thisObj->setValue(const_cast<const Texture::Sampler**>(_samplers), _count);
 }

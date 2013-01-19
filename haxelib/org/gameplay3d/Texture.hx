@@ -61,6 +61,12 @@ class Texture extends GameplayObject, implements Ref
         return hx_Texture_getHeight(nativeObject);
     }
 
+    // DECL: const char* getPath() const;
+    public function getPath():String
+    {
+        return hx_Texture_getPath(nativeObject);
+    }
+
     // DECL: unsigned int getWidth() const;
     public function getWidth():Int
     {
@@ -103,6 +109,7 @@ class Texture extends GameplayObject, implements Ref
     static var hx_Texture_getFormat:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_getFormat", 1);
     static var hx_Texture_getHandle:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_getHandle", 1);
     static var hx_Texture_getHeight:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_getHeight", 1);
+    static var hx_Texture_getPath:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_getPath", 1);
     static var hx_Texture_getWidth:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_getWidth", 1);
     static var hx_Texture_isCompressed:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_isCompressed", 1);
     static var hx_Texture_isMipmapped:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_isMipmapped", 1);
