@@ -64,13 +64,16 @@ class GameplayObject extends NativeBinding
     @:allow(org.gameplat3d.wrapper)
     static inline function wrap<T : GameplayObject>(classObj:Class<T>, nativeObject:Dynamic):T
     {
-        args[0] = nativeObject;
-
         return
             if (nativeObject == null)
                 null;
+            else if (Std.is(nativeObject, Ref))
+                nativeObject;
             else
+            {
+                args[0] = nativeObject;
                 Type.createInstance(classObj, args); // new T(nativeObject, null);
+            }
     }
 
     @:generic
