@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector2;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -23,40 +24,10 @@ class Gamepad extends GameplayObject
         return hx_Gamepad_getButtonCount(nativeObject);
     }
 
-    // DECL: ButtonState getButtonState(unsigned int buttonId) const;
-    public function getButtonState(buttonId:Int):Int
-    {
-        return hx_Gamepad_getButtonState(nativeObject, buttonId);
-    }
-
     // DECL: Form* getForm() const;
     public function getForm():Form
     {
         return Form.wrap(hx_Gamepad_getForm(nativeObject));
-    }
-
-    // DECL: const char* getId() const;
-    public function getId():String
-    {
-        return hx_Gamepad_getId(nativeObject);
-    }
-
-    // DECL: void getJoystickAxisValues(unsigned int joystickId, Vector2* outValues) const;
-    public function getJoystickAxisValues(joystickId:Int, outValues:Vector2):Void
-    {
-        hx_Gamepad_getJoystickAxisValues(nativeObject, joystickId, outValues.native());
-    }
-
-    // DECL: float getJoystickAxisX(unsigned int joystickId) const;
-    public function getJoystickAxisX(joystickId:Int):Float
-    {
-        return hx_Gamepad_getJoystickAxisX(nativeObject, joystickId);
-    }
-
-    // DECL: float getJoystickAxisY(unsigned int joystickId) const;
-    public function getJoystickAxisY(joystickId:Int):Float
-    {
-        return hx_Gamepad_getJoystickAxisY(nativeObject, joystickId);
     }
 
     // DECL: unsigned int getJoystickCount() const;
@@ -65,10 +36,52 @@ class Gamepad extends GameplayObject
         return hx_Gamepad_getJoystickCount(nativeObject);
     }
 
-    // DECL: bool isJoystickActive(unsigned int joystickId) const;
-    public function isJoystickActive(joystickId:Int):Bool
+    // DECL: void getJoystickValues(unsigned int joystickId, Vector2* outValues) const;
+    public function getJoystickValues(joystickId:Int, outValues:Vector2):Void
     {
-        return hx_Gamepad_isJoystickActive(nativeObject, joystickId);
+        hx_Gamepad_getJoystickValues(nativeObject, joystickId, outValues.native());
+    }
+
+    // DECL: const unsigned int getProductId() const;
+    public function getProductId():Int
+    {
+        return hx_Gamepad_getProductId(nativeObject);
+    }
+
+    // DECL: const char* getProductString() const;
+    public function getProductString():String
+    {
+        return hx_Gamepad_getProductString(nativeObject);
+    }
+
+    // DECL: unsigned int getTriggerCount() const;
+    public function getTriggerCount():Int
+    {
+        return hx_Gamepad_getTriggerCount(nativeObject);
+    }
+
+    // DECL: float getTriggerValue(unsigned int triggerId) const;
+    public function getTriggerValue(triggerId:Int):Float
+    {
+        return hx_Gamepad_getTriggerValue(nativeObject, triggerId);
+    }
+
+    // DECL: const unsigned int getVendorId() const;
+    public function getVendorId():Int
+    {
+        return hx_Gamepad_getVendorId(nativeObject);
+    }
+
+    // DECL: const char* getVendorString() const;
+    public function getVendorString():String
+    {
+        return hx_Gamepad_getVendorString(nativeObject);
+    }
+
+    // DECL: bool isButtonDown(ButtonMapping button) const;
+    public function isButtonDown(button:Int):Bool
+    {
+        return hx_Gamepad_isButtonDown(nativeObject, button);
     }
 
     // DECL: bool isVirtual() const;
@@ -89,14 +102,16 @@ class Gamepad extends GameplayObject
 
     static var hx_Gamepad_draw:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_draw", 1);
     static var hx_Gamepad_getButtonCount:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getButtonCount", 1);
-    static var hx_Gamepad_getButtonState:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getButtonState", 2);
     static var hx_Gamepad_getForm:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getForm", 1);
-    static var hx_Gamepad_getId:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getId", 1);
-    static var hx_Gamepad_getJoystickAxisValues:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getJoystickAxisValues", 3);
-    static var hx_Gamepad_getJoystickAxisX:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getJoystickAxisX", 2);
-    static var hx_Gamepad_getJoystickAxisY:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getJoystickAxisY", 2);
     static var hx_Gamepad_getJoystickCount:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getJoystickCount", 1);
-    static var hx_Gamepad_isJoystickActive:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_isJoystickActive", 2);
+    static var hx_Gamepad_getJoystickValues:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getJoystickValues", 3);
+    static var hx_Gamepad_getProductId:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getProductId", 1);
+    static var hx_Gamepad_getProductString:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getProductString", 1);
+    static var hx_Gamepad_getTriggerCount:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getTriggerCount", 1);
+    static var hx_Gamepad_getTriggerValue:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getTriggerValue", 2);
+    static var hx_Gamepad_getVendorId:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getVendorId", 1);
+    static var hx_Gamepad_getVendorString:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getVendorString", 1);
+    static var hx_Gamepad_isButtonDown:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_isButtonDown", 2);
     static var hx_Gamepad_isVirtual:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_isVirtual", 1);
     static var hx_Gamepad_update:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_update", 2);
 }

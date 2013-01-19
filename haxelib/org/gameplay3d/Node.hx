@@ -293,6 +293,13 @@ class Node extends Transform, implements Ref
         return hx_Node_getTag(nativeObject, name);
     }
 
+
+    // DECL: Terrain* getTerrain() const;
+    public function getTerrain():Terrain
+    {
+        return Terrain.wrap(hx_Node_getTerrain(nativeObject));
+    }
+
     // DECL: Vector3 getTranslationView() const;
     public function getTranslationView():SharedVector3
     {
@@ -443,6 +450,12 @@ class Node extends Transform, implements Ref
         hx_Node_setTag(nativeObject, name, value);
     }
 
+    // DECL: void setTerrain(Terrain* terrain);
+    public function setTerrain(terrain:Terrain):Void
+    {
+        hx_Node_setTerrain(nativeObject, terrain.native());
+    }
+
     // DECL: void setUserPointer(void* pointer, void (*cleanupCallback)(void*) = NULL);
     public function setUserPointer(pointer:Handle, cleanCallback:Dynamic = null):Void
     {
@@ -490,6 +503,7 @@ class Node extends Transform, implements Ref
     static var hx_Node_getRootNode:Dynamic = cpp.Lib.load("gameplay", "hx_Node_getRootNode", 1);
     static var hx_Node_getScene:Dynamic = cpp.Lib.load("gameplay", "hx_Node_getScene", 1);
     static var hx_Node_getTag:Dynamic = cpp.Lib.load("gameplay", "hx_Node_getTag", 2);
+    static var hx_Node_getTerrain:Dynamic = cpp.Lib.load("gameplay", "hx_Node_getTerrain", 1);
     static var hx_Node_getTranslationView:Dynamic = cpp.Lib.load("gameplay", "hx_Node_getTranslationView", 1);
     static var hx_Node_getTranslationWorld:Dynamic = cpp.Lib.load("gameplay", "hx_Node_getTranslationWorld", 1);
     static var hx_Node_getType:Dynamic = cpp.Lib.load("gameplay", "hx_Node_getType", 1);
@@ -515,6 +529,7 @@ class Node extends Transform, implements Ref
     static var hx_Node_setModel:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setModel", 2);
     static var hx_Node_setParticleEmitter:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setParticleEmitter", 2);
     static var hx_Node_setTag:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setTag", 3);
+    static var hx_Node_setTerrain:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setTerrain", 2);
     static var hx_Node_setUserPointer:Dynamic = cpp.Lib.load("gameplay", "hx_Node_setUserPointer", 3);
 }
 

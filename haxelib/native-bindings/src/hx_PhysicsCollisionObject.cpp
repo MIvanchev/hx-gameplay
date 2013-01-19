@@ -23,6 +23,51 @@ void hx_PhysicsCollisionObject_addCollisionListener_Str_ColObj(value thisObj, va
 }
 DEFINE_PRIM(hx_PhysicsCollisionObject_addCollisionListener_Str_ColObj, 3);
 
+// DECL: PhysicsCharacter* asCharacter();
+value hx_PhysicsCollisionObject_asCharacter(value thisObj)
+{
+    PhysicsCollisionObject *_thisObj;
+    ValueToObject(thisObj, _thisObj);
+    return ObjectToValue(_thisObj->asCharacter(), false);
+}
+DEFINE_PRIM(hx_PhysicsCollisionObject_asCharacter, 1);
+
+// DECL: PhysicsGhostObject* asGhostObject();
+value hx_PhysicsCollisionObject_asGhostObject(value thisObj)
+{
+    PhysicsCollisionObject *_thisObj;
+    ValueToObject(thisObj, _thisObj);
+    return ObjectToValue(_thisObj->asGhostObject(), false);
+}
+DEFINE_PRIM(hx_PhysicsCollisionObject_asGhostObject, 1);
+
+// DECL: PhysicsRigidBody* asRigidBody();
+value hx_PhysicsCollisionObject_asRigidBody(value thisObj)
+{
+    PhysicsCollisionObject *_thisObj;
+    ValueToObject(thisObj, _thisObj);
+    return ObjectToValue(_thisObj->asRigidBody(), false);
+}
+DEFINE_PRIM(hx_PhysicsCollisionObject_asRigidBody, 1);
+
+// DECL: PhysicsVehicle* asVehicle();
+value hx_PhysicsCollisionObject_asVehicle(value thisObj)
+{
+    PhysicsCollisionObject *_thisObj;
+    ValueToObject(thisObj, _thisObj);
+    return ObjectToValue(_thisObj->asVehicle(), false);
+}
+DEFINE_PRIM(hx_PhysicsCollisionObject_asVehicle, 1);
+
+// DECL: PhysicsVehicleWheel* asVehicleWheel();
+value hx_PhysicsCollisionObject_asVehicleWheel(value thisObj)
+{
+    PhysicsCollisionObject *_thisObj;
+    ValueToObject(thisObj, _thisObj);
+    return ObjectToValue(_thisObj->asVehicleWheel(), false);
+}
+DEFINE_PRIM(hx_PhysicsCollisionObject_asVehicleWheel, 1);
+
 // DECL: bool collidesWith(PhysicsCollisionObject* object) const;
 value hx_PhysicsCollisionObject_collidesWith(value thisObj, value object)
 {

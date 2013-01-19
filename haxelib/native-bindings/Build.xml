@@ -102,6 +102,7 @@
         <file name="src/hx_Game.cpp"/>
         <file name="src/hx_Gamepad.cpp"/>
         <file name="src/hx_Gesture.cpp"/>
+		<file name="src/hx_HeightField.cpp"/>
         <file name="src/hx_Image.cpp"/>
         <file name="src/hx_Joint.cpp"/>
         <file name="src/hx_Joystick.cpp"/>
@@ -162,6 +163,8 @@
         <file name="src/hx_SpriteBatch.cpp"/>
         <file name="src/hx_Stream.cpp"/>
         <file name="src/hx_Technique.cpp"/>
+		<file name="src/hx_Terrain.cpp"/>
+		<file name="src/hx_TerrainPatch.cpp"/>
         <file name="src/hx_TextBox.cpp"/>
         <file name="src/hx_Texture.cpp"/>
         <file name="src/hx_Texture_Sampler.cpp"/>

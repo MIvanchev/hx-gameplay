@@ -353,6 +353,15 @@ value hx_Node_getTag(value thisObj, value name)
 }
 DEFINE_PRIM(hx_Node_getTag, 2);
 
+// DECL: Terrain* getTerrain() const;
+value hx_Node_getTerrain(value thisObj)
+{
+    Node *_thisObj;
+    ValueToObject(thisObj, _thisObj);
+    return ReferenceToValue(_thisObj->getTerrain(), true, true);
+}
+DEFINE_PRIM(hx_Node_getTerrain, 1);
+
 // DECL: Vector3 getTranslationView() const;
 value hx_Node_getTranslationView(value thisObj)
 {
@@ -605,6 +614,17 @@ void hx_Node_setTag(value thisObj, value name, value value)
     _thisObj->setTag(_name, _value);
 }
 DEFINE_PRIM(hx_Node_setTag, 3);
+
+// DECL: void setTerrain(Terrain* terrain);
+void hx_Node_setTerrain(value thisObj, value terrain)
+{
+    Node *_thisObj;
+    Terrain *_terrain;
+    ValueToObject(thisObj, _thisObj);
+    ValueToObject(terrain, _terrain);
+    _thisObj->setTerrain(_terrain);
+}
+DEFINE_PRIM(hx_Node_setTerrain, 2);
 
 // DECL: void setUserPointer(void* pointer, void (*cleanupCallback)(void*) = NULL);
 void hx_Node_setUserPointer(value thisObj, value pointer, value cleanupCallback)

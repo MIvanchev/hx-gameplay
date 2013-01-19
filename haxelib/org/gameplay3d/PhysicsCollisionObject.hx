@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.wrapper.PhysicsCollisionObject_CollisionListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -11,6 +12,24 @@ class PhysicsCollisionObject extends GameplayObject
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    var _character:PhysicsCharacter;
+    var _ghostObject:PhysicsGhostObject;
+    var _rigidBody:PhysicsRigidBody;
+    var _vehicle:PhysicsVehicle;
+    var _vehicleWheel:PhysicsVehicleWheel;
+
+    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
+    {
+        var initialized = this.nativeObject != null;
+        super.impersonate(nativeObject);
+        _character = PhysicsCharacter.wrap(hx_PhysicsCollisionObject_asCharacter());
+        _ghostObject = PhysicsGhostObject.wrap(hx_PhysicsCollisionObject_asGhostObject());
+        _rigidBody = PhysicsRigidBody.wrap(hx_PhysicsCollisionObject_asRigidBody());
+        _vehicle = PhysicsVehicle.wrap(hx_PhysicsCollisionObject_asVehicle());
+        _vehicleWheel = PhysicsVehicleWheel.wrap(hx_PhysicsCollisionObject_asVehicleWheel());
+        return cast(this);
+    }
+
     // DECL: void addCollisionListener(CollisionListener* listener, PhysicsCollisionObject* object = NULL);
     public function addCollisionListener_Lsnr_ColObj(listener:PhysicsCollisionObject_CollisionListenerWrapper, object:PhysicsCollisionObject = null):Void
     {
@@ -21,6 +40,36 @@ class PhysicsCollisionObject extends GameplayObject
     public function addCollisionListener_Str_ColObj(_function:String, object:PhysicsCollisionObject = null):Void
     {
         hx_PhysicsCollisionObject_addCollisionListener_Str_ColObj(nativeObject, _function, object.native());
+    }
+
+    // DECL: PhysicsCharacter* asCharacter();
+    public function asCharacter():PhysicsCharacter
+    {
+        return _character;
+    }
+
+    // DECL: PhysicsGhostObject* asGhostObject();
+    public function asGhostObject():PhysicsGhostObject
+    {
+        return _ghostObject;
+    }
+
+    // DECL: PhysicsRigidBody* asRigidBody();
+    public function asRigidBody():PhysicsRigidBody
+    {
+        return _rigidBody;
+    }
+
+    // DECL: PhysicsVehicle* asVehicle();
+    public function asVehicle():PhysicsVehicle
+    {
+        return _vehicle;
+    }
+
+    // DECL: PhysicsVehicleWheel* asVehicleWheel();
+    public function asVehicleWheel():PhysicsVehicleWheel
+    {
+        return _vehicleWheel;
     }
 
     // DECL: bool collidesWith(PhysicsCollisionObject* object) const;
@@ -95,6 +144,11 @@ class PhysicsCollisionObject extends GameplayObject
 
     static var hx_PhysicsCollisionObject_addCollisionListener_Lsnr_ColObj:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_addCollisionListener_Lsnr_ColObj", 3);
     static var hx_PhysicsCollisionObject_addCollisionListener_Str_ColObj:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_addCollisionListener_Str_ColObj", 3);
+    static var hx_PhysicsCollisionObject_asCharacter:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asCharacter", 1);
+    static var hx_PhysicsCollisionObject_asGhostObject:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asGhostObject", 1);
+    static var hx_PhysicsCollisionObject_asRigidBody:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asRigidBody", 1);
+    static var hx_PhysicsCollisionObject_asVehicle:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asVehicle", 1);
+    static var hx_PhysicsCollisionObject_asVehicleWheel:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asVehicleWheel", 1);
     static var hx_PhysicsCollisionObject_collidesWith:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_collidesWith", 2);
     static var hx_PhysicsCollisionObject_getCollisionShape:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getCollisionShape", 1);
     static var hx_PhysicsCollisionObject_getNode:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getNode", 1);
@@ -106,6 +160,10 @@ class PhysicsCollisionObject extends GameplayObject
     static var hx_PhysicsCollisionObject_removeCollisionListener_Lsnr_ColObj:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_removeCollisionListener_Lsnr_ColObj", 3);
     static var hx_PhysicsCollisionObject_removeCollisionListener_Str_ColObj:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_removeCollisionListener_Str_ColObj", 3);
     static var hx_PhysicsCollisionObject_setEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_setEnabled", 2);
+    static var hx_PhysicsCollisionObject_CollisionListener_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionListener_Construct", 1);
+    static var hx_PhysicsCollisionObject_CollisionPair_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_Construct", 2);
+    static var hx_PhysicsCollisionObject_CollisionPair_property_objectA_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_property_objectA_get", 1);
+    static var hx_PhysicsCollisionObject_CollisionPair_property_objectB_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_property_objectB_get", 1);
 }
 
 // END
