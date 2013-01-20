@@ -397,7 +397,7 @@ value ReferenceToValue (type *object, bool increaseRefCount)                    
         if (increaseRefCount)                                                                               \
             object->addRef();                                                                               \
                                                                                                             \
-        val_gc(nativeObject, FreeReference);                                                               \
+        val_gc(nativeObject, FreeReference);                                                                \
     }                                                                                                       \
                                                                                                             \
     return wrappedReference->wrapper;                                                                       \
@@ -437,6 +437,11 @@ void ValueToObject(value _value, type *&pointer)                                
 {                                                                                               \
     if (val_is_null(_value))                                                                    \
         pointer = NULL;                                                                         \
+    else if (val_is_kind(_value, k_Object_Ref))                                                 \
+    {                                                                                           \
+        WrappedReference *wrappedReference = static_cast<WrappedReference*>(val_data(_value));  \
+        pointer = dynamic_cast<type*>(wrappedReference->key);                                   \
+    }                                                                                           \
     else if (val_is_float(_value))                                                              \
     {                                                                                           \
         double storage = ValueToDouble(_value);                                                 \
@@ -458,11 +463,6 @@ void ValueToObject(value _value, type *&pointer)                                
     {                                                                                           \
         PhysicsCollisionObject *base = static_cast<PhysicsCollisionObject*>(val_data(_value));  \
         pointer = dynamic_cast<type*>(base);                                                    \
-    }                                                                                           \
-    else if (val_is_kind(_value, k_Object_Ref))                                                 \
-    {                                                                                           \
-        WrappedReference *wrappedReference = static_cast<WrappedReference*>(val_data(_value));  \
-        pointer = dynamic_cast<type*>(wrappedReference->key);                                   \
     }                                                                                           \
     else if (val_is_kind(_value, k_Object_ScriptTarget))                                        \
     {                                                                                           \
