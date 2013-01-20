@@ -16,7 +16,7 @@ DEFINE_PRIM(hx_DepthStencilTarget_static_create, 4);
 value hx_DepthStencilTarget_static_getDepthStencilTarget(value id)
 {
     const char *_id = ValueToString(id);
-    return ReferenceToValue(DepthStencilTarget::getDepthStencilTarget(_id), true, true);
+    return ReferenceToValue(DepthStencilTarget::getDepthStencilTarget(_id), true);
 }
 DEFINE_PRIM(hx_DepthStencilTarget_static_getDepthStencilTarget, 1);
 

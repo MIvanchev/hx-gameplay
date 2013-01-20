@@ -109,7 +109,7 @@ value hx_Camera_getNode(value thisObj)
 {
     Camera *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getNode(), true, true);
+    return ReferenceToValue(_thisObj->getNode(), true);
 }
 DEFINE_PRIM(hx_Camera_getNode, 1);
 

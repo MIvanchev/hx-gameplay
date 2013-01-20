@@ -21,7 +21,7 @@ public:
     {
         val_call2(
                 clbkAnimationEvent.get(),
-                ReferenceToValue(clip, true, true),
+                ReferenceToValue(clip, true),
                 EnumToValue(type)
             );
     }

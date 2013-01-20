@@ -6,7 +6,7 @@ value hx_AIController_findAgent(value thisObj, value id)
     AIController *_thisObj;
     const char *_id = ValueToString(id);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->findAgent(_id), true, true);
+    return ReferenceToValue(_thisObj->findAgent(_id), true);
 }
 DEFINE_PRIM(hx_AIController_findAgent, 2);
 

@@ -29,7 +29,7 @@ value hx_Container_getAnimation(value thisObj, value id)
     Container *_thisObj;
     const char *_id = ValueToString(id);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getAnimation(_id), true, true);
+    return ReferenceToValue(_thisObj->getAnimation(_id), true);
 }
 DEFINE_PRIM(hx_Container_getAnimation, 2);
 
@@ -61,7 +61,7 @@ value hx_Container_getControl_Str(value thisObj, value id)
     Container *_thisObj;
     const char *_id = ValueToString(id);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getControl(_id), true, true);
+    return ReferenceToValue(_thisObj->getControl(_id), true);
 }
 DEFINE_PRIM(hx_Container_getControl_Str, 2);
 
@@ -71,7 +71,7 @@ value hx_Container_getControl_Int(value thisObj, value index)
     Container *_thisObj;
     unsigned int _index = ValueToUint(index);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getControl(_index), true, true);
+    return ReferenceToValue(_thisObj->getControl(_index), true);
 }
 DEFINE_PRIM(hx_Container_getControl_Int, 2);
 
@@ -84,7 +84,7 @@ value hx_Container_getControls(value thisObj)
 
     const value& result = alloc_array(controls.size());
     for (int index = 0; index < controls.size(); index++)
-        val_array_set_i(result, index, ReferenceToValue(controls[index], true, true));
+        val_array_set_i(result, index, ReferenceToValue(controls[index], true));
 
     return result;
 }
@@ -95,7 +95,7 @@ value hx_Container_getLayout(value thisObj)
 {
     Container *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getLayout(), true, true);
+    return ReferenceToValue(_thisObj->getLayout(), true);
 }
 DEFINE_PRIM(hx_Container_getLayout, 1);
 

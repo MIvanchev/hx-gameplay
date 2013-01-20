@@ -5,7 +5,7 @@ value hx_Uniform_getEffect(value thisObj)
 {
     Uniform *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getEffect(), true, true);
+    return ReferenceToValue(_thisObj->getEffect(), true);
 }
 DEFINE_PRIM(hx_Uniform_getEffect, 1);
 

@@ -33,7 +33,7 @@ DEFINE_PRIM(hx_Form_draw, 1);
 value hx_Form_static_getForm(value id)
 {
     const char *_id = ValueToString(id);
-    return ReferenceToValue(Form::getForm(_id), true, true);
+    return ReferenceToValue(Form::getForm(_id), true);
 }
 DEFINE_PRIM(hx_Form_static_getForm, 1);
 
@@ -42,7 +42,7 @@ value hx_Form_getTheme(value thisObj)
 {
     Form *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getTheme(), true, true);
+    return ReferenceToValue(_thisObj->getTheme(), true);
 }
 DEFINE_PRIM(hx_Form_getTheme, 1);
 

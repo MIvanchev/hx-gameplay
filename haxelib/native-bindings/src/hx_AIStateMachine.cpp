@@ -6,7 +6,7 @@ value hx_AIStateMachine_addState_Str(value thisObj, value id)
     AIStateMachine *_thisObj;
     const char *_id = ValueToString(id);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->addState(_id), true, true);
+    return ReferenceToValue(_thisObj->addState(_id), true);
 }
 DEFINE_PRIM(hx_AIStateMachine_addState_Str, 2);
 
@@ -26,7 +26,7 @@ value hx_AIStateMachine_getActiveState(value thisObj)
 {
     AIStateMachine *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getActiveState(), true, true);
+    return ReferenceToValue(_thisObj->getActiveState(), true);
 }
 DEFINE_PRIM(hx_AIStateMachine_getActiveState, 1);
 
@@ -35,7 +35,7 @@ value hx_AIStateMachine_getAgent(value thisObj)
 {
     AIStateMachine *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getAgent(), true, true);
+    return ReferenceToValue(_thisObj->getAgent(), true);
 }
 DEFINE_PRIM(hx_AIStateMachine_getAgent, 1);
 
@@ -45,7 +45,7 @@ value hx_AIStateMachine_getState(value thisObj, value id)
     AIStateMachine *_thisObj;
     const char *_id = ValueToString(id);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getState(_id), true, true);
+    return ReferenceToValue(_thisObj->getState(_id), true);
 }
 DEFINE_PRIM(hx_AIStateMachine_getState, 2);
 
@@ -66,7 +66,7 @@ value hx_AIStateMachine_setState_Str(value thisObj, value id)
     AIStateMachine *_thisObj;
     const char *_id = ValueToString(id);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->setState(_id), true, true);
+    return ReferenceToValue(_thisObj->setState(_id), true);
 }
 DEFINE_PRIM(hx_AIStateMachine_setState_Str, 2);
 

@@ -34,7 +34,7 @@ public:
         bool result =
                 val_get_bool(val_call1(
                         *clbkVisitMethod,
-                        ReferenceToValue(node, true, true)
+                        ReferenceToValue(node, true)
                     ));
         return result;
     }
@@ -44,7 +44,7 @@ public:
         bool result =
                 val_get_bool(val_call2(
                         *clbkVisitMethod,
-                        ReferenceToValue(node, true, true),
+                        ReferenceToValue(node, true),
                         alloc_int(cookie)
                     ));
         return result;
@@ -61,7 +61,7 @@ value hx_Scene_addNode_Str(value thisObj, value id)
     Scene *_thisObj;
     const char *_id = ValueToString(id);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->addNode(_id), true, true);
+    return ReferenceToValue(_thisObj->addNode(_id), true);
 }
 DEFINE_PRIM(hx_Scene_addNode_Str, 2);
 
@@ -111,7 +111,7 @@ value hx_Scene_findNode(value thisObj, value id, value recursive, value exactMat
     bool _recursive = val_get_bool(recursive);
     bool _exactMatch = val_get_bool(exactMatch);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->findNode(_id, _recursive, _exactMatch), true, true);
+    return ReferenceToValue(_thisObj->findNode(_id, _recursive, _exactMatch), true);
 }
 DEFINE_PRIM(hx_Scene_findNode, 4);
 
@@ -129,7 +129,7 @@ value hx_Scene_findNodes(value thisObj, value id, value nodes, value recursive, 
 
     const value& result = alloc_array(_nodes.size());
     for (int index = 0; index < _nodes.size(); index++)
-        val_array_set_i(result, index, ReferenceToValue(_nodes[index], true, true));
+        val_array_set_i(result, index, ReferenceToValue(_nodes[index], true));
 
     SetOutParameterValue(nodes, result);
 
@@ -142,7 +142,7 @@ value hx_Scene_getActiveCamera(value thisObj)
 {
     Scene *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getActiveCamera(), true, true);
+    return ReferenceToValue(_thisObj->getActiveCamera(), true);
 }
 DEFINE_PRIM(hx_Scene_getActiveCamera, 1);
 
@@ -160,7 +160,7 @@ value hx_Scene_getFirstNode(value thisObj)
 {
     Scene *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getFirstNode(), true, true);
+    return ReferenceToValue(_thisObj->getFirstNode(), true);
 }
 DEFINE_PRIM(hx_Scene_getFirstNode, 1);
 

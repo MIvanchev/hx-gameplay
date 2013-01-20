@@ -31,7 +31,7 @@ value hx_AudioSource_getNode(value thisObj)
 {
     AudioSource *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getNode(), true, true);
+    return ReferenceToValue(_thisObj->getNode(), true);
 }
 DEFINE_PRIM(hx_AudioSource_getNode, 1);
 

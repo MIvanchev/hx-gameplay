@@ -32,7 +32,7 @@ value hx_Texture_Sampler_getTexture(value thisObj)
 {
     Texture::Sampler *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getTexture(), true, true);
+    return ReferenceToValue(_thisObj->getTexture(), true);
 }
 DEFINE_PRIM(hx_Texture_Sampler_getTexture, 1);
 

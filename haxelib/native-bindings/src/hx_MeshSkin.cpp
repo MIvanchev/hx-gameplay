@@ -15,7 +15,7 @@ value hx_MeshSkin_getJoint_Str(value thisObj, value id)
     MeshSkin *_thisObj;
     const char *_id = ValueToString(id);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getJoint(_id), true, true);
+    return ReferenceToValue(_thisObj->getJoint(_id), true);
 }
 DEFINE_PRIM(hx_MeshSkin_getJoint_Str, 2);
 
@@ -25,7 +25,7 @@ value hx_MeshSkin_getJoint_Int(value thisObj, value index)
     MeshSkin *_thisObj;
     unsigned int _index = ValueToUint(index);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getJoint(_index), true, true);
+    return ReferenceToValue(_thisObj->getJoint(_index), true);
 }
 DEFINE_PRIM(hx_MeshSkin_getJoint_Int, 2);
 
@@ -72,7 +72,7 @@ value hx_MeshSkin_getModel(value thisObj)
 {
     MeshSkin *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getModel(), true, true);
+    return ReferenceToValue(_thisObj->getModel(), true);
 }
 DEFINE_PRIM(hx_MeshSkin_getModel, 1);
 
@@ -81,7 +81,7 @@ value hx_MeshSkin_getRootJoint(value thisObj)
 {
     MeshSkin *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getRootJoint(), true, true);
+    return ReferenceToValue(_thisObj->getRootJoint(), true);
 }
 DEFINE_PRIM(hx_MeshSkin_getRootJoint, 1);
 

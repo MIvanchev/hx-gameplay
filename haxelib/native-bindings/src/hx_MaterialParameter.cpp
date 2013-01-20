@@ -79,7 +79,7 @@ value hx_MaterialParameter_getSampler(value thisObj, value index)
     MaterialParameter *_thisObj;
     unsigned int _index = ValueToUint(index);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getSampler(_index), true, true);
+    return ReferenceToValue(_thisObj->getSampler(_index), true);
 }
 DEFINE_PRIM(hx_MaterialParameter_getSampler, 2);
 
@@ -103,7 +103,7 @@ value hx_MaterialParameter_setValue_Str_Bool(value thisObj, value texturePath, v
     const char *_texturePath = ValueToString(texturePath);
     bool _generateMipmaps = val_get_bool(generateMipmaps);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->setValue(_texturePath, _generateMipmaps), true, true);
+    return ReferenceToValue(_thisObj->setValue(_texturePath, _generateMipmaps), true);
 }
 DEFINE_PRIM(hx_MaterialParameter_setValue_Str_Bool, 3);
 

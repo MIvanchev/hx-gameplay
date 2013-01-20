@@ -28,7 +28,7 @@ value hx_Animation_getClip_Str(value thisObj, value clipId)
     Animation *_thisObj;
     const char *_clipId = ValueToString(clipId);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getClip(_clipId), true, true);
+    return ReferenceToValue(_thisObj->getClip(_clipId), true);
 }
 DEFINE_PRIM(hx_Animation_getClip_Str, 2);
 
@@ -38,7 +38,7 @@ value hx_Animation_getClip_Int(value thisObj, value index)
     Animation *_thisObj;
     unsigned int _index = ValueToUint(index);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getClip(_index), true, true);
+    return ReferenceToValue(_thisObj->getClip(_index), true);
 }
 DEFINE_PRIM(hx_Animation_getClip_Int, 2);
 

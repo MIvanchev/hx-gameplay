@@ -15,7 +15,7 @@ value hx_Technique_getPass(value thisObj, value id)
     Technique *_thisObj;
     const char *_id = ValueToString(id);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getPass(_id), true, true);
+    return ReferenceToValue(_thisObj->getPass(_id), true);
 }
 DEFINE_PRIM(hx_Technique_getPass, 2);
 
@@ -25,7 +25,7 @@ value hx_Technique_getPassByIndex(value thisObj, value index)
     Technique *_thisObj;
     unsigned int _index = ValueToUint(index);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getPassByIndex(_index), true, true);
+    return ReferenceToValue(_thisObj->getPassByIndex(_index), true);
 }
 DEFINE_PRIM(hx_Technique_getPassByIndex, 2);
 

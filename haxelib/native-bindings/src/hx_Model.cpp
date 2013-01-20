@@ -25,7 +25,7 @@ value hx_Model_getMaterial(value thisObj, value partIndex)
     Model *_thisObj;
     int _partIndex = val_get_int(partIndex);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getMaterial(_partIndex), true, true);
+    return ReferenceToValue(_thisObj->getMaterial(_partIndex), true);
 }
 DEFINE_PRIM(hx_Model_getMaterial, 2);
 
@@ -34,7 +34,7 @@ value hx_Model_getMesh(value thisObj)
 {
     Model *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getMesh(), true, true);
+    return ReferenceToValue(_thisObj->getMesh(), true);
 }
 DEFINE_PRIM(hx_Model_getMesh, 1);
 
@@ -52,7 +52,7 @@ value hx_Model_getNode(value thisObj)
 {
     Model *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getNode(), true, true);
+    return ReferenceToValue(_thisObj->getNode(), true);
 }
 DEFINE_PRIM(hx_Model_getNode, 1);
 
@@ -82,7 +82,7 @@ value hx_Model_setMaterial_Str_Int(value thisObj, value materialPath, value part
     const char *_materialPath = ValueToString(materialPath);
     int _partIndex = val_get_int(partIndex);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->setMaterial(_materialPath, _partIndex), true, true);
+    return ReferenceToValue(_thisObj->setMaterial(_materialPath, _partIndex), true);
 }
 DEFINE_PRIM(hx_Model_setMaterial_Str_Int, 3);
 
@@ -95,7 +95,7 @@ value hx_Model_setMaterial_StrX3_Int(value thisObj, value vshPath, value fshPath
     const char *_defines = ValueToString(defines);
     int _partIndex = val_get_int(partIndex);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->setMaterial(_vshPath, _fshPath, _defines, _partIndex), true, true);
+    return ReferenceToValue(_thisObj->setMaterial(_vshPath, _fshPath, _defines, _partIndex), true);
 }
 DEFINE_PRIM(hx_Model_setMaterial_StrX3_Int, 5);
 

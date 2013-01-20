@@ -41,7 +41,7 @@ value hx_Material_getTechnique(value thisObj)
 {
     Material *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getTechnique(), true, true);
+    return ReferenceToValue(_thisObj->getTechnique(), true);
 }
 DEFINE_PRIM(hx_Material_getTechnique, 1);
 
@@ -51,7 +51,7 @@ value hx_Material_getTechnique_Str(value thisObj, value id)
     Material *_thisObj;
     const char *_id = ValueToString(id);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getTechnique(_id), true, true);
+    return ReferenceToValue(_thisObj->getTechnique(_id), true);
 }
 DEFINE_PRIM(hx_Material_getTechnique_Str, 2);
 
@@ -61,7 +61,7 @@ value hx_Material_getTechniqueByIndex(value thisObj, value index)
     Material *_thisObj;
     unsigned int _index = ValueToUint(index);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getTechniqueByIndex(_index), true, true);
+    return ReferenceToValue(_thisObj->getTechniqueByIndex(_index), true);
 }
 DEFINE_PRIM(hx_Material_getTechniqueByIndex, 2);
 

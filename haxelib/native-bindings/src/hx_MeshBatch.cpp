@@ -92,7 +92,7 @@ value hx_MeshBatch_getMaterial(value thisObj)
 {
     MeshBatch *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getMaterial(), true, true);
+    return ReferenceToValue(_thisObj->getMaterial(), true);
 }
 DEFINE_PRIM(hx_MeshBatch_getMaterial, 1);
 

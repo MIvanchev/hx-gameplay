@@ -39,7 +39,7 @@ value hx_FrameBuffer_getDepthStencilTarget(value thisObj)
 {
     FrameBuffer *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getDepthStencilTarget(), true, true);
+    return ReferenceToValue(_thisObj->getDepthStencilTarget(), true);
 }
 DEFINE_PRIM(hx_FrameBuffer_getDepthStencilTarget, 1);
 
@@ -47,7 +47,7 @@ DEFINE_PRIM(hx_FrameBuffer_getDepthStencilTarget, 1);
 value hx_FrameBuffer_static_getFrameBuffer(value id)
 {
     const char *_id = ValueToString(id);
-    return ReferenceToValue(FrameBuffer::getFrameBuffer(_id), true, true);
+    return ReferenceToValue(FrameBuffer::getFrameBuffer(_id), true);
 }
 DEFINE_PRIM(hx_FrameBuffer_static_getFrameBuffer, 1);
 
@@ -82,7 +82,7 @@ value hx_FrameBuffer_getRenderTarget(value thisObj, value index)
     FrameBuffer *_thisObj;
     unsigned int _index = ValueToUint(index);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getRenderTarget(_index), true, true);
+    return ReferenceToValue(_thisObj->getRenderTarget(_index), true);
 }
 DEFINE_PRIM(hx_FrameBuffer_getRenderTarget, 2);
 

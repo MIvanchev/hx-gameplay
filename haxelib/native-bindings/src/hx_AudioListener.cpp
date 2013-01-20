@@ -5,7 +5,7 @@ value hx_AudioListener_getCamera(value thisObj)
 {
     AudioListener *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getCamera(), true, true);
+    return ReferenceToValue(_thisObj->getCamera(), true);
 }
 DEFINE_PRIM(hx_AudioListener_getCamera, 1);
 

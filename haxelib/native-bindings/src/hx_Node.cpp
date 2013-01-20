@@ -45,7 +45,7 @@ value hx_Node_findNode(value thisObj, value id, value recursive, value exactMatc
     bool _recursive = val_get_bool(recursive);
     bool _exactMatch = val_get_bool(exactMatch);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->findNode(_id, _recursive, _exactMatch), true, true);
+    return ReferenceToValue(_thisObj->findNode(_id, _recursive, _exactMatch), true);
 }
 DEFINE_PRIM(hx_Node_findNode, 4);
 
@@ -63,7 +63,7 @@ value hx_Node_findNodes(value thisObj, value id, value nodes, value recursive, v
 
     const value& result = alloc_array(_nodes.size());
     for (int index = 0; index < _nodes.size(); index++)
-        val_array_set_i(result, index, ReferenceToValue(_nodes[index], true, true));
+        val_array_set_i(result, index, ReferenceToValue(_nodes[index], true));
 
     SetOutParameterValue(nodes, result);
 
@@ -95,7 +95,7 @@ value hx_Node_getAdvertisedDescendant(value thisObj, value i)
     Node *_thisObj;
     unsigned int _i = ValueToUint(i);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getAdvertisedDescendant(_i), true, true);
+    return ReferenceToValue(_thisObj->getAdvertisedDescendant(_i), true);
 }
 DEFINE_PRIM(hx_Node_getAdvertisedDescendant, 2);
 
@@ -104,7 +104,7 @@ value hx_Node_getAgent(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getAgent(), true, true);
+    return ReferenceToValue(_thisObj->getAgent(), true);
 }
 DEFINE_PRIM(hx_Node_getAgent, 1);
 
@@ -114,7 +114,7 @@ value hx_Node_getAnimation(value thisObj, value id)
     Node *_thisObj;
     const char *_id = ValueToString(id);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getAnimation(_id), true, true);
+    return ReferenceToValue(_thisObj->getAnimation(_id), true);
 }
 DEFINE_PRIM(hx_Node_getAnimation, 2);
 
@@ -123,7 +123,7 @@ value hx_Node_getAudioSource(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getAudioSource(), true, true);
+    return ReferenceToValue(_thisObj->getAudioSource(), true);
 }
 DEFINE_PRIM(hx_Node_getAudioSource, 1);
 
@@ -141,7 +141,7 @@ value hx_Node_getCamera(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getCamera(), true, true);
+    return ReferenceToValue(_thisObj->getCamera(), true);
 }
 DEFINE_PRIM(hx_Node_getCamera, 1);
 
@@ -168,7 +168,7 @@ value hx_Node_getFirstChild(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getFirstChild(), true, true);
+    return ReferenceToValue(_thisObj->getFirstChild(), true);
 }
 DEFINE_PRIM(hx_Node_getFirstChild, 1);
 
@@ -177,7 +177,7 @@ value hx_Node_getForm(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getForm(), true, true);
+    return ReferenceToValue(_thisObj->getForm(), true);
 }
 DEFINE_PRIM(hx_Node_getForm, 1);
 
@@ -249,7 +249,7 @@ value hx_Node_getLight(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getLight(), true, true);
+    return ReferenceToValue(_thisObj->getLight(), true);
 }
 DEFINE_PRIM(hx_Node_getLight, 1);
 
@@ -258,7 +258,7 @@ value hx_Node_getModel(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getModel(), true, true);
+    return ReferenceToValue(_thisObj->getModel(), true);
 }
 DEFINE_PRIM(hx_Node_getModel, 1);
 
@@ -267,7 +267,7 @@ value hx_Node_getNextSibling(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getNextSibling(), true, true);
+    return ReferenceToValue(_thisObj->getNextSibling(), true);
 }
 DEFINE_PRIM(hx_Node_getNextSibling, 1);
 
@@ -285,7 +285,7 @@ value hx_Node_getParent(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getParent(), true, true);
+    return ReferenceToValue(_thisObj->getParent(), true);
 }
 DEFINE_PRIM(hx_Node_getParent, 1);
 
@@ -294,7 +294,7 @@ value hx_Node_getParticleEmitter(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getParticleEmitter(), true, true);
+    return ReferenceToValue(_thisObj->getParticleEmitter(), true);
 }
 DEFINE_PRIM(hx_Node_getParticleEmitter, 1);
 
@@ -303,7 +303,7 @@ value hx_Node_getPreviousSibling(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getPreviousSibling(), true, true);
+    return ReferenceToValue(_thisObj->getPreviousSibling(), true);
 }
 DEFINE_PRIM(hx_Node_getPreviousSibling, 1);
 
@@ -330,7 +330,7 @@ value hx_Node_getRootNode(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getRootNode(), true, true);
+    return ReferenceToValue(_thisObj->getRootNode(), true);
 }
 DEFINE_PRIM(hx_Node_getRootNode, 1);
 
@@ -339,7 +339,7 @@ value hx_Node_getScene(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getScene(), true, true);
+    return ReferenceToValue(_thisObj->getScene(), true);
 }
 DEFINE_PRIM(hx_Node_getScene, 1);
 
@@ -358,7 +358,7 @@ value hx_Node_getTerrain(value thisObj)
 {
     Node *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getTerrain(), true, true);
+    return ReferenceToValue(_thisObj->getTerrain(), true);
 }
 DEFINE_PRIM(hx_Node_getTerrain, 1);
 

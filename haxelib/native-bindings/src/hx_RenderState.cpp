@@ -6,7 +6,7 @@ value hx_RenderState_getParameter(value thisObj, value name)
     RenderState *_thisObj;
     const char *_name = ValueToString(name);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getParameter(_name), true, true);
+    return ReferenceToValue(_thisObj->getParameter(_name), true);
 }
 DEFINE_PRIM(hx_RenderState_getParameter, 2);
 
@@ -15,7 +15,7 @@ value hx_RenderState_getStateBlock(value thisObj)
 {
     RenderState *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getStateBlock(), true, true);
+    return ReferenceToValue(_thisObj->getStateBlock(), true);
 }
 DEFINE_PRIM(hx_RenderState_getStateBlock, 1);
 

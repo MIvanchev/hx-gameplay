@@ -74,7 +74,7 @@ value hx_Terrain_getNode(value thisObj)
 {
     Terrain *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getNode(), true, true);
+    return ReferenceToValue(_thisObj->getNode(), true);
 }
 DEFINE_PRIM(hx_Terrain_getNode, 1);
 

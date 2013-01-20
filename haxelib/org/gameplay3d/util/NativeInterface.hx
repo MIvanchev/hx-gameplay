@@ -114,6 +114,7 @@ class NativeInterface
         registerClass(Light);
         registerClass(Material);
         registerClass(MaterialParameter);
+        registerClass(Mesh);
         registerClass(Model);
         registerClass(Node);
         registerClass(ParticleEmitter);

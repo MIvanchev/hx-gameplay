@@ -23,7 +23,7 @@ value hx_Gamepad_getForm(value thisObj)
 {
     Gamepad *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getForm(), true, true);
+    return ReferenceToValue(_thisObj->getForm(), true);
 }
 DEFINE_PRIM(hx_Gamepad_getForm, 1);
 

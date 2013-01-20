@@ -14,7 +14,7 @@ value hx_Pass_getEffect(value thisObj)
 {
     Pass *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getEffect(), true, true);
+    return ReferenceToValue(_thisObj->getEffect(), true);
 }
 DEFINE_PRIM(hx_Pass_getEffect, 1);
 
@@ -32,7 +32,7 @@ value hx_Pass_getVertexAttributeBinding(value thisObj)
 {
     Pass *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getVertexAttributeBinding(), true, true);
+    return ReferenceToValue(_thisObj->getVertexAttributeBinding(), true);
 }
 DEFINE_PRIM(hx_Pass_getVertexAttributeBinding, 1);
 

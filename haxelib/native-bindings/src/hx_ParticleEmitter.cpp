@@ -133,7 +133,7 @@ value hx_ParticleEmitter_getNode(value thisObj)
 {
     ParticleEmitter *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getNode(), true, true);
+    return ReferenceToValue(_thisObj->getNode(), true);
 }
 DEFINE_PRIM(hx_ParticleEmitter_getNode, 1);
 

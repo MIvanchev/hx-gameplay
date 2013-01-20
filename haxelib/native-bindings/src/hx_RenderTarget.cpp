@@ -42,7 +42,7 @@ DEFINE_PRIM(hx_RenderTarget_getId, 1);
 value hx_RenderTarget_static_getRenderTarget(value id)
 {
     const char *_id = ValueToString(id);
-    return ReferenceToValue(RenderTarget::getRenderTarget(_id),true, true);
+    return ReferenceToValue(RenderTarget::getRenderTarget(_id), true);
 }
 DEFINE_PRIM(hx_RenderTarget_static_getRenderTarget, 1);
 
@@ -51,7 +51,7 @@ value hx_RenderTarget_getTexture(value thisObj)
 {
     RenderTarget *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getTexture(), true, true);
+    return ReferenceToValue(_thisObj->getTexture(), true);
 }
 DEFINE_PRIM(hx_RenderTarget_getTexture, 1);
 

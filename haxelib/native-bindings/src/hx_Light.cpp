@@ -113,7 +113,7 @@ value hx_Light_getNode(value thisObj)
 {
     Light *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getNode(), true, true);
+    return ReferenceToValue(_thisObj->getNode(), true);
 }
 DEFINE_PRIM(hx_Light_getNode, 1);
 

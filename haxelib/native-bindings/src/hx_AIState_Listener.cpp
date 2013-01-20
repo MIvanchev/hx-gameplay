@@ -28,8 +28,8 @@ public:
     {
         val_call2(
                 clbkStateEnter.get(),
-                ReferenceToValue(agent, true, true),
-                ReferenceToValue(state, true, true)
+                ReferenceToValue(agent, true),
+                ReferenceToValue(state, true)
             );
     }
 
@@ -37,8 +37,8 @@ public:
     {
         val_call2(
                 clbkStateExit.get(),
-                ReferenceToValue(agent, true, true),
-                ReferenceToValue(state, true, true)
+                ReferenceToValue(agent, true),
+                ReferenceToValue(state, true)
             );
     }
 
@@ -46,8 +46,8 @@ public:
     {
         val_call3(
                 clbkStateEnter.get(),
-                ReferenceToValue(agent, true, true),
-                ReferenceToValue(state, true, true),
+                ReferenceToValue(agent, true),
+                ReferenceToValue(state, true),
                 alloc_float(elapsedTime)
             );
     }

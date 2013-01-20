@@ -32,7 +32,7 @@ DEFINE_PRIM(hx_Effect_static_createFromSource, 3);
 // DECL: static Effect* getCurrentEffect();
 value hx_Effect_static_getCurrentEffect()
 {
-    return ReferenceToValue(Effect::getCurrentEffect(), true, true);
+    return ReferenceToValue(Effect::getCurrentEffect(), true);
 }
 DEFINE_PRIM(hx_Effect_static_getCurrentEffect, 0);
 

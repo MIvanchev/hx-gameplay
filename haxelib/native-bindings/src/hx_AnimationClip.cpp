@@ -90,7 +90,7 @@ value hx_AnimationClip_getAnimation(value thisObj)
 {
     AnimationClip *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getAnimation(), true, true);
+    return ReferenceToValue(_thisObj->getAnimation(), true);
 }
 DEFINE_PRIM(hx_AnimationClip_getAnimation, 1);
 

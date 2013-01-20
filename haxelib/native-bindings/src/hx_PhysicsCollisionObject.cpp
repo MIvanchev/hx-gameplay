@@ -83,7 +83,7 @@ value hx_PhysicsCollisionObject_getCollisionShape(value thisObj)
 {
     PhysicsCollisionObject *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getCollisionShape(), true, true);
+    return ReferenceToValue(_thisObj->getCollisionShape(), true);
 }
 DEFINE_PRIM(hx_PhysicsCollisionObject_getCollisionShape, 1);
 
@@ -92,7 +92,7 @@ value hx_PhysicsCollisionObject_getNode(value thisObj)
 {
     PhysicsCollisionObject *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getNode(), true, true);
+    return ReferenceToValue(_thisObj->getNode(), true);
 }
 DEFINE_PRIM(hx_PhysicsCollisionObject_getNode, 1);
 

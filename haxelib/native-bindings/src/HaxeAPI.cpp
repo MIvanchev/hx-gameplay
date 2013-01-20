@@ -13,7 +13,6 @@ DEFINE_KIND(k_Object);
 DEFINE_KIND(k_Object_AnimationTarget);
 DEFINE_KIND(k_Object_PhysicsCollisionObject);
 DEFINE_KIND(k_Object_Ref);
-DEFINE_KIND(k_Object_Ref_Hash);
 DEFINE_KIND(k_Object_ScriptTarget);
 DEFINE_KIND(k_Object_Transform_Listener);
 
@@ -26,7 +25,6 @@ extern "C" void allocateKinds()
     k_Object_AnimationTarget = alloc_kind();
     k_Object_PhysicsCollisionObject = alloc_kind();
     k_Object_Ref = alloc_kind();
-    k_Object_Ref_Hash = alloc_kind();
     k_Object_ScriptTarget = alloc_kind();
     k_Object_Transform_Listener = alloc_kind();
 
@@ -360,51 +358,6 @@ struct WrappedReference
 
 WrappedReference *referenceHash = NULL;
 
-void _FreeReference(value object)
-{
-#ifdef DEBUG
-    printf("DEBUG: Releasing reference-counted object.\n");
-#endif
-
-    val_gc(object, NULL);
-    if (!val_is_null(object))
-    {
-        void *handle = val_get_handle(object, k_Object_Ref_Hash);
-        WrappedReference *wrappedReference = static_cast<WrappedReference*>(handle);
-        HASH_DEL(referenceHash, wrappedReference);
-        SAFE_RELEASE(wrappedReference->key);
-        free(wrappedReference);
-    }
-}
-
-#define REFERENCE_TO_VALUE(type, name)                                                                      \
-static value refConstructor ## name;                                                                        \
-value Reference ## name ## ToValue (type *object, bool increaseRefCount)                                    \
-{                                                                                                           \
-    if (object == NULL)                                                                                     \
-        return alloc_null();                                                                                \
-                                                                                                            \
-    WrappedReference *wrappedReference;                                                                     \
-    Ref *key = static_cast<Ref*>(object);                                                                   \
-    HASH_FIND_PTR(referenceHash, &key, wrappedReference);                                                   \
-    if (wrappedReference == NULL)                                                                           \
-    {                                                                                                       \
-        wrappedReference = (WrappedReference*) malloc(sizeof(WrappedReference));                            \
-        const value& nativeObject = alloc_abstract(k_Object_Ref_Hash, static_cast<void*>(wrappedReference));    \
-        const value& wrapper = val_call1(refConstructor ## name, nativeObject);                             \
-        wrappedReference->key = key;                                                                        \
-        wrappedReference->wrapper = const_cast<value&>(wrapper);                                            \
-        HASH_ADD_PTR(referenceHash, key, wrappedReference);                                                 \
-                                                                                                            \
-        if (increaseRefCount)                                                                               \
-            object->addRef();                                                                               \
-                                                                                                            \
-        val_gc(nativeObject, _FreeReference);                                                               \
-    }                                                                                                       \
-                                                                                                            \
-    return wrappedReference->wrapper;                                                                       \
-}
-
 void FreeReference(value object)
 {
 #ifdef DEBUG
@@ -415,26 +368,39 @@ void FreeReference(value object)
     if (!val_is_null(object))
     {
         void *handle = val_get_handle(object, k_Object_Ref);
-        Ref *reference = static_cast<Ref*>(handle);
-        SAFE_RELEASE(reference);
+        WrappedReference *wrappedReference = static_cast<WrappedReference*>(handle);
+        HASH_DEL(referenceHash, wrappedReference);
+        SAFE_RELEASE(wrappedReference->key);
+        free(wrappedReference);
     }
 }
 
-value ReferenceToValue(Ref *pointer, bool free, bool increaseRefCount)
-{
-    if (pointer == NULL)
-        return alloc_null();
-
-    void *handle = static_cast<void*>(pointer);
-    const value& result = alloc_abstract(k_Object_Ref, handle);
-
-    if (free)
-        val_gc(result, &FreeReference);
-
-    if (increaseRefCount)
-        pointer->addRef();
-
-    return result;
+#define REFERENCE_TO_VALUE(type, name)                                                                      \
+static value refConstructor ## name;                                                                        \
+value ReferenceToValue (type *object, bool increaseRefCount)                                                \
+{                                                                                                           \
+    if (object == NULL)                                                                                     \
+        return alloc_null();                                                                                \
+                                                                                                            \
+    WrappedReference *wrappedReference;                                                                     \
+    Ref *key = static_cast<Ref*>(object);                                                                   \
+    HASH_FIND_PTR(referenceHash, &key, wrappedReference);                                                   \
+    if (wrappedReference == NULL)                                                                           \
+    {                                                                                                       \
+        wrappedReference = (WrappedReference*) malloc(sizeof(WrappedReference));                            \
+        const value& nativeObject = alloc_abstract(k_Object_Ref, static_cast<void*>(wrappedReference));     \
+        const value& wrapper = val_call1(refConstructor ## name, nativeObject);                             \
+        wrappedReference->key = key;                                                                        \
+        wrappedReference->wrapper = const_cast<value&>(wrapper);                                            \
+        HASH_ADD_PTR(referenceHash, key, wrappedReference);                                                 \
+                                                                                                            \
+        if (increaseRefCount)                                                                               \
+            object->addRef();                                                                               \
+                                                                                                            \
+        val_gc(nativeObject, FreeReference);                                                               \
+    }                                                                                                       \
+                                                                                                            \
+    return wrappedReference->wrapper;                                                                       \
 }
 
 static char *errorMsg = "Reference or object kind expected.";
@@ -494,11 +460,6 @@ void ValueToObject(value _value, type *&pointer)                                
         pointer = dynamic_cast<type*>(base);                                                    \
     }                                                                                           \
     else if (val_is_kind(_value, k_Object_Ref))                                                 \
-    {                                                                                           \
-        Ref *base = static_cast<Ref*>(val_data(_value));                                        \
-        pointer = dynamic_cast<type*>(base);                                                    \
-    }                                                                                           \
-    else if (val_is_kind(_value, k_Object_Ref_Hash))                                            \
     {                                                                                           \
         WrappedReference *wrappedReference = static_cast<WrappedReference*>(val_data(_value));  \
         pointer = dynamic_cast<type*>(wrappedReference->key);                                   \
@@ -700,6 +661,7 @@ void setReferenceConstructor(value name, value constructor)
     APPLY_CONSTRUCTOR(Light)
     APPLY_CONSTRUCTOR(Material)
     APPLY_CONSTRUCTOR(MaterialParameter)
+    APPLY_CONSTRUCTOR(Mesh)
     APPLY_CONSTRUCTOR(Model)
     APPLY_CONSTRUCTOR(Node)
     APPLY_CONSTRUCTOR(ParticleEmitter)

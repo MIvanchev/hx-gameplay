@@ -175,7 +175,7 @@ value hx_Control_getFont(value thisObj, value state)
     Control::State _state;
     ValueToObject(thisObj, _thisObj);
     ValueToEnum(state, _state);
-    return ReferenceToValue(_thisObj->getFont(_state), true, true);
+    return ReferenceToValue(_thisObj->getFont(_state), true);
 }
 DEFINE_PRIM(hx_Control_getFont, 2);
 

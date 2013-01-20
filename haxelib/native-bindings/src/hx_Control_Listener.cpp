@@ -21,7 +21,7 @@ public:
     {
         val_call2(
                 clbkControlEvent.get(),
-                ReferenceToValue(control, true, true),
+                ReferenceToValue(control, true),
                 EnumToValue(type)
             );
     }

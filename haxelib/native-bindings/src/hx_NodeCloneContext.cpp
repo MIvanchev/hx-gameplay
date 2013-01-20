@@ -14,7 +14,7 @@ value hx_NodeCloneContext_findClonedAnimation(value thisObj, value animation)
     Animation *_animation;
     ValueToObject(thisObj, _thisObj);
     ValueToObject(animation, _animation);
-    return ReferenceToValue(_thisObj->findClonedAnimation(_animation), true, true);
+    return ReferenceToValue(_thisObj->findClonedAnimation(_animation), true);
 }
 DEFINE_PRIM(hx_NodeCloneContext_findClonedAnimation, 2);
 
@@ -25,7 +25,7 @@ value hx_NodeCloneContext_findClonedNode(value thisObj, value node)
     Node *_node;
     ValueToObject(thisObj, _thisObj);
     ValueToObject(node, _node);
-    return ReferenceToValue(_thisObj->findClonedNode(_node), true, true);
+    return ReferenceToValue(_thisObj->findClonedNode(_node), true);
 }
 DEFINE_PRIM(hx_NodeCloneContext_findClonedNode, 2);
 

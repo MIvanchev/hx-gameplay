@@ -305,7 +305,7 @@ value hx_SpriteBatch_getMaterial(value thisObj)
 {
     SpriteBatch *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getMaterial(), true, true);
+    return ReferenceToValue(_thisObj->getMaterial(), true);
 }
 DEFINE_PRIM(hx_SpriteBatch_getMaterial, 1);
 
@@ -323,7 +323,7 @@ value hx_SpriteBatch_getSampler(value thisObj)
 {
     SpriteBatch *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getSampler(), true, true);
+    return ReferenceToValue(_thisObj->getSampler(), true);
 }
 DEFINE_PRIM(hx_SpriteBatch_getSampler, 1);
 
@@ -332,7 +332,7 @@ value hx_SpriteBatch_getStateBlock(value thisObj)
 {
     SpriteBatch *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getStateBlock(), true, true);
+    return ReferenceToValue(_thisObj->getStateBlock(), true);
 }
 DEFINE_PRIM(hx_SpriteBatch_getStateBlock, 1);
 

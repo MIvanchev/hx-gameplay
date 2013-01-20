@@ -149,7 +149,7 @@ value hx_AnimationTarget_getAnimation(value thisObj, value id)
     AnimationTarget *_thisObj;
     const char *_id = ValueToString(id);
     ValueToObject(thisObj, _thisObj);
-    return ReferenceToValue(_thisObj->getAnimation(_id), true, true);
+    return ReferenceToValue(_thisObj->getAnimation(_id), true);
 }
 DEFINE_PRIM(hx_AnimationTarget_getAnimation, 2);
 
