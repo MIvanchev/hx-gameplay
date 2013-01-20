@@ -35,6 +35,52 @@ DECLARE_KIND(k_Object_ScriptTarget);
 DECLARE_KIND(k_Object_Transform_Listener);
 
 /*******************************************************************************
+ * BOXING / UNBOXING FUNCTIONS                                                 *
+ ******************************************************************************/
+
+#define ValueToFloat(value) static_cast<float>(val_get_double(value))
+#define ValueToDouble(value) val_get_double(value)
+#define ValueToUint(value) static_cast<unsigned int>(val_get_int(value))
+#define ValueToShort(value) static_cast<short>(val_get_int(value))
+#define ValueToUshort(value) static_cast<unsigned short>(val_get_int(value))
+#define ValueToLong(value) static_cast<long>(val_get_int(value))
+#define ValueToUlong(value) static_cast<unsigned long>(val_get_int(value))
+#define ValueToSizeT(value) static_cast<size_t>(val_get_int(value))
+#define ValueToString(value) (val_is_null(value) ? NULL : val_get_string(value))
+
+template<typename TYPE>
+void ValueToEnum(value _value, TYPE &_enumVal)
+{
+    _enumVal = static_cast<TYPE>(val_get_int(_value));
+}
+
+#define StringToValue(str) (((str) == NULL) ? alloc_null() : alloc_string(str))
+#define EnumToValue(enumVal) alloc_int(enumVal)
+
+template<typename TYPE>
+void ValueToBuffer(value _value, TYPE*& _bufferVal)
+{
+    if (val_is_null(_value))
+        _bufferVal = NULL;
+    else if (val_is_buffer(_value))
+        _bufferVal = reinterpret_cast<TYPE *>(buffer_data(val_to_buffer(_value)));
+    else
+        hx_failure("Buffer expected.");
+}
+
+template<typename TYPE>
+value BufferToValue(const TYPE *data, unsigned long size)
+{
+    if (data == NULL)
+        return alloc_null();
+
+    const buffer& result = alloc_buffer_len(0);
+    buffer_append_sub(result, reinterpret_cast<const char *>(data), size);
+
+    return buffer_val(result);
+}
+
+/*******************************************************************************
  * OUT PARAMETER PASSING                                                       *
  ******************************************************************************/
 
@@ -140,57 +186,6 @@ value ArrayToValue(const TYPE* _array, bool reclaim = false)
 }
 
 /*******************************************************************************
- * BOXING / UNBOXING FUNCTIONS                                                 *
- ******************************************************************************/
-
-float ValueToFloat(value _value);
-double ValueToDouble(value _value);
-unsigned int ValueToUint(value _value);
-short ValueToShort(value _value);
-unsigned short ValueToUshort(value _value);
-long ValueToLong(value _value);
-unsigned long ValueToUlong(value _value);
-size_t ValueToSizeT(value _value);
-const char *ValueToString(value _value);
-
-template<typename TYPE>
-void ValueToBuffer(value _value, TYPE*& _bufferVal)
-{
-    if (val_is_null(_value))
-        _bufferVal = NULL;
-    else if (val_is_buffer(_value))
-        _bufferVal = reinterpret_cast<TYPE *>(buffer_data(val_to_buffer(_value)));
-    else
-        hx_failure("Buffer expected.");
-}
-
-template<typename TYPE>
-void ValueToEnum(value _value, TYPE &_enumVal)
-{
-    _enumVal = static_cast<TYPE>(val_get_int(_value));
-}
-
-value StringToValue(const char *str);
-
-template<typename TYPE>
-value BufferToValue(const TYPE *data, unsigned long size)
-{
-    if (data == NULL)
-        return alloc_null();
-
-    const buffer& result = alloc_buffer_len(0);
-    buffer_append_sub(result, reinterpret_cast<const char *>(data), size);
-
-    return buffer_val(result);
-}
-
-template<typename TYPE>
-value EnumToValue(TYPE _enumVal)
-{
-    return alloc_int(_enumVal);
-}
-
-/*******************************************************************************
  * WRAPPER TYPES                                                               *
  ******************************************************************************/
 
@@ -254,8 +249,8 @@ void FreeObject(value object)
     void ValueToObject(value _value, type *&pointer);
 
 #define CONVERSION_PROTOTYPES_REF(type)                                    \
-   value ReferenceToValue(type *object, bool increaseRefCount = false);    \
-   void ValueToObject(value _value, type *&pointer);
+    value ReferenceToValue(type *object, bool increaseRefCount = false);   \
+    void ValueToObject(value _value, type *&pointer);
 
 CONVERSION_PROTOTYPES(AIAgent::Listener)
 CONVERSION_PROTOTYPES_NO_FINALIZER(AIController)

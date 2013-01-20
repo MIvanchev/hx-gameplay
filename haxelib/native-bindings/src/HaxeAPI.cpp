@@ -36,105 +36,6 @@ extern "C" void allocateKinds()
 DEFINE_ENTRY_POINT(allocateKinds);
 
 /*******************************************************************************
- * EQUIVALENCE TESTING                                                         *
- ******************************************************************************/
-
-template<typename T>
-bool TestEquivalence(T* objectA,  const value& objectB)
-{
-    if (val_is_kind(objectB, k_Object_AnimationTarget))
-    {
-        AnimationTarget *base = static_cast<AnimationTarget*>(val_data(objectB));
-        if (objectA == dynamic_cast<T*>(base))
-            return true;
-    }
-    else if (val_is_kind(objectB, k_Object_PhysicsCollisionObject))
-    {
-        PhysicsCollisionObject *base = static_cast<PhysicsCollisionObject*>(val_data(objectB));
-        if (objectA == dynamic_cast<T*>(base))
-            return true;
-    }
-    else if (val_is_kind(objectB, k_Object_Ref))
-    {
-        Ref *base = static_cast<Ref*>(val_data(objectB));
-        if (objectA == dynamic_cast<T*>(base))
-            return true;
-    }
-    else if (val_is_kind(objectB, k_Object_ScriptTarget))
-    {
-        ScriptTarget *base = static_cast<ScriptTarget*>(val_data(objectB));
-        if (objectA == dynamic_cast<T*>(base))
-            return true;
-    }
-    else if (val_is_kind(objectB, k_Object_Transform_Listener))
-    {
-        Transform::Listener *base = static_cast<Transform::Listener*>(val_data(objectB));
-        if (objectA == dynamic_cast<T*>(base))
-            return true;
-    }
-    return false;
-}
-
-value testEquivalence(value objectA, value objectB)
-{
-    if (val_is_null(objectA))
-    {
-        if (val_is_null(objectB))
-            return val_true;
-        else
-            return val_false;
-    }
-
-    bool result = false;
-
-    if (val_is_kind(objectA, k_OutParameter))
-    {
-        if (val_is_kind(objectB, k_OutParameter))
-            result = val_data(objectA) == val_data(objectB);
-    }
-    else if (val_is_kind(objectA, k_Handle))
-    {
-        if (val_is_kind(objectB, k_Handle))
-            result = val_data(objectA) == val_data(objectB);
-    }
-    else if (val_is_kind(objectA, k_Array))
-    {
-        if (val_is_kind(objectB, k_Array))
-            result = val_data(objectA) == val_data(objectB);
-    }
-    else if (val_is_kind(objectA, k_Object))
-    {
-        if (val_is_kind(objectB, k_Object))
-            result = val_data(objectA) == val_data(objectB);
-    }
-    else if (val_is_kind(objectA, k_Object_AnimationTarget))
-    {
-        result = TestEquivalence(static_cast<AnimationTarget*>(val_data(objectA)), objectB);
-    }
-    else if (val_is_kind(objectA, k_Object_PhysicsCollisionObject))
-    {
-        result = TestEquivalence(static_cast<PhysicsCollisionObject*>(val_data(objectA)), objectB);
-    }
-    else if (val_is_kind(objectA, k_Object_Ref))
-    {
-        result = TestEquivalence(static_cast<Ref*>(val_data(objectA)), objectB);
-    }
-    else if (val_is_kind(objectA, k_Object_ScriptTarget))
-    {
-        result = TestEquivalence(static_cast<ScriptTarget*>(val_data(objectA)), objectB);
-    }
-    else if (val_is_kind(objectA, k_Object_Transform_Listener))
-    {
-        result = TestEquivalence(static_cast<Transform::Listener*>(val_data(objectA)), objectB);
-    }
-    else
-        hx_failure("Invalid kind specified for equivalence check.");
-
-    return alloc_bool(result);
-}
-DEFINE_PRIM(testEquivalence, 2)
-
-/*******************************************************************************
  * OUT PARAMETER PASSING                                                       *
  ******************************************************************************/
 
@@ -276,74 +177,6 @@ NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(char, Char, alloc_int, val_get_int);
 NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(unsigned char, Byte, alloc_int, val_get_int);
 NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(float, Float, alloc_float, ValueToFloat);
 NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(double, Double, alloc_float, ValueToDouble);
-
-/*******************************************************************************
- * BOXING / UNBOXING FUNCTIONS                                                 *
- ******************************************************************************/
-
-float ValueToFloat(value _value)
-{
-    double number = val_get_double(_value);
-    return static_cast<float>(number);
-}
-
-double ValueToDouble(value _value)
-{
-    double number = val_get_double(_value);
-    return number;
-}
-
-unsigned int ValueToUint(value _value)
-{
-    int number = val_get_int(_value);
-    return static_cast<unsigned int>(number);
-}
-
-short ValueToShort(value _value)
-{
-    int number = val_get_int(_value);
-    return static_cast<short>(number);
-}
-
-unsigned short ValueToUshort(value _value)
-{
-    int number = val_get_int(_value);
-    return static_cast<unsigned short>(number);
-}
-
-long ValueToLong(value _value)
-{
-    int number = val_get_int(_value);
-    return static_cast<long>(number);
-}
-
-unsigned long ValueToUlong(value _value)
-{
-    int number = val_get_int(_value);
-    return static_cast<unsigned long>(number);
-}
-
-size_t ValueToSizeT(value _value)
-{
-    size_t number = val_get_int(_value);
-    return static_cast<size_t>(number);
-}
-
-const char *ValueToString(value _value)
-{
-    if (val_is_null(_value))
-        return NULL;
-
-    return val_get_string(_value);
-}
-
-value StringToValue(const char *str)
-{
-    if (str == NULL)
-        return alloc_null();
-
-    return alloc_string(str);
-}
 
 /*******************************************************************************
  * GAMEPLAY OBJECT PASSING                                                     *
@@ -694,6 +527,100 @@ void updateReference(value refWrapper, value wrapper)
     _refWrapper->wrapper = wrapper;
 }
 DEFINE_PRIM(updateReference, 2)
+
+/*******************************************************************************
+ * EQUIVALENCE TESTING                                                         *
+ ******************************************************************************/
+
+template<typename T>
+bool TestEquivalence(T* objectA,  const value& objectB)
+{
+    if (val_is_kind(objectB, k_Object_AnimationTarget))
+    {
+        AnimationTarget *base = static_cast<AnimationTarget*>(val_data(objectB));
+        if (objectA == dynamic_cast<T*>(base))
+            return true;
+    }
+    else if (val_is_kind(objectB, k_Object_PhysicsCollisionObject))
+    {
+        PhysicsCollisionObject *base = static_cast<PhysicsCollisionObject*>(val_data(objectB));
+        if (objectA == dynamic_cast<T*>(base))
+            return true;
+    }
+    else if (val_is_kind(objectB, k_Object_ScriptTarget))
+    {
+        ScriptTarget *base = static_cast<ScriptTarget*>(val_data(objectB));
+        if (objectA == dynamic_cast<T*>(base))
+            return true;
+    }
+    else if (val_is_kind(objectB, k_Object_Transform_Listener))
+    {
+        Transform::Listener *base = static_cast<Transform::Listener*>(val_data(objectB));
+        if (objectA == dynamic_cast<T*>(base))
+            return true;
+    }
+    return false;
+}
+
+value testEquivalence(value objectA, value objectB)
+{
+    if (val_is_null(objectA))
+    {
+        if (val_is_null(objectB))
+            return val_true;
+        else
+            return val_false;
+    }
+
+    bool result = false;
+
+    if (val_is_kind(objectA, k_OutParameter))
+    {
+        if (val_is_kind(objectB, k_OutParameter))
+            result = val_data(objectA) == val_data(objectB);
+    }
+    else if (val_is_kind(objectA, k_Handle))
+    {
+        if (val_is_kind(objectB, k_Handle))
+            result = val_data(objectA) == val_data(objectB);
+    }
+    else if (val_is_kind(objectA, k_Array))
+    {
+        if (val_is_kind(objectB, k_Array))
+            result = val_data(objectA) == val_data(objectB);
+    }
+    else if (val_is_kind(objectA, k_Object_Ref))
+    {
+        if (val_is_kind(objectB, k_Object_Ref))
+            result = val_data(objectA) == val_data(objectB);
+    }
+    else if (val_is_kind(objectA, k_Object))
+    {
+        if (val_is_kind(objectB, k_Object))
+            result = val_data(objectA) == val_data(objectB);
+    }
+    else if (val_is_kind(objectA, k_Object_AnimationTarget))
+    {
+        result = TestEquivalence(static_cast<AnimationTarget*>(val_data(objectA)), objectB);
+    }
+    else if (val_is_kind(objectA, k_Object_PhysicsCollisionObject))
+    {
+        result = TestEquivalence(static_cast<PhysicsCollisionObject*>(val_data(objectA)), objectB);
+    }
+    else if (val_is_kind(objectA, k_Object_ScriptTarget))
+    {
+        result = TestEquivalence(static_cast<ScriptTarget*>(val_data(objectA)), objectB);
+    }
+    else if (val_is_kind(objectA, k_Object_Transform_Listener))
+    {
+        result = TestEquivalence(static_cast<Transform::Listener*>(val_data(objectA)), objectB);
+    }
+    else
+        hx_failure("Invalid kind specified for equivalence check.");
+
+    return alloc_bool(result);
+}
+DEFINE_PRIM(testEquivalence, 2)
 
 /*******************************************************************************
  * (TODO)                                                                      *
