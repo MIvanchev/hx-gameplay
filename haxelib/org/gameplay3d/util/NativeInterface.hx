@@ -6,6 +6,7 @@ import org.gameplay3d.AIAgent;
 import org.gameplay3d.AIState;
 import org.gameplay3d.Animation;
 import org.gameplay3d.AnimationClip;
+import org.gameplay3d.AuidoBuffer;
 import org.gameplay3d.Bundle;
 import org.gameplay3d.Button;
 import org.gameplay3d.Camera;
@@ -90,7 +91,7 @@ class NativeInterface
         registerClass(AIState);
         registerClass(Animation);
         registerClass(AnimationClip);
-        //registerClass(AudioBuffer);
+        registerClass(AudioBuffer);
         registerClass(Bundle);
         registerClass(Button);
         registerClass(Camera);

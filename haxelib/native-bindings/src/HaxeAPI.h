@@ -113,6 +113,12 @@ void ValueToArray(value _value, TYPE*& _array)
 {
     if (val_is_null(_value))
         _array = NULL;
+    else if (val_is_float(_value))
+    {
+        double storage = ValueToDouble(_value);
+        uintptr_t ptr = static_cast<uintptr_t>(storage);
+        _array = reinterpret_cast<TYPE*>(ptr);
+    }
     else
     {
         void *data = val_get_handle(_value, k_Array);
@@ -123,11 +129,15 @@ void ValueToArray(value _value, TYPE*& _array)
 template<typename TYPE>
 value ArrayToValue(const TYPE* _array, bool reclaim = false)
 {
-    const void *data = static_cast<const void*>(_array);
-    const value& result = alloc_abstract(k_Array, const_cast<void*>(data));
     if (reclaim)
+    {
+        const void *data = static_cast<const void*>(_array);
+        const value& result = alloc_abstract(k_Array, const_cast<void*>(data));
         val_gc(result, &FreeArray<TYPE>);
-    return result;
+        return result;
+    }
+    uintptr_t storage = reinterpret_cast<uintptr_t>(_array);
+    return alloc_float(static_cast<double>(storage));
 }
 
 /*******************************************************************************
