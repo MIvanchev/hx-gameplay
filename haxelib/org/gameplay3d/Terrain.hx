@@ -29,7 +29,7 @@ class Terrain extends Transform_ListenerImpl, implements Ref
     }
 
     // DECL: static Terrain* create(HeightField* heightfield, const Vector3& scale = Vector3::one(), unsigned int patchSize = 32,
-    public static function create_HghtFld_V3_IntX2_Flt_Str(heightfield:HeightField, scale:Vector3, patchSize:Int, detailLevels:Int, skirtScale:Float, normalMapPath:String):Terrain
+    public static function create_HghtFld_V3_IntX2_Flt_Str(heightfield:HeightField, scale:Vector3, patchSize:Int = 32, detailLevels:Int = 1, skirtScale:Float = 0.0, normalMapPath:String = null):Terrain
     {
         return hx_Terrain_static_create_HghtFld_V3_IntX2_Flt_Str(heightfield.native(), scale.native(), patchSize, detailLevels, skirtScale, normalMapPath);
     }
@@ -47,7 +47,7 @@ class Terrain extends Transform_ListenerImpl, implements Ref
     }
 
     // DECL: void draw(bool wireframe = false);
-    public function draw(wireframe:Bool):Void
+    public function draw(wireframe:Bool = false):Void
     {
         hx_Terrain_draw(nativeObject, wireframe);
     }
@@ -107,7 +107,7 @@ class Terrain extends Transform_ListenerImpl, implements Ref
     }
 
     // DECL: bool setLayer(int index,
-    public function setLayer(index:Int, texturePath:String, textureRepeat:Vector2, blendPath:String, blendChannel:Int, row:Int, column:Int):Bool
+    public function setLayer(index:Int, texturePath:String, textureRepeat:Vector2, blendPath:String = null, blendChannel:Int = 0, row:Int = -1, column:Int = -1):Bool
     {
         return hx_Terrain_setLayer(nativeObject, index, texturePath, textureRepeat.native(), blendPath, blendChannel, row, column);
     }

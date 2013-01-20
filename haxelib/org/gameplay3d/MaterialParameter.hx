@@ -64,7 +64,7 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
     // DECL: Texture::Sampler* getSampler(unsigned int index = 0) const;
     public function getSampler(index:Int = 0):Texture_Sampler
     {
-        return Texture_Sampler.wrap(hx_MaterialParameter_getSampler(nativeObject));
+        return Texture_Sampler.wrap(hx_MaterialParameter_getSampler(nativeObject, index));
     }
 
     // DECL: void setAnimationPropertyValue(int propertyId, AnimationValue* value, float blendWeight = 1.0f);

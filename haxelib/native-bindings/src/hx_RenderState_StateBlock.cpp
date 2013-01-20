@@ -68,6 +68,17 @@ void hx_RenderState_StateBlock_setDepthTest(value thisObj, value enabled)
 }
 DEFINE_PRIM(hx_RenderState_StateBlock_setDepthTest, 2);
 
+// void setDepthFunction(DepthFunction func);
+void hx_RenderState_StateBlock_setDepthFunction(value thisObj, value func)
+{
+    RenderState::StateBlock *_thisObj;
+    RenderState::DepthFunction _func;
+    ValueToObject(thisObj, _thisObj);
+    ValueToEnum(func, _func);
+    _thisObj->setDepthFunction(_func);
+}
+DEFINE_PRIM(hx_RenderState_StateBlock_setDepthFunction, 2);
+
 // DECL: void setDepthWrite(bool enabled);
 void hx_RenderState_StateBlock_setDepthWrite(value thisObj, value enabled)
 {

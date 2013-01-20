@@ -38,13 +38,13 @@ class HeightField extends GameplayObject, implements Ref
     }
 
     // DECL: static HeightField* createFromImage(const char* path, float heightMin = 0, float heightMax = 1);
-    public static function createFromImage(path:String, heightMin:Float, heightMax:Float):HeightField
+    public static function createFromImage(path:String, heightMin:Float = 0.0, heightMax:Float = 1.0):HeightField
     {
         return HeightField.wrap(hx_HeightField_static_createFromImage(path, heightMin, heightMax));
     }
 
     // DECL: static HeightField* createFromRAW(const char* path, unsigned int width, unsigned int height, float heightMin = 0, float heightMax = 1);
-    public static function createFromRAW(path:String, width:Int, height:Int, heightMin:Float, heightMax:Float):HeightField
+    public static function createFromRAW(path:String, width:Int, height:Int, heightMin:Float = 0.0, heightMax:Float = 1.0):HeightField
     {
         return HeightField.wrap(hx_HeightField_static_createFromRAW(path, width, height, heightMin, heightMax));
     }

@@ -4,7 +4,7 @@
 value hx_Platform_static_create(value game, value attachToWindow)
 {
     Game *_game;
-    void *_attachToWindow;
+    void *_attachToWindow = NULL;
     ValueToObject(game, _game);
     ValueToHandle(attachToWindow, _attachToWindow);
     return ObjectToValue(Platform::create(_game, _attachToWindow));

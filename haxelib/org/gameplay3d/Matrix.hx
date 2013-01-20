@@ -614,9 +614,9 @@ class Matrix extends GameplayObject, implements IMatrix
     static var hx_Matrix_static_createOrthographic:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createOrthographic", 5);
     static var hx_Matrix_static_createOrthographicOffCenter:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createOrthographicOffCenter", -1);
     static var hx_Matrix_static_createPerspective:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createPerspective", 5);
-    static var hx_Matrix_static_createReflection:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createPerspective", 5);
+    static var hx_Matrix_static_createReflection:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createReflection", 2);
     static var hx_Matrix_static_createRotation_Qtrn_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createRotation_Qtrn_Mat", 2);
-    static var hx_Matrix_static_createRotation_V3_Flt_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createReflection", 2);
+    static var hx_Matrix_static_createRotation_V3_Flt_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createRotation_V3_Flt_Mat", 3);
     static var hx_Matrix_static_createRotationX:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createRotationX", 2);
     static var hx_Matrix_static_createRotationY:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createRotationY", 2);
     static var hx_Matrix_static_createRotationZ:Dynamic = cpp.Lib.load("gameplay", "hx_Matrix_static_createRotationZ", 2);
