@@ -185,8 +185,12 @@ NATIVE_ARRAY_FUNCTIONS_PRIMITIVE(double, Double, alloc_float, ValueToDouble);
 struct WrappedReference
 {
     Ref *key;
-    value wrapper;
+    AutoGCRoot wrapper;
     UT_hash_handle hh;
+
+    WrappedReference()
+        : wrapper(alloc_null())
+    { }
 };
 
 WrappedReference *referenceHash = NULL;
@@ -204,7 +208,7 @@ void FreeReference(value object)
         WrappedReference *wrappedReference = static_cast<WrappedReference*>(handle);
         HASH_DEL(referenceHash, wrappedReference);
         SAFE_RELEASE(wrappedReference->key);
-        free(wrappedReference);
+        SAFE_DELETE(wrappedReference);
     }
 }
 
@@ -220,11 +224,11 @@ value ReferenceToValue (type *object, bool increaseRefCount)                    
     HASH_FIND_PTR(referenceHash, &key, wrappedReference);                                                   \
     if (wrappedReference == NULL)                                                                           \
     {                                                                                                       \
-        wrappedReference = (WrappedReference*) malloc(sizeof(WrappedReference));                            \
+        wrappedReference = new WrappedReference();                                                          \
         const value& nativeObject = alloc_abstract(k_Object_Ref, static_cast<void*>(wrappedReference));     \
         const value& wrapper = val_call1(refConstructor ## name, nativeObject);                             \
         wrappedReference->key = key;                                                                        \
-        wrappedReference->wrapper = const_cast<value&>(wrapper);                                            \
+        wrappedReference->wrapper.set(wrapper);                                                             \
         HASH_ADD_PTR(referenceHash, key, wrappedReference);                                                 \
                                                                                                             \
         if (increaseRefCount)                                                                               \
@@ -233,7 +237,7 @@ value ReferenceToValue (type *object, bool increaseRefCount)                    
         val_gc(nativeObject, FreeReference);                                                                \
     }                                                                                                       \
                                                                                                             \
-    return wrappedReference->wrapper;                                                                       \
+    return wrappedReference->wrapper.get();                                                                 \
 }
 
 static char *errorMsg = "Reference or object kind expected.";
@@ -520,13 +524,13 @@ void setReferenceConstructor(value name, value constructor)
 }
 DEFINE_PRIM(setReferenceConstructor, 2)
 
-void updateReference(value refWrapper, value wrapper)
+void setReferenceInstance(value refWrapper, value wrapper)
 {
     void *data = val_get_handle(refWrapper, k_Object_Ref);
     WrappedReference *_refWrapper = static_cast<WrappedReference*>(data);
-    _refWrapper->wrapper = wrapper;
+    _refWrapper->wrapper.set(wrapper);
 }
-DEFINE_PRIM(updateReference, 2)
+DEFINE_PRIM(setReferenceInstance, 2)
 
 /*******************************************************************************
  * EQUIVALENCE TESTING                                                         *

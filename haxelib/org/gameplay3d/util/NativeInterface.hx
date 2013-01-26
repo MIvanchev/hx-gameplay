@@ -1,6 +1,8 @@
 package org.gameplay3d.util;
 
 import cpp.Lib;
+import cpp.vm.WeakRef;
+import cpp.vm.WeakRef;
 import org.gameplay3d.AbsoluteLayout;
 import org.gameplay3d.AIAgent;
 import org.gameplay3d.AIState;
@@ -65,10 +67,16 @@ class NativeInterface
      **************************************************************************/
 
     /**
-     * The native method used to pass the wrapper factory methods to the CFFI
+     * The native method used to pass the instance factory methods to the C++
      * layer.
      */
     static var setReferenceConstructor:Dynamic;
+
+    /**
+     * The native method used to pass reference-counted instances to the C++
+     * layer.
+     */
+    static var setReferenceInstance:Dynamic;
 
     /**
      * The list of factory methods used to construct Haxe wrappers for reference
@@ -78,7 +86,7 @@ class NativeInterface
      * for the whole execution time of the application, i.e. not be reclaimed by
      * the garbage collector.
      */
-    static var factories:List<Dynamic->Ref> = new List();
+    static var factories:List<Dynamic->WeakRef<GameplayObject>> = new List();
 
     /**
      * TODO
@@ -86,6 +94,7 @@ class NativeInterface
     public static function initialie()
     {
         setReferenceConstructor = Lib.load("gameplay", "setReferenceConstructor", 2);
+        setReferenceInstance = Lib.load("gameplay", "setReferenceInstance", 2);
         registerClass(AbsoluteLayout);
         registerClass(AIAgent);
         registerClass(AIState);
@@ -140,6 +149,14 @@ class NativeInterface
     /**
      * TODO
      */
+    public static function updateReference(nativeObject:Dynamic, instance:GameplayObject)
+    {
+        setReferenceInstance(nativeObject, new WeakRef<GameplayObject>(instance));
+    }
+
+    /**
+     * TODO
+     */
     @:generic
     static function registerClass<T : (GameplayObject, Ref)>(classObj:Class<T>)
     {
@@ -155,9 +172,9 @@ class NativeInterface
         //
 
         factories.push(
-                function(nativeObject:Dynamic):T
+                function(nativeObject:Dynamic):WeakRef<GameplayObject>
                 {
-                    return classObj.wrap(nativeObject);
+                    return new WeakRef<GameplayObject>(classObj.wrap(nativeObject));
                 }
             );
 

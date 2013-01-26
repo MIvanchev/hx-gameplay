@@ -1,6 +1,8 @@
 package org.gameplay3d;
 
+import cpp.vm.WeakRef;
 import org.gameplay3d.intern.NativeBinding;
+import org.gameplay3d.util.NativeInterface;
 
 /**
  * Encapsulates the root of gameplay's class hierarchy and provides the main
@@ -67,8 +69,11 @@ class GameplayObject extends NativeBinding
         return
             if (nativeObject == null)
                 null;
-            else if (Std.is(nativeObject, Ref))
-                nativeObject;
+            else if (Std.is(nativeObject, WeakRef))
+            {
+                var ref:WeakRef<GameplayObject> = nativeObject;
+                cast(ref.get());
+            }
             else
             {
                 args[0] = nativeObject;
@@ -79,14 +84,16 @@ class GameplayObject extends NativeBinding
     @:generic
     public function castTo<T : GameplayObject>(classObj:Class<T>):T
     {
-       var nameSrc = Type.getClassName(Type.getClass(this));
-       var nameDst = Type.getClassName(classObj);
-
-#if debug
-       trace('DEBUG: Native conversion from "$nameSrc" to "$nameDst".');
-#end
-
-       return wrap(classObj, nativeObject);
+        return
+            if (Std.is(this, classObj))
+                cast(this);
+            else
+            {
+                var result = wrap(classObj, nativeObject);
+                if (Std.is(this, Ref))
+                    NativeInterface.updateReference(nativeObject, result);
+                result;
+            }
     }
 }
 
