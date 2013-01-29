@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.shared.SharedQuaternion;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -30,9 +31,7 @@ class PhysicsConstraint extends GameplayObject
     // DECL: static Quaternion getRotationOffset(const Node* node, const Vector3& point);
     public static function getRotationOffset(node:Node, point:IVector3):SharedQuaternion
     {
-        if (_rotationOffset == null)
-            _rotationOffset = Quaternion.make();
-        return _rotationOffset.impersonate(hx_PhysicsConstraint_static_getRotationOffset(node.native(), point.native()));
+        return Macros.impersonateResult(_rotationOffset, hx_PhysicsConstraint_static_getRotationOffset(node.native(), point.native()));
     }
 
     // DECL: static Vector3 getTranslationOffset(const Node* node, const Vector3& point);

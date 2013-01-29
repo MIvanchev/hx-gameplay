@@ -39,14 +39,14 @@ DECLARE_KIND(k_Object_Transform_Listener);
  ******************************************************************************/
 
 #define ValueToFloat(value) static_cast<float>(val_get_double(value))
-#define ValueToDouble(value) val_get_double(value)
+#define ValueToDouble(value) ( val_get_double(value) )
 #define ValueToUint(value) static_cast<unsigned int>(val_get_int(value))
 #define ValueToShort(value) static_cast<short>(val_get_int(value))
 #define ValueToUshort(value) static_cast<unsigned short>(val_get_int(value))
 #define ValueToLong(value) static_cast<long>(val_get_int(value))
 #define ValueToUlong(value) static_cast<unsigned long>(val_get_int(value))
 #define ValueToSizeT(value) static_cast<size_t>(val_get_int(value))
-#define ValueToString(value) (val_is_null(value) ? NULL : val_get_string(value))
+#define ValueToString(value) ( val_is_null(value) ? NULL : (val_get_string(value)) )
 
 template<typename TYPE>
 void ValueToEnum(value _value, TYPE &_enumVal)
@@ -73,6 +73,9 @@ value BufferToValue(const TYPE *data, unsigned long size)
 {
     if (data == NULL)
         return alloc_null();
+
+    // FIXME; Relocation of result perhaps possible.
+    //
 
     const buffer& result = alloc_buffer_len(0);
     buffer_append_sub(result, reinterpret_cast<const char *>(data), size);

@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -14,17 +15,6 @@ class Light extends GameplayObject, implements Ref
      **************************************************************************/
 
     var _color:Vector3;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _color = Vector3.make();
-        }
-        return cast(this);
-    }
 
     // DECL: static Light* createDirectional(const Vector3& color);
     public static function createDirectional_V3(color:IVector3):Light
@@ -65,7 +55,7 @@ class Light extends GameplayObject, implements Ref
     // DECL: const Vector3& getColor() const;
     public function getColor():IVector3
     {
-        return _color.impersonate(hx_Light_getColor(nativeObject));
+        return Macros.impersonateResult(_color, hx_Light_getColor(nativeObject));
     }
 
     // DECL: float getInnerAngle() const;

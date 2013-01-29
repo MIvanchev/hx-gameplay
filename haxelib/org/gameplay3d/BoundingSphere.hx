@@ -7,12 +7,13 @@ import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class BoundingSphere : public GameplayObject
-class BoundingSphere extends GameplayObject
+class BoundingSphere extends GameplayObject, implements IBoundingSphere
 {
     /***************************************************************************
      * PROPERTIES                                                              *
@@ -31,14 +32,7 @@ class BoundingSphere extends GameplayObject
     {
         var initialized = this.nativeObject != null;
         super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            center = Vector3.wrap(hx_BoundingSphere_property_center_get(nativeObject));
-        }
-        else
-        {
-            center.impersonate(hx_BoundingSphere_property_center_get(nativeObject));
-        }
+        Macros.impersonateResult(center, hx_BoundingSphere_property_center_get(nativeObject));
         return cast(this);
     }
 
@@ -63,9 +57,7 @@ class BoundingSphere extends GameplayObject
     // DECL: static const BoundingSphere& empty();
     public static function empty():IBoundingSphere
     {
-        if (_empty == null)
-            _empty = BoundingSphere.make();
-        return _empty.impersonate(hx_BoundingSphere_static_empty());
+        return Macros.impersonateResult(_empty, hx_BoundingSphere_static_empty());
     }
 
     // DECL: bool intersects(const BoundingBox& box) const;

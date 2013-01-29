@@ -13,7 +13,6 @@ class AIState extends ScriptTargetImpl, implements Ref
      * MEMBERS                                                                 *
      **************************************************************************/
 
-
     // DECL: static AIState* create(const char* id);
     public static function create(id:String):AIState
     {

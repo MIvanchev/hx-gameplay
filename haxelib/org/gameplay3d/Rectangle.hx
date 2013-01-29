@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IRectangle;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -80,9 +81,7 @@ class Rectangle extends GameplayObject, implements IRectangle
     // DECL: static const Rectangle& empty();
     public static function empty():IRectangle
     {
-        if (_empty == null)
-            _empty = Rectangle.make();
-        return _empty.impersonate(hx_Rectangle_static_empty());
+        return Macros.impersonateResult(_empty, hx_Rectangle_static_empty());
     }
 
     // DECL: void inflate(float horizontalAmount, float verticalAmount);

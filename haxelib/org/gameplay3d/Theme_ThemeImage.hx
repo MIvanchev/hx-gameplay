@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -17,22 +18,10 @@ class Theme_ThemeImage extends GameplayObject, implements Ref
     var _color:Vector4;
     var _region:Rectangle;
 
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _color = Vector4.make();
-            _region = Rectangle.make();
-        }
-        return cast(this);
-    }
-
     // DECL: const Vector4& getColor() const;
     public function getColor():IVector4
     {
-        return _color.impersonate(hx_Theme_ThemeImage_getColor(nativeObject));
+        return Macros.impersonateResult(_color, hx_Theme_ThemeImage_getColor(nativeObject));
     }
 
     // DECL: const char* getId() const;
@@ -44,7 +33,7 @@ class Theme_ThemeImage extends GameplayObject, implements Ref
     // DECL: const Rectangle& getRegion() const;
     public function getRegion():IRectangle
     {
-        return _region.impersonate(hx_Theme_ThemeImage_getRegion(nativeObject));
+        return Macros.impersonateResult(_region, hx_Theme_ThemeImage_getRegion(nativeObject));
     }
 
     // DECL: const UVs& getUVs() const;

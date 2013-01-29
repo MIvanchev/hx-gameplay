@@ -7,6 +7,7 @@ import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.shared.SharedVector3;
 import org.gameplay3d.util.INativeArray;
 
@@ -32,19 +33,9 @@ class BoundingBox extends GameplayObject, implements IBoundingBox
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        var initialized = this.nativeObject != null;
         super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _center = Vector3.make();
-            min = Vector3.wrap(hx_BoundingBox_property_min_get(nativeObject));
-            max = Vector3.wrap(hx_BoundingBox_property_max_get(nativeObject));
-        }
-        else
-        {
-            min.impersonate(hx_BoundingBox_property_min_get(nativeObject));
-            max.impersonate(hx_BoundingBox_property_max_get(nativeObject));
-        }
+        Macros.impersonateResult(min, hx_BoundingBox_property_min_get(nativeObject));
+        Macros.impersonateResult(max, hx_BoundingBox_property_max_get(nativeObject));
         return cast(this);
     }
 
@@ -75,15 +66,13 @@ class BoundingBox extends GameplayObject, implements IBoundingBox
     // DECL: static const BoundingBox& empty();
     public static function empty():IBoundingBox
     {
-        if (_empty == null)
-            _empty = BoundingBox.make();
-        return _empty.impersonate(hx_BoundingBox_static_empty());
+        return Macros.impersonateResult(_empty, hx_BoundingBox_static_empty());
     }
 
     // DECL: Vector3 getCenter() const;
     public function getCenter():SharedVector3
     {
-        return _center.impersonate(hx_BoundingBox_getCenter(nativeObject));
+        return Macros.impersonateResult(_center, hx_BoundingBox_getCenter(nativeObject));
     }
 
     // DECL: void getCenter(Vector3* dst) const;

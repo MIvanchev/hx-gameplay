@@ -7,6 +7,7 @@ import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -26,18 +27,6 @@ class Ray extends GameplayObject
 
     var _direction:Vector3;
     var _origin:Vector3;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _direction = Vector3.make();
-            _origin = Vector3.make();
-        }
-        return cast(this);
-    }
 
     // DECL: Ray();
     public static function make():Ray
@@ -66,13 +55,13 @@ class Ray extends GameplayObject
     // DECL: const Vector3& getDirection() const;
     public function getDirection():IVector3
     {
-        return _direction.impersonate(hx_Ray_getDirection(nativeObject));
+        return Macros.impersonateResult(_direction, hx_Ray_getDirection(nativeObject));
     }
 
     // DECL: const Vector3& getOrigin() const;
     public function getOrigin():IVector3
     {
-        return _origin.impersonate(hx_Ray_getOrigin(nativeObject));
+        return Macros.impersonateResult(_origin, hx_Ray_getOrigin(nativeObject));
     }
 
     // DECL: float intersects(const BoundingBox& box) const;

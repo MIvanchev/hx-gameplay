@@ -1,5 +1,6 @@
 package org.gameplay3d;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -20,18 +21,9 @@ class PhysicsCollisionObject_CollisionPair extends GameplayObject
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        var initialized = this.nativeObject != null;
         super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            objectA = PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectA_get(nativeObject));
-            objectB = PhysicsCollisionObject.wrap(hx_PhysicsCollisionObject_CollisionPair_property_objectB_get(nativeObject));
-        }
-        else
-        {
-            objectA.impersonate(hx_PhysicsCollisionObject_CollisionPair_property_objectA_get(nativeObject));
-            objectB.impersonate(hx_PhysicsCollisionObject_CollisionPair_property_objectB_get(nativeObject));
-        }
+        Macros.impersonateResult(objectA, hx_PhysicsCollisionObject_CollisionPair_property_objectA_get(nativeObject));
+        Macros.impersonateResult(objectB, hx_PhysicsCollisionObject_CollisionPair_property_objectB_get(nativeObject));
         return cast(this);
     }
 

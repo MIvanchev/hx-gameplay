@@ -226,6 +226,7 @@ value ReferenceToValue (type *object, bool increaseRefCount)                    
     {                                                                                                       \
         wrappedReference = new WrappedReference();                                                          \
         const value& nativeObject = alloc_abstract(k_Object_Ref, static_cast<void*>(wrappedReference));     \
+        val_gc(nativeObject, FreeReference);                                                                \
         const value& wrapper = val_call1(refConstructor ## name, nativeObject);                             \
         wrappedReference->key = key;                                                                        \
         wrappedReference->wrapper.set(wrapper);                                                             \
@@ -233,9 +234,7 @@ value ReferenceToValue (type *object, bool increaseRefCount)                    
                                                                                                             \
         if (increaseRefCount)                                                                               \
             object->addRef();                                                                               \
-                                                                                                            \
-        val_gc(nativeObject, FreeReference);                                                                \
-    }                                                                                                       \
+        }                                                                                                   \
                                                                                                             \
     return wrappedReference->wrapper.get();                                                                 \
 }
@@ -251,7 +250,6 @@ value ObjectToValue(const type *pointer)                                        
     const base_type *base = static_cast<const base_type*>(pointer);                 \
     const void *handle = static_cast<const void*>(base);                            \
     const value& result =  alloc_abstract(kind, const_cast<void*>(handle));         \
-                                                                                    \
     val_gc(result, &FreeObject<type, base_type>);                                   \
                                                                                     \
     return result;                                                                  \
@@ -563,6 +561,9 @@ bool TestEquivalence(T* objectA,  const value& objectB)
         if (objectA == dynamic_cast<T*>(base))
             return true;
     }
+    else
+        hx_failure("Invalid destination type specified in equivalence test.");
+
     return false;
 }
 
@@ -620,7 +621,7 @@ value testEquivalence(value objectA, value objectB)
         result = TestEquivalence(static_cast<Transform::Listener*>(val_data(objectA)), objectB);
     }
     else
-        hx_failure("Invalid kind specified for equivalence check.");
+        hx_failure("Invalid kind specified in equivalence check.");
 
     return alloc_bool(result);
 }

@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IBoundingBox;
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -16,17 +17,6 @@ class Terrain extends Transform_ListenerImpl, implements Ref
      **************************************************************************/
 
     var _boundingBox:BoundingBox;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _boundingBox = BoundingBox.make();
-        }
-        return cast(this);
-    }
 
     // DECL: static Terrain* create(HeightField* heightfield, const Vector3& scale = Vector3::one(), unsigned int patchSize = 32,
     public static function create_HghtFld_V3_IntX2_Flt_Str(heightfield:HeightField, scale:Vector3, patchSize:Int = 32, detailLevels:Int = 1, skirtScale:Float = 0.0, normalMapPath:String = null):Terrain
@@ -55,7 +45,7 @@ class Terrain extends Transform_ListenerImpl, implements Ref
     // DECL: const BoundingBox& getBoundingBox() const;
     public function getBoundingBox():IBoundingBox
     {
-        return _boundingBox.impersonate(hx_Terrain_getBoundingBox(nativeObject));
+        return Macros.impersonateResult(_boundingBox, hx_Terrain_getBoundingBox(nativeObject));
     }
 
     // DECL: float getHeight(float x, float z) const;

@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.util.OutParameter;
@@ -17,17 +18,6 @@ class Scene extends GameplayObject, implements Ref
      **************************************************************************/
 
     var _ambientColor:Vector3;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _ambientColor = Vector3.make();
-        }
-        return cast(this);
-    }
 
     // DECL: Node* addNode(const char* id = NULL);
     public function addNode_Str(id:String = null):Node
@@ -83,7 +73,7 @@ class Scene extends GameplayObject, implements Ref
     // DECL: const Vector3& getAmbientColor() const;
     public function getAmbientColor():IVector3
     {
-        return _ambientColor.impersonate(hx_Scene_getAmbientColor(nativeObject));
+        return Macros.impersonateResult(_ambientColor, hx_Scene_getAmbientColor(nativeObject));
     }
 
     // DECL: Node* getFirstNode() const;

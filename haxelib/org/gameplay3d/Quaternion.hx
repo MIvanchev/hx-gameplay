@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -89,9 +90,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     // DECL: static const Quaternion& identity();
     public static function identity():IQuaternion
     {
-        if (_identity == null)
-            _identity = Quaternion.make();
-        return _identity.impersonate(hx_Quaternion_static_identity());
+        return Macros.impersonateResult(_identity, hx_Quaternion_static_identity());
     }
 
     // DECL: bool inverse();
@@ -205,9 +204,7 @@ class Quaternion extends GameplayObject, implements IQuaternion
     // DECL: static const Quaternion& zero();
     public static function zero():IQuaternion
     {
-        if (_zero == null)
-            _zero = Quaternion.make();
-        return _zero.impersonate(hx_Quaternion_static_zero());
+        return Macros.impersonateResult(_zero, hx_Quaternion_static_zero());
     }
 
     /***************************************************************************

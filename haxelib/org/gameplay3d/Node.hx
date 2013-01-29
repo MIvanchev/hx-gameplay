@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IBoundingSphere;
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.shared.SharedVector3;
 import org.gameplay3d.util.Handle;
@@ -38,35 +39,6 @@ class Node extends Transform, implements Ref
     var _worldViewMatrix:Matrix;
     var _worldViewProjectionMatrix:Matrix;
     var _boundingSphere:BoundingSphere;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _activeCameraTranslationView = Vector3.make();
-            _activeCameraTranslationWorld = Vector3.make();
-            _forwardVectorView = Vector3.make();
-            _forwardVectorWorld = Vector3.make();
-            _rightVectorWorld = Vector3.make();
-            _translationView = Vector3.make();
-            _translationWorld = Vector3.make();
-            _upVectorWorld = Vector3.make();
-            _inverseTransposeWorldMatrix = Matrix.make();
-            _inverseTransposeWorldViewMatrix = Matrix.make();
-            _inverseViewMatrix = Matrix.make();
-            _inverseViewProjectionMatrix = Matrix.make();
-            _projectionMatrix = Matrix.make();
-            _viewMatrix = Matrix.make();
-            _viewProjectionMatrix = Matrix.make();
-            _worldMatrix = Matrix.make();
-            _worldViewMatrix = Matrix.make();
-            _worldViewProjectionMatrix = Matrix.make();
-            _boundingSphere = BoundingSphere.make();
-        }
-        return cast(this);
-    }
 
     // DECL: void addAdvertisedDescendant(Node* node);
     public function addAdvertisedDescendant(node:Node):Void
@@ -110,13 +82,13 @@ class Node extends Transform, implements Ref
     // DECL: Vector3 getActiveCameraTranslationView() const;
     public function getActiveCameraTranslationView():SharedVector3
     {
-        return _activeCameraTranslationView.impersonate(hx_Node_getActiveCameraTranslationView(nativeObject));
+        return Macros.impersonateResult(_activeCameraTranslationView, hx_Node_getActiveCameraTranslationView(nativeObject));
     }
 
     // DECL: Vector3 getActiveCameraTranslationWorld() const;
     public function getActiveCameraTranslationWorld():SharedVector3
     {
-        return _activeCameraTranslationWorld.impersonate(hx_Node_getActiveCameraTranslationWorld(nativeObject));
+        return Macros.impersonateResult(_activeCameraTranslationWorld, hx_Node_getActiveCameraTranslationWorld(nativeObject));
     }
 
     // DECL: Node* getAdvertisedDescendant(unsigned int i) const;
@@ -146,7 +118,7 @@ class Node extends Transform, implements Ref
     // DECL: const BoundingSphere& getBoundingSphere() const;
     public function getBoundingSphere():IBoundingSphere
     {
-        return _boundingSphere.impersonate(hx_Node_getBoundingSphere(nativeObject));
+        return Macros.impersonateResult(_boundingSphere, hx_Node_getBoundingSphere(nativeObject));
     }
 
     // DECL: Camera* getCamera() const;
@@ -182,13 +154,13 @@ class Node extends Transform, implements Ref
     // DECL: Vector3 getForwardVectorView() const;
     public function getForwardVectorView():SharedVector3
     {
-        return _forwardVectorView.impersonate(hx_Node_getForwardVectorView(nativeObject));
+        return Macros.impersonateResult(_forwardVectorView, hx_Node_getForwardVectorView(nativeObject));
     }
 
     // DECL: Vector3 getForwardVectorWorld() const;
     public function getForwardVectorWorld():SharedVector3
     {
-        return _forwardVectorWorld.impersonate(hx_Node_getForwardVectorWorld(nativeObject));
+        return Macros.impersonateResult(_forwardVectorWorld, hx_Node_getForwardVectorWorld(nativeObject));
     }
 
     // DECL: const char* getId() const;
@@ -200,25 +172,25 @@ class Node extends Transform, implements Ref
     // DECL: const Matrix& getInverseTransposeWorldMatrix() const;
     public function getInverseTransposeWorldMatrix():IMatrix
     {
-        return _inverseTransposeWorldMatrix.impersonate(hx_Node_getInverseTransposeWorldMatrix(nativeObject));
+        return Macros.impersonateResult(_inverseTransposeWorldMatrix, hx_Node_getInverseTransposeWorldMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getInverseTransposeWorldViewMatrix() const;
     public function getInverseTransposeWorldViewMatrix():IMatrix
     {
-        return _inverseTransposeWorldViewMatrix.impersonate(hx_Node_getInverseTransposeWorldViewMatrix(nativeObject));
+        return Macros.impersonateResult(_inverseTransposeWorldViewMatrix, hx_Node_getInverseTransposeWorldViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getInverseViewMatrix() const;
     public function getInverseViewMatrix():IMatrix
     {
-        return _inverseViewMatrix.impersonate(hx_Node_getInverseViewMatrix(nativeObject));
+        return Macros.impersonateResult(_inverseViewMatrix, hx_Node_getInverseViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getInverseViewProjectionMatrix() const;
     public function getInverseViewProjectionMatrix():IMatrix
     {
-        return _inverseViewProjectionMatrix.impersonate(hx_Node_getInverseViewProjectionMatrix(nativeObject));
+        return Macros.impersonateResult(_inverseViewProjectionMatrix, hx_Node_getInverseViewProjectionMatrix(nativeObject));
     }
 
     // DECL: Light* getLight() const;
@@ -266,13 +238,13 @@ class Node extends Transform, implements Ref
     // DECL: const Matrix& getProjectionMatrix() const;
     public function getProjectionMatrix():IMatrix
     {
-        return _projectionMatrix.impersonate(hx_Node_getProjectionMatrix(nativeObject));
+        return Macros.impersonateResult(_projectionMatrix, hx_Node_getProjectionMatrix(nativeObject));
     }
 
     // DECL: Vector3 getRightVectorWorld() const;
     public function getRightVectorWorld():SharedVector3
     {
-        return _rightVectorWorld.impersonate(hx_Node_getRightVectorWorld(nativeObject));
+        return Macros.impersonateResult(_rightVectorWorld, hx_Node_getRightVectorWorld(nativeObject));
     }
 
     // DECL: Node* getRootNode() const;
@@ -303,13 +275,13 @@ class Node extends Transform, implements Ref
     // DECL: Vector3 getTranslationView() const;
     public function getTranslationView():SharedVector3
     {
-        return _translationView.impersonate(hx_Node_getTranslationView(nativeObject));
+        return Macros.impersonateResult(_translationView, hx_Node_getTranslationView(nativeObject));
     }
 
     // DECL: Vector3 getTranslationWorld() const;
     public function getTranslationWorld():SharedVector3
     {
-        return _translationWorld.impersonate(hx_Node_getTranslationWorld(nativeObject));
+        return Macros.impersonateResult(_translationWorld, hx_Node_getTranslationWorld(nativeObject));
     }
 
     // DECL: virtual Node::Type getType() const;
@@ -321,7 +293,7 @@ class Node extends Transform, implements Ref
     // DECL: Vector3 getUpVectorWorld() const;
     public function getUpVectorWorld():SharedVector3
     {
-        return _upVectorWorld.impersonate(hx_Node_getUpVectorWorld(nativeObject));
+        return Macros.impersonateResult(_upVectorWorld, hx_Node_getUpVectorWorld(nativeObject));
     }
 
     // DECL: void* getUserPointer() const;
@@ -333,31 +305,31 @@ class Node extends Transform, implements Ref
     // DECL: const Matrix& getViewMatrix() const;
     public function getViewMatrix():IMatrix
     {
-        return _viewMatrix.impersonate(hx_Node_getViewMatrix(nativeObject));
+        return Macros.impersonateResult(_viewMatrix, hx_Node_getViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getViewProjectionMatrix() const;
     public function getViewProjectionMatrix():IMatrix
     {
-        return _viewProjectionMatrix.impersonate(hx_Node_getViewProjectionMatrix(nativeObject));
+         return Macros.impersonateResult(_viewProjectionMatrix, hx_Node_getViewProjectionMatrix(nativeObject));
     }
 
     // DECL: virtual const Matrix& getWorldMatrix() const;
     public function getWorldMatrix():IMatrix
     {
-        return _worldMatrix.impersonate(hx_Node_getWorldMatrix(nativeObject));
+        return Macros.impersonateResult(_worldMatrix, hx_Node_getWorldMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getWorldViewMatrix() const;
     public function getWorldViewMatrix():IMatrix
     {
-        return _worldViewMatrix.impersonate(hx_Node_getWorldViewMatrix(nativeObject));
+        return Macros.impersonateResult(_worldViewMatrix, hx_Node_getWorldViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getWorldViewProjectionMatrix() const;
     public function getWorldViewProjectionMatrix():IMatrix
     {
-        return _worldViewProjectionMatrix.impersonate(hx_Node_getWorldViewProjectionMatrix(nativeObject));
+        return Macros.impersonateResult(_worldViewProjectionMatrix, hx_Node_getWorldViewProjectionMatrix(nativeObject));
     }
 
     // DECL: bool hasTag(const char* name) const;

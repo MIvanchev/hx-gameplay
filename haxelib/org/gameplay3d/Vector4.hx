@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector4;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -164,9 +165,7 @@ class Vector4 extends GameplayObject, implements IVector4
     // DECL: static const Vector4& one();
     public static function one():IVector4
     {
-        if (_one == null)
-            _one = Vector4.make();
-        return _one.impersonate(hx_Vector4_static_one());
+        return Macros.impersonateResult(_one, hx_Vector4_static_one());
     }
 
     // DECL: void scale(float scalar);
@@ -214,41 +213,31 @@ class Vector4 extends GameplayObject, implements IVector4
     // DECL: static const Vector4& unitW();
     public static function unitW():IVector4
     {
-        if (_unitW == null)
-            _unitW = Vector4.make();
-        return _unitW.impersonate(hx_Vector4_static_unitW());
+        return Macros.impersonateResult(_unitW, hx_Vector4_static_unitW());
     }
 
     // DECL: static const Vector4& unitX();
     public static function unitX():IVector4
     {
-        if (_unitX == null)
-            _unitX = Vector4.make();
-        return _unitX.impersonate(hx_Vector4_static_unitX());
+        return Macros.impersonateResult(_unitX, hx_Vector4_static_unitX());
     }
 
     // DECL: static const Vector4& unitY();
     public static function unitY():IVector4
     {
-        if (_unitY == null)
-            _unitY = Vector4.make();
-        return _unitY.impersonate(hx_Vector4_static_unitY());
+        return Macros.impersonateResult(_unitY, hx_Vector4_static_unitY());
     }
 
     // DECL: static const Vector4& unitZ();
     public static function unitZ():IVector4
     {
-        if (_unitZ == null)
-            _unitZ = Vector4.make();
-        return _unitZ.impersonate(hx_Vector4_static_unitZ());
+        return Macros.impersonateResult(_unitZ, hx_Vector4_static_unitZ());
     }
 
     // DECL: static const Vector4& zero();
     public static function zero():IVector4
     {
-        if (_zero == null)
-            _zero = Vector4.make();
-        return _zero.impersonate(hx_Vector4_static_zero());
+        return Macros.impersonateResult(_zero, hx_Vector4_static_zero());
     }
 
     /***************************************************************************

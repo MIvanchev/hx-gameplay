@@ -13,6 +13,15 @@ class NativeBinding implements INativeBinding
     /**
      * TODO
      */
+    function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
+    {
+        this.nativeObject = nativeObject;
+        return cast(this);
+    }
+
+    /**
+     * TODO
+     */
     public function isEquivalentTo(object:INativeBinding):Bool
     {
         return testEquivalence(nativeObject, native(object));
@@ -24,15 +33,6 @@ class NativeBinding implements INativeBinding
     public static inline function native(object:INativeBinding):Dynamic
     {
         return if (object == null) null else object.nativeObject;
-    }
-
-    /**
-     * TODO
-     */
-    function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        this.nativeObject = nativeObject;
-        return cast(this);
     }
 
     /***************************************************************************

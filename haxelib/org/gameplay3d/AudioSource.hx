@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -15,17 +16,6 @@ class AudioSource extends Transform_ListenerImpl, implements Ref
      **************************************************************************/
 
     var _velocity:Vector3;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _velocity = Vector3.make();
-        }
-        return cast(this);
-    }
 
     // DECL: static AudioSource* create(Properties* properties);
     public static function create_Prop(properties:Properties):AudioSource
@@ -66,7 +56,7 @@ class AudioSource extends Transform_ListenerImpl, implements Ref
     // DECL: const Vector3& getVelocity() const;
     public function getVelocity():IVector3
     {
-        return _velocity.impersonate(hx_AudioSource_getVelocity(nativeObject));
+        return Macros.impersonateResult(_velocity, hx_AudioSource_getVelocity(nativeObject));
     }
 
     // DECL: bool isLooped() const;

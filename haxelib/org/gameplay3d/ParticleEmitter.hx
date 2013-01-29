@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -27,28 +28,6 @@ class ParticleEmitter extends GameplayObject, implements Ref
     var _colorEndVariance:Vector4;
     var _colorStart:Vector4;
     var _colorStartVariance:Vector4;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _acceleration = Vector3.make();
-            _accelerationVariance = Vector3.make();
-            _position = Vector3.make();
-            _positionVariance = Vector3.make();
-            _rotationAxis = Vector3.make();
-            _rotationAxisVariance = Vector3.make();
-            _velocity = Vector3.make();
-            _velocityVariance = Vector3.make();
-            _colorEnd = Vector4.make();
-            _colorEndVariance = Vector4.make();
-            _colorStart = Vector4.make();
-            _colorStartVariance = Vector4.make();
-        }
-        return cast(this);
-    }
 
     // DECL: static ParticleEmitter* create(Properties* properties);
     public static function create_Prop(properties:Properties):ParticleEmitter
@@ -83,37 +62,37 @@ class ParticleEmitter extends GameplayObject, implements Ref
     // DECL: const Vector3& getAcceleration() const;
     public function getAcceleration():IVector3
     {
-        return _acceleration.impersonate(hx_ParticleEmitter_getAcceleration(nativeObject));
+        return Macros.impersonateResult(_acceleration, hx_ParticleEmitter_getAcceleration(nativeObject));
     }
 
     // DECL: const Vector3& getAccelerationVariance() const;
     public function getAccelerationVariance():IVector3
     {
-        return _accelerationVariance.impersonate(hx_ParticleEmitter_getAccelerationVariance(nativeObject));
+        return Macros.impersonateResult(_accelerationVariance, hx_ParticleEmitter_getAccelerationVariance(nativeObject));
     }
 
     // DECL: const Vector4& getColorEnd() const;
     public function getColorEnd():IVector4
     {
-        return _colorEnd.impersonate(hx_ParticleEmitter_getColorEnd(nativeObject));
+        return Macros.impersonateResult(_colorEnd, hx_ParticleEmitter_getColorEnd(nativeObject));
     }
 
     // DECL: const Vector4& getColorEndVariance() const;
     public function getColorEndVariance():IVector4
     {
-        return _colorEndVariance.impersonate(hx_ParticleEmitter_getColorEndVariance(nativeObject));
+        return Macros.impersonateResult(_colorEndVariance, hx_ParticleEmitter_getColorEndVariance(nativeObject));
     }
 
     // DECL: const Vector4& getColorStart() const;
     public function getColorStart():IVector4
     {
-        return _colorStart.impersonate(hx_ParticleEmitter_getColorStart(nativeObject));
+        return Macros.impersonateResult(_colorStart, hx_ParticleEmitter_getColorStart(nativeObject));
     }
 
     // DECL: const Vector4& getColorStartVariance() const;
     public function getColorStartVariance():IVector4
     {
-        return _colorStartVariance.impersonate(hx_ParticleEmitter_getColorStartVariance(nativeObject));
+        return Macros.impersonateResult(_colorStartVariance, hx_ParticleEmitter_getColorStartVariance(nativeObject));
     }
 
     // DECL: unsigned int getEmissionRate() const;
@@ -149,25 +128,25 @@ class ParticleEmitter extends GameplayObject, implements Ref
     // DECL: const Vector3& getPosition() const;
     public function getPosition():IVector3
     {
-        return _position.impersonate(hx_ParticleEmitter_getPosition(nativeObject));
+        return Macros.impersonateResult(_position, hx_ParticleEmitter_getPosition(nativeObject));
     }
 
     // DECL: const Vector3& getPositionVariance() const;
     public function getPositionVariance():IVector3
     {
-        return _positionVariance.impersonate(hx_ParticleEmitter_getPositionVariance(nativeObject));
+        return Macros.impersonateResult(_positionVariance, hx_ParticleEmitter_getPositionVariance(nativeObject));
     }
 
     // DECL: const Vector3& getRotationAxis() const;
     public function getRotationAxis():IVector3
     {
-        return _rotationAxis.impersonate(hx_ParticleEmitter_getRotationAxis(nativeObject));
+        return Macros.impersonateResult(_rotationAxis, hx_ParticleEmitter_getRotationAxis(nativeObject));
     }
 
     // DECL: const Vector3& getRotationAxisVariance() const;
     public function getRotationAxisVariance():IVector3
     {
-        return _rotationAxisVariance.impersonate(hx_ParticleEmitter_getRotationAxisVariance(nativeObject));
+        return Macros.impersonateResult(_rotationAxisVariance, hx_ParticleEmitter_getRotationAxisVariance(nativeObject));
     }
 
     // DECL: float getRotationPerParticleSpeedMax() const;
@@ -239,13 +218,13 @@ class ParticleEmitter extends GameplayObject, implements Ref
     // DECL: const Vector3& getVelocity() const;
     public function getVelocity():IVector3
     {
-        return _velocity.impersonate(hx_ParticleEmitter_getVelocity(nativeObject));
+        return Macros.impersonateResult(_velocity, hx_ParticleEmitter_getVelocity(nativeObject));
     }
 
     // DECL: const Vector3& getVelocityVariance() const;
     public function getVelocityVariance():IVector3
     {
-        return _velocityVariance.impersonate(hx_ParticleEmitter_getVelocityVariance(nativeObject));
+        return Macros.impersonateResult(_velocityVariance, hx_ParticleEmitter_getVelocityVariance(nativeObject));
     }
 
     // DECL: bool isActive() const;

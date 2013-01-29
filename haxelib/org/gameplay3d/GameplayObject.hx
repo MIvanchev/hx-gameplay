@@ -71,8 +71,9 @@ class GameplayObject extends NativeBinding
                 null;
             else if (Std.is(nativeObject, WeakRef))
             {
-                var ref:WeakRef<GameplayObject> = nativeObject;
-                cast(ref.get());
+                var ref:WeakRef<T> = nativeObject;
+                if (ref.get() != null)
+                    ref.get();
             }
             else
             {

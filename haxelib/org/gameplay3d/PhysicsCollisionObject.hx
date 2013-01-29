@@ -1,5 +1,6 @@
 package org.gameplay3d;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.wrapper.PhysicsCollisionObject_CollisionListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -18,18 +19,6 @@ class PhysicsCollisionObject extends GameplayObject
     var _vehicle:PhysicsVehicle;
     var _vehicleWheel:PhysicsVehicleWheel;
 
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        _character = PhysicsCharacter.wrap(hx_PhysicsCollisionObject_asCharacter());
-        _ghostObject = PhysicsGhostObject.wrap(hx_PhysicsCollisionObject_asGhostObject());
-        _rigidBody = PhysicsRigidBody.wrap(hx_PhysicsCollisionObject_asRigidBody());
-        _vehicle = PhysicsVehicle.wrap(hx_PhysicsCollisionObject_asVehicle());
-        _vehicleWheel = PhysicsVehicleWheel.wrap(hx_PhysicsCollisionObject_asVehicleWheel());
-        return cast(this);
-    }
-
     // DECL: void addCollisionListener(CollisionListener* listener, PhysicsCollisionObject* object = NULL);
     public function addCollisionListener_Lsnr_ColObj(listener:PhysicsCollisionObject_CollisionListenerWrapper, object:PhysicsCollisionObject = null):Void
     {
@@ -45,31 +34,31 @@ class PhysicsCollisionObject extends GameplayObject
     // DECL: PhysicsCharacter* asCharacter();
     public function asCharacter():PhysicsCharacter
     {
-        return _character;
+        return Macros.impersonateResult(_character, hx_PhysicsCollisionObject_asCharacter(nativeObject));
     }
 
     // DECL: PhysicsGhostObject* asGhostObject();
     public function asGhostObject():PhysicsGhostObject
     {
-        return _ghostObject;
+        return Macros.impersonateResult(_ghostObject, hx_PhysicsCollisionObject_asGhostObject(nativeObject));
     }
 
     // DECL: PhysicsRigidBody* asRigidBody();
     public function asRigidBody():PhysicsRigidBody
     {
-        return _rigidBody;
+        return Macros.impersonateResult(_rigidBody, hx_PhysicsCollisionObject_asRigidBody(nativeObject));
     }
 
     // DECL: PhysicsVehicle* asVehicle();
     public function asVehicle():PhysicsVehicle
     {
-        return _vehicle;
+        return Macros.impersonateResult(_vehicle, hx_PhysicsCollisionObject_asVehicle(nativeObject));
     }
 
     // DECL: PhysicsVehicleWheel* asVehicleWheel();
     public function asVehicleWheel():PhysicsVehicleWheel
     {
-        return _vehicleWheel;
+        return Macros.impersonateResult(_vehicleWheel, hx_PhysicsCollisionObject_asVehicleWheel(nativeObject));
     }
 
     // DECL: bool collidesWith(PhysicsCollisionObject* object) const;

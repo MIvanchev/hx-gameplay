@@ -8,24 +8,24 @@ class MethodWrapper
 {
 private:
 
-    const value *clbkVisitMethod;
+    AutoGCRoot clbkVisitMethod;
 
 public:
 
     MethodWrapper()
-        : clbkVisitMethod(NULL)
+        : clbkVisitMethod(alloc_null())
     {
     }
 
     void visit(Scene *scene, const value &visitMethod)
     {
-        clbkVisitMethod = &visitMethod;
+        clbkVisitMethod.set(visitMethod);
         scene->visit(this, &MethodWrapper::visitWrapper);
     }
 
     void visit(Scene *scene, const value &visitMethod, long cookie)
     {
-        clbkVisitMethod = &visitMethod;
+        clbkVisitMethod.set(visitMethod);
         scene->visit(this, &MethodWrapper::visitWrapper, cookie);
     }
 
@@ -33,7 +33,7 @@ public:
     {
         bool result =
                 val_get_bool(val_call1(
-                        *clbkVisitMethod,
+                        clbkVisitMethod.get(),
                         ReferenceToValue(node, true)
                     ));
         return result;
@@ -43,7 +43,7 @@ public:
     {
         bool result =
                 val_get_bool(val_call2(
-                        *clbkVisitMethod,
+                        clbkVisitMethod.get(),
                         ReferenceToValue(node, true),
                         alloc_int(cookie)
                     ));

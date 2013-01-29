@@ -6,6 +6,7 @@ import org.gameplay3d.immutable.IVector2;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -18,17 +19,6 @@ class SpriteBatch extends GameplayObject
      **************************************************************************/
 
     var _projectionMatrix:Matrix;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _projectionMatrix = Matrix.make();
-        }
-        return cast(this);
-    }
 
     // DECL: static SpriteBatch* create(Texture* texture, Effect* effect = NULL, unsigned int initialCapacity = 0);
     public static function create_Tex_Eff_Int(texture:Texture, effect:Effect = null, initialCapacity:Int = 0):SpriteBatch
@@ -111,7 +101,7 @@ class SpriteBatch extends GameplayObject
     // DECL: const Matrix& getProjectionMatrix() const;
     public function getProjectionMatrix():IMatrix
     {
-        return _projectionMatrix.impersonate(hx_SpriteBatch_getProjectionMatrix(nativeObject));
+        return Macros.impersonateResult(_projectionMatrix, hx_SpriteBatch_getProjectionMatrix(nativeObject));
     }
 
     // DECL: Texture::Sampler* getSampler() const;

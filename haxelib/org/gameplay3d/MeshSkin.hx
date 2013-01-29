@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.util.ObjectArray;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -18,21 +19,10 @@ class MeshSkin extends Transform_ListenerImpl
 
     var _bindShape:Matrix;
 
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _bindShape = Matrix.make();
-        }
-        return cast(this);
-    }
-
     // DECL: const Matrix& getBindShape() const;
     public function getBindShape():IMatrix
     {
-        return _bindShape.impersonate(hx_MeshSkin_getBindShape(nativeObject));
+        return Macros.impersonateResult(_bindShape, hx_MeshSkin_getBindShape(nativeObject));
     }
 
     // DECL: Joint* getJoint(const char* id) const;

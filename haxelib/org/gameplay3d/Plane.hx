@@ -7,12 +7,13 @@ import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Plane : public GameplayObject
-class Plane extends GameplayObject
+class Plane extends GameplayObject, implements IPlane
 {
     /***************************************************************************
      * CONSTANTS                                                               *
@@ -27,17 +28,6 @@ class Plane extends GameplayObject
      **************************************************************************/
 
     var _normal:Vector3;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _normal = Vector3.make();
-        }
-        return cast(this);
-    }
 
     // DECL: Plane();
     public static function make():Plane
@@ -78,7 +68,7 @@ class Plane extends GameplayObject
     // DECL: const Vector3& getNormal() const;
     public function getNormal():IVector3
     {
-        return _normal.impersonate(hx_Plane_getNormal(nativeObject));
+        return Macros.impersonateResult(_normal, hx_Plane_getNormal(nativeObject));
     }
 
     // DECL: static void intersection(const Plane& p1, const Plane& p2, const Plane& p3, Vector3* point);

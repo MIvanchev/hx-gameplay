@@ -6,6 +6,7 @@ import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.AnimationTarget_ScriptTarget;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.shared.SharedVector3;
 import org.gameplay3d.wrapper.Transform_ListenerWrapper;
 
@@ -48,26 +49,6 @@ class Transform extends AnimationTarget_ScriptTarget
     var _upVector:Vector3;
     var _matrix:Matrix;
     var _rotation:Quaternion;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _scale = Vector3.make();
-            _translation = Vector3.make();
-            _backVector = Vector3.make();
-            _downVector = Vector3.make();
-            _forwardVector = Vector3.make();
-            _leftVector = Vector3.make();
-            _rightVector = Vector3.make();
-            _upVector = Vector3.make();
-            _matrix = Matrix.make();
-            _rotation = Quaternion.make();
-        }
-        return cast(this);
-    }
 
     // DECL: Transform();
     public static function make():Transform
@@ -114,7 +95,7 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: Vector3 getBackVector() const;
     public function getBackVector():SharedVector3
     {
-        return _backVector.impersonate(hx_Transform_getBackVector(nativeObject));
+        return Macros.impersonateResult(_backVector, hx_Transform_getBackVector(nativeObject));
     }
 
     // DECL: void getBackVector(Vector3* dst) const;
@@ -126,7 +107,7 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: Vector3 getDownVector() const;
     public function getDownVector():SharedVector3
     {
-        return _downVector.impersonate(hx_Transform_getDownVector(nativeObject));
+        return Macros.impersonateResult(_downVector, hx_Transform_getDownVector(nativeObject));
     }
 
     // DECL: void getDownVector(Vector3* dst) const;
@@ -138,7 +119,7 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: Vector3 getForwardVector() const;
     public function getForwardVector():SharedVector3
     {
-        return _forwardVector.impersonate(hx_Transform_getForwardVector(nativeObject));
+        return Macros.impersonateResult(_forwardVector, hx_Transform_getForwardVector(nativeObject));
     }
 
     // DECL: void getForwardVector(Vector3* dst) const;
@@ -150,7 +131,7 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: Vector3 getLeftVector() const;
     public function getLeftVector():SharedVector3
     {
-        return _leftVector.impersonate(hx_Transform_getLeftVector(nativeObject));
+        return Macros.impersonateResult(_leftVector, hx_Transform_getLeftVector(nativeObject));
     }
 
     // DECL: void getLeftVector(Vector3* dst) const;
@@ -162,13 +143,13 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: const Matrix& getMatrix() const;
     public function getMatrix():IMatrix
     {
-        return _matrix.impersonate(hx_Transform_getMatrix(nativeObject));
+        return Macros.impersonateResult(_matrix, hx_Transform_getMatrix(nativeObject));
     }
 
     // DECL: Vector3 getRightVector() const;
     public function getRightVector():SharedVector3
     {
-        return _rightVector.impersonate(hx_Transform_getRightVector(nativeObject));
+        return Macros.impersonateResult(_rightVector, hx_Transform_getRightVector(nativeObject));
     }
 
     // DECL: void getRightVector(Vector3* dst) const;
@@ -180,7 +161,7 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: const Quaternion& getRotation() const;
     public function getRotation():IQuaternion
     {
-        return _rotation.impersonate(hx_Transform_getRotation(nativeObject));
+        return Macros.impersonateResult(_rotation, hx_Transform_getRotation(nativeObject));
     }
 
     // DECL: float getRotation(Vector3* axis) const;
@@ -204,7 +185,7 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: const Vector3& getScale() const;
     public function getScale():IVector3
     {
-        return _scale.impersonate(hx_Transform_getScale(nativeObject));
+        return Macros.impersonateResult(_scale, hx_Transform_getScale(nativeObject));
     }
 
     // DECL: void getScale(Vector3* scale) const;
@@ -234,7 +215,7 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: const Vector3& getTranslation() const;
     public function getTranslation():IVector3
     {
-        return _translation.impersonate(hx_Transform_getTranslation(nativeObject));
+        return Macros.impersonateResult(_translation, hx_Transform_getTranslation(nativeObject));
     }
 
     // DECL: void getTranslation(Vector3* translation) const;
@@ -264,7 +245,7 @@ class Transform extends AnimationTarget_ScriptTarget
     // DECL: Vector3 getUpVector() const;
     public function getUpVector():SharedVector3
     {
-        return _upVector.impersonate(hx_Transform_getUpVector(nativeObject));
+        return Macros.impersonateResult(_upVector, hx_Transform_getUpVector(nativeObject));
     }
 
     // DECL: void getUpVector(Vector3* dst) const;

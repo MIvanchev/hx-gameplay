@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.shared.SharedVector3;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -17,21 +18,10 @@ class PhysicsCharacter extends PhysicsGhostObject
 
     var _currentVelocity:Vector3;
 
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _currentVelocity = Vector3.make();
-        }
-        return cast(this);
-    }
-
     // DECL: Vector3 getCurrentVelocity() const;
     public function getCurrentVelocity():SharedVector3
     {
-        return _currentVelocity.impersonate(hx_PhysicsCharacter_getCurrentVelocity(nativeObject));
+        return Macros.impersonateResult(_currentVelocity, hx_PhysicsCharacter_getCurrentVelocity(nativeObject));
     }
 
     // DECL: float getMaxSlopeAngle() const;

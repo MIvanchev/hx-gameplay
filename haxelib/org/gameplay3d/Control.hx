@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.impl.AnimationTarget_ScriptTarget;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.Theme_SideRegions;
 import org.gameplay3d.wrapper.Control_ListenerWrapper;
 
@@ -40,26 +41,6 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     var _cursorRegion:Rectangle;
     var _imageRegion:Rectangle;
     var _skinRegion:Rectangle;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _cursorColor = Vector4.make();
-            _imageColor = Vector4.make();
-            _skinColor = Vector4.make();
-            _textColor = Vector4.make();
-            _bounds = Rectangle.make();
-            _clip = Rectangle.make();
-            _clipBounds = Rectangle.make();
-            _cursorRegion = Rectangle.make();
-            _imageRegion = Rectangle.make();
-            _skinRegion = Rectangle.make();
-        }
-        return cast(this);
-    }
 
     // DECL: virtual void addListener(Control::Listener* listener, int eventFlags);
     public function addListener(listener:Control_ListenerWrapper, eventFlags:Int):Void
@@ -112,19 +93,19 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Rectangle& getBounds() const;
     public function getBounds():IRectangle
     {
-        return Rectangle.wrap(hx_Control_getBounds(nativeObject));
+        return Macros.impersonateResult(_bounds, hx_Control_getBounds(nativeObject));
     }
 
     // DECL: const Rectangle& getClip() const;
     public function getClip():IRectangle
     {
-        return _clip.impersonate(hx_Control_getClip(nativeObject));
+        return Macros.impersonateResult(_clip, hx_Control_getClip(nativeObject));
     }
 
     // DECL: const Rectangle& getClipBounds() const;
     public function getClipBounds():IRectangle
     {
-        return _clipBounds.impersonate(hx_Control_getClipBounds(nativeObject));
+        return Macros.impersonateResult(_clipBounds, hx_Control_getClipBounds(nativeObject));
     }
 
     // DECL: bool getConsumeInputEvents();
@@ -136,13 +117,13 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Vector4& getCursorColor(State state);
     public function getCursorColor(state:Int):IVector4
     {
-        return _cursorColor.impersonate(hx_Control_getCursorColor(nativeObject, state));
+        return Macros.impersonateResult(_cursorColor, hx_Control_getCursorColor(nativeObject, state));
     }
 
     // DECL: const Rectangle& getCursorRegion(State state) const;
     public function getCursorRegion(state:Int):IRectangle
     {
-        return _cursorRegion.impersonate(hx_Control_getCursorRegion(nativeObject, state));
+        return Macros.impersonateResult(_cursorRegion, hx_Control_getCursorRegion(nativeObject, state));
     }
 
     // DECL: const Theme::UVs& getCursorUVs(State state);
@@ -184,13 +165,13 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Vector4& getImageColor(const char* id, State state) const;
     public function getImageColor(id:String, state:Int):IVector4
     {
-        return _imageColor.impersonate(hx_Control_getImageColor(nativeObject, id, state));
+        return Macros.impersonateResult(_imageColor, hx_Control_getImageColor(nativeObject, id, state));
     }
 
     // DECL: const Rectangle& getImageRegion(const char* id, State state) const;
     public function getImageRegion(id:String, state:Int):IRectangle
     {
-        return _imageRegion.impersonate(hx_Control_getImageRegion(nativeObject, id, state));
+        return Macros.impersonateResult(_imageRegion, hx_Control_getImageRegion(nativeObject, id, state));
     }
 
     // DECL: const Theme::UVs& getImageUVs(const char* id, State state) const;
@@ -220,13 +201,13 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Vector4& getSkinColor(State state = NORMAL) const;
     public function getSkinColor(state:Int = Control_State.NORMAL):IVector4
     {
-        return _skinColor.impersonate(hx_Control_getSkinColor(nativeObject, state));
+        return Macros.impersonateResult(_skinColor, hx_Control_getSkinColor(nativeObject, state));
     }
 
     // DECL: const Rectangle& getSkinRegion(State state = NORMAL) const;
     public function getSkinRegion(state:Int = Control_State.NORMAL):IRectangle
     {
-        return _skinRegion.impersonate(hx_Control_getSkinRegion(nativeObject, state));
+        return Macros.impersonateResult(_skinRegion, hx_Control_getSkinRegion(nativeObject, state));
     }
 
     // DECL: State getState() const;
@@ -250,7 +231,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Vector4& getTextColor(State state = NORMAL) const;
     public function getTextColor(state:Int = Control_State.NORMAL):IVector4
     {
-        return _textColor.impersonate(hx_Control_getTextColor(nativeObject, state));
+        return Macros.impersonateResult(_textColor, hx_Control_getTextColor(nativeObject, state));
     }
 
     // DECL: bool getTextRightToLeft(State state = NORMAL) const;

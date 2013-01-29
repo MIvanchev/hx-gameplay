@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.shared.SharedVector3;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -20,22 +21,6 @@ class PhysicsRigidBody extends PhysicsCollisionObject
     var _gravity:Vector3;
     var _linearFactor:Vector3;
     var _linearVelocity:Vector3;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _angularFactor = Vector3.make();
-            _angularVelocity = Vector3.make();
-            _anisotropicFriction = Vector3.make();
-            _gravity = Vector3.make();
-            _linearFactor = Vector3.make();
-            _linearVelocity = Vector3.make();
-        }
-        return cast(this);
-    }
 
     // DECL: void applyForce(const Vector3& force, const Vector3* relativePosition = NULL);
     public function applyForce(force:IVector3, relativePosition:Vector3 = null):Void
@@ -70,19 +55,19 @@ class PhysicsRigidBody extends PhysicsCollisionObject
     // DECL: inline Vector3 getAngularFactor() const;
     public function getAngularFactor():SharedVector3
     {
-        return _angularFactor.impersonate(hx_PhysicsRigidBody_getAngularFactor(nativeObject));
+        return Macros.impersonateResult(_angularFactor, hx_PhysicsRigidBody_getAngularFactor(nativeObject));
     }
 
     // DECL: inline Vector3 getAngularVelocity() const;
     public function getAngularVelocity():SharedVector3
     {
-        return _angularVelocity.impersonate(hx_PhysicsRigidBody_getAngularVelocity(nativeObject));
+        return Macros.impersonateResult(_angularVelocity, hx_PhysicsRigidBody_getAngularVelocity(nativeObject));
     }
 
     // DECL: inline Vector3 getAnisotropicFriction() const;
     public function getAnisotropicFriction():SharedVector3
     {
-        return _anisotropicFriction.impersonate(hx_PhysicsRigidBody_getAnisotropicFriction(nativeObject));
+        return Macros.impersonateResult(_anisotropicFriction, hx_PhysicsRigidBody_getAnisotropicFriction(nativeObject));
     }
 
     // DECL: inline float getFriction() const;
@@ -94,7 +79,7 @@ class PhysicsRigidBody extends PhysicsCollisionObject
     // DECL: inline Vector3 getGravity() const;
     public function getGravity():SharedVector3
     {
-        return _gravity.impersonate(hx_PhysicsRigidBody_getGravity(nativeObject));
+        return Macros.impersonateResult(_gravity, hx_PhysicsRigidBody_getGravity(nativeObject));
     }
 
     // DECL: float getHeight(float x, float z) const;
@@ -112,13 +97,13 @@ class PhysicsRigidBody extends PhysicsCollisionObject
     // DECL: inline Vector3 getLinearFactor() const;
     public function getLinearFactor():SharedVector3
     {
-        return _linearFactor.impersonate(hx_PhysicsRigidBody_getLinearFactor(nativeObject));
+        return Macros.impersonateResult(_linearFactor, hx_PhysicsRigidBody_getLinearFactor(nativeObject));
     }
 
     // DECL: inline Vector3 getLinearVelocity() const;
     public function getLinearVelocity():SharedVector3
     {
-        return _linearVelocity.impersonate(hx_PhysicsRigidBody_getLinearVelocity(nativeObject));
+        return Macros.impersonateResult(_linearVelocity, hx_PhysicsRigidBody_getLinearVelocity(nativeObject));
     }
 
     // DECL: inline float getMass() const;

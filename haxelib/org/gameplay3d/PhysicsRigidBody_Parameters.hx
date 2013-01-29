@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -29,20 +30,10 @@ class PhysicsRigidBody_Parameters extends GameplayObject
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        var initialized = this.nativeObject != null;
         super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            anisotropicFriction = Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get(nativeObject));
-            linearFactor = Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_linearFactor_get(nativeObject));
-            angularFactor = Vector3.wrap(hx_PhysicsRigidBody_Parameters_property_angularFactor_get(nativeObject));
-        }
-        else
-        {
-            anisotropicFriction.impersonate(hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get(nativeObject));
-            linearFactor.impersonate(hx_PhysicsRigidBody_Parameters_property_linearFactor_get(nativeObject));
-            angularFactor.impersonate(hx_PhysicsRigidBody_Parameters_property_angularFactor_get(nativeObject));
-        }
+        Macros.impersonateResult(anisotropicFriction, hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get(nativeObject));
+        Macros.impersonateResult(linearFactor, hx_PhysicsRigidBody_Parameters_property_linearFactor_get(nativeObject));
+        Macros.impersonateResult(angularFactor, hx_PhysicsRigidBody_Parameters_property_angularFactor_get(nativeObject));
         return cast(this);
     }
 

@@ -5,6 +5,7 @@ import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.util.IMutableNativeArray;
 import org.gameplay3d.util.INativeArray;
 import org.gameplay3d.util.PrimitiveArray;
@@ -264,9 +265,7 @@ class Matrix extends GameplayObject, implements IMatrix
     // DECL: static const Matrix& identity();
     public static function identity():IMatrix
     {
-        if (_identity == null)
-            _identity = Matrix.make();
-        return _identity.impersonate(hx_Matrix_static_identity());
+        return Macros.impersonateResult(_identity, hx_Matrix_static_identity());
     }
 
     // DECL: bool invert();
@@ -548,9 +547,7 @@ class Matrix extends GameplayObject, implements IMatrix
     // DECL: static const Matrix& zero();
     public static function zero():IMatrix
     {
-        if (_zero == null)
-            _zero = Matrix.make();
-        return _zero.impersonate(hx_Matrix_static_zero());
+        return Macros.impersonateResult(_zero, hx_Matrix_static_zero());
     }
 
     /***************************************************************************

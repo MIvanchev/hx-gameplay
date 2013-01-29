@@ -7,13 +7,14 @@ import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.util.PrimitiveArray;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Frustum : public GameplayObject
-class Frustum extends GameplayObject
+class Frustum extends GameplayObject, implements IFrustum
 {
     /***************************************************************************
      * MEMBERS                                                                 *
@@ -25,22 +26,6 @@ class Frustum extends GameplayObject
     var _right:Plane;
     var _far:Plane;
     var _near:Plane;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _top = Plane.make();
-            _bottom = Plane.make();
-            _left = Plane.make();
-            _right = Plane.make();
-            _far = Plane.make();
-            _near = Plane.make();
-        }
-        return cast(this);
-    }
 
     // DECL: Frustum();
     public static function make():Frustum
@@ -63,7 +48,7 @@ class Frustum extends GameplayObject
     // DECL: const Plane& getBottom() const;
     public function getBottom():IPlane
     {
-        return _bottom.impersonate(hx_Frustum_getBottom(nativeObject));
+        return Macros.impersonateResult(_bottom, hx_Frustum_getBottom(nativeObject));
     }
 
     // DECL: void getCorners(Vector3* corners) const;
@@ -75,13 +60,13 @@ class Frustum extends GameplayObject
     // DECL: const Plane& getFar() const;
     public function getFar():IPlane
     {
-        return _far.impersonate(hx_Frustum_getFar(nativeObject));
+        return Macros.impersonateResult(_far, hx_Frustum_getFar(nativeObject));
     }
 
     // DECL: const Plane& getLeft() const;
     public function getLeft():IPlane
     {
-        return _left.impersonate(hx_Frustum_getLeft(nativeObject));
+        return Macros.impersonateResult(_left, hx_Frustum_getLeft(nativeObject));
     }
 
     // DECL: void getMatrix(Matrix* dst) const;
@@ -93,19 +78,19 @@ class Frustum extends GameplayObject
     // DECL: const Plane& getNear() const;
     public function getNear():IPlane
     {
-        return _near.impersonate(hx_Frustum_getNear(nativeObject));
+          return Macros.impersonateResult(_near, hx_Frustum_getNear(nativeObject));
     }
 
     // DECL: const Plane& getRight() const;
     public function getRight():IPlane
     {
-        return _right.impersonate(hx_Frustum_getRight(nativeObject));
+        return Macros.impersonateResult(_right, hx_Frustum_getRight(nativeObject));
     }
 
     // DECL: const Plane& getTop() const;
     public function getTop():IPlane
     {
-        return _top.impersonate(hx_Frustum_getTop(nativeObject));
+        return Macros.impersonateResult(_top, hx_Frustum_getTop(nativeObject));
     }
 
     // DECL: bool intersects(const BoundingBox& box) const;

@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -19,42 +20,28 @@ class PhysicsGenericConstraint extends PhysicsConstraint
     var _rotationOffsetA:Quaternion;
     var _rotationOffsetB:Quaternion;
 
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _translationOffsetA = Vector3.make();
-            _translationOffsetB = Vector3.make();
-            _rotationOffsetA = Quaternion.make();
-            _rotationOffsetB = Quaternion.make();
-        }
-        return cast(this);
-    }
-
     // DECL: inline const Quaternion& getRotationOffsetA() const;
     public function getRotationOffsetA():IQuaternion
     {
-        return _rotationOffsetA.impersonate(hx_PhysicsGenericConstraint_getRotationOffsetA(nativeObject));
+        return Macros.impersonateResult(_rotationOffsetA, hx_PhysicsGenericConstraint_getRotationOffsetA(nativeObject));
     }
 
     // DECL: inline const Quaternion& getRotationOffsetB() const;
     public function getRotationOffsetB():IQuaternion
     {
-        return _rotationOffsetB.impersonate(hx_PhysicsGenericConstraint_getRotationOffsetB(nativeObject));
+        return Macros.impersonateResult(_rotationOffsetB, hx_PhysicsGenericConstraint_getRotationOffsetB(nativeObject));
     }
 
     // DECL: inline const Vector3& getTranslationOffsetA() const;
     public function getTranslationOffsetA():IVector3
     {
-        return _translationOffsetA.impersonate(hx_PhysicsGenericConstraint_getTranslationOffsetA(nativeObject));
+        return Macros.impersonateResult(_translationOffsetA, hx_PhysicsGenericConstraint_getTranslationOffsetA(nativeObject));
     }
 
     // DECL: inline const Vector3& getTranslationOffsetB() const;
     public function getTranslationOffsetB():IVector3
     {
-        return _translationOffsetB.impersonate(hx_PhysicsGenericConstraint_getTranslationOffsetB(nativeObject));
+        return Macros.impersonateResult(_translationOffsetB, hx_PhysicsGenericConstraint_getTranslationOffsetB(nativeObject));
     }
 
     // DECL: inline void setAngularLowerLimit(const Vector3& limits);

@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import cpp.Lib;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -24,20 +25,10 @@ class PhysicsController_HitResult extends GameplayObject
 
     override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
     {
-        var initialized = this.nativeObject != null;
         super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            object = PhysicsCollisionObject.wrap(hx_PhysicsController_HitResult_property_object_get(nativeObject));
-            point = Vector3.wrap(hx_PhysicsController_HitResult_property_point_get(nativeObject));
-            normal = Vector3.wrap(hx_PhysicsController_HitResult_property_normal_get(nativeObject));
-        }
-        else
-        {
-            object.impersonate(hx_PhysicsController_HitResult_property_object_get(nativeObject));
-            point.impersonate(hx_PhysicsController_HitResult_property_point_get(nativeObject));
-            normal.impersonate(hx_PhysicsController_HitResult_property_normal_get(nativeObject));
-        }
+        Macros.impersonateResult(object, hx_PhysicsController_HitResult_property_object_get(nativeObject));
+        Macros.impersonateResult(point, hx_PhysicsController_HitResult_property_point_get(nativeObject));
+        Macros.impersonateResult(normal, hx_PhysicsController_HitResult_property_normal_get(nativeObject));
         return cast(this);
     }
 

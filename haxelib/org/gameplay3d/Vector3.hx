@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -173,9 +174,7 @@ class Vector3 extends GameplayObject, implements IVector3
     // DECL: static const Vector3& one();
     public static function one():IVector3
     {
-        if (_one == null)
-            _one = Vector3.make();
-        return _one.impersonate(hx_Vector3_static_one());
+        return Macros.impersonateResult(_one, hx_Vector3_static_one());
     }
 
     // DECL: void scale(float scalar);
@@ -229,33 +228,25 @@ class Vector3 extends GameplayObject, implements IVector3
     // DECL: static const Vector3& unitX();
     public static function unitX():IVector3
     {
-        if (_unitX == null)
-            _unitX = Vector3.make();
-        return _unitX.impersonate(hx_Vector3_static_unitX());
+        return Macros.impersonateResult(_unitX, hx_Vector3_static_unitX());
     }
 
     // DECL: static const Vector3& unitY();
     public static function unitY():IVector3
     {
-        if (_unitY == null)
-            _unitY = Vector3.make();
-        return _unitY.impersonate(hx_Vector3_static_unitY());
+        return Macros.impersonateResult(_unitY, hx_Vector3_static_unitY());
     }
 
     // DECL: static const Vector3& unitZ();
     public static function unitZ():IVector3
     {
-        if (_unitZ == null)
-            _unitZ = Vector3.make();
-        return _unitZ.impersonate(hx_Vector3_static_unitZ());
+        return Macros.impersonateResult(_unitX, hx_Vector3_static_unitZ());
     }
 
     // DECL: static const Vector3& zero();
     public static function zero():IVector3
     {
-        if (_zero == null)
-            _zero = Vector3.make();
-        return _zero.impersonate(hx_Vector3_static_zero());
+        return Macros.impersonateResult(_zero, hx_Vector3_static_zero());
     }
 
     /***************************************************************************

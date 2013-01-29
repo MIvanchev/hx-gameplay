@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -18,20 +19,6 @@ class AudioListener extends Transform_ListenerImpl
     var _orientationUp:Vector3;
     var _position:Vector3;
     var _velocity:Vector3;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _orientationForward = Vector3.make();
-            _orientationUp = Vector3.make();
-            _position = Vector3.make();
-            _velocity = Vector3.make();
-        }
-        return cast(this);
-    }
 
     // DECL: Camera* getCamera() const;
     public function getCamera():Camera
@@ -60,25 +47,25 @@ class AudioListener extends Transform_ListenerImpl
     // DECL: const Vector3& getOrientationForward() const;
     public function getOrientationForward():IVector3
     {
-        return _orientationForward.impersonate(hx_AudioListener_getOrientationForward(nativeObject));
+        return Macros.impersonateResult(_orientationForward, hx_AudioListener_getOrientationForward(nativeObject));
     }
 
     // DECL: const Vector3& getOrientationUp() const;
     public function getOrientationUp():IVector3
     {
-        return _orientationUp.impersonate(hx_AudioListener_getOrientationUp(nativeObject));
+        return Macros.impersonateResult(_orientationUp, hx_AudioListener_getOrientationUp(nativeObject));
     }
 
     // DECL: const Vector3& getPosition() const;
     public function getPosition():IVector3
     {
-        return _position.impersonate(hx_AudioListener_getPosition(nativeObject));
+        return Macros.impersonateResult(_position, hx_AudioListener_getPosition(nativeObject));
     }
 
     // DECL: const Vector3& getVelocity() const;
     public function getVelocity():IVector3
     {
-        return _velocity.impersonate(hx_AudioListener_getVelocity(nativeObject));
+        return Macros.impersonateResult(_velocity, hx_AudioListener_getVelocity(nativeObject));
     }
 
     // DECL: void setCamera(Camera* camera);

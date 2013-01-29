@@ -6,6 +6,7 @@ import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.INativeBinding;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.OutParameter;
 
@@ -25,22 +26,6 @@ class Camera extends Transform_ListenerImpl, implements Ref
     var _viewMatrix:Matrix;
     var _viewProjectionMatrix:Matrix;
     var _frustum:Frustum;
-
-    override function impersonate<T : INativeBinding>(nativeObject:Dynamic):T
-    {
-        var initialized = this.nativeObject != null;
-        super.impersonate(nativeObject);
-        if (!initialized)
-        {
-            _inverseViewMatrix = Matrix.make();
-            _inverseViewProjectionMatrix = Matrix.make();
-            _projectionMatrix = Matrix.make();
-            _viewMatrix = Matrix.make();
-            _viewProjectionMatrix = Matrix.make();
-            _frustum = Frustum.make();
-        }
-        return cast(this);
-    }
 
     // DECL: static Camera* create(Properties* properties);
     public static function create(properties:Properties):Camera
@@ -87,19 +72,19 @@ class Camera extends Transform_ListenerImpl, implements Ref
     // DECL: const Frustum& getFrustum() const;
     public function getFrustum():IFrustum
     {
-        return _frustum.impersonate(hx_Camera_getFrustum(nativeObject));
+        return Macros.impersonateResult(_frustum, hx_Camera_getFrustum(nativeObject));
     }
 
     // DECL: const Matrix& getInverseViewMatrix() const;
     public function getInverseViewMatrix():IMatrix
     {
-        return _inverseViewMatrix.impersonate(hx_Camera_getInverseViewMatrix(nativeObject));
+        return Macros.impersonateResult(_inverseViewMatrix, hx_Camera_getInverseViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getInverseViewProjectionMatrix() const;
     public function getInverseViewProjectionMatrix():IMatrix
     {
-        return _inverseViewProjectionMatrix.impersonate(hx_Camera_getInverseViewProjectionMatrix(nativeObject));
+        return Macros.impersonateResult(_inverseViewProjectionMatrix, hx_Camera_getInverseViewProjectionMatrix(nativeObject));
     }
 
     // DECL: float getNearPlane() const;
@@ -117,19 +102,19 @@ class Camera extends Transform_ListenerImpl, implements Ref
     // DECL: const Matrix& getProjectionMatrix() const;
     public function getProjectionMatrix():IMatrix
     {
-        return _projectionMatrix.impersonate(hx_Camera_getProjectionMatrix(nativeObject));
+        return Macros.impersonateResult(_projectionMatrix, hx_Camera_getProjectionMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getViewMatrix() const;
     public function getViewMatrix():IMatrix
     {
-        return _viewMatrix.impersonate(hx_Camera_getViewMatrix(nativeObject));
+        return Macros.impersonateResult(_viewMatrix, hx_Camera_getViewMatrix(nativeObject));
     }
 
     // DECL: const Matrix& getViewProjectionMatrix() const;
     public function getViewProjectionMatrix():IMatrix
     {
-        return _viewProjectionMatrix.impersonate(hx_Camera_getViewProjectionMatrix(nativeObject));
+        return Macros.impersonateResult(_viewProjectionMatrix, hx_Camera_getViewProjectionMatrix(nativeObject));
     }
 
     // DECL: float getZoomX() const;
