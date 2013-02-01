@@ -1,14 +1,17 @@
 package org.gameplay3d;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
+
+import org.gameplay3d.immutable.ITheme_SideRegions;
 
 typedef Theme_Margin = Theme_SideRegions;
 typedef Theme_Border = Theme_SideRegions;
 typedef Theme_Padding = Theme_SideRegions;
 
 // DECL: struct SideRegions : public GameplayObject
-class Theme_SideRegions extends GameplayObject
+class Theme_SideRegions extends GameplayObject, implements ITheme_SideRegions
 {
     /***************************************************************************
      * PROPERTIES                                                              *
@@ -23,6 +26,8 @@ class Theme_SideRegions extends GameplayObject
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    static var _empty:Theme_SideRegions;
+
     // DECL: SideRegions() : top(0), bottom(0), left(0), right(0) {}
     public static function make():Theme_SideRegions
     {
@@ -30,9 +35,9 @@ class Theme_SideRegions extends GameplayObject
     }
 
     // DECL: static const SideRegions& empty();
-    public static function empty():Theme_SideRegions
+    public static function empty():ITheme_SideRegions
     {
-        return Theme_SideRegions.wrap(hx_Theme_SideRegions_static_empty());
+        return Macros.impersonateResult(_empty, hx_Theme_SideRegions_static_empty());
     }
 
     /***************************************************************************

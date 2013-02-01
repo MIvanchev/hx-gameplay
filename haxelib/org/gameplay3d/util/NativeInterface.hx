@@ -79,6 +79,11 @@ class NativeInterface
     static var setReferenceInstance:Dynamic;
 
     /**
+     * TODO
+     */
+    static var wrapCachedReference:Dynamic;
+
+    /**
      * The list of factory methods used to construct Haxe wrappers for reference
      * counted classes.
      *
@@ -95,6 +100,7 @@ class NativeInterface
     {
         setReferenceConstructor = Lib.load("gameplay", "setReferenceConstructor", 2);
         setReferenceInstance = Lib.load("gameplay", "setReferenceInstance", 2);
+        wrapCachedReference = Lib.load("gameplay", "wrapCachedReference", 0);
         registerClass(AbsoluteLayout);
         registerClass(AIAgent);
         registerClass(AIState);
@@ -149,9 +155,18 @@ class NativeInterface
     /**
      * TODO
      */
-    public static function updateReference(nativeObject:Dynamic, instance:GameplayObject)
+    public static function deinitialize()
     {
-        setReferenceInstance(nativeObject, new WeakRef<GameplayObject>(instance));
+        var releaseReferenceConstructors = Lib.load("gameplay", "releaseReferenceConstructors", 0);
+        releaseReferenceConstructors();
+    }
+
+    /**
+     * TODO
+     */
+    public static inline function rebuildCache()
+    {
+        return wrapCachedReference();
     }
 
     /**
@@ -179,5 +194,13 @@ class NativeInterface
             );
 
         setReferenceConstructor(name, factories.first());
+    }
+
+    /**
+     * TODO
+     */
+    public static function updateReference(nativeObject:Dynamic, instance:GameplayObject)
+    {
+        setReferenceInstance(nativeObject, new WeakRef<GameplayObject>(instance));
     }
 }

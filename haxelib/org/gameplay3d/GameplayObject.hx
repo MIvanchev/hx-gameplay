@@ -72,8 +72,14 @@ class GameplayObject extends NativeBinding
             else if (Std.is(nativeObject, WeakRef))
             {
                 var ref:WeakRef<T> = nativeObject;
-                if (ref.get() != null)
-                    ref.get();
+                var result = ref.get();
+                if (result == null)
+                {
+                    args[0] = NativeInterface.rebuildCache();
+                    result = Type.createInstance(classObj, args);
+                    ref.set(result);
+                }
+                result;
             }
             else
             {

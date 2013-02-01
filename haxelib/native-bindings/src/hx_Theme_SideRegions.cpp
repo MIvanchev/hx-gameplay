@@ -10,9 +10,7 @@ DEFINE_PRIM(hx_Theme_SideRegions_Construct, 0);
 // DECL: static const SideRegions& empty();
 value hx_Theme_SideRegions_static_empty()
 {
-    Theme::SideRegions *_result = new Theme::SideRegions();
-    *_result = Theme::SideRegions::empty();
-    return ObjectToValue(_result);
+    return ObjectToValue(&Theme::SideRegions::empty(), false);
 }
 DEFINE_PRIM(hx_Theme_SideRegions_static_empty, 0);
 

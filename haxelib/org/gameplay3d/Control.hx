@@ -1,6 +1,8 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IRectangle;
+import org.gameplay3d.immutable.ITheme_SideRegions;
+import org.gameplay3d.immutable.ITheme_UVs;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.impl.AnimationTarget_ScriptTarget;
 import org.gameplay3d.intern.INativeBinding;
@@ -41,6 +43,11 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     var _cursorRegion:Rectangle;
     var _imageRegion:Rectangle;
     var _skinRegion:Rectangle;
+    var _cursorUVs:Theme_UVs;
+    var _imageUVs:Theme_UVs;
+    var _border:Theme_Border;
+    var _margin:Theme_Margin;
+    var _padding:Theme_Padding;
 
     // DECL: virtual void addListener(Control::Listener* listener, int eventFlags);
     public function addListener(listener:Control_ListenerWrapper, eventFlags:Int):Void
@@ -85,9 +92,9 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: const Theme::Border& getBorder(State state = NORMAL) const;
-    public function getBorder(state:Int = Control_State.NORMAL):Theme_Border
+    public function getBorder(state:Int = Control_State.NORMAL):ITheme_Border
     {
-        return Theme_Border.wrap(hx_Control_getBorder(nativeObject, state));
+        return Macros.impersonateResult(_border, hx_Control_getBorder(nativeObject, state));
     }
 
     // DECL: const Rectangle& getBounds() const;
@@ -127,9 +134,9 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: const Theme::UVs& getCursorUVs(State state);
-    public function getCursorUVs(state:Int):Theme_UVs
+    public function getCursorUVs(state:Int):ITheme_UVs
     {
-        return Theme_UVs.wrap(hx_Control_getCursorUVs(nativeObject, state));
+        return Macros.impersonateResult(_cursorUVs, hx_Control_getCursorUVs(nativeObject, state));
     }
 
     // DECL: int getFocusIndex() const;
@@ -175,15 +182,15 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     }
 
     // DECL: const Theme::UVs& getImageUVs(const char* id, State state) const;
-    public function getImageUVs(id:String, state:Int):Theme_UVs
+    public function getImageUVs(id:String, state:Int):ITheme_UVs
     {
-        return Theme_UVs.wrap(hx_Control_getImageUVs(nativeObject, id, state));
+        return Macros.impersonateResult(_imageUVs, hx_Control_getImageUVs(nativeObject, id, state));
     }
 
     // DECL: const Theme::Margin& getMargin() const;
-    public function getMargin():Theme_Margin
+    public function getMargin():ITheme_Margin
     {
-        return Theme_Margin.wrap(hx_Control_getMargin(nativeObject));
+        return Macros.impersonateResult(_margin, hx_Control_getMargin(nativeObject));
     }
 
     // DECL: float getOpacity(State state = NORMAL) const;
@@ -195,7 +202,7 @@ class Control extends AnimationTarget_ScriptTarget, implements Ref
     // DECL: const Theme::Padding& getPadding() const;
     public function getPadding():Theme_Padding
     {
-        return Theme_Padding.wrap(hx_Control_getPadding(nativeObject));
+        return Macros.impersonateResult(_padding, hx_Control_getPadding(nativeObject));
     }
 
     // DECL: const Vector4& getSkinColor(State state = NORMAL) const;

@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.ITheme_UVs;
+import org.gameplay3d.intern.Macros;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -21,6 +22,8 @@ class Theme_UVs extends GameplayObject, implements ITheme_UVs
      * MEMBERS                                                                 *
      **************************************************************************/
 
+    static var _empty:Theme_UVs;
+
     // DECL: UVs();
     public static function make():Theme_UVs
     {
@@ -34,9 +37,9 @@ class Theme_UVs extends GameplayObject, implements ITheme_UVs
     }
 
     // DECL: static const UVs& empty();
-    public static function empty():Theme_UVs
+    public static function empty():ITheme_UVs
     {
-        return Theme_UVs.wrap(hx_Theme_UVs_static_empty());
+        return Macros.impersonateResult(_empty, hx_Theme_UVs_static_empty());
     }
 
     /***************************************************************************

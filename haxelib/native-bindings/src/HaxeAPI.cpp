@@ -193,7 +193,9 @@ struct WrappedReference
     { }
 };
 
-WrappedReference *referenceHash = NULL;
+static WrappedReference *referenceHash = NULL;
+static WrappedReference *referenceCache = NULL;
+static std::list<AutoGCRoot*> roots;
 
 void FreeReference(value object)
 {
@@ -213,7 +215,7 @@ void FreeReference(value object)
 }
 
 #define REFERENCE_TO_VALUE(type, name)                                                                      \
-static value refConstructor ## name;                                                                        \
+static AutoGCRoot refConstructor ## name(alloc_null());                                                     \
 value ReferenceToValue (type *object, bool increaseRefCount)                                                \
 {                                                                                                           \
     if (object == NULL)                                                                                     \
@@ -224,17 +226,19 @@ value ReferenceToValue (type *object, bool increaseRefCount)                    
     HASH_FIND_PTR(referenceHash, &key, wrappedReference);                                                   \
     if (wrappedReference == NULL)                                                                           \
     {                                                                                                       \
+        if (increaseRefCount)                                                                               \
+            object->addRef();                                                                               \
+                                                                                                            \
         wrappedReference = new WrappedReference();                                                          \
         const value& nativeObject = alloc_abstract(k_Object_Ref, static_cast<void*>(wrappedReference));     \
         val_gc(nativeObject, FreeReference);                                                                \
-        const value& wrapper = val_call1(refConstructor ## name, nativeObject);                             \
+        const value& wrapper = val_call1(refConstructor ## name.get(), nativeObject);                       \
         wrappedReference->key = key;                                                                        \
         wrappedReference->wrapper.set(wrapper);                                                             \
         HASH_ADD_PTR(referenceHash, key, wrappedReference);                                                 \
+    }                                                                                                       \
                                                                                                             \
-        if (increaseRefCount)                                                                               \
-            object->addRef();                                                                               \
-        }                                                                                                   \
+    referenceCache = wrappedReference;                                                                      \
                                                                                                             \
     return wrappedReference->wrapper.get();                                                                 \
 }
@@ -459,14 +463,15 @@ CONVERSION_FUNCTIONS_REF(Theme::ThemeImage, Theme_ThemeImage)
 CONVERSION_FUNCTIONS_REF(VertexAttributeBinding, VertexAttributeBinding)
 CONVERSION_FUNCTIONS_REF(VerticalLayout, VerticalLayout)
 
-void setReferenceConstructor(value name, value constructor)
+void setReferenceConstructor(value name, value constructor, value updater)
 {
     const char *_name = ValueToString(name);
-#define APPLY_CONSTRUCTOR(type)                \
-    if (!strcmp(_name, #type))                 \
-    {                                          \
-        refConstructor ## type = constructor;  \
-        return;                                \
+#define APPLY_CONSTRUCTOR(type)                     \
+    if (!strcmp(_name, #type))                      \
+    {                                               \
+        refConstructor ## type.set(constructor);    \
+        roots.push_back(&refConstructor ## type);   \
+        return;                                     \
     }
     APPLY_CONSTRUCTOR(AbsoluteLayout)
     APPLY_CONSTRUCTOR(AIAgent)
@@ -529,6 +534,20 @@ void setReferenceInstance(value refWrapper, value wrapper)
     _refWrapper->wrapper.set(wrapper);
 }
 DEFINE_PRIM(setReferenceInstance, 2)
+
+value wrapCachedReference()
+{
+    return alloc_abstract(k_Object_Ref, static_cast<void*>(referenceCache));
+}
+DEFINE_PRIM(wrapCachedReference, 0)
+
+void releaseReferenceConstructors()
+{
+    for (std::list<AutoGCRoot*>::iterator it = roots.begin(); it != roots.end(); it++)
+        (*it)->set(alloc_null());
+    roots.clear();
+}
+DEFINE_PRIM(releaseReferenceConstructors, 0)
 
 /*******************************************************************************
  * EQUIVALENCE TESTING                                                         *

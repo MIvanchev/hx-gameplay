@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IRectangle;
+import org.gameplay3d.immutable.ITheme_UVs;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
@@ -17,6 +18,7 @@ class Theme_ThemeImage extends GameplayObject, implements Ref
 
     var _color:Vector4;
     var _region:Rectangle;
+    var _uvs:Theme_UVs;
 
     // DECL: const Vector4& getColor() const;
     public function getColor():IVector4
@@ -37,9 +39,9 @@ class Theme_ThemeImage extends GameplayObject, implements Ref
     }
 
     // DECL: const UVs& getUVs() const;
-    public function getUVs():Theme_UVs
+    public function getUVs():ITheme_UVs
     {
-        return Theme_UVs.wrap(hx_Theme_ThemeImage_getUVs(nativeObject));
+        return Macros.impersonateResult(_uvs, hx_Theme_ThemeImage_getUVs(nativeObject));
     }
 
     /***************************************************************************

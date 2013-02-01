@@ -78,11 +78,7 @@ value hx_Control_getBorder(value thisObj, value state)
     Control::State _state;
     ValueToObject(thisObj, _thisObj);
     ValueToEnum(state, _state);
-
-    Theme::Border *result = new Theme::Border();
-    *result = _thisObj->getBorder(_state);
-
-    return ObjectToValue(result);
+    return ObjectToValue(&_thisObj->getBorder(_state), false);
 }
 DEFINE_PRIM(hx_Control_getBorder, 2);
 
@@ -151,11 +147,7 @@ value hx_Control_getCursorUVs(value thisObj, value state)
     Control::State _state;
     ValueToObject(thisObj, _thisObj);
     ValueToEnum(state, _state);
-
-    Theme::UVs *result = new Theme::UVs();
-    *result = _thisObj->getCursorUVs(_state);
-
-    return ObjectToValue(result);
+    return ObjectToValue(&_thisObj->getCursorUVs(_state), false);
 }
 DEFINE_PRIM(hx_Control_getCursorUVs, 2);
 
@@ -240,11 +232,7 @@ value hx_Control_getImageUVs(value thisObj, value id, value state)
     Control::State _state;
     ValueToObject(thisObj, _thisObj);
     ValueToEnum(state, _state);
-
-    Theme::UVs *result = new Theme::UVs();
-    *result = _thisObj->getImageUVs(_id, _state);
-
-    return ObjectToValue(result);
+    return ObjectToValue(&_thisObj->getImageUVs(_id, _state), false);
 }
 DEFINE_PRIM(hx_Control_getImageUVs, 3);
 
@@ -253,11 +241,7 @@ value hx_Control_getMargin(value thisObj)
 {
     Control *_thisObj;
     ValueToObject(thisObj, _thisObj);
-
-    Theme::Margin *result = new Theme::Margin();
-    *result = _thisObj->getMargin();
-
-    return ObjectToValue(result);
+    return ObjectToValue(&_thisObj->getMargin(), false);
 }
 DEFINE_PRIM(hx_Control_getMargin, 1);
 
@@ -277,11 +261,7 @@ value hx_Control_getPadding(value thisObj)
 {
     Control *_thisObj;
     ValueToObject(thisObj, _thisObj);
-
-    Theme::Padding *result = new Theme::Padding();
-    *result = _thisObj->getPadding();
-
-    return ObjectToValue(result);
+    return ObjectToValue(&_thisObj->getPadding(), false);
 }
 DEFINE_PRIM(hx_Control_getPadding, 1);
 

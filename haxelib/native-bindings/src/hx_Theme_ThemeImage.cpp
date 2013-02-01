@@ -32,9 +32,7 @@ value hx_Theme_ThemeImage_getUVs(value thisObj)
 {
     Theme::ThemeImage *_thisObj;
     ValueToObject(thisObj, _thisObj);
-    Theme::UVs *result = new Theme::UVs();
-    *result = _thisObj->getUVs();
-    return ObjectToValue(result);
+    return ObjectToValue(&_thisObj->getUVs(), false);
 }
 DEFINE_PRIM(hx_Theme_ThemeImage_getUVs, 1);
 
