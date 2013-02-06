@@ -9,7 +9,6 @@
     <include name="${HXCPP}/build-tool/BuildCommon.xml"/>
 
     <!-- Determine the output location for the NDLL -->
-
     <set name="LIB_DIR" value="-L" unless="windows"/>
     <set name="LIB_DIR" value="-libpath:" if="windows"/>
     <section if="android">
@@ -28,7 +27,13 @@
         <set name="LIB_CPU_TYPE" value="x64" if="HXCPP_M64"/>
     </section>
 
-    <set name="LIB_SUFFIX" value="lib/${LIB_PLATFORM}/${LIB_CPU_TYPE}"/>
+    <section if="macos">
+        <set name="LIB_PLATFORM" value="macosx"/>
+        <set name="LIB_CPU_TYPE" value="x86" unless="HXCPP_M64"/>
+        <set name="LIB_CPU_TYPE" value="x64" if="HXCPP_M64"/>
+    </section>
+    <set name="LIB_SUFFIX" value="lib/${LIB_PLATFORM}/${LIB_CPU_TYPE}" unless="macos"/>
+    <set name="LIB_SUFFIX" value="lib/${LIB_PLATFORM}" if="macos"/>
 
     <!-- Set platform specific variables -->
 
@@ -38,7 +43,7 @@
 
     <!-- Specify the list of files to be compiled and the compile options. -->
 
-    <set name="GAMEPLAY_DIR" value="../../../gameplay"/>
+    <set name="GAMEPLAY_DIR" value="../../../Gameplay"/>
 
     <files id="common">
         <compilerflag value="-Iinclude"/>
@@ -58,6 +63,7 @@
         <compilerflag value="-Iinclude"/>
         <compilerflag value="-DWIN32" if="windows"/>
         <compilerflag value="-std=c++0x" if="linux"/>
+        <compilerflag value="-std=c++0x" if="macos"/>
         <compilerflag value="-std=gnu++0x" if="android"/>
         
         <file name="src/HaxeAPI.cpp"/>
@@ -198,31 +204,32 @@
         <ext value=".so" if="android"/>
         <ext value=".ndll" if="linux"/>
         <ext value=".ndll" if="windows"/>
+        <ext value=".ndll" if="macos"/>
 
         <files id="common"/>
 
         <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/bullet/${LIB_SUFFIX}"/>
-        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/collada-dom/${LIB_SUFFIX}"/>
-        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/detour/${LIB_SUFFIX}"/>
-        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/detourcrowd/${LIB_SUFFIX}"/>
-        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/freetype2/${LIB_SUFFIX}"/>
-        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/glew/${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/collada-dom/${LIB_SUFFIX}" unless="macos"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/detour/${LIB_SUFFIX}" unless="macos"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/detourcrowd/${LIB_SUFFIX}" unless="macos"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/freetype2/${LIB_SUFFIX}" unless="macos"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/glew/${LIB_SUFFIX}" unless="macos"/>
         <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/libpng/${LIB_SUFFIX}"/>
         <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/lua/${LIB_SUFFIX}"/>
         <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/oggvorbis/${LIB_SUFFIX}"/>
-        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/openal/${LIB_SUFFIX}"/>
-        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/pcre/${LIB_SUFFIX}"/>
-        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/recast/${LIB_SUFFIX}"/>
-        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/tinyxml2/${LIB_SUFFIX}"/>
-        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/zlib/${LIB_SUFFIX}"/>
-        <flag value="${LIB_DIR}${LIB_SUFFIX}"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/openal/${LIB_SUFFIX}" unless="macos"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/pcre/${LIB_SUFFIX}" unless="macos"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/recast/${LIB_SUFFIX}" unless="macos"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/tinyxml2/${LIB_SUFFIX}" unless="macos"/>
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/zlib/${LIB_SUFFIX}" unless="macos"/>
+
+	<!-- Xcode places libgameplay in /Library/Developer/Xcode/DerivedData/gameplay-'random characters here'/Build/Products -->
+	<!-- User should copy the resulting target to the Gameplay root directory -->
+        <flag value="${LIB_DIR}${GAMEPLAY_DIR}" if="macos"/>
 
         <!-------------------------------------------------------->
         <!-- Static libraries for Gameplay and its dependencies -->
         <!-------------------------------------------------------->
-
-        <lib name="-lgameplay" unless="windows"/>
-        <lib name="gameplay.lib" if="windows"/>
 
         <lib name="-lbullet" if="android"/>
         <lib name="-lbullet" if="blackberry"/>
@@ -278,17 +285,18 @@
         <lib name="-lopenal" if="android"/>
         <lib name="-lopenal" if="linux"/>
         <lib name="openal32.lib" if="windows"/>
-
-        <lib name="-lpcre" if="macos"/>
-        <lib name="-lpcrecpp" if="macos"/>
-
         <lib name="-lrecast" if="android"/>
         <lib name="-lrecast" if="blackberry"/>
         <lib name="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/recast/lib/windows/recast.lib" if="windows"/>
 
         <lib name="-lzlib" if="android"/>
         <lib name="-lz" if="linux"/>
+        <lib name="-lz" if="macos"/>
         <lib name="zlib.lib" if="windows"/>
+
+        <lib name="-lgameplay" unless="windows"/>
+        <lib name="gameplay.lib" if="windows"/>
+
         
         <!---------------------->
         <!-- System libraries -->
@@ -319,4 +327,15 @@
     <target id="default">
         <target id="gameplay-hx"/>
     </target>
+
+   <linker id="dll" exe="g++" if="macos">
+	<flag value="-framework"/>
+	<flag value="OpenGL"/>
+	<flag value="-framework"/>
+	<flag value="OpenAL"/>
+	<flag value="-framework"/>
+	<flag value="Quartz"/>
+	<flag value="-framework"/>
+	<flag value="IOKit"/>
+   </linker>
 </xml>
