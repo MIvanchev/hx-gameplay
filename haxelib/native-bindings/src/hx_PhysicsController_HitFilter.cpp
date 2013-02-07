@@ -34,13 +34,10 @@ public:
 
     bool hit(const PhysicsController::HitResult& result)
     {
-        PhysicsController::HitResult *_result = new PhysicsController::HitResult();
-        *_result = result;
-
         const value& flag =
             val_call1(
                 clbkFilter.get(),
-                ObjectToValue(_result)
+                ObjectToValue(result, false)
             );
 
         return val_get_bool(flag);

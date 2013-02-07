@@ -2,29 +2,18 @@ package org.gameplay3d.wrapper;
 
 import org.gameplay3d.AIAgent_Listener;
 import org.gameplay3d.AIMessage;
-import org.gameplay3d.GameplayObject;
+import org.gameplay3d.intern.ListenerWrapper;
 
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Listener : public GameplayObject
-class AIAgent_ListenerWrapper extends GameplayObject, implements AIAgent_Listener
+class AIAgent_ListenerWrapper extends ListenerWrapper<AIAgent_Listener>, implements AIAgent_Listener
 {
-    /***************************************************************************
-     * PROPERTIES                                                              *
-     **************************************************************************/
-
-    public var target(default, null):AIAgent_Listener;
-
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    function new(target, nativeObject, nativeObjectInitializerParams)
-    {
-        super(nativeObject, nativeObjectInitializerParams);
-        this.target = target;
-    }
-
+    // DECL: (none)
     public static function make(target)
     {
         return new AIAgent_ListenerWrapper(target, constructNativeObject, [ null ]);

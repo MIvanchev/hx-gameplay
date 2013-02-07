@@ -1,29 +1,17 @@
 package org.gameplay3d.wrapper;
 
+import org.gameplay3d.intern.ListenerWrapper;
 import org.gameplay3d.util.Handle;
-import org.gameplay3d.GameplayObject;
 import org.gameplay3d.TimeListener;
 
 // DECL: class TimeListener : public GameplayObject
-class TimeListenerWrapper extends GameplayObject, implements TimeListener
+class TimeListenerWrapper extends ListenerWrapper<TimeListener>, implements TimeListener
 {
-    /***************************************************************************
-     * PROPERTIES                                                              *
-     **************************************************************************/
-
-    public var target(default, null):TimeListener;
-
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    function new(target, nativeObject, nativeObjectInitializerParams)
-    {
-        super(nativeObject, nativeObjectInitializerParams);
-        this.target = target;
-    }
-
-    // DECL: TimeListener();
+    // DECL: (none)
     public static function make(target)
     {
         return new TimeListenerWrapper(target, constructNativeObject, [ null ]);

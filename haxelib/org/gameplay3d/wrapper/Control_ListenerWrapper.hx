@@ -2,29 +2,18 @@ package org.gameplay3d.wrapper;
 
 import org.gameplay3d.Control;
 import org.gameplay3d.Control_Listener;
-import org.gameplay3d.GameplayObject;
+import org.gameplay3d.intern.ListenerWrapper;
 
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Listener : public GameplayObject
-class Control_ListenerWrapper extends GameplayObject, implements Control_Listener
+class Control_ListenerWrapper extends ListenerWrapper<Control_Listener>, implements Control_Listener
 {
-    /***************************************************************************
-     * PROPERTIES                                                              *
-     **************************************************************************/
-
-    public var target(default, null):Control_Listener;
-
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    function new(target, nativeObject, nativeObjectInitializerParams)
-    {
-        super(nativeObject, nativeObjectInitializerParams);
-        this.target = target;
-    }
-
+    // DECL: (none)
     public static function make(target)
     {
         return new Control_ListenerWrapper(target, constructNativeObject, [ null ]);

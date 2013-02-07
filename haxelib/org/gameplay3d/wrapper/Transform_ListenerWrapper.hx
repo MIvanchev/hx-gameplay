@@ -1,31 +1,19 @@
 package org.gameplay3d.wrapper;
 
-import org.gameplay3d.GameplayObject;
+import org.gameplay3d.intern.ListenerWrapper;
 import org.gameplay3d.Transform;
 import org.gameplay3d.Transform_Listener;
 
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Listener : public GameplayObject
-class Transform_ListenerWrapper extends GameplayObject, implements Transform_Listener
+class Transform_ListenerWrapper extends ListenerWrapper<Transform_Listener>, implements Transform_Listener
 {
-     /***************************************************************************
-     * PROPERTIES                                                              *
-     **************************************************************************/
-
-    public var target(default, null):Transform_Listener;
-
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    function new(target, nativeObject, nativeObjectInitializerParams)
-    {
-        super(nativeObject, nativeObjectInitializerParams);
-        this.target = target;
-    }
-
-    // DECL: TimeListener();
+    // DECL: (none)
     public static function make(target)
     {
         return new Transform_ListenerWrapper(target, constructNativeObject, [ null ]);

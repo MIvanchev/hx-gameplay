@@ -2,29 +2,18 @@ package org.gameplay3d.wrapper;
 
 import org.gameplay3d.AnimationClip;
 import org.gameplay3d.AnimationClip_Listener;
-import org.gameplay3d.GameplayObject;
+import org.gameplay3d.intern.ListenerWrapper;
 
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Listener : public GameplayObject
-class AnimationClip_ListenerWrapper extends GameplayObject, implements AnimationClip_Listener
+class AnimationClip_ListenerWrapper extends ListenerWrapper<AnimationClip_Listener>, implements AnimationClip_Listener
 {
-    /***************************************************************************
-     * PROPERTIES                                                              *
-     **************************************************************************/
-
-    public var target(default, null):AnimationClip_Listener;
-
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    function new(target, nativeObject, nativeObjectInitializerParams)
-    {
-        super(nativeObject, nativeObjectInitializerParams);
-        this.target = target;
-    }
-
+    // DECL: (none)
     public static function make(target)
     {
         return new AnimationClip_ListenerWrapper(target, constructNativeObject, [ null ]);

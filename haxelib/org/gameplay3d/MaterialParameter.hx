@@ -6,6 +6,7 @@ import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.intern.impl.AnimationTargetImpl;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.util.INativeArray;
 import org.gameplay3d.util.PrimitiveArray;
 
@@ -26,10 +27,10 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
      **************************************************************************/
 
     // DECL: void bindValue(ClassType* classInstance, ParameterType (ClassType::*valueMethod)() const);
-    //public function bindValue(classInstance:ClassType, const:ParameterType (ClassType::*valueMethod)()):Void
-    //{
-        //hx_MaterialParameter_bindValue(nativeObject, classInstance.native(), const.native());
-    //}
+    @:generic
+    public function bindValue_Func<T>(valueMethod:Void->T):Void
+    {
+    }
 
     // DECL: void bindValue(ClassType* classInstance, ParameterType (ClassType::*valueMethod)() const, unsigned int (ClassType::*countMethod)() const);
     //public function bindValue(classInstance:ClassType, const:ParameterType (ClassType::*valueMethod)(), const:unsigned int (ClassType::*countMethod)()):Void

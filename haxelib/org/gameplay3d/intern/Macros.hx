@@ -2,6 +2,7 @@ package org.gameplay3d.intern;
 
 import haxe.macro.Context;
 import haxe.macro.Expr;
+import haxe.macro.TypeTools;
 
 /**
  * TODO
@@ -28,5 +29,22 @@ class Macros
                 $name = $i{id[id.length - 1]}.wrap($result);
             else
                 $name = $name.impersonate($result);
+   }
+
+   /**
+    * TODO
+    */
+   macro
+   public static function returnType(func:Expr):Expr
+   {
+        var id =
+            TypeTools.toString(
+                    switch (Context.follow(Context.typeof(func)))
+                    {
+                    case TFun(_, r): r;
+                    default: Context.error("Invalid type specified.", Context.currentPos());
+                    }
+                ).split(".");
+        return macro $i{id[id.length - 1]};
    }
 }

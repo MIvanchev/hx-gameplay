@@ -1,30 +1,24 @@
 package org.gameplay3d.wrapper;
 
-import org.gameplay3d.GameplayObject;
+import org.gameplay3d.intern.ListenerWrapper;
+import org.gameplay3d.intern.Macros;
 import org.gameplay3d.PhysicsController_HitFilter;
+import org.gameplay3d.PhysicsController_HitResult;
+import org.gameplay3d.shared.SharedPhysicsController_HitResult;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class HitFilter
-class PhysicsController_HitFilterWrapper extends GameplayObject, implements PhysicsController_HitFilter
+class PhysicsController_HitFilterWrapper extends ListenerWrapper<PhysicsController_HitFilter>, implements PhysicsController_HitFilter
 {
-    /***************************************************************************
-     * PROPERTIES                                                              *
-     **************************************************************************/
-
-    public var target(default, null):PhysicsController_HitFilter;
-
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    function new(target, nativeObject, nativeObjectInitializerParams)
-    {
-        super(nativeObject, nativeObjectInitializerParams);
-        this.target = target;
-    }
+    var _result:SharedPhysicsController_HitResult;
 
+    // DECL: (none)
     public static function make(target)
     {
         return new PhysicsController_HitFilterWrapper(target, constructNativeObject, [ null ]);
@@ -37,7 +31,7 @@ class PhysicsController_HitFilterWrapper extends GameplayObject, implements Phys
     }
 
     // DECL: virtual bool hit(const HitResult& result);
-    public function hit(result:PhysicsController_HitResult):Bool
+    public function hit(result:SharedPhysicsController_HitResult):Bool
     {
         return target.hit(result);
     }
@@ -53,7 +47,7 @@ class PhysicsController_HitFilterWrapper extends GameplayObject, implements Phys
 
     function hitWrapper(result)
     {
-        return hit(PhysicsController_HitResult.wrap(result));
+        return hit(Macros.impersonateResult(_result, result));
     }
 
     // DECL: HitFilter();

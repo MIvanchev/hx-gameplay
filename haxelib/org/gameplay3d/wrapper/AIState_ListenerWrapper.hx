@@ -3,29 +3,18 @@ package org.gameplay3d.wrapper;
 import org.gameplay3d.AIAgent;
 import org.gameplay3d.AIState;
 import org.gameplay3d.AIState_Listener;
-import org.gameplay3d.GameplayObject;
+import org.gameplay3d.intern.ListenerWrapper;
 
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Listener : public GameplayObject
-class AIState_ListenerWrapper extends GameplayObject, implements AIState_Listener
+class AIState_ListenerWrapper extends ListenerWrapper<AIState_Listener>, implements AIState_Listener
 {
-    /***************************************************************************
-     * PROPERTIES                                                              *
-     **************************************************************************/
-
-    public var target(default, null):AIState_Listener;
-
     /***************************************************************************
      * MEMBERS                                                                 *
      **************************************************************************/
 
-    function new(target, nativeObject, nativeObjectInitializerParams)
-    {
-        super(nativeObject, nativeObjectInitializerParams);
-        this.target = target;
-    }
-
+    // DECL: (none)
     public static function make(target)
     {
         return new AIState_ListenerWrapper(target, constructNativeObject, [ null ]);
