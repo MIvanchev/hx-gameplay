@@ -71,15 +71,15 @@ class RadioButton extends Button
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_RadioButton_addListener:Dynamic = cpp.Lib.load("gameplay", "hx_RadioButton_addListener", 3);
-    static var hx_RadioButton_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_RadioButton_static_create", 2);
-    static var hx_RadioButton_getGroupId:Dynamic = cpp.Lib.load("gameplay", "hx_RadioButton_getGroupId", 1);
-    static var hx_RadioButton_getImageSize:Dynamic = cpp.Lib.load("gameplay", "hx_RadioButton_getImageSize", 1);
-    static var hx_RadioButton_getType:Dynamic = cpp.Lib.load("gameplay", "hx_RadioButton_getType", 1);
-    static var hx_RadioButton_isSelected:Dynamic = cpp.Lib.load("gameplay", "hx_RadioButton_isSelected", 1);
-    static var hx_RadioButton_setGroupId:Dynamic = cpp.Lib.load("gameplay", "hx_RadioButton_setGroupId", 2);
-    static var hx_RadioButton_setImageSize:Dynamic = cpp.Lib.load("gameplay", "hx_RadioButton_setImageSize", 3);
-    static var hx_RadioButton_setSelected:Dynamic = cpp.Lib.load("gameplay", "hx_RadioButton_setSelected", 2);
+    static var hx_RadioButton_addListener = cpp.Lib.load("gameplay", "hx_RadioButton_addListener", 3);
+    static var hx_RadioButton_static_create = cpp.Lib.load("gameplay", "hx_RadioButton_static_create", 2);
+    static var hx_RadioButton_getGroupId = cpp.Lib.load("gameplay", "hx_RadioButton_getGroupId", 1);
+    static var hx_RadioButton_getImageSize = cpp.Lib.load("gameplay", "hx_RadioButton_getImageSize", 1);
+    static var hx_RadioButton_getType = cpp.Lib.load("gameplay", "hx_RadioButton_getType", 1);
+    static var hx_RadioButton_isSelected = cpp.Lib.load("gameplay", "hx_RadioButton_isSelected", 1);
+    static var hx_RadioButton_setGroupId = cpp.Lib.load("gameplay", "hx_RadioButton_setGroupId", 2);
+    static var hx_RadioButton_setImageSize = cpp.Lib.load("gameplay", "hx_RadioButton_setImageSize", 3);
+    static var hx_RadioButton_setSelected = cpp.Lib.load("gameplay", "hx_RadioButton_setSelected", 2);
 }
 
 // END

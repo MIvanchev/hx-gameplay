@@ -48,10 +48,10 @@ class Theme_ThemeImage extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Theme_ThemeImage_getColor:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_ThemeImage_getColor", 1);
-    static var hx_Theme_ThemeImage_getId:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_ThemeImage_getId", 1);
-    static var hx_Theme_ThemeImage_getRegion:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_ThemeImage_getRegion", 1);
-    static var hx_Theme_ThemeImage_getUVs:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_ThemeImage_getUVs", 1);
+    static var hx_Theme_ThemeImage_getColor = cpp.Lib.load("gameplay", "hx_Theme_ThemeImage_getColor", 1);
+    static var hx_Theme_ThemeImage_getId = cpp.Lib.load("gameplay", "hx_Theme_ThemeImage_getId", 1);
+    static var hx_Theme_ThemeImage_getRegion = cpp.Lib.load("gameplay", "hx_Theme_ThemeImage_getRegion", 1);
+    static var hx_Theme_ThemeImage_getUVs = cpp.Lib.load("gameplay", "hx_Theme_ThemeImage_getUVs", 1);
 }
 
 // END

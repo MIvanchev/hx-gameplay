@@ -172,31 +172,31 @@ class AnimationClip extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AnimationClip_addBeginListener_Lsnr:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_addBeginListener_Lsnr", 2);
-    static var hx_AnimationClip_addBeginListener_Str:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_addBeginListener_Str", 2);
-    static var hx_AnimationClip_addEndListener_Lsnr:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_addEndListener_Lsnr", 2);
-    static var hx_AnimationClip_addEndListener_Str:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_addEndListener_Str", 2);
-    static var hx_AnimationClip_addListener_Lsnr_Int:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_addListener_Lsnr_Int", 3);
-    static var hx_AnimationClip_addListener_Str_Int:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_addListener_Str_Int", 3);
-    static var hx_AnimationClip_crossFade:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_crossFade", 3);
-    static var hx_AnimationClip_getActiveDuration:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_getActiveDuration", 1);
-    static var hx_AnimationClip_getAnimation:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_getAnimation", 1);
-    static var hx_AnimationClip_getBlendWeight:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_getBlendWeight", 1);
-    static var hx_AnimationClip_getDuration:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_getDuration", 1);
-    static var hx_AnimationClip_getElaspedTime:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_getElaspedTime", 1);
-    static var hx_AnimationClip_getEndTime:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_getEndTime", 1);
-    static var hx_AnimationClip_getId:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_getId", 1);
-    static var hx_AnimationClip_getRepeatCount:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_getRepeatCount", 1);
-    static var hx_AnimationClip_getSpeed:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_getSpeed", 1);
-    static var hx_AnimationClip_getStartTime:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_getStartTime", 1);
-    static var hx_AnimationClip_isPlaying:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_isPlaying", 1);
-    static var hx_AnimationClip_pause:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_pause", 1);
-    static var hx_AnimationClip_play:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_play", 1);
-    static var hx_AnimationClip_setActiveDuration:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_setActiveDuration", 2);
-    static var hx_AnimationClip_setBlendWeight:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_setBlendWeight", 2);
-    static var hx_AnimationClip_setRepeatCount:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_setRepeatCount", 2);
-    static var hx_AnimationClip_setSpeed:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_setSpeed", 2);
-    static var hx_AnimationClip_stop:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_stop", 1);
+    static var hx_AnimationClip_addBeginListener_Lsnr = cpp.Lib.load("gameplay", "hx_AnimationClip_addBeginListener_Lsnr", 2);
+    static var hx_AnimationClip_addBeginListener_Str = cpp.Lib.load("gameplay", "hx_AnimationClip_addBeginListener_Str", 2);
+    static var hx_AnimationClip_addEndListener_Lsnr = cpp.Lib.load("gameplay", "hx_AnimationClip_addEndListener_Lsnr", 2);
+    static var hx_AnimationClip_addEndListener_Str = cpp.Lib.load("gameplay", "hx_AnimationClip_addEndListener_Str", 2);
+    static var hx_AnimationClip_addListener_Lsnr_Int = cpp.Lib.load("gameplay", "hx_AnimationClip_addListener_Lsnr_Int", 3);
+    static var hx_AnimationClip_addListener_Str_Int = cpp.Lib.load("gameplay", "hx_AnimationClip_addListener_Str_Int", 3);
+    static var hx_AnimationClip_crossFade = cpp.Lib.load("gameplay", "hx_AnimationClip_crossFade", 3);
+    static var hx_AnimationClip_getActiveDuration = cpp.Lib.load("gameplay", "hx_AnimationClip_getActiveDuration", 1);
+    static var hx_AnimationClip_getAnimation = cpp.Lib.load("gameplay", "hx_AnimationClip_getAnimation", 1);
+    static var hx_AnimationClip_getBlendWeight = cpp.Lib.load("gameplay", "hx_AnimationClip_getBlendWeight", 1);
+    static var hx_AnimationClip_getDuration = cpp.Lib.load("gameplay", "hx_AnimationClip_getDuration", 1);
+    static var hx_AnimationClip_getElaspedTime = cpp.Lib.load("gameplay", "hx_AnimationClip_getElaspedTime", 1);
+    static var hx_AnimationClip_getEndTime = cpp.Lib.load("gameplay", "hx_AnimationClip_getEndTime", 1);
+    static var hx_AnimationClip_getId = cpp.Lib.load("gameplay", "hx_AnimationClip_getId", 1);
+    static var hx_AnimationClip_getRepeatCount = cpp.Lib.load("gameplay", "hx_AnimationClip_getRepeatCount", 1);
+    static var hx_AnimationClip_getSpeed = cpp.Lib.load("gameplay", "hx_AnimationClip_getSpeed", 1);
+    static var hx_AnimationClip_getStartTime = cpp.Lib.load("gameplay", "hx_AnimationClip_getStartTime", 1);
+    static var hx_AnimationClip_isPlaying = cpp.Lib.load("gameplay", "hx_AnimationClip_isPlaying", 1);
+    static var hx_AnimationClip_pause = cpp.Lib.load("gameplay", "hx_AnimationClip_pause", 1);
+    static var hx_AnimationClip_play = cpp.Lib.load("gameplay", "hx_AnimationClip_play", 1);
+    static var hx_AnimationClip_setActiveDuration = cpp.Lib.load("gameplay", "hx_AnimationClip_setActiveDuration", 2);
+    static var hx_AnimationClip_setBlendWeight = cpp.Lib.load("gameplay", "hx_AnimationClip_setBlendWeight", 2);
+    static var hx_AnimationClip_setRepeatCount = cpp.Lib.load("gameplay", "hx_AnimationClip_setRepeatCount", 2);
+    static var hx_AnimationClip_setSpeed = cpp.Lib.load("gameplay", "hx_AnimationClip_setSpeed", 2);
+    static var hx_AnimationClip_stop = cpp.Lib.load("gameplay", "hx_AnimationClip_stop", 1);
 }
 
 // END

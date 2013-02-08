@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -20,7 +22,7 @@ class AbsoluteLayout extends Layout
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AbsoluteLayout_getType:Dynamic = cpp.Lib.load("gameplay", "hx_AbsoluteLayout_getType", 1);
+    static var hx_AbsoluteLayout_getType = NativeInterface.loadMember(AbsoluteLayout, "getType", 1);
 }
 
 // END

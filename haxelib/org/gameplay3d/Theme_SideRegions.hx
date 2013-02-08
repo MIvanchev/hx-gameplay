@@ -98,16 +98,16 @@ class Theme_SideRegions extends GameplayObject, implements ITheme_SideRegions
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Theme_SideRegions_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_Construct", 0);
-    static var hx_Theme_SideRegions_static_empty:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_static_empty", 0);
-    static var hx_Theme_SideRegions_property_top_get:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_top_get", 1);
-    static var hx_Theme_SideRegions_property_top_set:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_top_set", 2);
-    static var hx_Theme_SideRegions_property_left_get:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_left_get", 1);
-    static var hx_Theme_SideRegions_property_left_set:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_left_set", 2);
-    static var hx_Theme_SideRegions_property_bottom_get:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_bottom_get", 1);
-    static var hx_Theme_SideRegions_property_bottom_set:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_bottom_set", 2);
-    static var hx_Theme_SideRegions_property_right_get:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_right_get", 1);
-    static var hx_Theme_SideRegions_property_right_set:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_right_set", 2);
+    static var hx_Theme_SideRegions_Construct = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_Construct", 0);
+    static var hx_Theme_SideRegions_static_empty = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_static_empty", 0);
+    static var hx_Theme_SideRegions_property_top_get = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_top_get", 1);
+    static var hx_Theme_SideRegions_property_top_set = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_top_set", 2);
+    static var hx_Theme_SideRegions_property_left_get = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_left_get", 1);
+    static var hx_Theme_SideRegions_property_left_set = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_left_set", 2);
+    static var hx_Theme_SideRegions_property_bottom_get = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_bottom_get", 1);
+    static var hx_Theme_SideRegions_property_bottom_set = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_bottom_set", 2);
+    static var hx_Theme_SideRegions_property_right_get = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_right_get", 1);
+    static var hx_Theme_SideRegions_property_right_set = cpp.Lib.load("gameplay", "hx_Theme_SideRegions_property_right_set", 2);
 }
 
 // END

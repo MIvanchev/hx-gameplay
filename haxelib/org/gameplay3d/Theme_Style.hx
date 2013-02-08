@@ -20,7 +20,7 @@ class Theme_Style extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Theme_Style_getTheme:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_Style_getTheme", 1);
+    static var hx_Theme_Style_getTheme = cpp.Lib.load("gameplay", "hx_Theme_Style_getTheme", 1);
 }
 
 // END

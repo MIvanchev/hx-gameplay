@@ -74,16 +74,16 @@ class RenderState_StateBlock extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_RenderState_StateBlock_bind:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_bind", 1);
-    static var hx_RenderState_StateBlock_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_static_create", 0);
-    static var hx_RenderState_StateBlock_setBlend:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setBlend", 2);
-    static var hx_RenderState_StateBlock_setBlendDst:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setBlendDst", 2);
-    static var hx_RenderState_StateBlock_setBlendSrc:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setBlendSrc", 2);
-    static var hx_RenderState_StateBlock_setCullFace:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setCullFace", 2);
-    static var hx_RenderState_StateBlock_setDepthTest:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setDepthTest", 2);
-    static var hx_RenderState_StateBlock_setDepthWrite:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setDepthWrite", 2);
-    static var hx_RenderState_StateBlock_setDepthFunction:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setDepthFunction", 2);
-    static var hx_RenderState_StateBlock_setState:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setState", 3);
+    static var hx_RenderState_StateBlock_bind = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_bind", 1);
+    static var hx_RenderState_StateBlock_static_create = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_static_create", 0);
+    static var hx_RenderState_StateBlock_setBlend = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setBlend", 2);
+    static var hx_RenderState_StateBlock_setBlendDst = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setBlendDst", 2);
+    static var hx_RenderState_StateBlock_setBlendSrc = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setBlendSrc", 2);
+    static var hx_RenderState_StateBlock_setCullFace = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setCullFace", 2);
+    static var hx_RenderState_StateBlock_setDepthTest = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setDepthTest", 2);
+    static var hx_RenderState_StateBlock_setDepthWrite = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setDepthWrite", 2);
+    static var hx_RenderState_StateBlock_setDepthFunction = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setDepthFunction", 2);
+    static var hx_RenderState_StateBlock_setState = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setState", 3);
 }
 
 // END

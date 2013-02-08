@@ -77,13 +77,13 @@ class HeightField extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_HeightField_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_HeightField_static_create", 2);
-    static var hx_HeightField_static_createFromImage:Dynamic = cpp.Lib.load("gameplay", "hx_HeightField_static_createFromImage", 3);
-    static var hx_HeightField_static_createFromRAW:Dynamic = cpp.Lib.load("gameplay", "hx_HeightField_static_createFromRAW", 5);
-    static var hx_HeightField_getArray:Dynamic = cpp.Lib.load("gameplay", "hx_HeightField_getArray", 1);
-    static var hx_HeightField_getColumnCount:Dynamic = cpp.Lib.load("gameplay", "hx_HeightField_getColumnCount", 1);
-    static var hx_HeightField_getHeight:Dynamic = cpp.Lib.load("gameplay", "hx_HeightField_getHeight", 3);
-    static var hx_HeightField_getRowCount:Dynamic = cpp.Lib.load("gameplay", "hx_HeightField_getRowCount", 1);
+    static var hx_HeightField_static_create = cpp.Lib.load("gameplay", "hx_HeightField_static_create", 2);
+    static var hx_HeightField_static_createFromImage = cpp.Lib.load("gameplay", "hx_HeightField_static_createFromImage", 3);
+    static var hx_HeightField_static_createFromRAW = cpp.Lib.load("gameplay", "hx_HeightField_static_createFromRAW", 5);
+    static var hx_HeightField_getArray = cpp.Lib.load("gameplay", "hx_HeightField_getArray", 1);
+    static var hx_HeightField_getColumnCount = cpp.Lib.load("gameplay", "hx_HeightField_getColumnCount", 1);
+    static var hx_HeightField_getHeight = cpp.Lib.load("gameplay", "hx_HeightField_getHeight", 3);
+    static var hx_HeightField_getRowCount = cpp.Lib.load("gameplay", "hx_HeightField_getRowCount", 1);
 
 }
 

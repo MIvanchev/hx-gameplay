@@ -92,19 +92,19 @@ class FrameBuffer extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_FrameBuffer_bind:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_bind", 1);
-    static var hx_FrameBuffer_static_bindDefault:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_static_bindDefault", 0);
-    static var hx_FrameBuffer_static_create_Str:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_static_create_Str", 1);
-    static var hx_FrameBuffer_static_create_Str_IntX2:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_static_create_Str_IntX2", 3);
-    static var hx_FrameBuffer_getDepthStencilTarget:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_getDepthStencilTarget", 1);
-    static var hx_FrameBuffer_static_getFrameBuffer:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_static_getFrameBuffer", 1);
-    static var hx_FrameBuffer_getHeight:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_getHeight", 1);
-    static var hx_FrameBuffer_getId:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_getId", 1);
-    static var hx_FrameBuffer_static_getMaxRenderTargets:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_static_getMaxRenderTargets", 0);
-    static var hx_FrameBuffer_getRenderTarget:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_getRenderTarget", 2);
-    static var hx_FrameBuffer_getWidth:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_getWidth", 1);
-    static var hx_FrameBuffer_setDepthStencilTarget:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_setDepthStencilTarget", 2);
-    static var hx_FrameBuffer_setRenderTarget:Dynamic = cpp.Lib.load("gameplay", "hx_FrameBuffer_setRenderTarget", 3);
+    static var hx_FrameBuffer_bind = cpp.Lib.load("gameplay", "hx_FrameBuffer_bind", 1);
+    static var hx_FrameBuffer_static_bindDefault = cpp.Lib.load("gameplay", "hx_FrameBuffer_static_bindDefault", 0);
+    static var hx_FrameBuffer_static_create_Str = cpp.Lib.load("gameplay", "hx_FrameBuffer_static_create_Str", 1);
+    static var hx_FrameBuffer_static_create_Str_IntX2 = cpp.Lib.load("gameplay", "hx_FrameBuffer_static_create_Str_IntX2", 3);
+    static var hx_FrameBuffer_getDepthStencilTarget = cpp.Lib.load("gameplay", "hx_FrameBuffer_getDepthStencilTarget", 1);
+    static var hx_FrameBuffer_static_getFrameBuffer = cpp.Lib.load("gameplay", "hx_FrameBuffer_static_getFrameBuffer", 1);
+    static var hx_FrameBuffer_getHeight = cpp.Lib.load("gameplay", "hx_FrameBuffer_getHeight", 1);
+    static var hx_FrameBuffer_getId = cpp.Lib.load("gameplay", "hx_FrameBuffer_getId", 1);
+    static var hx_FrameBuffer_static_getMaxRenderTargets = cpp.Lib.load("gameplay", "hx_FrameBuffer_static_getMaxRenderTargets", 0);
+    static var hx_FrameBuffer_getRenderTarget = cpp.Lib.load("gameplay", "hx_FrameBuffer_getRenderTarget", 2);
+    static var hx_FrameBuffer_getWidth = cpp.Lib.load("gameplay", "hx_FrameBuffer_getWidth", 1);
+    static var hx_FrameBuffer_setDepthStencilTarget = cpp.Lib.load("gameplay", "hx_FrameBuffer_setDepthStencilTarget", 2);
+    static var hx_FrameBuffer_setRenderTarget = cpp.Lib.load("gameplay", "hx_FrameBuffer_setRenderTarget", 3);
 }
 
 // END

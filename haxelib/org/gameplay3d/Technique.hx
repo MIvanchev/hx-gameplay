@@ -38,10 +38,10 @@ class Technique extends RenderState
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Technique_getId:Dynamic = cpp.Lib.load("gameplay", "hx_Technique_getId", 1);
-    static var hx_Technique_getPass:Dynamic = cpp.Lib.load("gameplay", "hx_Technique_getPass", 2);
-    static var hx_Technique_getPassByIndex:Dynamic = cpp.Lib.load("gameplay", "hx_Technique_getPassByIndex", 2);
-    static var hx_Technique_getPassCount:Dynamic = cpp.Lib.load("gameplay", "hx_Technique_getPassCount", 1);
+    static var hx_Technique_getId = cpp.Lib.load("gameplay", "hx_Technique_getId", 1);
+    static var hx_Technique_getPass = cpp.Lib.load("gameplay", "hx_Technique_getPass", 2);
+    static var hx_Technique_getPassByIndex = cpp.Lib.load("gameplay", "hx_Technique_getPassByIndex", 2);
+    static var hx_Technique_getPassCount = cpp.Lib.load("gameplay", "hx_Technique_getPassCount", 1);
 }
 
 // END

@@ -193,35 +193,35 @@ class PhysicsVehicleWheel extends PhysicsCollisionObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsVehicleWheel_getFrictionBreakout:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getFrictionBreakout", 1);
-    static var hx_PhysicsVehicleWheel_getRollInfluence:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getRollInfluence", 1);
-    static var hx_PhysicsVehicleWheel_getStrutConnectionOffset:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutConnectionOffset", 2);
-    static var hx_PhysicsVehicleWheel_getStrutDampingCompression:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutDampingCompression", 1);
-    static var hx_PhysicsVehicleWheel_getStrutDampingRelaxation:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutDampingRelaxation", 1);
-    static var hx_PhysicsVehicleWheel_getStrutForceMax:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutForceMax", 1);
-    static var hx_PhysicsVehicleWheel_getStrutRestLength:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutRestLength", 1);
-    static var hx_PhysicsVehicleWheel_getStrutStiffness:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutStiffness", 1);
-    static var hx_PhysicsVehicleWheel_getStrutTravelMax:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutTravelMax", 1);
-    static var hx_PhysicsVehicleWheel_getType:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getType", 1);
-    static var hx_PhysicsVehicleWheel_getWheelAxle:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getWheelAxle", 2);
-    static var hx_PhysicsVehicleWheel_getWheelDirection:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getWheelDirection", 2);
-    static var hx_PhysicsVehicleWheel_getWheelRadius:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getWheelRadius", 1);
-    static var hx_PhysicsVehicleWheel_isSteerable:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_isSteerable", 1);
-    static var hx_PhysicsVehicleWheel_setEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setEnabled", 2);
-    static var hx_PhysicsVehicleWheel_setFrictionBreakout:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setFrictionBreakout", 2);
-    static var hx_PhysicsVehicleWheel_setRollInfluence:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setRollInfluence", 2);
-    static var hx_PhysicsVehicleWheel_setSteerable:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setSteerable", 2);
-    static var hx_PhysicsVehicleWheel_setStrutConnectionOffset:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutConnectionOffset", 2);
-    static var hx_PhysicsVehicleWheel_setStrutDampingCompression:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutDampingCompression", 2);
-    static var hx_PhysicsVehicleWheel_setStrutDampingRelaxation:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutDampingRelaxation", 2);
-    static var hx_PhysicsVehicleWheel_setStrutForceMax:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutForceMax", 2);
-    static var hx_PhysicsVehicleWheel_setStrutRestLength:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutRestLength", 2);
-    static var hx_PhysicsVehicleWheel_setStrutStiffness:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutStiffness", 2);
-    static var hx_PhysicsVehicleWheel_setStrutTravelMax:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutTravelMax", 2);
-    static var hx_PhysicsVehicleWheel_setWheelAxle:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setWheelAxle", 2);
-    static var hx_PhysicsVehicleWheel_setWheelDirection:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setWheelDirection", 2);
-    static var hx_PhysicsVehicleWheel_setWheelRadius:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setWheelRadius", 2);
-    static var hx_PhysicsVehicleWheel_transform:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_transform", 2);
+    static var hx_PhysicsVehicleWheel_getFrictionBreakout = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getFrictionBreakout", 1);
+    static var hx_PhysicsVehicleWheel_getRollInfluence = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getRollInfluence", 1);
+    static var hx_PhysicsVehicleWheel_getStrutConnectionOffset = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutConnectionOffset", 2);
+    static var hx_PhysicsVehicleWheel_getStrutDampingCompression = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutDampingCompression", 1);
+    static var hx_PhysicsVehicleWheel_getStrutDampingRelaxation = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutDampingRelaxation", 1);
+    static var hx_PhysicsVehicleWheel_getStrutForceMax = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutForceMax", 1);
+    static var hx_PhysicsVehicleWheel_getStrutRestLength = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutRestLength", 1);
+    static var hx_PhysicsVehicleWheel_getStrutStiffness = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutStiffness", 1);
+    static var hx_PhysicsVehicleWheel_getStrutTravelMax = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutTravelMax", 1);
+    static var hx_PhysicsVehicleWheel_getType = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getType", 1);
+    static var hx_PhysicsVehicleWheel_getWheelAxle = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getWheelAxle", 2);
+    static var hx_PhysicsVehicleWheel_getWheelDirection = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getWheelDirection", 2);
+    static var hx_PhysicsVehicleWheel_getWheelRadius = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getWheelRadius", 1);
+    static var hx_PhysicsVehicleWheel_isSteerable = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_isSteerable", 1);
+    static var hx_PhysicsVehicleWheel_setEnabled = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setEnabled", 2);
+    static var hx_PhysicsVehicleWheel_setFrictionBreakout = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setFrictionBreakout", 2);
+    static var hx_PhysicsVehicleWheel_setRollInfluence = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setRollInfluence", 2);
+    static var hx_PhysicsVehicleWheel_setSteerable = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setSteerable", 2);
+    static var hx_PhysicsVehicleWheel_setStrutConnectionOffset = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutConnectionOffset", 2);
+    static var hx_PhysicsVehicleWheel_setStrutDampingCompression = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutDampingCompression", 2);
+    static var hx_PhysicsVehicleWheel_setStrutDampingRelaxation = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutDampingRelaxation", 2);
+    static var hx_PhysicsVehicleWheel_setStrutForceMax = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutForceMax", 2);
+    static var hx_PhysicsVehicleWheel_setStrutRestLength = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutRestLength", 2);
+    static var hx_PhysicsVehicleWheel_setStrutStiffness = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutStiffness", 2);
+    static var hx_PhysicsVehicleWheel_setStrutTravelMax = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutTravelMax", 2);
+    static var hx_PhysicsVehicleWheel_setWheelAxle = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setWheelAxle", 2);
+    static var hx_PhysicsVehicleWheel_setWheelDirection = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setWheelDirection", 2);
+    static var hx_PhysicsVehicleWheel_setWheelRadius = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setWheelRadius", 2);
+    static var hx_PhysicsVehicleWheel_transform = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_transform", 2);
 }
 
 // END

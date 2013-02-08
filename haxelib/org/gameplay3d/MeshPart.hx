@@ -59,13 +59,13 @@ class MeshPart extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_MeshPart_getIndexBuffer:Dynamic = cpp.Lib.load("gameplay", "hx_MeshPart_getIndexBuffer", 1);
-    static var hx_MeshPart_getIndexCount:Dynamic = cpp.Lib.load("gameplay", "hx_MeshPart_getIndexCount", 1);
-    static var hx_MeshPart_getIndexFormat:Dynamic = cpp.Lib.load("gameplay", "hx_MeshPart_getIndexFormat", 1);
-    static var hx_MeshPart_getMeshIndex:Dynamic = cpp.Lib.load("gameplay", "hx_MeshPart_getMeshIndex", 1);
-    static var hx_MeshPart_getPrimitiveType:Dynamic = cpp.Lib.load("gameplay", "hx_MeshPart_getPrimitiveType", 1);
-    static var hx_MeshPart_isDynamic:Dynamic = cpp.Lib.load("gameplay", "hx_MeshPart_isDynamic", 1);
-    static var hx_MeshPart_setIndexData:Dynamic = cpp.Lib.load("gameplay", "hx_MeshPart_setIndexData", 4);
+    static var hx_MeshPart_getIndexBuffer = cpp.Lib.load("gameplay", "hx_MeshPart_getIndexBuffer", 1);
+    static var hx_MeshPart_getIndexCount = cpp.Lib.load("gameplay", "hx_MeshPart_getIndexCount", 1);
+    static var hx_MeshPart_getIndexFormat = cpp.Lib.load("gameplay", "hx_MeshPart_getIndexFormat", 1);
+    static var hx_MeshPart_getMeshIndex = cpp.Lib.load("gameplay", "hx_MeshPart_getMeshIndex", 1);
+    static var hx_MeshPart_getPrimitiveType = cpp.Lib.load("gameplay", "hx_MeshPart_getPrimitiveType", 1);
+    static var hx_MeshPart_isDynamic = cpp.Lib.load("gameplay", "hx_MeshPart_isDynamic", 1);
+    static var hx_MeshPart_setIndexData = cpp.Lib.load("gameplay", "hx_MeshPart_setIndexData", 4);
 }
 
 // END

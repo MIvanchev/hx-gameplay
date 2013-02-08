@@ -32,9 +32,9 @@ class VerticalLayout extends Layout
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_VerticalLayout_getBottomToTop:Dynamic = cpp.Lib.load("gameplay", "hx_VerticalLayout_getBottomToTop", 1);
-    static var hx_VerticalLayout_getType:Dynamic = cpp.Lib.load("gameplay", "hx_VerticalLayout_getType", 1);
-    static var hx_VerticalLayout_setBottomToTop:Dynamic = cpp.Lib.load("gameplay", "hx_VerticalLayout_setBottomToTop", 2);
+    static var hx_VerticalLayout_getBottomToTop = cpp.Lib.load("gameplay", "hx_VerticalLayout_getBottomToTop", 1);
+    static var hx_VerticalLayout_getType = cpp.Lib.load("gameplay", "hx_VerticalLayout_getType", 1);
+    static var hx_VerticalLayout_setBottomToTop = cpp.Lib.load("gameplay", "hx_VerticalLayout_setBottomToTop", 2);
 }
 
 // END

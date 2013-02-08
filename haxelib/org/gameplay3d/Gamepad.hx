@@ -100,20 +100,20 @@ class Gamepad extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Gamepad_draw:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_draw", 1);
-    static var hx_Gamepad_getButtonCount:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getButtonCount", 1);
-    static var hx_Gamepad_getForm:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getForm", 1);
-    static var hx_Gamepad_getJoystickCount:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getJoystickCount", 1);
-    static var hx_Gamepad_getJoystickValues:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getJoystickValues", 3);
-    static var hx_Gamepad_getProductId:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getProductId", 1);
-    static var hx_Gamepad_getProductString:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getProductString", 1);
-    static var hx_Gamepad_getTriggerCount:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getTriggerCount", 1);
-    static var hx_Gamepad_getTriggerValue:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getTriggerValue", 2);
-    static var hx_Gamepad_getVendorId:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getVendorId", 1);
-    static var hx_Gamepad_getVendorString:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_getVendorString", 1);
-    static var hx_Gamepad_isButtonDown:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_isButtonDown", 2);
-    static var hx_Gamepad_isVirtual:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_isVirtual", 1);
-    static var hx_Gamepad_update:Dynamic = cpp.Lib.load("gameplay", "hx_Gamepad_update", 2);
+    static var hx_Gamepad_draw = cpp.Lib.load("gameplay", "hx_Gamepad_draw", 1);
+    static var hx_Gamepad_getButtonCount = cpp.Lib.load("gameplay", "hx_Gamepad_getButtonCount", 1);
+    static var hx_Gamepad_getForm = cpp.Lib.load("gameplay", "hx_Gamepad_getForm", 1);
+    static var hx_Gamepad_getJoystickCount = cpp.Lib.load("gameplay", "hx_Gamepad_getJoystickCount", 1);
+    static var hx_Gamepad_getJoystickValues = cpp.Lib.load("gameplay", "hx_Gamepad_getJoystickValues", 3);
+    static var hx_Gamepad_getProductId = cpp.Lib.load("gameplay", "hx_Gamepad_getProductId", 1);
+    static var hx_Gamepad_getProductString = cpp.Lib.load("gameplay", "hx_Gamepad_getProductString", 1);
+    static var hx_Gamepad_getTriggerCount = cpp.Lib.load("gameplay", "hx_Gamepad_getTriggerCount", 1);
+    static var hx_Gamepad_getTriggerValue = cpp.Lib.load("gameplay", "hx_Gamepad_getTriggerValue", 2);
+    static var hx_Gamepad_getVendorId = cpp.Lib.load("gameplay", "hx_Gamepad_getVendorId", 1);
+    static var hx_Gamepad_getVendorString = cpp.Lib.load("gameplay", "hx_Gamepad_getVendorString", 1);
+    static var hx_Gamepad_isButtonDown = cpp.Lib.load("gameplay", "hx_Gamepad_isButtonDown", 2);
+    static var hx_Gamepad_isVirtual = cpp.Lib.load("gameplay", "hx_Gamepad_isVirtual", 1);
+    static var hx_Gamepad_update = cpp.Lib.load("gameplay", "hx_Gamepad_update", 2);
 }
 
 // END

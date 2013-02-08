@@ -132,24 +132,24 @@ class SpriteBatch extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_SpriteBatch_static_create_Tex_Eff_Int:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_static_create_Tex_Eff_Int", 3);
-    static var hx_SpriteBatch_static_create_Str_Eff_Int:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_static_create_Str_Eff_Int", 3);
-    static var hx_SpriteBatch_draw_RctX2_V4:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_RctX2_V4", 4);
-    static var hx_SpriteBatch_draw_V3_Rct_V2_V4:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_V3_Rct_V2_V4", 5);
-    static var hx_SpriteBatch_draw_V3_Rct_V2_V4_V2_Flt:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_V3_Rct_V2_V4_V2_Flt", -1);
-    static var hx_SpriteBatch_draw_V3_FltX6_V4_V2_Flt_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_V3_FltX6_V4_V2_Flt_Bool", -1);
-    static var hx_SpriteBatch_draw_V3X3_FltX6_V4_V2_Flt:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_V3X3_FltX6_V4_V2_Flt", -1);
-    static var hx_SpriteBatch_draw_FltX8_V4:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_FltX8_V4", -1);
-    static var hx_SpriteBatch_draw_FltX8_V4_Rct:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_FltX8_V4_Rct", -1);
-    static var hx_SpriteBatch_draw_FltX9_V4_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_FltX9_V4_Bool", -1);
-    static var hx_SpriteBatch_draw_FltX9_V4_V2_Flt_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_FltX9_V4_V2_Flt_Bool", -1);
-    static var hx_SpriteBatch_finish:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_finish", 1);
-    static var hx_SpriteBatch_getMaterial:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_getMaterial", 1);
-    static var hx_SpriteBatch_getProjectionMatrix:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_getProjectionMatrix", 1);
-    static var hx_SpriteBatch_getSampler:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_getSampler", 1);
-    static var hx_SpriteBatch_getStateBlock:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_getStateBlock", 1);
-    static var hx_SpriteBatch_setProjectionMatrix:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_setProjectionMatrix", 2);
-    static var hx_SpriteBatch_start:Dynamic = cpp.Lib.load("gameplay", "hx_SpriteBatch_start", 1);
+    static var hx_SpriteBatch_static_create_Tex_Eff_Int = cpp.Lib.load("gameplay", "hx_SpriteBatch_static_create_Tex_Eff_Int", 3);
+    static var hx_SpriteBatch_static_create_Str_Eff_Int = cpp.Lib.load("gameplay", "hx_SpriteBatch_static_create_Str_Eff_Int", 3);
+    static var hx_SpriteBatch_draw_RctX2_V4 = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_RctX2_V4", 4);
+    static var hx_SpriteBatch_draw_V3_Rct_V2_V4 = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_V3_Rct_V2_V4", 5);
+    static var hx_SpriteBatch_draw_V3_Rct_V2_V4_V2_Flt = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_V3_Rct_V2_V4_V2_Flt", -1);
+    static var hx_SpriteBatch_draw_V3_FltX6_V4_V2_Flt_Bool = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_V3_FltX6_V4_V2_Flt_Bool", -1);
+    static var hx_SpriteBatch_draw_V3X3_FltX6_V4_V2_Flt = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_V3X3_FltX6_V4_V2_Flt", -1);
+    static var hx_SpriteBatch_draw_FltX8_V4 = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_FltX8_V4", -1);
+    static var hx_SpriteBatch_draw_FltX8_V4_Rct = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_FltX8_V4_Rct", -1);
+    static var hx_SpriteBatch_draw_FltX9_V4_Bool = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_FltX9_V4_Bool", -1);
+    static var hx_SpriteBatch_draw_FltX9_V4_V2_Flt_Bool = cpp.Lib.load("gameplay", "hx_SpriteBatch_draw_FltX9_V4_V2_Flt_Bool", -1);
+    static var hx_SpriteBatch_finish = cpp.Lib.load("gameplay", "hx_SpriteBatch_finish", 1);
+    static var hx_SpriteBatch_getMaterial = cpp.Lib.load("gameplay", "hx_SpriteBatch_getMaterial", 1);
+    static var hx_SpriteBatch_getProjectionMatrix = cpp.Lib.load("gameplay", "hx_SpriteBatch_getProjectionMatrix", 1);
+    static var hx_SpriteBatch_getSampler = cpp.Lib.load("gameplay", "hx_SpriteBatch_getSampler", 1);
+    static var hx_SpriteBatch_getStateBlock = cpp.Lib.load("gameplay", "hx_SpriteBatch_getStateBlock", 1);
+    static var hx_SpriteBatch_setProjectionMatrix = cpp.Lib.load("gameplay", "hx_SpriteBatch_setProjectionMatrix", 2);
+    static var hx_SpriteBatch_start = cpp.Lib.load("gameplay", "hx_SpriteBatch_start", 1);
 }
 
 // END

@@ -1,6 +1,5 @@
 package org.gameplay3d.util;
 
-import cpp.Lib;
 import org.gameplay3d.intern.NativeBinding;
 import org.gameplay3d.intern.INativeBinding;
 
@@ -37,7 +36,7 @@ class ObjectArray<T : GameplayObject> extends NativeBinding,
         if (packageEnd != -1)
             name = name.substr(packageEnd + 1);
 
-        var getter = Lib.load("gameplay", 'getNativeArrayElement$name', 2);
+        var getter = NativeInterface.load('getNativeArrayElement$name', 2);
 
         objects = [];
         for (index in 0...length)
@@ -64,7 +63,7 @@ class ObjectArray<T : GameplayObject> extends NativeBinding,
         if (packageEnd != -1)
             name = name.substr(packageEnd + 1);
 
-        var constructor = Lib.load("gameplay", 'allocNativeArray$name', 2);
+        var constructor = NativeInterface.load('allocNativeArray$name', 2);
 
         // Construct the array.
         //

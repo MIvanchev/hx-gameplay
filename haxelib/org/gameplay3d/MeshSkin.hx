@@ -89,17 +89,17 @@ class MeshSkin extends Transform_ListenerImpl
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_MeshSkin_getBindShape:Dynamic = cpp.Lib.load("gameplay", "hx_MeshSkin_getBindShape", 1);
-    static var hx_MeshSkin_getJoint_Str:Dynamic = cpp.Lib.load("gameplay", "hx_MeshSkin_getJoint_Str", 2);
-    static var hx_MeshSkin_getJoint_Int:Dynamic = cpp.Lib.load("gameplay", "hx_MeshSkin_getJoint_Int", 2);
-    static var hx_MeshSkin_getJointCount:Dynamic = cpp.Lib.load("gameplay", "hx_MeshSkin_getJointCount", 1);
-    static var hx_MeshSkin_getJointIndex:Dynamic = cpp.Lib.load("gameplay", "hx_MeshSkin_getJointIndex", 2);
-    static var hx_MeshSkin_getMatrixPalette:Dynamic = cpp.Lib.load("gameplay", "hx_MeshSkin_getMatrixPalette", 1);
-    static var hx_MeshSkin_getMatrixPaletteSize:Dynamic = cpp.Lib.load("gameplay", "hx_MeshSkin_getMatrixPaletteSize", 1);
-    static var hx_MeshSkin_getModel:Dynamic = cpp.Lib.load("gameplay", "hx_MeshSkin_getModel", 1);
-    static var hx_MeshSkin_getRootJoint:Dynamic = cpp.Lib.load("gameplay", "hx_MeshSkin_getRootJoint", 1);
-    static var hx_MeshSkin_setBindShape:Dynamic = cpp.Lib.load("gameplay", "hx_MeshSkin_setBindShape", 2);
-    static var hx_MeshSkin_setRootJoint:Dynamic = cpp.Lib.load("gameplay", "hx_MeshSkin_setRootJoint", 2);
+    static var hx_MeshSkin_getBindShape = cpp.Lib.load("gameplay", "hx_MeshSkin_getBindShape", 1);
+    static var hx_MeshSkin_getJoint_Str = cpp.Lib.load("gameplay", "hx_MeshSkin_getJoint_Str", 2);
+    static var hx_MeshSkin_getJoint_Int = cpp.Lib.load("gameplay", "hx_MeshSkin_getJoint_Int", 2);
+    static var hx_MeshSkin_getJointCount = cpp.Lib.load("gameplay", "hx_MeshSkin_getJointCount", 1);
+    static var hx_MeshSkin_getJointIndex = cpp.Lib.load("gameplay", "hx_MeshSkin_getJointIndex", 2);
+    static var hx_MeshSkin_getMatrixPalette = cpp.Lib.load("gameplay", "hx_MeshSkin_getMatrixPalette", 1);
+    static var hx_MeshSkin_getMatrixPaletteSize = cpp.Lib.load("gameplay", "hx_MeshSkin_getMatrixPaletteSize", 1);
+    static var hx_MeshSkin_getModel = cpp.Lib.load("gameplay", "hx_MeshSkin_getModel", 1);
+    static var hx_MeshSkin_getRootJoint = cpp.Lib.load("gameplay", "hx_MeshSkin_getRootJoint", 1);
+    static var hx_MeshSkin_setBindShape = cpp.Lib.load("gameplay", "hx_MeshSkin_setBindShape", 2);
+    static var hx_MeshSkin_setRootJoint = cpp.Lib.load("gameplay", "hx_MeshSkin_setRootJoint", 2);
 }
 
 // END

@@ -159,29 +159,29 @@ class Effect extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Effect_bind:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_bind", 1);
-    static var hx_Effect_static_createFromFile:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_static_createFromFile", 3);
-    static var hx_Effect_static_createFromSource:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_static_createFromSource", 3);
-    static var hx_Effect_static_getCurrentEffect:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_static_getCurrentEffect", 0);
-    static var hx_Effect_getId:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_getId", 1);
-    static var hx_Effect_getUniform_Str:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_getUniform_Str", 2);
-    static var hx_Effect_getUniform_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_getUniform_Int", 2);
-    static var hx_Effect_getUniformCount:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_getUniformCount", 1);
-    static var hx_Effect_getVertexAttribute:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_getVertexAttribute", 2);
-    static var hx_Effect_setValue_Unif_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Mat", 3);
-    static var hx_Effect_setValue_Unif_ArrMat_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrMat_Int", 4);
-    static var hx_Effect_setValue_Unif_Smplr:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Smplr", 3);
-    static var hx_Effect_setValue_Unif_ArrSmplr_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrSmplr_Int", 4);
-    static var hx_Effect_setValue_Unif_V2:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_V2", 3);
-    static var hx_Effect_setValue_Unif_ArrV2_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrV2_Int", 4);
-    static var hx_Effect_setValue_Unif_V3:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_V3", 3);
-    static var hx_Effect_setValue_Unif_ArrV3_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrV3_Int", 4);
-    static var hx_Effect_setValue_Unif_V4:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_V4", 3);
-    static var hx_Effect_setValue_Unif_ArrV4_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrV4_Int", 4);
-    static var hx_Effect_setValue_Unif_ArrFlt_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrFlt_Int", 4);
-    static var hx_Effect_setValue_Unif_ArrInt_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrInt_Int", 4);
-    static var hx_Effect_setValue_Unif_Flt:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Flt", 3);
-    static var hx_Effect_setValue_Unif_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Int", 3);
+    static var hx_Effect_bind = cpp.Lib.load("gameplay", "hx_Effect_bind", 1);
+    static var hx_Effect_static_createFromFile = cpp.Lib.load("gameplay", "hx_Effect_static_createFromFile", 3);
+    static var hx_Effect_static_createFromSource = cpp.Lib.load("gameplay", "hx_Effect_static_createFromSource", 3);
+    static var hx_Effect_static_getCurrentEffect = cpp.Lib.load("gameplay", "hx_Effect_static_getCurrentEffect", 0);
+    static var hx_Effect_getId = cpp.Lib.load("gameplay", "hx_Effect_getId", 1);
+    static var hx_Effect_getUniform_Str = cpp.Lib.load("gameplay", "hx_Effect_getUniform_Str", 2);
+    static var hx_Effect_getUniform_Int = cpp.Lib.load("gameplay", "hx_Effect_getUniform_Int", 2);
+    static var hx_Effect_getUniformCount = cpp.Lib.load("gameplay", "hx_Effect_getUniformCount", 1);
+    static var hx_Effect_getVertexAttribute = cpp.Lib.load("gameplay", "hx_Effect_getVertexAttribute", 2);
+    static var hx_Effect_setValue_Unif_Mat = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Mat", 3);
+    static var hx_Effect_setValue_Unif_ArrMat_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrMat_Int", 4);
+    static var hx_Effect_setValue_Unif_Smplr = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Smplr", 3);
+    static var hx_Effect_setValue_Unif_ArrSmplr_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrSmplr_Int", 4);
+    static var hx_Effect_setValue_Unif_V2 = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_V2", 3);
+    static var hx_Effect_setValue_Unif_ArrV2_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrV2_Int", 4);
+    static var hx_Effect_setValue_Unif_V3 = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_V3", 3);
+    static var hx_Effect_setValue_Unif_ArrV3_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrV3_Int", 4);
+    static var hx_Effect_setValue_Unif_V4 = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_V4", 3);
+    static var hx_Effect_setValue_Unif_ArrV4_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrV4_Int", 4);
+    static var hx_Effect_setValue_Unif_ArrFlt_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrFlt_Int", 4);
+    static var hx_Effect_setValue_Unif_ArrInt_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrInt_Int", 4);
+    static var hx_Effect_setValue_Unif_Flt = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Flt", 3);
+    static var hx_Effect_setValue_Unif_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Int", 3);
 }
 
 // END

@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -128,25 +129,25 @@ class AIMessage extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AIMessage_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_static_create", 4);
-    static var hx_AIMessage_static_destroy:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_static_destroy", 1);
-    static var hx_AIMessage_getBoolean:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_getBoolean", 2);
-    static var hx_AIMessage_getDouble:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_getDouble", 2);
-    static var hx_AIMessage_getFloat:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_getFloat", 2);
-    static var hx_AIMessage_getId:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_getId", 1);
-    static var hx_AIMessage_getInt:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_getInt", 2);
-    static var hx_AIMessage_getLong:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_getLong", 2);
-    static var hx_AIMessage_getParameterCount:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_getParameterCount", 1);
-    static var hx_AIMessage_getParameterType:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_getParameterType", 2);
-    static var hx_AIMessage_getReceiver:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_getReceiver", 1);
-    static var hx_AIMessage_getSender:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_getSender", 1);
-    static var hx_AIMessage_getString:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_getString", 2);
-    static var hx_AIMessage_setBoolean:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_setBoolean", 3);
-    static var hx_AIMessage_setDouble:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_setDouble", 3);
-    static var hx_AIMessage_setFloat:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_setFloat", 3);
-    static var hx_AIMessage_setInt:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_setInt", 3);
-    static var hx_AIMessage_setLong:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_setLong", 3);
-    static var hx_AIMessage_setString:Dynamic = cpp.Lib.load("gameplay", "hx_AIMessage_setString", 3);
+    static var hx_AIMessage_static_create = NativeInterface.loadMember(AIMessage, "static_create", 4);
+    static var hx_AIMessage_static_destroy = NativeInterface.loadMember(AIMessage, "static_destroy", 1);
+    static var hx_AIMessage_getBoolean = NativeInterface.loadMember(AIMessage, "getBoolean", 2);
+    static var hx_AIMessage_getDouble = NativeInterface.loadMember(AIMessage, "getDouble", 2);
+    static var hx_AIMessage_getFloat = NativeInterface.loadMember(AIMessage, "getFloat", 2);
+    static var hx_AIMessage_getId = NativeInterface.loadMember(AIMessage, "getId", 1);
+    static var hx_AIMessage_getInt = NativeInterface.loadMember(AIMessage, "getInt", 2);
+    static var hx_AIMessage_getLong = NativeInterface.loadMember(AIMessage, "getLong", 2);
+    static var hx_AIMessage_getParameterCount = NativeInterface.loadMember(AIMessage, "getParameterCount", 1);
+    static var hx_AIMessage_getParameterType = NativeInterface.loadMember(AIMessage, "getParameterType", 2);
+    static var hx_AIMessage_getReceiver = NativeInterface.loadMember(AIMessage, "getReceiver", 1);
+    static var hx_AIMessage_getSender = NativeInterface.loadMember(AIMessage, "getSender", 1);
+    static var hx_AIMessage_getString = NativeInterface.loadMember(AIMessage, "getString", 2);
+    static var hx_AIMessage_setBoolean = NativeInterface.loadMember(AIMessage, "setBoolean", 3);
+    static var hx_AIMessage_setDouble = NativeInterface.loadMember(AIMessage, "setDouble", 3);
+    static var hx_AIMessage_setFloat = NativeInterface.loadMember(AIMessage, "setFloat", 3);
+    static var hx_AIMessage_setInt = NativeInterface.loadMember(AIMessage, "setInt", 3);
+    static var hx_AIMessage_setLong = NativeInterface.loadMember(AIMessage, "setLong", 3);
+    static var hx_AIMessage_setString = NativeInterface.loadMember(AIMessage, "setString", 3);
 }
 
 // END

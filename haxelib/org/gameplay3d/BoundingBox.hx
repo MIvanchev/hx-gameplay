@@ -197,29 +197,29 @@ class BoundingBox extends GameplayObject, implements IBoundingBox
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_BoundingBox_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_Construct", 0);
-    static var hx_BoundingBox_Construct_BBox:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_Construct_BBox", 1);
-    static var hx_BoundingBox_Construct_V3X2:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_Construct_V3X2", 2);
-    static var hx_BoundingBox_Construct_FltX6:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_Construct_FltX6", -1);
-    static var hx_BoundingBox_static_empty:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_static_empty", 0);
-    static var hx_BoundingBox_getCenter:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_getCenter", 1);
-    static var hx_BoundingBox_getCenter_V3:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_getCenter_V3", 2);
-    static var hx_BoundingBox_getCorners:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_getCorners", 2);
-    static var hx_BoundingBox_intersects_BBox:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_intersects_BBox", 2);
-    static var hx_BoundingBox_intersects_BSphr:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_intersects_BSphr", 2);
-    static var hx_BoundingBox_intersects_Frstm:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_intersects_Frstm", 2);
-    static var hx_BoundingBox_intersects_Plane:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_intersects_Plane", 2);
-    static var hx_BoundingBox_intersects_Ray:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_intersects_Ray", 2);
-    static var hx_BoundingBox_isEmpty:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_isEmpty", 1);
-    static var hx_BoundingBox_merge_BBox:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_merge_BBox", 2);
-    static var hx_BoundingBox_merge_BSphr:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_merge_BSphr", 2);
-    static var hx_BoundingBox_set_BBox:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_set_BBox", 2);
-    static var hx_BoundingBox_set_BSphr:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_set_BSphr", 2);
-    static var hx_BoundingBox_set_V3X2:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_set_V3X2", 3);
-    static var hx_BoundingBox_set_FltX6:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_set_FltX6", -1);
-    static var hx_BoundingBox_transform:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_transform", 2);
-    static var hx_BoundingBox_property_min_get:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_property_min_get", 1);
-    static var hx_BoundingBox_property_max_get:Dynamic = cpp.Lib.load("gameplay", "hx_BoundingBox_property_max_get", 1);
+    static var hx_BoundingBox_Construct = cpp.Lib.load("gameplay", "hx_BoundingBox_Construct", 0);
+    static var hx_BoundingBox_Construct_BBox = cpp.Lib.load("gameplay", "hx_BoundingBox_Construct_BBox", 1);
+    static var hx_BoundingBox_Construct_V3X2 = cpp.Lib.load("gameplay", "hx_BoundingBox_Construct_V3X2", 2);
+    static var hx_BoundingBox_Construct_FltX6 = cpp.Lib.load("gameplay", "hx_BoundingBox_Construct_FltX6", -1);
+    static var hx_BoundingBox_static_empty = cpp.Lib.load("gameplay", "hx_BoundingBox_static_empty", 0);
+    static var hx_BoundingBox_getCenter = cpp.Lib.load("gameplay", "hx_BoundingBox_getCenter", 1);
+    static var hx_BoundingBox_getCenter_V3 = cpp.Lib.load("gameplay", "hx_BoundingBox_getCenter_V3", 2);
+    static var hx_BoundingBox_getCorners = cpp.Lib.load("gameplay", "hx_BoundingBox_getCorners", 2);
+    static var hx_BoundingBox_intersects_BBox = cpp.Lib.load("gameplay", "hx_BoundingBox_intersects_BBox", 2);
+    static var hx_BoundingBox_intersects_BSphr = cpp.Lib.load("gameplay", "hx_BoundingBox_intersects_BSphr", 2);
+    static var hx_BoundingBox_intersects_Frstm = cpp.Lib.load("gameplay", "hx_BoundingBox_intersects_Frstm", 2);
+    static var hx_BoundingBox_intersects_Plane = cpp.Lib.load("gameplay", "hx_BoundingBox_intersects_Plane", 2);
+    static var hx_BoundingBox_intersects_Ray = cpp.Lib.load("gameplay", "hx_BoundingBox_intersects_Ray", 2);
+    static var hx_BoundingBox_isEmpty = cpp.Lib.load("gameplay", "hx_BoundingBox_isEmpty", 1);
+    static var hx_BoundingBox_merge_BBox = cpp.Lib.load("gameplay", "hx_BoundingBox_merge_BBox", 2);
+    static var hx_BoundingBox_merge_BSphr = cpp.Lib.load("gameplay", "hx_BoundingBox_merge_BSphr", 2);
+    static var hx_BoundingBox_set_BBox = cpp.Lib.load("gameplay", "hx_BoundingBox_set_BBox", 2);
+    static var hx_BoundingBox_set_BSphr = cpp.Lib.load("gameplay", "hx_BoundingBox_set_BSphr", 2);
+    static var hx_BoundingBox_set_V3X2 = cpp.Lib.load("gameplay", "hx_BoundingBox_set_V3X2", 3);
+    static var hx_BoundingBox_set_FltX6 = cpp.Lib.load("gameplay", "hx_BoundingBox_set_FltX6", -1);
+    static var hx_BoundingBox_transform = cpp.Lib.load("gameplay", "hx_BoundingBox_transform", 2);
+    static var hx_BoundingBox_property_min_get = cpp.Lib.load("gameplay", "hx_BoundingBox_property_min_get", 1);
+    static var hx_BoundingBox_property_max_get = cpp.Lib.load("gameplay", "hx_BoundingBox_property_max_get", 1);
 }
 
 // END

@@ -60,13 +60,13 @@ class Platform extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Platform_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Platform_static_create", 2);
-    static var hx_Platform_enterMessagePump:Dynamic = cpp.Lib.load("gameplay", "hx_Platform_enterMessagePump", 1);
-    static var hx_Platform_static_gamepadEventConnectedInternal:Dynamic = cpp.Lib.load("gameplay", "hx_Platform_static_gamepadEventConnectedInternal", -1);
-    static var hx_Platform_static_gamepadEventDisconnectedInternal:Dynamic = cpp.Lib.load("gameplay", "hx_Platform_static_gamepadEventDisconnectedInternal", 1);
-    static var hx_Platform_static_keyEventInternal:Dynamic = cpp.Lib.load("gameplay", "hx_Platform_static_keyEventInternal", 2);
-    static var hx_Platform_static_mouseEventInternal:Dynamic = cpp.Lib.load("gameplay", "hx_Platform_static_mouseEventInternal", 4);
-    static var hx_Platform_static_touchEventInternal:Dynamic = cpp.Lib.load("gameplay", "hx_Platform_static_touchEventInternal", 4);
+    static var hx_Platform_static_create = cpp.Lib.load("gameplay", "hx_Platform_static_create", 2);
+    static var hx_Platform_enterMessagePump = cpp.Lib.load("gameplay", "hx_Platform_enterMessagePump", 1);
+    static var hx_Platform_static_gamepadEventConnectedInternal = cpp.Lib.load("gameplay", "hx_Platform_static_gamepadEventConnectedInternal", -1);
+    static var hx_Platform_static_gamepadEventDisconnectedInternal = cpp.Lib.load("gameplay", "hx_Platform_static_gamepadEventDisconnectedInternal", 1);
+    static var hx_Platform_static_keyEventInternal = cpp.Lib.load("gameplay", "hx_Platform_static_keyEventInternal", 2);
+    static var hx_Platform_static_mouseEventInternal = cpp.Lib.load("gameplay", "hx_Platform_static_mouseEventInternal", 4);
+    static var hx_Platform_static_touchEventInternal = cpp.Lib.load("gameplay", "hx_Platform_static_touchEventInternal", 4);
 }
 
 // END

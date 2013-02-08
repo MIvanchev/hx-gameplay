@@ -54,11 +54,11 @@ class NodeCloneContext extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_NodeCloneContext_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_NodeCloneContext_Construct", 0);
-    static var hx_NodeCloneContext_findClonedAnimation:Dynamic = cpp.Lib.load("gameplay", "hx_NodeCloneContext_findClonedAnimation", 2);
-    static var hx_NodeCloneContext_findClonedNode:Dynamic = cpp.Lib.load("gameplay", "hx_NodeCloneContext_findClonedNode", 2);
-    static var hx_NodeCloneContext_registerClonedAnimation:Dynamic = cpp.Lib.load("gameplay", "hx_NodeCloneContext_registerClonedAnimation", 3);
-    static var hx_NodeCloneContext_registerClonedNode:Dynamic = cpp.Lib.load("gameplay", "hx_NodeCloneContext_registerClonedNode", 3);
+    static var hx_NodeCloneContext_Construct = cpp.Lib.load("gameplay", "hx_NodeCloneContext_Construct", 0);
+    static var hx_NodeCloneContext_findClonedAnimation = cpp.Lib.load("gameplay", "hx_NodeCloneContext_findClonedAnimation", 2);
+    static var hx_NodeCloneContext_findClonedNode = cpp.Lib.load("gameplay", "hx_NodeCloneContext_findClonedNode", 2);
+    static var hx_NodeCloneContext_registerClonedAnimation = cpp.Lib.load("gameplay", "hx_NodeCloneContext_registerClonedAnimation", 3);
+    static var hx_NodeCloneContext_registerClonedNode = cpp.Lib.load("gameplay", "hx_NodeCloneContext_registerClonedNode", 3);
 }
 
 // END

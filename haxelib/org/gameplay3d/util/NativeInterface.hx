@@ -1,8 +1,9 @@
 package org.gameplay3d.util;
 
+#if !macro
 import cpp.Lib;
 import cpp.vm.WeakRef;
-import cpp.vm.WeakRef;
+#end
 import org.gameplay3d.AbsoluteLayout;
 import org.gameplay3d.AIAgent;
 import org.gameplay3d.AIState;
@@ -79,7 +80,8 @@ class NativeInterface
     static var setReferenceInstance:Dynamic;
 
     /**
-     * TODO
+     * The native method used to rebuild the last cached reference if the
+     * corresponding weak-reference has been freed.
      */
     static var wrapCachedReference:Dynamic;
 
@@ -91,16 +93,18 @@ class NativeInterface
      * for the whole execution time of the application, i.e. not be reclaimed by
      * the garbage collector.
      */
+#if !macro
     static var factories:List<Dynamic->WeakRef<GameplayObject>> = new List();
+#end
 
     /**
      * TODO
      */
     public static function initialie()
     {
-        setReferenceConstructor = Lib.load("gameplay", "setReferenceConstructor", 2);
-        setReferenceInstance = Lib.load("gameplay", "setReferenceInstance", 2);
-        wrapCachedReference = Lib.load("gameplay", "wrapCachedReference", 0);
+        setReferenceConstructor = load("setReferenceConstructor", 2);
+        setReferenceInstance = load("setReferenceInstance", 2);
+        wrapCachedReference = load("wrapCachedReference", 0);
         registerClass(AbsoluteLayout);
         registerClass(AIAgent);
         registerClass(AIState);
@@ -157,7 +161,7 @@ class NativeInterface
      */
     public static function deinitialize()
     {
-        var releaseReferenceConstructors = Lib.load("gameplay", "releaseReferenceConstructors", 0);
+        var releaseReferenceConstructors = load("releaseReferenceConstructors", 0);
         releaseReferenceConstructors();
     }
 
@@ -186,6 +190,7 @@ class NativeInterface
         // Set a constructor for the class and make it known to the hxcpp layer.
         //
 
+#if !macro
         factories.push(
                 function(nativeObject:Dynamic):WeakRef<GameplayObject>
                 {
@@ -194,6 +199,7 @@ class NativeInterface
             );
 
         setReferenceConstructor(name, factories.first());
+#end
     }
 
     /**
@@ -201,6 +207,29 @@ class NativeInterface
      */
     public static function updateReference(nativeObject:Dynamic, instance:GameplayObject)
     {
+#if !macro
         setReferenceInstance(nativeObject, new WeakRef<GameplayObject>(instance));
+#end
+    }
+
+    /**
+     * TODO
+     */
+    public static function load(name:String, arity:Int):Dynamic
+    {
+#if !macro
+        return Lib.load("gameplay", name, arity);
+#else
+        return null;
+#end
+    }
+
+    /**
+     * TODO
+     */
+    public static function loadMember(classObj:Class<Dynamic>, name:String, arity:Int):Dynamic
+    {
+        var path = Type.getClassName(classObj).split(".");
+        return load('hx_${path[path.length - 1]}_$name', arity);
     }
 }

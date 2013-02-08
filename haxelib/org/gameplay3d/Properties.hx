@@ -154,27 +154,27 @@ class Properties extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Properties_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_static_create", 1);
-    static var hx_Properties_exists:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_exists", 2);
-    static var hx_Properties_getBool:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getBool", 3);
-    static var hx_Properties_getColor_Str_V3:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getColor_Str_V3", 3);
-    static var hx_Properties_getColor_Str_V4:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getColor_Str_V4", 3);
-    static var hx_Properties_getFloat:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getFloat", 2);
-    static var hx_Properties_getId:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getId", 1);
-    static var hx_Properties_getInt:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getInt", 2);
-    static var hx_Properties_getLong:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getLong", 2);
-    static var hx_Properties_getMatrix:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getMatrix", 3);
-    static var hx_Properties_getNamespace_Str_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getNamespace_Str_Bool", 3);
-    static var hx_Properties_getNamespace:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getNamespace", 1);
-    static var hx_Properties_getNextNamespace:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getNextNamespace", 1);
-    static var hx_Properties_getNextProperty:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getNextProperty", 2);
-    static var hx_Properties_getQuaternionFromAxisAngle:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getQuaternionFromAxisAngle", 3);
-    static var hx_Properties_getString:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getString", 2);
-    static var hx_Properties_getType:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getType", 2);
-    static var hx_Properties_getVector2:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getVector2", 3);
-    static var hx_Properties_getVector3:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getVector3", 3);
-    static var hx_Properties_getVector4:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_getVector4", 3);
-    static var hx_Properties_rewind:Dynamic = cpp.Lib.load("gameplay", "hx_Properties_rewind", 1);
+    static var hx_Properties_static_create = cpp.Lib.load("gameplay", "hx_Properties_static_create", 1);
+    static var hx_Properties_exists = cpp.Lib.load("gameplay", "hx_Properties_exists", 2);
+    static var hx_Properties_getBool = cpp.Lib.load("gameplay", "hx_Properties_getBool", 3);
+    static var hx_Properties_getColor_Str_V3 = cpp.Lib.load("gameplay", "hx_Properties_getColor_Str_V3", 3);
+    static var hx_Properties_getColor_Str_V4 = cpp.Lib.load("gameplay", "hx_Properties_getColor_Str_V4", 3);
+    static var hx_Properties_getFloat = cpp.Lib.load("gameplay", "hx_Properties_getFloat", 2);
+    static var hx_Properties_getId = cpp.Lib.load("gameplay", "hx_Properties_getId", 1);
+    static var hx_Properties_getInt = cpp.Lib.load("gameplay", "hx_Properties_getInt", 2);
+    static var hx_Properties_getLong = cpp.Lib.load("gameplay", "hx_Properties_getLong", 2);
+    static var hx_Properties_getMatrix = cpp.Lib.load("gameplay", "hx_Properties_getMatrix", 3);
+    static var hx_Properties_getNamespace_Str_Bool = cpp.Lib.load("gameplay", "hx_Properties_getNamespace_Str_Bool", 3);
+    static var hx_Properties_getNamespace = cpp.Lib.load("gameplay", "hx_Properties_getNamespace", 1);
+    static var hx_Properties_getNextNamespace = cpp.Lib.load("gameplay", "hx_Properties_getNextNamespace", 1);
+    static var hx_Properties_getNextProperty = cpp.Lib.load("gameplay", "hx_Properties_getNextProperty", 2);
+    static var hx_Properties_getQuaternionFromAxisAngle = cpp.Lib.load("gameplay", "hx_Properties_getQuaternionFromAxisAngle", 3);
+    static var hx_Properties_getString = cpp.Lib.load("gameplay", "hx_Properties_getString", 2);
+    static var hx_Properties_getType = cpp.Lib.load("gameplay", "hx_Properties_getType", 2);
+    static var hx_Properties_getVector2 = cpp.Lib.load("gameplay", "hx_Properties_getVector2", 3);
+    static var hx_Properties_getVector3 = cpp.Lib.load("gameplay", "hx_Properties_getVector3", 3);
+    static var hx_Properties_getVector4 = cpp.Lib.load("gameplay", "hx_Properties_getVector4", 3);
+    static var hx_Properties_rewind = cpp.Lib.load("gameplay", "hx_Properties_rewind", 1);
 }
 
 // END

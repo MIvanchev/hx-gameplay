@@ -87,17 +87,17 @@ class AnimationTargetImpl extends GameplayObject, implements AnimationTarget
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AnimationTarget_createAnimation_Str_Prop:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_Prop", 3);
-    static var hx_AnimationTarget_createAnimation_StrX2:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_StrX2", 3);
-    static var hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFlt_Int:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFlt_Int", -1);
-    static var hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int", -1);
-    static var hx_AnimationTarget_createAnimationFromBy:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimationFromBy", -1);
-    static var hx_AnimationTarget_createAnimationFromTo:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimationFromTo", -1);
-    static var hx_AnimationTarget_destroyAnimation:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_destroyAnimation", 2);
-    static var hx_AnimationTarget_getAnimation:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_getAnimation", 2);
-    static var hx_AnimationTarget_getAnimationPropertyComponentCount:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_getAnimationPropertyComponentCount", 2);
-    static var hx_AnimationTarget_getAnimationPropertyValue:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_getAnimationPropertyValue", 3);
-    static var hx_AnimationTarget_setAnimationPropertyValue:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationTarget_setAnimationPropertyValue", 4);
+    static var hx_AnimationTarget_createAnimation_Str_Prop = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_Prop", 3);
+    static var hx_AnimationTarget_createAnimation_StrX2 = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_StrX2", 3);
+    static var hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFlt_Int = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFlt_Int", -1);
+    static var hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int", -1);
+    static var hx_AnimationTarget_createAnimationFromBy = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimationFromBy", -1);
+    static var hx_AnimationTarget_createAnimationFromTo = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimationFromTo", -1);
+    static var hx_AnimationTarget_destroyAnimation = cpp.Lib.load("gameplay", "hx_AnimationTarget_destroyAnimation", 2);
+    static var hx_AnimationTarget_getAnimation = cpp.Lib.load("gameplay", "hx_AnimationTarget_getAnimation", 2);
+    static var hx_AnimationTarget_getAnimationPropertyComponentCount = cpp.Lib.load("gameplay", "hx_AnimationTarget_getAnimationPropertyComponentCount", 2);
+    static var hx_AnimationTarget_getAnimationPropertyValue = cpp.Lib.load("gameplay", "hx_AnimationTarget_getAnimationPropertyValue", 3);
+    static var hx_AnimationTarget_setAnimationPropertyValue = cpp.Lib.load("gameplay", "hx_AnimationTarget_setAnimationPropertyValue", 4);
 }
 
 // END

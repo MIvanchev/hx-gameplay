@@ -67,11 +67,11 @@ class PhysicsController_HitResult extends GameplayObject
      **************************************************************************/
 
     static var hx_PhysicsController_HitResult_Construct = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_Construct", 0);
-    static var hx_PhysicsController_HitResult_property_object_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_object_get", 1);
-    static var hx_PhysicsController_HitResult_property_point_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_point_get", 1);
-    static var hx_PhysicsController_HitResult_property_fraction_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_fraction_get", 1);
-    static var hx_PhysicsController_HitResult_property_fraction_set:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_fraction_set", 2);
-    static var hx_PhysicsController_HitResult_property_normal_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_normal_get", 1);
+    static var hx_PhysicsController_HitResult_property_object_get = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_object_get", 1);
+    static var hx_PhysicsController_HitResult_property_point_get = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_point_get", 1);
+    static var hx_PhysicsController_HitResult_property_fraction_get = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_fraction_get", 1);
+    static var hx_PhysicsController_HitResult_property_fraction_set = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_fraction_set", 2);
+    static var hx_PhysicsController_HitResult_property_normal_get = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_normal_get", 1);
 }
 
 // END

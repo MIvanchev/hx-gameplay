@@ -41,10 +41,10 @@ class AnimationValue extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AnimationValue_getFloat:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationValue_getFloat", 2);
-    static var hx_AnimationValue_getFloats:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationValue_getFloats", 4);
-    static var hx_AnimationValue_setFloat:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationValue_setFloat", 3);
-    static var hx_AnimationValue_setFloats:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationValue_setFloats", 4);
+    static var hx_AnimationValue_getFloat = cpp.Lib.load("gameplay", "hx_AnimationValue_getFloat", 2);
+    static var hx_AnimationValue_getFloats = cpp.Lib.load("gameplay", "hx_AnimationValue_getFloats", 4);
+    static var hx_AnimationValue_setFloat = cpp.Lib.load("gameplay", "hx_AnimationValue_setFloat", 3);
+    static var hx_AnimationValue_setFloats = cpp.Lib.load("gameplay", "hx_AnimationValue_setFloats", 4);
 }
 
 // END

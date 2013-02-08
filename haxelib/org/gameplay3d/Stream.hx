@@ -96,18 +96,18 @@ class Stream extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Stream_canRead:Dynamic = cpp.Lib.load("gameplay", "hx_Stream_canRead", 1);
-    static var hx_Stream_canSeek:Dynamic = cpp.Lib.load("gameplay", "hx_Stream_canSeek", 1);
-    static var hx_Stream_canWrite:Dynamic = cpp.Lib.load("gameplay", "hx_Stream_canWrite", 1);
-    static var hx_Stream_close:Dynamic = cpp.Lib.load("gameplay", "hx_Stream_close", 1);
-    static var hx_Stream_eof:Dynamic = cpp.Lib.load("gameplay", "hx_Stream_eof", 1);
-    static var hx_Stream_length:Dynamic = cpp.Lib.load("gameplay", "hx_Stream_length", 1);
-    static var hx_Stream_position:Dynamic = cpp.Lib.load("gameplay", "hx_Stream_position", 1);
-    static var hx_Stream_read:Dynamic = cpp.Lib.load("gameplay", "hx_Stream_read", 4);
-    static var hx_Stream_readLine:Dynamic = cpp.Lib.load("gameplay", "hx_Stream_readLine", 3);
-    static var hx_Stream_rewind:Dynamic = cpp.Lib.load("gameplay", "hx_Stream_rewind", 1);
-    static var hx_Stream_seek:Dynamic = cpp.Lib.load("gameplay", "hx_Stream_seek", 3);
-    static var hx_Stream_write:Dynamic = cpp.Lib.load("gameplay", "hx_Stream_write", 4);
+    static var hx_Stream_canRead = cpp.Lib.load("gameplay", "hx_Stream_canRead", 1);
+    static var hx_Stream_canSeek = cpp.Lib.load("gameplay", "hx_Stream_canSeek", 1);
+    static var hx_Stream_canWrite = cpp.Lib.load("gameplay", "hx_Stream_canWrite", 1);
+    static var hx_Stream_close = cpp.Lib.load("gameplay", "hx_Stream_close", 1);
+    static var hx_Stream_eof = cpp.Lib.load("gameplay", "hx_Stream_eof", 1);
+    static var hx_Stream_length = cpp.Lib.load("gameplay", "hx_Stream_length", 1);
+    static var hx_Stream_position = cpp.Lib.load("gameplay", "hx_Stream_position", 1);
+    static var hx_Stream_read = cpp.Lib.load("gameplay", "hx_Stream_read", 4);
+    static var hx_Stream_readLine = cpp.Lib.load("gameplay", "hx_Stream_readLine", 3);
+    static var hx_Stream_rewind = cpp.Lib.load("gameplay", "hx_Stream_rewind", 1);
+    static var hx_Stream_seek = cpp.Lib.load("gameplay", "hx_Stream_seek", 3);
+    static var hx_Stream_write = cpp.Lib.load("gameplay", "hx_Stream_write", 4);
 }
 
 // END

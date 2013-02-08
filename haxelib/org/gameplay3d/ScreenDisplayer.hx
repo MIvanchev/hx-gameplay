@@ -61,11 +61,11 @@ class ScreenDisplayer extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_ScreenDisplayer_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_Construct", 0);
-    static var hx_ScreenDisplayer_static_finish:Dynamic = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_static_finish", 0);
-    static var hx_ScreenDisplayer_run:Dynamic = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_run", 4);
-    static var hx_ScreenDisplayer_complete:Dynamic = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_complete", 1);
-    static var hx_ScreenDisplayer_static_start:Dynamic = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_static_start", 2);
+    static var hx_ScreenDisplayer_Construct = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_Construct", 0);
+    static var hx_ScreenDisplayer_static_finish = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_static_finish", 0);
+    static var hx_ScreenDisplayer_run = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_run", 4);
+    static var hx_ScreenDisplayer_complete = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_complete", 1);
+    static var hx_ScreenDisplayer_static_start = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_static_start", 2);
 }
 
 // END

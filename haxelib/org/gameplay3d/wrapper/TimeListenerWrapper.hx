@@ -42,7 +42,7 @@ class TimeListenerWrapper extends ListenerWrapper<TimeListener>, implements Time
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_TimeListener_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_TimeListener_Construct", 1);
+    static var hx_TimeListener_Construct = cpp.Lib.load("gameplay", "hx_TimeListener_Construct", 1);
 }
 
 // END

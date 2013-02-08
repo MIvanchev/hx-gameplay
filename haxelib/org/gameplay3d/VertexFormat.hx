@@ -56,11 +56,11 @@ class VertexFormat extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_VertexFormat_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_VertexFormat_Construct", 2);
-    static var hx_VertexFormat_getElement:Dynamic = cpp.Lib.load("gameplay", "hx_VertexFormat_getElement", 2);
-    static var hx_VertexFormat_getElementCount:Dynamic = cpp.Lib.load("gameplay", "hx_VertexFormat_getElementCount", 1);
-    static var hx_VertexFormat_getVertexSize:Dynamic = cpp.Lib.load("gameplay", "hx_VertexFormat_getVertexSize", 1);
-    static var hx_VertexFormat_static_toString:Dynamic = cpp.Lib.load("gameplay", "hx_VertexFormat_static_toString", 1);
+    static var hx_VertexFormat_Construct = cpp.Lib.load("gameplay", "hx_VertexFormat_Construct", 2);
+    static var hx_VertexFormat_getElement = cpp.Lib.load("gameplay", "hx_VertexFormat_getElement", 2);
+    static var hx_VertexFormat_getElementCount = cpp.Lib.load("gameplay", "hx_VertexFormat_getElementCount", 1);
+    static var hx_VertexFormat_getVertexSize = cpp.Lib.load("gameplay", "hx_VertexFormat_getVertexSize", 1);
+    static var hx_VertexFormat_static_toString = cpp.Lib.load("gameplay", "hx_VertexFormat_static_toString", 1);
 }
 
 // END

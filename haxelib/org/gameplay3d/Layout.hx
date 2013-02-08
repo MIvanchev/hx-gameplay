@@ -20,7 +20,7 @@ class Layout extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Layout_getType:Dynamic = cpp.Lib.load("gameplay", "hx_Layout_getType", 1);
+    static var hx_Layout_getType = cpp.Lib.load("gameplay", "hx_Layout_getType", 1);
 }
 
 // END

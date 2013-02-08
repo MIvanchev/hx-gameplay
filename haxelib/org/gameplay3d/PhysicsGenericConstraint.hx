@@ -96,18 +96,18 @@ class PhysicsGenericConstraint extends PhysicsConstraint
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsGenericConstraint_getRotationOffsetA:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_getRotationOffsetA", 1);
-    static var hx_PhysicsGenericConstraint_getRotationOffsetB:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_getRotationOffsetB", 1);
-    static var hx_PhysicsGenericConstraint_getTranslationOffsetA:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_getTranslationOffsetA", 1);
-    static var hx_PhysicsGenericConstraint_getTranslationOffsetB:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_getTranslationOffsetB", 1);
-    static var hx_PhysicsGenericConstraint_setAngularLowerLimit:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setAngularLowerLimit", 2);
-    static var hx_PhysicsGenericConstraint_setAngularUpperLimit:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setAngularUpperLimit", 2);
-    static var hx_PhysicsGenericConstraint_setLinearLowerLimit:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setLinearLowerLimit", 2);
-    static var hx_PhysicsGenericConstraint_setLinearUpperLimit:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setLinearUpperLimit", 2);
-    static var hx_PhysicsGenericConstraint_setRotationOffsetA:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setRotationOffsetA", 2);
-    static var hx_PhysicsGenericConstraint_setRotationOffsetB:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setRotationOffsetB", 2);
-    static var hx_PhysicsGenericConstraint_setTranslationOffsetA:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setTranslationOffsetA", 2);
-    static var hx_PhysicsGenericConstraint_setTranslationOffsetB:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setTranslationOffsetB", 2);
+    static var hx_PhysicsGenericConstraint_getRotationOffsetA = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_getRotationOffsetA", 1);
+    static var hx_PhysicsGenericConstraint_getRotationOffsetB = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_getRotationOffsetB", 1);
+    static var hx_PhysicsGenericConstraint_getTranslationOffsetA = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_getTranslationOffsetA", 1);
+    static var hx_PhysicsGenericConstraint_getTranslationOffsetB = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_getTranslationOffsetB", 1);
+    static var hx_PhysicsGenericConstraint_setAngularLowerLimit = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setAngularLowerLimit", 2);
+    static var hx_PhysicsGenericConstraint_setAngularUpperLimit = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setAngularUpperLimit", 2);
+    static var hx_PhysicsGenericConstraint_setLinearLowerLimit = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setLinearLowerLimit", 2);
+    static var hx_PhysicsGenericConstraint_setLinearUpperLimit = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setLinearUpperLimit", 2);
+    static var hx_PhysicsGenericConstraint_setRotationOffsetA = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setRotationOffsetA", 2);
+    static var hx_PhysicsGenericConstraint_setRotationOffsetB = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setRotationOffsetB", 2);
+    static var hx_PhysicsGenericConstraint_setTranslationOffsetA = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setTranslationOffsetA", 2);
+    static var hx_PhysicsGenericConstraint_setTranslationOffsetB = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setTranslationOffsetB", 2);
 }
 
 // END

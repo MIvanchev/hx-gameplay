@@ -100,20 +100,20 @@ class Form extends Container
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Form_static_create_Str_ThmStl_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Form_static_create_Str_ThmStl_Int", 3);
-    static var hx_Form_static_create_Str:Dynamic = cpp.Lib.load("gameplay", "hx_Form_static_create_Str", 1);
-    static var hx_Form_draw:Dynamic = cpp.Lib.load("gameplay", "hx_Form_draw", 1);
-    static var hx_Form_static_getForm:Dynamic = cpp.Lib.load("gameplay", "hx_Form_static_getForm", 1);
-    static var hx_Form_getTheme:Dynamic = cpp.Lib.load("gameplay", "hx_Form_getTheme", 1);
-    static var hx_Form_getType:Dynamic = cpp.Lib.load("gameplay", "hx_Form_getType", 1);
-    static var hx_Form_setAutoHeight:Dynamic = cpp.Lib.load("gameplay", "hx_Form_setAutoHeight", 2);
-    static var hx_Form_setAutoWidth:Dynamic = cpp.Lib.load("gameplay", "hx_Form_setAutoWidth", 2);
-    static var hx_Form_setBounds:Dynamic = cpp.Lib.load("gameplay", "hx_Form_setBounds", 2);
-    static var hx_Form_setHeight:Dynamic = cpp.Lib.load("gameplay", "hx_Form_setHeight", 2);
-    static var hx_Form_setNode:Dynamic = cpp.Lib.load("gameplay", "hx_Form_setNode", 2);
-    static var hx_Form_setSize:Dynamic = cpp.Lib.load("gameplay", "hx_Form_setSize", 3);
-    static var hx_Form_setWidth:Dynamic = cpp.Lib.load("gameplay", "hx_Form_setWidth", 2);
-    static var hx_Form_update:Dynamic = cpp.Lib.load("gameplay", "hx_Form_update", 2);
+    static var hx_Form_static_create_Str_ThmStl_Int = cpp.Lib.load("gameplay", "hx_Form_static_create_Str_ThmStl_Int", 3);
+    static var hx_Form_static_create_Str = cpp.Lib.load("gameplay", "hx_Form_static_create_Str", 1);
+    static var hx_Form_draw = cpp.Lib.load("gameplay", "hx_Form_draw", 1);
+    static var hx_Form_static_getForm = cpp.Lib.load("gameplay", "hx_Form_static_getForm", 1);
+    static var hx_Form_getTheme = cpp.Lib.load("gameplay", "hx_Form_getTheme", 1);
+    static var hx_Form_getType = cpp.Lib.load("gameplay", "hx_Form_getType", 1);
+    static var hx_Form_setAutoHeight = cpp.Lib.load("gameplay", "hx_Form_setAutoHeight", 2);
+    static var hx_Form_setAutoWidth = cpp.Lib.load("gameplay", "hx_Form_setAutoWidth", 2);
+    static var hx_Form_setBounds = cpp.Lib.load("gameplay", "hx_Form_setBounds", 2);
+    static var hx_Form_setHeight = cpp.Lib.load("gameplay", "hx_Form_setHeight", 2);
+    static var hx_Form_setNode = cpp.Lib.load("gameplay", "hx_Form_setNode", 2);
+    static var hx_Form_setSize = cpp.Lib.load("gameplay", "hx_Form_setSize", 3);
+    static var hx_Form_setWidth = cpp.Lib.load("gameplay", "hx_Form_setWidth", 2);
+    static var hx_Form_update = cpp.Lib.load("gameplay", "hx_Form_update", 2);
 }
 
 // END

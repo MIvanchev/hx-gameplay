@@ -26,8 +26,8 @@ class AIController extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AIController_findAgent:Dynamic = cpp.Lib.load("gameplay", "hx_AIController_findAgent", 2);
-    static var hx_AIController_sendMessage:Dynamic = cpp.Lib.load("gameplay", "hx_AIController_sendMessage", 3);
+    static var hx_AIController_findAgent = cpp.Lib.load("gameplay", "hx_AIController_findAgent", 2);
+    static var hx_AIController_sendMessage = cpp.Lib.load("gameplay", "hx_AIController_sendMessage", 3);
 }
 
 // END

@@ -44,7 +44,7 @@ class Control_ListenerWrapper extends ListenerWrapper<Control_Listener>, impleme
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Control_Listener_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_Control_Listener_Construct", 1);
+    static var hx_Control_Listener_Construct = cpp.Lib.load("gameplay", "hx_Control_Listener_Construct", 1);
 }
 
 // END

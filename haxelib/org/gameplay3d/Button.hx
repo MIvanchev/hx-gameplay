@@ -20,7 +20,7 @@ class Button extends Label
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Button_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Button_static_create", 2);
+    static var hx_Button_static_create = cpp.Lib.load("gameplay", "hx_Button_static_create", 2);
 }
 
 // END

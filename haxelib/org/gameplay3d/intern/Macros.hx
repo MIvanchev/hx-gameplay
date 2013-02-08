@@ -35,13 +35,16 @@ class Macros
     * TODO
     */
    macro
-   public static function returnType(func:Expr):Expr
+   public static function binderType(func:Expr):Expr
    {
         var id =
             TypeTools.toString(
                     switch (Context.follow(Context.typeof(func)))
                     {
-                    case TFun(_, r): r;
+                    case TFun(args, r):
+                        if (args != null && args.length != 0)
+                            Context.error("The function should not take any arguments.", Context.currentPos());
+                        r;
                     default: Context.error("Invalid type specified.", Context.currentPos());
                     }
                 ).split(".");

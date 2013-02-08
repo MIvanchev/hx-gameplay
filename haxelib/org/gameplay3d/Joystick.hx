@@ -83,17 +83,17 @@ class Joystick extends Control
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Joystick_addListener:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_addListener", 3);
-    static var hx_Joystick_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_static_create", 2);
-    static var hx_Joystick_getIndex:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_getIndex", 1);
-    static var hx_Joystick_getInnerRegionSize:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_getInnerRegionSize", 1);
-    static var hx_Joystick_getOuterRegionSize:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_getOuterRegionSize", 1);
-    static var hx_Joystick_getType:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_getType", 1);
-    static var hx_Joystick_getValue:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_getValue", 1);
-    static var hx_Joystick_isRelative:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_isRelative", 1);
-    static var hx_Joystick_setInnerRegionSize:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_setInnerRegionSize", 2);
-    static var hx_Joystick_setOuterRegionSize:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_setOuterRegionSize", 2);
-    static var hx_Joystick_setRelative:Dynamic = cpp.Lib.load("gameplay", "hx_Joystick_setRelative", 2);
+    static var hx_Joystick_addListener = cpp.Lib.load("gameplay", "hx_Joystick_addListener", 3);
+    static var hx_Joystick_static_create = cpp.Lib.load("gameplay", "hx_Joystick_static_create", 2);
+    static var hx_Joystick_getIndex = cpp.Lib.load("gameplay", "hx_Joystick_getIndex", 1);
+    static var hx_Joystick_getInnerRegionSize = cpp.Lib.load("gameplay", "hx_Joystick_getInnerRegionSize", 1);
+    static var hx_Joystick_getOuterRegionSize = cpp.Lib.load("gameplay", "hx_Joystick_getOuterRegionSize", 1);
+    static var hx_Joystick_getType = cpp.Lib.load("gameplay", "hx_Joystick_getType", 1);
+    static var hx_Joystick_getValue = cpp.Lib.load("gameplay", "hx_Joystick_getValue", 1);
+    static var hx_Joystick_isRelative = cpp.Lib.load("gameplay", "hx_Joystick_isRelative", 1);
+    static var hx_Joystick_setInnerRegionSize = cpp.Lib.load("gameplay", "hx_Joystick_setInnerRegionSize", 2);
+    static var hx_Joystick_setOuterRegionSize = cpp.Lib.load("gameplay", "hx_Joystick_setOuterRegionSize", 2);
+    static var hx_Joystick_setRelative = cpp.Lib.load("gameplay", "hx_Joystick_setRelative", 2);
 }
 
 // END

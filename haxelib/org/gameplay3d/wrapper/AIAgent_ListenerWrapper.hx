@@ -44,7 +44,7 @@ class AIAgent_ListenerWrapper extends ListenerWrapper<AIAgent_Listener>, impleme
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AIAgent_Listener_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_AIAgent_Listener_Construct", 1);
+    static var hx_AIAgent_Listener_Construct = cpp.Lib.load("gameplay", "hx_AIAgent_Listener_Construct", 1);
 }
 
 // END

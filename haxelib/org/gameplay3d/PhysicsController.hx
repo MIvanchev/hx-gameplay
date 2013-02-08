@@ -115,21 +115,21 @@ class PhysicsController extends ScriptTargetImpl
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsController_addStatusListener:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_addStatusListener", 2);
-    static var hx_PhysicsController_createFixedConstraint:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_createFixedConstraint", 3);
-    static var hx_PhysicsController_createGenericConstraint_RgdBodyX2:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_createGenericConstraint_RgdBodyX2", 3);
-    static var hx_PhysicsController_createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3", -1);
-    static var hx_PhysicsController_createHingeConstraint:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_createHingeConstraint", -1);
-    static var hx_PhysicsController_createSocketConstraint_RgdBodyX2:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_createSocketConstraint_RgdBodyX2", 3);
-    static var hx_PhysicsController_createSocketConstraint_RgdBody_V3_RgdBody_V3:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_createSocketConstraint_RgdBody_V3_RgdBody_V3", 5);
-    static var hx_PhysicsController_createSpringConstraint_RgdBodyX2:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_createSpringConstraint_RgdBodyX2", 3);
-    static var hx_PhysicsController_createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3", -1);
-    static var hx_PhysicsController_drawDebug:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_drawDebug", 2);
-    static var hx_PhysicsController_getGravity:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_getGravity", 1);
-    static var hx_PhysicsController_rayTest:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_rayTest", 5);
-    static var hx_PhysicsController_removeStatusListener:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_removeStatusListener", 2);
-    static var hx_PhysicsController_setGravity:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_setGravity", 2);
-    static var hx_PhysicsController_sweepTest:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_sweepTest", 5);
+    static var hx_PhysicsController_addStatusListener = cpp.Lib.load("gameplay", "hx_PhysicsController_addStatusListener", 2);
+    static var hx_PhysicsController_createFixedConstraint = cpp.Lib.load("gameplay", "hx_PhysicsController_createFixedConstraint", 3);
+    static var hx_PhysicsController_createGenericConstraint_RgdBodyX2 = cpp.Lib.load("gameplay", "hx_PhysicsController_createGenericConstraint_RgdBodyX2", 3);
+    static var hx_PhysicsController_createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3 = cpp.Lib.load("gameplay", "hx_PhysicsController_createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3", -1);
+    static var hx_PhysicsController_createHingeConstraint = cpp.Lib.load("gameplay", "hx_PhysicsController_createHingeConstraint", -1);
+    static var hx_PhysicsController_createSocketConstraint_RgdBodyX2 = cpp.Lib.load("gameplay", "hx_PhysicsController_createSocketConstraint_RgdBodyX2", 3);
+    static var hx_PhysicsController_createSocketConstraint_RgdBody_V3_RgdBody_V3 = cpp.Lib.load("gameplay", "hx_PhysicsController_createSocketConstraint_RgdBody_V3_RgdBody_V3", 5);
+    static var hx_PhysicsController_createSpringConstraint_RgdBodyX2 = cpp.Lib.load("gameplay", "hx_PhysicsController_createSpringConstraint_RgdBodyX2", 3);
+    static var hx_PhysicsController_createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3 = cpp.Lib.load("gameplay", "hx_PhysicsController_createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3", -1);
+    static var hx_PhysicsController_drawDebug = cpp.Lib.load("gameplay", "hx_PhysicsController_drawDebug", 2);
+    static var hx_PhysicsController_getGravity = cpp.Lib.load("gameplay", "hx_PhysicsController_getGravity", 1);
+    static var hx_PhysicsController_rayTest = cpp.Lib.load("gameplay", "hx_PhysicsController_rayTest", 5);
+    static var hx_PhysicsController_removeStatusListener = cpp.Lib.load("gameplay", "hx_PhysicsController_removeStatusListener", 2);
+    static var hx_PhysicsController_setGravity = cpp.Lib.load("gameplay", "hx_PhysicsController_setGravity", 2);
+    static var hx_PhysicsController_sweepTest = cpp.Lib.load("gameplay", "hx_PhysicsController_sweepTest", 5);
 }
 
 // END

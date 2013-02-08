@@ -59,13 +59,13 @@ class CheckBox extends Button
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_CheckBox_addListener:Dynamic = cpp.Lib.load("gameplay", "hx_CheckBox_addListener", 3);
-    static var hx_CheckBox_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_CheckBox_static_create", 2);
-    static var hx_CheckBox_getImageSize:Dynamic = cpp.Lib.load("gameplay", "hx_CheckBox_getImageSize", 1);
-    static var hx_CheckBox_getType:Dynamic = cpp.Lib.load("gameplay", "hx_CheckBox_getType", 1);
-    static var hx_CheckBox_isChecked:Dynamic = cpp.Lib.load("gameplay", "hx_CheckBox_isChecked", 1);
-    static var hx_CheckBox_setChecked:Dynamic = cpp.Lib.load("gameplay", "hx_CheckBox_setChecked", 2);
-    static var hx_CheckBox_setImageSize:Dynamic = cpp.Lib.load("gameplay", "hx_CheckBox_setImageSize", 3);
+    static var hx_CheckBox_addListener = cpp.Lib.load("gameplay", "hx_CheckBox_addListener", 3);
+    static var hx_CheckBox_static_create = cpp.Lib.load("gameplay", "hx_CheckBox_static_create", 2);
+    static var hx_CheckBox_getImageSize = cpp.Lib.load("gameplay", "hx_CheckBox_getImageSize", 1);
+    static var hx_CheckBox_getType = cpp.Lib.load("gameplay", "hx_CheckBox_getType", 1);
+    static var hx_CheckBox_isChecked = cpp.Lib.load("gameplay", "hx_CheckBox_isChecked", 1);
+    static var hx_CheckBox_setChecked = cpp.Lib.load("gameplay", "hx_CheckBox_setChecked", 2);
+    static var hx_CheckBox_setImageSize = cpp.Lib.load("gameplay", "hx_CheckBox_setImageSize", 3);
 }
 
 // END

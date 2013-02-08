@@ -60,7 +60,7 @@ class PhysicsController_HitFilterWrapper extends ListenerWrapper<PhysicsControll
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_HaxePhysicsController_HitFilter_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_HaxePhysicsController_HitFilter_Construct", 2);
+    static var hx_HaxePhysicsController_HitFilter_Construct = cpp.Lib.load("gameplay", "hx_HaxePhysicsController_HitFilter_Construct", 2);
 }
 
 // END

@@ -20,7 +20,7 @@ class AnimationController extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AnimationController_stopAllAnimations:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationController_stopAllAnimations", 1);
+    static var hx_AnimationController_stopAllAnimations = cpp.Lib.load("gameplay", "hx_AnimationController_stopAllAnimations", 1);
 }
 
 // END

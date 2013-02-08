@@ -101,20 +101,20 @@ class Texture extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Texture_static_create_IntX3_Dat_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_static_create_IntX3_Dat_Bool", 5);
-    static var hx_Texture_static_create_Img_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_static_create_Img_Bool", 2);
-    static var hx_Texture_static_create_Hndl_IntX3:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_static_create_Hndl_IntX3", 4);
-    static var hx_Texture_static_create_Str_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_static_create_Str_Bool", 2);
-    static var hx_Texture_generateMipmaps:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_generateMipmaps", 1);
-    static var hx_Texture_getFormat:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_getFormat", 1);
-    static var hx_Texture_getHandle:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_getHandle", 1);
-    static var hx_Texture_getHeight:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_getHeight", 1);
-    static var hx_Texture_getPath:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_getPath", 1);
-    static var hx_Texture_getWidth:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_getWidth", 1);
-    static var hx_Texture_isCompressed:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_isCompressed", 1);
-    static var hx_Texture_isMipmapped:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_isMipmapped", 1);
-    static var hx_Texture_setFilterMode:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_setFilterMode", 3);
-    static var hx_Texture_setWrapMode:Dynamic = cpp.Lib.load("gameplay", "hx_Texture_setWrapMode", 3);
+    static var hx_Texture_static_create_IntX3_Dat_Bool = cpp.Lib.load("gameplay", "hx_Texture_static_create_IntX3_Dat_Bool", 5);
+    static var hx_Texture_static_create_Img_Bool = cpp.Lib.load("gameplay", "hx_Texture_static_create_Img_Bool", 2);
+    static var hx_Texture_static_create_Hndl_IntX3 = cpp.Lib.load("gameplay", "hx_Texture_static_create_Hndl_IntX3", 4);
+    static var hx_Texture_static_create_Str_Bool = cpp.Lib.load("gameplay", "hx_Texture_static_create_Str_Bool", 2);
+    static var hx_Texture_generateMipmaps = cpp.Lib.load("gameplay", "hx_Texture_generateMipmaps", 1);
+    static var hx_Texture_getFormat = cpp.Lib.load("gameplay", "hx_Texture_getFormat", 1);
+    static var hx_Texture_getHandle = cpp.Lib.load("gameplay", "hx_Texture_getHandle", 1);
+    static var hx_Texture_getHeight = cpp.Lib.load("gameplay", "hx_Texture_getHeight", 1);
+    static var hx_Texture_getPath = cpp.Lib.load("gameplay", "hx_Texture_getPath", 1);
+    static var hx_Texture_getWidth = cpp.Lib.load("gameplay", "hx_Texture_getWidth", 1);
+    static var hx_Texture_isCompressed = cpp.Lib.load("gameplay", "hx_Texture_isCompressed", 1);
+    static var hx_Texture_isMipmapped = cpp.Lib.load("gameplay", "hx_Texture_isMipmapped", 1);
+    static var hx_Texture_setFilterMode = cpp.Lib.load("gameplay", "hx_Texture_setFilterMode", 3);
+    static var hx_Texture_setWrapMode = cpp.Lib.load("gameplay", "hx_Texture_setWrapMode", 3);
 }
 
 // END

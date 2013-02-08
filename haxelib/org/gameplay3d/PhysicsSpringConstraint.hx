@@ -86,18 +86,18 @@ class PhysicsSpringConstraint extends PhysicsGenericConstraint
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsSpringConstraint_setAngularDampingX:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setAngularDampingX", 2);
-    static var hx_PhysicsSpringConstraint_setAngularDampingY:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setAngularDampingY", 2);
-    static var hx_PhysicsSpringConstraint_setAngularDampingZ:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setAngularDampingZ", 2);
-    static var hx_PhysicsSpringConstraint_setAngularStrengthX:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setAngularStrengthX", 2);
-    static var hx_PhysicsSpringConstraint_setAngularStrengthY:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setAngularStrengthY", 2);
-    static var hx_PhysicsSpringConstraint_setAngularStrengthZ:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setAngularStrengthZ", 2);
-    static var hx_PhysicsSpringConstraint_setLinearDampingX:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setLinearDampingX", 2);
-    static var hx_PhysicsSpringConstraint_setLinearDampingY:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setLinearDampingY", 2);
-    static var hx_PhysicsSpringConstraint_setLinearDampingZ:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setLinearDampingZ", 2);
-    static var hx_PhysicsSpringConstraint_setLinearStrengthX:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setLinearStrengthX", 2);
-    static var hx_PhysicsSpringConstraint_setLinearStrengthY:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setLinearStrengthY", 2);
-    static var hx_PhysicsSpringConstraint_setLinearStrengthZ:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setLinearStrengthZ", 2);
+    static var hx_PhysicsSpringConstraint_setAngularDampingX = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setAngularDampingX", 2);
+    static var hx_PhysicsSpringConstraint_setAngularDampingY = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setAngularDampingY", 2);
+    static var hx_PhysicsSpringConstraint_setAngularDampingZ = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setAngularDampingZ", 2);
+    static var hx_PhysicsSpringConstraint_setAngularStrengthX = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setAngularStrengthX", 2);
+    static var hx_PhysicsSpringConstraint_setAngularStrengthY = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setAngularStrengthY", 2);
+    static var hx_PhysicsSpringConstraint_setAngularStrengthZ = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setAngularStrengthZ", 2);
+    static var hx_PhysicsSpringConstraint_setLinearDampingX = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setLinearDampingX", 2);
+    static var hx_PhysicsSpringConstraint_setLinearDampingY = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setLinearDampingY", 2);
+    static var hx_PhysicsSpringConstraint_setLinearDampingZ = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setLinearDampingZ", 2);
+    static var hx_PhysicsSpringConstraint_setLinearStrengthX = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setLinearStrengthX", 2);
+    static var hx_PhysicsSpringConstraint_setLinearStrengthY = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setLinearStrengthY", 2);
+    static var hx_PhysicsSpringConstraint_setLinearStrengthZ = cpp.Lib.load("gameplay", "hx_PhysicsSpringConstraint_setLinearStrengthZ", 2);
 }
 
 // END

@@ -48,9 +48,9 @@ class PhysicsCollisionShape_Definition extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsCollisionShape_Definition_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_Definition_Construct", 0);
-    static var hx_PhysicsCollisionShape_Definition_Construct_ColShpDef:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_Definition_Construct_ColShpDef", 1);
-    static var hx_PhysicsCollisionShape_Definition_isEmpty:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_Definition_isEmpty", 1);
+    static var hx_PhysicsCollisionShape_Definition_Construct = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_Definition_Construct", 0);
+    static var hx_PhysicsCollisionShape_Definition_Construct_ColShpDef = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_Definition_Construct_ColShpDef", 1);
+    static var hx_PhysicsCollisionShape_Definition_isEmpty = cpp.Lib.load("gameplay", "hx_PhysicsCollisionShape_Definition_isEmpty", 1);
 }
 
 // END

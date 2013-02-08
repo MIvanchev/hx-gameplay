@@ -124,23 +124,23 @@ class PhysicsCharacter extends PhysicsGhostObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsCharacter_getCurrentVelocity:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_getCurrentVelocity", 1);
-    static var hx_PhysicsCharacter_getMaxSlopeAngle:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_getMaxSlopeAngle", 1);
-    static var hx_PhysicsCharacter_getMaxStepHeight:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_getMaxStepHeight", 1);
-    static var hx_PhysicsCharacter_getType:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_getType", 1);
-    static var hx_PhysicsCharacter_isPhysicsEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_isPhysicsEnabled", 1);
-    static var hx_PhysicsCharacter_jump:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_jump", 2);
-    static var hx_PhysicsCharacter_rotate_Qtrn:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_rotate_Qtrn", 2);
-    static var hx_PhysicsCharacter_rotate_V3_Flt:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_rotate_V3_Flt", 3);
-    static var hx_PhysicsCharacter_setForwardVelocity:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setForwardVelocity", 2);
-    static var hx_PhysicsCharacter_setMaxSlopeAngle:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setMaxSlopeAngle", 2);
-    static var hx_PhysicsCharacter_setMaxStepHeight:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setMaxStepHeight", 2);
-    static var hx_PhysicsCharacter_setPhysicsEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setPhysicsEnabled", 2);
-    static var hx_PhysicsCharacter_setRightVelocity:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setRightVelocity", 2);
-    static var hx_PhysicsCharacter_setRotation_Qtrn:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setRotation_Qtrn", 2);
-    static var hx_PhysicsCharacter_setRotation_V3_Flt:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setRotation_V3_Flt", 3);
-    static var hx_PhysicsCharacter_setVelocity_V3:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setVelocity_V3", 2);
-    static var hx_PhysicsCharacter_setVelocity_FltX3:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setVelocity_FltX3", 4);
+    static var hx_PhysicsCharacter_getCurrentVelocity = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_getCurrentVelocity", 1);
+    static var hx_PhysicsCharacter_getMaxSlopeAngle = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_getMaxSlopeAngle", 1);
+    static var hx_PhysicsCharacter_getMaxStepHeight = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_getMaxStepHeight", 1);
+    static var hx_PhysicsCharacter_getType = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_getType", 1);
+    static var hx_PhysicsCharacter_isPhysicsEnabled = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_isPhysicsEnabled", 1);
+    static var hx_PhysicsCharacter_jump = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_jump", 2);
+    static var hx_PhysicsCharacter_rotate_Qtrn = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_rotate_Qtrn", 2);
+    static var hx_PhysicsCharacter_rotate_V3_Flt = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_rotate_V3_Flt", 3);
+    static var hx_PhysicsCharacter_setForwardVelocity = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setForwardVelocity", 2);
+    static var hx_PhysicsCharacter_setMaxSlopeAngle = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setMaxSlopeAngle", 2);
+    static var hx_PhysicsCharacter_setMaxStepHeight = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setMaxStepHeight", 2);
+    static var hx_PhysicsCharacter_setPhysicsEnabled = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setPhysicsEnabled", 2);
+    static var hx_PhysicsCharacter_setRightVelocity = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setRightVelocity", 2);
+    static var hx_PhysicsCharacter_setRotation_Qtrn = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setRotation_Qtrn", 2);
+    static var hx_PhysicsCharacter_setRotation_V3_Flt = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setRotation_V3_Flt", 3);
+    static var hx_PhysicsCharacter_setVelocity_V3 = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setVelocity_V3", 2);
+    static var hx_PhysicsCharacter_setVelocity_FltX3 = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setVelocity_FltX3", 4);
 }
 
 // END

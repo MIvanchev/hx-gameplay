@@ -167,25 +167,25 @@ class Frustum extends GameplayObject, implements IFrustum
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Frustum_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_Construct", 0);
-    static var hx_Frustum_Construct_Frstm:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_Construct_Frstm", 1);
-    static var hx_Frustum_Construct_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_Construct_Mat", 1);
-    static var hx_Frustum_getBottom:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_getBottom", 1);
-    static var hx_Frustum_getCorners:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_getCorners", 2);
-    static var hx_Frustum_getFar:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_getFar", 1);
-    static var hx_Frustum_getLeft:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_getLeft", 1);
-    static var hx_Frustum_getMatrix:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_getMatrix", 2);
-    static var hx_Frustum_getNear:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_getNear", 1);
-    static var hx_Frustum_getRight:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_getRight", 1);
-    static var hx_Frustum_getTop:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_getTop", 1);
-    static var hx_Frustum_intersects_BBox:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_intersects_BBox", 2);
-    static var hx_Frustum_intersects_BSphr:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_intersects_BSphr", 2);
-    static var hx_Frustum_intersects_V3:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_intersects_V3", 2);
-    static var hx_Frustum_intersects_FltX3:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_intersects_FltX3", 4);
-    static var hx_Frustum_intersects_Plane:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_intersects_Plane", 2);
-    static var hx_Frustum_intersects_Ray:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_intersects_Ray", 2);
-    static var hx_Frustum_set_Frstm:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_set_Frstm", 2);
-    static var hx_Frustum_set_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_Frustum_set_Mat", 2);
+    static var hx_Frustum_Construct = cpp.Lib.load("gameplay", "hx_Frustum_Construct", 0);
+    static var hx_Frustum_Construct_Frstm = cpp.Lib.load("gameplay", "hx_Frustum_Construct_Frstm", 1);
+    static var hx_Frustum_Construct_Mat = cpp.Lib.load("gameplay", "hx_Frustum_Construct_Mat", 1);
+    static var hx_Frustum_getBottom = cpp.Lib.load("gameplay", "hx_Frustum_getBottom", 1);
+    static var hx_Frustum_getCorners = cpp.Lib.load("gameplay", "hx_Frustum_getCorners", 2);
+    static var hx_Frustum_getFar = cpp.Lib.load("gameplay", "hx_Frustum_getFar", 1);
+    static var hx_Frustum_getLeft = cpp.Lib.load("gameplay", "hx_Frustum_getLeft", 1);
+    static var hx_Frustum_getMatrix = cpp.Lib.load("gameplay", "hx_Frustum_getMatrix", 2);
+    static var hx_Frustum_getNear = cpp.Lib.load("gameplay", "hx_Frustum_getNear", 1);
+    static var hx_Frustum_getRight = cpp.Lib.load("gameplay", "hx_Frustum_getRight", 1);
+    static var hx_Frustum_getTop = cpp.Lib.load("gameplay", "hx_Frustum_getTop", 1);
+    static var hx_Frustum_intersects_BBox = cpp.Lib.load("gameplay", "hx_Frustum_intersects_BBox", 2);
+    static var hx_Frustum_intersects_BSphr = cpp.Lib.load("gameplay", "hx_Frustum_intersects_BSphr", 2);
+    static var hx_Frustum_intersects_V3 = cpp.Lib.load("gameplay", "hx_Frustum_intersects_V3", 2);
+    static var hx_Frustum_intersects_FltX3 = cpp.Lib.load("gameplay", "hx_Frustum_intersects_FltX3", 4);
+    static var hx_Frustum_intersects_Plane = cpp.Lib.load("gameplay", "hx_Frustum_intersects_Plane", 2);
+    static var hx_Frustum_intersects_Ray = cpp.Lib.load("gameplay", "hx_Frustum_intersects_Ray", 2);
+    static var hx_Frustum_set_Frstm = cpp.Lib.load("gameplay", "hx_Frustum_set_Frstm", 2);
+    static var hx_Frustum_set_Mat = cpp.Lib.load("gameplay", "hx_Frustum_set_Mat", 2);
 }
 
 // END

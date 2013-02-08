@@ -46,11 +46,11 @@ class Image extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Image_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Image_static_create", 1);
-    static var hx_Image_getData:Dynamic = cpp.Lib.load("gameplay", "hx_Image_getData", 1);
-    static var hx_Image_getFormat:Dynamic = cpp.Lib.load("gameplay", "hx_Image_getFormat", 1);
-    static var hx_Image_getHeight:Dynamic = cpp.Lib.load("gameplay", "hx_Image_getHeight", 1);
-    static var hx_Image_getWidth:Dynamic = cpp.Lib.load("gameplay", "hx_Image_getWidth", 1);
+    static var hx_Image_static_create = cpp.Lib.load("gameplay", "hx_Image_static_create", 1);
+    static var hx_Image_getData = cpp.Lib.load("gameplay", "hx_Image_getData", 1);
+    static var hx_Image_getFormat = cpp.Lib.load("gameplay", "hx_Image_getFormat", 1);
+    static var hx_Image_getHeight = cpp.Lib.load("gameplay", "hx_Image_getHeight", 1);
+    static var hx_Image_getWidth = cpp.Lib.load("gameplay", "hx_Image_getWidth", 1);
 }
 
 // END

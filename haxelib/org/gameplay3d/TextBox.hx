@@ -39,10 +39,10 @@ class TextBox extends Label
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_TextBox_addListener:Dynamic = cpp.Lib.load("gameplay", "hx_TextBox_addListener", 3);
-    static var hx_TextBox_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_TextBox_static_create", 2);
-    static var hx_TextBox_getLastKeypress:Dynamic = cpp.Lib.load("gameplay", "hx_TextBox_getLastKeypress", 1);
-    static var hx_TextBox_getType:Dynamic = cpp.Lib.load("gameplay", "hx_TextBox_getType", 1);
+    static var hx_TextBox_addListener = cpp.Lib.load("gameplay", "hx_TextBox_addListener", 3);
+    static var hx_TextBox_static_create = cpp.Lib.load("gameplay", "hx_TextBox_static_create", 2);
+    static var hx_TextBox_getLastKeypress = cpp.Lib.load("gameplay", "hx_TextBox_getLastKeypress", 1);
+    static var hx_TextBox_getType = cpp.Lib.load("gameplay", "hx_TextBox_getType", 1);
 }
 
 // END

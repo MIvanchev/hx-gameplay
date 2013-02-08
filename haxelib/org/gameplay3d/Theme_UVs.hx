@@ -106,17 +106,17 @@ class Theme_UVs extends GameplayObject, implements ITheme_UVs
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Theme_UVs_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_UVs_Construct", 0);
-    static var hx_Theme_UVs_Construct_FltX4:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_UVs_Construct_FltX4", 4);
-    static var hx_Theme_UVs_static_empty:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_UVs_static_empty", 0);
-    static var hx_Theme_UVs_property_u1_get:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_u1_get", 1);
-    static var hx_Theme_UVs_property_u1_set:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_u1_set", 2);
-    static var hx_Theme_UVs_property_v1_get:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_v1_get", 1);
-    static var hx_Theme_UVs_property_v1_set:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_v1_set", 2);
-    static var hx_Theme_UVs_property_u2_get:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_u2_get", 1);
-    static var hx_Theme_UVs_property_u2_set:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_u2_set", 2);
-    static var hx_Theme_UVs_property_v2_get:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_v2_get", 1);
-    static var hx_Theme_UVs_property_v2_set:Dynamic = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_v2_set", 2);
+    static var hx_Theme_UVs_Construct = cpp.Lib.load("gameplay", "hx_Theme_UVs_Construct", 0);
+    static var hx_Theme_UVs_Construct_FltX4 = cpp.Lib.load("gameplay", "hx_Theme_UVs_Construct_FltX4", 4);
+    static var hx_Theme_UVs_static_empty = cpp.Lib.load("gameplay", "hx_Theme_UVs_static_empty", 0);
+    static var hx_Theme_UVs_property_u1_get = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_u1_get", 1);
+    static var hx_Theme_UVs_property_u1_set = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_u1_set", 2);
+    static var hx_Theme_UVs_property_v1_get = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_v1_get", 1);
+    static var hx_Theme_UVs_property_v1_set = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_v1_set", 2);
+    static var hx_Theme_UVs_property_u2_get = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_u2_get", 1);
+    static var hx_Theme_UVs_property_u2_set = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_u2_set", 2);
+    static var hx_Theme_UVs_property_v2_get = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_v2_get", 1);
+    static var hx_Theme_UVs_property_v2_set = cpp.Lib.load("gameplay", "hx_Theme_UVs_property_v2_set", 2);
 }
 
 // END

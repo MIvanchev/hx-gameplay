@@ -220,34 +220,34 @@ class Rectangle extends GameplayObject, implements IRectangle
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Rectangle_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_Construct", 0);
-    static var hx_Rectangle_Construct_Rct:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_Construct_Rct", 1);
-    static var hx_Rectangle_Construct_FltX2:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_Construct_FltX2", 2);
-    static var hx_Rectangle_Construct_FltX4:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_Construct_FltX4", 4);
-    static var hx_Rectangle_bottom:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_bottom", 1);
-    static var hx_Rectangle_static_combine:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_static_combine", 3);
-    static var hx_Rectangle_contains_Rct:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_contains_Rct", 2);
-    static var hx_Rectangle_contains_FltX2:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_contains_FltX2", 3);
-    static var hx_Rectangle_contains_FltX4:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_contains_FltX4", 5);
-    static var hx_Rectangle_static_empty:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_static_empty", 0);
-    static var hx_Rectangle_inflate:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_inflate", 3);
-    static var hx_Rectangle_intersects_Rct:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_intersects_Rct", 2);
-    static var hx_Rectangle_intersects_FltX4:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_intersects_FltX4", 5);
-    static var hx_Rectangle_isEmpty:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_isEmpty", 1);
-    static var hx_Rectangle_left:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_left", 1);
-    static var hx_Rectangle_right:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_right", 1);
-    static var hx_Rectangle_set_Rct:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_set_Rct", 2);
-    static var hx_Rectangle_set_FltX4:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_set_FltX4", 5);
-    static var hx_Rectangle_setPosition:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_setPosition", 3);
-    static var hx_Rectangle_top:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_top", 1);
-    static var hx_Rectangle_property_x_get:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_property_x_get", 1);
-    static var hx_Rectangle_property_x_set:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_property_x_set", 2);
-    static var hx_Rectangle_property_y_get:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_property_y_get", 1);
-    static var hx_Rectangle_property_y_set:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_property_y_set", 2);
-    static var hx_Rectangle_property_width_get:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_property_width_get", 1);
-    static var hx_Rectangle_property_width_set:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_property_width_set", 2);
-    static var hx_Rectangle_property_height_get:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_property_height_get", 1);
-    static var hx_Rectangle_property_height_set:Dynamic = cpp.Lib.load("gameplay", "hx_Rectangle_property_height_set", 2);
+    static var hx_Rectangle_Construct = cpp.Lib.load("gameplay", "hx_Rectangle_Construct", 0);
+    static var hx_Rectangle_Construct_Rct = cpp.Lib.load("gameplay", "hx_Rectangle_Construct_Rct", 1);
+    static var hx_Rectangle_Construct_FltX2 = cpp.Lib.load("gameplay", "hx_Rectangle_Construct_FltX2", 2);
+    static var hx_Rectangle_Construct_FltX4 = cpp.Lib.load("gameplay", "hx_Rectangle_Construct_FltX4", 4);
+    static var hx_Rectangle_bottom = cpp.Lib.load("gameplay", "hx_Rectangle_bottom", 1);
+    static var hx_Rectangle_static_combine = cpp.Lib.load("gameplay", "hx_Rectangle_static_combine", 3);
+    static var hx_Rectangle_contains_Rct = cpp.Lib.load("gameplay", "hx_Rectangle_contains_Rct", 2);
+    static var hx_Rectangle_contains_FltX2 = cpp.Lib.load("gameplay", "hx_Rectangle_contains_FltX2", 3);
+    static var hx_Rectangle_contains_FltX4 = cpp.Lib.load("gameplay", "hx_Rectangle_contains_FltX4", 5);
+    static var hx_Rectangle_static_empty = cpp.Lib.load("gameplay", "hx_Rectangle_static_empty", 0);
+    static var hx_Rectangle_inflate = cpp.Lib.load("gameplay", "hx_Rectangle_inflate", 3);
+    static var hx_Rectangle_intersects_Rct = cpp.Lib.load("gameplay", "hx_Rectangle_intersects_Rct", 2);
+    static var hx_Rectangle_intersects_FltX4 = cpp.Lib.load("gameplay", "hx_Rectangle_intersects_FltX4", 5);
+    static var hx_Rectangle_isEmpty = cpp.Lib.load("gameplay", "hx_Rectangle_isEmpty", 1);
+    static var hx_Rectangle_left = cpp.Lib.load("gameplay", "hx_Rectangle_left", 1);
+    static var hx_Rectangle_right = cpp.Lib.load("gameplay", "hx_Rectangle_right", 1);
+    static var hx_Rectangle_set_Rct = cpp.Lib.load("gameplay", "hx_Rectangle_set_Rct", 2);
+    static var hx_Rectangle_set_FltX4 = cpp.Lib.load("gameplay", "hx_Rectangle_set_FltX4", 5);
+    static var hx_Rectangle_setPosition = cpp.Lib.load("gameplay", "hx_Rectangle_setPosition", 3);
+    static var hx_Rectangle_top = cpp.Lib.load("gameplay", "hx_Rectangle_top", 1);
+    static var hx_Rectangle_property_x_get = cpp.Lib.load("gameplay", "hx_Rectangle_property_x_get", 1);
+    static var hx_Rectangle_property_x_set = cpp.Lib.load("gameplay", "hx_Rectangle_property_x_set", 2);
+    static var hx_Rectangle_property_y_get = cpp.Lib.load("gameplay", "hx_Rectangle_property_y_get", 1);
+    static var hx_Rectangle_property_y_set = cpp.Lib.load("gameplay", "hx_Rectangle_property_y_set", 2);
+    static var hx_Rectangle_property_width_get = cpp.Lib.load("gameplay", "hx_Rectangle_property_width_get", 1);
+    static var hx_Rectangle_property_width_set = cpp.Lib.load("gameplay", "hx_Rectangle_property_width_set", 2);
+    static var hx_Rectangle_property_height_get = cpp.Lib.load("gameplay", "hx_Rectangle_property_height_get", 1);
+    static var hx_Rectangle_property_height_set = cpp.Lib.load("gameplay", "hx_Rectangle_property_height_set", 2);
 }
 
 // END

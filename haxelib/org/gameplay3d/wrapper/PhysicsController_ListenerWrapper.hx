@@ -37,7 +37,7 @@ class PhysicsController_ListenerWrapper extends ListenerWrapper<PhysicsControlle
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsController_Listener_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsController_Listener_Construct", 1);
+    static var hx_PhysicsController_Listener_Construct = cpp.Lib.load("gameplay", "hx_PhysicsController_Listener_Construct", 1);
 }
 
 // END

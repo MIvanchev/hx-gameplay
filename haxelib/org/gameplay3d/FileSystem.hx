@@ -108,19 +108,19 @@ class FileSystem extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_FileSystem_static_createFileFromAsset:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_createFileFromAsset", 1);
-    static var hx_FileSystem_static_fileExists:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_fileExists", 1);
-    static var hx_FileSystem_static_getExtension:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_getExtension", 1);
-    static var hx_FileSystem_static_getResourcePath:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_getResourcePath", 0);
-    static var hx_FileSystem_static_isAbsolutePath:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_isAbsolutePath", 1);
-    static var hx_FileSystem_static_listFiles:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_listFiles", 2);
-    static var hx_FileSystem_static_loadResourceAliases_Prop:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_loadResourceAliases_Prop", 1);
-    static var hx_FileSystem_static_loadResourceAliases_Str:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_loadResourceAliases_Str", 1);
-    static var hx_FileSystem_static_open:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_open", 2);
-    static var hx_FileSystem_static_openFile:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_openFile", 2);
-    static var hx_FileSystem_static_readAll:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_readAll", 2);
-    static var hx_FileSystem_static_resolvePath:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_resolvePath", 1);
-    static var hx_FileSystem_static_setResourcePath:Dynamic = cpp.Lib.load("gameplay", "hx_FileSystem_static_setResourcePath", 1);
+    static var hx_FileSystem_static_createFileFromAsset = cpp.Lib.load("gameplay", "hx_FileSystem_static_createFileFromAsset", 1);
+    static var hx_FileSystem_static_fileExists = cpp.Lib.load("gameplay", "hx_FileSystem_static_fileExists", 1);
+    static var hx_FileSystem_static_getExtension = cpp.Lib.load("gameplay", "hx_FileSystem_static_getExtension", 1);
+    static var hx_FileSystem_static_getResourcePath = cpp.Lib.load("gameplay", "hx_FileSystem_static_getResourcePath", 0);
+    static var hx_FileSystem_static_isAbsolutePath = cpp.Lib.load("gameplay", "hx_FileSystem_static_isAbsolutePath", 1);
+    static var hx_FileSystem_static_listFiles = cpp.Lib.load("gameplay", "hx_FileSystem_static_listFiles", 2);
+    static var hx_FileSystem_static_loadResourceAliases_Prop = cpp.Lib.load("gameplay", "hx_FileSystem_static_loadResourceAliases_Prop", 1);
+    static var hx_FileSystem_static_loadResourceAliases_Str = cpp.Lib.load("gameplay", "hx_FileSystem_static_loadResourceAliases_Str", 1);
+    static var hx_FileSystem_static_open = cpp.Lib.load("gameplay", "hx_FileSystem_static_open", 2);
+    static var hx_FileSystem_static_openFile = cpp.Lib.load("gameplay", "hx_FileSystem_static_openFile", 2);
+    static var hx_FileSystem_static_readAll = cpp.Lib.load("gameplay", "hx_FileSystem_static_readAll", 2);
+    static var hx_FileSystem_static_resolvePath = cpp.Lib.load("gameplay", "hx_FileSystem_static_resolvePath", 1);
+    static var hx_FileSystem_static_setResourcePath = cpp.Lib.load("gameplay", "hx_FileSystem_static_setResourcePath", 1);
 }
 
 // END

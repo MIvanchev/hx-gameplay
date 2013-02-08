@@ -62,13 +62,13 @@ class PhysicsConstraint extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsConstraint_static_centerOfMassMidpoint:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_static_centerOfMassMidpoint", 2);
-    static var hx_PhysicsConstraint_getBreakingImpulse:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_getBreakingImpulse", 1);
-    static var hx_PhysicsConstraint_static_getRotationOffset:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_static_getRotationOffset", 2);
-    static var hx_PhysicsConstraint_static_getTranslationOffset:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_static_getTranslationOffset", 2);
-    static var hx_PhysicsConstraint_isEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_isEnabled", 1);
-    static var hx_PhysicsConstraint_setBreakingImpulse:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_setBreakingImpulse", 2);
-    static var hx_PhysicsConstraint_setEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_setEnabled", 2);
+    static var hx_PhysicsConstraint_static_centerOfMassMidpoint = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_static_centerOfMassMidpoint", 2);
+    static var hx_PhysicsConstraint_getBreakingImpulse = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_getBreakingImpulse", 1);
+    static var hx_PhysicsConstraint_static_getRotationOffset = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_static_getRotationOffset", 2);
+    static var hx_PhysicsConstraint_static_getTranslationOffset = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_static_getTranslationOffset", 2);
+    static var hx_PhysicsConstraint_isEnabled = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_isEnabled", 1);
+    static var hx_PhysicsConstraint_setBreakingImpulse = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_setBreakingImpulse", 2);
+    static var hx_PhysicsConstraint_setEnabled = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_setEnabled", 2);
 }
 
 // END

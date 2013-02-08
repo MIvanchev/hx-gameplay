@@ -36,8 +36,8 @@ class Font_Text extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Font_Text_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_Font_Text_Construct", 1);
-    static var hx_Font_Text_getText:Dynamic = cpp.Lib.load("gameplay", "hx_Font_Text_getText", 1);
+    static var hx_Font_Text_Construct = cpp.Lib.load("gameplay", "hx_Font_Text_Construct", 1);
+    static var hx_Font_Text_getText = cpp.Lib.load("gameplay", "hx_Font_Text_getText", 1);
 }
 
 // END

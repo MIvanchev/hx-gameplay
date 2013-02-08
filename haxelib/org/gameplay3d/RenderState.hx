@@ -44,11 +44,11 @@ class RenderState extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_RenderState_getParameter:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_getParameter", 2);
-    static var hx_RenderState_getStateBlock:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_getStateBlock", 1);
-    static var hx_RenderState_setParameterAutoBinding_Str_Int:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_setParameterAutoBinding_Str_Int", 3);
-    static var hx_RenderState_setParameterAutoBinding_StrX2:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_setParameterAutoBinding_StrX2", 3);
-    static var hx_RenderState_setStateBlock:Dynamic = cpp.Lib.load("gameplay", "hx_RenderState_setStateBlock", 2);
+    static var hx_RenderState_getParameter = cpp.Lib.load("gameplay", "hx_RenderState_getParameter", 2);
+    static var hx_RenderState_getStateBlock = cpp.Lib.load("gameplay", "hx_RenderState_getStateBlock", 1);
+    static var hx_RenderState_setParameterAutoBinding_Str_Int = cpp.Lib.load("gameplay", "hx_RenderState_setParameterAutoBinding_Str_Int", 3);
+    static var hx_RenderState_setParameterAutoBinding_StrX2 = cpp.Lib.load("gameplay", "hx_RenderState_setParameterAutoBinding_StrX2", 3);
+    static var hx_RenderState_setStateBlock = cpp.Lib.load("gameplay", "hx_RenderState_setStateBlock", 2);
 }
 
 // END

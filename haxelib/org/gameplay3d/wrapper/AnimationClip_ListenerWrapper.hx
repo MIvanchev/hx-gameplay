@@ -44,7 +44,7 @@ class AnimationClip_ListenerWrapper extends ListenerWrapper<AnimationClip_Listen
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AnimationClip_Listener_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_AnimationClip_Listener_Construct", 1);
+    static var hx_AnimationClip_Listener_Construct = cpp.Lib.load("gameplay", "hx_AnimationClip_Listener_Construct", 1);
 }
 
 // END

@@ -194,36 +194,36 @@ class PhysicsVehicle extends PhysicsCollisionObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsVehicle_addWheel:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_addWheel", 2);
-    static var hx_PhysicsVehicle_getBoostGain:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBoostGain", 1);
-    static var hx_PhysicsVehicle_getBoostSpeed:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBoostSpeed", 1);
-    static var hx_PhysicsVehicle_getBrakedownFull:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBrakedownFull", 1);
-    static var hx_PhysicsVehicle_getBrakedownStart:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBrakedownStart", 1);
-    static var hx_PhysicsVehicle_getBrakingForce:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBrakingForce", 1);
-    static var hx_PhysicsVehicle_getDownForce:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getDownForce", 1);
-    static var hx_PhysicsVehicle_getDrivedownFull:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getDrivedownFull", 1);
-    static var hx_PhysicsVehicle_getDrivedownStart:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getDrivedownStart", 1);
-    static var hx_PhysicsVehicle_getDrivingForce:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getDrivingForce", 1);
-    static var hx_PhysicsVehicle_getNumWheels:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getNumWheels", 1);
-    static var hx_PhysicsVehicle_getRigidBody:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getRigidBody", 1);
-    static var hx_PhysicsVehicle_getSpeedKph:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSpeedKph", 1);
-    static var hx_PhysicsVehicle_getSpeedSmoothKph:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSpeedSmoothKph", 1);
-    static var hx_PhysicsVehicle_getSteerdownGain:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSteerdownGain", 1);
-    static var hx_PhysicsVehicle_getSteerdownSpeed:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSteerdownSpeed", 1);
-    static var hx_PhysicsVehicle_getSteeringGain:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSteeringGain", 1);
-    static var hx_PhysicsVehicle_getType:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getType", 1);
-    static var hx_PhysicsVehicle_getWheel:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getWheel", 2);
-    static var hx_PhysicsVehicle_reset:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_reset", 1);
-    static var hx_PhysicsVehicle_setBoost:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setBoost", 3);
-    static var hx_PhysicsVehicle_setBrakedown:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setBrakedown", 3);
-    static var hx_PhysicsVehicle_setBrakingForce:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setBrakingForce", 2);
-    static var hx_PhysicsVehicle_setDownforce:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setDownforce", 2);
-    static var hx_PhysicsVehicle_setDrivedown:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setDrivedown", 3);
-    static var hx_PhysicsVehicle_setDrivingForce:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setDrivingForce", 2);
-    static var hx_PhysicsVehicle_setEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setEnabled", 2);
-    static var hx_PhysicsVehicle_setSteerdown:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setSteerdown", 3);
-    static var hx_PhysicsVehicle_setSteeringGain:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setSteeringGain", 2);
-    static var hx_PhysicsVehicle_update:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_update", 5);
+    static var hx_PhysicsVehicle_addWheel = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_addWheel", 2);
+    static var hx_PhysicsVehicle_getBoostGain = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBoostGain", 1);
+    static var hx_PhysicsVehicle_getBoostSpeed = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBoostSpeed", 1);
+    static var hx_PhysicsVehicle_getBrakedownFull = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBrakedownFull", 1);
+    static var hx_PhysicsVehicle_getBrakedownStart = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBrakedownStart", 1);
+    static var hx_PhysicsVehicle_getBrakingForce = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBrakingForce", 1);
+    static var hx_PhysicsVehicle_getDownForce = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getDownForce", 1);
+    static var hx_PhysicsVehicle_getDrivedownFull = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getDrivedownFull", 1);
+    static var hx_PhysicsVehicle_getDrivedownStart = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getDrivedownStart", 1);
+    static var hx_PhysicsVehicle_getDrivingForce = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getDrivingForce", 1);
+    static var hx_PhysicsVehicle_getNumWheels = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getNumWheels", 1);
+    static var hx_PhysicsVehicle_getRigidBody = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getRigidBody", 1);
+    static var hx_PhysicsVehicle_getSpeedKph = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSpeedKph", 1);
+    static var hx_PhysicsVehicle_getSpeedSmoothKph = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSpeedSmoothKph", 1);
+    static var hx_PhysicsVehicle_getSteerdownGain = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSteerdownGain", 1);
+    static var hx_PhysicsVehicle_getSteerdownSpeed = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSteerdownSpeed", 1);
+    static var hx_PhysicsVehicle_getSteeringGain = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSteeringGain", 1);
+    static var hx_PhysicsVehicle_getType = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getType", 1);
+    static var hx_PhysicsVehicle_getWheel = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getWheel", 2);
+    static var hx_PhysicsVehicle_reset = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_reset", 1);
+    static var hx_PhysicsVehicle_setBoost = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setBoost", 3);
+    static var hx_PhysicsVehicle_setBrakedown = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setBrakedown", 3);
+    static var hx_PhysicsVehicle_setBrakingForce = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setBrakingForce", 2);
+    static var hx_PhysicsVehicle_setDownforce = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setDownforce", 2);
+    static var hx_PhysicsVehicle_setDrivedown = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setDrivedown", 3);
+    static var hx_PhysicsVehicle_setDrivingForce = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setDrivingForce", 2);
+    static var hx_PhysicsVehicle_setEnabled = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setEnabled", 2);
+    static var hx_PhysicsVehicle_setSteerdown = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setSteerdown", 3);
+    static var hx_PhysicsVehicle_setSteeringGain = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setSteeringGain", 2);
+    static var hx_PhysicsVehicle_update = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_update", 5);
 }
 
 // END

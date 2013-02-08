@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import haxe.macro.Expr;
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.immutable.IVector2;
 import org.gameplay3d.immutable.IVector3;
@@ -27,9 +28,11 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
      **************************************************************************/
 
     // DECL: void bindValue(ClassType* classInstance, ParameterType (ClassType::*valueMethod)() const);
-    @:generic
-    public function bindValue_Func<T>(valueMethod:Void->T):Void
+    macro
+    public function bindValue_Func(thisObj:Expr, valueMethod:Expr):Void
     {
+        //var path = Type.getClassName(Float).split(".");
+        //trace(Type.typeof);
     }
 
     // DECL: void bindValue(ClassType* classInstance, ParameterType (ClassType::*valueMethod)() const, unsigned int (ClassType::*countMethod)() const);
@@ -168,27 +171,27 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_MaterialParameter_bindValue:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_bindValue", 3);
-    static var hx_MaterialParameter_getAnimationPropertyComponentCount:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_getAnimationPropertyComponentCount", 2);
-    static var hx_MaterialParameter_getAnimationPropertyValue:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_getAnimationPropertyValue", 3);
-    static var hx_MaterialParameter_getName:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_getName", 1);
-    static var hx_MaterialParameter_getSampler:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_getSampler", 2);
-    static var hx_MaterialParameter_setAnimationPropertyValue:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setAnimationPropertyValue", 4);
-    static var hx_MaterialParameter_setValue_Str_Bool:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Str_Bool", 3);
-    static var hx_MaterialParameter_setValue_Mat:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Mat", 2);
-    static var hx_MaterialParameter_setValue_ArrMat_Int:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrMat_Int", 3);
-    static var hx_MaterialParameter_setValue_Smplr:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Smplr", 2);
-    static var hx_MaterialParameter_setValue_ArrSmplr_Int:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrSmplr_Int", 3);
-    static var hx_MaterialParameter_setValue_V2:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_V2", 2);
-    static var hx_MaterialParameter_setValue_ArrV2_Int:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrV2_Int", 3);
-    static var hx_MaterialParameter_setValue_V3:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_V3", 2);
-    static var hx_MaterialParameter_setValue_ArrV3_Int:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrV3_Int", 3);
-    static var hx_MaterialParameter_setValue_V4:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_V4", 2);
-    static var hx_MaterialParameter_setValue_ArrV4_Int:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrV4_Int", 3);
-    static var hx_MaterialParameter_setValue_ArrFlt_Int:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrFlt_Int", 3);
-    static var hx_MaterialParameter_setValue_ArrInt_Int:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrInt_Int", 3);
-    static var hx_MaterialParameter_setValue_Flt:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Flt", 2);
-    static var hx_MaterialParameter_setValue_Int:Dynamic = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Int", 2);
+    static var hx_MaterialParameter_bindValue = cpp.Lib.load("gameplay", "hx_MaterialParameter_bindValue", 3);
+    static var hx_MaterialParameter_getAnimationPropertyComponentCount = cpp.Lib.load("gameplay", "hx_MaterialParameter_getAnimationPropertyComponentCount", 2);
+    static var hx_MaterialParameter_getAnimationPropertyValue = cpp.Lib.load("gameplay", "hx_MaterialParameter_getAnimationPropertyValue", 3);
+    static var hx_MaterialParameter_getName = cpp.Lib.load("gameplay", "hx_MaterialParameter_getName", 1);
+    static var hx_MaterialParameter_getSampler = cpp.Lib.load("gameplay", "hx_MaterialParameter_getSampler", 2);
+    static var hx_MaterialParameter_setAnimationPropertyValue = cpp.Lib.load("gameplay", "hx_MaterialParameter_setAnimationPropertyValue", 4);
+    static var hx_MaterialParameter_setValue_Str_Bool = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Str_Bool", 3);
+    static var hx_MaterialParameter_setValue_Mat = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Mat", 2);
+    static var hx_MaterialParameter_setValue_ArrMat_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrMat_Int", 3);
+    static var hx_MaterialParameter_setValue_Smplr = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Smplr", 2);
+    static var hx_MaterialParameter_setValue_ArrSmplr_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrSmplr_Int", 3);
+    static var hx_MaterialParameter_setValue_V2 = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_V2", 2);
+    static var hx_MaterialParameter_setValue_ArrV2_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrV2_Int", 3);
+    static var hx_MaterialParameter_setValue_V3 = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_V3", 2);
+    static var hx_MaterialParameter_setValue_ArrV3_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrV3_Int", 3);
+    static var hx_MaterialParameter_setValue_V4 = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_V4", 2);
+    static var hx_MaterialParameter_setValue_ArrV4_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrV4_Int", 3);
+    static var hx_MaterialParameter_setValue_ArrFlt_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrFlt_Int", 3);
+    static var hx_MaterialParameter_setValue_ArrInt_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrInt_Int", 3);
+    static var hx_MaterialParameter_setValue_Flt = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Flt", 2);
+    static var hx_MaterialParameter_setValue_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Int", 2);
 }
 
 // END

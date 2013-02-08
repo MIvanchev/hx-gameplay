@@ -33,9 +33,9 @@ class Uniform extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Uniform_getEffect:Dynamic = cpp.Lib.load("gameplay", "hx_Uniform_getEffect", 1);
-    static var hx_Uniform_getName:Dynamic = cpp.Lib.load("gameplay", "hx_Uniform_getName", 1);
-    static var hx_Uniform_getType:Dynamic = cpp.Lib.load("gameplay", "hx_Uniform_getType", 1);
+    static var hx_Uniform_getEffect = cpp.Lib.load("gameplay", "hx_Uniform_getEffect", 1);
+    static var hx_Uniform_getName = cpp.Lib.load("gameplay", "hx_Uniform_getName", 1);
+    static var hx_Uniform_getType = cpp.Lib.load("gameplay", "hx_Uniform_getType", 1);
 }
 
 // END

@@ -62,14 +62,14 @@ class Bundle extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Bundle_contains:Dynamic = cpp.Lib.load("gameplay", "hx_Bundle_contains", 2);
-    static var hx_Bundle_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Bundle_static_create", 1);
-    static var hx_Bundle_getObjectCount:Dynamic = cpp.Lib.load("gameplay", "hx_Bundle_getObjectCount", 1);
-    static var hx_Bundle_getObjectId:Dynamic = cpp.Lib.load("gameplay", "hx_Bundle_getObjectId", 2);
-    static var hx_Bundle_loadFont:Dynamic = cpp.Lib.load("gameplay", "hx_Bundle_loadFont", 2);
-    static var hx_Bundle_loadMesh:Dynamic = cpp.Lib.load("gameplay", "hx_Bundle_loadMesh", 2);
-    static var hx_Bundle_loadNode:Dynamic = cpp.Lib.load("gameplay", "hx_Bundle_loadNode", 2);
-    static var hx_Bundle_loadScene:Dynamic = cpp.Lib.load("gameplay", "hx_Bundle_loadScene", 2);
+    static var hx_Bundle_contains = cpp.Lib.load("gameplay", "hx_Bundle_contains", 2);
+    static var hx_Bundle_static_create = cpp.Lib.load("gameplay", "hx_Bundle_static_create", 1);
+    static var hx_Bundle_getObjectCount = cpp.Lib.load("gameplay", "hx_Bundle_getObjectCount", 1);
+    static var hx_Bundle_getObjectId = cpp.Lib.load("gameplay", "hx_Bundle_getObjectId", 2);
+    static var hx_Bundle_loadFont = cpp.Lib.load("gameplay", "hx_Bundle_loadFont", 2);
+    static var hx_Bundle_loadMesh = cpp.Lib.load("gameplay", "hx_Bundle_loadMesh", 2);
+    static var hx_Bundle_loadNode = cpp.Lib.load("gameplay", "hx_Bundle_loadNode", 2);
+    static var hx_Bundle_loadScene = cpp.Lib.load("gameplay", "hx_Bundle_loadScene", 2);
 }
 
 // END

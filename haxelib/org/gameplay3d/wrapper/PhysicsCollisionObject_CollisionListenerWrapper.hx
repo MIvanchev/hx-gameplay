@@ -58,7 +58,7 @@ class PhysicsCollisionObject_CollisionListenerWrapper extends ListenerWrapper<Ph
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsCollisionObject_CollisionListener_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionListener_Construct", 1);
+    static var hx_PhysicsCollisionObject_CollisionListener_Construct = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionListener_Construct", 1);
 }
 
 // END

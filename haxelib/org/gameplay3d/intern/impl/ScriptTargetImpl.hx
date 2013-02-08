@@ -29,8 +29,8 @@ class ScriptTargetImpl extends GameplayObject, implements ScriptTarget
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_ScriptTarget_addScriptCallback:Dynamic = cpp.Lib.load("gameplay", "hx_ScriptTarget_addScriptCallback", 3);
-    static var hx_ScriptTarget_removeScriptCallback:Dynamic = cpp.Lib.load("gameplay", "hx_ScriptTarget_removeScriptCallback", 3);
+    static var hx_ScriptTarget_addScriptCallback = cpp.Lib.load("gameplay", "hx_ScriptTarget_addScriptCallback", 3);
+    static var hx_ScriptTarget_removeScriptCallback = cpp.Lib.load("gameplay", "hx_ScriptTarget_removeScriptCallback", 3);
 }
 
 // END

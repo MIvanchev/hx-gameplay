@@ -86,18 +86,18 @@ class Model extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Model_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Model_static_create", 1);
-    static var hx_Model_draw:Dynamic = cpp.Lib.load("gameplay", "hx_Model_draw", 2);
-    static var hx_Model_getMaterial:Dynamic = cpp.Lib.load("gameplay", "hx_Model_getMaterial", 2);
-    static var hx_Model_getMesh:Dynamic = cpp.Lib.load("gameplay", "hx_Model_getMesh", 1);
-    static var hx_Model_getMeshPartCount:Dynamic = cpp.Lib.load("gameplay", "hx_Model_getMeshPartCount", 1);
-    static var hx_Model_getNode:Dynamic = cpp.Lib.load("gameplay", "hx_Model_getNode", 1);
-    static var hx_Model_getSkin:Dynamic = cpp.Lib.load("gameplay", "hx_Model_getSkin", 1);
-    static var hx_Model_hasMaterial:Dynamic = cpp.Lib.load("gameplay", "hx_Model_hasMaterial", 2);
-    static var hx_Model_setMaterial_Str_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Model_setMaterial_Str_Int", 3);
-    static var hx_Model_setMaterial_StrX3_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Model_setMaterial_StrX3_Int", 5);
-    static var hx_Model_setMaterial_Mtrl_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Model_setMaterial_Mtrl_Int", 3);
-    static var hx_Model_setNode:Dynamic = cpp.Lib.load("gameplay", "hx_Model_setNode", 2);
+    static var hx_Model_static_create = cpp.Lib.load("gameplay", "hx_Model_static_create", 1);
+    static var hx_Model_draw = cpp.Lib.load("gameplay", "hx_Model_draw", 2);
+    static var hx_Model_getMaterial = cpp.Lib.load("gameplay", "hx_Model_getMaterial", 2);
+    static var hx_Model_getMesh = cpp.Lib.load("gameplay", "hx_Model_getMesh", 1);
+    static var hx_Model_getMeshPartCount = cpp.Lib.load("gameplay", "hx_Model_getMeshPartCount", 1);
+    static var hx_Model_getNode = cpp.Lib.load("gameplay", "hx_Model_getNode", 1);
+    static var hx_Model_getSkin = cpp.Lib.load("gameplay", "hx_Model_getSkin", 1);
+    static var hx_Model_hasMaterial = cpp.Lib.load("gameplay", "hx_Model_hasMaterial", 2);
+    static var hx_Model_setMaterial_Str_Int = cpp.Lib.load("gameplay", "hx_Model_setMaterial_Str_Int", 3);
+    static var hx_Model_setMaterial_StrX3_Int = cpp.Lib.load("gameplay", "hx_Model_setMaterial_StrX3_Int", 5);
+    static var hx_Model_setMaterial_Mtrl_Int = cpp.Lib.load("gameplay", "hx_Model_setMaterial_Mtrl_Int", 3);
+    static var hx_Model_setNode = cpp.Lib.load("gameplay", "hx_Model_setNode", 2);
 }
 
 // END

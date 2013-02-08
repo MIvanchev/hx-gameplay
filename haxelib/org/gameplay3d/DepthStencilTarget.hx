@@ -50,12 +50,12 @@ class DepthStencilTarget extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_DepthStencilTarget_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_static_create", 4);
-    static var hx_DepthStencilTarget_static_getDepthStencilTarget:Dynamic = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_static_getDepthStencilTarget", 1);
-    static var hx_DepthStencilTarget_getFormat:Dynamic = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_getFormat", 1);
-    static var hx_DepthStencilTarget_getHeight:Dynamic = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_getHeight", 1);
-    static var hx_DepthStencilTarget_getId:Dynamic = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_getId", 1);
-    static var hx_DepthStencilTarget_getWidth:Dynamic = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_getWidth", 1);
+    static var hx_DepthStencilTarget_static_create = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_static_create", 4);
+    static var hx_DepthStencilTarget_static_getDepthStencilTarget = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_static_getDepthStencilTarget", 1);
+    static var hx_DepthStencilTarget_getFormat = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_getFormat", 1);
+    static var hx_DepthStencilTarget_getHeight = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_getHeight", 1);
+    static var hx_DepthStencilTarget_getId = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_getId", 1);
+    static var hx_DepthStencilTarget_getWidth = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_getWidth", 1);
 }
 
 // END

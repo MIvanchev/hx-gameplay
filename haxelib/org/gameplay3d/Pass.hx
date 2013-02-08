@@ -50,12 +50,12 @@ class Pass extends RenderState
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Pass_bind:Dynamic = cpp.Lib.load("gameplay", "hx_Pass_bind", 1);
-    static var hx_Pass_getEffect:Dynamic = cpp.Lib.load("gameplay", "hx_Pass_getEffect", 1);
-    static var hx_Pass_getId:Dynamic = cpp.Lib.load("gameplay", "hx_Pass_getId", 1);
-    static var hx_Pass_getVertexAttributeBinding:Dynamic = cpp.Lib.load("gameplay", "hx_Pass_getVertexAttributeBinding", 1);
-    static var hx_Pass_setVertexAttributeBinding:Dynamic = cpp.Lib.load("gameplay", "hx_Pass_setVertexAttributeBinding", 2);
-    static var hx_Pass_unbind:Dynamic = cpp.Lib.load("gameplay", "hx_Pass_unbind", 1);
+    static var hx_Pass_bind = cpp.Lib.load("gameplay", "hx_Pass_bind", 1);
+    static var hx_Pass_getEffect = cpp.Lib.load("gameplay", "hx_Pass_getEffect", 1);
+    static var hx_Pass_getId = cpp.Lib.load("gameplay", "hx_Pass_getId", 1);
+    static var hx_Pass_getVertexAttributeBinding = cpp.Lib.load("gameplay", "hx_Pass_getVertexAttributeBinding", 1);
+    static var hx_Pass_setVertexAttributeBinding = cpp.Lib.load("gameplay", "hx_Pass_setVertexAttributeBinding", 2);
+    static var hx_Pass_unbind = cpp.Lib.load("gameplay", "hx_Pass_unbind", 1);
 }
 
 // END

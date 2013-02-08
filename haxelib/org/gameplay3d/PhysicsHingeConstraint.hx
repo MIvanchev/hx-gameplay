@@ -20,7 +20,7 @@ class PhysicsHingeConstraint extends PhysicsConstraint
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsHingeConstraint_setLimits:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsHingeConstraint_setLimits", 4);
+    static var hx_PhysicsHingeConstraint_setLimits = cpp.Lib.load("gameplay", "hx_PhysicsHingeConstraint_setLimits", 4);
 }
 
 // END

@@ -20,7 +20,7 @@ class FlowLayout extends Layout
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_FlowLayout_getType:Dynamic = cpp.Lib.load("gameplay", "hx_FlowLayout_getType", 1);
+    static var hx_FlowLayout_getType = cpp.Lib.load("gameplay", "hx_FlowLayout_getType", 1);
 }
 
 // END

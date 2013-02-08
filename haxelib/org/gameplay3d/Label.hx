@@ -45,11 +45,11 @@ class Label extends Control
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Label_addListener:Dynamic = cpp.Lib.load("gameplay", "hx_Label_addListener", 3);
-    static var hx_Label_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Label_static_create", 2);
-    static var hx_Label_getText:Dynamic = cpp.Lib.load("gameplay", "hx_Label_getText", 1);
-    static var hx_Label_getType:Dynamic = cpp.Lib.load("gameplay", "hx_Label_getType", 1);
-    static var hx_Label_setText:Dynamic = cpp.Lib.load("gameplay", "hx_Label_setText", 2);
+    static var hx_Label_addListener = cpp.Lib.load("gameplay", "hx_Label_addListener", 3);
+    static var hx_Label_static_create = cpp.Lib.load("gameplay", "hx_Label_static_create", 2);
+    static var hx_Label_getText = cpp.Lib.load("gameplay", "hx_Label_getText", 1);
+    static var hx_Label_getType = cpp.Lib.load("gameplay", "hx_Label_getType", 1);
+    static var hx_Label_setText = cpp.Lib.load("gameplay", "hx_Label_setText", 2);
 }
 
 // END

@@ -71,7 +71,7 @@ class AIState_ListenerWrapper extends ListenerWrapper<AIState_Listener>, impleme
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AIState_Listener_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_AIState_Listener_Construct", 3);
+    static var hx_AIState_Listener_Construct = cpp.Lib.load("gameplay", "hx_AIState_Listener_Construct", 3);
 }
 
 // END

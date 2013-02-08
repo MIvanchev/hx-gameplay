@@ -60,13 +60,13 @@ class AIAgent extends ScriptTargetImpl, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AIAgent_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_AIAgent_static_create", 0);
-    static var hx_AIAgent_getId:Dynamic = cpp.Lib.load("gameplay", "hx_AIAgent_getId", 1);
-    static var hx_AIAgent_getNode:Dynamic = cpp.Lib.load("gameplay", "hx_AIAgent_getNode", 1);
-    static var hx_AIAgent_getStateMachine:Dynamic = cpp.Lib.load("gameplay", "hx_AIAgent_getStateMachine", 1);
-    static var hx_AIAgent_isEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_AIAgent_isEnabled", 1);
-    static var hx_AIAgent_setEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_AIAgent_setEnabled", 2);
-    static var hx_AIAgent_setListener:Dynamic = cpp.Lib.load("gameplay", "hx_AIAgent_setListener", 2);
+    static var hx_AIAgent_static_create = cpp.Lib.load("gameplay", "hx_AIAgent_static_create", 0);
+    static var hx_AIAgent_getId = cpp.Lib.load("gameplay", "hx_AIAgent_getId", 1);
+    static var hx_AIAgent_getNode = cpp.Lib.load("gameplay", "hx_AIAgent_getNode", 1);
+    static var hx_AIAgent_getStateMachine = cpp.Lib.load("gameplay", "hx_AIAgent_getStateMachine", 1);
+    static var hx_AIAgent_isEnabled = cpp.Lib.load("gameplay", "hx_AIAgent_isEnabled", 1);
+    static var hx_AIAgent_setEnabled = cpp.Lib.load("gameplay", "hx_AIAgent_setEnabled", 2);
+    static var hx_AIAgent_setListener = cpp.Lib.load("gameplay", "hx_AIAgent_setListener", 2);
 }
 
 // END

@@ -32,8 +32,8 @@ class Joint extends Node
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Joint_getInverseBindPose:Dynamic = cpp.Lib.load("gameplay", "hx_Joint_getInverseBindPose", 1);
-    static var hx_Joint_getType:Dynamic = cpp.Lib.load("gameplay", "hx_Joint_getType", 1);
+    static var hx_Joint_getInverseBindPose = cpp.Lib.load("gameplay", "hx_Joint_getInverseBindPose", 1);
+    static var hx_Joint_getType = cpp.Lib.load("gameplay", "hx_Joint_getType", 1);
 }
 
 // END

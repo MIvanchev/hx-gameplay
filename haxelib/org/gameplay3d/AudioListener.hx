@@ -120,22 +120,22 @@ class AudioListener extends Transform_ListenerImpl
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AudioListener_getCamera:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_getCamera", 1);
-    static var hx_AudioListener_getGain:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_getGain", 1);
-    static var hx_AudioListener_static_getInstance:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_static_getInstance", 0);
-    static var hx_AudioListener_getOrientation:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_getOrientation", 1);
-    static var hx_AudioListener_getOrientationForward:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_getOrientationForward", 1);
-    static var hx_AudioListener_getOrientationUp:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_getOrientationUp", 1);
-    static var hx_AudioListener_getPosition:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_getPosition", 1);
-    static var hx_AudioListener_getVelocity:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_getVelocity", 1);
-    static var hx_AudioListener_setCamera:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_setCamera", 2);
-    static var hx_AudioListener_setGain:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_setGain", 2);
-    static var hx_AudioListener_setOrientation_V3X2:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_setOrientation_V3X2", 3);
-    static var hx_AudioListener_setOrientation_FltX6:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_setOrientation_FltX6", -1);
-    static var hx_AudioListener_setPosition_V3:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_setPosition_V3", 2);
-    static var hx_AudioListener_setPosition_FltX3:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_setPosition_FltX3", 4);
-    static var hx_AudioListener_setVelocity_V3:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_setVelocity_V3", 2);
-    static var hx_AudioListener_setVelocity_FltX3:Dynamic = cpp.Lib.load("gameplay", "hx_AudioListener_setVelocity_FltX3", 4);
+    static var hx_AudioListener_getCamera = cpp.Lib.load("gameplay", "hx_AudioListener_getCamera", 1);
+    static var hx_AudioListener_getGain = cpp.Lib.load("gameplay", "hx_AudioListener_getGain", 1);
+    static var hx_AudioListener_static_getInstance = cpp.Lib.load("gameplay", "hx_AudioListener_static_getInstance", 0);
+    static var hx_AudioListener_getOrientation = cpp.Lib.load("gameplay", "hx_AudioListener_getOrientation", 1);
+    static var hx_AudioListener_getOrientationForward = cpp.Lib.load("gameplay", "hx_AudioListener_getOrientationForward", 1);
+    static var hx_AudioListener_getOrientationUp = cpp.Lib.load("gameplay", "hx_AudioListener_getOrientationUp", 1);
+    static var hx_AudioListener_getPosition = cpp.Lib.load("gameplay", "hx_AudioListener_getPosition", 1);
+    static var hx_AudioListener_getVelocity = cpp.Lib.load("gameplay", "hx_AudioListener_getVelocity", 1);
+    static var hx_AudioListener_setCamera = cpp.Lib.load("gameplay", "hx_AudioListener_setCamera", 2);
+    static var hx_AudioListener_setGain = cpp.Lib.load("gameplay", "hx_AudioListener_setGain", 2);
+    static var hx_AudioListener_setOrientation_V3X2 = cpp.Lib.load("gameplay", "hx_AudioListener_setOrientation_V3X2", 3);
+    static var hx_AudioListener_setOrientation_FltX6 = cpp.Lib.load("gameplay", "hx_AudioListener_setOrientation_FltX6", -1);
+    static var hx_AudioListener_setPosition_V3 = cpp.Lib.load("gameplay", "hx_AudioListener_setPosition_V3", 2);
+    static var hx_AudioListener_setPosition_FltX3 = cpp.Lib.load("gameplay", "hx_AudioListener_setPosition_FltX3", 4);
+    static var hx_AudioListener_setVelocity_V3 = cpp.Lib.load("gameplay", "hx_AudioListener_setVelocity_V3", 2);
+    static var hx_AudioListener_setVelocity_FltX3 = cpp.Lib.load("gameplay", "hx_AudioListener_setVelocity_FltX3", 4);
 }
 
 // END

@@ -71,15 +71,15 @@ class MeshBatch extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_MeshBatch_add:Dynamic = cpp.Lib.load("gameplay", "hx_MeshBatch_add", 5);
-    static var hx_MeshBatch_static_create_Frmt_Int_Mtrl_Bool_IntX2:Dynamic = cpp.Lib.load("gameplay", "hx_MeshBatch_static_create_Frmt_Int_Mtrl_Bool_IntX2", -1);
-    static var hx_MeshBatch_static_create_Frmt_Int_Str_Bool_IntX2:Dynamic = cpp.Lib.load("gameplay", "hx_MeshBatch_static_create_Frmt_Int_Str_Bool_IntX2", -1);
-    static var hx_MeshBatch_draw:Dynamic = cpp.Lib.load("gameplay", "hx_MeshBatch_draw", 1);
-    static var hx_MeshBatch_finish:Dynamic = cpp.Lib.load("gameplay", "hx_MeshBatch_finish", 1);
-    static var hx_MeshBatch_getCapacity:Dynamic = cpp.Lib.load("gameplay", "hx_MeshBatch_getCapacity", 1);
-    static var hx_MeshBatch_getMaterial:Dynamic = cpp.Lib.load("gameplay", "hx_MeshBatch_getMaterial", 1);
-    static var hx_MeshBatch_setCapacity:Dynamic = cpp.Lib.load("gameplay", "hx_MeshBatch_setCapacity", 2);
-    static var hx_MeshBatch_start:Dynamic = cpp.Lib.load("gameplay", "hx_MeshBatch_start", 1);
+    static var hx_MeshBatch_add = cpp.Lib.load("gameplay", "hx_MeshBatch_add", 5);
+    static var hx_MeshBatch_static_create_Frmt_Int_Mtrl_Bool_IntX2 = cpp.Lib.load("gameplay", "hx_MeshBatch_static_create_Frmt_Int_Mtrl_Bool_IntX2", -1);
+    static var hx_MeshBatch_static_create_Frmt_Int_Str_Bool_IntX2 = cpp.Lib.load("gameplay", "hx_MeshBatch_static_create_Frmt_Int_Str_Bool_IntX2", -1);
+    static var hx_MeshBatch_draw = cpp.Lib.load("gameplay", "hx_MeshBatch_draw", 1);
+    static var hx_MeshBatch_finish = cpp.Lib.load("gameplay", "hx_MeshBatch_finish", 1);
+    static var hx_MeshBatch_getCapacity = cpp.Lib.load("gameplay", "hx_MeshBatch_getCapacity", 1);
+    static var hx_MeshBatch_getMaterial = cpp.Lib.load("gameplay", "hx_MeshBatch_getMaterial", 1);
+    static var hx_MeshBatch_setCapacity = cpp.Lib.load("gameplay", "hx_MeshBatch_setCapacity", 2);
+    static var hx_MeshBatch_start = cpp.Lib.load("gameplay", "hx_MeshBatch_start", 1);
 }
 
 // END

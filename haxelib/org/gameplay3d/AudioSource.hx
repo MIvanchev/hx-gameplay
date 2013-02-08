@@ -129,24 +129,24 @@ class AudioSource extends Transform_ListenerImpl, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AudioSource_static_create_Prop:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_static_create_Prop", 1);
-    static var hx_AudioSource_static_create_Str:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_static_create_Str", 1);
-    static var hx_AudioSource_getGain:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_getGain", 1);
-    static var hx_AudioSource_getNode:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_getNode", 1);
-    static var hx_AudioSource_getPitch:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_getPitch", 1);
-    static var hx_AudioSource_getState:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_getState", 1);
-    static var hx_AudioSource_getVelocity:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_getVelocity", 1);
-    static var hx_AudioSource_isLooped:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_isLooped", 1);
-    static var hx_AudioSource_pause:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_pause", 1);
-    static var hx_AudioSource_play:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_play", 1);
-    static var hx_AudioSource_resume:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_resume", 1);
-    static var hx_AudioSource_rewind:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_rewind", 1);
-    static var hx_AudioSource_setGain:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_setGain", 2);
-    static var hx_AudioSource_setLooped:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_setLooped", 2);
-    static var hx_AudioSource_setPitch:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_setPitch", 2);
-    static var hx_AudioSource_setVelocity_V3:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_setVelocity_V3", 2);
-    static var hx_AudioSource_setVelocity_FltX3:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_setVelocity_FltX3", 4);
-    static var hx_AudioSource_stop:Dynamic = cpp.Lib.load("gameplay", "hx_AudioSource_stop", 1);
+    static var hx_AudioSource_static_create_Prop = cpp.Lib.load("gameplay", "hx_AudioSource_static_create_Prop", 1);
+    static var hx_AudioSource_static_create_Str = cpp.Lib.load("gameplay", "hx_AudioSource_static_create_Str", 1);
+    static var hx_AudioSource_getGain = cpp.Lib.load("gameplay", "hx_AudioSource_getGain", 1);
+    static var hx_AudioSource_getNode = cpp.Lib.load("gameplay", "hx_AudioSource_getNode", 1);
+    static var hx_AudioSource_getPitch = cpp.Lib.load("gameplay", "hx_AudioSource_getPitch", 1);
+    static var hx_AudioSource_getState = cpp.Lib.load("gameplay", "hx_AudioSource_getState", 1);
+    static var hx_AudioSource_getVelocity = cpp.Lib.load("gameplay", "hx_AudioSource_getVelocity", 1);
+    static var hx_AudioSource_isLooped = cpp.Lib.load("gameplay", "hx_AudioSource_isLooped", 1);
+    static var hx_AudioSource_pause = cpp.Lib.load("gameplay", "hx_AudioSource_pause", 1);
+    static var hx_AudioSource_play = cpp.Lib.load("gameplay", "hx_AudioSource_play", 1);
+    static var hx_AudioSource_resume = cpp.Lib.load("gameplay", "hx_AudioSource_resume", 1);
+    static var hx_AudioSource_rewind = cpp.Lib.load("gameplay", "hx_AudioSource_rewind", 1);
+    static var hx_AudioSource_setGain = cpp.Lib.load("gameplay", "hx_AudioSource_setGain", 2);
+    static var hx_AudioSource_setLooped = cpp.Lib.load("gameplay", "hx_AudioSource_setLooped", 2);
+    static var hx_AudioSource_setPitch = cpp.Lib.load("gameplay", "hx_AudioSource_setPitch", 2);
+    static var hx_AudioSource_setVelocity_V3 = cpp.Lib.load("gameplay", "hx_AudioSource_setVelocity_V3", 2);
+    static var hx_AudioSource_setVelocity_FltX3 = cpp.Lib.load("gameplay", "hx_AudioSource_setVelocity_FltX3", 4);
+    static var hx_AudioSource_stop = cpp.Lib.load("gameplay", "hx_AudioSource_stop", 1);
 }
 
 // END

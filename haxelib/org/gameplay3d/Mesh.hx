@@ -159,28 +159,28 @@ class Mesh extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Mesh_addPart:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_addPart", 5);
-    static var hx_Mesh_static_createBoundingBox:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_static_createBoundingBox", 1);
-    static var hx_Mesh_static_createLines:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_static_createLines", 2);
-    static var hx_Mesh_static_createMesh:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_static_createMesh", 3);
-    static var hx_Mesh_static_createQuad_V3X4:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_static_createQuad_V3X4", 4);
-    static var hx_Mesh_static_createQuad_FltX8:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_static_createQuad_FltX8", -1);
-    static var hx_Mesh_static_createQuadFullscreen:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_static_createQuadFullscreen", 0);
-    static var hx_Mesh_getBoundingBox:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_getBoundingBox", 1);
-    static var hx_Mesh_getBoundingSphere:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_getBoundingSphere", 1);
-    static var hx_Mesh_getPart:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_getPart", 2);
-    static var hx_Mesh_getPartCount:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_getPartCount", 1);
-    static var hx_Mesh_getPrimitiveType:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_getPrimitiveType", 1);
-    static var hx_Mesh_getUrl:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_getUrl", 1);
-    static var hx_Mesh_getVertexBuffer:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_getVertexBuffer", 1);
-    static var hx_Mesh_getVertexCount:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_getVertexCount", 1);
-    static var hx_Mesh_getVertexFormat:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_getVertexFormat", 1);
-    static var hx_Mesh_getVertexSize:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_getVertexSize", 1);
-    static var hx_Mesh_isDynamic:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_isDynamic", 1);
-    static var hx_Mesh_setBoundingBox:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_setBoundingBox", 2);
-    static var hx_Mesh_setBoundingSphere:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_setBoundingSphere", 2);
-    static var hx_Mesh_setPrimitiveType:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_setPrimitiveType", 2);
-    static var hx_Mesh_setVertexData:Dynamic = cpp.Lib.load("gameplay", "hx_Mesh_setVertexData", 4);
+    static var hx_Mesh_addPart = cpp.Lib.load("gameplay", "hx_Mesh_addPart", 5);
+    static var hx_Mesh_static_createBoundingBox = cpp.Lib.load("gameplay", "hx_Mesh_static_createBoundingBox", 1);
+    static var hx_Mesh_static_createLines = cpp.Lib.load("gameplay", "hx_Mesh_static_createLines", 2);
+    static var hx_Mesh_static_createMesh = cpp.Lib.load("gameplay", "hx_Mesh_static_createMesh", 3);
+    static var hx_Mesh_static_createQuad_V3X4 = cpp.Lib.load("gameplay", "hx_Mesh_static_createQuad_V3X4", 4);
+    static var hx_Mesh_static_createQuad_FltX8 = cpp.Lib.load("gameplay", "hx_Mesh_static_createQuad_FltX8", -1);
+    static var hx_Mesh_static_createQuadFullscreen = cpp.Lib.load("gameplay", "hx_Mesh_static_createQuadFullscreen", 0);
+    static var hx_Mesh_getBoundingBox = cpp.Lib.load("gameplay", "hx_Mesh_getBoundingBox", 1);
+    static var hx_Mesh_getBoundingSphere = cpp.Lib.load("gameplay", "hx_Mesh_getBoundingSphere", 1);
+    static var hx_Mesh_getPart = cpp.Lib.load("gameplay", "hx_Mesh_getPart", 2);
+    static var hx_Mesh_getPartCount = cpp.Lib.load("gameplay", "hx_Mesh_getPartCount", 1);
+    static var hx_Mesh_getPrimitiveType = cpp.Lib.load("gameplay", "hx_Mesh_getPrimitiveType", 1);
+    static var hx_Mesh_getUrl = cpp.Lib.load("gameplay", "hx_Mesh_getUrl", 1);
+    static var hx_Mesh_getVertexBuffer = cpp.Lib.load("gameplay", "hx_Mesh_getVertexBuffer", 1);
+    static var hx_Mesh_getVertexCount = cpp.Lib.load("gameplay", "hx_Mesh_getVertexCount", 1);
+    static var hx_Mesh_getVertexFormat = cpp.Lib.load("gameplay", "hx_Mesh_getVertexFormat", 1);
+    static var hx_Mesh_getVertexSize = cpp.Lib.load("gameplay", "hx_Mesh_getVertexSize", 1);
+    static var hx_Mesh_isDynamic = cpp.Lib.load("gameplay", "hx_Mesh_isDynamic", 1);
+    static var hx_Mesh_setBoundingBox = cpp.Lib.load("gameplay", "hx_Mesh_setBoundingBox", 2);
+    static var hx_Mesh_setBoundingSphere = cpp.Lib.load("gameplay", "hx_Mesh_setBoundingSphere", 2);
+    static var hx_Mesh_setPrimitiveType = cpp.Lib.load("gameplay", "hx_Mesh_setPrimitiveType", 2);
+    static var hx_Mesh_setVertexData = cpp.Lib.load("gameplay", "hx_Mesh_setVertexData", 4);
 }
 
 // END

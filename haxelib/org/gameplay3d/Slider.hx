@@ -118,23 +118,23 @@ class Slider extends Label
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Slider_addListener:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_addListener", 3);
-    static var hx_Slider_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_static_create", 2);
-    static var hx_Slider_getMax:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_getMax", 1);
-    static var hx_Slider_getMin:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_getMin", 1);
-    static var hx_Slider_getStep:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_getStep", 1);
-    static var hx_Slider_getType:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_getType", 1);
-    static var hx_Slider_getValue:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_getValue", 1);
-    static var hx_Slider_getValueTextAlignment:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_getValueTextAlignment", 1);
-    static var hx_Slider_getValueTextPrecision:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_getValueTextPrecision", 1);
-    static var hx_Slider_isValueTextVisible:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_isValueTextVisible", 1);
-    static var hx_Slider_setMax:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setMax", 2);
-    static var hx_Slider_setMin:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setMin", 2);
-    static var hx_Slider_setStep:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setStep", 2);
-    static var hx_Slider_setValue:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setValue", 2);
-    static var hx_Slider_setValueTextAlignment:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setValueTextAlignment", 2);
-    static var hx_Slider_setValueTextPrecision:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setValueTextPrecision", 2);
-    static var hx_Slider_setValueTextVisible:Dynamic = cpp.Lib.load("gameplay", "hx_Slider_setValueTextVisible", 2);
+    static var hx_Slider_addListener = cpp.Lib.load("gameplay", "hx_Slider_addListener", 3);
+    static var hx_Slider_static_create = cpp.Lib.load("gameplay", "hx_Slider_static_create", 2);
+    static var hx_Slider_getMax = cpp.Lib.load("gameplay", "hx_Slider_getMax", 1);
+    static var hx_Slider_getMin = cpp.Lib.load("gameplay", "hx_Slider_getMin", 1);
+    static var hx_Slider_getStep = cpp.Lib.load("gameplay", "hx_Slider_getStep", 1);
+    static var hx_Slider_getType = cpp.Lib.load("gameplay", "hx_Slider_getType", 1);
+    static var hx_Slider_getValue = cpp.Lib.load("gameplay", "hx_Slider_getValue", 1);
+    static var hx_Slider_getValueTextAlignment = cpp.Lib.load("gameplay", "hx_Slider_getValueTextAlignment", 1);
+    static var hx_Slider_getValueTextPrecision = cpp.Lib.load("gameplay", "hx_Slider_getValueTextPrecision", 1);
+    static var hx_Slider_isValueTextVisible = cpp.Lib.load("gameplay", "hx_Slider_isValueTextVisible", 1);
+    static var hx_Slider_setMax = cpp.Lib.load("gameplay", "hx_Slider_setMax", 2);
+    static var hx_Slider_setMin = cpp.Lib.load("gameplay", "hx_Slider_setMin", 2);
+    static var hx_Slider_setStep = cpp.Lib.load("gameplay", "hx_Slider_setStep", 2);
+    static var hx_Slider_setValue = cpp.Lib.load("gameplay", "hx_Slider_setValue", 2);
+    static var hx_Slider_setValueTextAlignment = cpp.Lib.load("gameplay", "hx_Slider_setValueTextAlignment", 2);
+    static var hx_Slider_setValueTextPrecision = cpp.Lib.load("gameplay", "hx_Slider_setValueTextPrecision", 2);
+    static var hx_Slider_setValueTextVisible = cpp.Lib.load("gameplay", "hx_Slider_setValueTextVisible", 2);
 }
 
 // END

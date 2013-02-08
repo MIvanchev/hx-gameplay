@@ -131,28 +131,28 @@ class PhysicsCollisionObject extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsCollisionObject_addCollisionListener_Lsnr_ColObj:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_addCollisionListener_Lsnr_ColObj", 3);
-    static var hx_PhysicsCollisionObject_addCollisionListener_Str_ColObj:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_addCollisionListener_Str_ColObj", 3);
-    static var hx_PhysicsCollisionObject_asCharacter:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asCharacter", 1);
-    static var hx_PhysicsCollisionObject_asGhostObject:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asGhostObject", 1);
-    static var hx_PhysicsCollisionObject_asRigidBody:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asRigidBody", 1);
-    static var hx_PhysicsCollisionObject_asVehicle:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asVehicle", 1);
-    static var hx_PhysicsCollisionObject_asVehicleWheel:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asVehicleWheel", 1);
-    static var hx_PhysicsCollisionObject_collidesWith:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_collidesWith", 2);
-    static var hx_PhysicsCollisionObject_getCollisionShape:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getCollisionShape", 1);
-    static var hx_PhysicsCollisionObject_getNode:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getNode", 1);
-    static var hx_PhysicsCollisionObject_getShapeType:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getShapeType", 1);
-    static var hx_PhysicsCollisionObject_getType:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getType", 1);
-    static var hx_PhysicsCollisionObject_isDynamic:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_isDynamic", 1);
-    static var hx_PhysicsCollisionObject_isEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_isEnabled", 1);
-    static var hx_PhysicsCollisionObject_isKinematic:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_isKinematic", 1);
-    static var hx_PhysicsCollisionObject_removeCollisionListener_Lsnr_ColObj:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_removeCollisionListener_Lsnr_ColObj", 3);
-    static var hx_PhysicsCollisionObject_removeCollisionListener_Str_ColObj:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_removeCollisionListener_Str_ColObj", 3);
-    static var hx_PhysicsCollisionObject_setEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_setEnabled", 2);
-    static var hx_PhysicsCollisionObject_CollisionListener_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionListener_Construct", 1);
-    static var hx_PhysicsCollisionObject_CollisionPair_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_Construct", 2);
-    static var hx_PhysicsCollisionObject_CollisionPair_property_objectA_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_property_objectA_get", 1);
-    static var hx_PhysicsCollisionObject_CollisionPair_property_objectB_get:Dynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_property_objectB_get", 1);
+    static var hx_PhysicsCollisionObject_addCollisionListener_Lsnr_ColObj = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_addCollisionListener_Lsnr_ColObj", 3);
+    static var hx_PhysicsCollisionObject_addCollisionListener_Str_ColObj = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_addCollisionListener_Str_ColObj", 3);
+    static var hx_PhysicsCollisionObject_asCharacter = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asCharacter", 1);
+    static var hx_PhysicsCollisionObject_asGhostObject = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asGhostObject", 1);
+    static var hx_PhysicsCollisionObject_asRigidBody = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asRigidBody", 1);
+    static var hx_PhysicsCollisionObject_asVehicle = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asVehicle", 1);
+    static var hx_PhysicsCollisionObject_asVehicleWheel = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asVehicleWheel", 1);
+    static var hx_PhysicsCollisionObject_collidesWith = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_collidesWith", 2);
+    static var hx_PhysicsCollisionObject_getCollisionShape = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getCollisionShape", 1);
+    static var hx_PhysicsCollisionObject_getNode = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getNode", 1);
+    static var hx_PhysicsCollisionObject_getShapeType = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getShapeType", 1);
+    static var hx_PhysicsCollisionObject_getType = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getType", 1);
+    static var hx_PhysicsCollisionObject_isDynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_isDynamic", 1);
+    static var hx_PhysicsCollisionObject_isEnabled = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_isEnabled", 1);
+    static var hx_PhysicsCollisionObject_isKinematic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_isKinematic", 1);
+    static var hx_PhysicsCollisionObject_removeCollisionListener_Lsnr_ColObj = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_removeCollisionListener_Lsnr_ColObj", 3);
+    static var hx_PhysicsCollisionObject_removeCollisionListener_Str_ColObj = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_removeCollisionListener_Str_ColObj", 3);
+    static var hx_PhysicsCollisionObject_setEnabled = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_setEnabled", 2);
+    static var hx_PhysicsCollisionObject_CollisionListener_Construct = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionListener_Construct", 1);
+    static var hx_PhysicsCollisionObject_CollisionPair_Construct = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_Construct", 2);
+    static var hx_PhysicsCollisionObject_CollisionPair_property_objectA_get = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_property_objectA_get", 1);
+    static var hx_PhysicsCollisionObject_CollisionPair_property_objectB_get = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_property_objectB_get", 1);
 }
 
 // END

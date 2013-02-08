@@ -44,11 +44,11 @@ class Logger extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Logger_static_isEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_Logger_static_isEnabled", 1);
-    static var hx_Logger_static_log:Dynamic = cpp.Lib.load("gameplay", "hx_Logger_static_log", 2);
-    static var hx_Logger_static_set_Int_Str:Dynamic = cpp.Lib.load("gameplay", "hx_Logger_static_set_Int_Str", 2);
-    static var hx_Logger_static_set_Int_Func:Dynamic = cpp.Lib.load("gameplay", "hx_Logger_static_set_Int_Func", 2);
-    static var hx_Logger_static_setEnabled:Dynamic = cpp.Lib.load("gameplay", "hx_Logger_static_setEnabled", 2);
+    static var hx_Logger_static_isEnabled = cpp.Lib.load("gameplay", "hx_Logger_static_isEnabled", 1);
+    static var hx_Logger_static_log = cpp.Lib.load("gameplay", "hx_Logger_static_log", 2);
+    static var hx_Logger_static_set_Int_Str = cpp.Lib.load("gameplay", "hx_Logger_static_set_Int_Str", 2);
+    static var hx_Logger_static_set_Int_Func = cpp.Lib.load("gameplay", "hx_Logger_static_set_Int_Func", 2);
+    static var hx_Logger_static_setEnabled = cpp.Lib.load("gameplay", "hx_Logger_static_setEnabled", 2);
 }
 
 // END

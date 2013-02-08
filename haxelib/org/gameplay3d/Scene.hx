@@ -171,27 +171,27 @@ class Scene extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Scene_addNode_Str:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_addNode_Str", 2);
-    static var hx_Scene_addNode_Node:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_addNode_Node", 2);
-    static var hx_Scene_bindAudioListenerToCamera:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_bindAudioListenerToCamera", 2);
-    static var hx_Scene_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_static_create", 0);
-    static var hx_Scene_drawDebug:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_drawDebug", 2);
-    static var hx_Scene_findNode:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_findNode", 4);
-    static var hx_Scene_findNodes:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_findNodes", 5);
-    static var hx_Scene_getActiveCamera:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_getActiveCamera", 1);
-    static var hx_Scene_getAmbientColor:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_getAmbientColor", 1);
-    static var hx_Scene_getFirstNode:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_getFirstNode", 1);
-    static var hx_Scene_getId:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_getId", 1);
-    static var hx_Scene_getNodeCount:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_getNodeCount", 1);
-    static var hx_Scene_static_load:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_static_load", 1);
-    static var hx_Scene_removeAllNodes:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_removeAllNodes", 1);
-    static var hx_Scene_removeNode:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_removeNode", 2);
-    static var hx_Scene_setActiveCamera:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_setActiveCamera", 2);
-    static var hx_Scene_setAmbientColor:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_setAmbientColor", 4);
-    static var hx_Scene_setId:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_setId", 2);
-    static var hx_Scene_visit_Str:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_visit_Str", 2);
-    static var hx_Scene_visit_Func:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_visit_Func", 2);
-    static var hx_Scene_visit_Func_Int:Dynamic = cpp.Lib.load("gameplay", "hx_Scene_visit_Func_Int", 3);
+    static var hx_Scene_addNode_Str = cpp.Lib.load("gameplay", "hx_Scene_addNode_Str", 2);
+    static var hx_Scene_addNode_Node = cpp.Lib.load("gameplay", "hx_Scene_addNode_Node", 2);
+    static var hx_Scene_bindAudioListenerToCamera = cpp.Lib.load("gameplay", "hx_Scene_bindAudioListenerToCamera", 2);
+    static var hx_Scene_static_create = cpp.Lib.load("gameplay", "hx_Scene_static_create", 0);
+    static var hx_Scene_drawDebug = cpp.Lib.load("gameplay", "hx_Scene_drawDebug", 2);
+    static var hx_Scene_findNode = cpp.Lib.load("gameplay", "hx_Scene_findNode", 4);
+    static var hx_Scene_findNodes = cpp.Lib.load("gameplay", "hx_Scene_findNodes", 5);
+    static var hx_Scene_getActiveCamera = cpp.Lib.load("gameplay", "hx_Scene_getActiveCamera", 1);
+    static var hx_Scene_getAmbientColor = cpp.Lib.load("gameplay", "hx_Scene_getAmbientColor", 1);
+    static var hx_Scene_getFirstNode = cpp.Lib.load("gameplay", "hx_Scene_getFirstNode", 1);
+    static var hx_Scene_getId = cpp.Lib.load("gameplay", "hx_Scene_getId", 1);
+    static var hx_Scene_getNodeCount = cpp.Lib.load("gameplay", "hx_Scene_getNodeCount", 1);
+    static var hx_Scene_static_load = cpp.Lib.load("gameplay", "hx_Scene_static_load", 1);
+    static var hx_Scene_removeAllNodes = cpp.Lib.load("gameplay", "hx_Scene_removeAllNodes", 1);
+    static var hx_Scene_removeNode = cpp.Lib.load("gameplay", "hx_Scene_removeNode", 2);
+    static var hx_Scene_setActiveCamera = cpp.Lib.load("gameplay", "hx_Scene_setActiveCamera", 2);
+    static var hx_Scene_setAmbientColor = cpp.Lib.load("gameplay", "hx_Scene_setAmbientColor", 4);
+    static var hx_Scene_setId = cpp.Lib.load("gameplay", "hx_Scene_setId", 2);
+    static var hx_Scene_visit_Str = cpp.Lib.load("gameplay", "hx_Scene_visit_Str", 2);
+    static var hx_Scene_visit_Func = cpp.Lib.load("gameplay", "hx_Scene_visit_Func", 2);
+    static var hx_Scene_visit_Func_Int = cpp.Lib.load("gameplay", "hx_Scene_visit_Func_Int", 3);
 }
 
 // END

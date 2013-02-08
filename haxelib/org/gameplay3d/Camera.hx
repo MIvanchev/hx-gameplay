@@ -198,32 +198,32 @@ class Camera extends Transform_ListenerImpl, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Camera_static_create:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_static_create", 1);
-    static var hx_Camera_static_createOrthographic:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_static_createOrthographic", 5);
-    static var hx_Camera_static_createPerspective:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_static_createPerspective", 4);
-    static var hx_Camera_getAspectRatio:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getAspectRatio", 1);
-    static var hx_Camera_getCameraType:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getCameraType", 1);
-    static var hx_Camera_getFarPlane:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getFarPlane", 1);
-    static var hx_Camera_getFieldOfView:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getFieldOfView", 1);
-    static var hx_Camera_getFrustum:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getFrustum", 1);
-    static var hx_Camera_getInverseViewMatrix:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getInverseViewMatrix", 1);
-    static var hx_Camera_getInverseViewProjectionMatrix:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getInverseViewProjectionMatrix", 1);
-    static var hx_Camera_getNearPlane:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getNearPlane", 1);
-    static var hx_Camera_getNode:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getNode", 1);
-    static var hx_Camera_getProjectionMatrix:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getProjectionMatrix", 1);
-    static var hx_Camera_getViewMatrix:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getViewMatrix", 1);
-    static var hx_Camera_getViewProjectionMatrix:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getViewProjectionMatrix", 1);
-    static var hx_Camera_getZoomX:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getZoomX", 1);
-    static var hx_Camera_getZoomY:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_getZoomY", 1);
-    static var hx_Camera_pickRay:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_pickRay", 5);
-    static var hx_Camera_project:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_project", -1);
-    static var hx_Camera_setAspectRatio:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_setAspectRatio", 2);
-    static var hx_Camera_setFarPlane:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_setFarPlane", 2);
-    static var hx_Camera_setFieldOfView:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_setFieldOfView", 2);
-    static var hx_Camera_setNearPlane:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_setNearPlane", 2);
-    static var hx_Camera_setZoomX:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_setZoomX", 2);
-    static var hx_Camera_setZoomY:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_setZoomY", 2);
-    static var hx_Camera_unproject:Dynamic = cpp.Lib.load("gameplay", "hx_Camera_unproject", -1);
+    static var hx_Camera_static_create = cpp.Lib.load("gameplay", "hx_Camera_static_create", 1);
+    static var hx_Camera_static_createOrthographic = cpp.Lib.load("gameplay", "hx_Camera_static_createOrthographic", 5);
+    static var hx_Camera_static_createPerspective = cpp.Lib.load("gameplay", "hx_Camera_static_createPerspective", 4);
+    static var hx_Camera_getAspectRatio = cpp.Lib.load("gameplay", "hx_Camera_getAspectRatio", 1);
+    static var hx_Camera_getCameraType = cpp.Lib.load("gameplay", "hx_Camera_getCameraType", 1);
+    static var hx_Camera_getFarPlane = cpp.Lib.load("gameplay", "hx_Camera_getFarPlane", 1);
+    static var hx_Camera_getFieldOfView = cpp.Lib.load("gameplay", "hx_Camera_getFieldOfView", 1);
+    static var hx_Camera_getFrustum = cpp.Lib.load("gameplay", "hx_Camera_getFrustum", 1);
+    static var hx_Camera_getInverseViewMatrix = cpp.Lib.load("gameplay", "hx_Camera_getInverseViewMatrix", 1);
+    static var hx_Camera_getInverseViewProjectionMatrix = cpp.Lib.load("gameplay", "hx_Camera_getInverseViewProjectionMatrix", 1);
+    static var hx_Camera_getNearPlane = cpp.Lib.load("gameplay", "hx_Camera_getNearPlane", 1);
+    static var hx_Camera_getNode = cpp.Lib.load("gameplay", "hx_Camera_getNode", 1);
+    static var hx_Camera_getProjectionMatrix = cpp.Lib.load("gameplay", "hx_Camera_getProjectionMatrix", 1);
+    static var hx_Camera_getViewMatrix = cpp.Lib.load("gameplay", "hx_Camera_getViewMatrix", 1);
+    static var hx_Camera_getViewProjectionMatrix = cpp.Lib.load("gameplay", "hx_Camera_getViewProjectionMatrix", 1);
+    static var hx_Camera_getZoomX = cpp.Lib.load("gameplay", "hx_Camera_getZoomX", 1);
+    static var hx_Camera_getZoomY = cpp.Lib.load("gameplay", "hx_Camera_getZoomY", 1);
+    static var hx_Camera_pickRay = cpp.Lib.load("gameplay", "hx_Camera_pickRay", 5);
+    static var hx_Camera_project = cpp.Lib.load("gameplay", "hx_Camera_project", -1);
+    static var hx_Camera_setAspectRatio = cpp.Lib.load("gameplay", "hx_Camera_setAspectRatio", 2);
+    static var hx_Camera_setFarPlane = cpp.Lib.load("gameplay", "hx_Camera_setFarPlane", 2);
+    static var hx_Camera_setFieldOfView = cpp.Lib.load("gameplay", "hx_Camera_setFieldOfView", 2);
+    static var hx_Camera_setNearPlane = cpp.Lib.load("gameplay", "hx_Camera_setNearPlane", 2);
+    static var hx_Camera_setZoomX = cpp.Lib.load("gameplay", "hx_Camera_setZoomX", 2);
+    static var hx_Camera_setZoomY = cpp.Lib.load("gameplay", "hx_Camera_setZoomY", 2);
+    static var hx_Camera_unproject = cpp.Lib.load("gameplay", "hx_Camera_unproject", -1);
 }
 
 // END

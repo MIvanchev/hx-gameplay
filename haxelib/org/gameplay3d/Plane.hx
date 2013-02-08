@@ -181,26 +181,26 @@ class Plane extends GameplayObject, implements IPlane
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Plane_Construct:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_Construct", 0);
-    static var hx_Plane_Construct_Plane:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_Construct_Plane", 1);
-    static var hx_Plane_Construct_V3_Flt:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_Construct_V3_Flt", 2);
-    static var hx_Plane_Construct_FltX4:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_Construct_FltX4", 4);
-    static var hx_Plane_distance:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_distance", 2);
-    static var hx_Plane_getDistance:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_getDistance", 1);
-    static var hx_Plane_getNormal:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_getNormal", 1);
-    static var hx_Plane_static_intersection:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_static_intersection", 4);
-    static var hx_Plane_intersects_BBox:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_intersects_BBox", 2);
-    static var hx_Plane_intersects_BSphr:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_intersects_BSphr", 2);
-    static var hx_Plane_intersects_Frstm:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_intersects_Frstm", 2);
-    static var hx_Plane_intersects_Plane:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_intersects_Plane", 2);
-    static var hx_Plane_intersects_Ray:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_intersects_Ray", 2);
-    static var hx_Plane_isParallel:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_isParallel", 2);
-    static var hx_Plane_set_Plane:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_set_Plane", 2);
-    static var hx_Plane_set_V3_Flt:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_set_V3_Flt", 3);
-    static var hx_Plane_setDistance:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_setDistance", 2);
-    static var hx_Plane_setNormal_V3:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_setNormal_V3", 2);
-    static var hx_Plane_setNormal_FltX3:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_setNormal_FltX3", 4);
-    static var hx_Plane_transform:Dynamic = cpp.Lib.load("gameplay", "hx_Plane_transform", 2);
+    static var hx_Plane_Construct = cpp.Lib.load("gameplay", "hx_Plane_Construct", 0);
+    static var hx_Plane_Construct_Plane = cpp.Lib.load("gameplay", "hx_Plane_Construct_Plane", 1);
+    static var hx_Plane_Construct_V3_Flt = cpp.Lib.load("gameplay", "hx_Plane_Construct_V3_Flt", 2);
+    static var hx_Plane_Construct_FltX4 = cpp.Lib.load("gameplay", "hx_Plane_Construct_FltX4", 4);
+    static var hx_Plane_distance = cpp.Lib.load("gameplay", "hx_Plane_distance", 2);
+    static var hx_Plane_getDistance = cpp.Lib.load("gameplay", "hx_Plane_getDistance", 1);
+    static var hx_Plane_getNormal = cpp.Lib.load("gameplay", "hx_Plane_getNormal", 1);
+    static var hx_Plane_static_intersection = cpp.Lib.load("gameplay", "hx_Plane_static_intersection", 4);
+    static var hx_Plane_intersects_BBox = cpp.Lib.load("gameplay", "hx_Plane_intersects_BBox", 2);
+    static var hx_Plane_intersects_BSphr = cpp.Lib.load("gameplay", "hx_Plane_intersects_BSphr", 2);
+    static var hx_Plane_intersects_Frstm = cpp.Lib.load("gameplay", "hx_Plane_intersects_Frstm", 2);
+    static var hx_Plane_intersects_Plane = cpp.Lib.load("gameplay", "hx_Plane_intersects_Plane", 2);
+    static var hx_Plane_intersects_Ray = cpp.Lib.load("gameplay", "hx_Plane_intersects_Ray", 2);
+    static var hx_Plane_isParallel = cpp.Lib.load("gameplay", "hx_Plane_isParallel", 2);
+    static var hx_Plane_set_Plane = cpp.Lib.load("gameplay", "hx_Plane_set_Plane", 2);
+    static var hx_Plane_set_V3_Flt = cpp.Lib.load("gameplay", "hx_Plane_set_V3_Flt", 3);
+    static var hx_Plane_setDistance = cpp.Lib.load("gameplay", "hx_Plane_setDistance", 2);
+    static var hx_Plane_setNormal_V3 = cpp.Lib.load("gameplay", "hx_Plane_setNormal_V3", 2);
+    static var hx_Plane_setNormal_FltX3 = cpp.Lib.load("gameplay", "hx_Plane_setNormal_FltX3", 4);
+    static var hx_Plane_transform = cpp.Lib.load("gameplay", "hx_Plane_transform", 2);
 }
 
 // END

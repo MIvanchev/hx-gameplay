@@ -1,6 +1,8 @@
 package org.gameplay3d;
 
+#if !macro
 import cpp.vm.WeakRef;
+#end
 import org.gameplay3d.intern.NativeBinding;
 import org.gameplay3d.util.NativeInterface;
 
@@ -69,6 +71,7 @@ class GameplayObject extends NativeBinding
         return
             if (nativeObject == null)
                 null;
+#if !macro
             else if (Std.is(nativeObject, WeakRef))
             {
                 var ref:WeakRef<T> = nativeObject;
@@ -81,6 +84,7 @@ class GameplayObject extends NativeBinding
                 }
                 result;
             }
+#end
             else
             {
                 args[0] = nativeObject;
