@@ -1,6 +1,5 @@
 package org.gameplay3d;
 
-import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.Handle;
 import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;

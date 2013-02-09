@@ -1,7 +1,6 @@
 package org.gameplay3d;
 
 import haxe.io.BytesData;
-import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
 
@@ -60,19 +59,13 @@ class Stream extends GameplayObject
     // DECL: virtual size_t read(void* ptr, size_t size, size_t count) = 0;
     public function read(ptr:OutParameter<BytesData>, size:Int, count:Int):Int
     {
-        var _ptr = new NativeOutParameter();
-        var result = hx_Stream_read(nativeObject, _ptr.native(), size, count);
-        ptr.value = _ptr.value;
-        return result;
+        return hx_Stream_read(nativeObject, ptr, size, count);
     }
 
     // DECL: virtual char* readLine(char* str, int num) = 0;
     public function readLine(str:OutParameter<String>, num:Int):String
     {
-        var _str = new NativeOutParameter();
-        var result = hx_Stream_readLine(nativeObject, _str.native(), num);
-        str.value = _str.value;
-        return result;
+        return hx_Stream_readLine(nativeObject, str, num);
     }
 
     // DECL: virtual bool rewind() = 0;

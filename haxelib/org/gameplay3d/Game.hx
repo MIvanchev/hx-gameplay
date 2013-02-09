@@ -4,7 +4,6 @@ import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
-import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.Handle;
 import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
@@ -113,11 +112,7 @@ class Game extends GameplayObject
     // DECL: inline void getAccelerometerValues(float* pitch, float* roll);
     public function getAccelerometerValues(pitch:OutParameter<Float>, roll:OutParameter<Float>):Void
     {
-        var _pitch = new NativeOutParameter();
-        var _roll = new NativeOutParameter();
-        hx_Game_getAccelerometerValues(nativeObject, _pitch.native(), _roll.native());
-        pitch.value = _pitch.value;
-        roll.value = _roll.value;
+        hx_Game_getAccelerometerValues(nativeObject, pitch, roll);
     }
 
     // DECL: inline AnimationController* getAnimationController() const;

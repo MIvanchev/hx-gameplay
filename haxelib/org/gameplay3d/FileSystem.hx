@@ -1,6 +1,5 @@
 package org.gameplay3d;
 
-import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.Handle;
 import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
@@ -48,8 +47,8 @@ class FileSystem extends GameplayObject
     // DECL: static bool listFiles(const char* dirPath, std::vector<std::string>& files);
     public static function listFiles(dirPath:String, files:OutParameter<Array<String>>):Bool
     {
-        var _files = new NativeOutParameter();
-        var result = hx_FileSystem_static_listFiles(dirPath, _files.native());
+        var _files = { value: null };
+        var result = hx_FileSystem_static_listFiles(dirPath, _files);
         if (result)
             files.value = _files.value;
         return result;
@@ -82,15 +81,7 @@ class FileSystem extends GameplayObject
     // DECL: static char* readAll(const char* filePath, int* fileSize = NULL);
     public static function readAll(filePath:String, fileSize:OutParameter<Int> = null):String
     {
-        var _fileSize =
-            if (fileSize == null)
-                null;
-            else
-                new NativeOutParameter();
-        var result = hx_FileSystem_static_readAll(filePath, _fileSize);
-        if (fileSize != null)
-            fileSize.value = _fileSize.value;
-        return result;
+        return hx_FileSystem_static_readAll(filePath, fileSize);
     }
 
     // DECL: static const char* resolvePath(const char* path);

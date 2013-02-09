@@ -3,7 +3,6 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
-import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
@@ -59,8 +58,8 @@ class Scene extends GameplayObject, implements Ref
     // DECL: unsigned int findNodes(const char* id, std::vector<Node*>& nodes, bool recursive = true, bool exactMatch = true) const;
     public function findNodes(id:String, nodes:OutParameter<Array<Node>>, recursive:Bool = true, exactMatch:Bool = true):Int
     {
-        var _nodes = new NativeOutParameter();
-        var result = hx_Scene_findNodes(nativeObject, id, _nodes.native(), recursive, exactMatch);
+        var _nodes = { value: null };
+        var result = hx_Scene_findNodes(nativeObject, id, _nodes, recursive, exactMatch);
         nodes.value = ConversionTools.extractNodeArray(_nodes.value);
         return result;
     }

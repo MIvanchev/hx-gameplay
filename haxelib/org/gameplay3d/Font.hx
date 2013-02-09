@@ -3,7 +3,6 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector2;
 import org.gameplay3d.immutable.IVector4;
-import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
 
@@ -98,11 +97,7 @@ class Font extends GameplayObject, implements Ref
     // DECL: void measureText(const char* text, unsigned int size, unsigned int* widthOut, unsigned int* heightOut);
     public function measureText_Str_Int_OutIntX2(text:String, size:Int, widthOut:OutParameter<Int>, heightOut:OutParameter<Int>):Void
     {
-        var _widthOut = new NativeOutParameter();
-        var _heightOut = new NativeOutParameter();
-        hx_Font_measureText_Str_Int_OutIntX2(nativeObject, text, size, _widthOut.native(), _heightOut.native());
-        widthOut.value = _widthOut.value;
-        heightOut.value = _heightOut.value;
+        hx_Font_measureText_Str_Int_OutIntX2(nativeObject, text, size, widthOut, heightOut);
     }
 
     // DECL: void start();

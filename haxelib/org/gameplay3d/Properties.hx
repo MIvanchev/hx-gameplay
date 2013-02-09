@@ -1,6 +1,5 @@
 package org.gameplay3d;
 
-import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
 
@@ -95,18 +94,7 @@ class Properties extends GameplayObject
     // DECL: const char* getNextProperty(char** value = NULL);
     public function getNextProperty(value:OutParameter<String> = null):String
     {
-        var _value =
-            if (value == null)
-                null;
-            else
-                new NativeOutParameter();
-
-        var result = hx_Properties_getNextProperty(nativeObject, _value.native());
-
-        if (value != null)
-            value.value = _value.value;
-
-        return result;
+        return hx_Properties_getNextProperty(nativeObject, value);
     }
 
     // DECL: bool getQuaternionFromAxisAngle(const char* name, Quaternion* out) const;
