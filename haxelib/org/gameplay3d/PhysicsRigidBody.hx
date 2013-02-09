@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
 import org.gameplay3d.shared.SharedVector3;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -236,41 +237,41 @@ class PhysicsRigidBody extends PhysicsCollisionObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsRigidBody_applyForce = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_applyForce", 3);
-    static var hx_PhysicsRigidBody_applyImpulse = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_applyImpulse", 3);
-    static var hx_PhysicsRigidBody_applyTorque = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_applyTorque", 2);
-    static var hx_PhysicsRigidBody_applyTorqueImpulse = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_applyTorqueImpulse", 2);
-    static var hx_PhysicsRigidBody_getAngularDamping = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getAngularDamping", 1);
-    static var hx_PhysicsRigidBody_getAngularFactor = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getAngularFactor", 1);
-    static var hx_PhysicsRigidBody_getAngularVelocity = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getAngularVelocity", 1);
-    static var hx_PhysicsRigidBody_getAnisotropicFriction = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getAnisotropicFriction", 1);
-    static var hx_PhysicsRigidBody_getFriction = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getFriction", 1);
-    static var hx_PhysicsRigidBody_getGravity = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getGravity", 1);
-    static var hx_PhysicsRigidBody_getHeight = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getHeight", 3);
-    static var hx_PhysicsRigidBody_getLinearDamping = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getLinearDamping", 1);
-    static var hx_PhysicsRigidBody_getLinearFactor = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getLinearFactor", 1);
-    static var hx_PhysicsRigidBody_getLinearVelocity = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getLinearVelocity", 1);
-    static var hx_PhysicsRigidBody_getMass = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getMass", 1);
-    static var hx_PhysicsRigidBody_getRestitution = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getRestitution", 1);
-    static var hx_PhysicsRigidBody_getType = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_getType", 1);
-    static var hx_PhysicsRigidBody_isStatic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_isStatic", 1);
-    static var hx_PhysicsRigidBody_setAngularFactor_V3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setAngularFactor_V3", 2);
-    static var hx_PhysicsRigidBody_setAngularFactor_FltX3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setAngularFactor_FltX3", 4);
-    static var hx_PhysicsRigidBody_setAngularVelocity_V3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setAngularVelocity_V3", 2);
-    static var hx_PhysicsRigidBody_setAngularVelocity_FltX3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setAngularVelocity_FltX3", 4);
-    static var hx_PhysicsRigidBody_setAnisotropicFriction_V3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setAnisotropicFriction_V3", 2);
-    static var hx_PhysicsRigidBody_setAnisotropicFriction_FltX3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setAnisotropicFriction_FltX3", 4);
-    static var hx_PhysicsRigidBody_setDamping = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setDamping", 3);
-    static var hx_PhysicsRigidBody_setEnabled = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setEnabled", 2);
-    static var hx_PhysicsRigidBody_setFriction = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setFriction", 2);
-    static var hx_PhysicsRigidBody_setGravity_V3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setGravity_V3", 2);
-    static var hx_PhysicsRigidBody_setGravity_FltX3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setGravity_FltX3", 4);
-    static var hx_PhysicsRigidBody_setKinematic = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setKinematic", 2);
-    static var hx_PhysicsRigidBody_setLinearFactor_V3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setLinearFactor_V3", 2);
-    static var hx_PhysicsRigidBody_setLinearFactor_FltX3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setLinearFactor_FltX3", 4);
-    static var hx_PhysicsRigidBody_setLinearVelocity_V3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setLinearVelocity_V3", 2);
-    static var hx_PhysicsRigidBody_setLinearVelocity_FltX3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setLinearVelocity_FltX3", 4);
-    static var hx_PhysicsRigidBody_setRestitution = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_setRestitution", 2);
+    static var hx_PhysicsRigidBody_applyForce = NativeInterface.loadMember(PhysicsRigidBody, "applyForce", 3);
+    static var hx_PhysicsRigidBody_applyImpulse = NativeInterface.loadMember(PhysicsRigidBody, "applyImpulse", 3);
+    static var hx_PhysicsRigidBody_applyTorque = NativeInterface.loadMember(PhysicsRigidBody, "applyTorque", 2);
+    static var hx_PhysicsRigidBody_applyTorqueImpulse = NativeInterface.loadMember(PhysicsRigidBody, "applyTorqueImpulse", 2);
+    static var hx_PhysicsRigidBody_getAngularDamping = NativeInterface.loadMember(PhysicsRigidBody, "getAngularDamping", 1);
+    static var hx_PhysicsRigidBody_getAngularFactor = NativeInterface.loadMember(PhysicsRigidBody, "getAngularFactor", 1);
+    static var hx_PhysicsRigidBody_getAngularVelocity = NativeInterface.loadMember(PhysicsRigidBody, "getAngularVelocity", 1);
+    static var hx_PhysicsRigidBody_getAnisotropicFriction = NativeInterface.loadMember(PhysicsRigidBody, "getAnisotropicFriction", 1);
+    static var hx_PhysicsRigidBody_getFriction = NativeInterface.loadMember(PhysicsRigidBody, "getFriction", 1);
+    static var hx_PhysicsRigidBody_getGravity = NativeInterface.loadMember(PhysicsRigidBody, "getGravity", 1);
+    static var hx_PhysicsRigidBody_getHeight = NativeInterface.loadMember(PhysicsRigidBody, "getHeight", 3);
+    static var hx_PhysicsRigidBody_getLinearDamping = NativeInterface.loadMember(PhysicsRigidBody, "getLinearDamping", 1);
+    static var hx_PhysicsRigidBody_getLinearFactor = NativeInterface.loadMember(PhysicsRigidBody, "getLinearFactor", 1);
+    static var hx_PhysicsRigidBody_getLinearVelocity = NativeInterface.loadMember(PhysicsRigidBody, "getLinearVelocity", 1);
+    static var hx_PhysicsRigidBody_getMass = NativeInterface.loadMember(PhysicsRigidBody, "getMass", 1);
+    static var hx_PhysicsRigidBody_getRestitution = NativeInterface.loadMember(PhysicsRigidBody, "getRestitution", 1);
+    static var hx_PhysicsRigidBody_getType = NativeInterface.loadMember(PhysicsRigidBody, "getType", 1);
+    static var hx_PhysicsRigidBody_isStatic = NativeInterface.loadMember(PhysicsRigidBody, "isStatic", 1);
+    static var hx_PhysicsRigidBody_setAngularFactor_V3 = NativeInterface.loadMember(PhysicsRigidBody, "setAngularFactor_V3", 2);
+    static var hx_PhysicsRigidBody_setAngularFactor_FltX3 = NativeInterface.loadMember(PhysicsRigidBody, "setAngularFactor_FltX3", 4);
+    static var hx_PhysicsRigidBody_setAngularVelocity_V3 = NativeInterface.loadMember(PhysicsRigidBody, "setAngularVelocity_V3", 2);
+    static var hx_PhysicsRigidBody_setAngularVelocity_FltX3 = NativeInterface.loadMember(PhysicsRigidBody, "setAngularVelocity_FltX3", 4);
+    static var hx_PhysicsRigidBody_setAnisotropicFriction_V3 = NativeInterface.loadMember(PhysicsRigidBody, "setAnisotropicFriction_V3", 2);
+    static var hx_PhysicsRigidBody_setAnisotropicFriction_FltX3 = NativeInterface.loadMember(PhysicsRigidBody, "setAnisotropicFriction_FltX3", 4);
+    static var hx_PhysicsRigidBody_setDamping = NativeInterface.loadMember(PhysicsRigidBody, "setDamping", 3);
+    static var hx_PhysicsRigidBody_setEnabled = NativeInterface.loadMember(PhysicsRigidBody, "setEnabled", 2);
+    static var hx_PhysicsRigidBody_setFriction = NativeInterface.loadMember(PhysicsRigidBody, "setFriction", 2);
+    static var hx_PhysicsRigidBody_setGravity_V3 = NativeInterface.loadMember(PhysicsRigidBody, "setGravity_V3", 2);
+    static var hx_PhysicsRigidBody_setGravity_FltX3 = NativeInterface.loadMember(PhysicsRigidBody, "setGravity_FltX3", 4);
+    static var hx_PhysicsRigidBody_setKinematic = NativeInterface.loadMember(PhysicsRigidBody, "setKinematic", 2);
+    static var hx_PhysicsRigidBody_setLinearFactor_V3 = NativeInterface.loadMember(PhysicsRigidBody, "setLinearFactor_V3", 2);
+    static var hx_PhysicsRigidBody_setLinearFactor_FltX3 = NativeInterface.loadMember(PhysicsRigidBody, "setLinearFactor_FltX3", 4);
+    static var hx_PhysicsRigidBody_setLinearVelocity_V3 = NativeInterface.loadMember(PhysicsRigidBody, "setLinearVelocity_V3", 2);
+    static var hx_PhysicsRigidBody_setLinearVelocity_FltX3 = NativeInterface.loadMember(PhysicsRigidBody, "setLinearVelocity_FltX3", 4);
+    static var hx_PhysicsRigidBody_setRestitution = NativeInterface.loadMember(PhysicsRigidBody, "setRestitution", 2);
 }
 
 // END

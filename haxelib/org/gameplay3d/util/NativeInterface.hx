@@ -100,6 +100,16 @@ class NativeInterface
     /**
      * TODO
      */
+    static var lastClass:Class<Dynamic>;
+
+    /**
+     * TODO
+     */
+    static var lastName:String;
+
+    /**
+     * TODO
+     */
     public static function initialie()
     {
         setReferenceConstructor = load("setReferenceConstructor", 2);
@@ -229,7 +239,12 @@ class NativeInterface
      */
     public static function loadMember(classObj:Class<Dynamic>, name:String, arity:Int):Dynamic
     {
-        var path = Type.getClassName(classObj).split(".");
-        return load('hx_${path[path.length - 1]}_$name', arity);
+        if (lastClass != classObj)
+        {
+            var path = Type.getClassName(classObj).split(".");
+            lastClass = classObj;
+            lastName = path[path.length - 1];
+        }
+        return load('hx_${lastName}_$name', arity);
     }
 }

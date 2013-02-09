@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -38,10 +39,10 @@ class Technique extends RenderState
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Technique_getId = cpp.Lib.load("gameplay", "hx_Technique_getId", 1);
-    static var hx_Technique_getPass = cpp.Lib.load("gameplay", "hx_Technique_getPass", 2);
-    static var hx_Technique_getPassByIndex = cpp.Lib.load("gameplay", "hx_Technique_getPassByIndex", 2);
-    static var hx_Technique_getPassCount = cpp.Lib.load("gameplay", "hx_Technique_getPassCount", 1);
+    static var hx_Technique_getId = NativeInterface.loadMember(Technique, "getId", 1);
+    static var hx_Technique_getPass = NativeInterface.loadMember(Technique, "getPass", 2);
+    static var hx_Technique_getPassByIndex = NativeInterface.loadMember(Technique, "getPassByIndex", 2);
+    static var hx_Technique_getPassCount = NativeInterface.loadMember(Technique, "getPassCount", 1);
 }
 
 // END

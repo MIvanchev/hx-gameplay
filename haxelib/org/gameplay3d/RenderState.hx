@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -44,11 +45,11 @@ class RenderState extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_RenderState_getParameter = cpp.Lib.load("gameplay", "hx_RenderState_getParameter", 2);
-    static var hx_RenderState_getStateBlock = cpp.Lib.load("gameplay", "hx_RenderState_getStateBlock", 1);
-    static var hx_RenderState_setParameterAutoBinding_Str_Int = cpp.Lib.load("gameplay", "hx_RenderState_setParameterAutoBinding_Str_Int", 3);
-    static var hx_RenderState_setParameterAutoBinding_StrX2 = cpp.Lib.load("gameplay", "hx_RenderState_setParameterAutoBinding_StrX2", 3);
-    static var hx_RenderState_setStateBlock = cpp.Lib.load("gameplay", "hx_RenderState_setStateBlock", 2);
+    static var hx_RenderState_getParameter = NativeInterface.loadMember(RenderState, "getParameter", 2);
+    static var hx_RenderState_getStateBlock = NativeInterface.loadMember(RenderState, "getStateBlock", 1);
+    static var hx_RenderState_setParameterAutoBinding_Str_Int = NativeInterface.loadMember(RenderState, "setParameterAutoBinding_Str_Int", 3);
+    static var hx_RenderState_setParameterAutoBinding_StrX2 = NativeInterface.loadMember(RenderState, "setParameterAutoBinding_StrX2", 3);
+    static var hx_RenderState_setStateBlock = NativeInterface.loadMember(RenderState, "setStateBlock", 2);
 }
 
 // END

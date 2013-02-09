@@ -8,6 +8,7 @@ import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.PrimitiveArray;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -167,25 +168,25 @@ class Frustum extends GameplayObject, implements IFrustum
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Frustum_Construct = cpp.Lib.load("gameplay", "hx_Frustum_Construct", 0);
-    static var hx_Frustum_Construct_Frstm = cpp.Lib.load("gameplay", "hx_Frustum_Construct_Frstm", 1);
-    static var hx_Frustum_Construct_Mat = cpp.Lib.load("gameplay", "hx_Frustum_Construct_Mat", 1);
-    static var hx_Frustum_getBottom = cpp.Lib.load("gameplay", "hx_Frustum_getBottom", 1);
-    static var hx_Frustum_getCorners = cpp.Lib.load("gameplay", "hx_Frustum_getCorners", 2);
-    static var hx_Frustum_getFar = cpp.Lib.load("gameplay", "hx_Frustum_getFar", 1);
-    static var hx_Frustum_getLeft = cpp.Lib.load("gameplay", "hx_Frustum_getLeft", 1);
-    static var hx_Frustum_getMatrix = cpp.Lib.load("gameplay", "hx_Frustum_getMatrix", 2);
-    static var hx_Frustum_getNear = cpp.Lib.load("gameplay", "hx_Frustum_getNear", 1);
-    static var hx_Frustum_getRight = cpp.Lib.load("gameplay", "hx_Frustum_getRight", 1);
-    static var hx_Frustum_getTop = cpp.Lib.load("gameplay", "hx_Frustum_getTop", 1);
-    static var hx_Frustum_intersects_BBox = cpp.Lib.load("gameplay", "hx_Frustum_intersects_BBox", 2);
-    static var hx_Frustum_intersects_BSphr = cpp.Lib.load("gameplay", "hx_Frustum_intersects_BSphr", 2);
-    static var hx_Frustum_intersects_V3 = cpp.Lib.load("gameplay", "hx_Frustum_intersects_V3", 2);
-    static var hx_Frustum_intersects_FltX3 = cpp.Lib.load("gameplay", "hx_Frustum_intersects_FltX3", 4);
-    static var hx_Frustum_intersects_Plane = cpp.Lib.load("gameplay", "hx_Frustum_intersects_Plane", 2);
-    static var hx_Frustum_intersects_Ray = cpp.Lib.load("gameplay", "hx_Frustum_intersects_Ray", 2);
-    static var hx_Frustum_set_Frstm = cpp.Lib.load("gameplay", "hx_Frustum_set_Frstm", 2);
-    static var hx_Frustum_set_Mat = cpp.Lib.load("gameplay", "hx_Frustum_set_Mat", 2);
+    static var hx_Frustum_Construct = NativeInterface.loadMember(Frustum, "Construct", 0);
+    static var hx_Frustum_Construct_Frstm = NativeInterface.loadMember(Frustum, "Construct_Frstm", 1);
+    static var hx_Frustum_Construct_Mat = NativeInterface.loadMember(Frustum, "Construct_Mat", 1);
+    static var hx_Frustum_getBottom = NativeInterface.loadMember(Frustum, "getBottom", 1);
+    static var hx_Frustum_getCorners = NativeInterface.loadMember(Frustum, "getCorners", 2);
+    static var hx_Frustum_getFar = NativeInterface.loadMember(Frustum, "getFar", 1);
+    static var hx_Frustum_getLeft = NativeInterface.loadMember(Frustum, "getLeft", 1);
+    static var hx_Frustum_getMatrix = NativeInterface.loadMember(Frustum, "getMatrix", 2);
+    static var hx_Frustum_getNear = NativeInterface.loadMember(Frustum, "getNear", 1);
+    static var hx_Frustum_getRight = NativeInterface.loadMember(Frustum, "getRight", 1);
+    static var hx_Frustum_getTop = NativeInterface.loadMember(Frustum, "getTop", 1);
+    static var hx_Frustum_intersects_BBox = NativeInterface.loadMember(Frustum, "intersects_BBox", 2);
+    static var hx_Frustum_intersects_BSphr = NativeInterface.loadMember(Frustum, "intersects_BSphr", 2);
+    static var hx_Frustum_intersects_V3 = NativeInterface.loadMember(Frustum, "intersects_V3", 2);
+    static var hx_Frustum_intersects_FltX3 = NativeInterface.loadMember(Frustum, "intersects_FltX3", 4);
+    static var hx_Frustum_intersects_Plane = NativeInterface.loadMember(Frustum, "intersects_Plane", 2);
+    static var hx_Frustum_intersects_Ray = NativeInterface.loadMember(Frustum, "intersects_Ray", 2);
+    static var hx_Frustum_set_Frstm = NativeInterface.loadMember(Frustum, "set_Frstm", 2);
+    static var hx_Frustum_set_Mat = NativeInterface.loadMember(Frustum, "set_Mat", 2);
 }
 
 // END

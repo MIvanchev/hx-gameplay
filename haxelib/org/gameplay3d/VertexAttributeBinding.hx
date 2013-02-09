@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import haxe.io.BytesData;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -40,10 +41,10 @@ class VertexAttributeBinding extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_VertexAttributeBinding_bind = cpp.Lib.load("gameplay", "hx_VertexAttributeBinding_bind", 1);
-    static var hx_VertexAttributeBinding_static_create_Mesh_Eff = cpp.Lib.load("gameplay", "hx_VertexAttributeBinding_static_create_Mesh_Eff", 2);
-    static var hx_VertexAttributeBinding_static_create_Frmt_Dat_Eff = cpp.Lib.load("gameplay", "hx_VertexAttributeBinding_static_create_Frmt_Dat_Eff", 3);
-    static var hx_VertexAttributeBinding_unbind = cpp.Lib.load("gameplay", "hx_VertexAttributeBinding_unbind", 1);
+    static var hx_VertexAttributeBinding_bind = NativeInterface.loadMember(VertexAttributeBinding, "bind", 1);
+    static var hx_VertexAttributeBinding_static_create_Mesh_Eff = NativeInterface.loadMember(VertexAttributeBinding, "static_create_Mesh_Eff", 2);
+    static var hx_VertexAttributeBinding_static_create_Frmt_Dat_Eff = NativeInterface.loadMember(VertexAttributeBinding, "static_create_Frmt_Dat_Eff", 3);
+    static var hx_VertexAttributeBinding_unbind = NativeInterface.loadMember(VertexAttributeBinding, "unbind", 1);
 }
 
 // END

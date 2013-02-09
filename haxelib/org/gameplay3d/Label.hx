@@ -1,4 +1,6 @@
 package org.gameplay3d;
+
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.wrapper.Control_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -45,11 +47,11 @@ class Label extends Control
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Label_addListener = cpp.Lib.load("gameplay", "hx_Label_addListener", 3);
-    static var hx_Label_static_create = cpp.Lib.load("gameplay", "hx_Label_static_create", 2);
-    static var hx_Label_getText = cpp.Lib.load("gameplay", "hx_Label_getText", 1);
-    static var hx_Label_getType = cpp.Lib.load("gameplay", "hx_Label_getType", 1);
-    static var hx_Label_setText = cpp.Lib.load("gameplay", "hx_Label_setText", 2);
+    static var hx_Label_addListener = NativeInterface.loadMember(Label, "addListener", 3);
+    static var hx_Label_static_create = NativeInterface.loadMember(Label, "static_create", 2);
+    static var hx_Label_getText = NativeInterface.loadMember(Label, "getText", 1);
+    static var hx_Label_getType = NativeInterface.loadMember(Label, "getType", 1);
+    static var hx_Label_setText = NativeInterface.loadMember(Label, "setText", 2);
 }
 
 // END

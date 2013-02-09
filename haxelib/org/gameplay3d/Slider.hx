@@ -1,5 +1,6 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.wrapper.Control_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -118,23 +119,23 @@ class Slider extends Label
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Slider_addListener = cpp.Lib.load("gameplay", "hx_Slider_addListener", 3);
-    static var hx_Slider_static_create = cpp.Lib.load("gameplay", "hx_Slider_static_create", 2);
-    static var hx_Slider_getMax = cpp.Lib.load("gameplay", "hx_Slider_getMax", 1);
-    static var hx_Slider_getMin = cpp.Lib.load("gameplay", "hx_Slider_getMin", 1);
-    static var hx_Slider_getStep = cpp.Lib.load("gameplay", "hx_Slider_getStep", 1);
-    static var hx_Slider_getType = cpp.Lib.load("gameplay", "hx_Slider_getType", 1);
-    static var hx_Slider_getValue = cpp.Lib.load("gameplay", "hx_Slider_getValue", 1);
-    static var hx_Slider_getValueTextAlignment = cpp.Lib.load("gameplay", "hx_Slider_getValueTextAlignment", 1);
-    static var hx_Slider_getValueTextPrecision = cpp.Lib.load("gameplay", "hx_Slider_getValueTextPrecision", 1);
-    static var hx_Slider_isValueTextVisible = cpp.Lib.load("gameplay", "hx_Slider_isValueTextVisible", 1);
-    static var hx_Slider_setMax = cpp.Lib.load("gameplay", "hx_Slider_setMax", 2);
-    static var hx_Slider_setMin = cpp.Lib.load("gameplay", "hx_Slider_setMin", 2);
-    static var hx_Slider_setStep = cpp.Lib.load("gameplay", "hx_Slider_setStep", 2);
-    static var hx_Slider_setValue = cpp.Lib.load("gameplay", "hx_Slider_setValue", 2);
-    static var hx_Slider_setValueTextAlignment = cpp.Lib.load("gameplay", "hx_Slider_setValueTextAlignment", 2);
-    static var hx_Slider_setValueTextPrecision = cpp.Lib.load("gameplay", "hx_Slider_setValueTextPrecision", 2);
-    static var hx_Slider_setValueTextVisible = cpp.Lib.load("gameplay", "hx_Slider_setValueTextVisible", 2);
+    static var hx_Slider_addListener = NativeInterface.loadMember(Slider, "addListener", 3);
+    static var hx_Slider_static_create = NativeInterface.loadMember(Slider, "static_create", 2);
+    static var hx_Slider_getMax = NativeInterface.loadMember(Slider, "getMax", 1);
+    static var hx_Slider_getMin = NativeInterface.loadMember(Slider, "getMin", 1);
+    static var hx_Slider_getStep = NativeInterface.loadMember(Slider, "getStep", 1);
+    static var hx_Slider_getType = NativeInterface.loadMember(Slider, "getType", 1);
+    static var hx_Slider_getValue = NativeInterface.loadMember(Slider, "getValue", 1);
+    static var hx_Slider_getValueTextAlignment = NativeInterface.loadMember(Slider, "getValueTextAlignment", 1);
+    static var hx_Slider_getValueTextPrecision = NativeInterface.loadMember(Slider, "getValueTextPrecision", 1);
+    static var hx_Slider_isValueTextVisible = NativeInterface.loadMember(Slider, "isValueTextVisible", 1);
+    static var hx_Slider_setMax = NativeInterface.loadMember(Slider, "setMax", 2);
+    static var hx_Slider_setMin = NativeInterface.loadMember(Slider, "setMin", 2);
+    static var hx_Slider_setStep = NativeInterface.loadMember(Slider, "setStep", 2);
+    static var hx_Slider_setValue = NativeInterface.loadMember(Slider, "setValue", 2);
+    static var hx_Slider_setValueTextAlignment = NativeInterface.loadMember(Slider, "setValueTextAlignment", 2);
+    static var hx_Slider_setValueTextPrecision = NativeInterface.loadMember(Slider, "setValueTextPrecision", 2);
+    static var hx_Slider_setValueTextVisible = NativeInterface.loadMember(Slider, "setValueTextVisible", 2);
 }
 
 // END

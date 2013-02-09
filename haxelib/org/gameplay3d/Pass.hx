@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -50,12 +52,12 @@ class Pass extends RenderState
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Pass_bind = cpp.Lib.load("gameplay", "hx_Pass_bind", 1);
-    static var hx_Pass_getEffect = cpp.Lib.load("gameplay", "hx_Pass_getEffect", 1);
-    static var hx_Pass_getId = cpp.Lib.load("gameplay", "hx_Pass_getId", 1);
-    static var hx_Pass_getVertexAttributeBinding = cpp.Lib.load("gameplay", "hx_Pass_getVertexAttributeBinding", 1);
-    static var hx_Pass_setVertexAttributeBinding = cpp.Lib.load("gameplay", "hx_Pass_setVertexAttributeBinding", 2);
-    static var hx_Pass_unbind = cpp.Lib.load("gameplay", "hx_Pass_unbind", 1);
+    static var hx_Pass_bind = NativeInterface.loadMember(Pass, "bind", 1);
+    static var hx_Pass_getEffect = NativeInterface.loadMember(Pass, "getEffect", 1);
+    static var hx_Pass_getId = NativeInterface.loadMember(Pass, "getId", 1);
+    static var hx_Pass_getVertexAttributeBinding = NativeInterface.loadMember(Pass, "getVertexAttributeBinding", 1);
+    static var hx_Pass_setVertexAttributeBinding = NativeInterface.loadMember(Pass, "setVertexAttributeBinding", 2);
+    static var hx_Pass_unbind = NativeInterface.loadMember(Pass, "unbind", 1);
 }
 
 // END

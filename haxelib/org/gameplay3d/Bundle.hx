@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -62,14 +64,14 @@ class Bundle extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Bundle_contains = cpp.Lib.load("gameplay", "hx_Bundle_contains", 2);
-    static var hx_Bundle_static_create = cpp.Lib.load("gameplay", "hx_Bundle_static_create", 1);
-    static var hx_Bundle_getObjectCount = cpp.Lib.load("gameplay", "hx_Bundle_getObjectCount", 1);
-    static var hx_Bundle_getObjectId = cpp.Lib.load("gameplay", "hx_Bundle_getObjectId", 2);
-    static var hx_Bundle_loadFont = cpp.Lib.load("gameplay", "hx_Bundle_loadFont", 2);
-    static var hx_Bundle_loadMesh = cpp.Lib.load("gameplay", "hx_Bundle_loadMesh", 2);
-    static var hx_Bundle_loadNode = cpp.Lib.load("gameplay", "hx_Bundle_loadNode", 2);
-    static var hx_Bundle_loadScene = cpp.Lib.load("gameplay", "hx_Bundle_loadScene", 2);
+    static var hx_Bundle_contains = NativeInterface.loadMember(Bundle, "contains", 2);
+    static var hx_Bundle_static_create = NativeInterface.loadMember(Bundle, "static_create", 1);
+    static var hx_Bundle_getObjectCount = NativeInterface.loadMember(Bundle, "getObjectCount", 1);
+    static var hx_Bundle_getObjectId = NativeInterface.loadMember(Bundle, "getObjectId", 2);
+    static var hx_Bundle_loadFont = NativeInterface.loadMember(Bundle, "loadFont", 2);
+    static var hx_Bundle_loadMesh = NativeInterface.loadMember(Bundle, "loadMesh", 2);
+    static var hx_Bundle_loadNode = NativeInterface.loadMember(Bundle, "loadNode", 2);
+    static var hx_Bundle_loadScene = NativeInterface.loadMember(Bundle, "loadScene", 2);
 }
 
 // END

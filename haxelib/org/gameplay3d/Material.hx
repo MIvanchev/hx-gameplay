@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -68,15 +70,15 @@ class Material extends RenderState
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Material_static_create_Eff = cpp.Lib.load("gameplay", "hx_Material_static_create_Eff", 1);
-    static var hx_Material_static_create_Prop = cpp.Lib.load("gameplay", "hx_Material_static_create_Prop", 1);
-    static var hx_Material_static_create_Str = cpp.Lib.load("gameplay", "hx_Material_static_create_Str", 1);
-    static var hx_Material_static_create_StrX3 = cpp.Lib.load("gameplay", "hx_Material_static_create_StrX3", 3);
-    static var hx_Material_getTechnique = cpp.Lib.load("gameplay", "hx_Material_getTechnique", 1);
-    static var hx_Material_getTechnique_Str = cpp.Lib.load("gameplay", "hx_Material_getTechnique_Str", 2);
-    static var hx_Material_getTechniqueByIndex = cpp.Lib.load("gameplay", "hx_Material_getTechniqueByIndex", 2);
-    static var hx_Material_getTechniqueCount = cpp.Lib.load("gameplay", "hx_Material_getTechniqueCount", 1);
-    static var hx_Material_setTechnique = cpp.Lib.load("gameplay", "hx_Material_setTechnique", 2);
+    static var hx_Material_static_create_Eff = NativeInterface.loadMember(Material, "static_create_Eff", 1);
+    static var hx_Material_static_create_Prop = NativeInterface.loadMember(Material, "static_create_Prop", 1);
+    static var hx_Material_static_create_Str = NativeInterface.loadMember(Material, "static_create_Str", 1);
+    static var hx_Material_static_create_StrX3 = NativeInterface.loadMember(Material, "static_create_StrX3", 3);
+    static var hx_Material_getTechnique = NativeInterface.loadMember(Material, "getTechnique", 1);
+    static var hx_Material_getTechnique_Str = NativeInterface.loadMember(Material, "getTechnique_Str", 2);
+    static var hx_Material_getTechniqueByIndex = NativeInterface.loadMember(Material, "getTechniqueByIndex", 2);
+    static var hx_Material_getTechniqueCount = NativeInterface.loadMember(Material, "getTechniqueCount", 1);
+    static var hx_Material_setTechnique = NativeInterface.loadMember(Material, "setTechnique", 2);
 }
 
 // END

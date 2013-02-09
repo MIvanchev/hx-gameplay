@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -32,9 +34,9 @@ class VerticalLayout extends Layout
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_VerticalLayout_getBottomToTop = cpp.Lib.load("gameplay", "hx_VerticalLayout_getBottomToTop", 1);
-    static var hx_VerticalLayout_getType = cpp.Lib.load("gameplay", "hx_VerticalLayout_getType", 1);
-    static var hx_VerticalLayout_setBottomToTop = cpp.Lib.load("gameplay", "hx_VerticalLayout_setBottomToTop", 2);
+    static var hx_VerticalLayout_getBottomToTop = NativeInterface.loadMember(VerticalLayout, "getBottomToTop", 1);
+    static var hx_VerticalLayout_getType = NativeInterface.loadMember(VerticalLayout, "getType", 1);
+    static var hx_VerticalLayout_setBottomToTop = NativeInterface.loadMember(VerticalLayout, "setBottomToTop", 2);
 }
 
 // END

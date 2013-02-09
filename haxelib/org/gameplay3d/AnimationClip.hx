@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.wrapper.AnimationClip_ListenerWrapper;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -172,31 +173,31 @@ class AnimationClip extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AnimationClip_addBeginListener_Lsnr = cpp.Lib.load("gameplay", "hx_AnimationClip_addBeginListener_Lsnr", 2);
-    static var hx_AnimationClip_addBeginListener_Str = cpp.Lib.load("gameplay", "hx_AnimationClip_addBeginListener_Str", 2);
-    static var hx_AnimationClip_addEndListener_Lsnr = cpp.Lib.load("gameplay", "hx_AnimationClip_addEndListener_Lsnr", 2);
-    static var hx_AnimationClip_addEndListener_Str = cpp.Lib.load("gameplay", "hx_AnimationClip_addEndListener_Str", 2);
-    static var hx_AnimationClip_addListener_Lsnr_Int = cpp.Lib.load("gameplay", "hx_AnimationClip_addListener_Lsnr_Int", 3);
-    static var hx_AnimationClip_addListener_Str_Int = cpp.Lib.load("gameplay", "hx_AnimationClip_addListener_Str_Int", 3);
-    static var hx_AnimationClip_crossFade = cpp.Lib.load("gameplay", "hx_AnimationClip_crossFade", 3);
-    static var hx_AnimationClip_getActiveDuration = cpp.Lib.load("gameplay", "hx_AnimationClip_getActiveDuration", 1);
-    static var hx_AnimationClip_getAnimation = cpp.Lib.load("gameplay", "hx_AnimationClip_getAnimation", 1);
-    static var hx_AnimationClip_getBlendWeight = cpp.Lib.load("gameplay", "hx_AnimationClip_getBlendWeight", 1);
-    static var hx_AnimationClip_getDuration = cpp.Lib.load("gameplay", "hx_AnimationClip_getDuration", 1);
-    static var hx_AnimationClip_getElaspedTime = cpp.Lib.load("gameplay", "hx_AnimationClip_getElaspedTime", 1);
-    static var hx_AnimationClip_getEndTime = cpp.Lib.load("gameplay", "hx_AnimationClip_getEndTime", 1);
-    static var hx_AnimationClip_getId = cpp.Lib.load("gameplay", "hx_AnimationClip_getId", 1);
-    static var hx_AnimationClip_getRepeatCount = cpp.Lib.load("gameplay", "hx_AnimationClip_getRepeatCount", 1);
-    static var hx_AnimationClip_getSpeed = cpp.Lib.load("gameplay", "hx_AnimationClip_getSpeed", 1);
-    static var hx_AnimationClip_getStartTime = cpp.Lib.load("gameplay", "hx_AnimationClip_getStartTime", 1);
-    static var hx_AnimationClip_isPlaying = cpp.Lib.load("gameplay", "hx_AnimationClip_isPlaying", 1);
-    static var hx_AnimationClip_pause = cpp.Lib.load("gameplay", "hx_AnimationClip_pause", 1);
-    static var hx_AnimationClip_play = cpp.Lib.load("gameplay", "hx_AnimationClip_play", 1);
-    static var hx_AnimationClip_setActiveDuration = cpp.Lib.load("gameplay", "hx_AnimationClip_setActiveDuration", 2);
-    static var hx_AnimationClip_setBlendWeight = cpp.Lib.load("gameplay", "hx_AnimationClip_setBlendWeight", 2);
-    static var hx_AnimationClip_setRepeatCount = cpp.Lib.load("gameplay", "hx_AnimationClip_setRepeatCount", 2);
-    static var hx_AnimationClip_setSpeed = cpp.Lib.load("gameplay", "hx_AnimationClip_setSpeed", 2);
-    static var hx_AnimationClip_stop = cpp.Lib.load("gameplay", "hx_AnimationClip_stop", 1);
+    static var hx_AnimationClip_addBeginListener_Lsnr = NativeInterface.loadMember(AnimationClip, "addBeginListener_Lsnr", 2);
+    static var hx_AnimationClip_addBeginListener_Str = NativeInterface.loadMember(AnimationClip, "addBeginListener_Str", 2);
+    static var hx_AnimationClip_addEndListener_Lsnr = NativeInterface.loadMember(AnimationClip, "addEndListener_Lsnr", 2);
+    static var hx_AnimationClip_addEndListener_Str = NativeInterface.loadMember(AnimationClip, "addEndListener_Str", 2);
+    static var hx_AnimationClip_addListener_Lsnr_Int = NativeInterface.loadMember(AnimationClip, "addListener_Lsnr_Int", 3);
+    static var hx_AnimationClip_addListener_Str_Int = NativeInterface.loadMember(AnimationClip, "addListener_Str_Int", 3);
+    static var hx_AnimationClip_crossFade = NativeInterface.loadMember(AnimationClip, "crossFade", 3);
+    static var hx_AnimationClip_getActiveDuration = NativeInterface.loadMember(AnimationClip, "getActiveDuration", 1);
+    static var hx_AnimationClip_getAnimation = NativeInterface.loadMember(AnimationClip, "getAnimation", 1);
+    static var hx_AnimationClip_getBlendWeight = NativeInterface.loadMember(AnimationClip, "getBlendWeight", 1);
+    static var hx_AnimationClip_getDuration = NativeInterface.loadMember(AnimationClip, "getDuration", 1);
+    static var hx_AnimationClip_getElaspedTime = NativeInterface.loadMember(AnimationClip, "getElaspedTime", 1);
+    static var hx_AnimationClip_getEndTime = NativeInterface.loadMember(AnimationClip, "getEndTime", 1);
+    static var hx_AnimationClip_getId = NativeInterface.loadMember(AnimationClip, "getId", 1);
+    static var hx_AnimationClip_getRepeatCount = NativeInterface.loadMember(AnimationClip, "getRepeatCount", 1);
+    static var hx_AnimationClip_getSpeed = NativeInterface.loadMember(AnimationClip, "getSpeed", 1);
+    static var hx_AnimationClip_getStartTime = NativeInterface.loadMember(AnimationClip, "getStartTime", 1);
+    static var hx_AnimationClip_isPlaying = NativeInterface.loadMember(AnimationClip, "isPlaying", 1);
+    static var hx_AnimationClip_pause = NativeInterface.loadMember(AnimationClip, "pause", 1);
+    static var hx_AnimationClip_play = NativeInterface.loadMember(AnimationClip, "play", 1);
+    static var hx_AnimationClip_setActiveDuration = NativeInterface.loadMember(AnimationClip, "setActiveDuration", 2);
+    static var hx_AnimationClip_setBlendWeight = NativeInterface.loadMember(AnimationClip, "setBlendWeight", 2);
+    static var hx_AnimationClip_setRepeatCount = NativeInterface.loadMember(AnimationClip, "setRepeatCount", 2);
+    static var hx_AnimationClip_setSpeed = NativeInterface.loadMember(AnimationClip, "setSpeed", 2);
+    static var hx_AnimationClip_stop = NativeInterface.loadMember(AnimationClip, "stop", 1);
 }
 
 // END

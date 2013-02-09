@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector2;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.wrapper.Control_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -71,15 +72,15 @@ class RadioButton extends Button
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_RadioButton_addListener = cpp.Lib.load("gameplay", "hx_RadioButton_addListener", 3);
-    static var hx_RadioButton_static_create = cpp.Lib.load("gameplay", "hx_RadioButton_static_create", 2);
-    static var hx_RadioButton_getGroupId = cpp.Lib.load("gameplay", "hx_RadioButton_getGroupId", 1);
-    static var hx_RadioButton_getImageSize = cpp.Lib.load("gameplay", "hx_RadioButton_getImageSize", 1);
-    static var hx_RadioButton_getType = cpp.Lib.load("gameplay", "hx_RadioButton_getType", 1);
-    static var hx_RadioButton_isSelected = cpp.Lib.load("gameplay", "hx_RadioButton_isSelected", 1);
-    static var hx_RadioButton_setGroupId = cpp.Lib.load("gameplay", "hx_RadioButton_setGroupId", 2);
-    static var hx_RadioButton_setImageSize = cpp.Lib.load("gameplay", "hx_RadioButton_setImageSize", 3);
-    static var hx_RadioButton_setSelected = cpp.Lib.load("gameplay", "hx_RadioButton_setSelected", 2);
+    static var hx_RadioButton_addListener = NativeInterface.loadMember(RadioButton, "addListener", 3);
+    static var hx_RadioButton_static_create = NativeInterface.loadMember(RadioButton, "static_create", 2);
+    static var hx_RadioButton_getGroupId = NativeInterface.loadMember(RadioButton, "getGroupId", 1);
+    static var hx_RadioButton_getImageSize = NativeInterface.loadMember(RadioButton, "getImageSize", 1);
+    static var hx_RadioButton_getType = NativeInterface.loadMember(RadioButton, "getType", 1);
+    static var hx_RadioButton_isSelected = NativeInterface.loadMember(RadioButton, "isSelected", 1);
+    static var hx_RadioButton_setGroupId = NativeInterface.loadMember(RadioButton, "setGroupId", 2);
+    static var hx_RadioButton_setImageSize = NativeInterface.loadMember(RadioButton, "setImageSize", 3);
+    static var hx_RadioButton_setSelected = NativeInterface.loadMember(RadioButton, "setSelected", 2);
 }
 
 // END

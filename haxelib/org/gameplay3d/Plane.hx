@@ -8,6 +8,7 @@ import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -181,26 +182,26 @@ class Plane extends GameplayObject, implements IPlane
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Plane_Construct = cpp.Lib.load("gameplay", "hx_Plane_Construct", 0);
-    static var hx_Plane_Construct_Plane = cpp.Lib.load("gameplay", "hx_Plane_Construct_Plane", 1);
-    static var hx_Plane_Construct_V3_Flt = cpp.Lib.load("gameplay", "hx_Plane_Construct_V3_Flt", 2);
-    static var hx_Plane_Construct_FltX4 = cpp.Lib.load("gameplay", "hx_Plane_Construct_FltX4", 4);
-    static var hx_Plane_distance = cpp.Lib.load("gameplay", "hx_Plane_distance", 2);
-    static var hx_Plane_getDistance = cpp.Lib.load("gameplay", "hx_Plane_getDistance", 1);
-    static var hx_Plane_getNormal = cpp.Lib.load("gameplay", "hx_Plane_getNormal", 1);
-    static var hx_Plane_static_intersection = cpp.Lib.load("gameplay", "hx_Plane_static_intersection", 4);
-    static var hx_Plane_intersects_BBox = cpp.Lib.load("gameplay", "hx_Plane_intersects_BBox", 2);
-    static var hx_Plane_intersects_BSphr = cpp.Lib.load("gameplay", "hx_Plane_intersects_BSphr", 2);
-    static var hx_Plane_intersects_Frstm = cpp.Lib.load("gameplay", "hx_Plane_intersects_Frstm", 2);
-    static var hx_Plane_intersects_Plane = cpp.Lib.load("gameplay", "hx_Plane_intersects_Plane", 2);
-    static var hx_Plane_intersects_Ray = cpp.Lib.load("gameplay", "hx_Plane_intersects_Ray", 2);
-    static var hx_Plane_isParallel = cpp.Lib.load("gameplay", "hx_Plane_isParallel", 2);
-    static var hx_Plane_set_Plane = cpp.Lib.load("gameplay", "hx_Plane_set_Plane", 2);
-    static var hx_Plane_set_V3_Flt = cpp.Lib.load("gameplay", "hx_Plane_set_V3_Flt", 3);
-    static var hx_Plane_setDistance = cpp.Lib.load("gameplay", "hx_Plane_setDistance", 2);
-    static var hx_Plane_setNormal_V3 = cpp.Lib.load("gameplay", "hx_Plane_setNormal_V3", 2);
-    static var hx_Plane_setNormal_FltX3 = cpp.Lib.load("gameplay", "hx_Plane_setNormal_FltX3", 4);
-    static var hx_Plane_transform = cpp.Lib.load("gameplay", "hx_Plane_transform", 2);
+    static var hx_Plane_Construct = NativeInterface.loadMember(Plane, "Construct", 0);
+    static var hx_Plane_Construct_Plane = NativeInterface.loadMember(Plane, "Construct_Plane", 1);
+    static var hx_Plane_Construct_V3_Flt = NativeInterface.loadMember(Plane, "Construct_V3_Flt", 2);
+    static var hx_Plane_Construct_FltX4 = NativeInterface.loadMember(Plane, "Construct_FltX4", 4);
+    static var hx_Plane_distance = NativeInterface.loadMember(Plane, "distance", 2);
+    static var hx_Plane_getDistance = NativeInterface.loadMember(Plane, "getDistance", 1);
+    static var hx_Plane_getNormal = NativeInterface.loadMember(Plane, "getNormal", 1);
+    static var hx_Plane_static_intersection = NativeInterface.loadMember(Plane, "static_intersection", 4);
+    static var hx_Plane_intersects_BBox = NativeInterface.loadMember(Plane, "intersects_BBox", 2);
+    static var hx_Plane_intersects_BSphr = NativeInterface.loadMember(Plane, "intersects_BSphr", 2);
+    static var hx_Plane_intersects_Frstm = NativeInterface.loadMember(Plane, "intersects_Frstm", 2);
+    static var hx_Plane_intersects_Plane = NativeInterface.loadMember(Plane, "intersects_Plane", 2);
+    static var hx_Plane_intersects_Ray = NativeInterface.loadMember(Plane, "intersects_Ray", 2);
+    static var hx_Plane_isParallel = NativeInterface.loadMember(Plane, "isParallel", 2);
+    static var hx_Plane_set_Plane = NativeInterface.loadMember(Plane, "set_Plane", 2);
+    static var hx_Plane_set_V3_Flt = NativeInterface.loadMember(Plane, "set_V3_Flt", 3);
+    static var hx_Plane_setDistance = NativeInterface.loadMember(Plane, "setDistance", 2);
+    static var hx_Plane_setNormal_V3 = NativeInterface.loadMember(Plane, "setNormal_V3", 2);
+    static var hx_Plane_setNormal_FltX3 = NativeInterface.loadMember(Plane, "setNormal_FltX3", 4);
+    static var hx_Plane_transform = NativeInterface.loadMember(Plane, "transform", 2);
 }
 
 // END

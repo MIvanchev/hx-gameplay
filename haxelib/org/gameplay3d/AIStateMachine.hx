@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -62,14 +64,14 @@ class AIStateMachine extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AIStateMachine_addState_Str = cpp.Lib.load("gameplay", "hx_AIStateMachine_addState_Str", 2);
-    static var hx_AIStateMachine_addState_AIState = cpp.Lib.load("gameplay", "hx_AIStateMachine_addState_AIState", 2);
-    static var hx_AIStateMachine_getActiveState = cpp.Lib.load("gameplay", "hx_AIStateMachine_getActiveState", 1);
-    static var hx_AIStateMachine_getAgent = cpp.Lib.load("gameplay", "hx_AIStateMachine_getAgent", 1);
-    static var hx_AIStateMachine_getState = cpp.Lib.load("gameplay", "hx_AIStateMachine_getState", 2);
-    static var hx_AIStateMachine_removeState = cpp.Lib.load("gameplay", "hx_AIStateMachine_removeState", 2);
-    static var hx_AIStateMachine_setState_Str = cpp.Lib.load("gameplay", "hx_AIStateMachine_setState_Str", 2);
-    static var hx_AIStateMachine_setState_AIState = cpp.Lib.load("gameplay", "hx_AIStateMachine_setState_AIState", 2);
+    static var hx_AIStateMachine_addState_Str = NativeInterface.loadMember(AIStateMachine, "addState_Str", 2);
+    static var hx_AIStateMachine_addState_AIState = NativeInterface.loadMember(AIStateMachine, "addState_AIState", 2);
+    static var hx_AIStateMachine_getActiveState = NativeInterface.loadMember(AIStateMachine, "getActiveState", 1);
+    static var hx_AIStateMachine_getAgent = NativeInterface.loadMember(AIStateMachine, "getAgent", 1);
+    static var hx_AIStateMachine_getState = NativeInterface.loadMember(AIStateMachine, "getState", 2);
+    static var hx_AIStateMachine_removeState = NativeInterface.loadMember(AIStateMachine, "removeState", 2);
+    static var hx_AIStateMachine_setState_Str = NativeInterface.loadMember(AIStateMachine, "setState_Str", 2);
+    static var hx_AIStateMachine_setState_AIState = NativeInterface.loadMember(AIStateMachine, "setState_AIState", 2);
 }
 
 // END

@@ -6,6 +6,7 @@ import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.util.Handle;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -159,29 +160,29 @@ class Effect extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Effect_bind = cpp.Lib.load("gameplay", "hx_Effect_bind", 1);
-    static var hx_Effect_static_createFromFile = cpp.Lib.load("gameplay", "hx_Effect_static_createFromFile", 3);
-    static var hx_Effect_static_createFromSource = cpp.Lib.load("gameplay", "hx_Effect_static_createFromSource", 3);
-    static var hx_Effect_static_getCurrentEffect = cpp.Lib.load("gameplay", "hx_Effect_static_getCurrentEffect", 0);
-    static var hx_Effect_getId = cpp.Lib.load("gameplay", "hx_Effect_getId", 1);
-    static var hx_Effect_getUniform_Str = cpp.Lib.load("gameplay", "hx_Effect_getUniform_Str", 2);
-    static var hx_Effect_getUniform_Int = cpp.Lib.load("gameplay", "hx_Effect_getUniform_Int", 2);
-    static var hx_Effect_getUniformCount = cpp.Lib.load("gameplay", "hx_Effect_getUniformCount", 1);
-    static var hx_Effect_getVertexAttribute = cpp.Lib.load("gameplay", "hx_Effect_getVertexAttribute", 2);
-    static var hx_Effect_setValue_Unif_Mat = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Mat", 3);
-    static var hx_Effect_setValue_Unif_ArrMat_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrMat_Int", 4);
-    static var hx_Effect_setValue_Unif_Smplr = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Smplr", 3);
-    static var hx_Effect_setValue_Unif_ArrSmplr_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrSmplr_Int", 4);
-    static var hx_Effect_setValue_Unif_V2 = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_V2", 3);
-    static var hx_Effect_setValue_Unif_ArrV2_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrV2_Int", 4);
-    static var hx_Effect_setValue_Unif_V3 = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_V3", 3);
-    static var hx_Effect_setValue_Unif_ArrV3_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrV3_Int", 4);
-    static var hx_Effect_setValue_Unif_V4 = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_V4", 3);
-    static var hx_Effect_setValue_Unif_ArrV4_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrV4_Int", 4);
-    static var hx_Effect_setValue_Unif_ArrFlt_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrFlt_Int", 4);
-    static var hx_Effect_setValue_Unif_ArrInt_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_ArrInt_Int", 4);
-    static var hx_Effect_setValue_Unif_Flt = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Flt", 3);
-    static var hx_Effect_setValue_Unif_Int = cpp.Lib.load("gameplay", "hx_Effect_setValue_Unif_Int", 3);
+    static var hx_Effect_bind = NativeInterface.loadMember(Effect, "bind", 1);
+    static var hx_Effect_static_createFromFile = NativeInterface.loadMember(Effect, "static_createFromFile", 3);
+    static var hx_Effect_static_createFromSource = NativeInterface.loadMember(Effect, "static_createFromSource", 3);
+    static var hx_Effect_static_getCurrentEffect = NativeInterface.loadMember(Effect, "static_getCurrentEffect", 0);
+    static var hx_Effect_getId = NativeInterface.loadMember(Effect, "getId", 1);
+    static var hx_Effect_getUniform_Str = NativeInterface.loadMember(Effect, "getUniform_Str", 2);
+    static var hx_Effect_getUniform_Int = NativeInterface.loadMember(Effect, "getUniform_Int", 2);
+    static var hx_Effect_getUniformCount = NativeInterface.loadMember(Effect, "getUniformCount", 1);
+    static var hx_Effect_getVertexAttribute = NativeInterface.loadMember(Effect, "getVertexAttribute", 2);
+    static var hx_Effect_setValue_Unif_Mat = NativeInterface.loadMember(Effect, "setValue_Unif_Mat", 3);
+    static var hx_Effect_setValue_Unif_ArrMat_Int = NativeInterface.loadMember(Effect, "setValue_Unif_ArrMat_Int", 4);
+    static var hx_Effect_setValue_Unif_Smplr = NativeInterface.loadMember(Effect, "setValue_Unif_Smplr", 3);
+    static var hx_Effect_setValue_Unif_ArrSmplr_Int = NativeInterface.loadMember(Effect, "setValue_Unif_ArrSmplr_Int", 4);
+    static var hx_Effect_setValue_Unif_V2 = NativeInterface.loadMember(Effect, "setValue_Unif_V2", 3);
+    static var hx_Effect_setValue_Unif_ArrV2_Int = NativeInterface.loadMember(Effect, "setValue_Unif_ArrV2_Int", 4);
+    static var hx_Effect_setValue_Unif_V3 = NativeInterface.loadMember(Effect, "setValue_Unif_V3", 3);
+    static var hx_Effect_setValue_Unif_ArrV3_Int = NativeInterface.loadMember(Effect, "setValue_Unif_ArrV3_Int", 4);
+    static var hx_Effect_setValue_Unif_V4 = NativeInterface.loadMember(Effect, "setValue_Unif_V4", 3);
+    static var hx_Effect_setValue_Unif_ArrV4_Int = NativeInterface.loadMember(Effect, "setValue_Unif_ArrV4_Int", 4);
+    static var hx_Effect_setValue_Unif_ArrFlt_Int = NativeInterface.loadMember(Effect, "setValue_Unif_ArrFlt_Int", 4);
+    static var hx_Effect_setValue_Unif_ArrInt_Int = NativeInterface.loadMember(Effect, "setValue_Unif_ArrInt_Int", 4);
+    static var hx_Effect_setValue_Unif_Flt = NativeInterface.loadMember(Effect, "setValue_Unif_Flt", 3);
+    static var hx_Effect_setValue_Unif_Int = NativeInterface.loadMember(Effect, "setValue_Unif_Int", 3);
 }
 
 // END

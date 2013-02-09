@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -140,26 +141,26 @@ class Light extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Light_static_createDirectional_V3 = cpp.Lib.load("gameplay", "hx_Light_static_createDirectional_V3", 1);
-    static var hx_Light_static_createDirectional_FltX3 = cpp.Lib.load("gameplay", "hx_Light_static_createDirectional_FltX3", 3);
-    static var hx_Light_static_createPoint_V3_Flt = cpp.Lib.load("gameplay", "hx_Light_static_createPoint_V3_Flt", 2);
-    static var hx_Light_static_createPoint_FltX4 = cpp.Lib.load("gameplay", "hx_Light_static_createPoint_FltX4", 4);
-    static var hx_Light_static_createSpot_V3_FltX3 = cpp.Lib.load("gameplay", "hx_Light_static_createSpot_V3_FltX3", 4);
-    static var hx_Light_static_createSpot_FltX6 = cpp.Lib.load("gameplay", "hx_Light_static_createSpot_FltX6", -1);
-    static var hx_Light_getColor = cpp.Lib.load("gameplay", "hx_Light_getColor", 1);
-    static var hx_Light_getInnerAngle = cpp.Lib.load("gameplay", "hx_Light_getInnerAngle", 1);
-    static var hx_Light_getInnerAngleCos = cpp.Lib.load("gameplay", "hx_Light_getInnerAngleCos", 1);
-    static var hx_Light_getLightType = cpp.Lib.load("gameplay", "hx_Light_getLightType", 1);
-    static var hx_Light_getNode = cpp.Lib.load("gameplay", "hx_Light_getNode", 1);
-    static var hx_Light_getOuterAngle = cpp.Lib.load("gameplay", "hx_Light_getOuterAngle", 1);
-    static var hx_Light_getOuterAngleCos = cpp.Lib.load("gameplay", "hx_Light_getOuterAngleCos", 1);
-    static var hx_Light_getRange = cpp.Lib.load("gameplay", "hx_Light_getRange", 1);
-    static var hx_Light_getRangeInverse = cpp.Lib.load("gameplay", "hx_Light_getRangeInverse", 1);
-    static var hx_Light_setColor_V3 = cpp.Lib.load("gameplay", "hx_Light_setColor_V3", 2);
-    static var hx_Light_setColor_FltX3 = cpp.Lib.load("gameplay", "hx_Light_setColor_FltX3", 4);
-    static var hx_Light_setInnerAngle = cpp.Lib.load("gameplay", "hx_Light_setInnerAngle", 2);
-    static var hx_Light_setOuterAngle = cpp.Lib.load("gameplay", "hx_Light_setOuterAngle", 2);
-    static var hx_Light_setRange = cpp.Lib.load("gameplay", "hx_Light_setRange", 2);
+    static var hx_Light_static_createDirectional_V3 = NativeInterface.loadMember(Light, "static_createDirectional_V3", 1);
+    static var hx_Light_static_createDirectional_FltX3 = NativeInterface.loadMember(Light, "static_createDirectional_FltX3", 3);
+    static var hx_Light_static_createPoint_V3_Flt = NativeInterface.loadMember(Light, "static_createPoint_V3_Flt", 2);
+    static var hx_Light_static_createPoint_FltX4 = NativeInterface.loadMember(Light, "static_createPoint_FltX4", 4);
+    static var hx_Light_static_createSpot_V3_FltX3 = NativeInterface.loadMember(Light, "static_createSpot_V3_FltX3", 4);
+    static var hx_Light_static_createSpot_FltX6 = NativeInterface.loadMember(Light, "static_createSpot_FltX6", -1);
+    static var hx_Light_getColor = NativeInterface.loadMember(Light, "getColor", 1);
+    static var hx_Light_getInnerAngle = NativeInterface.loadMember(Light, "getInnerAngle", 1);
+    static var hx_Light_getInnerAngleCos = NativeInterface.loadMember(Light, "getInnerAngleCos", 1);
+    static var hx_Light_getLightType = NativeInterface.loadMember(Light, "getLightType", 1);
+    static var hx_Light_getNode = NativeInterface.loadMember(Light, "getNode", 1);
+    static var hx_Light_getOuterAngle = NativeInterface.loadMember(Light, "getOuterAngle", 1);
+    static var hx_Light_getOuterAngleCos = NativeInterface.loadMember(Light, "getOuterAngleCos", 1);
+    static var hx_Light_getRange = NativeInterface.loadMember(Light, "getRange", 1);
+    static var hx_Light_getRangeInverse = NativeInterface.loadMember(Light, "getRangeInverse", 1);
+    static var hx_Light_setColor_V3 = NativeInterface.loadMember(Light, "setColor_V3", 2);
+    static var hx_Light_setColor_FltX3 = NativeInterface.loadMember(Light, "setColor_FltX3", 4);
+    static var hx_Light_setInnerAngle = NativeInterface.loadMember(Light, "setInnerAngle", 2);
+    static var hx_Light_setOuterAngle = NativeInterface.loadMember(Light, "setOuterAngle", 2);
+    static var hx_Light_setRange = NativeInterface.loadMember(Light, "setRange", 2);
 }
 
 // END

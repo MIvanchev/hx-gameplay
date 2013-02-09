@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -36,8 +38,8 @@ class Font_Text extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Font_Text_Construct = cpp.Lib.load("gameplay", "hx_Font_Text_Construct", 1);
-    static var hx_Font_Text_getText = cpp.Lib.load("gameplay", "hx_Font_Text_getText", 1);
+    static var hx_Font_Text_Construct = NativeInterface.loadMember(Font_Text, "Construct", 1);
+    static var hx_Font_Text_getText = NativeInterface.loadMember(Font_Text, "getText", 1);
 }
 
 // END

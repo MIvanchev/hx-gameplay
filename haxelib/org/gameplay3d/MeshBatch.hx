@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import haxe.io.BytesData;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.PrimitiveArray;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -71,15 +72,15 @@ class MeshBatch extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_MeshBatch_add = cpp.Lib.load("gameplay", "hx_MeshBatch_add", 5);
-    static var hx_MeshBatch_static_create_Frmt_Int_Mtrl_Bool_IntX2 = cpp.Lib.load("gameplay", "hx_MeshBatch_static_create_Frmt_Int_Mtrl_Bool_IntX2", -1);
-    static var hx_MeshBatch_static_create_Frmt_Int_Str_Bool_IntX2 = cpp.Lib.load("gameplay", "hx_MeshBatch_static_create_Frmt_Int_Str_Bool_IntX2", -1);
-    static var hx_MeshBatch_draw = cpp.Lib.load("gameplay", "hx_MeshBatch_draw", 1);
-    static var hx_MeshBatch_finish = cpp.Lib.load("gameplay", "hx_MeshBatch_finish", 1);
-    static var hx_MeshBatch_getCapacity = cpp.Lib.load("gameplay", "hx_MeshBatch_getCapacity", 1);
-    static var hx_MeshBatch_getMaterial = cpp.Lib.load("gameplay", "hx_MeshBatch_getMaterial", 1);
-    static var hx_MeshBatch_setCapacity = cpp.Lib.load("gameplay", "hx_MeshBatch_setCapacity", 2);
-    static var hx_MeshBatch_start = cpp.Lib.load("gameplay", "hx_MeshBatch_start", 1);
+    static var hx_MeshBatch_add = NativeInterface.loadMember(MeshBatch, "add", 5);
+    static var hx_MeshBatch_static_create_Frmt_Int_Mtrl_Bool_IntX2 = NativeInterface.loadMember(MeshBatch, "static_create_Frmt_Int_Mtrl_Bool_IntX2", -1);
+    static var hx_MeshBatch_static_create_Frmt_Int_Str_Bool_IntX2 = NativeInterface.loadMember(MeshBatch, "static_create_Frmt_Int_Str_Bool_IntX2", -1);
+    static var hx_MeshBatch_draw = NativeInterface.loadMember(MeshBatch, "draw", 1);
+    static var hx_MeshBatch_finish = NativeInterface.loadMember(MeshBatch, "finish", 1);
+    static var hx_MeshBatch_getCapacity = NativeInterface.loadMember(MeshBatch, "getCapacity", 1);
+    static var hx_MeshBatch_getMaterial = NativeInterface.loadMember(MeshBatch, "getMaterial", 1);
+    static var hx_MeshBatch_setCapacity = NativeInterface.loadMember(MeshBatch, "setCapacity", 2);
+    static var hx_MeshBatch_start = NativeInterface.loadMember(MeshBatch, "start", 1);
 }
 
 // END

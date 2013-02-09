@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -54,11 +56,11 @@ class NodeCloneContext extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_NodeCloneContext_Construct = cpp.Lib.load("gameplay", "hx_NodeCloneContext_Construct", 0);
-    static var hx_NodeCloneContext_findClonedAnimation = cpp.Lib.load("gameplay", "hx_NodeCloneContext_findClonedAnimation", 2);
-    static var hx_NodeCloneContext_findClonedNode = cpp.Lib.load("gameplay", "hx_NodeCloneContext_findClonedNode", 2);
-    static var hx_NodeCloneContext_registerClonedAnimation = cpp.Lib.load("gameplay", "hx_NodeCloneContext_registerClonedAnimation", 3);
-    static var hx_NodeCloneContext_registerClonedNode = cpp.Lib.load("gameplay", "hx_NodeCloneContext_registerClonedNode", 3);
+    static var hx_NodeCloneContext_Construct = NativeInterface.loadMember(NodeCloneContext, "Construct", 0);
+    static var hx_NodeCloneContext_findClonedAnimation = NativeInterface.loadMember(NodeCloneContext, "findClonedAnimation", 2);
+    static var hx_NodeCloneContext_findClonedNode = NativeInterface.loadMember(NodeCloneContext, "findClonedNode", 2);
+    static var hx_NodeCloneContext_registerClonedAnimation = NativeInterface.loadMember(NodeCloneContext, "registerClonedAnimation", 3);
+    static var hx_NodeCloneContext_registerClonedNode = NativeInterface.loadMember(NodeCloneContext, "registerClonedNode", 3);
 }
 
 // END

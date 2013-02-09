@@ -1,5 +1,7 @@
 package org.gameplay3d.intern;
 
+import org.gameplay3d.util.NativeInterface;
+
 /**
  * TODO
  */
@@ -39,5 +41,5 @@ class NativeBinding implements INativeBinding
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var testEquivalence:Dynamic = cpp.Lib.load("gameplay", "testEquivalence", 2);
+    static var testEquivalence:Dynamic = NativeInterface.load("testEquivalence", 2);
 }

@@ -2,6 +2,7 @@ package org.gameplay3d.wrapper;
 
 import org.gameplay3d.intern.ListenerWrapper;
 import org.gameplay3d.util.Handle;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.TimeListener;
 
 // DECL: class TimeListener : public GameplayObject
@@ -42,7 +43,7 @@ class TimeListenerWrapper extends ListenerWrapper<TimeListener>, implements Time
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_TimeListener_Construct = cpp.Lib.load("gameplay", "hx_TimeListener_Construct", 1);
+    static var hx_TimeListener_Construct = NativeInterface.loadMember(TimeListener, "Construct", 1);
 }
 
 // END

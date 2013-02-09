@@ -5,6 +5,7 @@ import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -112,21 +113,21 @@ class Terrain extends Transform_ListenerImpl, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Terrain_static_create_HghtFld_V3_IntX2_Flt_Str = cpp.Lib.load("gameplay", "hx_Terrain_static_create_HghtFld_V3_IntX2_Flt_Str", -1);
-    static var hx_Terrain_static_create_Prop = cpp.Lib.load("gameplay", "hx_Terrain_static_create_Prop", 1);
-    static var hx_Terrain_static_create_Str = cpp.Lib.load("gameplay", "hx_Terrain_static_create_Str", 1);
-    static var hx_Terrain_draw = cpp.Lib.load("gameplay", "hx_Terrain_draw", 2);
-    static var hx_Terrain_getBoundingBox = cpp.Lib.load("gameplay", "hx_Terrain_getBoundingBox", 1);
-    static var hx_Terrain_getHeight = cpp.Lib.load("gameplay", "hx_Terrain_getHeight", 3);
-    static var hx_Terrain_getNode = cpp.Lib.load("gameplay", "hx_Terrain_getNode", 1);
-    static var hx_Terrain_getPatchCount = cpp.Lib.load("gameplay", "hx_Terrain_getPatchCount", 1);
-    static var hx_Terrain_getTriangleCount = cpp.Lib.load("gameplay", "hx_Terrain_getTriangleCount", 1);
-    static var hx_Terrain_getVisiblePatchCount = cpp.Lib.load("gameplay", "hx_Terrain_getVisiblePatchCount", 1);
-    static var hx_Terrain_getVisibleTriangleCount = cpp.Lib.load("gameplay", "hx_Terrain_getVisibleTriangleCount", 1);
-    static var hx_Terrain_isFlagSet = cpp.Lib.load("gameplay", "hx_Terrain_isFlagSet", 2);
-    static var hx_Terrain_setFlag = cpp.Lib.load("gameplay", "hx_Terrain_setFlag", 3);
-    static var hx_Terrain_setLayer = cpp.Lib.load("gameplay", "hx_Terrain_setLayer", -1);
-    static var hx_Terrain_transformChanged = cpp.Lib.load("gameplay", "hx_Terrain_transformChanged", 3);
+    static var hx_Terrain_static_create_HghtFld_V3_IntX2_Flt_Str = NativeInterface.loadMember(Terrain, "static_create_HghtFld_V3_IntX2_Flt_Str", -1);
+    static var hx_Terrain_static_create_Prop = NativeInterface.loadMember(Terrain, "static_create_Prop", 1);
+    static var hx_Terrain_static_create_Str = NativeInterface.loadMember(Terrain, "static_create_Str", 1);
+    static var hx_Terrain_draw = NativeInterface.loadMember(Terrain, "draw", 2);
+    static var hx_Terrain_getBoundingBox = NativeInterface.loadMember(Terrain, "getBoundingBox", 1);
+    static var hx_Terrain_getHeight = NativeInterface.loadMember(Terrain, "getHeight", 3);
+    static var hx_Terrain_getNode = NativeInterface.loadMember(Terrain, "getNode", 1);
+    static var hx_Terrain_getPatchCount = NativeInterface.loadMember(Terrain, "getPatchCount", 1);
+    static var hx_Terrain_getTriangleCount = NativeInterface.loadMember(Terrain, "getTriangleCount", 1);
+    static var hx_Terrain_getVisiblePatchCount = NativeInterface.loadMember(Terrain, "getVisiblePatchCount", 1);
+    static var hx_Terrain_getVisibleTriangleCount = NativeInterface.loadMember(Terrain, "getVisibleTriangleCount", 1);
+    static var hx_Terrain_isFlagSet = NativeInterface.loadMember(Terrain, "isFlagSet", 2);
+    static var hx_Terrain_setFlag = NativeInterface.loadMember(Terrain, "setFlag", 3);
+    static var hx_Terrain_setLayer = NativeInterface.loadMember(Terrain, "setLayer", -1);
+    static var hx_Terrain_transformChanged = NativeInterface.loadMember(Terrain, "transformChanged", 3);
 }
 
 // END

@@ -5,6 +5,7 @@ import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
 import org.gameplay3d.shared.SharedVector3;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -124,23 +125,23 @@ class PhysicsCharacter extends PhysicsGhostObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsCharacter_getCurrentVelocity = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_getCurrentVelocity", 1);
-    static var hx_PhysicsCharacter_getMaxSlopeAngle = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_getMaxSlopeAngle", 1);
-    static var hx_PhysicsCharacter_getMaxStepHeight = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_getMaxStepHeight", 1);
-    static var hx_PhysicsCharacter_getType = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_getType", 1);
-    static var hx_PhysicsCharacter_isPhysicsEnabled = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_isPhysicsEnabled", 1);
-    static var hx_PhysicsCharacter_jump = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_jump", 2);
-    static var hx_PhysicsCharacter_rotate_Qtrn = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_rotate_Qtrn", 2);
-    static var hx_PhysicsCharacter_rotate_V3_Flt = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_rotate_V3_Flt", 3);
-    static var hx_PhysicsCharacter_setForwardVelocity = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setForwardVelocity", 2);
-    static var hx_PhysicsCharacter_setMaxSlopeAngle = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setMaxSlopeAngle", 2);
-    static var hx_PhysicsCharacter_setMaxStepHeight = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setMaxStepHeight", 2);
-    static var hx_PhysicsCharacter_setPhysicsEnabled = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setPhysicsEnabled", 2);
-    static var hx_PhysicsCharacter_setRightVelocity = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setRightVelocity", 2);
-    static var hx_PhysicsCharacter_setRotation_Qtrn = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setRotation_Qtrn", 2);
-    static var hx_PhysicsCharacter_setRotation_V3_Flt = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setRotation_V3_Flt", 3);
-    static var hx_PhysicsCharacter_setVelocity_V3 = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setVelocity_V3", 2);
-    static var hx_PhysicsCharacter_setVelocity_FltX3 = cpp.Lib.load("gameplay", "hx_PhysicsCharacter_setVelocity_FltX3", 4);
+    static var hx_PhysicsCharacter_getCurrentVelocity = NativeInterface.loadMember(PhysicsCharacter, "getCurrentVelocity", 1);
+    static var hx_PhysicsCharacter_getMaxSlopeAngle = NativeInterface.loadMember(PhysicsCharacter, "getMaxSlopeAngle", 1);
+    static var hx_PhysicsCharacter_getMaxStepHeight = NativeInterface.loadMember(PhysicsCharacter, "getMaxStepHeight", 1);
+    static var hx_PhysicsCharacter_getType = NativeInterface.loadMember(PhysicsCharacter, "getType", 1);
+    static var hx_PhysicsCharacter_isPhysicsEnabled = NativeInterface.loadMember(PhysicsCharacter, "isPhysicsEnabled", 1);
+    static var hx_PhysicsCharacter_jump = NativeInterface.loadMember(PhysicsCharacter, "jump", 2);
+    static var hx_PhysicsCharacter_rotate_Qtrn = NativeInterface.loadMember(PhysicsCharacter, "rotate_Qtrn", 2);
+    static var hx_PhysicsCharacter_rotate_V3_Flt = NativeInterface.loadMember(PhysicsCharacter, "rotate_V3_Flt", 3);
+    static var hx_PhysicsCharacter_setForwardVelocity = NativeInterface.loadMember(PhysicsCharacter, "setForwardVelocity", 2);
+    static var hx_PhysicsCharacter_setMaxSlopeAngle = NativeInterface.loadMember(PhysicsCharacter, "setMaxSlopeAngle", 2);
+    static var hx_PhysicsCharacter_setMaxStepHeight = NativeInterface.loadMember(PhysicsCharacter, "setMaxStepHeight", 2);
+    static var hx_PhysicsCharacter_setPhysicsEnabled = NativeInterface.loadMember(PhysicsCharacter, "setPhysicsEnabled", 2);
+    static var hx_PhysicsCharacter_setRightVelocity = NativeInterface.loadMember(PhysicsCharacter, "setRightVelocity", 2);
+    static var hx_PhysicsCharacter_setRotation_Qtrn = NativeInterface.loadMember(PhysicsCharacter, "setRotation_Qtrn", 2);
+    static var hx_PhysicsCharacter_setRotation_V3_Flt = NativeInterface.loadMember(PhysicsCharacter, "setRotation_V3_Flt", 3);
+    static var hx_PhysicsCharacter_setVelocity_V3 = NativeInterface.loadMember(PhysicsCharacter, "setVelocity_V3", 2);
+    static var hx_PhysicsCharacter_setVelocity_FltX3 = NativeInterface.loadMember(PhysicsCharacter, "setVelocity_FltX3", 4);
 }
 
 // END

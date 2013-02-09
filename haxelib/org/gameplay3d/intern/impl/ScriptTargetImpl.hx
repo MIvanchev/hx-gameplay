@@ -2,6 +2,7 @@ package org.gameplay3d.intern.impl;
 
 import org.gameplay3d.GameplayObject;
 import org.gameplay3d.ScriptTarget;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -29,8 +30,8 @@ class ScriptTargetImpl extends GameplayObject, implements ScriptTarget
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_ScriptTarget_addScriptCallback = cpp.Lib.load("gameplay", "hx_ScriptTarget_addScriptCallback", 3);
-    static var hx_ScriptTarget_removeScriptCallback = cpp.Lib.load("gameplay", "hx_ScriptTarget_removeScriptCallback", 3);
+    static var hx_ScriptTarget_addScriptCallback = NativeInterface.loadMember(ScriptTarget, "addScriptCallback", 3);
+    static var hx_ScriptTarget_removeScriptCallback = NativeInterface.loadMember(ScriptTarget, "removeScriptCallback", 3);
 }
 
 // END

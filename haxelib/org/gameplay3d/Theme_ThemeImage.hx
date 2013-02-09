@@ -5,6 +5,7 @@ import org.gameplay3d.immutable.ITheme_UVs;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -48,10 +49,10 @@ class Theme_ThemeImage extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Theme_ThemeImage_getColor = cpp.Lib.load("gameplay", "hx_Theme_ThemeImage_getColor", 1);
-    static var hx_Theme_ThemeImage_getId = cpp.Lib.load("gameplay", "hx_Theme_ThemeImage_getId", 1);
-    static var hx_Theme_ThemeImage_getRegion = cpp.Lib.load("gameplay", "hx_Theme_ThemeImage_getRegion", 1);
-    static var hx_Theme_ThemeImage_getUVs = cpp.Lib.load("gameplay", "hx_Theme_ThemeImage_getUVs", 1);
+    static var hx_Theme_ThemeImage_getColor = NativeInterface.loadMember(Theme_ThemeImage, "getColor", 1);
+    static var hx_Theme_ThemeImage_getId = NativeInterface.loadMember(Theme_ThemeImage, "getId", 1);
+    static var hx_Theme_ThemeImage_getRegion = NativeInterface.loadMember(Theme_ThemeImage, "getRegion", 1);
+    static var hx_Theme_ThemeImage_getUVs = NativeInterface.loadMember(Theme_ThemeImage, "getUVs", 1);
 }
 
 // END

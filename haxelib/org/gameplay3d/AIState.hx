@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.intern.impl.ScriptTargetImpl;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.wrapper.AIState_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -35,10 +36,10 @@ class AIState extends ScriptTargetImpl, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AIState_static_create = cpp.Lib.load("gameplay", "hx_AIState_static_create", 1);
-    static var hx_AIState_getId = cpp.Lib.load("gameplay", "hx_AIState_getId", 1);
-    static var hx_AIState_setListener = cpp.Lib.load("gameplay", "hx_AIState_setListener", 2);
-    static var hx_AIState_Listener_Construct = cpp.Lib.load("gameplay", "hx_AIState_Listener_Construct", 3);
+    static var hx_AIState_static_create = NativeInterface.loadMember(AIState, "static_create", 1);
+    static var hx_AIState_getId = NativeInterface.loadMember(AIState, "getId", 1);
+    static var hx_AIState_setListener = NativeInterface.loadMember(AIState, "setListener", 2);
+    static var hx_AIState_Listener_Construct = NativeInterface.loadMember(AIState_Listener, "Construct", 3);
 }
 
 // END

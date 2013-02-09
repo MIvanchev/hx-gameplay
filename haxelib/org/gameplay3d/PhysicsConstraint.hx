@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.Macros;
 import org.gameplay3d.shared.SharedQuaternion;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -62,13 +63,13 @@ class PhysicsConstraint extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsConstraint_static_centerOfMassMidpoint = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_static_centerOfMassMidpoint", 2);
-    static var hx_PhysicsConstraint_getBreakingImpulse = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_getBreakingImpulse", 1);
-    static var hx_PhysicsConstraint_static_getRotationOffset = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_static_getRotationOffset", 2);
-    static var hx_PhysicsConstraint_static_getTranslationOffset = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_static_getTranslationOffset", 2);
-    static var hx_PhysicsConstraint_isEnabled = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_isEnabled", 1);
-    static var hx_PhysicsConstraint_setBreakingImpulse = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_setBreakingImpulse", 2);
-    static var hx_PhysicsConstraint_setEnabled = cpp.Lib.load("gameplay", "hx_PhysicsConstraint_setEnabled", 2);
+    static var hx_PhysicsConstraint_static_centerOfMassMidpoint = NativeInterface.loadMember(PhysicsConstraint, "static_centerOfMassMidpoint", 2);
+    static var hx_PhysicsConstraint_getBreakingImpulse = NativeInterface.loadMember(PhysicsConstraint, "getBreakingImpulse", 1);
+    static var hx_PhysicsConstraint_static_getRotationOffset = NativeInterface.loadMember(PhysicsConstraint, "static_getRotationOffset", 2);
+    static var hx_PhysicsConstraint_static_getTranslationOffset = NativeInterface.loadMember(PhysicsConstraint, "static_getTranslationOffset", 2);
+    static var hx_PhysicsConstraint_isEnabled = NativeInterface.loadMember(PhysicsConstraint, "isEnabled", 1);
+    static var hx_PhysicsConstraint_setBreakingImpulse = NativeInterface.loadMember(PhysicsConstraint, "setBreakingImpulse", 2);
+    static var hx_PhysicsConstraint_setEnabled = NativeInterface.loadMember(PhysicsConstraint, "setEnabled", 2);
 }
 
 // END

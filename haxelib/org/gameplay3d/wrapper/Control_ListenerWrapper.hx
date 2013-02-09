@@ -3,6 +3,7 @@ package org.gameplay3d.wrapper;
 import org.gameplay3d.Control;
 import org.gameplay3d.Control_Listener;
 import org.gameplay3d.intern.ListenerWrapper;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.GameplayObject;
 
@@ -44,7 +45,7 @@ class Control_ListenerWrapper extends ListenerWrapper<Control_Listener>, impleme
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Control_Listener_Construct = cpp.Lib.load("gameplay", "hx_Control_Listener_Construct", 1);
+    static var hx_Control_Listener_Construct = NativeInterface.loadMember(Control_Listener, "Construct", 1);
 }
 
 // END

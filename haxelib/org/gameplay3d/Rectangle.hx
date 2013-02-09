@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -220,34 +221,34 @@ class Rectangle extends GameplayObject, implements IRectangle
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Rectangle_Construct = cpp.Lib.load("gameplay", "hx_Rectangle_Construct", 0);
-    static var hx_Rectangle_Construct_Rct = cpp.Lib.load("gameplay", "hx_Rectangle_Construct_Rct", 1);
-    static var hx_Rectangle_Construct_FltX2 = cpp.Lib.load("gameplay", "hx_Rectangle_Construct_FltX2", 2);
-    static var hx_Rectangle_Construct_FltX4 = cpp.Lib.load("gameplay", "hx_Rectangle_Construct_FltX4", 4);
-    static var hx_Rectangle_bottom = cpp.Lib.load("gameplay", "hx_Rectangle_bottom", 1);
-    static var hx_Rectangle_static_combine = cpp.Lib.load("gameplay", "hx_Rectangle_static_combine", 3);
-    static var hx_Rectangle_contains_Rct = cpp.Lib.load("gameplay", "hx_Rectangle_contains_Rct", 2);
-    static var hx_Rectangle_contains_FltX2 = cpp.Lib.load("gameplay", "hx_Rectangle_contains_FltX2", 3);
-    static var hx_Rectangle_contains_FltX4 = cpp.Lib.load("gameplay", "hx_Rectangle_contains_FltX4", 5);
-    static var hx_Rectangle_static_empty = cpp.Lib.load("gameplay", "hx_Rectangle_static_empty", 0);
-    static var hx_Rectangle_inflate = cpp.Lib.load("gameplay", "hx_Rectangle_inflate", 3);
-    static var hx_Rectangle_intersects_Rct = cpp.Lib.load("gameplay", "hx_Rectangle_intersects_Rct", 2);
-    static var hx_Rectangle_intersects_FltX4 = cpp.Lib.load("gameplay", "hx_Rectangle_intersects_FltX4", 5);
-    static var hx_Rectangle_isEmpty = cpp.Lib.load("gameplay", "hx_Rectangle_isEmpty", 1);
-    static var hx_Rectangle_left = cpp.Lib.load("gameplay", "hx_Rectangle_left", 1);
-    static var hx_Rectangle_right = cpp.Lib.load("gameplay", "hx_Rectangle_right", 1);
-    static var hx_Rectangle_set_Rct = cpp.Lib.load("gameplay", "hx_Rectangle_set_Rct", 2);
-    static var hx_Rectangle_set_FltX4 = cpp.Lib.load("gameplay", "hx_Rectangle_set_FltX4", 5);
-    static var hx_Rectangle_setPosition = cpp.Lib.load("gameplay", "hx_Rectangle_setPosition", 3);
-    static var hx_Rectangle_top = cpp.Lib.load("gameplay", "hx_Rectangle_top", 1);
-    static var hx_Rectangle_property_x_get = cpp.Lib.load("gameplay", "hx_Rectangle_property_x_get", 1);
-    static var hx_Rectangle_property_x_set = cpp.Lib.load("gameplay", "hx_Rectangle_property_x_set", 2);
-    static var hx_Rectangle_property_y_get = cpp.Lib.load("gameplay", "hx_Rectangle_property_y_get", 1);
-    static var hx_Rectangle_property_y_set = cpp.Lib.load("gameplay", "hx_Rectangle_property_y_set", 2);
-    static var hx_Rectangle_property_width_get = cpp.Lib.load("gameplay", "hx_Rectangle_property_width_get", 1);
-    static var hx_Rectangle_property_width_set = cpp.Lib.load("gameplay", "hx_Rectangle_property_width_set", 2);
-    static var hx_Rectangle_property_height_get = cpp.Lib.load("gameplay", "hx_Rectangle_property_height_get", 1);
-    static var hx_Rectangle_property_height_set = cpp.Lib.load("gameplay", "hx_Rectangle_property_height_set", 2);
+    static var hx_Rectangle_Construct = NativeInterface.loadMember(Rectangle, "Construct", 0);
+    static var hx_Rectangle_Construct_Rct = NativeInterface.loadMember(Rectangle, "Construct_Rct", 1);
+    static var hx_Rectangle_Construct_FltX2 = NativeInterface.loadMember(Rectangle, "Construct_FltX2", 2);
+    static var hx_Rectangle_Construct_FltX4 = NativeInterface.loadMember(Rectangle, "Construct_FltX4", 4);
+    static var hx_Rectangle_bottom = NativeInterface.loadMember(Rectangle, "bottom", 1);
+    static var hx_Rectangle_static_combine = NativeInterface.loadMember(Rectangle, "static_combine", 3);
+    static var hx_Rectangle_contains_Rct = NativeInterface.loadMember(Rectangle, "contains_Rct", 2);
+    static var hx_Rectangle_contains_FltX2 = NativeInterface.loadMember(Rectangle, "contains_FltX2", 3);
+    static var hx_Rectangle_contains_FltX4 = NativeInterface.loadMember(Rectangle, "contains_FltX4", 5);
+    static var hx_Rectangle_static_empty = NativeInterface.loadMember(Rectangle, "static_empty", 0);
+    static var hx_Rectangle_inflate = NativeInterface.loadMember(Rectangle, "inflate", 3);
+    static var hx_Rectangle_intersects_Rct = NativeInterface.loadMember(Rectangle, "intersects_Rct", 2);
+    static var hx_Rectangle_intersects_FltX4 = NativeInterface.loadMember(Rectangle, "intersects_FltX4", 5);
+    static var hx_Rectangle_isEmpty = NativeInterface.loadMember(Rectangle, "isEmpty", 1);
+    static var hx_Rectangle_left = NativeInterface.loadMember(Rectangle, "left", 1);
+    static var hx_Rectangle_right = NativeInterface.loadMember(Rectangle, "right", 1);
+    static var hx_Rectangle_set_Rct = NativeInterface.loadMember(Rectangle, "set_Rct", 2);
+    static var hx_Rectangle_set_FltX4 = NativeInterface.loadMember(Rectangle, "set_FltX4", 5);
+    static var hx_Rectangle_setPosition = NativeInterface.loadMember(Rectangle, "setPosition", 3);
+    static var hx_Rectangle_top = NativeInterface.loadMember(Rectangle, "top", 1);
+    static var hx_Rectangle_property_x_get = NativeInterface.loadMember(Rectangle, "property_x_get", 1);
+    static var hx_Rectangle_property_x_set = NativeInterface.loadMember(Rectangle, "property_x_set", 2);
+    static var hx_Rectangle_property_y_get = NativeInterface.loadMember(Rectangle, "property_y_get", 1);
+    static var hx_Rectangle_property_y_set = NativeInterface.loadMember(Rectangle, "property_y_set", 2);
+    static var hx_Rectangle_property_width_get = NativeInterface.loadMember(Rectangle, "property_width_get", 1);
+    static var hx_Rectangle_property_width_set = NativeInterface.loadMember(Rectangle, "property_width_set", 2);
+    static var hx_Rectangle_property_height_get = NativeInterface.loadMember(Rectangle, "property_height_get", 1);
+    static var hx_Rectangle_property_height_set = NativeInterface.loadMember(Rectangle, "property_height_set", 2);
 }
 
 // END

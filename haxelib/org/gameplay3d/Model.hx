@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -86,18 +87,18 @@ class Model extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Model_static_create = cpp.Lib.load("gameplay", "hx_Model_static_create", 1);
-    static var hx_Model_draw = cpp.Lib.load("gameplay", "hx_Model_draw", 2);
-    static var hx_Model_getMaterial = cpp.Lib.load("gameplay", "hx_Model_getMaterial", 2);
-    static var hx_Model_getMesh = cpp.Lib.load("gameplay", "hx_Model_getMesh", 1);
-    static var hx_Model_getMeshPartCount = cpp.Lib.load("gameplay", "hx_Model_getMeshPartCount", 1);
-    static var hx_Model_getNode = cpp.Lib.load("gameplay", "hx_Model_getNode", 1);
-    static var hx_Model_getSkin = cpp.Lib.load("gameplay", "hx_Model_getSkin", 1);
-    static var hx_Model_hasMaterial = cpp.Lib.load("gameplay", "hx_Model_hasMaterial", 2);
-    static var hx_Model_setMaterial_Str_Int = cpp.Lib.load("gameplay", "hx_Model_setMaterial_Str_Int", 3);
-    static var hx_Model_setMaterial_StrX3_Int = cpp.Lib.load("gameplay", "hx_Model_setMaterial_StrX3_Int", 5);
-    static var hx_Model_setMaterial_Mtrl_Int = cpp.Lib.load("gameplay", "hx_Model_setMaterial_Mtrl_Int", 3);
-    static var hx_Model_setNode = cpp.Lib.load("gameplay", "hx_Model_setNode", 2);
+    static var hx_Model_static_create = NativeInterface.loadMember(Model, "static_create", 1);
+    static var hx_Model_draw = NativeInterface.loadMember(Model, "draw", 2);
+    static var hx_Model_getMaterial = NativeInterface.loadMember(Model, "getMaterial", 2);
+    static var hx_Model_getMesh = NativeInterface.loadMember(Model, "getMesh", 1);
+    static var hx_Model_getMeshPartCount = NativeInterface.loadMember(Model, "getMeshPartCount", 1);
+    static var hx_Model_getNode = NativeInterface.loadMember(Model, "getNode", 1);
+    static var hx_Model_getSkin = NativeInterface.loadMember(Model, "getSkin", 1);
+    static var hx_Model_hasMaterial = NativeInterface.loadMember(Model, "hasMaterial", 2);
+    static var hx_Model_setMaterial_Str_Int = NativeInterface.loadMember(Model, "setMaterial_Str_Int", 3);
+    static var hx_Model_setMaterial_StrX3_Int = NativeInterface.loadMember(Model, "setMaterial_StrX3_Int", 5);
+    static var hx_Model_setMaterial_Mtrl_Int = NativeInterface.loadMember(Model, "setMaterial_Mtrl_Int", 3);
+    static var hx_Model_setNode = NativeInterface.loadMember(Model, "setNode", 2);
 }
 
 // END

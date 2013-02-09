@@ -2,7 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.NativeOutParameter;
-import org.gameplay3d.util.OutParameter;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -193,35 +193,35 @@ class PhysicsVehicleWheel extends PhysicsCollisionObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsVehicleWheel_getFrictionBreakout = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getFrictionBreakout", 1);
-    static var hx_PhysicsVehicleWheel_getRollInfluence = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getRollInfluence", 1);
-    static var hx_PhysicsVehicleWheel_getStrutConnectionOffset = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutConnectionOffset", 2);
-    static var hx_PhysicsVehicleWheel_getStrutDampingCompression = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutDampingCompression", 1);
-    static var hx_PhysicsVehicleWheel_getStrutDampingRelaxation = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutDampingRelaxation", 1);
-    static var hx_PhysicsVehicleWheel_getStrutForceMax = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutForceMax", 1);
-    static var hx_PhysicsVehicleWheel_getStrutRestLength = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutRestLength", 1);
-    static var hx_PhysicsVehicleWheel_getStrutStiffness = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutStiffness", 1);
-    static var hx_PhysicsVehicleWheel_getStrutTravelMax = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getStrutTravelMax", 1);
-    static var hx_PhysicsVehicleWheel_getType = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getType", 1);
-    static var hx_PhysicsVehicleWheel_getWheelAxle = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getWheelAxle", 2);
-    static var hx_PhysicsVehicleWheel_getWheelDirection = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getWheelDirection", 2);
-    static var hx_PhysicsVehicleWheel_getWheelRadius = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_getWheelRadius", 1);
-    static var hx_PhysicsVehicleWheel_isSteerable = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_isSteerable", 1);
-    static var hx_PhysicsVehicleWheel_setEnabled = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setEnabled", 2);
-    static var hx_PhysicsVehicleWheel_setFrictionBreakout = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setFrictionBreakout", 2);
-    static var hx_PhysicsVehicleWheel_setRollInfluence = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setRollInfluence", 2);
-    static var hx_PhysicsVehicleWheel_setSteerable = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setSteerable", 2);
-    static var hx_PhysicsVehicleWheel_setStrutConnectionOffset = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutConnectionOffset", 2);
-    static var hx_PhysicsVehicleWheel_setStrutDampingCompression = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutDampingCompression", 2);
-    static var hx_PhysicsVehicleWheel_setStrutDampingRelaxation = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutDampingRelaxation", 2);
-    static var hx_PhysicsVehicleWheel_setStrutForceMax = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutForceMax", 2);
-    static var hx_PhysicsVehicleWheel_setStrutRestLength = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutRestLength", 2);
-    static var hx_PhysicsVehicleWheel_setStrutStiffness = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutStiffness", 2);
-    static var hx_PhysicsVehicleWheel_setStrutTravelMax = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setStrutTravelMax", 2);
-    static var hx_PhysicsVehicleWheel_setWheelAxle = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setWheelAxle", 2);
-    static var hx_PhysicsVehicleWheel_setWheelDirection = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setWheelDirection", 2);
-    static var hx_PhysicsVehicleWheel_setWheelRadius = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_setWheelRadius", 2);
-    static var hx_PhysicsVehicleWheel_transform = cpp.Lib.load("gameplay", "hx_PhysicsVehicleWheel_transform", 2);
+    static var hx_PhysicsVehicleWheel_getFrictionBreakout = NativeInterface.loadMember(PhysicsVehicleWheel, "getFrictionBreakout", 1);
+    static var hx_PhysicsVehicleWheel_getRollInfluence = NativeInterface.loadMember(PhysicsVehicleWheel, "getRollInfluence", 1);
+    static var hx_PhysicsVehicleWheel_getStrutConnectionOffset = NativeInterface.loadMember(PhysicsVehicleWheel, "getStrutConnectionOffset", 2);
+    static var hx_PhysicsVehicleWheel_getStrutDampingCompression = NativeInterface.loadMember(PhysicsVehicleWheel, "getStrutDampingCompression", 1);
+    static var hx_PhysicsVehicleWheel_getStrutDampingRelaxation = NativeInterface.loadMember(PhysicsVehicleWheel, "getStrutDampingRelaxation", 1);
+    static var hx_PhysicsVehicleWheel_getStrutForceMax = NativeInterface.loadMember(PhysicsVehicleWheel, "getStrutForceMax", 1);
+    static var hx_PhysicsVehicleWheel_getStrutRestLength = NativeInterface.loadMember(PhysicsVehicleWheel, "getStrutRestLength", 1);
+    static var hx_PhysicsVehicleWheel_getStrutStiffness = NativeInterface.loadMember(PhysicsVehicleWheel, "getStrutStiffness", 1);
+    static var hx_PhysicsVehicleWheel_getStrutTravelMax = NativeInterface.loadMember(PhysicsVehicleWheel, "getStrutTravelMax", 1);
+    static var hx_PhysicsVehicleWheel_getType = NativeInterface.loadMember(PhysicsVehicleWheel, "getType", 1);
+    static var hx_PhysicsVehicleWheel_getWheelAxle = NativeInterface.loadMember(PhysicsVehicleWheel, "getWheelAxle", 2);
+    static var hx_PhysicsVehicleWheel_getWheelDirection = NativeInterface.loadMember(PhysicsVehicleWheel, "getWheelDirection", 2);
+    static var hx_PhysicsVehicleWheel_getWheelRadius = NativeInterface.loadMember(PhysicsVehicleWheel, "getWheelRadius", 1);
+    static var hx_PhysicsVehicleWheel_isSteerable = NativeInterface.loadMember(PhysicsVehicleWheel, "isSteerable", 1);
+    static var hx_PhysicsVehicleWheel_setEnabled = NativeInterface.loadMember(PhysicsVehicleWheel, "setEnabled", 2);
+    static var hx_PhysicsVehicleWheel_setFrictionBreakout = NativeInterface.loadMember(PhysicsVehicleWheel, "setFrictionBreakout", 2);
+    static var hx_PhysicsVehicleWheel_setRollInfluence = NativeInterface.loadMember(PhysicsVehicleWheel, "setRollInfluence", 2);
+    static var hx_PhysicsVehicleWheel_setSteerable = NativeInterface.loadMember(PhysicsVehicleWheel, "setSteerable", 2);
+    static var hx_PhysicsVehicleWheel_setStrutConnectionOffset = NativeInterface.loadMember(PhysicsVehicleWheel, "setStrutConnectionOffset", 2);
+    static var hx_PhysicsVehicleWheel_setStrutDampingCompression = NativeInterface.loadMember(PhysicsVehicleWheel, "setStrutDampingCompression", 2);
+    static var hx_PhysicsVehicleWheel_setStrutDampingRelaxation = NativeInterface.loadMember(PhysicsVehicleWheel, "setStrutDampingRelaxation", 2);
+    static var hx_PhysicsVehicleWheel_setStrutForceMax = NativeInterface.loadMember(PhysicsVehicleWheel, "setStrutForceMax", 2);
+    static var hx_PhysicsVehicleWheel_setStrutRestLength = NativeInterface.loadMember(PhysicsVehicleWheel, "setStrutRestLength", 2);
+    static var hx_PhysicsVehicleWheel_setStrutStiffness = NativeInterface.loadMember(PhysicsVehicleWheel, "setStrutStiffness", 2);
+    static var hx_PhysicsVehicleWheel_setStrutTravelMax = NativeInterface.loadMember(PhysicsVehicleWheel, "setStrutTravelMax", 2);
+    static var hx_PhysicsVehicleWheel_setWheelAxle = NativeInterface.loadMember(PhysicsVehicleWheel, "setWheelAxle", 2);
+    static var hx_PhysicsVehicleWheel_setWheelDirection = NativeInterface.loadMember(PhysicsVehicleWheel, "setWheelDirection", 2);
+    static var hx_PhysicsVehicleWheel_setWheelRadius = NativeInterface.loadMember(PhysicsVehicleWheel, "setWheelRadius", 2);
+    static var hx_PhysicsVehicleWheel_transform = NativeInterface.loadMember(PhysicsVehicleWheel, "transform", 2);
 }
 
 // END

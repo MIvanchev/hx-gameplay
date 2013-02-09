@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -129,23 +130,23 @@ class PhysicsRigidBody_Parameters extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsRigidBody_Parameters_Construct = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_Construct", 0);
-    static var hx_PhysicsRigidBody_Parameters_Construct_FltX5_Bool_V3X3 = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_Construct_FltX5_Bool_V3X3", -1);
-    static var hx_PhysicsRigidBody_Parameters_property_mass_get = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_mass_get", 1);
-    static var hx_PhysicsRigidBody_Parameters_property_mass_set = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_mass_set", 2);
-    static var hx_PhysicsRigidBody_Parameters_property_friction_get = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_friction_get", 1);
-    static var hx_PhysicsRigidBody_Parameters_property_friction_set = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_friction_set", 2);
-    static var hx_PhysicsRigidBody_Parameters_property_restitution_get = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_restitution_get", 1);
-    static var hx_PhysicsRigidBody_Parameters_property_restitution_set = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_restitution_set", 2);
-    static var hx_PhysicsRigidBody_Parameters_property_linearDamping_get = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_linearDamping_get", 1);
-    static var hx_PhysicsRigidBody_Parameters_property_linearDamping_set = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_linearDamping_set", 2);
-    static var hx_PhysicsRigidBody_Parameters_property_angularDamping_get = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_angularDamping_get", 1);
-    static var hx_PhysicsRigidBody_Parameters_property_angularDamping_set = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_angularDamping_set", 2);
-    static var hx_PhysicsRigidBody_Parameters_property_kinematic_get = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_kinematic_get", 1);
-    static var hx_PhysicsRigidBody_Parameters_property_kinematic_set = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_kinematic_set", 2);
-    static var hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get", 1);
-    static var hx_PhysicsRigidBody_Parameters_property_linearFactor_get = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_linearFactor_get", 1);
-    static var hx_PhysicsRigidBody_Parameters_property_angularFactor_get = cpp.Lib.load("gameplay", "hx_PhysicsRigidBody_Parameters_property_angularFactor_get", 1);
+    static var hx_PhysicsRigidBody_Parameters_Construct = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "Construct", 0);
+    static var hx_PhysicsRigidBody_Parameters_Construct_FltX5_Bool_V3X3 = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "Construct_FltX5_Bool_V3X3", -1);
+    static var hx_PhysicsRigidBody_Parameters_property_mass_get = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_mass_get", 1);
+    static var hx_PhysicsRigidBody_Parameters_property_mass_set = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_mass_set", 2);
+    static var hx_PhysicsRigidBody_Parameters_property_friction_get = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_friction_get", 1);
+    static var hx_PhysicsRigidBody_Parameters_property_friction_set = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_friction_set", 2);
+    static var hx_PhysicsRigidBody_Parameters_property_restitution_get = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_restitution_get", 1);
+    static var hx_PhysicsRigidBody_Parameters_property_restitution_set = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_restitution_set", 2);
+    static var hx_PhysicsRigidBody_Parameters_property_linearDamping_get = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_linearDamping_get", 1);
+    static var hx_PhysicsRigidBody_Parameters_property_linearDamping_set = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_linearDamping_set", 2);
+    static var hx_PhysicsRigidBody_Parameters_property_angularDamping_get = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_angularDamping_get", 1);
+    static var hx_PhysicsRigidBody_Parameters_property_angularDamping_set = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_angularDamping_set", 2);
+    static var hx_PhysicsRigidBody_Parameters_property_kinematic_get = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_kinematic_get", 1);
+    static var hx_PhysicsRigidBody_Parameters_property_kinematic_set = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_kinematic_set", 2);
+    static var hx_PhysicsRigidBody_Parameters_property_anisotropicFriction_get = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_anisotropicFriction_get", 1);
+    static var hx_PhysicsRigidBody_Parameters_property_linearFactor_get = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_linearFactor_get", 1);
+    static var hx_PhysicsRigidBody_Parameters_property_angularFactor_get = NativeInterface.loadMember(PhysicsRigidBody_Parameters, "property_angularFactor_get", 1);
 }
 
 // END

@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -20,7 +22,7 @@ class Button extends Label
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Button_static_create = cpp.Lib.load("gameplay", "hx_Button_static_create", 2);
+    static var hx_Button_static_create = NativeInterface.loadMember(Button, "static_create", 2);
 }
 
 // END

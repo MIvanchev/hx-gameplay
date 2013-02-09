@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -20,7 +22,7 @@ class PhysicsHingeConstraint extends PhysicsConstraint
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsHingeConstraint_setLimits = cpp.Lib.load("gameplay", "hx_PhysicsHingeConstraint_setLimits", 4);
+    static var hx_PhysicsHingeConstraint_setLimits = NativeInterface.loadMember(PhysicsHingeConstraint, "setLimits", 4);
 }
 
 // END

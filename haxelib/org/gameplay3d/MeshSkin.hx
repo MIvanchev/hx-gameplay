@@ -5,6 +5,7 @@ import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.ObjectArray;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -89,17 +90,17 @@ class MeshSkin extends Transform_ListenerImpl
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_MeshSkin_getBindShape = cpp.Lib.load("gameplay", "hx_MeshSkin_getBindShape", 1);
-    static var hx_MeshSkin_getJoint_Str = cpp.Lib.load("gameplay", "hx_MeshSkin_getJoint_Str", 2);
-    static var hx_MeshSkin_getJoint_Int = cpp.Lib.load("gameplay", "hx_MeshSkin_getJoint_Int", 2);
-    static var hx_MeshSkin_getJointCount = cpp.Lib.load("gameplay", "hx_MeshSkin_getJointCount", 1);
-    static var hx_MeshSkin_getJointIndex = cpp.Lib.load("gameplay", "hx_MeshSkin_getJointIndex", 2);
-    static var hx_MeshSkin_getMatrixPalette = cpp.Lib.load("gameplay", "hx_MeshSkin_getMatrixPalette", 1);
-    static var hx_MeshSkin_getMatrixPaletteSize = cpp.Lib.load("gameplay", "hx_MeshSkin_getMatrixPaletteSize", 1);
-    static var hx_MeshSkin_getModel = cpp.Lib.load("gameplay", "hx_MeshSkin_getModel", 1);
-    static var hx_MeshSkin_getRootJoint = cpp.Lib.load("gameplay", "hx_MeshSkin_getRootJoint", 1);
-    static var hx_MeshSkin_setBindShape = cpp.Lib.load("gameplay", "hx_MeshSkin_setBindShape", 2);
-    static var hx_MeshSkin_setRootJoint = cpp.Lib.load("gameplay", "hx_MeshSkin_setRootJoint", 2);
+    static var hx_MeshSkin_getBindShape = NativeInterface.loadMember(MeshSkin, "getBindShape", 1);
+    static var hx_MeshSkin_getJoint_Str = NativeInterface.loadMember(MeshSkin, "getJoint_Str", 2);
+    static var hx_MeshSkin_getJoint_Int = NativeInterface.loadMember(MeshSkin, "getJoint_Int", 2);
+    static var hx_MeshSkin_getJointCount = NativeInterface.loadMember(MeshSkin, "getJointCount", 1);
+    static var hx_MeshSkin_getJointIndex = NativeInterface.loadMember(MeshSkin, "getJointIndex", 2);
+    static var hx_MeshSkin_getMatrixPalette = NativeInterface.loadMember(MeshSkin, "getMatrixPalette", 1);
+    static var hx_MeshSkin_getMatrixPaletteSize = NativeInterface.loadMember(MeshSkin, "getMatrixPaletteSize", 1);
+    static var hx_MeshSkin_getModel = NativeInterface.loadMember(MeshSkin, "getModel", 1);
+    static var hx_MeshSkin_getRootJoint = NativeInterface.loadMember(MeshSkin, "getRootJoint", 1);
+    static var hx_MeshSkin_setBindShape = NativeInterface.loadMember(MeshSkin, "setBindShape", 2);
+    static var hx_MeshSkin_setRootJoint = NativeInterface.loadMember(MeshSkin, "setRootJoint", 2);
 }
 
 // END

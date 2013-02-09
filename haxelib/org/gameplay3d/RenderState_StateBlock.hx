@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -74,16 +75,16 @@ class RenderState_StateBlock extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_RenderState_StateBlock_bind = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_bind", 1);
-    static var hx_RenderState_StateBlock_static_create = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_static_create", 0);
-    static var hx_RenderState_StateBlock_setBlend = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setBlend", 2);
-    static var hx_RenderState_StateBlock_setBlendDst = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setBlendDst", 2);
-    static var hx_RenderState_StateBlock_setBlendSrc = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setBlendSrc", 2);
-    static var hx_RenderState_StateBlock_setCullFace = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setCullFace", 2);
-    static var hx_RenderState_StateBlock_setDepthTest = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setDepthTest", 2);
-    static var hx_RenderState_StateBlock_setDepthWrite = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setDepthWrite", 2);
-    static var hx_RenderState_StateBlock_setDepthFunction = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setDepthFunction", 2);
-    static var hx_RenderState_StateBlock_setState = cpp.Lib.load("gameplay", "hx_RenderState_StateBlock_setState", 3);
+    static var hx_RenderState_StateBlock_bind = NativeInterface.loadMember(RenderState_StateBlock, "bind", 1);
+    static var hx_RenderState_StateBlock_static_create = NativeInterface.loadMember(RenderState_StateBlock, "static_create", 0);
+    static var hx_RenderState_StateBlock_setBlend = NativeInterface.loadMember(RenderState_StateBlock, "setBlend", 2);
+    static var hx_RenderState_StateBlock_setBlendDst = NativeInterface.loadMember(RenderState_StateBlock, "setBlendDst", 2);
+    static var hx_RenderState_StateBlock_setBlendSrc = NativeInterface.loadMember(RenderState_StateBlock, "setBlendSrc", 2);
+    static var hx_RenderState_StateBlock_setCullFace = NativeInterface.loadMember(RenderState_StateBlock, "setCullFace", 2);
+    static var hx_RenderState_StateBlock_setDepthTest = NativeInterface.loadMember(RenderState_StateBlock, "setDepthTest", 2);
+    static var hx_RenderState_StateBlock_setDepthWrite = NativeInterface.loadMember(RenderState_StateBlock, "setDepthWrite", 2);
+    static var hx_RenderState_StateBlock_setDepthFunction = NativeInterface.loadMember(RenderState_StateBlock, "setDepthFunction", 2);
+    static var hx_RenderState_StateBlock_setState = NativeInterface.loadMember(RenderState_StateBlock, "setState", 3);
 }
 
 // END

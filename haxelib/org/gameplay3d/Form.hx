@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IRectangle;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -100,20 +101,20 @@ class Form extends Container
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Form_static_create_Str_ThmStl_Int = cpp.Lib.load("gameplay", "hx_Form_static_create_Str_ThmStl_Int", 3);
-    static var hx_Form_static_create_Str = cpp.Lib.load("gameplay", "hx_Form_static_create_Str", 1);
-    static var hx_Form_draw = cpp.Lib.load("gameplay", "hx_Form_draw", 1);
-    static var hx_Form_static_getForm = cpp.Lib.load("gameplay", "hx_Form_static_getForm", 1);
-    static var hx_Form_getTheme = cpp.Lib.load("gameplay", "hx_Form_getTheme", 1);
-    static var hx_Form_getType = cpp.Lib.load("gameplay", "hx_Form_getType", 1);
-    static var hx_Form_setAutoHeight = cpp.Lib.load("gameplay", "hx_Form_setAutoHeight", 2);
-    static var hx_Form_setAutoWidth = cpp.Lib.load("gameplay", "hx_Form_setAutoWidth", 2);
-    static var hx_Form_setBounds = cpp.Lib.load("gameplay", "hx_Form_setBounds", 2);
-    static var hx_Form_setHeight = cpp.Lib.load("gameplay", "hx_Form_setHeight", 2);
-    static var hx_Form_setNode = cpp.Lib.load("gameplay", "hx_Form_setNode", 2);
-    static var hx_Form_setSize = cpp.Lib.load("gameplay", "hx_Form_setSize", 3);
-    static var hx_Form_setWidth = cpp.Lib.load("gameplay", "hx_Form_setWidth", 2);
-    static var hx_Form_update = cpp.Lib.load("gameplay", "hx_Form_update", 2);
+    static var hx_Form_static_create_Str_ThmStl_Int = NativeInterface.loadMember(Form, "static_create_Str_ThmStl_Int", 3);
+    static var hx_Form_static_create_Str = NativeInterface.loadMember(Form, "static_create_Str", 1);
+    static var hx_Form_draw = NativeInterface.loadMember(Form, "draw", 1);
+    static var hx_Form_static_getForm = NativeInterface.loadMember(Form, "static_getForm", 1);
+    static var hx_Form_getTheme = NativeInterface.loadMember(Form, "getTheme", 1);
+    static var hx_Form_getType = NativeInterface.loadMember(Form, "getType", 1);
+    static var hx_Form_setAutoHeight = NativeInterface.loadMember(Form, "setAutoHeight", 2);
+    static var hx_Form_setAutoWidth = NativeInterface.loadMember(Form, "setAutoWidth", 2);
+    static var hx_Form_setBounds = NativeInterface.loadMember(Form, "setBounds", 2);
+    static var hx_Form_setHeight = NativeInterface.loadMember(Form, "setHeight", 2);
+    static var hx_Form_setNode = NativeInterface.loadMember(Form, "setNode", 2);
+    static var hx_Form_setSize = NativeInterface.loadMember(Form, "setSize", 3);
+    static var hx_Form_setWidth = NativeInterface.loadMember(Form, "setWidth", 2);
+    static var hx_Form_update = NativeInterface.loadMember(Form, "update", 2);
 }
 
 // END

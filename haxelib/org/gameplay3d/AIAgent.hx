@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.intern.impl.ScriptTargetImpl;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.wrapper.AIAgent_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -60,13 +61,13 @@ class AIAgent extends ScriptTargetImpl, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AIAgent_static_create = cpp.Lib.load("gameplay", "hx_AIAgent_static_create", 0);
-    static var hx_AIAgent_getId = cpp.Lib.load("gameplay", "hx_AIAgent_getId", 1);
-    static var hx_AIAgent_getNode = cpp.Lib.load("gameplay", "hx_AIAgent_getNode", 1);
-    static var hx_AIAgent_getStateMachine = cpp.Lib.load("gameplay", "hx_AIAgent_getStateMachine", 1);
-    static var hx_AIAgent_isEnabled = cpp.Lib.load("gameplay", "hx_AIAgent_isEnabled", 1);
-    static var hx_AIAgent_setEnabled = cpp.Lib.load("gameplay", "hx_AIAgent_setEnabled", 2);
-    static var hx_AIAgent_setListener = cpp.Lib.load("gameplay", "hx_AIAgent_setListener", 2);
+    static var hx_AIAgent_static_create = NativeInterface.loadMember(AIAgent, "static_create", 0);
+    static var hx_AIAgent_getId = NativeInterface.loadMember(AIAgent, "getId", 1);
+    static var hx_AIAgent_getNode = NativeInterface.loadMember(AIAgent, "getNode", 1);
+    static var hx_AIAgent_getStateMachine = NativeInterface.loadMember(AIAgent, "getStateMachine", 1);
+    static var hx_AIAgent_isEnabled = NativeInterface.loadMember(AIAgent, "isEnabled", 1);
+    static var hx_AIAgent_setEnabled = NativeInterface.loadMember(AIAgent, "setEnabled", 2);
+    static var hx_AIAgent_setListener = NativeInterface.loadMember(AIAgent, "setListener", 2);
 }
 
 // END

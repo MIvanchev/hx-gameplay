@@ -8,6 +8,7 @@ import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -162,23 +163,23 @@ class Ray extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Ray_Construct = cpp.Lib.load("gameplay", "hx_Ray_Construct", 0);
-    static var hx_Ray_Construct_Ray = cpp.Lib.load("gameplay", "hx_Ray_Construct_Ray", 1);
-    static var hx_Ray_Construct_V3X2 = cpp.Lib.load("gameplay", "hx_Ray_Construct_V3X2", 2);
-    static var hx_Ray_Construct_FltX6 = cpp.Lib.load("gameplay", "hx_Ray_Construct_FltX6", -1);
-    static var hx_Ray_getDirection = cpp.Lib.load("gameplay", "hx_Ray_getDirection", 1);
-    static var hx_Ray_getOrigin = cpp.Lib.load("gameplay", "hx_Ray_getOrigin", 1);
-    static var hx_Ray_intersects_BBox = cpp.Lib.load("gameplay", "hx_Ray_intersects_BBox", 2);
-    static var hx_Ray_intersects_BSphr = cpp.Lib.load("gameplay", "hx_Ray_intersects_BSphr", 2);
-    static var hx_Ray_intersects_Frstm = cpp.Lib.load("gameplay", "hx_Ray_intersects_Frstm", 2);
-    static var hx_Ray_intersects_Plane = cpp.Lib.load("gameplay", "hx_Ray_intersects_Plane", 2);
-    static var hx_Ray_set_Ray = cpp.Lib.load("gameplay", "hx_Ray_set_Ray", 2);
-    static var hx_Ray_set_V3X2 = cpp.Lib.load("gameplay", "hx_Ray_set_V3X2", 3);
-    static var hx_Ray_setDirection_V3 = cpp.Lib.load("gameplay", "hx_Ray_setDirection_V3", 2);
-    static var hx_Ray_setDirection_FltX3 = cpp.Lib.load("gameplay", "hx_Ray_setDirection_FltX3", 4);
-    static var hx_Ray_setOrigin_V3 = cpp.Lib.load("gameplay", "hx_Ray_setOrigin_V3", 2);
-    static var hx_Ray_setOrigin_FltX3 = cpp.Lib.load("gameplay", "hx_Ray_setOrigin_FltX3", 4);
-    static var hx_Ray_transform = cpp.Lib.load("gameplay", "hx_Ray_transform", 2);
+    static var hx_Ray_Construct = NativeInterface.loadMember(Ray, "Construct", 0);
+    static var hx_Ray_Construct_Ray = NativeInterface.loadMember(Ray, "Construct_Ray", 1);
+    static var hx_Ray_Construct_V3X2 = NativeInterface.loadMember(Ray, "Construct_V3X2", 2);
+    static var hx_Ray_Construct_FltX6 = NativeInterface.loadMember(Ray, "Construct_FltX6", -1);
+    static var hx_Ray_getDirection = NativeInterface.loadMember(Ray, "getDirection", 1);
+    static var hx_Ray_getOrigin = NativeInterface.loadMember(Ray, "getOrigin", 1);
+    static var hx_Ray_intersects_BBox = NativeInterface.loadMember(Ray, "intersects_BBox", 2);
+    static var hx_Ray_intersects_BSphr = NativeInterface.loadMember(Ray, "intersects_BSphr", 2);
+    static var hx_Ray_intersects_Frstm = NativeInterface.loadMember(Ray, "intersects_Frstm", 2);
+    static var hx_Ray_intersects_Plane = NativeInterface.loadMember(Ray, "intersects_Plane", 2);
+    static var hx_Ray_set_Ray = NativeInterface.loadMember(Ray, "set_Ray", 2);
+    static var hx_Ray_set_V3X2 = NativeInterface.loadMember(Ray, "set_V3X2", 3);
+    static var hx_Ray_setDirection_V3 = NativeInterface.loadMember(Ray, "setDirection_V3", 2);
+    static var hx_Ray_setDirection_FltX3 = NativeInterface.loadMember(Ray, "setDirection_FltX3", 4);
+    static var hx_Ray_setOrigin_V3 = NativeInterface.loadMember(Ray, "setOrigin_V3", 2);
+    static var hx_Ray_setOrigin_FltX3 = NativeInterface.loadMember(Ray, "setOrigin_FltX3", 4);
+    static var hx_Ray_transform = NativeInterface.loadMember(Ray, "transform", 2);
 }
 
 // END

@@ -6,6 +6,7 @@ import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.ScriptTargetImpl;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.wrapper.PhysicsController_HitFilterWrapper;
 import org.gameplay3d.wrapper.PhysicsController_ListenerWrapper;
 
@@ -115,21 +116,21 @@ class PhysicsController extends ScriptTargetImpl
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsController_addStatusListener = cpp.Lib.load("gameplay", "hx_PhysicsController_addStatusListener", 2);
-    static var hx_PhysicsController_createFixedConstraint = cpp.Lib.load("gameplay", "hx_PhysicsController_createFixedConstraint", 3);
-    static var hx_PhysicsController_createGenericConstraint_RgdBodyX2 = cpp.Lib.load("gameplay", "hx_PhysicsController_createGenericConstraint_RgdBodyX2", 3);
-    static var hx_PhysicsController_createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3 = cpp.Lib.load("gameplay", "hx_PhysicsController_createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3", -1);
-    static var hx_PhysicsController_createHingeConstraint = cpp.Lib.load("gameplay", "hx_PhysicsController_createHingeConstraint", -1);
-    static var hx_PhysicsController_createSocketConstraint_RgdBodyX2 = cpp.Lib.load("gameplay", "hx_PhysicsController_createSocketConstraint_RgdBodyX2", 3);
-    static var hx_PhysicsController_createSocketConstraint_RgdBody_V3_RgdBody_V3 = cpp.Lib.load("gameplay", "hx_PhysicsController_createSocketConstraint_RgdBody_V3_RgdBody_V3", 5);
-    static var hx_PhysicsController_createSpringConstraint_RgdBodyX2 = cpp.Lib.load("gameplay", "hx_PhysicsController_createSpringConstraint_RgdBodyX2", 3);
-    static var hx_PhysicsController_createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3 = cpp.Lib.load("gameplay", "hx_PhysicsController_createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3", -1);
-    static var hx_PhysicsController_drawDebug = cpp.Lib.load("gameplay", "hx_PhysicsController_drawDebug", 2);
-    static var hx_PhysicsController_getGravity = cpp.Lib.load("gameplay", "hx_PhysicsController_getGravity", 1);
-    static var hx_PhysicsController_rayTest = cpp.Lib.load("gameplay", "hx_PhysicsController_rayTest", 5);
-    static var hx_PhysicsController_removeStatusListener = cpp.Lib.load("gameplay", "hx_PhysicsController_removeStatusListener", 2);
-    static var hx_PhysicsController_setGravity = cpp.Lib.load("gameplay", "hx_PhysicsController_setGravity", 2);
-    static var hx_PhysicsController_sweepTest = cpp.Lib.load("gameplay", "hx_PhysicsController_sweepTest", 5);
+    static var hx_PhysicsController_addStatusListener = NativeInterface.loadMember(PhysicsController, "addStatusListener", 2);
+    static var hx_PhysicsController_createFixedConstraint = NativeInterface.loadMember(PhysicsController, "createFixedConstraint", 3);
+    static var hx_PhysicsController_createGenericConstraint_RgdBodyX2 = NativeInterface.loadMember(PhysicsController, "createGenericConstraint_RgdBodyX2", 3);
+    static var hx_PhysicsController_createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3 = NativeInterface.loadMember(PhysicsController, "createGenericConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3", -1);
+    static var hx_PhysicsController_createHingeConstraint = NativeInterface.loadMember(PhysicsController, "createHingeConstraint", -1);
+    static var hx_PhysicsController_createSocketConstraint_RgdBodyX2 = NativeInterface.loadMember(PhysicsController, "createSocketConstraint_RgdBodyX2", 3);
+    static var hx_PhysicsController_createSocketConstraint_RgdBody_V3_RgdBody_V3 = NativeInterface.loadMember(PhysicsController, "createSocketConstraint_RgdBody_V3_RgdBody_V3", 5);
+    static var hx_PhysicsController_createSpringConstraint_RgdBodyX2 = NativeInterface.loadMember(PhysicsController, "createSpringConstraint_RgdBodyX2", 3);
+    static var hx_PhysicsController_createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3 = NativeInterface.loadMember(PhysicsController, "createSpringConstraint_RgdBody_Qtrn_V3_RgdBody_Qtrn_V3", -1);
+    static var hx_PhysicsController_drawDebug = NativeInterface.loadMember(PhysicsController, "drawDebug", 2);
+    static var hx_PhysicsController_getGravity = NativeInterface.loadMember(PhysicsController, "getGravity", 1);
+    static var hx_PhysicsController_rayTest = NativeInterface.loadMember(PhysicsController, "rayTest", 5);
+    static var hx_PhysicsController_removeStatusListener = NativeInterface.loadMember(PhysicsController, "removeStatusListener", 2);
+    static var hx_PhysicsController_setGravity = NativeInterface.loadMember(PhysicsController, "setGravity", 2);
+    static var hx_PhysicsController_sweepTest = NativeInterface.loadMember(PhysicsController, "sweepTest", 5);
 }
 
 // END

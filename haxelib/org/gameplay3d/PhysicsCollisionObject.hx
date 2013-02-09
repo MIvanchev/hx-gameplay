@@ -1,6 +1,8 @@
 package org.gameplay3d;
+
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.wrapper.PhysicsCollisionObject_CollisionListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -131,28 +133,24 @@ class PhysicsCollisionObject extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsCollisionObject_addCollisionListener_Lsnr_ColObj = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_addCollisionListener_Lsnr_ColObj", 3);
-    static var hx_PhysicsCollisionObject_addCollisionListener_Str_ColObj = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_addCollisionListener_Str_ColObj", 3);
-    static var hx_PhysicsCollisionObject_asCharacter = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asCharacter", 1);
-    static var hx_PhysicsCollisionObject_asGhostObject = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asGhostObject", 1);
-    static var hx_PhysicsCollisionObject_asRigidBody = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asRigidBody", 1);
-    static var hx_PhysicsCollisionObject_asVehicle = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asVehicle", 1);
-    static var hx_PhysicsCollisionObject_asVehicleWheel = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_asVehicleWheel", 1);
-    static var hx_PhysicsCollisionObject_collidesWith = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_collidesWith", 2);
-    static var hx_PhysicsCollisionObject_getCollisionShape = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getCollisionShape", 1);
-    static var hx_PhysicsCollisionObject_getNode = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getNode", 1);
-    static var hx_PhysicsCollisionObject_getShapeType = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getShapeType", 1);
-    static var hx_PhysicsCollisionObject_getType = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_getType", 1);
-    static var hx_PhysicsCollisionObject_isDynamic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_isDynamic", 1);
-    static var hx_PhysicsCollisionObject_isEnabled = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_isEnabled", 1);
-    static var hx_PhysicsCollisionObject_isKinematic = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_isKinematic", 1);
-    static var hx_PhysicsCollisionObject_removeCollisionListener_Lsnr_ColObj = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_removeCollisionListener_Lsnr_ColObj", 3);
-    static var hx_PhysicsCollisionObject_removeCollisionListener_Str_ColObj = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_removeCollisionListener_Str_ColObj", 3);
-    static var hx_PhysicsCollisionObject_setEnabled = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_setEnabled", 2);
-    static var hx_PhysicsCollisionObject_CollisionListener_Construct = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionListener_Construct", 1);
-    static var hx_PhysicsCollisionObject_CollisionPair_Construct = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_Construct", 2);
-    static var hx_PhysicsCollisionObject_CollisionPair_property_objectA_get = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_property_objectA_get", 1);
-    static var hx_PhysicsCollisionObject_CollisionPair_property_objectB_get = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionPair_property_objectB_get", 1);
+    static var hx_PhysicsCollisionObject_addCollisionListener_Lsnr_ColObj = NativeInterface.loadMember(PhysicsCollisionObject, "addCollisionListener_Lsnr_ColObj", 3);
+    static var hx_PhysicsCollisionObject_addCollisionListener_Str_ColObj = NativeInterface.loadMember(PhysicsCollisionObject, "addCollisionListener_Str_ColObj", 3);
+    static var hx_PhysicsCollisionObject_asCharacter = NativeInterface.loadMember(PhysicsCollisionObject, "asCharacter", 1);
+    static var hx_PhysicsCollisionObject_asGhostObject = NativeInterface.loadMember(PhysicsCollisionObject, "asGhostObject", 1);
+    static var hx_PhysicsCollisionObject_asRigidBody = NativeInterface.loadMember(PhysicsCollisionObject, "asRigidBody", 1);
+    static var hx_PhysicsCollisionObject_asVehicle = NativeInterface.loadMember(PhysicsCollisionObject, "asVehicle", 1);
+    static var hx_PhysicsCollisionObject_asVehicleWheel = NativeInterface.loadMember(PhysicsCollisionObject, "asVehicleWheel", 1);
+    static var hx_PhysicsCollisionObject_collidesWith = NativeInterface.loadMember(PhysicsCollisionObject, "collidesWith", 2);
+    static var hx_PhysicsCollisionObject_getCollisionShape = NativeInterface.loadMember(PhysicsCollisionObject, "getCollisionShape", 1);
+    static var hx_PhysicsCollisionObject_getNode = NativeInterface.loadMember(PhysicsCollisionObject, "getNode", 1);
+    static var hx_PhysicsCollisionObject_getShapeType = NativeInterface.loadMember(PhysicsCollisionObject, "getShapeType", 1);
+    static var hx_PhysicsCollisionObject_getType = NativeInterface.loadMember(PhysicsCollisionObject, "getType", 1);
+    static var hx_PhysicsCollisionObject_isDynamic = NativeInterface.loadMember(PhysicsCollisionObject, "isDynamic", 1);
+    static var hx_PhysicsCollisionObject_isEnabled = NativeInterface.loadMember(PhysicsCollisionObject, "isEnabled", 1);
+    static var hx_PhysicsCollisionObject_isKinematic = NativeInterface.loadMember(PhysicsCollisionObject, "isKinematic", 1);
+    static var hx_PhysicsCollisionObject_removeCollisionListener_Lsnr_ColObj = NativeInterface.loadMember(PhysicsCollisionObject, "removeCollisionListener_Lsnr_ColObj", 3);
+    static var hx_PhysicsCollisionObject_removeCollisionListener_Str_ColObj = NativeInterface.loadMember(PhysicsCollisionObject, "removeCollisionListener_Str_ColObj", 3);
+    static var hx_PhysicsCollisionObject_setEnabled = NativeInterface.loadMember(PhysicsCollisionObject, "setEnabled", 2);
 }
 
 // END

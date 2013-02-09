@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -26,8 +28,8 @@ class AIController extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AIController_findAgent = cpp.Lib.load("gameplay", "hx_AIController_findAgent", 2);
-    static var hx_AIController_sendMessage = cpp.Lib.load("gameplay", "hx_AIController_sendMessage", 3);
+    static var hx_AIController_findAgent = NativeInterface.loadMember(AIController, "findAgent", 2);
+    static var hx_AIController_sendMessage = NativeInterface.loadMember(AIController, "sendMessage", 3);
 }
 
 // END

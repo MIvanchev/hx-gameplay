@@ -3,6 +3,7 @@ package org.gameplay3d;
 import cpp.Lib;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -66,12 +67,12 @@ class PhysicsController_HitResult extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsController_HitResult_Construct = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_Construct", 0);
-    static var hx_PhysicsController_HitResult_property_object_get = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_object_get", 1);
-    static var hx_PhysicsController_HitResult_property_point_get = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_point_get", 1);
-    static var hx_PhysicsController_HitResult_property_fraction_get = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_fraction_get", 1);
-    static var hx_PhysicsController_HitResult_property_fraction_set = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_fraction_set", 2);
-    static var hx_PhysicsController_HitResult_property_normal_get = cpp.Lib.load("gameplay", "hx_PhysicsController_HitResult_property_normal_get", 1);
+    static var hx_PhysicsController_HitResult_Construct = NativeInterface.loadMember(PhysicsController_HitResult, "Construct", 0);
+    static var hx_PhysicsController_HitResult_property_object_get = NativeInterface.loadMember(PhysicsController_HitResult, "property_object_get", 1);
+    static var hx_PhysicsController_HitResult_property_point_get = NativeInterface.loadMember(PhysicsController_HitResult, "property_point_get", 1);
+    static var hx_PhysicsController_HitResult_property_fraction_get = NativeInterface.loadMember(PhysicsController_HitResult, "property_fraction_get", 1);
+    static var hx_PhysicsController_HitResult_property_fraction_set = NativeInterface.loadMember(PhysicsController_HitResult, "property_fraction_set", 2);
+    static var hx_PhysicsController_HitResult_property_normal_get = NativeInterface.loadMember(PhysicsController_HitResult, "property_normal_get", 1);
 }
 
 // END

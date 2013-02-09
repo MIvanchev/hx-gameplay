@@ -5,6 +5,7 @@ import org.gameplay3d.AnimationTarget;
 import org.gameplay3d.AnimationValue;
 import org.gameplay3d.GameplayObject;
 import org.gameplay3d.Properties;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.PrimitiveArray;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -87,17 +88,17 @@ class AnimationTargetImpl extends GameplayObject, implements AnimationTarget
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AnimationTarget_createAnimation_Str_Prop = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_Prop", 3);
-    static var hx_AnimationTarget_createAnimation_StrX2 = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_StrX2", 3);
-    static var hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFlt_Int = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFlt_Int", -1);
-    static var hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int", -1);
-    static var hx_AnimationTarget_createAnimationFromBy = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimationFromBy", -1);
-    static var hx_AnimationTarget_createAnimationFromTo = cpp.Lib.load("gameplay", "hx_AnimationTarget_createAnimationFromTo", -1);
-    static var hx_AnimationTarget_destroyAnimation = cpp.Lib.load("gameplay", "hx_AnimationTarget_destroyAnimation", 2);
-    static var hx_AnimationTarget_getAnimation = cpp.Lib.load("gameplay", "hx_AnimationTarget_getAnimation", 2);
-    static var hx_AnimationTarget_getAnimationPropertyComponentCount = cpp.Lib.load("gameplay", "hx_AnimationTarget_getAnimationPropertyComponentCount", 2);
-    static var hx_AnimationTarget_getAnimationPropertyValue = cpp.Lib.load("gameplay", "hx_AnimationTarget_getAnimationPropertyValue", 3);
-    static var hx_AnimationTarget_setAnimationPropertyValue = cpp.Lib.load("gameplay", "hx_AnimationTarget_setAnimationPropertyValue", 4);
+    static var hx_AnimationTarget_createAnimation_Str_Prop = NativeInterface.loadMember(AnimationTarget, "createAnimation_Str_Prop", 3);
+    static var hx_AnimationTarget_createAnimation_StrX2 = NativeInterface.loadMember(AnimationTarget, "createAnimation_StrX2", 3);
+    static var hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFlt_Int = NativeInterface.loadMember(AnimationTarget, "createAnimation_Str_IntX2_ArrInt_ArrFlt_Int", -1);
+    static var hx_AnimationTarget_createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int = NativeInterface.loadMember(AnimationTarget, "createAnimation_Str_IntX2_ArrInt_ArrFltX3_Int", -1);
+    static var hx_AnimationTarget_createAnimationFromBy = NativeInterface.loadMember(AnimationTarget, "createAnimationFromBy", -1);
+    static var hx_AnimationTarget_createAnimationFromTo = NativeInterface.loadMember(AnimationTarget, "createAnimationFromTo", -1);
+    static var hx_AnimationTarget_destroyAnimation = NativeInterface.loadMember(AnimationTarget, "destroyAnimation", 2);
+    static var hx_AnimationTarget_getAnimation = NativeInterface.loadMember(AnimationTarget, "getAnimation", 2);
+    static var hx_AnimationTarget_getAnimationPropertyComponentCount = NativeInterface.loadMember(AnimationTarget, "getAnimationPropertyComponentCount", 2);
+    static var hx_AnimationTarget_getAnimationPropertyValue = NativeInterface.loadMember(AnimationTarget, "getAnimationPropertyValue", 3);
+    static var hx_AnimationTarget_setAnimationPropertyValue = NativeInterface.loadMember(AnimationTarget, "setAnimationPropertyValue", 4);
 }
 
 // END

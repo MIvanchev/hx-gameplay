@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.util.IMutableNativeArray;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.PrimitiveArray;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -77,13 +78,13 @@ class HeightField extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_HeightField_static_create = cpp.Lib.load("gameplay", "hx_HeightField_static_create", 2);
-    static var hx_HeightField_static_createFromImage = cpp.Lib.load("gameplay", "hx_HeightField_static_createFromImage", 3);
-    static var hx_HeightField_static_createFromRAW = cpp.Lib.load("gameplay", "hx_HeightField_static_createFromRAW", 5);
-    static var hx_HeightField_getArray = cpp.Lib.load("gameplay", "hx_HeightField_getArray", 1);
-    static var hx_HeightField_getColumnCount = cpp.Lib.load("gameplay", "hx_HeightField_getColumnCount", 1);
-    static var hx_HeightField_getHeight = cpp.Lib.load("gameplay", "hx_HeightField_getHeight", 3);
-    static var hx_HeightField_getRowCount = cpp.Lib.load("gameplay", "hx_HeightField_getRowCount", 1);
+    static var hx_HeightField_static_create = NativeInterface.loadMember(HeightField, "static_create", 2);
+    static var hx_HeightField_static_createFromImage = NativeInterface.loadMember(HeightField, "static_createFromImage", 3);
+    static var hx_HeightField_static_createFromRAW = NativeInterface.loadMember(HeightField, "static_createFromRAW", 5);
+    static var hx_HeightField_getArray = NativeInterface.loadMember(HeightField, "getArray", 1);
+    static var hx_HeightField_getColumnCount = NativeInterface.loadMember(HeightField, "getColumnCount", 1);
+    static var hx_HeightField_getHeight = NativeInterface.loadMember(HeightField, "getHeight", 3);
+    static var hx_HeightField_getRowCount = NativeInterface.loadMember(HeightField, "getRowCount", 1);
 
 }
 

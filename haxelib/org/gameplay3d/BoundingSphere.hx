@@ -8,6 +8,7 @@ import org.gameplay3d.immutable.IPlane;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -172,25 +173,25 @@ class BoundingSphere extends GameplayObject, implements IBoundingSphere
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_BoundingSphere_Construct = cpp.Lib.load("gameplay", "hx_BoundingSphere_Construct", 0);
-    static var hx_BoundingSphere_Construct_BSphr = cpp.Lib.load("gameplay", "hx_BoundingSphere_Construct_BSphr", 1);
-    static var hx_BoundingSphere_Construct_V3_Flt = cpp.Lib.load("gameplay", "hx_BoundingSphere_Construct_V3_Flt", 2);
-    static var hx_BoundingSphere_static_empty = cpp.Lib.load("gameplay", "hx_BoundingSphere_static_empty", 0);
-    static var hx_BoundingSphere_intersects_BBox = cpp.Lib.load("gameplay", "hx_BoundingSphere_intersects_BBox", 2);
-    static var hx_BoundingSphere_intersects_BSphr = cpp.Lib.load("gameplay", "hx_BoundingSphere_intersects_BSphr", 2);
-    static var hx_BoundingSphere_intersects_Frstm = cpp.Lib.load("gameplay", "hx_BoundingSphere_intersects_Frstm", 2);
-    static var hx_BoundingSphere_intersects_Plane = cpp.Lib.load("gameplay", "hx_BoundingSphere_intersects_Plane", 2);
-    static var hx_BoundingSphere_intersects_Ray = cpp.Lib.load("gameplay", "hx_BoundingSphere_intersects_Ray", 2);
-    static var hx_BoundingSphere_isEmpty = cpp.Lib.load("gameplay", "hx_BoundingSphere_isEmpty", 1);
-    static var hx_BoundingSphere_merge_BBox = cpp.Lib.load("gameplay", "hx_BoundingSphere_merge_BBox", 2);
-    static var hx_BoundingSphere_merge_BSphr = cpp.Lib.load("gameplay", "hx_BoundingSphere_merge_BSphr", 2);
-    static var hx_BoundingSphere_set_BBox = cpp.Lib.load("gameplay", "hx_BoundingSphere_set_BBox", 2);
-    static var hx_BoundingSphere_set_BSphr = cpp.Lib.load("gameplay", "hx_BoundingSphere_set_BSphr", 2);
-    static var hx_BoundingSphere_set_V3_Flt = cpp.Lib.load("gameplay", "hx_BoundingSphere_set_V3_Flt", 3);
-    static var hx_BoundingSphere_transform = cpp.Lib.load("gameplay", "hx_BoundingSphere_transform", 2);
-    static var hx_BoundingSphere_property_center_get = cpp.Lib.load("gameplay", "hx_BoundingSphere_property_center_get", 1);
-    static var hx_BoundingSphere_property_radius_get = cpp.Lib.load("gameplay", "hx_BoundingSphere_property_radius_get", 1);
-    static var hx_BoundingSphere_property_radius_set = cpp.Lib.load("gameplay", "hx_BoundingSphere_property_radius_set", 2);
+    static var hx_BoundingSphere_Construct = NativeInterface.loadMember(BoundingSphere, "Construct", 0);
+    static var hx_BoundingSphere_Construct_BSphr = NativeInterface.loadMember(BoundingSphere, "Construct_BSphr", 1);
+    static var hx_BoundingSphere_Construct_V3_Flt = NativeInterface.loadMember(BoundingSphere, "Construct_V3_Flt", 2);
+    static var hx_BoundingSphere_static_empty = NativeInterface.loadMember(BoundingSphere, "static_empty", 0);
+    static var hx_BoundingSphere_intersects_BBox = NativeInterface.loadMember(BoundingSphere, "intersects_BBox", 2);
+    static var hx_BoundingSphere_intersects_BSphr = NativeInterface.loadMember(BoundingSphere, "intersects_BSphr", 2);
+    static var hx_BoundingSphere_intersects_Frstm = NativeInterface.loadMember(BoundingSphere, "intersects_Frstm", 2);
+    static var hx_BoundingSphere_intersects_Plane = NativeInterface.loadMember(BoundingSphere, "intersects_Plane", 2);
+    static var hx_BoundingSphere_intersects_Ray = NativeInterface.loadMember(BoundingSphere, "intersects_Ray", 2);
+    static var hx_BoundingSphere_isEmpty = NativeInterface.loadMember(BoundingSphere, "isEmpty", 1);
+    static var hx_BoundingSphere_merge_BBox = NativeInterface.loadMember(BoundingSphere, "merge_BBox", 2);
+    static var hx_BoundingSphere_merge_BSphr = NativeInterface.loadMember(BoundingSphere, "merge_BSphr", 2);
+    static var hx_BoundingSphere_set_BBox = NativeInterface.loadMember(BoundingSphere, "set_BBox", 2);
+    static var hx_BoundingSphere_set_BSphr = NativeInterface.loadMember(BoundingSphere, "set_BSphr", 2);
+    static var hx_BoundingSphere_set_V3_Flt = NativeInterface.loadMember(BoundingSphere, "set_V3_Flt", 3);
+    static var hx_BoundingSphere_transform = NativeInterface.loadMember(BoundingSphere, "transform", 2);
+    static var hx_BoundingSphere_property_center_get = NativeInterface.loadMember(BoundingSphere, "property_center_get", 1);
+    static var hx_BoundingSphere_property_radius_get = NativeInterface.loadMember(BoundingSphere, "property_radius_get", 1);
+    static var hx_BoundingSphere_property_radius_set = NativeInterface.loadMember(BoundingSphere, "property_radius_set", 2);
 }
 
 // END

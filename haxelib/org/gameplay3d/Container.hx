@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.intern.ConversionTools;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -148,27 +149,27 @@ class Container extends Control
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Container_addControl = cpp.Lib.load("gameplay", "hx_Container_addControl", 2);
-    static var hx_Container_static_create = cpp.Lib.load("gameplay", "hx_Container_static_create", 3);
-    static var hx_Container_getAnimation = cpp.Lib.load("gameplay", "hx_Container_getAnimation", 2);
-    static var hx_Container_getAnimationPropertyComponentCount = cpp.Lib.load("gameplay", "hx_Container_getAnimationPropertyComponentCount", 2);
-    static var hx_Container_getAnimationPropertyValue = cpp.Lib.load("gameplay", "hx_Container_getAnimationPropertyValue", 3);
-    static var hx_Container_getControl_Str = cpp.Lib.load("gameplay", "hx_Container_getControl_Str", 2);
-    static var hx_Container_getControl_Int = cpp.Lib.load("gameplay", "hx_Container_getControl_Int", 2);
-    static var hx_Container_getControls = cpp.Lib.load("gameplay", "hx_Container_getControls", 1);
-    static var hx_Container_getLayout = cpp.Lib.load("gameplay", "hx_Container_getLayout", 1);
-    static var hx_Container_getScroll = cpp.Lib.load("gameplay", "hx_Container_getScroll", 1);
-    static var hx_Container_getType = cpp.Lib.load("gameplay", "hx_Container_getType", 1);
-    static var hx_Container_insertControl = cpp.Lib.load("gameplay", "hx_Container_insertControl", 3);
-    static var hx_Container_isContainer = cpp.Lib.load("gameplay", "hx_Container_isContainer", 1);
-    static var hx_Container_isScrollBarsAutoHide = cpp.Lib.load("gameplay", "hx_Container_isScrollBarsAutoHide", 1);
-    static var hx_Container_isScrolling = cpp.Lib.load("gameplay", "hx_Container_isScrolling", 1);
-    static var hx_Container_removeControl_Ctrl = cpp.Lib.load("gameplay", "hx_Container_removeControl_Ctrl", 2);
-    static var hx_Container_removeControl_Str = cpp.Lib.load("gameplay", "hx_Container_removeControl_Str", 2);
-    static var hx_Container_removeControl_Int = cpp.Lib.load("gameplay", "hx_Container_removeControl_Int", 2);
-    static var hx_Container_setAnimationPropertyValue = cpp.Lib.load("gameplay", "hx_Container_setAnimationPropertyValue", 4);
-    static var hx_Container_setScroll = cpp.Lib.load("gameplay", "hx_Container_setScroll", 2);
-    static var hx_Container_setScrollBarsAutoHide = cpp.Lib.load("gameplay", "hx_Container_setScrollBarsAutoHide", 2);
+    static var hx_Container_addControl = NativeInterface.loadMember(Container, "addControl", 2);
+    static var hx_Container_static_create = NativeInterface.loadMember(Container, "static_create", 3);
+    static var hx_Container_getAnimation = NativeInterface.loadMember(Container, "getAnimation", 2);
+    static var hx_Container_getAnimationPropertyComponentCount = NativeInterface.loadMember(Container, "getAnimationPropertyComponentCount", 2);
+    static var hx_Container_getAnimationPropertyValue = NativeInterface.loadMember(Container, "getAnimationPropertyValue", 3);
+    static var hx_Container_getControl_Str = NativeInterface.loadMember(Container, "getControl_Str", 2);
+    static var hx_Container_getControl_Int = NativeInterface.loadMember(Container, "getControl_Int", 2);
+    static var hx_Container_getControls = NativeInterface.loadMember(Container, "getControls", 1);
+    static var hx_Container_getLayout = NativeInterface.loadMember(Container, "getLayout", 1);
+    static var hx_Container_getScroll = NativeInterface.loadMember(Container, "getScroll", 1);
+    static var hx_Container_getType = NativeInterface.loadMember(Container, "getType", 1);
+    static var hx_Container_insertControl = NativeInterface.loadMember(Container, "insertControl", 3);
+    static var hx_Container_isContainer = NativeInterface.loadMember(Container, "isContainer", 1);
+    static var hx_Container_isScrollBarsAutoHide = NativeInterface.loadMember(Container, "isScrollBarsAutoHide", 1);
+    static var hx_Container_isScrolling = NativeInterface.loadMember(Container, "isScrolling", 1);
+    static var hx_Container_removeControl_Ctrl = NativeInterface.loadMember(Container, "removeControl_Ctrl", 2);
+    static var hx_Container_removeControl_Str = NativeInterface.loadMember(Container, "removeControl_Str", 2);
+    static var hx_Container_removeControl_Int = NativeInterface.loadMember(Container, "removeControl_Int", 2);
+    static var hx_Container_setAnimationPropertyValue = NativeInterface.loadMember(Container, "setAnimationPropertyValue", 4);
+    static var hx_Container_setScroll = NativeInterface.loadMember(Container, "setScroll", 2);
+    static var hx_Container_setScrollBarsAutoHide = NativeInterface.loadMember(Container, "setScrollBarsAutoHide", 2);
 }
 
 // END

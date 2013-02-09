@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -50,12 +52,12 @@ class DepthStencilTarget extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_DepthStencilTarget_static_create = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_static_create", 4);
-    static var hx_DepthStencilTarget_static_getDepthStencilTarget = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_static_getDepthStencilTarget", 1);
-    static var hx_DepthStencilTarget_getFormat = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_getFormat", 1);
-    static var hx_DepthStencilTarget_getHeight = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_getHeight", 1);
-    static var hx_DepthStencilTarget_getId = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_getId", 1);
-    static var hx_DepthStencilTarget_getWidth = cpp.Lib.load("gameplay", "hx_DepthStencilTarget_getWidth", 1);
+    static var hx_DepthStencilTarget_static_create = NativeInterface.loadMember(DepthStencilTarget, "static_create", 4);
+    static var hx_DepthStencilTarget_static_getDepthStencilTarget = NativeInterface.loadMember(DepthStencilTarget, "static_getDepthStencilTarget", 1);
+    static var hx_DepthStencilTarget_getFormat = NativeInterface.loadMember(DepthStencilTarget, "getFormat", 1);
+    static var hx_DepthStencilTarget_getHeight = NativeInterface.loadMember(DepthStencilTarget, "getHeight", 1);
+    static var hx_DepthStencilTarget_getId = NativeInterface.loadMember(DepthStencilTarget, "getId", 1);
+    static var hx_DepthStencilTarget_getWidth = NativeInterface.loadMember(DepthStencilTarget, "getWidth", 1);
 }
 
 // END

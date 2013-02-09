@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.wrapper.Control_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -39,10 +40,10 @@ class TextBox extends Label
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_TextBox_addListener = cpp.Lib.load("gameplay", "hx_TextBox_addListener", 3);
-    static var hx_TextBox_static_create = cpp.Lib.load("gameplay", "hx_TextBox_static_create", 2);
-    static var hx_TextBox_getLastKeypress = cpp.Lib.load("gameplay", "hx_TextBox_getLastKeypress", 1);
-    static var hx_TextBox_getType = cpp.Lib.load("gameplay", "hx_TextBox_getType", 1);
+    static var hx_TextBox_addListener = NativeInterface.loadMember(TextBox, "addListener", 3);
+    static var hx_TextBox_static_create = NativeInterface.loadMember(TextBox, "static_create", 2);
+    static var hx_TextBox_getLastKeypress = NativeInterface.loadMember(TextBox, "getLastKeypress", 1);
+    static var hx_TextBox_getType = NativeInterface.loadMember(TextBox, "getType", 1);
 }
 
 // END

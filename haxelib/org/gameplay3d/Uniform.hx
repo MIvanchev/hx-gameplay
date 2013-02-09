@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -33,9 +34,9 @@ class Uniform extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Uniform_getEffect = cpp.Lib.load("gameplay", "hx_Uniform_getEffect", 1);
-    static var hx_Uniform_getName = cpp.Lib.load("gameplay", "hx_Uniform_getName", 1);
-    static var hx_Uniform_getType = cpp.Lib.load("gameplay", "hx_Uniform_getType", 1);
+    static var hx_Uniform_getEffect = NativeInterface.loadMember(Uniform, "getEffect", 1);
+    static var hx_Uniform_getName = NativeInterface.loadMember(Uniform, "getName", 1);
+    static var hx_Uniform_getType = NativeInterface.loadMember(Uniform, "getType", 1);
 }
 
 // END

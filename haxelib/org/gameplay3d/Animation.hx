@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -80,17 +82,17 @@ class Animation extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Animation_createClip = cpp.Lib.load("gameplay", "hx_Animation_createClip", 4);
-    static var hx_Animation_createClips = cpp.Lib.load("gameplay", "hx_Animation_createClips", 2);
-    static var hx_Animation_getClip_Str = cpp.Lib.load("gameplay", "hx_Animation_getClip_Str", 2);
-    static var hx_Animation_getClip_Int = cpp.Lib.load("gameplay", "hx_Animation_getClip_Int", 2);
-    static var hx_Animation_getClipCount = cpp.Lib.load("gameplay", "hx_Animation_getClipCount", 1);
-    static var hx_Animation_getDuration = cpp.Lib.load("gameplay", "hx_Animation_getDuration", 1);
-    static var hx_Animation_getId = cpp.Lib.load("gameplay", "hx_Animation_getId", 1);
-    static var hx_Animation_pause = cpp.Lib.load("gameplay", "hx_Animation_pause", 2);
-    static var hx_Animation_play = cpp.Lib.load("gameplay", "hx_Animation_play", 2);
-    static var hx_Animation_stop = cpp.Lib.load("gameplay", "hx_Animation_stop", 2);
-    static var hx_Animation_targets = cpp.Lib.load("gameplay", "hx_Animation_targets", 2);
+    static var hx_Animation_createClip = NativeInterface.loadMember(Animation, "createClip", 4);
+    static var hx_Animation_createClips = NativeInterface.loadMember(Animation, "createClips", 2);
+    static var hx_Animation_getClip_Str = NativeInterface.loadMember(Animation, "getClip_Str", 2);
+    static var hx_Animation_getClip_Int = NativeInterface.loadMember(Animation, "getClip_Int", 2);
+    static var hx_Animation_getClipCount = NativeInterface.loadMember(Animation, "getClipCount", 1);
+    static var hx_Animation_getDuration = NativeInterface.loadMember(Animation, "getDuration", 1);
+    static var hx_Animation_getId = NativeInterface.loadMember(Animation, "getId", 1);
+    static var hx_Animation_pause = NativeInterface.loadMember(Animation, "pause", 2);
+    static var hx_Animation_play = NativeInterface.loadMember(Animation, "play", 2);
+    static var hx_Animation_stop = NativeInterface.loadMember(Animation, "stop", 2);
+    static var hx_Animation_targets = NativeInterface.loadMember(Animation, "targets", 2);
 }
 
 // END

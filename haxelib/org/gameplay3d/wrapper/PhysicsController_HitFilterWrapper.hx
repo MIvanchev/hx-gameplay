@@ -2,6 +2,7 @@ package org.gameplay3d.wrapper;
 
 import org.gameplay3d.intern.ListenerWrapper;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.PhysicsController_HitFilter;
 import org.gameplay3d.PhysicsController_HitResult;
 import org.gameplay3d.shared.SharedPhysicsController_HitResult;
@@ -60,7 +61,7 @@ class PhysicsController_HitFilterWrapper extends ListenerWrapper<PhysicsControll
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_HaxePhysicsController_HitFilter_Construct = cpp.Lib.load("gameplay", "hx_HaxePhysicsController_HitFilter_Construct", 2);
+    static var hx_HaxePhysicsController_HitFilter_Construct = NativeInterface.load("hx_HaxePhysicsController_HitFilter_Construct", 2);
 }
 
 // END

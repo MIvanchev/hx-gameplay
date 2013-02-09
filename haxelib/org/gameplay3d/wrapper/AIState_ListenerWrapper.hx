@@ -4,6 +4,7 @@ import org.gameplay3d.AIAgent;
 import org.gameplay3d.AIState;
 import org.gameplay3d.AIState_Listener;
 import org.gameplay3d.intern.ListenerWrapper;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.GameplayObject;
 
@@ -71,7 +72,7 @@ class AIState_ListenerWrapper extends ListenerWrapper<AIState_Listener>, impleme
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AIState_Listener_Construct = cpp.Lib.load("gameplay", "hx_AIState_Listener_Construct", 3);
+    static var hx_AIState_Listener_Construct = NativeInterface.loadMember(AIState_Listener, "Construct", 3);
 }
 
 // END

@@ -159,28 +159,28 @@ class PrimitiveArray<T> extends NativeBinding,
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var allocNativeArrayInt = cpp.Lib.load("gameplay", "allocNativeArrayInt", 2);
-    static var allocNativeArrayUint = cpp.Lib.load("gameplay", "allocNativeArrayUint", 2);
-    static var allocNativeArrayShort = cpp.Lib.load("gameplay", "allocNativeArrayShort", 2);
-    static var allocNativeArrayUshort = cpp.Lib.load("gameplay", "allocNativeArrayUshort", 2);
-    static var allocNativeArrayChar = cpp.Lib.load("gameplay", "allocNativeArrayChar", 2);
-    static var allocNativeArrayByte = cpp.Lib.load("gameplay", "allocNativeArrayByte", 2);
-    static var allocNativeArrayFloat = cpp.Lib.load("gameplay", "allocNativeArrayFloat", 2);
-    static var allocNativeArrayDouble = cpp.Lib.load("gameplay", "allocNativeArrayDouble", 2);
-    static var getNativeArrayElementInt = cpp.Lib.load("gameplay", "getNativeArrayElementInt", 2);
-    static var getNativeArrayElementUint = cpp.Lib.load("gameplay", "getNativeArrayElementUint", 2);
-    static var getNativeArrayElementShort = cpp.Lib.load("gameplay", "getNativeArrayElementShort", 2);
-    static var getNativeArrayElementUshort = cpp.Lib.load("gameplay", "getNativeArrayElementUshort", 2);
-    static var getNativeArrayElementChar = cpp.Lib.load("gameplay", "getNativeArrayElementChar", 2);
-    static var getNativeArrayElementByte = cpp.Lib.load("gameplay", "getNativeArrayElementByte", 2);
-    static var getNativeArrayElementFloat = cpp.Lib.load("gameplay", "getNativeArrayElementFloat", 2);
-    static var getNativeArrayElementDouble = cpp.Lib.load("gameplay", "getNativeArrayElementDouble", 2);
-    static var setNativeArrayElementInt = cpp.Lib.load("gameplay", "setNativeArrayElementInt", 3);
-    static var setNativeArrayElementUint = cpp.Lib.load("gameplay", "setNativeArrayElementUint", 3);
-    static var setNativeArrayElementShort = cpp.Lib.load("gameplay", "setNativeArrayElementShort", 3);
-    static var setNativeArrayElementUshort = cpp.Lib.load("gameplay", "setNativeArrayElementUshort", 3);
-    static var setNativeArrayElementChar = cpp.Lib.load("gameplay", "setNativeArrayElementChar", 3);
-    static var setNativeArrayElementByte = cpp.Lib.load("gameplay", "setNativeArrayElementByte", 3);
-    static var setNativeArrayElementFloat = cpp.Lib.load("gameplay", "setNativeArrayElementFloat", 3);
-    static var setNativeArrayElementDouble = cpp.Lib.load("gameplay", "setNativeArrayElementDouble", 3);
+    static var allocNativeArrayInt = NativeInterface.load("allocNativeArrayInt", 2);
+    static var allocNativeArrayUint = NativeInterface.load("allocNativeArrayUint", 2);
+    static var allocNativeArrayShort = NativeInterface.load("allocNativeArrayShort", 2);
+    static var allocNativeArrayUshort = NativeInterface.load("allocNativeArrayUshort", 2);
+    static var allocNativeArrayChar = NativeInterface.load("allocNativeArrayChar", 2);
+    static var allocNativeArrayByte = NativeInterface.load("allocNativeArrayByte", 2);
+    static var allocNativeArrayFloat = NativeInterface.load("allocNativeArrayFloat", 2);
+    static var allocNativeArrayDouble = NativeInterface.load("allocNativeArrayDouble", 2);
+    static var getNativeArrayElementInt = NativeInterface.load("getNativeArrayElementInt", 2);
+    static var getNativeArrayElementUint = NativeInterface.load("getNativeArrayElementUint", 2);
+    static var getNativeArrayElementShort = NativeInterface.load("getNativeArrayElementShort", 2);
+    static var getNativeArrayElementUshort = NativeInterface.load("getNativeArrayElementUshort", 2);
+    static var getNativeArrayElementChar = NativeInterface.load("getNativeArrayElementChar", 2);
+    static var getNativeArrayElementByte = NativeInterface.load("getNativeArrayElementByte", 2);
+    static var getNativeArrayElementFloat = NativeInterface.load("getNativeArrayElementFloat", 2);
+    static var getNativeArrayElementDouble = NativeInterface.load("getNativeArrayElementDouble", 2);
+    static var setNativeArrayElementInt = NativeInterface.load("setNativeArrayElementInt", 3);
+    static var setNativeArrayElementUint = NativeInterface.load("setNativeArrayElementUint", 3);
+    static var setNativeArrayElementShort = NativeInterface.load("setNativeArrayElementShort", 3);
+    static var setNativeArrayElementUshort = NativeInterface.load("setNativeArrayElementUshort", 3);
+    static var setNativeArrayElementChar = NativeInterface.load("setNativeArrayElementChar", 3);
+    static var setNativeArrayElementByte = NativeInterface.load("setNativeArrayElementByte", 3);
+    static var setNativeArrayElementFloat = NativeInterface.load("setNativeArrayElementFloat", 3);
+    static var setNativeArrayElementDouble = NativeInterface.load("setNativeArrayElementDouble", 3);
 }

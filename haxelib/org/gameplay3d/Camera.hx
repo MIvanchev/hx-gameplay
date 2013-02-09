@@ -8,6 +8,7 @@ import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
 import org.gameplay3d.intern.NativeOutParameter;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -198,32 +199,32 @@ class Camera extends Transform_ListenerImpl, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Camera_static_create = cpp.Lib.load("gameplay", "hx_Camera_static_create", 1);
-    static var hx_Camera_static_createOrthographic = cpp.Lib.load("gameplay", "hx_Camera_static_createOrthographic", 5);
-    static var hx_Camera_static_createPerspective = cpp.Lib.load("gameplay", "hx_Camera_static_createPerspective", 4);
-    static var hx_Camera_getAspectRatio = cpp.Lib.load("gameplay", "hx_Camera_getAspectRatio", 1);
-    static var hx_Camera_getCameraType = cpp.Lib.load("gameplay", "hx_Camera_getCameraType", 1);
-    static var hx_Camera_getFarPlane = cpp.Lib.load("gameplay", "hx_Camera_getFarPlane", 1);
-    static var hx_Camera_getFieldOfView = cpp.Lib.load("gameplay", "hx_Camera_getFieldOfView", 1);
-    static var hx_Camera_getFrustum = cpp.Lib.load("gameplay", "hx_Camera_getFrustum", 1);
-    static var hx_Camera_getInverseViewMatrix = cpp.Lib.load("gameplay", "hx_Camera_getInverseViewMatrix", 1);
-    static var hx_Camera_getInverseViewProjectionMatrix = cpp.Lib.load("gameplay", "hx_Camera_getInverseViewProjectionMatrix", 1);
-    static var hx_Camera_getNearPlane = cpp.Lib.load("gameplay", "hx_Camera_getNearPlane", 1);
-    static var hx_Camera_getNode = cpp.Lib.load("gameplay", "hx_Camera_getNode", 1);
-    static var hx_Camera_getProjectionMatrix = cpp.Lib.load("gameplay", "hx_Camera_getProjectionMatrix", 1);
-    static var hx_Camera_getViewMatrix = cpp.Lib.load("gameplay", "hx_Camera_getViewMatrix", 1);
-    static var hx_Camera_getViewProjectionMatrix = cpp.Lib.load("gameplay", "hx_Camera_getViewProjectionMatrix", 1);
-    static var hx_Camera_getZoomX = cpp.Lib.load("gameplay", "hx_Camera_getZoomX", 1);
-    static var hx_Camera_getZoomY = cpp.Lib.load("gameplay", "hx_Camera_getZoomY", 1);
-    static var hx_Camera_pickRay = cpp.Lib.load("gameplay", "hx_Camera_pickRay", 5);
-    static var hx_Camera_project = cpp.Lib.load("gameplay", "hx_Camera_project", -1);
-    static var hx_Camera_setAspectRatio = cpp.Lib.load("gameplay", "hx_Camera_setAspectRatio", 2);
-    static var hx_Camera_setFarPlane = cpp.Lib.load("gameplay", "hx_Camera_setFarPlane", 2);
-    static var hx_Camera_setFieldOfView = cpp.Lib.load("gameplay", "hx_Camera_setFieldOfView", 2);
-    static var hx_Camera_setNearPlane = cpp.Lib.load("gameplay", "hx_Camera_setNearPlane", 2);
-    static var hx_Camera_setZoomX = cpp.Lib.load("gameplay", "hx_Camera_setZoomX", 2);
-    static var hx_Camera_setZoomY = cpp.Lib.load("gameplay", "hx_Camera_setZoomY", 2);
-    static var hx_Camera_unproject = cpp.Lib.load("gameplay", "hx_Camera_unproject", -1);
+    static var hx_Camera_static_create = NativeInterface.loadMember(Camera, "static_create", 1);
+    static var hx_Camera_static_createOrthographic = NativeInterface.loadMember(Camera, "static_createOrthographic", 5);
+    static var hx_Camera_static_createPerspective = NativeInterface.loadMember(Camera, "static_createPerspective", 4);
+    static var hx_Camera_getAspectRatio = NativeInterface.loadMember(Camera, "getAspectRatio", 1);
+    static var hx_Camera_getCameraType = NativeInterface.loadMember(Camera, "getCameraType", 1);
+    static var hx_Camera_getFarPlane = NativeInterface.loadMember(Camera, "getFarPlane", 1);
+    static var hx_Camera_getFieldOfView = NativeInterface.loadMember(Camera, "getFieldOfView", 1);
+    static var hx_Camera_getFrustum = NativeInterface.loadMember(Camera, "getFrustum", 1);
+    static var hx_Camera_getInverseViewMatrix = NativeInterface.loadMember(Camera, "getInverseViewMatrix", 1);
+    static var hx_Camera_getInverseViewProjectionMatrix = NativeInterface.loadMember(Camera, "getInverseViewProjectionMatrix", 1);
+    static var hx_Camera_getNearPlane = NativeInterface.loadMember(Camera, "getNearPlane", 1);
+    static var hx_Camera_getNode = NativeInterface.loadMember(Camera, "getNode", 1);
+    static var hx_Camera_getProjectionMatrix = NativeInterface.loadMember(Camera, "getProjectionMatrix", 1);
+    static var hx_Camera_getViewMatrix = NativeInterface.loadMember(Camera, "getViewMatrix", 1);
+    static var hx_Camera_getViewProjectionMatrix = NativeInterface.loadMember(Camera, "getViewProjectionMatrix", 1);
+    static var hx_Camera_getZoomX = NativeInterface.loadMember(Camera, "getZoomX", 1);
+    static var hx_Camera_getZoomY = NativeInterface.loadMember(Camera, "getZoomY", 1);
+    static var hx_Camera_pickRay = NativeInterface.loadMember(Camera, "pickRay", 5);
+    static var hx_Camera_project = NativeInterface.loadMember(Camera, "project", -1);
+    static var hx_Camera_setAspectRatio = NativeInterface.loadMember(Camera, "setAspectRatio", 2);
+    static var hx_Camera_setFarPlane = NativeInterface.loadMember(Camera, "setFarPlane", 2);
+    static var hx_Camera_setFieldOfView = NativeInterface.loadMember(Camera, "setFieldOfView", 2);
+    static var hx_Camera_setNearPlane = NativeInterface.loadMember(Camera, "setNearPlane", 2);
+    static var hx_Camera_setZoomX = NativeInterface.loadMember(Camera, "setZoomX", 2);
+    static var hx_Camera_setZoomY = NativeInterface.loadMember(Camera, "setZoomY", 2);
+    static var hx_Camera_unproject = NativeInterface.loadMember(Camera, "unproject", -1);
 }
 
 // END

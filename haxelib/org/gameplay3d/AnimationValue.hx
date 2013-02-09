@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.util.INativeArray;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.PrimitiveArray;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -41,10 +42,10 @@ class AnimationValue extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AnimationValue_getFloat = cpp.Lib.load("gameplay", "hx_AnimationValue_getFloat", 2);
-    static var hx_AnimationValue_getFloats = cpp.Lib.load("gameplay", "hx_AnimationValue_getFloats", 4);
-    static var hx_AnimationValue_setFloat = cpp.Lib.load("gameplay", "hx_AnimationValue_setFloat", 3);
-    static var hx_AnimationValue_setFloats = cpp.Lib.load("gameplay", "hx_AnimationValue_setFloats", 4);
+    static var hx_AnimationValue_getFloat = NativeInterface.loadMember(AnimationValue, "getFloat", 2);
+    static var hx_AnimationValue_getFloats = NativeInterface.loadMember(AnimationValue, "getFloats", 4);
+    static var hx_AnimationValue_setFloat = NativeInterface.loadMember(AnimationValue, "setFloat", 3);
+    static var hx_AnimationValue_setFloats = NativeInterface.loadMember(AnimationValue, "setFloats", 4);
 }
 
 // END

@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import haxe.io.BytesData;
 import org.gameplay3d.intern.NativeOutParameter;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -96,18 +97,18 @@ class Stream extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Stream_canRead = cpp.Lib.load("gameplay", "hx_Stream_canRead", 1);
-    static var hx_Stream_canSeek = cpp.Lib.load("gameplay", "hx_Stream_canSeek", 1);
-    static var hx_Stream_canWrite = cpp.Lib.load("gameplay", "hx_Stream_canWrite", 1);
-    static var hx_Stream_close = cpp.Lib.load("gameplay", "hx_Stream_close", 1);
-    static var hx_Stream_eof = cpp.Lib.load("gameplay", "hx_Stream_eof", 1);
-    static var hx_Stream_length = cpp.Lib.load("gameplay", "hx_Stream_length", 1);
-    static var hx_Stream_position = cpp.Lib.load("gameplay", "hx_Stream_position", 1);
-    static var hx_Stream_read = cpp.Lib.load("gameplay", "hx_Stream_read", 4);
-    static var hx_Stream_readLine = cpp.Lib.load("gameplay", "hx_Stream_readLine", 3);
-    static var hx_Stream_rewind = cpp.Lib.load("gameplay", "hx_Stream_rewind", 1);
-    static var hx_Stream_seek = cpp.Lib.load("gameplay", "hx_Stream_seek", 3);
-    static var hx_Stream_write = cpp.Lib.load("gameplay", "hx_Stream_write", 4);
+    static var hx_Stream_canRead = NativeInterface.loadMember(Stream, "canRead", 1);
+    static var hx_Stream_canSeek = NativeInterface.loadMember(Stream, "canSeek", 1);
+    static var hx_Stream_canWrite = NativeInterface.loadMember(Stream, "canWrite", 1);
+    static var hx_Stream_close = NativeInterface.loadMember(Stream, "close", 1);
+    static var hx_Stream_eof = NativeInterface.loadMember(Stream, "eof", 1);
+    static var hx_Stream_length = NativeInterface.loadMember(Stream, "length", 1);
+    static var hx_Stream_position = NativeInterface.loadMember(Stream, "position", 1);
+    static var hx_Stream_read = NativeInterface.loadMember(Stream, "read", 4);
+    static var hx_Stream_readLine = NativeInterface.loadMember(Stream, "readLine", 3);
+    static var hx_Stream_rewind = NativeInterface.loadMember(Stream, "rewind", 1);
+    static var hx_Stream_seek = NativeInterface.loadMember(Stream, "seek", 3);
+    static var hx_Stream_write = NativeInterface.loadMember(Stream, "write", 4);
 }
 
 // END

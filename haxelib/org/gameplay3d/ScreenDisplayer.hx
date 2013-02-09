@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.util.Handle;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -61,11 +62,11 @@ class ScreenDisplayer extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_ScreenDisplayer_Construct = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_Construct", 0);
-    static var hx_ScreenDisplayer_static_finish = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_static_finish", 0);
-    static var hx_ScreenDisplayer_run = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_run", 4);
-    static var hx_ScreenDisplayer_complete = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_complete", 1);
-    static var hx_ScreenDisplayer_static_start = cpp.Lib.load("gameplay", "hx_ScreenDisplayer_static_start", 2);
+    static var hx_ScreenDisplayer_Construct = NativeInterface.loadMember(ScreenDisplayer, "Construct", 0);
+    static var hx_ScreenDisplayer_static_finish = NativeInterface.loadMember(ScreenDisplayer, "static_finish", 0);
+    static var hx_ScreenDisplayer_run = NativeInterface.loadMember(ScreenDisplayer, "run", 4);
+    static var hx_ScreenDisplayer_complete = NativeInterface.loadMember(ScreenDisplayer, "complete", 1);
+    static var hx_ScreenDisplayer_static_start = NativeInterface.loadMember(ScreenDisplayer, "static_start", 2);
 }
 
 // END

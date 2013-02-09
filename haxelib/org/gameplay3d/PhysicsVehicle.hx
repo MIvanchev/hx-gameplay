@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -194,36 +196,36 @@ class PhysicsVehicle extends PhysicsCollisionObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsVehicle_addWheel = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_addWheel", 2);
-    static var hx_PhysicsVehicle_getBoostGain = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBoostGain", 1);
-    static var hx_PhysicsVehicle_getBoostSpeed = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBoostSpeed", 1);
-    static var hx_PhysicsVehicle_getBrakedownFull = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBrakedownFull", 1);
-    static var hx_PhysicsVehicle_getBrakedownStart = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBrakedownStart", 1);
-    static var hx_PhysicsVehicle_getBrakingForce = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getBrakingForce", 1);
-    static var hx_PhysicsVehicle_getDownForce = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getDownForce", 1);
-    static var hx_PhysicsVehicle_getDrivedownFull = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getDrivedownFull", 1);
-    static var hx_PhysicsVehicle_getDrivedownStart = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getDrivedownStart", 1);
-    static var hx_PhysicsVehicle_getDrivingForce = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getDrivingForce", 1);
-    static var hx_PhysicsVehicle_getNumWheels = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getNumWheels", 1);
-    static var hx_PhysicsVehicle_getRigidBody = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getRigidBody", 1);
-    static var hx_PhysicsVehicle_getSpeedKph = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSpeedKph", 1);
-    static var hx_PhysicsVehicle_getSpeedSmoothKph = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSpeedSmoothKph", 1);
-    static var hx_PhysicsVehicle_getSteerdownGain = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSteerdownGain", 1);
-    static var hx_PhysicsVehicle_getSteerdownSpeed = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSteerdownSpeed", 1);
-    static var hx_PhysicsVehicle_getSteeringGain = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getSteeringGain", 1);
-    static var hx_PhysicsVehicle_getType = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getType", 1);
-    static var hx_PhysicsVehicle_getWheel = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_getWheel", 2);
-    static var hx_PhysicsVehicle_reset = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_reset", 1);
-    static var hx_PhysicsVehicle_setBoost = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setBoost", 3);
-    static var hx_PhysicsVehicle_setBrakedown = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setBrakedown", 3);
-    static var hx_PhysicsVehicle_setBrakingForce = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setBrakingForce", 2);
-    static var hx_PhysicsVehicle_setDownforce = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setDownforce", 2);
-    static var hx_PhysicsVehicle_setDrivedown = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setDrivedown", 3);
-    static var hx_PhysicsVehicle_setDrivingForce = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setDrivingForce", 2);
-    static var hx_PhysicsVehicle_setEnabled = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setEnabled", 2);
-    static var hx_PhysicsVehicle_setSteerdown = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setSteerdown", 3);
-    static var hx_PhysicsVehicle_setSteeringGain = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_setSteeringGain", 2);
-    static var hx_PhysicsVehicle_update = cpp.Lib.load("gameplay", "hx_PhysicsVehicle_update", 5);
+    static var hx_PhysicsVehicle_addWheel = NativeInterface.loadMember(PhysicsVehicle, "addWheel", 2);
+    static var hx_PhysicsVehicle_getBoostGain = NativeInterface.loadMember(PhysicsVehicle, "getBoostGain", 1);
+    static var hx_PhysicsVehicle_getBoostSpeed = NativeInterface.loadMember(PhysicsVehicle, "getBoostSpeed", 1);
+    static var hx_PhysicsVehicle_getBrakedownFull = NativeInterface.loadMember(PhysicsVehicle, "getBrakedownFull", 1);
+    static var hx_PhysicsVehicle_getBrakedownStart = NativeInterface.loadMember(PhysicsVehicle, "getBrakedownStart", 1);
+    static var hx_PhysicsVehicle_getBrakingForce = NativeInterface.loadMember(PhysicsVehicle, "getBrakingForce", 1);
+    static var hx_PhysicsVehicle_getDownForce = NativeInterface.loadMember(PhysicsVehicle, "getDownForce", 1);
+    static var hx_PhysicsVehicle_getDrivedownFull = NativeInterface.loadMember(PhysicsVehicle, "getDrivedownFull", 1);
+    static var hx_PhysicsVehicle_getDrivedownStart = NativeInterface.loadMember(PhysicsVehicle, "getDrivedownStart", 1);
+    static var hx_PhysicsVehicle_getDrivingForce = NativeInterface.loadMember(PhysicsVehicle, "getDrivingForce", 1);
+    static var hx_PhysicsVehicle_getNumWheels = NativeInterface.loadMember(PhysicsVehicle, "getNumWheels", 1);
+    static var hx_PhysicsVehicle_getRigidBody = NativeInterface.loadMember(PhysicsVehicle, "getRigidBody", 1);
+    static var hx_PhysicsVehicle_getSpeedKph = NativeInterface.loadMember(PhysicsVehicle, "getSpeedKph", 1);
+    static var hx_PhysicsVehicle_getSpeedSmoothKph = NativeInterface.loadMember(PhysicsVehicle, "getSpeedSmoothKph", 1);
+    static var hx_PhysicsVehicle_getSteerdownGain = NativeInterface.loadMember(PhysicsVehicle, "getSteerdownGain", 1);
+    static var hx_PhysicsVehicle_getSteerdownSpeed = NativeInterface.loadMember(PhysicsVehicle, "getSteerdownSpeed", 1);
+    static var hx_PhysicsVehicle_getSteeringGain = NativeInterface.loadMember(PhysicsVehicle, "getSteeringGain", 1);
+    static var hx_PhysicsVehicle_getType = NativeInterface.loadMember(PhysicsVehicle, "getType", 1);
+    static var hx_PhysicsVehicle_getWheel = NativeInterface.loadMember(PhysicsVehicle, "getWheel", 2);
+    static var hx_PhysicsVehicle_reset = NativeInterface.loadMember(PhysicsVehicle, "reset", 1);
+    static var hx_PhysicsVehicle_setBoost = NativeInterface.loadMember(PhysicsVehicle, "setBoost", 3);
+    static var hx_PhysicsVehicle_setBrakedown = NativeInterface.loadMember(PhysicsVehicle, "setBrakedown", 3);
+    static var hx_PhysicsVehicle_setBrakingForce = NativeInterface.loadMember(PhysicsVehicle, "setBrakingForce", 2);
+    static var hx_PhysicsVehicle_setDownforce = NativeInterface.loadMember(PhysicsVehicle, "setDownforce", 2);
+    static var hx_PhysicsVehicle_setDrivedown = NativeInterface.loadMember(PhysicsVehicle, "setDrivedown", 3);
+    static var hx_PhysicsVehicle_setDrivingForce = NativeInterface.loadMember(PhysicsVehicle, "setDrivingForce", 2);
+    static var hx_PhysicsVehicle_setEnabled = NativeInterface.loadMember(PhysicsVehicle, "setEnabled", 2);
+    static var hx_PhysicsVehicle_setSteerdown = NativeInterface.loadMember(PhysicsVehicle, "setSteerdown", 3);
+    static var hx_PhysicsVehicle_setSteeringGain = NativeInterface.loadMember(PhysicsVehicle, "setSteeringGain", 2);
+    static var hx_PhysicsVehicle_update = NativeInterface.loadMember(PhysicsVehicle, "update", 5);
 }
 
 // END

@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -20,7 +22,7 @@ class PhysicsGhostObject extends PhysicsCollisionObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsGhostObject_getType = cpp.Lib.load("gameplay", "hx_PhysicsGhostObject_getType", 1);
+    static var hx_PhysicsGhostObject_getType = NativeInterface.loadMember(PhysicsGhostObject, "getType", 1);
 }
 
 // END

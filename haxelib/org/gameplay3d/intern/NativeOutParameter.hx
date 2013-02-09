@@ -1,5 +1,8 @@
 package org.gameplay3d.intern;
 
+import org.gameplay3d.util.NativeInterface;
+
+
 /**
  * TODO
  */
@@ -37,7 +40,7 @@ class NativeOutParameter extends NativeBinding
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var createOutParameter:Dynamic = cpp.Lib.load("gameplay", "createOutParameter", 0);
-    static var setOutParameterValue:Dynamic = cpp.Lib.load("gameplay", "setOutParameterValue", 2);
-    static var getOutParameterValue:Dynamic = cpp.Lib.load("gameplay", "getOutParameterValue", 1);
+    static var createOutParameter:Dynamic = NativeInterface.load("createOutParameter", 0);
+    static var setOutParameterValue:Dynamic = NativeInterface.load("setOutParameterValue", 2);
+    static var getOutParameterValue:Dynamic = NativeInterface.load("getOutParameterValue", 1);
 }

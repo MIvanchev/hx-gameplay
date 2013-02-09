@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IRectangle;
 import org.gameplay3d.immutable.IVector2;
 import org.gameplay3d.immutable.IVector4;
 import org.gameplay3d.intern.NativeOutParameter;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
 
 using org.gameplay3d.GameplayObject;
@@ -114,21 +115,21 @@ class Font extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Font_static_create = cpp.Lib.load("gameplay", "hx_Font_static_create", 2);
-    static var hx_Font_createText = cpp.Lib.load("gameplay", "hx_Font_createText", -1);
-    static var hx_Font_drawText_Txt = cpp.Lib.load("gameplay", "hx_Font_drawText_Txt", 2);
-    static var hx_Font_drawText_Str_Rct_V4_IntX2_BoolX2_Rct = cpp.Lib.load("gameplay", "hx_Font_drawText_Str_Rct_V4_IntX2_BoolX2_Rct", -1);
-    static var hx_Font_drawText_Str_IntX2_V4_Int_Bool = cpp.Lib.load("gameplay", "hx_Font_drawText_Str_IntX2_V4_Int_Bool", -1);
-    static var hx_Font_drawText_Str_IntX2_FltX4_Int_Bool = cpp.Lib.load("gameplay", "hx_Font_drawText_Str_IntX2_FltX4_Int_Bool", -1);
-    static var hx_Font_finish = cpp.Lib.load("gameplay", "hx_Font_finish", 1);
-    static var hx_Font_getIndexAtLocation = cpp.Lib.load("gameplay", "hx_Font_getIndexAtLocation", -1);
-    static var hx_Font_static_getJustify = cpp.Lib.load("gameplay", "hx_Font_static_getJustify", 1);
-    static var hx_Font_getLocationAtIndex = cpp.Lib.load("gameplay", "hx_Font_getLocationAtIndex", -1);
-    static var hx_Font_getSize = cpp.Lib.load("gameplay", "hx_Font_getSize", 1);
-    static var hx_Font_getSpriteBatch = cpp.Lib.load("gameplay", "hx_Font_getSpriteBatch", 1);
-    static var hx_Font_measureText_Str_Rct_Int_Rct_Int_BoolX2 = cpp.Lib.load("gameplay", "hx_Font_measureText_Str_Rct_Int_Rct_Int_BoolX2", -1);
-    static var hx_Font_measureText_Str_Int_OutIntX2 = cpp.Lib.load("gameplay", "hx_Font_measureText_Str_Int_OutIntX2", 5);
-    static var hx_Font_start = cpp.Lib.load("gameplay", "hx_Font_start", 1);
+    static var hx_Font_static_create = NativeInterface.loadMember(Font, "static_create", 2);
+    static var hx_Font_createText = NativeInterface.loadMember(Font, "createText", -1);
+    static var hx_Font_drawText_Txt = NativeInterface.loadMember(Font, "drawText_Txt", 2);
+    static var hx_Font_drawText_Str_Rct_V4_IntX2_BoolX2_Rct = NativeInterface.loadMember(Font, "drawText_Str_Rct_V4_IntX2_BoolX2_Rct", -1);
+    static var hx_Font_drawText_Str_IntX2_V4_Int_Bool = NativeInterface.loadMember(Font, "drawText_Str_IntX2_V4_Int_Bool", -1);
+    static var hx_Font_drawText_Str_IntX2_FltX4_Int_Bool = NativeInterface.loadMember(Font, "drawText_Str_IntX2_FltX4_Int_Bool", -1);
+    static var hx_Font_finish = NativeInterface.loadMember(Font, "finish", 1);
+    static var hx_Font_getIndexAtLocation = NativeInterface.loadMember(Font, "getIndexAtLocation", -1);
+    static var hx_Font_static_getJustify = NativeInterface.loadMember(Font, "static_getJustify", 1);
+    static var hx_Font_getLocationAtIndex = NativeInterface.loadMember(Font, "getLocationAtIndex", -1);
+    static var hx_Font_getSize = NativeInterface.loadMember(Font, "getSize", 1);
+    static var hx_Font_getSpriteBatch = NativeInterface.loadMember(Font, "getSpriteBatch", 1);
+    static var hx_Font_measureText_Str_Rct_Int_Rct_Int_BoolX2 = NativeInterface.loadMember(Font, "measureText_Str_Rct_Int_Rct_Int_BoolX2", -1);
+    static var hx_Font_measureText_Str_Int_OutIntX2 = NativeInterface.loadMember(Font, "measureText_Str_Int_OutIntX2", 5);
+    static var hx_Font_start = NativeInterface.loadMember(Font, "start", 1);
 }
 
 // END

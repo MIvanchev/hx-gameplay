@@ -2,6 +2,7 @@ package org.gameplay3d.wrapper;
 
 import org.gameplay3d.GameplayObject;
 import org.gameplay3d.intern.ListenerWrapper;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.PhysicsController_Listener;
 
 // DECL: class Listener
@@ -37,7 +38,7 @@ class PhysicsController_ListenerWrapper extends ListenerWrapper<PhysicsControlle
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsController_Listener_Construct = cpp.Lib.load("gameplay", "hx_PhysicsController_Listener_Construct", 1);
+    static var hx_PhysicsController_Listener_Construct = NativeInterface.loadMember(PhysicsController_Listener, "Construct", 1);
 }
 
 // END

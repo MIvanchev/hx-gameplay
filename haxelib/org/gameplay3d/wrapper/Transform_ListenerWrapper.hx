@@ -3,6 +3,7 @@ package org.gameplay3d.wrapper;
 import org.gameplay3d.intern.ListenerWrapper;
 import org.gameplay3d.Transform;
 import org.gameplay3d.Transform_Listener;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.GameplayObject;
 
@@ -44,7 +45,7 @@ class Transform_ListenerWrapper extends ListenerWrapper<Transform_Listener>, imp
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Transform_Listener_Construct = cpp.Lib.load("gameplay", "hx_Transform_Listener_Construct", 1);
+    static var hx_Transform_Listener_Construct = NativeInterface.loadMember(Transform_Listener, "Construct", 1);
 }
 
 // END

@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.intern.ConversionTools;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -56,11 +57,11 @@ class VertexFormat extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_VertexFormat_Construct = cpp.Lib.load("gameplay", "hx_VertexFormat_Construct", 2);
-    static var hx_VertexFormat_getElement = cpp.Lib.load("gameplay", "hx_VertexFormat_getElement", 2);
-    static var hx_VertexFormat_getElementCount = cpp.Lib.load("gameplay", "hx_VertexFormat_getElementCount", 1);
-    static var hx_VertexFormat_getVertexSize = cpp.Lib.load("gameplay", "hx_VertexFormat_getVertexSize", 1);
-    static var hx_VertexFormat_static_toString = cpp.Lib.load("gameplay", "hx_VertexFormat_static_toString", 1);
+    static var hx_VertexFormat_Construct = NativeInterface.loadMember(VertexFormat, "Construct", 2);
+    static var hx_VertexFormat_getElement = NativeInterface.loadMember(VertexFormat, "getElement", 2);
+    static var hx_VertexFormat_getElementCount = NativeInterface.loadMember(VertexFormat, "getElementCount", 1);
+    static var hx_VertexFormat_getVertexSize = NativeInterface.loadMember(VertexFormat, "getVertexSize", 1);
+    static var hx_VertexFormat_static_toString = NativeInterface.loadMember(VertexFormat, "static_toString", 1);
 }
 
 // END

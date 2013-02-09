@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -129,24 +130,24 @@ class AudioSource extends Transform_ListenerImpl, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AudioSource_static_create_Prop = cpp.Lib.load("gameplay", "hx_AudioSource_static_create_Prop", 1);
-    static var hx_AudioSource_static_create_Str = cpp.Lib.load("gameplay", "hx_AudioSource_static_create_Str", 1);
-    static var hx_AudioSource_getGain = cpp.Lib.load("gameplay", "hx_AudioSource_getGain", 1);
-    static var hx_AudioSource_getNode = cpp.Lib.load("gameplay", "hx_AudioSource_getNode", 1);
-    static var hx_AudioSource_getPitch = cpp.Lib.load("gameplay", "hx_AudioSource_getPitch", 1);
-    static var hx_AudioSource_getState = cpp.Lib.load("gameplay", "hx_AudioSource_getState", 1);
-    static var hx_AudioSource_getVelocity = cpp.Lib.load("gameplay", "hx_AudioSource_getVelocity", 1);
-    static var hx_AudioSource_isLooped = cpp.Lib.load("gameplay", "hx_AudioSource_isLooped", 1);
-    static var hx_AudioSource_pause = cpp.Lib.load("gameplay", "hx_AudioSource_pause", 1);
-    static var hx_AudioSource_play = cpp.Lib.load("gameplay", "hx_AudioSource_play", 1);
-    static var hx_AudioSource_resume = cpp.Lib.load("gameplay", "hx_AudioSource_resume", 1);
-    static var hx_AudioSource_rewind = cpp.Lib.load("gameplay", "hx_AudioSource_rewind", 1);
-    static var hx_AudioSource_setGain = cpp.Lib.load("gameplay", "hx_AudioSource_setGain", 2);
-    static var hx_AudioSource_setLooped = cpp.Lib.load("gameplay", "hx_AudioSource_setLooped", 2);
-    static var hx_AudioSource_setPitch = cpp.Lib.load("gameplay", "hx_AudioSource_setPitch", 2);
-    static var hx_AudioSource_setVelocity_V3 = cpp.Lib.load("gameplay", "hx_AudioSource_setVelocity_V3", 2);
-    static var hx_AudioSource_setVelocity_FltX3 = cpp.Lib.load("gameplay", "hx_AudioSource_setVelocity_FltX3", 4);
-    static var hx_AudioSource_stop = cpp.Lib.load("gameplay", "hx_AudioSource_stop", 1);
+    static var hx_AudioSource_static_create_Prop = NativeInterface.loadMember(AudioSource, "static_create_Prop", 1);
+    static var hx_AudioSource_static_create_Str = NativeInterface.loadMember(AudioSource, "static_create_Str", 1);
+    static var hx_AudioSource_getGain = NativeInterface.loadMember(AudioSource, "getGain", 1);
+    static var hx_AudioSource_getNode = NativeInterface.loadMember(AudioSource, "getNode", 1);
+    static var hx_AudioSource_getPitch = NativeInterface.loadMember(AudioSource, "getPitch", 1);
+    static var hx_AudioSource_getState = NativeInterface.loadMember(AudioSource, "getState", 1);
+    static var hx_AudioSource_getVelocity = NativeInterface.loadMember(AudioSource, "getVelocity", 1);
+    static var hx_AudioSource_isLooped = NativeInterface.loadMember(AudioSource, "isLooped", 1);
+    static var hx_AudioSource_pause = NativeInterface.loadMember(AudioSource, "pause", 1);
+    static var hx_AudioSource_play = NativeInterface.loadMember(AudioSource, "play", 1);
+    static var hx_AudioSource_resume = NativeInterface.loadMember(AudioSource, "resume", 1);
+    static var hx_AudioSource_rewind = NativeInterface.loadMember(AudioSource, "rewind", 1);
+    static var hx_AudioSource_setGain = NativeInterface.loadMember(AudioSource, "setGain", 2);
+    static var hx_AudioSource_setLooped = NativeInterface.loadMember(AudioSource, "setLooped", 2);
+    static var hx_AudioSource_setPitch = NativeInterface.loadMember(AudioSource, "setPitch", 2);
+    static var hx_AudioSource_setVelocity_V3 = NativeInterface.loadMember(AudioSource, "setVelocity_V3", 2);
+    static var hx_AudioSource_setVelocity_FltX3 = NativeInterface.loadMember(AudioSource, "setVelocity_FltX3", 4);
+    static var hx_AudioSource_stop = NativeInterface.loadMember(AudioSource, "stop", 1);
 }
 
 // END

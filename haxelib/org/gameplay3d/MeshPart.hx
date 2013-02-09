@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import haxe.io.BytesData;
 import org.gameplay3d.util.Handle;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -59,13 +60,13 @@ class MeshPart extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_MeshPart_getIndexBuffer = cpp.Lib.load("gameplay", "hx_MeshPart_getIndexBuffer", 1);
-    static var hx_MeshPart_getIndexCount = cpp.Lib.load("gameplay", "hx_MeshPart_getIndexCount", 1);
-    static var hx_MeshPart_getIndexFormat = cpp.Lib.load("gameplay", "hx_MeshPart_getIndexFormat", 1);
-    static var hx_MeshPart_getMeshIndex = cpp.Lib.load("gameplay", "hx_MeshPart_getMeshIndex", 1);
-    static var hx_MeshPart_getPrimitiveType = cpp.Lib.load("gameplay", "hx_MeshPart_getPrimitiveType", 1);
-    static var hx_MeshPart_isDynamic = cpp.Lib.load("gameplay", "hx_MeshPart_isDynamic", 1);
-    static var hx_MeshPart_setIndexData = cpp.Lib.load("gameplay", "hx_MeshPart_setIndexData", 4);
+    static var hx_MeshPart_getIndexBuffer = NativeInterface.loadMember(MeshPart, "getIndexBuffer", 1);
+    static var hx_MeshPart_getIndexCount = NativeInterface.loadMember(MeshPart, "getIndexCount", 1);
+    static var hx_MeshPart_getIndexFormat = NativeInterface.loadMember(MeshPart, "getIndexFormat", 1);
+    static var hx_MeshPart_getMeshIndex = NativeInterface.loadMember(MeshPart, "getMeshIndex", 1);
+    static var hx_MeshPart_getPrimitiveType = NativeInterface.loadMember(MeshPart, "getPrimitiveType", 1);
+    static var hx_MeshPart_isDynamic = NativeInterface.loadMember(MeshPart, "isDynamic", 1);
+    static var hx_MeshPart_setIndexData = NativeInterface.loadMember(MeshPart, "setIndexData", 4);
 }
 
 // END

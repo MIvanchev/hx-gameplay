@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector2;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.wrapper.Control_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -83,17 +84,17 @@ class Joystick extends Control
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Joystick_addListener = cpp.Lib.load("gameplay", "hx_Joystick_addListener", 3);
-    static var hx_Joystick_static_create = cpp.Lib.load("gameplay", "hx_Joystick_static_create", 2);
-    static var hx_Joystick_getIndex = cpp.Lib.load("gameplay", "hx_Joystick_getIndex", 1);
-    static var hx_Joystick_getInnerRegionSize = cpp.Lib.load("gameplay", "hx_Joystick_getInnerRegionSize", 1);
-    static var hx_Joystick_getOuterRegionSize = cpp.Lib.load("gameplay", "hx_Joystick_getOuterRegionSize", 1);
-    static var hx_Joystick_getType = cpp.Lib.load("gameplay", "hx_Joystick_getType", 1);
-    static var hx_Joystick_getValue = cpp.Lib.load("gameplay", "hx_Joystick_getValue", 1);
-    static var hx_Joystick_isRelative = cpp.Lib.load("gameplay", "hx_Joystick_isRelative", 1);
-    static var hx_Joystick_setInnerRegionSize = cpp.Lib.load("gameplay", "hx_Joystick_setInnerRegionSize", 2);
-    static var hx_Joystick_setOuterRegionSize = cpp.Lib.load("gameplay", "hx_Joystick_setOuterRegionSize", 2);
-    static var hx_Joystick_setRelative = cpp.Lib.load("gameplay", "hx_Joystick_setRelative", 2);
+    static var hx_Joystick_addListener = NativeInterface.loadMember(Joystick, "addListener", 3);
+    static var hx_Joystick_static_create = NativeInterface.loadMember(Joystick, "static_create", 2);
+    static var hx_Joystick_getIndex = NativeInterface.loadMember(Joystick, "getIndex", 1);
+    static var hx_Joystick_getInnerRegionSize = NativeInterface.loadMember(Joystick, "getInnerRegionSize", 1);
+    static var hx_Joystick_getOuterRegionSize = NativeInterface.loadMember(Joystick, "getOuterRegionSize", 1);
+    static var hx_Joystick_getType = NativeInterface.loadMember(Joystick, "getType", 1);
+    static var hx_Joystick_getValue = NativeInterface.loadMember(Joystick, "getValue", 1);
+    static var hx_Joystick_isRelative = NativeInterface.loadMember(Joystick, "isRelative", 1);
+    static var hx_Joystick_setInnerRegionSize = NativeInterface.loadMember(Joystick, "setInnerRegionSize", 2);
+    static var hx_Joystick_setOuterRegionSize = NativeInterface.loadMember(Joystick, "setOuterRegionSize", 2);
+    static var hx_Joystick_setRelative = NativeInterface.loadMember(Joystick, "setRelative", 2);
 }
 
 // END

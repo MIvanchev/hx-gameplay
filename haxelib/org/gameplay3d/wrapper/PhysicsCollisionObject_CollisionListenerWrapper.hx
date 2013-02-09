@@ -3,6 +3,7 @@ package org.gameplay3d.wrapper;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.ListenerWrapper;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.PhysicsCollisionObject_CollisionListener;
 import org.gameplay3d.PhysicsCollisionObject_CollisionPair;
 import org.gameplay3d.shared.SharedPhysicsCollisionObject_CollisionPair;
@@ -58,7 +59,7 @@ class PhysicsCollisionObject_CollisionListenerWrapper extends ListenerWrapper<Ph
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsCollisionObject_CollisionListener_Construct = cpp.Lib.load("gameplay", "hx_PhysicsCollisionObject_CollisionListener_Construct", 1);
+    static var hx_PhysicsCollisionObject_CollisionListener_Construct = NativeInterface.loadMember(PhysicsCollisionObject_CollisionListener, "Construct", 1);
 }
 
 // END

@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector2;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -298,45 +299,45 @@ class Vector2 extends GameplayObject, implements IVector2
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Vector2_Construct = cpp.Lib.load("gameplay", "hx_Vector2_Construct", 0);
-    static var hx_Vector2_Construct_V2 = cpp.Lib.load("gameplay", "hx_Vector2_Construct_V2", 1);
-    static var hx_Vector2_Construct_V2X2 = cpp.Lib.load("gameplay", "hx_Vector2_Construct_V2X2", 2);
-    static var hx_Vector2_Construct_ArrFlt = cpp.Lib.load("gameplay", "hx_Vector2_Construct_ArrFlt", 1);
-    static var hx_Vector2_Construct_FltX2 = cpp.Lib.load("gameplay", "hx_Vector2_Construct_FltX2", 2);
-    static var hx_Vector2_static_add = cpp.Lib.load("gameplay", "hx_Vector2_static_add", 3);
-    static var hx_Vector2_add = cpp.Lib.load("gameplay", "hx_Vector2_add", 2);
-    static var hx_Vector2_static_angle = cpp.Lib.load("gameplay", "hx_Vector2_static_angle", 2);
-    static var hx_Vector2_static_clamp = cpp.Lib.load("gameplay", "hx_Vector2_static_clamp", 4);
-    static var hx_Vector2_clamp = cpp.Lib.load("gameplay", "hx_Vector2_clamp", 3);
-    static var hx_Vector2_distance = cpp.Lib.load("gameplay", "hx_Vector2_distance", 2);
-    static var hx_Vector2_distanceSquared = cpp.Lib.load("gameplay", "hx_Vector2_distanceSquared", 2);
-    static var hx_Vector2_dot = cpp.Lib.load("gameplay", "hx_Vector2_dot", 2);
-    static var hx_Vector2_static_dot = cpp.Lib.load("gameplay", "hx_Vector2_static_dot", 2);
-    static var hx_Vector2_isOne = cpp.Lib.load("gameplay", "hx_Vector2_isOne", 1);
-    static var hx_Vector2_isZero = cpp.Lib.load("gameplay", "hx_Vector2_isZero", 1);
-    static var hx_Vector2_length = cpp.Lib.load("gameplay", "hx_Vector2_length", 1);
-    static var hx_Vector2_lengthSquared = cpp.Lib.load("gameplay", "hx_Vector2_lengthSquared", 1);
-    static var hx_Vector2_negate = cpp.Lib.load("gameplay", "hx_Vector2_negate", 1);
-    static var hx_Vector2_normalize = cpp.Lib.load("gameplay", "hx_Vector2_normalize", 1);
-    static var hx_Vector2_normalize_V2 = cpp.Lib.load("gameplay", "hx_Vector2_normalize_V2", 2);
-    static var hx_Vector2_static_one = cpp.Lib.load("gameplay", "hx_Vector2_static_one", 0);
-    static var hx_Vector2_rotate = cpp.Lib.load("gameplay", "hx_Vector2_rotate", 3);
-    static var hx_Vector2_scale_V2 = cpp.Lib.load("gameplay", "hx_Vector2_scale_V2", 2);
-    static var hx_Vector2_scale_Flt = cpp.Lib.load("gameplay", "hx_Vector2_scale_Flt", 2);
-    static var hx_Vector2_set_V2X2 = cpp.Lib.load("gameplay", "hx_Vector2_set_V2X2", 3);
-    static var hx_Vector2_set_V2 = cpp.Lib.load("gameplay", "hx_Vector2_set_V2", 2);
-    static var hx_Vector2_set_ArrFlt = cpp.Lib.load("gameplay", "hx_Vector2_set_ArrFlt", 2);
-    static var hx_Vector2_set_FltX2 = cpp.Lib.load("gameplay", "hx_Vector2_set_FltX2", 3);
-    static var hx_Vector2_smooth = cpp.Lib.load("gameplay", "hx_Vector2_smooth", 4);
-    static var hx_Vector2_static_subtract = cpp.Lib.load("gameplay", "hx_Vector2_static_subtract", 3);
-    static var hx_Vector2_subtract = cpp.Lib.load("gameplay", "hx_Vector2_subtract", 2);
-    static var hx_Vector2_static_unitX = cpp.Lib.load("gameplay", "hx_Vector2_static_unitX", 0);
-    static var hx_Vector2_static_unitY = cpp.Lib.load("gameplay", "hx_Vector2_static_unitY", 0);
-    static var hx_Vector2_static_zero = cpp.Lib.load("gameplay", "hx_Vector2_static_zero", 0);
-    static var hx_Vector2_property_x_get = cpp.Lib.load("gameplay", "hx_Vector2_property_x_get", 1);
-    static var hx_Vector2_property_x_set = cpp.Lib.load("gameplay", "hx_Vector2_property_x_set", 2);
-    static var hx_Vector2_property_y_get = cpp.Lib.load("gameplay", "hx_Vector2_property_y_get", 1);
-    static var hx_Vector2_property_y_set = cpp.Lib.load("gameplay", "hx_Vector2_property_y_set", 2);
+    static var hx_Vector2_Construct = NativeInterface.loadMember(Vector2, "Construct", 0);
+    static var hx_Vector2_Construct_V2 = NativeInterface.loadMember(Vector2, "Construct_V2", 1);
+    static var hx_Vector2_Construct_V2X2 = NativeInterface.loadMember(Vector2, "Construct_V2X2", 2);
+    static var hx_Vector2_Construct_ArrFlt = NativeInterface.loadMember(Vector2, "Construct_ArrFlt", 1);
+    static var hx_Vector2_Construct_FltX2 = NativeInterface.loadMember(Vector2, "Construct_FltX2", 2);
+    static var hx_Vector2_static_add = NativeInterface.loadMember(Vector2, "static_add", 3);
+    static var hx_Vector2_add = NativeInterface.loadMember(Vector2, "add", 2);
+    static var hx_Vector2_static_angle = NativeInterface.loadMember(Vector2, "static_angle", 2);
+    static var hx_Vector2_static_clamp = NativeInterface.loadMember(Vector2, "static_clamp", 4);
+    static var hx_Vector2_clamp = NativeInterface.loadMember(Vector2, "clamp", 3);
+    static var hx_Vector2_distance = NativeInterface.loadMember(Vector2, "distance", 2);
+    static var hx_Vector2_distanceSquared = NativeInterface.loadMember(Vector2, "distanceSquared", 2);
+    static var hx_Vector2_dot = NativeInterface.loadMember(Vector2, "dot", 2);
+    static var hx_Vector2_static_dot = NativeInterface.loadMember(Vector2, "static_dot", 2);
+    static var hx_Vector2_isOne = NativeInterface.loadMember(Vector2, "isOne", 1);
+    static var hx_Vector2_isZero = NativeInterface.loadMember(Vector2, "isZero", 1);
+    static var hx_Vector2_length = NativeInterface.loadMember(Vector2, "length", 1);
+    static var hx_Vector2_lengthSquared = NativeInterface.loadMember(Vector2, "lengthSquared", 1);
+    static var hx_Vector2_negate = NativeInterface.loadMember(Vector2, "negate", 1);
+    static var hx_Vector2_normalize = NativeInterface.loadMember(Vector2, "normalize", 1);
+    static var hx_Vector2_normalize_V2 = NativeInterface.loadMember(Vector2, "normalize_V2", 2);
+    static var hx_Vector2_static_one = NativeInterface.loadMember(Vector2, "static_one", 0);
+    static var hx_Vector2_rotate = NativeInterface.loadMember(Vector2, "rotate", 3);
+    static var hx_Vector2_scale_V2 = NativeInterface.loadMember(Vector2, "scale_V2", 2);
+    static var hx_Vector2_scale_Flt = NativeInterface.loadMember(Vector2, "scale_Flt", 2);
+    static var hx_Vector2_set_V2X2 = NativeInterface.loadMember(Vector2, "set_V2X2", 3);
+    static var hx_Vector2_set_V2 = NativeInterface.loadMember(Vector2, "set_V2", 2);
+    static var hx_Vector2_set_ArrFlt = NativeInterface.loadMember(Vector2, "set_ArrFlt", 2);
+    static var hx_Vector2_set_FltX2 = NativeInterface.loadMember(Vector2, "set_FltX2", 3);
+    static var hx_Vector2_smooth = NativeInterface.loadMember(Vector2, "smooth", 4);
+    static var hx_Vector2_static_subtract = NativeInterface.loadMember(Vector2, "static_subtract", 3);
+    static var hx_Vector2_subtract = NativeInterface.loadMember(Vector2, "subtract", 2);
+    static var hx_Vector2_static_unitX = NativeInterface.loadMember(Vector2, "static_unitX", 0);
+    static var hx_Vector2_static_unitY = NativeInterface.loadMember(Vector2, "static_unitY", 0);
+    static var hx_Vector2_static_zero = NativeInterface.loadMember(Vector2, "static_zero", 0);
+    static var hx_Vector2_property_x_get = NativeInterface.loadMember(Vector2, "property_x_get", 1);
+    static var hx_Vector2_property_x_set = NativeInterface.loadMember(Vector2, "property_x_set", 2);
+    static var hx_Vector2_property_y_get = NativeInterface.loadMember(Vector2, "property_y_get", 1);
+    static var hx_Vector2_property_y_set = NativeInterface.loadMember(Vector2, "property_y_set", 2);
 }
 
 // END

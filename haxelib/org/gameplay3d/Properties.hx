@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.intern.NativeOutParameter;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -154,27 +155,27 @@ class Properties extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Properties_static_create = cpp.Lib.load("gameplay", "hx_Properties_static_create", 1);
-    static var hx_Properties_exists = cpp.Lib.load("gameplay", "hx_Properties_exists", 2);
-    static var hx_Properties_getBool = cpp.Lib.load("gameplay", "hx_Properties_getBool", 3);
-    static var hx_Properties_getColor_Str_V3 = cpp.Lib.load("gameplay", "hx_Properties_getColor_Str_V3", 3);
-    static var hx_Properties_getColor_Str_V4 = cpp.Lib.load("gameplay", "hx_Properties_getColor_Str_V4", 3);
-    static var hx_Properties_getFloat = cpp.Lib.load("gameplay", "hx_Properties_getFloat", 2);
-    static var hx_Properties_getId = cpp.Lib.load("gameplay", "hx_Properties_getId", 1);
-    static var hx_Properties_getInt = cpp.Lib.load("gameplay", "hx_Properties_getInt", 2);
-    static var hx_Properties_getLong = cpp.Lib.load("gameplay", "hx_Properties_getLong", 2);
-    static var hx_Properties_getMatrix = cpp.Lib.load("gameplay", "hx_Properties_getMatrix", 3);
-    static var hx_Properties_getNamespace_Str_Bool = cpp.Lib.load("gameplay", "hx_Properties_getNamespace_Str_Bool", 3);
-    static var hx_Properties_getNamespace = cpp.Lib.load("gameplay", "hx_Properties_getNamespace", 1);
-    static var hx_Properties_getNextNamespace = cpp.Lib.load("gameplay", "hx_Properties_getNextNamespace", 1);
-    static var hx_Properties_getNextProperty = cpp.Lib.load("gameplay", "hx_Properties_getNextProperty", 2);
-    static var hx_Properties_getQuaternionFromAxisAngle = cpp.Lib.load("gameplay", "hx_Properties_getQuaternionFromAxisAngle", 3);
-    static var hx_Properties_getString = cpp.Lib.load("gameplay", "hx_Properties_getString", 2);
-    static var hx_Properties_getType = cpp.Lib.load("gameplay", "hx_Properties_getType", 2);
-    static var hx_Properties_getVector2 = cpp.Lib.load("gameplay", "hx_Properties_getVector2", 3);
-    static var hx_Properties_getVector3 = cpp.Lib.load("gameplay", "hx_Properties_getVector3", 3);
-    static var hx_Properties_getVector4 = cpp.Lib.load("gameplay", "hx_Properties_getVector4", 3);
-    static var hx_Properties_rewind = cpp.Lib.load("gameplay", "hx_Properties_rewind", 1);
+    static var hx_Properties_static_create = NativeInterface.loadMember(Properties, "static_create", 1);
+    static var hx_Properties_exists = NativeInterface.loadMember(Properties, "exists", 2);
+    static var hx_Properties_getBool = NativeInterface.loadMember(Properties, "getBool", 3);
+    static var hx_Properties_getColor_Str_V3 = NativeInterface.loadMember(Properties, "getColor_Str_V3", 3);
+    static var hx_Properties_getColor_Str_V4 = NativeInterface.loadMember(Properties, "getColor_Str_V4", 3);
+    static var hx_Properties_getFloat = NativeInterface.loadMember(Properties, "getFloat", 2);
+    static var hx_Properties_getId = NativeInterface.loadMember(Properties, "getId", 1);
+    static var hx_Properties_getInt = NativeInterface.loadMember(Properties, "getInt", 2);
+    static var hx_Properties_getLong = NativeInterface.loadMember(Properties, "getLong", 2);
+    static var hx_Properties_getMatrix = NativeInterface.loadMember(Properties, "getMatrix", 3);
+    static var hx_Properties_getNamespace_Str_Bool = NativeInterface.loadMember(Properties, "getNamespace_Str_Bool", 3);
+    static var hx_Properties_getNamespace = NativeInterface.loadMember(Properties, "getNamespace", 1);
+    static var hx_Properties_getNextNamespace = NativeInterface.loadMember(Properties, "getNextNamespace", 1);
+    static var hx_Properties_getNextProperty = NativeInterface.loadMember(Properties, "getNextProperty", 2);
+    static var hx_Properties_getQuaternionFromAxisAngle = NativeInterface.loadMember(Properties, "getQuaternionFromAxisAngle", 3);
+    static var hx_Properties_getString = NativeInterface.loadMember(Properties, "getString", 2);
+    static var hx_Properties_getType = NativeInterface.loadMember(Properties, "getType", 2);
+    static var hx_Properties_getVector2 = NativeInterface.loadMember(Properties, "getVector2", 3);
+    static var hx_Properties_getVector3 = NativeInterface.loadMember(Properties, "getVector3", 3);
+    static var hx_Properties_getVector4 = NativeInterface.loadMember(Properties, "getVector4", 3);
+    static var hx_Properties_rewind = NativeInterface.loadMember(Properties, "rewind", 1);
 }
 
 // END

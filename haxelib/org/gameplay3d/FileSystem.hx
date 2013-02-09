@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.Handle;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -108,19 +109,19 @@ class FileSystem extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_FileSystem_static_createFileFromAsset = cpp.Lib.load("gameplay", "hx_FileSystem_static_createFileFromAsset", 1);
-    static var hx_FileSystem_static_fileExists = cpp.Lib.load("gameplay", "hx_FileSystem_static_fileExists", 1);
-    static var hx_FileSystem_static_getExtension = cpp.Lib.load("gameplay", "hx_FileSystem_static_getExtension", 1);
-    static var hx_FileSystem_static_getResourcePath = cpp.Lib.load("gameplay", "hx_FileSystem_static_getResourcePath", 0);
-    static var hx_FileSystem_static_isAbsolutePath = cpp.Lib.load("gameplay", "hx_FileSystem_static_isAbsolutePath", 1);
-    static var hx_FileSystem_static_listFiles = cpp.Lib.load("gameplay", "hx_FileSystem_static_listFiles", 2);
-    static var hx_FileSystem_static_loadResourceAliases_Prop = cpp.Lib.load("gameplay", "hx_FileSystem_static_loadResourceAliases_Prop", 1);
-    static var hx_FileSystem_static_loadResourceAliases_Str = cpp.Lib.load("gameplay", "hx_FileSystem_static_loadResourceAliases_Str", 1);
-    static var hx_FileSystem_static_open = cpp.Lib.load("gameplay", "hx_FileSystem_static_open", 2);
-    static var hx_FileSystem_static_openFile = cpp.Lib.load("gameplay", "hx_FileSystem_static_openFile", 2);
-    static var hx_FileSystem_static_readAll = cpp.Lib.load("gameplay", "hx_FileSystem_static_readAll", 2);
-    static var hx_FileSystem_static_resolvePath = cpp.Lib.load("gameplay", "hx_FileSystem_static_resolvePath", 1);
-    static var hx_FileSystem_static_setResourcePath = cpp.Lib.load("gameplay", "hx_FileSystem_static_setResourcePath", 1);
+    static var hx_FileSystem_static_createFileFromAsset = NativeInterface.loadMember(FileSystem, "static_createFileFromAsset", 1);
+    static var hx_FileSystem_static_fileExists = NativeInterface.loadMember(FileSystem, "static_fileExists", 1);
+    static var hx_FileSystem_static_getExtension = NativeInterface.loadMember(FileSystem, "static_getExtension", 1);
+    static var hx_FileSystem_static_getResourcePath = NativeInterface.loadMember(FileSystem, "static_getResourcePath", 0);
+    static var hx_FileSystem_static_isAbsolutePath = NativeInterface.loadMember(FileSystem, "static_isAbsolutePath", 1);
+    static var hx_FileSystem_static_listFiles = NativeInterface.loadMember(FileSystem, "static_listFiles", 2);
+    static var hx_FileSystem_static_loadResourceAliases_Prop = NativeInterface.loadMember(FileSystem, "static_loadResourceAliases_Prop", 1);
+    static var hx_FileSystem_static_loadResourceAliases_Str = NativeInterface.loadMember(FileSystem, "static_loadResourceAliases_Str", 1);
+    static var hx_FileSystem_static_open = NativeInterface.loadMember(FileSystem, "static_open", 2);
+    static var hx_FileSystem_static_openFile = NativeInterface.loadMember(FileSystem, "static_openFile", 2);
+    static var hx_FileSystem_static_readAll = NativeInterface.loadMember(FileSystem, "static_readAll", 2);
+    static var hx_FileSystem_static_resolvePath = NativeInterface.loadMember(FileSystem, "static_resolvePath", 1);
+    static var hx_FileSystem_static_setResourcePath = NativeInterface.loadMember(FileSystem, "static_setResourcePath", 1);
 }
 
 // END

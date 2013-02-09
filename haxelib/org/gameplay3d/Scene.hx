@@ -5,6 +5,7 @@ import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.intern.ConversionTools;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -171,27 +172,27 @@ class Scene extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Scene_addNode_Str = cpp.Lib.load("gameplay", "hx_Scene_addNode_Str", 2);
-    static var hx_Scene_addNode_Node = cpp.Lib.load("gameplay", "hx_Scene_addNode_Node", 2);
-    static var hx_Scene_bindAudioListenerToCamera = cpp.Lib.load("gameplay", "hx_Scene_bindAudioListenerToCamera", 2);
-    static var hx_Scene_static_create = cpp.Lib.load("gameplay", "hx_Scene_static_create", 0);
-    static var hx_Scene_drawDebug = cpp.Lib.load("gameplay", "hx_Scene_drawDebug", 2);
-    static var hx_Scene_findNode = cpp.Lib.load("gameplay", "hx_Scene_findNode", 4);
-    static var hx_Scene_findNodes = cpp.Lib.load("gameplay", "hx_Scene_findNodes", 5);
-    static var hx_Scene_getActiveCamera = cpp.Lib.load("gameplay", "hx_Scene_getActiveCamera", 1);
-    static var hx_Scene_getAmbientColor = cpp.Lib.load("gameplay", "hx_Scene_getAmbientColor", 1);
-    static var hx_Scene_getFirstNode = cpp.Lib.load("gameplay", "hx_Scene_getFirstNode", 1);
-    static var hx_Scene_getId = cpp.Lib.load("gameplay", "hx_Scene_getId", 1);
-    static var hx_Scene_getNodeCount = cpp.Lib.load("gameplay", "hx_Scene_getNodeCount", 1);
-    static var hx_Scene_static_load = cpp.Lib.load("gameplay", "hx_Scene_static_load", 1);
-    static var hx_Scene_removeAllNodes = cpp.Lib.load("gameplay", "hx_Scene_removeAllNodes", 1);
-    static var hx_Scene_removeNode = cpp.Lib.load("gameplay", "hx_Scene_removeNode", 2);
-    static var hx_Scene_setActiveCamera = cpp.Lib.load("gameplay", "hx_Scene_setActiveCamera", 2);
-    static var hx_Scene_setAmbientColor = cpp.Lib.load("gameplay", "hx_Scene_setAmbientColor", 4);
-    static var hx_Scene_setId = cpp.Lib.load("gameplay", "hx_Scene_setId", 2);
-    static var hx_Scene_visit_Str = cpp.Lib.load("gameplay", "hx_Scene_visit_Str", 2);
-    static var hx_Scene_visit_Func = cpp.Lib.load("gameplay", "hx_Scene_visit_Func", 2);
-    static var hx_Scene_visit_Func_Int = cpp.Lib.load("gameplay", "hx_Scene_visit_Func_Int", 3);
+    static var hx_Scene_addNode_Str = NativeInterface.loadMember(Scene, "addNode_Str", 2);
+    static var hx_Scene_addNode_Node = NativeInterface.loadMember(Scene, "addNode_Node", 2);
+    static var hx_Scene_bindAudioListenerToCamera = NativeInterface.loadMember(Scene, "bindAudioListenerToCamera", 2);
+    static var hx_Scene_static_create = NativeInterface.loadMember(Scene, "static_create", 0);
+    static var hx_Scene_drawDebug = NativeInterface.loadMember(Scene, "drawDebug", 2);
+    static var hx_Scene_findNode = NativeInterface.loadMember(Scene, "findNode", 4);
+    static var hx_Scene_findNodes = NativeInterface.loadMember(Scene, "findNodes", 5);
+    static var hx_Scene_getActiveCamera = NativeInterface.loadMember(Scene, "getActiveCamera", 1);
+    static var hx_Scene_getAmbientColor = NativeInterface.loadMember(Scene, "getAmbientColor", 1);
+    static var hx_Scene_getFirstNode = NativeInterface.loadMember(Scene, "getFirstNode", 1);
+    static var hx_Scene_getId = NativeInterface.loadMember(Scene, "getId", 1);
+    static var hx_Scene_getNodeCount = NativeInterface.loadMember(Scene, "getNodeCount", 1);
+    static var hx_Scene_static_load = NativeInterface.loadMember(Scene, "static_load", 1);
+    static var hx_Scene_removeAllNodes = NativeInterface.loadMember(Scene, "removeAllNodes", 1);
+    static var hx_Scene_removeNode = NativeInterface.loadMember(Scene, "removeNode", 2);
+    static var hx_Scene_setActiveCamera = NativeInterface.loadMember(Scene, "setActiveCamera", 2);
+    static var hx_Scene_setAmbientColor = NativeInterface.loadMember(Scene, "setAmbientColor", 4);
+    static var hx_Scene_setId = NativeInterface.loadMember(Scene, "setId", 2);
+    static var hx_Scene_visit_Str = NativeInterface.loadMember(Scene, "visit_Str", 2);
+    static var hx_Scene_visit_Func = NativeInterface.loadMember(Scene, "visit_Func", 2);
+    static var hx_Scene_visit_Func_Int = NativeInterface.loadMember(Scene, "visit_Func_Int", 3);
 }
 
 // END

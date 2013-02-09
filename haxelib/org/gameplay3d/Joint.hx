@@ -3,6 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.immutable.IMatrix;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -32,8 +33,8 @@ class Joint extends Node
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Joint_getInverseBindPose = cpp.Lib.load("gameplay", "hx_Joint_getInverseBindPose", 1);
-    static var hx_Joint_getType = cpp.Lib.load("gameplay", "hx_Joint_getType", 1);
+    static var hx_Joint_getInverseBindPose = NativeInterface.loadMember(Joint, "getInverseBindPose", 1);
+    static var hx_Joint_getType = NativeInterface.loadMember(Joint, "getType", 1);
 }
 
 // END

@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -32,9 +33,9 @@ class Theme extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Theme_static_create = cpp.Lib.load("gameplay", "hx_Theme_static_create", 1);
-    static var hx_Theme_getEmptyStyle = cpp.Lib.load("gameplay", "hx_Theme_getEmptyStyle", 1);
-    static var hx_Theme_getStyle = cpp.Lib.load("gameplay", "hx_Theme_getStyle", 2);
+    static var hx_Theme_static_create = NativeInterface.loadMember(Theme, "static_create", 1);
+    static var hx_Theme_getEmptyStyle = NativeInterface.loadMember(Theme, "getEmptyStyle", 1);
+    static var hx_Theme_getStyle = NativeInterface.loadMember(Theme, "getStyle", 2);
 }
 
 // END

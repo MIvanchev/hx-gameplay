@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -44,11 +46,11 @@ class Logger extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Logger_static_isEnabled = cpp.Lib.load("gameplay", "hx_Logger_static_isEnabled", 1);
-    static var hx_Logger_static_log = cpp.Lib.load("gameplay", "hx_Logger_static_log", 2);
-    static var hx_Logger_static_set_Int_Str = cpp.Lib.load("gameplay", "hx_Logger_static_set_Int_Str", 2);
-    static var hx_Logger_static_set_Int_Func = cpp.Lib.load("gameplay", "hx_Logger_static_set_Int_Func", 2);
-    static var hx_Logger_static_setEnabled = cpp.Lib.load("gameplay", "hx_Logger_static_setEnabled", 2);
+    static var hx_Logger_static_isEnabled = NativeInterface.loadMember(Logger, "static_isEnabled", 1);
+    static var hx_Logger_static_log = NativeInterface.loadMember(Logger, "static_log", 2);
+    static var hx_Logger_static_set_Int_Str = NativeInterface.loadMember(Logger, "static_set_Int_Str", 2);
+    static var hx_Logger_static_set_Int_Func = NativeInterface.loadMember(Logger, "static_set_Int_Func", 2);
+    static var hx_Logger_static_setEnabled = NativeInterface.loadMember(Logger, "static_setEnabled", 2);
 }
 
 // END

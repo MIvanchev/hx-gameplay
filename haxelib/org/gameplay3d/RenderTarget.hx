@@ -1,4 +1,5 @@
 package org.gameplay3d;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -56,13 +57,13 @@ class RenderTarget extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_RenderTarget_static_create_Str_Tex = cpp.Lib.load("gameplay", "hx_RenderTarget_static_create_Str_Tex", 2);
-    static var hx_RenderTarget_static_create_Str_IntX2 = cpp.Lib.load("gameplay", "hx_RenderTarget_static_create_Str_IntX2", 3);
-    static var hx_RenderTarget_getHeight = cpp.Lib.load("gameplay", "hx_RenderTarget_getHeight", 1);
-    static var hx_RenderTarget_getId = cpp.Lib.load("gameplay", "hx_RenderTarget_getId", 1);
-    static var hx_RenderTarget_static_getRenderTarget = cpp.Lib.load("gameplay", "hx_RenderTarget_static_getRenderTarget", 1);
-    static var hx_RenderTarget_getTexture = cpp.Lib.load("gameplay", "hx_RenderTarget_getTexture", 1);
-    static var hx_RenderTarget_getWidth = cpp.Lib.load("gameplay", "hx_RenderTarget_getWidth", 1);
+    static var hx_RenderTarget_static_create_Str_Tex = NativeInterface.loadMember(RenderTarget, "static_create_Str_Tex", 2);
+    static var hx_RenderTarget_static_create_Str_IntX2 = NativeInterface.loadMember(RenderTarget, "static_create_Str_IntX2", 3);
+    static var hx_RenderTarget_getHeight = NativeInterface.loadMember(RenderTarget, "getHeight", 1);
+    static var hx_RenderTarget_getId = NativeInterface.loadMember(RenderTarget, "getId", 1);
+    static var hx_RenderTarget_static_getRenderTarget = NativeInterface.loadMember(RenderTarget, "static_getRenderTarget", 1);
+    static var hx_RenderTarget_getTexture = NativeInterface.loadMember(RenderTarget, "getTexture", 1);
+    static var hx_RenderTarget_getWidth = NativeInterface.loadMember(RenderTarget, "getWidth", 1);
 }
 
 // END

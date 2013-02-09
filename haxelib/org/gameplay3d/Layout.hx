@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -20,7 +22,7 @@ class Layout extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Layout_getType = cpp.Lib.load("gameplay", "hx_Layout_getType", 1);
+    static var hx_Layout_getType = NativeInterface.loadMember(Layout, "getType", 1);
 }
 
 // END

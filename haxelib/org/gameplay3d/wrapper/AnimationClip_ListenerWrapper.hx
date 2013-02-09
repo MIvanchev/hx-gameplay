@@ -3,6 +3,7 @@ package org.gameplay3d.wrapper;
 import org.gameplay3d.AnimationClip;
 import org.gameplay3d.AnimationClip_Listener;
 import org.gameplay3d.intern.ListenerWrapper;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.GameplayObject;
 
@@ -44,7 +45,7 @@ class AnimationClip_ListenerWrapper extends ListenerWrapper<AnimationClip_Listen
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AnimationClip_Listener_Construct = cpp.Lib.load("gameplay", "hx_AnimationClip_Listener_Construct", 1);
+    static var hx_AnimationClip_Listener_Construct = NativeInterface.loadMember(AnimationClip_Listener, "Construct", 1);
 }
 
 // END

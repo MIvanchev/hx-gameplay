@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -20,7 +22,7 @@ class AnimationController extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AnimationController_stopAllAnimations = cpp.Lib.load("gameplay", "hx_AnimationController_stopAllAnimations", 1);
+    static var hx_AnimationController_stopAllAnimations = NativeInterface.loadMember(AnimationController, "stopAllAnimations", 1);
 }
 
 // END

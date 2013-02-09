@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import haxe.io.BytesData;
 import org.gameplay3d.util.Handle;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -101,20 +102,20 @@ class Texture extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Texture_static_create_IntX3_Dat_Bool = cpp.Lib.load("gameplay", "hx_Texture_static_create_IntX3_Dat_Bool", 5);
-    static var hx_Texture_static_create_Img_Bool = cpp.Lib.load("gameplay", "hx_Texture_static_create_Img_Bool", 2);
-    static var hx_Texture_static_create_Hndl_IntX3 = cpp.Lib.load("gameplay", "hx_Texture_static_create_Hndl_IntX3", 4);
-    static var hx_Texture_static_create_Str_Bool = cpp.Lib.load("gameplay", "hx_Texture_static_create_Str_Bool", 2);
-    static var hx_Texture_generateMipmaps = cpp.Lib.load("gameplay", "hx_Texture_generateMipmaps", 1);
-    static var hx_Texture_getFormat = cpp.Lib.load("gameplay", "hx_Texture_getFormat", 1);
-    static var hx_Texture_getHandle = cpp.Lib.load("gameplay", "hx_Texture_getHandle", 1);
-    static var hx_Texture_getHeight = cpp.Lib.load("gameplay", "hx_Texture_getHeight", 1);
-    static var hx_Texture_getPath = cpp.Lib.load("gameplay", "hx_Texture_getPath", 1);
-    static var hx_Texture_getWidth = cpp.Lib.load("gameplay", "hx_Texture_getWidth", 1);
-    static var hx_Texture_isCompressed = cpp.Lib.load("gameplay", "hx_Texture_isCompressed", 1);
-    static var hx_Texture_isMipmapped = cpp.Lib.load("gameplay", "hx_Texture_isMipmapped", 1);
-    static var hx_Texture_setFilterMode = cpp.Lib.load("gameplay", "hx_Texture_setFilterMode", 3);
-    static var hx_Texture_setWrapMode = cpp.Lib.load("gameplay", "hx_Texture_setWrapMode", 3);
+    static var hx_Texture_static_create_IntX3_Dat_Bool = NativeInterface.loadMember(Texture, "static_create_IntX3_Dat_Bool", 5);
+    static var hx_Texture_static_create_Img_Bool = NativeInterface.loadMember(Texture, "static_create_Img_Bool", 2);
+    static var hx_Texture_static_create_Hndl_IntX3 = NativeInterface.loadMember(Texture, "static_create_Hndl_IntX3", 4);
+    static var hx_Texture_static_create_Str_Bool = NativeInterface.loadMember(Texture, "static_create_Str_Bool", 2);
+    static var hx_Texture_generateMipmaps = NativeInterface.loadMember(Texture, "generateMipmaps", 1);
+    static var hx_Texture_getFormat = NativeInterface.loadMember(Texture, "getFormat", 1);
+    static var hx_Texture_getHandle = NativeInterface.loadMember(Texture, "getHandle", 1);
+    static var hx_Texture_getHeight = NativeInterface.loadMember(Texture, "getHeight", 1);
+    static var hx_Texture_getPath = NativeInterface.loadMember(Texture, "getPath", 1);
+    static var hx_Texture_getWidth = NativeInterface.loadMember(Texture, "getWidth", 1);
+    static var hx_Texture_isCompressed = NativeInterface.loadMember(Texture, "isCompressed", 1);
+    static var hx_Texture_isMipmapped = NativeInterface.loadMember(Texture, "isMipmapped", 1);
+    static var hx_Texture_setFilterMode = NativeInterface.loadMember(Texture, "setFilterMode", 3);
+    static var hx_Texture_setWrapMode = NativeInterface.loadMember(Texture, "setWrapMode", 3);
 }
 
 // END

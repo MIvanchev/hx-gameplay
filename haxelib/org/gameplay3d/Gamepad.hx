@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector2;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -100,20 +101,20 @@ class Gamepad extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Gamepad_draw = cpp.Lib.load("gameplay", "hx_Gamepad_draw", 1);
-    static var hx_Gamepad_getButtonCount = cpp.Lib.load("gameplay", "hx_Gamepad_getButtonCount", 1);
-    static var hx_Gamepad_getForm = cpp.Lib.load("gameplay", "hx_Gamepad_getForm", 1);
-    static var hx_Gamepad_getJoystickCount = cpp.Lib.load("gameplay", "hx_Gamepad_getJoystickCount", 1);
-    static var hx_Gamepad_getJoystickValues = cpp.Lib.load("gameplay", "hx_Gamepad_getJoystickValues", 3);
-    static var hx_Gamepad_getProductId = cpp.Lib.load("gameplay", "hx_Gamepad_getProductId", 1);
-    static var hx_Gamepad_getProductString = cpp.Lib.load("gameplay", "hx_Gamepad_getProductString", 1);
-    static var hx_Gamepad_getTriggerCount = cpp.Lib.load("gameplay", "hx_Gamepad_getTriggerCount", 1);
-    static var hx_Gamepad_getTriggerValue = cpp.Lib.load("gameplay", "hx_Gamepad_getTriggerValue", 2);
-    static var hx_Gamepad_getVendorId = cpp.Lib.load("gameplay", "hx_Gamepad_getVendorId", 1);
-    static var hx_Gamepad_getVendorString = cpp.Lib.load("gameplay", "hx_Gamepad_getVendorString", 1);
-    static var hx_Gamepad_isButtonDown = cpp.Lib.load("gameplay", "hx_Gamepad_isButtonDown", 2);
-    static var hx_Gamepad_isVirtual = cpp.Lib.load("gameplay", "hx_Gamepad_isVirtual", 1);
-    static var hx_Gamepad_update = cpp.Lib.load("gameplay", "hx_Gamepad_update", 2);
+    static var hx_Gamepad_draw = NativeInterface.loadMember(Gamepad, "draw", 1);
+    static var hx_Gamepad_getButtonCount = NativeInterface.loadMember(Gamepad, "getButtonCount", 1);
+    static var hx_Gamepad_getForm = NativeInterface.loadMember(Gamepad, "getForm", 1);
+    static var hx_Gamepad_getJoystickCount = NativeInterface.loadMember(Gamepad, "getJoystickCount", 1);
+    static var hx_Gamepad_getJoystickValues = NativeInterface.loadMember(Gamepad, "getJoystickValues", 3);
+    static var hx_Gamepad_getProductId = NativeInterface.loadMember(Gamepad, "getProductId", 1);
+    static var hx_Gamepad_getProductString = NativeInterface.loadMember(Gamepad, "getProductString", 1);
+    static var hx_Gamepad_getTriggerCount = NativeInterface.loadMember(Gamepad, "getTriggerCount", 1);
+    static var hx_Gamepad_getTriggerValue = NativeInterface.loadMember(Gamepad, "getTriggerValue", 2);
+    static var hx_Gamepad_getVendorId = NativeInterface.loadMember(Gamepad, "getVendorId", 1);
+    static var hx_Gamepad_getVendorString = NativeInterface.loadMember(Gamepad, "getVendorString", 1);
+    static var hx_Gamepad_isButtonDown = NativeInterface.loadMember(Gamepad, "isButtonDown", 2);
+    static var hx_Gamepad_isVirtual = NativeInterface.loadMember(Gamepad, "isVirtual", 1);
+    static var hx_Gamepad_update = NativeInterface.loadMember(Gamepad, "update", 2);
 }
 
 // END

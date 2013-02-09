@@ -1,5 +1,7 @@
 package org.gameplay3d;
 
+import org.gameplay3d.util.NativeInterface;
+
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
@@ -73,12 +75,12 @@ class VertexFormat_Element extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_VertexFormat_Element_Construct = cpp.Lib.load("gameplay", "hx_VertexFormat_Element_Construct", 0);
-    static var hx_VertexFormat_Element_Construct_IntX2 = cpp.Lib.load("gameplay", "hx_VertexFormat_Element_Construct_IntX2", 2);
-    static var hx_VertexFormat_Element_property_usage_get = cpp.Lib.load("gameplay", "hx_VertexFormat_Element_property_usage_get", 1);
-    static var hx_VertexFormat_Element_property_usage_set = cpp.Lib.load("gameplay", "hx_VertexFormat_Element_property_usage_set", 2);
-    static var hx_VertexFormat_Element_property_size_get = cpp.Lib.load("gameplay", "hx_VertexFormat_Element_property_size_get", 1);
-    static var hx_VertexFormat_Element_property_size_set = cpp.Lib.load("gameplay", "hx_VertexFormat_Element_property_size_set", 2);
+    static var hx_VertexFormat_Element_Construct = NativeInterface.loadMember(VertexFormat_Element, "Construct", 0);
+    static var hx_VertexFormat_Element_Construct_IntX2 = NativeInterface.loadMember(VertexFormat_Element, "Construct_IntX2", 2);
+    static var hx_VertexFormat_Element_property_usage_get = NativeInterface.loadMember(VertexFormat_Element, "property_usage_get", 1);
+    static var hx_VertexFormat_Element_property_usage_set = NativeInterface.loadMember(VertexFormat_Element, "property_usage_set", 2);
+    static var hx_VertexFormat_Element_property_size_get = NativeInterface.loadMember(VertexFormat_Element, "property_size_get", 1);
+    static var hx_VertexFormat_Element_property_size_set = NativeInterface.loadMember(VertexFormat_Element, "property_size_set", 2);
 }
 
 // END

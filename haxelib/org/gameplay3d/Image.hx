@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import haxe.io.BytesData;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -46,11 +47,11 @@ class Image extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Image_static_create = cpp.Lib.load("gameplay", "hx_Image_static_create", 1);
-    static var hx_Image_getData = cpp.Lib.load("gameplay", "hx_Image_getData", 1);
-    static var hx_Image_getFormat = cpp.Lib.load("gameplay", "hx_Image_getFormat", 1);
-    static var hx_Image_getHeight = cpp.Lib.load("gameplay", "hx_Image_getHeight", 1);
-    static var hx_Image_getWidth = cpp.Lib.load("gameplay", "hx_Image_getWidth", 1);
+    static var hx_Image_static_create = NativeInterface.loadMember(Image, "static_create", 1);
+    static var hx_Image_getData = NativeInterface.loadMember(Image, "getData", 1);
+    static var hx_Image_getFormat = NativeInterface.loadMember(Image, "getFormat", 1);
+    static var hx_Image_getHeight = NativeInterface.loadMember(Image, "getHeight", 1);
+    static var hx_Image_getWidth = NativeInterface.loadMember(Image, "getWidth", 1);
 }
 
 // END

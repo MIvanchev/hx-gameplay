@@ -9,6 +9,7 @@ import org.gameplay3d.intern.ConversionTools;
 import org.gameplay3d.intern.impl.AnimationTargetImpl;
 import org.gameplay3d.intern.Macros;
 import org.gameplay3d.util.INativeArray;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.PrimitiveArray;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -171,27 +172,27 @@ class MaterialParameter extends AnimationTargetImpl, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_MaterialParameter_bindValue = cpp.Lib.load("gameplay", "hx_MaterialParameter_bindValue", 3);
-    static var hx_MaterialParameter_getAnimationPropertyComponentCount = cpp.Lib.load("gameplay", "hx_MaterialParameter_getAnimationPropertyComponentCount", 2);
-    static var hx_MaterialParameter_getAnimationPropertyValue = cpp.Lib.load("gameplay", "hx_MaterialParameter_getAnimationPropertyValue", 3);
-    static var hx_MaterialParameter_getName = cpp.Lib.load("gameplay", "hx_MaterialParameter_getName", 1);
-    static var hx_MaterialParameter_getSampler = cpp.Lib.load("gameplay", "hx_MaterialParameter_getSampler", 2);
-    static var hx_MaterialParameter_setAnimationPropertyValue = cpp.Lib.load("gameplay", "hx_MaterialParameter_setAnimationPropertyValue", 4);
-    static var hx_MaterialParameter_setValue_Str_Bool = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Str_Bool", 3);
-    static var hx_MaterialParameter_setValue_Mat = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Mat", 2);
-    static var hx_MaterialParameter_setValue_ArrMat_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrMat_Int", 3);
-    static var hx_MaterialParameter_setValue_Smplr = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Smplr", 2);
-    static var hx_MaterialParameter_setValue_ArrSmplr_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrSmplr_Int", 3);
-    static var hx_MaterialParameter_setValue_V2 = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_V2", 2);
-    static var hx_MaterialParameter_setValue_ArrV2_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrV2_Int", 3);
-    static var hx_MaterialParameter_setValue_V3 = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_V3", 2);
-    static var hx_MaterialParameter_setValue_ArrV3_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrV3_Int", 3);
-    static var hx_MaterialParameter_setValue_V4 = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_V4", 2);
-    static var hx_MaterialParameter_setValue_ArrV4_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrV4_Int", 3);
-    static var hx_MaterialParameter_setValue_ArrFlt_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrFlt_Int", 3);
-    static var hx_MaterialParameter_setValue_ArrInt_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_ArrInt_Int", 3);
-    static var hx_MaterialParameter_setValue_Flt = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Flt", 2);
-    static var hx_MaterialParameter_setValue_Int = cpp.Lib.load("gameplay", "hx_MaterialParameter_setValue_Int", 2);
+    static var hx_MaterialParameter_bindValue = NativeInterface.loadMember(MaterialParameter, "bindValue", 3);
+    static var hx_MaterialParameter_getAnimationPropertyComponentCount = NativeInterface.loadMember(MaterialParameter, "getAnimationPropertyComponentCount", 2);
+    static var hx_MaterialParameter_getAnimationPropertyValue = NativeInterface.loadMember(MaterialParameter, "getAnimationPropertyValue", 3);
+    static var hx_MaterialParameter_getName = NativeInterface.loadMember(MaterialParameter, "getName", 1);
+    static var hx_MaterialParameter_getSampler = NativeInterface.loadMember(MaterialParameter, "getSampler", 2);
+    static var hx_MaterialParameter_setAnimationPropertyValue = NativeInterface.loadMember(MaterialParameter, "setAnimationPropertyValue", 4);
+    static var hx_MaterialParameter_setValue_Str_Bool = NativeInterface.loadMember(MaterialParameter, "setValue_Str_Bool", 3);
+    static var hx_MaterialParameter_setValue_Mat = NativeInterface.loadMember(MaterialParameter, "setValue_Mat", 2);
+    static var hx_MaterialParameter_setValue_ArrMat_Int = NativeInterface.loadMember(MaterialParameter, "setValue_ArrMat_Int", 3);
+    static var hx_MaterialParameter_setValue_Smplr = NativeInterface.loadMember(MaterialParameter, "setValue_Smplr", 2);
+    static var hx_MaterialParameter_setValue_ArrSmplr_Int = NativeInterface.loadMember(MaterialParameter, "setValue_ArrSmplr_Int", 3);
+    static var hx_MaterialParameter_setValue_V2 = NativeInterface.loadMember(MaterialParameter, "setValue_V2", 2);
+    static var hx_MaterialParameter_setValue_ArrV2_Int = NativeInterface.loadMember(MaterialParameter, "setValue_ArrV2_Int", 3);
+    static var hx_MaterialParameter_setValue_V3 = NativeInterface.loadMember(MaterialParameter, "setValue_V3", 2);
+    static var hx_MaterialParameter_setValue_ArrV3_Int = NativeInterface.loadMember(MaterialParameter, "setValue_ArrV3_Int", 3);
+    static var hx_MaterialParameter_setValue_V4 = NativeInterface.loadMember(MaterialParameter, "setValue_V4", 2);
+    static var hx_MaterialParameter_setValue_ArrV4_Int = NativeInterface.loadMember(MaterialParameter, "setValue_ArrV4_Int", 3);
+    static var hx_MaterialParameter_setValue_ArrFlt_Int = NativeInterface.loadMember(MaterialParameter, "setValue_ArrFlt_Int", 3);
+    static var hx_MaterialParameter_setValue_ArrInt_Int = NativeInterface.loadMember(MaterialParameter, "setValue_ArrInt_Int", 3);
+    static var hx_MaterialParameter_setValue_Flt = NativeInterface.loadMember(MaterialParameter, "setValue_Flt", 2);
+    static var hx_MaterialParameter_setValue_Int = NativeInterface.loadMember(MaterialParameter, "setValue_Int", 2);
 }
 
 // END

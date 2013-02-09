@@ -2,6 +2,7 @@ package org.gameplay3d;
 
 import org.gameplay3d.intern.NativeOutParameter;
 import org.gameplay3d.util.Handle;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -60,13 +61,13 @@ class Platform extends GameplayObject
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Platform_static_create = cpp.Lib.load("gameplay", "hx_Platform_static_create", 2);
-    static var hx_Platform_enterMessagePump = cpp.Lib.load("gameplay", "hx_Platform_enterMessagePump", 1);
-    static var hx_Platform_static_gamepadEventConnectedInternal = cpp.Lib.load("gameplay", "hx_Platform_static_gamepadEventConnectedInternal", -1);
-    static var hx_Platform_static_gamepadEventDisconnectedInternal = cpp.Lib.load("gameplay", "hx_Platform_static_gamepadEventDisconnectedInternal", 1);
-    static var hx_Platform_static_keyEventInternal = cpp.Lib.load("gameplay", "hx_Platform_static_keyEventInternal", 2);
-    static var hx_Platform_static_mouseEventInternal = cpp.Lib.load("gameplay", "hx_Platform_static_mouseEventInternal", 4);
-    static var hx_Platform_static_touchEventInternal = cpp.Lib.load("gameplay", "hx_Platform_static_touchEventInternal", 4);
+    static var hx_Platform_static_create = NativeInterface.loadMember(Platform, "static_create", 2);
+    static var hx_Platform_enterMessagePump = NativeInterface.loadMember(Platform, "enterMessagePump", 1);
+    static var hx_Platform_static_gamepadEventConnectedInternal = NativeInterface.loadMember(Platform, "static_gamepadEventConnectedInternal", -1);
+    static var hx_Platform_static_gamepadEventDisconnectedInternal = NativeInterface.loadMember(Platform, "static_gamepadEventDisconnectedInternal", 1);
+    static var hx_Platform_static_keyEventInternal = NativeInterface.loadMember(Platform, "static_keyEventInternal", 2);
+    static var hx_Platform_static_mouseEventInternal = NativeInterface.loadMember(Platform, "static_mouseEventInternal", 4);
+    static var hx_Platform_static_touchEventInternal = NativeInterface.loadMember(Platform, "static_touchEventInternal", 4);
 }
 
 // END

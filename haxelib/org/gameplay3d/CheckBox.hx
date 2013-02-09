@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.immutable.IVector2;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.wrapper.Control_ListenerWrapper;
 
 using org.gameplay3d.intern.NativeBinding;
@@ -59,13 +60,13 @@ class CheckBox extends Button
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_CheckBox_addListener = cpp.Lib.load("gameplay", "hx_CheckBox_addListener", 3);
-    static var hx_CheckBox_static_create = cpp.Lib.load("gameplay", "hx_CheckBox_static_create", 2);
-    static var hx_CheckBox_getImageSize = cpp.Lib.load("gameplay", "hx_CheckBox_getImageSize", 1);
-    static var hx_CheckBox_getType = cpp.Lib.load("gameplay", "hx_CheckBox_getType", 1);
-    static var hx_CheckBox_isChecked = cpp.Lib.load("gameplay", "hx_CheckBox_isChecked", 1);
-    static var hx_CheckBox_setChecked = cpp.Lib.load("gameplay", "hx_CheckBox_setChecked", 2);
-    static var hx_CheckBox_setImageSize = cpp.Lib.load("gameplay", "hx_CheckBox_setImageSize", 3);
+    static var hx_CheckBox_addListener = NativeInterface.loadMember(CheckBox, "addListener", 3);
+    static var hx_CheckBox_static_create = NativeInterface.loadMember(CheckBox, "static_create", 2);
+    static var hx_CheckBox_getImageSize = NativeInterface.loadMember(CheckBox, "getImageSize", 1);
+    static var hx_CheckBox_getType = NativeInterface.loadMember(CheckBox, "getType", 1);
+    static var hx_CheckBox_isChecked = NativeInterface.loadMember(CheckBox, "isChecked", 1);
+    static var hx_CheckBox_setChecked = NativeInterface.loadMember(CheckBox, "setChecked", 2);
+    static var hx_CheckBox_setImageSize = NativeInterface.loadMember(CheckBox, "setImageSize", 3);
 }
 
 // END

@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IQuaternion;
 import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -96,18 +97,18 @@ class PhysicsGenericConstraint extends PhysicsConstraint
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_PhysicsGenericConstraint_getRotationOffsetA = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_getRotationOffsetA", 1);
-    static var hx_PhysicsGenericConstraint_getRotationOffsetB = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_getRotationOffsetB", 1);
-    static var hx_PhysicsGenericConstraint_getTranslationOffsetA = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_getTranslationOffsetA", 1);
-    static var hx_PhysicsGenericConstraint_getTranslationOffsetB = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_getTranslationOffsetB", 1);
-    static var hx_PhysicsGenericConstraint_setAngularLowerLimit = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setAngularLowerLimit", 2);
-    static var hx_PhysicsGenericConstraint_setAngularUpperLimit = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setAngularUpperLimit", 2);
-    static var hx_PhysicsGenericConstraint_setLinearLowerLimit = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setLinearLowerLimit", 2);
-    static var hx_PhysicsGenericConstraint_setLinearUpperLimit = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setLinearUpperLimit", 2);
-    static var hx_PhysicsGenericConstraint_setRotationOffsetA = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setRotationOffsetA", 2);
-    static var hx_PhysicsGenericConstraint_setRotationOffsetB = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setRotationOffsetB", 2);
-    static var hx_PhysicsGenericConstraint_setTranslationOffsetA = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setTranslationOffsetA", 2);
-    static var hx_PhysicsGenericConstraint_setTranslationOffsetB = cpp.Lib.load("gameplay", "hx_PhysicsGenericConstraint_setTranslationOffsetB", 2);
+    static var hx_PhysicsGenericConstraint_getRotationOffsetA = NativeInterface.loadMember(PhysicsGenericConstraint, "getRotationOffsetA", 1);
+    static var hx_PhysicsGenericConstraint_getRotationOffsetB = NativeInterface.loadMember(PhysicsGenericConstraint, "getRotationOffsetB", 1);
+    static var hx_PhysicsGenericConstraint_getTranslationOffsetA = NativeInterface.loadMember(PhysicsGenericConstraint, "getTranslationOffsetA", 1);
+    static var hx_PhysicsGenericConstraint_getTranslationOffsetB = NativeInterface.loadMember(PhysicsGenericConstraint, "getTranslationOffsetB", 1);
+    static var hx_PhysicsGenericConstraint_setAngularLowerLimit = NativeInterface.loadMember(PhysicsGenericConstraint, "setAngularLowerLimit", 2);
+    static var hx_PhysicsGenericConstraint_setAngularUpperLimit = NativeInterface.loadMember(PhysicsGenericConstraint, "setAngularUpperLimit", 2);
+    static var hx_PhysicsGenericConstraint_setLinearLowerLimit = NativeInterface.loadMember(PhysicsGenericConstraint, "setLinearLowerLimit", 2);
+    static var hx_PhysicsGenericConstraint_setLinearUpperLimit = NativeInterface.loadMember(PhysicsGenericConstraint, "setLinearUpperLimit", 2);
+    static var hx_PhysicsGenericConstraint_setRotationOffsetA = NativeInterface.loadMember(PhysicsGenericConstraint, "setRotationOffsetA", 2);
+    static var hx_PhysicsGenericConstraint_setRotationOffsetB = NativeInterface.loadMember(PhysicsGenericConstraint, "setRotationOffsetB", 2);
+    static var hx_PhysicsGenericConstraint_setTranslationOffsetA = NativeInterface.loadMember(PhysicsGenericConstraint, "setTranslationOffsetA", 2);
+    static var hx_PhysicsGenericConstraint_setTranslationOffsetB = NativeInterface.loadMember(PhysicsGenericConstraint, "setTranslationOffsetB", 2);
 }
 
 // END

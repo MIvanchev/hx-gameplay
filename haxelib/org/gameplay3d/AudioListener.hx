@@ -4,6 +4,7 @@ import org.gameplay3d.immutable.IVector3;
 import org.gameplay3d.intern.impl.Transform_ListenerImpl;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
+import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
@@ -120,22 +121,22 @@ class AudioListener extends Transform_ListenerImpl
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_AudioListener_getCamera = cpp.Lib.load("gameplay", "hx_AudioListener_getCamera", 1);
-    static var hx_AudioListener_getGain = cpp.Lib.load("gameplay", "hx_AudioListener_getGain", 1);
-    static var hx_AudioListener_static_getInstance = cpp.Lib.load("gameplay", "hx_AudioListener_static_getInstance", 0);
-    static var hx_AudioListener_getOrientation = cpp.Lib.load("gameplay", "hx_AudioListener_getOrientation", 1);
-    static var hx_AudioListener_getOrientationForward = cpp.Lib.load("gameplay", "hx_AudioListener_getOrientationForward", 1);
-    static var hx_AudioListener_getOrientationUp = cpp.Lib.load("gameplay", "hx_AudioListener_getOrientationUp", 1);
-    static var hx_AudioListener_getPosition = cpp.Lib.load("gameplay", "hx_AudioListener_getPosition", 1);
-    static var hx_AudioListener_getVelocity = cpp.Lib.load("gameplay", "hx_AudioListener_getVelocity", 1);
-    static var hx_AudioListener_setCamera = cpp.Lib.load("gameplay", "hx_AudioListener_setCamera", 2);
-    static var hx_AudioListener_setGain = cpp.Lib.load("gameplay", "hx_AudioListener_setGain", 2);
-    static var hx_AudioListener_setOrientation_V3X2 = cpp.Lib.load("gameplay", "hx_AudioListener_setOrientation_V3X2", 3);
-    static var hx_AudioListener_setOrientation_FltX6 = cpp.Lib.load("gameplay", "hx_AudioListener_setOrientation_FltX6", -1);
-    static var hx_AudioListener_setPosition_V3 = cpp.Lib.load("gameplay", "hx_AudioListener_setPosition_V3", 2);
-    static var hx_AudioListener_setPosition_FltX3 = cpp.Lib.load("gameplay", "hx_AudioListener_setPosition_FltX3", 4);
-    static var hx_AudioListener_setVelocity_V3 = cpp.Lib.load("gameplay", "hx_AudioListener_setVelocity_V3", 2);
-    static var hx_AudioListener_setVelocity_FltX3 = cpp.Lib.load("gameplay", "hx_AudioListener_setVelocity_FltX3", 4);
+    static var hx_AudioListener_getCamera = NativeInterface.loadMember(AudioListener, "getCamera", 1);
+    static var hx_AudioListener_getGain = NativeInterface.loadMember(AudioListener, "getGain", 1);
+    static var hx_AudioListener_static_getInstance = NativeInterface.loadMember(AudioListener, "static_getInstance", 0);
+    static var hx_AudioListener_getOrientation = NativeInterface.loadMember(AudioListener, "getOrientation", 1);
+    static var hx_AudioListener_getOrientationForward = NativeInterface.loadMember(AudioListener, "getOrientationForward", 1);
+    static var hx_AudioListener_getOrientationUp = NativeInterface.loadMember(AudioListener, "getOrientationUp", 1);
+    static var hx_AudioListener_getPosition = NativeInterface.loadMember(AudioListener, "getPosition", 1);
+    static var hx_AudioListener_getVelocity = NativeInterface.loadMember(AudioListener, "getVelocity", 1);
+    static var hx_AudioListener_setCamera = NativeInterface.loadMember(AudioListener, "setCamera", 2);
+    static var hx_AudioListener_setGain = NativeInterface.loadMember(AudioListener, "setGain", 2);
+    static var hx_AudioListener_setOrientation_V3X2 = NativeInterface.loadMember(AudioListener, "setOrientation_V3X2", 3);
+    static var hx_AudioListener_setOrientation_FltX6 = NativeInterface.loadMember(AudioListener, "setOrientation_FltX6", -1);
+    static var hx_AudioListener_setPosition_V3 = NativeInterface.loadMember(AudioListener, "setPosition_V3", 2);
+    static var hx_AudioListener_setPosition_FltX3 = NativeInterface.loadMember(AudioListener, "setPosition_FltX3", 4);
+    static var hx_AudioListener_setVelocity_V3 = NativeInterface.loadMember(AudioListener, "setVelocity_V3", 2);
+    static var hx_AudioListener_setVelocity_FltX3 = NativeInterface.loadMember(AudioListener, "setVelocity_FltX3", 4);
 }
 
 // END

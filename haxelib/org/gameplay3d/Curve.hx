@@ -1,6 +1,7 @@
 package org.gameplay3d;
 
 import org.gameplay3d.util.INativeArray;
+import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.util.OutParameter;
 import org.gameplay3d.util.PrimitiveArray;
 
@@ -78,16 +79,16 @@ class Curve extends GameplayObject, implements Ref
      * NATIVE INTERFACE                                                        *
      **************************************************************************/
 
-    static var hx_Curve_static_create = cpp.Lib.load("gameplay", "hx_Curve_static_create", 2);
-    static var hx_Curve_evaluate = cpp.Lib.load("gameplay", "hx_Curve_evaluate", 3);
-    static var hx_Curve_getComponentCount = cpp.Lib.load("gameplay", "hx_Curve_getComponentCount", 1);
-    static var hx_Curve_getEndTime = cpp.Lib.load("gameplay", "hx_Curve_getEndTime", 1);
-    static var hx_Curve_getPointCount = cpp.Lib.load("gameplay", "hx_Curve_getPointCount", 1);
-    static var hx_Curve_getStartTime = cpp.Lib.load("gameplay", "hx_Curve_getStartTime", 1);
-    static var hx_Curve_static_lerp = cpp.Lib.load("gameplay", "hx_Curve_static_lerp", 3);
-    static var hx_Curve_setPoint_Int_Flt_ArrFlt_Int = cpp.Lib.load("gameplay", "hx_Curve_setPoint_Int_Flt_ArrFlt_Int", 5);
-    static var hx_Curve_setPoint_Int_Flt_ArrFlt_Int_ArrFltX2 = cpp.Lib.load("gameplay", "hx_Curve_setPoint_Int_Flt_ArrFlt_Int_ArrFltX2", -1);
-    static var hx_Curve_setTangent = cpp.Lib.load("gameplay", "hx_Curve_setTangent", 5);
+    static var hx_Curve_static_create = NativeInterface.loadMember(Curve, "static_create", 2);
+    static var hx_Curve_evaluate = NativeInterface.loadMember(Curve, "evaluate", 3);
+    static var hx_Curve_getComponentCount = NativeInterface.loadMember(Curve, "getComponentCount", 1);
+    static var hx_Curve_getEndTime = NativeInterface.loadMember(Curve, "getEndTime", 1);
+    static var hx_Curve_getPointCount = NativeInterface.loadMember(Curve, "getPointCount", 1);
+    static var hx_Curve_getStartTime = NativeInterface.loadMember(Curve, "getStartTime", 1);
+    static var hx_Curve_static_lerp = NativeInterface.loadMember(Curve, "static_lerp", 3);
+    static var hx_Curve_setPoint_Int_Flt_ArrFlt_Int = NativeInterface.loadMember(Curve, "setPoint_Int_Flt_ArrFlt_Int", 5);
+    static var hx_Curve_setPoint_Int_Flt_ArrFlt_Int_ArrFltX2 = NativeInterface.loadMember(Curve, "setPoint_Int_Flt_ArrFlt_Int_ArrFltX2", -1);
+    static var hx_Curve_setTangent = NativeInterface.loadMember(Curve, "setTangent", 5);
 }
 
 // END
