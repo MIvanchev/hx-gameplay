@@ -100,8 +100,7 @@ value hx_FileSystem_static_readAll(value filePath, value fileSize)
     const char *_filePath = ValueToString(filePath);
     int _fileSize;
     char *result = FileSystem::readAll(_filePath, &_fileSize);
-    if (!val_is_null(fileSize))
-        SetOutParameterValue(fileSize, alloc_int(_fileSize));
+    SetOutParameterValue(fileSize, alloc_int(_fileSize));
     return StringToValue(result);
 }
 DEFINE_PRIM(hx_FileSystem_static_readAll, 2);

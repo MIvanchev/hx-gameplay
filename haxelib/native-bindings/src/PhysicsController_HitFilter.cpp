@@ -37,7 +37,7 @@ public:
         const value& flag =
             val_call1(
                 clbkFilter.get(),
-                ObjectToValue(result, false)
+                ObjectToValue(&result, false)
             );
 
         return val_get_bool(flag);

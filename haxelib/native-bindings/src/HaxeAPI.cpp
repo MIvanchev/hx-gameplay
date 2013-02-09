@@ -6,7 +6,6 @@
  * OBJECT KINDS DEFINITION & ALLOCATION                                        *
  ******************************************************************************/
 
-DEFINE_KIND(k_OutParameter);
 DEFINE_KIND(k_Handle);
 DEFINE_KIND(k_Array);
 DEFINE_KIND(k_Object);
@@ -18,7 +17,6 @@ DEFINE_KIND(k_Object_Transform_Listener);
 
 extern "C" void allocateKinds()
 {
-    k_OutParameter = alloc_kind();
     k_Handle = alloc_kind();
     k_Array = alloc_kind();
     k_Object = alloc_kind();
@@ -39,58 +37,15 @@ DEFINE_ENTRY_POINT(allocateKinds);
  * OUT PARAMETER PASSING                                                       *
  ******************************************************************************/
 
-void FreeOutParameter(value object)
+void SetOutParameterValue(const value& thisObj, const value& _value)
 {
-#ifdef DEBUG
-    printf("DEBUG: Freeing garbage collected out parameter.\n");
-#endif
-
-    val_gc(object, NULL);
-    if (!val_is_null(object))
+    if (!val_is_null(thisObj))
     {
-        void *handle = val_get_handle(object, k_OutParameter);
-        OutParameter *_thisObj = static_cast<OutParameter *>(handle);
-        SAFE_DELETE(_thisObj);
+        if (!val_is_object(thisObj))
+            hx_failure("Out parameter expected.");
+        alloc_field(thisObj, val_id("value"), _value);
     }
 }
-
-value CreateOutParameter()
-{
-    const value& result = alloc_abstract(k_OutParameter, new OutParameter());
-    val_gc(result, FreeOutParameter);
-    return result;
-}
-
-value SetOutParameterValue(const value& thisObj, const value& _value)
-{
-    void *handle = val_get_handle(thisObj, k_OutParameter);
-    static_cast<OutParameter*>(handle)->_value.set(_value);
-    return _value;
-}
-
-value GetOutParameterValue(const value& thisObj)
-{
-    void *handle = val_get_handle(thisObj, k_OutParameter);
-    return static_cast<OutParameter*>(handle)->_value.get();
-}
-
-inline value createOutParameter()
-{
-    return CreateOutParameter();
-}
-DEFINE_PRIM(createOutParameter, 0);
-
-inline value setOutParameterValue(value thisObj, value _value)
-{
-    return SetOutParameterValue(thisObj, _value);
-}
-DEFINE_PRIM(setOutParameterValue, 2);
-
-inline value getOutParameterValue(value thisObj)
-{
-    return GetOutParameterValue(thisObj);
-}
-DEFINE_PRIM(getOutParameterValue, 1);
 
 /*******************************************************************************
  * HANDLE PASSING                                                              *
@@ -598,12 +553,7 @@ value testEquivalence(value objectA, value objectB)
 
     bool result = false;
 
-    if (val_is_kind(objectA, k_OutParameter))
-    {
-        if (val_is_kind(objectB, k_OutParameter))
-            result = val_data(objectA) == val_data(objectB);
-    }
-    else if (val_is_kind(objectA, k_Handle))
+    if (val_is_kind(objectA, k_Handle))
     {
         if (val_is_kind(objectB, k_Handle))
             result = val_data(objectA) == val_data(objectB);

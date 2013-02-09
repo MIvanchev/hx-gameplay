@@ -24,7 +24,6 @@ using namespace gameplay;
  * OBJECT KINDS DECLARATION                                                    *
  ******************************************************************************/
 
-DECLARE_KIND(k_OutParameter);
 DECLARE_KIND(k_Handle);
 DECLARE_KIND(k_Array);
 DECLARE_KIND(k_Object);
@@ -87,19 +86,7 @@ value BufferToValue(const TYPE *data, unsigned long size)
  * OUT PARAMETER PASSING                                                       *
  ******************************************************************************/
 
-struct OutParameter
-{
-    AutoGCRoot _value;
-
-    OutParameter()
-        : _value(alloc_null())
-    {
-    }
-};
-
-value CreateOutParameter();
-value SetOutParameterValue(const value& thisObj, const value& _value);
-value GetOutParameterValue(const value& thisObj);
+void SetOutParameterValue(const value& thisObj, const value& _value);
 
 /*******************************************************************************
  * HANDLE PASSING                                                              *

@@ -140,8 +140,7 @@ value hx_Properties_getNextProperty(value thisObj, value _value)
     char *_val;
     ValueToObject(thisObj, _thisObj);
     const value& result = StringToValue(_thisObj->getNextProperty(&_val));
-    if (!val_is_null(_value))
-        SetOutParameterValue(_value, alloc_string(_val));
+    SetOutParameterValue(_value, alloc_string(_val));
     return result;
 }
 DEFINE_PRIM(hx_Properties_getNextProperty, 2);

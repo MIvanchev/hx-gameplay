@@ -196,8 +196,7 @@ void hx_Camera_project(value *args, int nargs)
 
     SetOutParameterValue(x, alloc_float(_x));
     SetOutParameterValue(y, alloc_float(_y));
-    if (val_is_null(depth))
-        SetOutParameterValue(depth, alloc_float(_depth));
+    SetOutParameterValue(depth, alloc_float(_depth));
 
 }
 DEFINE_PRIM_MULT(hx_Camera_project);
