@@ -8,7 +8,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class AIAgent : public Ref, public ScriptTarget
-class AIAgent extends ScriptTargetImpl, implements Ref
+class AIAgent extends ScriptTargetImpl implements Ref
 {
 
     /***************************************************************************

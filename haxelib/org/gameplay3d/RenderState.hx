@@ -5,7 +5,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class RenderState : public Ref
-class RenderState extends GameplayObject, implements Ref
+class RenderState extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

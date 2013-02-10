@@ -6,7 +6,7 @@ import org.gameplay3d.util.PrimitiveArray;
 /**
  * TODO
  */
-interface IFrustum implements INativeBinding
+interface IFrustum extends INativeBinding
 {
 
     /***************************************************************************

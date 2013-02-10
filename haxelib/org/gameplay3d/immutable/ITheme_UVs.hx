@@ -5,7 +5,7 @@ import org.gameplay3d.intern.INativeBinding;
 /**
  * TODO
  */
-interface ITheme_UVs implements INativeBinding
+interface ITheme_UVs extends INativeBinding
 {
     /***************************************************************************
      * PROPERTIES                                                              *

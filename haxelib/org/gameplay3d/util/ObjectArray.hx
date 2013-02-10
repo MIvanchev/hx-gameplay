@@ -7,8 +7,8 @@ import org.gameplay3d.intern.INativeBinding;
  * TODO
  */
 
-class ObjectArray<T : GameplayObject> extends NativeBinding,
-        implements INativeArray<T>,
+class ObjectArray<T : GameplayObject> extends NativeBinding
+        implements INativeArray<T>
         implements INativeBinding
 {
     /***************************************************************************

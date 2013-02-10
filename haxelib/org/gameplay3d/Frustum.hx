@@ -15,7 +15,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Frustum : public GameplayObject
-class Frustum extends GameplayObject, implements IFrustum
+class Frustum extends GameplayObject implements IFrustum
 {
     /***************************************************************************
      * MEMBERS                                                                 *

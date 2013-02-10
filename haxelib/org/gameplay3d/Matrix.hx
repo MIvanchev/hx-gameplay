@@ -15,7 +15,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Matrix
-class Matrix extends GameplayObject, implements IMatrix
+class Matrix extends GameplayObject implements IMatrix
 {
     /***************************************************************************
      * PROPERTIES                                                              *

@@ -12,7 +12,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class AnimationTarget : public GameplayObject
-class AnimationTargetImpl extends GameplayObject, implements AnimationTarget
+class AnimationTargetImpl extends GameplayObject implements AnimationTarget
 {
     /***************************************************************************
      * MEMBERS                                                                 *

@@ -6,7 +6,7 @@ import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.PhysicsController_Listener;
 
 // DECL: class Listener
-class PhysicsController_ListenerWrapper extends ListenerWrapper<PhysicsController_Listener>, implements PhysicsController_Listener
+class PhysicsController_ListenerWrapper extends ListenerWrapper<PhysicsController_Listener> implements PhysicsController_Listener
 {
     /***************************************************************************
      * MEMBERS                                                                 *

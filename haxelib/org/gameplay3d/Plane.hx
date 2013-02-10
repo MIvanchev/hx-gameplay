@@ -14,7 +14,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Plane : public GameplayObject
-class Plane extends GameplayObject, implements IPlane
+class Plane extends GameplayObject implements IPlane
 {
     /***************************************************************************
      * CONSTANTS                                                               *

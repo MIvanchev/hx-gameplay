@@ -8,7 +8,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class AIState : public Ref, public ScriptTarget
-class AIState extends ScriptTargetImpl, implements Ref
+class AIState extends ScriptTargetImpl implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

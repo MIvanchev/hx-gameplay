@@ -16,7 +16,7 @@ using org.gameplay3d.GameplayObject;
 /**
  * TODO
  */
-class AnimationTarget_ScriptTarget extends GameplayObject, implements AnimationTarget, implements ScriptTarget
+class AnimationTarget_ScriptTarget extends GameplayObject implements AnimationTarget implements ScriptTarget
 {
     /***************************************************************************
      * MEMBERS                                                                 *

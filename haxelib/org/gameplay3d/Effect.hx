@@ -12,7 +12,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Effect: public Ref
-class Effect extends GameplayObject, implements Ref
+class Effect extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

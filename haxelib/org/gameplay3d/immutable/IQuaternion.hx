@@ -5,7 +5,7 @@ import org.gameplay3d.intern.INativeBinding;
 /**
  * TODO
  */
-interface IQuaternion implements INativeBinding
+interface IQuaternion extends INativeBinding
 {
     /***************************************************************************
      * PROPERTIES                                                              *

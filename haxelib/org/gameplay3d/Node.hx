@@ -14,7 +14,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Node : public Transform, public Ref
-class Node extends Transform, implements Ref
+class Node extends Transform implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

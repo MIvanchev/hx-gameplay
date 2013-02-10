@@ -15,7 +15,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Mesh : public Ref
-class Mesh extends GameplayObject, implements Ref
+class Mesh extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

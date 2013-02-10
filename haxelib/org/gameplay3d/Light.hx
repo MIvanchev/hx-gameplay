@@ -9,7 +9,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Light : public Ref
-class Light extends GameplayObject, implements Ref
+class Light extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

@@ -48,6 +48,6 @@ class Macros
                     default: Context.error("Invalid type specified.", Context.currentPos());
                     }
                 ).split(".");
-        return macro $i{id[id.length - 1]};
+        return Context.makeExpr(id[id.length - 1], Context.currentPos());
    }
 }

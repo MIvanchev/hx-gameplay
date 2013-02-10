@@ -11,7 +11,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class ThemeImage : public Ref
-class Theme_ThemeImage extends GameplayObject, implements Ref
+class Theme_ThemeImage extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

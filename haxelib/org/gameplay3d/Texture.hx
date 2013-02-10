@@ -8,7 +8,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Texture : public Ref
-class Texture extends GameplayObject, implements Ref
+class Texture extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

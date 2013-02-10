@@ -6,7 +6,7 @@ import org.gameplay3d.Vector3;
 /**
  * TODO
  */
-interface IBoundingSphere implements INativeBinding
+interface IBoundingSphere extends INativeBinding
 {
     /***************************************************************************
      * PROPERTIES                                                              *

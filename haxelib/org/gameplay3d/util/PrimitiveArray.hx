@@ -15,8 +15,8 @@ typedef NativeArrayDouble = IMutableNativeArray<Float>;
 /**
  * TODO
  */
-class PrimitiveArray<T> extends NativeBinding,
-        implements IMutableNativeArray<T>,
+class PrimitiveArray<T> extends NativeBinding
+        implements IMutableNativeArray<T>
         implements INativeBinding
 {
     /***************************************************************************

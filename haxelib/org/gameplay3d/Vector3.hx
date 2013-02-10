@@ -7,7 +7,7 @@ import org.gameplay3d.util.NativeInterface;
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
-class Vector3 extends GameplayObject, implements IVector3
+class Vector3 extends GameplayObject implements IVector3
 {
     /***************************************************************************
      * PROPERTIES                                                              *

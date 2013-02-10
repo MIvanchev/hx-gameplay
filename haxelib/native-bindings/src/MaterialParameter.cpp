@@ -1,18 +1,33 @@
 #include "HaxeAPI.h"
 
+
 // TODO:
 // DECL: void bindValue(ClassType* classInstance, ParameterType (ClassType::*valueMethod)() const);
-// void hx_MaterialParameter_bindValue(value thisObj, value classInstance, value const)
-// {
-    // MaterialParameter *_thisObj;
-    // ClassType *_classInstance;
-    // ParameterType (ClassType::*valueMethod)() *_const;
-    // ValueToObject(thisObj, _thisObj);
-    // ValueToObject(classInstance, _classInstance);
-    // ValueToObject(const, _const);
-    // _thisObj->bindValue(_classInstance, _const);
-// }
-// DEFINE_PRIM(hx_MaterialParameter_bindValue, 3);
+void hx_MaterialParameter_bindValue_Func_Str(value thisObj, value valueMethod, value type)
+{
+    MaterialParameter *_thisObj;
+    const char *_type = ValueToString(type);
+    Binder *binder = ValueToBinder(valueMethod);
+    ValueToObject(thisObj, _thisObj);
+    const char *ptr;
+#define APPLY_BINDER(typestr, dest, extractor)                          \
+    ptr = strstr(_type, typestr);                                       \
+    if (ptr != NULL && strlen(ptr) == strlen(typestr))                  \
+    {                                                                   \
+        binder->converter = &extractor;                                 \
+        _thisObj->bindValue<Binder, dest>(binder, &Binder::callBinder); \
+        return;                                                         \
+    }
+
+    APPLY_BINDER("Float", float, val_get_double)
+    APPLY_BINDER("Int", int, val_get_int)
+    APPLY_BINDER("Vector2", Vector2*, ExtractObject<Vector2>)
+    APPLY_BINDER("Vector3", Vector3*, ExtractObject<Vector3>)
+    APPLY_BINDER("Vector4", Vector4*, ExtractObject<Vector4>)
+    APPLY_BINDER("Matrix", Matrix*, ExtractObject<Matrix>)
+    APPLY_BINDER("Texture_Sampler", Texture::Sampler*, ExtractObject<Texture::Sampler>)
+}
+DEFINE_PRIM(hx_MaterialParameter_bindValue_Func_Str, 3);
 
 // TODO:
 // DECL: void bindValue(ClassType* classInstance, ParameterType (ClassType::*valueMethod)() const, unsigned int (ClassType::*countMethod)() const);
@@ -31,7 +46,7 @@
 // DEFINE_PRIM(hx_MaterialParameter_bindValue, 4);
 
 // DECL: void bindValue(Node* node, const char* binding);
-void hx_MaterialParameter_bindValue(value thisObj, value node, value binding)
+void hx_MaterialParameter_bindValue_Node_Str(value thisObj, value node, value binding)
 {
     MaterialParameter *_thisObj;
     Node *_node;
@@ -40,7 +55,7 @@ void hx_MaterialParameter_bindValue(value thisObj, value node, value binding)
     ValueToObject(node, _node);
     _thisObj->bindValue(_node, _binding);
 }
-DEFINE_PRIM(hx_MaterialParameter_bindValue, 3);
+DEFINE_PRIM(hx_MaterialParameter_bindValue_Node_Str, 3);
 
 // DECL: unsigned int getAnimationPropertyComponentCount(int propertyId) const;
 value hx_MaterialParameter_getAnimationPropertyComponentCount(value thisObj, value propertyId)

@@ -9,7 +9,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class HeightField : public Ref
-class HeightField extends GameplayObject, implements Ref
+class HeightField extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

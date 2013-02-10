@@ -9,7 +9,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Curve : public Ref
-class Curve extends GameplayObject, implements Ref
+class Curve extends GameplayObject implements Ref
 {
      /***************************************************************************
      * MEMBERS                                                                 *

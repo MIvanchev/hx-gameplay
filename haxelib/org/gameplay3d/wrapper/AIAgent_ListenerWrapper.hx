@@ -8,7 +8,7 @@ import org.gameplay3d.util.NativeInterface;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Listener : public GameplayObject
-class AIAgent_ListenerWrapper extends ListenerWrapper<AIAgent_Listener>, implements AIAgent_Listener
+class AIAgent_ListenerWrapper extends ListenerWrapper<AIAgent_Listener> implements AIAgent_Listener
 {
     /***************************************************************************
      * MEMBERS                                                                 *

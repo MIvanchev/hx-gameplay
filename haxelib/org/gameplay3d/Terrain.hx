@@ -11,7 +11,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Terrain : public Ref, public Transform::Listener
-class Terrain extends Transform_ListenerImpl, implements Ref
+class Terrain extends Transform_ListenerImpl implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

@@ -6,7 +6,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Layout : public Ref
-class Layout extends GameplayObject, implements Ref
+class Layout extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

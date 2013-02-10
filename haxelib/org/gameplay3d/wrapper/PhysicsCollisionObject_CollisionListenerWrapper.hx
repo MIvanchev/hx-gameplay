@@ -13,7 +13,7 @@ import org.gameplay3d.Vector3;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class CollisionListener
-class PhysicsCollisionObject_CollisionListenerWrapper extends ListenerWrapper<PhysicsCollisionObject_CollisionListener>, implements PhysicsCollisionObject_CollisionListener
+class PhysicsCollisionObject_CollisionListenerWrapper extends ListenerWrapper<PhysicsCollisionObject_CollisionListener> implements PhysicsCollisionObject_CollisionListener
 {
     /***************************************************************************
      * MEMBERS                                                                 *

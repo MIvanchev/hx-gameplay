@@ -15,7 +15,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Control : public Ref, public AnimationTarget, public ScriptTarget
-class Control extends AnimationTarget_ScriptTarget, implements Ref
+class Control extends AnimationTarget_ScriptTarget implements Ref
 {
     /***************************************************************************
      * CONSTANTS                                                               *

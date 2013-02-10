@@ -14,7 +14,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class BoundingSphere : public GameplayObject
-class BoundingSphere extends GameplayObject, implements IBoundingSphere
+class BoundingSphere extends GameplayObject implements IBoundingSphere
 {
     /***************************************************************************
      * PROPERTIES                                                              *

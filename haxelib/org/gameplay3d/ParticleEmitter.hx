@@ -11,7 +11,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class ParticleEmitter : public Ref
-class ParticleEmitter extends GameplayObject, implements Ref
+class ParticleEmitter extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

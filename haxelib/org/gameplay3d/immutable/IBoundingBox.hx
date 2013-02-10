@@ -8,7 +8,7 @@ import org.gameplay3d.Vector3;
 /**
  * TODO
  */
-interface IBoundingBox implements INativeBinding
+interface IBoundingBox extends INativeBinding
 {
     /***************************************************************************
      * PROPERTIES                                                              *

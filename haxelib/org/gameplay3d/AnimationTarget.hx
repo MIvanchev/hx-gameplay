@@ -5,7 +5,7 @@ import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.util.PrimitiveArray;
 
 // DECL: class AnimationTarget : public GameplayObject
-interface AnimationTarget implements INativeBinding
+interface AnimationTarget extends INativeBinding
 {
     /***************************************************************************
      * MEMBERS                                                                 *

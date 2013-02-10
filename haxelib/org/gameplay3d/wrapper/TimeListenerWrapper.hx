@@ -6,7 +6,7 @@ import org.gameplay3d.util.NativeInterface;
 import org.gameplay3d.TimeListener;
 
 // DECL: class TimeListener : public GameplayObject
-class TimeListenerWrapper extends ListenerWrapper<TimeListener>, implements TimeListener
+class TimeListenerWrapper extends ListenerWrapper<TimeListener> implements TimeListener
 {
     /***************************************************************************
      * MEMBERS                                                                 *

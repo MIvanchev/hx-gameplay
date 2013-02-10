@@ -8,7 +8,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Rectangle : public GameplayObject
-class Rectangle extends GameplayObject, implements IRectangle
+class Rectangle extends GameplayObject implements IRectangle
 {
     /***************************************************************************
      * PROPERTIES                                                              *

@@ -10,7 +10,7 @@ import org.gameplay3d.util.INativeArray;
 /**
  * TODO
  */
-interface IMatrix implements INativeBinding
+interface IMatrix extends INativeBinding
 {
     /***************************************************************************
      * PROPERTIES                                                              *

@@ -10,7 +10,7 @@ using org.gameplay3d.GameplayObject;
 using org.gameplay3d.intern.NativeBinding;
 
 // DECL: class Font : public Ref
-class Font extends GameplayObject, implements Ref
+class Font extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

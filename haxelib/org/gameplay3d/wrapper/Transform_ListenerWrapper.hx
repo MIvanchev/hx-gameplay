@@ -8,7 +8,7 @@ import org.gameplay3d.util.NativeInterface;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Listener : public GameplayObject
-class Transform_ListenerWrapper extends ListenerWrapper<Transform_Listener>, implements Transform_Listener
+class Transform_ListenerWrapper extends ListenerWrapper<Transform_Listener> implements Transform_Listener
 {
     /***************************************************************************
      * MEMBERS                                                                 *

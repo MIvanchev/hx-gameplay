@@ -7,7 +7,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class VertexAttributeBinding : public Ref
-class VertexAttributeBinding extends GameplayObject, implements Ref
+class VertexAttributeBinding extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

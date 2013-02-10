@@ -8,7 +8,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class ScriptTarget : public GameplayObject
-class ScriptTargetImpl extends GameplayObject, implements ScriptTarget
+class ScriptTargetImpl extends GameplayObject implements ScriptTarget
 {
     /***************************************************************************
      * MEMBERS                                                                 *

@@ -10,7 +10,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Quaternion
-class Quaternion extends GameplayObject, implements IQuaternion
+class Quaternion extends GameplayObject implements IQuaternion
 {
     /***************************************************************************
      * PROPERTIES                                                              *

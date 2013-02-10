@@ -14,7 +14,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Camera : public Ref, public Transform::Listener
-class Camera extends Transform_ListenerImpl, implements Ref
+class Camera extends Transform_ListenerImpl implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

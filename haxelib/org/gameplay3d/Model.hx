@@ -5,7 +5,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Model : public Ref
-class Model extends GameplayObject, implements Ref
+class Model extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

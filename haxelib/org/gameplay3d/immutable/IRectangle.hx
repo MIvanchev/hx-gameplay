@@ -5,7 +5,7 @@ import org.gameplay3d.intern.INativeBinding;
 /**
  * TODO
  */
-interface IRectangle implements INativeBinding
+interface IRectangle extends INativeBinding
 {
    /***************************************************************************
      * PROPERTIES                                                              *

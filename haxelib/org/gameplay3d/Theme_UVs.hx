@@ -8,7 +8,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: struct UVs : public GameplayObject
-class Theme_UVs extends GameplayObject, implements ITheme_UVs
+class Theme_UVs extends GameplayObject implements ITheme_UVs
 {
     /***************************************************************************
      * PROPERTIES                                                              *

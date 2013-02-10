@@ -11,7 +11,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Scene : public Ref
-class Scene extends GameplayObject, implements Ref
+class Scene extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

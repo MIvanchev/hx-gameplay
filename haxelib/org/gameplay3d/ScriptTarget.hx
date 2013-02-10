@@ -3,7 +3,7 @@ package org.gameplay3d;
 import org.gameplay3d.intern.INativeBinding;
 
 // DECL: class ScriptTarget : public GameplayObject
-interface ScriptTarget implements INativeBinding
+interface ScriptTarget extends INativeBinding
 {
     /***************************************************************************
      * MEMBERS                                                                 *

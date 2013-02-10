@@ -24,6 +24,7 @@ using namespace gameplay;
  * OBJECT KINDS DECLARATION                                                    *
  ******************************************************************************/
 
+DECLARE_KIND(k_Binder);
 DECLARE_KIND(k_Handle);
 DECLARE_KIND(k_Array);
 DECLARE_KIND(k_Object);
@@ -46,6 +47,7 @@ DECLARE_KIND(k_Object_Transform_Listener);
 #define ValueToUlong(value) static_cast<unsigned long>(val_get_int(value))
 #define ValueToSizeT(value) static_cast<size_t>(val_get_int(value))
 #define ValueToString(value) ( val_is_null(value) ? NULL : (val_get_string(value)) )
+#define ValueToBinder(value) static_cast<Binder*>(val_get_handle(value, k_Binder))
 
 template<typename TYPE>
 void ValueToEnum(value _value, TYPE &_enumVal)
@@ -87,6 +89,29 @@ value BufferToValue(const TYPE *data, unsigned long size)
  ******************************************************************************/
 
 void SetOutParameterValue(const value& thisObj, const value& _value);
+
+/*******************************************************************************
+ * FUNCTION BINDERS                                                            *
+ ******************************************************************************/
+
+struct Binder
+{
+    AutoGCRoot func;
+    void *converter;
+
+    Binder(const value &_func)
+        : func(_func), converter(NULL)
+    {
+    }
+
+    template<typename T>
+    T callBinder() const
+    {
+        T (*_converter) (value) = static_cast<T (*)(value)>(converter);
+        val_call0(func.get());
+        return _converter(val_call0(func.get()));
+    }
+};
 
 /*******************************************************************************
  * HANDLE PASSING                                                              *
@@ -374,6 +399,14 @@ CONVERSION_PROTOTYPES_REF(Theme)
 CONVERSION_PROTOTYPES_REF(Theme::ThemeImage)
 CONVERSION_PROTOTYPES_REF(VertexAttributeBinding)
 CONVERSION_PROTOTYPES_REF(VerticalLayout)
+
+template<typename T>
+T *ExtractObject(value _value)
+{
+    T *object;
+    ValueToObject(_value, object);
+    return object;
+}
 
 /*******************************************************************************
  * (TODO)                                                                      *

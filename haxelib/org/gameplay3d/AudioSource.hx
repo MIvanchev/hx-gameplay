@@ -10,7 +10,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class AudioSource : public Ref, public Transform::Listener
-class AudioSource extends Transform_ListenerImpl, implements Ref
+class AudioSource extends Transform_ListenerImpl implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

@@ -6,7 +6,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class DepthStencilTarget : public Ref
-class DepthStencilTarget extends GameplayObject, implements Ref
+class DepthStencilTarget extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

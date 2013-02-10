@@ -16,7 +16,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class BoundingBox : public GameplayObject
-class BoundingBox extends GameplayObject, implements IBoundingBox
+class BoundingBox extends GameplayObject implements IBoundingBox
 {
     /***************************************************************************
      * PROPERTIES                                                              *

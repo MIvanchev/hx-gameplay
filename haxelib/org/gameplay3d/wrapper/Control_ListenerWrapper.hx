@@ -8,7 +8,7 @@ import org.gameplay3d.util.NativeInterface;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Listener : public GameplayObject
-class Control_ListenerWrapper extends ListenerWrapper<Control_Listener>, implements Control_Listener
+class Control_ListenerWrapper extends ListenerWrapper<Control_Listener> implements Control_Listener
 {
     /***************************************************************************
      * MEMBERS                                                                 *

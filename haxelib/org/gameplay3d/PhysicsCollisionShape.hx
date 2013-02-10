@@ -7,7 +7,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class PhysicsCollisionShape : public Ref
-class PhysicsCollisionShape extends GameplayObject, implements Ref
+class PhysicsCollisionShape extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

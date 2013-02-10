@@ -1,11 +1,12 @@
 package org.gameplay3d;
+
 import org.gameplay3d.util.NativeInterface;
 
 using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Theme: public Ref
-class Theme extends GameplayObject, implements Ref
+class Theme extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

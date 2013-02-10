@@ -12,7 +12,7 @@ typedef Theme_Border = Theme_SideRegions;
 typedef Theme_Padding = Theme_SideRegions;
 
 // DECL: struct SideRegions : public GameplayObject
-class Theme_SideRegions extends GameplayObject, implements ITheme_SideRegions
+class Theme_SideRegions extends GameplayObject implements ITheme_SideRegions
 {
     /***************************************************************************
      * PROPERTIES                                                              *

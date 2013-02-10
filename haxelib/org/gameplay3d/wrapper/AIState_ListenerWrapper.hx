@@ -9,7 +9,7 @@ import org.gameplay3d.util.NativeInterface;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Listener : public GameplayObject
-class AIState_ListenerWrapper extends ListenerWrapper<AIState_Listener>, implements AIState_Listener
+class AIState_ListenerWrapper extends ListenerWrapper<AIState_Listener> implements AIState_Listener
 {
     /***************************************************************************
      * MEMBERS                                                                 *

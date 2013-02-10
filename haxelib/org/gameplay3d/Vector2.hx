@@ -8,7 +8,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class Vector2
-class Vector2 extends GameplayObject, implements IVector2
+class Vector2 extends GameplayObject implements IVector2
 {
     /***************************************************************************
      * PROPERTIES                                                              *

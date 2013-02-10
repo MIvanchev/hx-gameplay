@@ -1,6 +1,5 @@
 package org.gameplay3d;
 
-import cpp.Lib;
 import org.gameplay3d.intern.INativeBinding;
 import org.gameplay3d.intern.Macros;
 import org.gameplay3d.util.NativeInterface;

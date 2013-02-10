@@ -6,6 +6,7 @@
  * OBJECT KINDS DEFINITION & ALLOCATION                                        *
  ******************************************************************************/
 
+DEFINE_KIND(k_Binder);
 DEFINE_KIND(k_Handle);
 DEFINE_KIND(k_Array);
 DEFINE_KIND(k_Object);
@@ -17,6 +18,7 @@ DEFINE_KIND(k_Object_Transform_Listener);
 
 extern "C" void allocateKinds()
 {
+    k_Binder = alloc_kind();
     k_Handle = alloc_kind();
     k_Array = alloc_kind();
     k_Object = alloc_kind();
@@ -46,6 +48,19 @@ void SetOutParameterValue(const value& thisObj, const value& _value)
         alloc_field(thisObj, val_id("value"), _value);
     }
 }
+
+
+/*******************************************************************************
+ * FUNCTION BINDERS                                                            *
+ ******************************************************************************/
+
+value createFunctionBinder(value func)
+{
+    void *data = static_cast<void*>(new Binder(func));
+    const value& binder = alloc_abstract(k_Binder, data);
+    return binder;
+}
+DEFINE_PRIM(createFunctionBinder, 1);
 
 /*******************************************************************************
  * HANDLE PASSING                                                              *
@@ -553,7 +568,12 @@ value testEquivalence(value objectA, value objectB)
 
     bool result = false;
 
-    if (val_is_kind(objectA, k_Handle))
+    if (val_is_kind(objectA, k_Binder))
+    {
+        if (val_is_kind(objectB, k_Binder))
+            result = val_data(objectA) == val_data(objectB);
+    }
+    else if (val_is_kind(objectA, k_Handle))
     {
         if (val_is_kind(objectB, k_Handle))
             result = val_data(objectA) == val_data(objectB);

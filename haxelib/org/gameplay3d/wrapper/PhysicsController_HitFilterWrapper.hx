@@ -11,7 +11,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class HitFilter
-class PhysicsController_HitFilterWrapper extends ListenerWrapper<PhysicsController_HitFilter>, implements PhysicsController_HitFilter
+class PhysicsController_HitFilterWrapper extends ListenerWrapper<PhysicsController_HitFilter> implements PhysicsController_HitFilter
 {
     /***************************************************************************
      * MEMBERS                                                                 *

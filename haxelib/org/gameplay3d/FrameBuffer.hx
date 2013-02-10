@@ -6,7 +6,7 @@ using org.gameplay3d.intern.NativeBinding;
 using org.gameplay3d.GameplayObject;
 
 // DECL: class FrameBuffer : public Ref
-class FrameBuffer extends GameplayObject, implements Ref
+class FrameBuffer extends GameplayObject implements Ref
 {
     /***************************************************************************
      * MEMBERS                                                                 *

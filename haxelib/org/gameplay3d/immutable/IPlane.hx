@@ -6,7 +6,7 @@ import org.gameplay3d.Vector3;
 /**
  * TODO
  */
-interface IPlane implements INativeBinding
+interface IPlane extends INativeBinding
 {
     /***************************************************************************
      * MEMBERS                                                                 *

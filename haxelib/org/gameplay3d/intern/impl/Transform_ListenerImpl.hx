@@ -4,7 +4,7 @@ import org.gameplay3d.GameplayObject;
 import org.gameplay3d.Transform_Listener;
 
 // DECL: class Listener : public GameplayObject
-class Transform_ListenerImpl extends GameplayObject, implements Transform_Listener
+class Transform_ListenerImpl extends GameplayObject implements Transform_Listener
 {
     /***************************************************************************
      * MEMBERS                                                                 *

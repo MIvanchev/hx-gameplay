@@ -5,7 +5,7 @@ import org.gameplay3d.intern.INativeBinding;
 /**
  * TODO
  */
-interface IVector3 implements INativeBinding
+interface IVector3 extends INativeBinding
 {
     /***************************************************************************
      * PROPERTIES                                                              *
