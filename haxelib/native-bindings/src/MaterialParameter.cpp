@@ -1,6 +1,8 @@
 #include "HaxeAPI.h"
 
 
+
+
 // TODO:
 // DECL: void bindValue(ClassType* classInstance, ParameterType (ClassType::*valueMethod)() const);
 void hx_MaterialParameter_bindValue_Func_Str(value thisObj, value valueMethod, value type)
@@ -10,11 +12,18 @@ void hx_MaterialParameter_bindValue_Func_Str(value thisObj, value valueMethod, v
     Binder *binder = ValueToBinder(valueMethod);
     ValueToObject(thisObj, _thisObj);
     const char *ptr;
+
+#ifdef __GNUC__
+    #define CONVERSION(x) (void*) (x)
+#else
+    #define CONVERSION(x) x
+#endif
 #define APPLY_BINDER(typestr, dest, extractor)                          \
     ptr = strstr(_type, typestr);                                       \
     if (ptr != NULL && strlen(ptr) == strlen(typestr))                  \
     {                                                                   \
-        binder->converter = &extractor;                                 \
+        if (false) extractor(alloc_null());                             \
+        binder->converter = CONVERSION(&extractor);                     \
         _thisObj->bindValue<Binder, dest>(binder, &Binder::callBinder); \
         return;                                                         \
     }

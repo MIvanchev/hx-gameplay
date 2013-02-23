@@ -67,6 +67,54 @@ abstract MaterialParameterBinder<T>(FunctionBinder<T>)
     }
 }
 
+abstract MaterialParameterArrayBinder<T>(FunctionBinder<T>)
+{
+    inline function new(v:Dynamic)
+    {
+        this = v;
+	}
+
+    public inline function getBinder()
+    {
+        return this;
+    }
+
+    @:from static public function fromFloat(val:Void->INativeArray<Float>)
+    {
+        return new MaterialParameterArrayBinder(new FunctionBinder(val, Macros.binderType(val)));
+    }
+
+    @:from static public function fromInt(val:Void->INativeArray<Int>)
+    {
+        return new MaterialParameterArrayBinder(new FunctionBinder(val, Macros.binderType(val)));
+    }
+
+    @:from static public function fromVector2(val:Void->ObjectArraty<Vector2>)
+    {
+        return new MaterialParameterArrayBinder(new FunctionBinder(val, Macros.binderType(val), false));
+    }
+
+    @:from static public function fromVector3(val:Void->INativeArray<Vector3>)
+    {
+        return new MaterialParameterArrayBinder(new FunctionBinder(val, Macros.binderType(val), false));
+    }
+
+    @:from static public function fromVector4(val:Void->INativeArray<Vector4>)
+    {
+        return new MaterialParameterArrayBinder(new FunctionBinder(val, Macros.binderType(val), false));
+    }
+
+    @:from static public function fromMatrix(val:Void->INativeArray<Matrix>)
+    {
+        return new MaterialParameterArrayBinder(new FunctionBinder(val, Macros.binderType(val), false));
+    }
+
+    @:from static public function fromSampler(val:Void->INativeArray<Texture_Sampler>)
+    {
+        return new MaterialParameterArrayBinder(new FunctionBinder(val, Macros.binderType(val), false));
+    }
+}
+
 // DECL: class MaterialParameter : public AnimationTarget, public Ref
 class MaterialParameter extends AnimationTargetImpl implements Ref
 {
@@ -81,10 +129,14 @@ class MaterialParameter extends AnimationTargetImpl implements Ref
      **************************************************************************/
 
     var binder:MaterialParameterBinder<Dynamic>;
+    var arrayBinder:MaterialParameterArrayBinder<Dynamic>;
+    var countBinder:FunctionBinder<Int>;
 
     function clearBinder()
     {
         binder = null;
+        arrayBinder = null;
+        countBinder = null;
     }
 
     // DECL: void bindValue(ClassType* classInstance, ParameterType (ClassType::*valueMethod)() const);
@@ -96,10 +148,13 @@ class MaterialParameter extends AnimationTargetImpl implements Ref
     }
 
     // DECL: void bindValue(ClassType* classInstance, ParameterType (ClassType::*valueMethod)() const, unsigned int (ClassType::*countMethod)() const);
-    //public function bindValue(classInstance:ClassType, const:ParameterType (ClassType::*valueMethod)(), const:unsigned int (ClassType::*countMethod)()):Void
-    //{
+    public function bindValue_FuncX2<T>(arrayBinder:MaterialParameterArrayBinder<T>, countBinder:Void->Int):Void
+    {
+        clearBinder();
+        this.arrayBinder = arrayBinder;
+        this.countBinder = new FunctionBinder(countBinder, "Int");
         //hx_MaterialParameter_bindValue(nativeObject, classInstance.native(), const.native(), const.native());
-    //}
+    }
 
     // DECL: void bindValue(Node* node, const char* binding);
     public function bindValue_Node_Str(node:Node, binding:String):Void

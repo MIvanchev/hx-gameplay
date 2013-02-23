@@ -41,13 +41,15 @@ class Macros
             TypeTools.toString(
                     switch (Context.follow(Context.typeof(func)))
                     {
-                    case TFun(args, r):
+                    case TFun(args, retType):
                         if (args != null && args.length != 0)
                             Context.error("The function should not take any arguments.", Context.currentPos());
-                        r;
+
+                      retType;
                     default: Context.error("Invalid type specified.", Context.currentPos());
                     }
                 ).split(".");
+        trace(id[id.length - 1]);
         return Context.makeExpr(id[id.length - 1], Context.currentPos());
    }
 }

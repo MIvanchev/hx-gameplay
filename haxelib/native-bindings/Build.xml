@@ -1,12 +1,6 @@
 <xml>
-
     <!-- WARNING: The library will require msvcr100.dll at runtime. -->
     <set name="ABI" value="/MD" if="windows"/>
-
-    <!-- Build file for the Haxe wrapper of gameplay3d -->
-    <!-- Install hxcpp and run with 'haxelib run hxcpp Build.xml' -->
-
-    <include name="${HXCPP}/build-tool/BuildCommon.xml"/>
 
     <!-- Determine the output location for the NDLL -->
 
@@ -32,9 +26,18 @@
 
     <!-- Set platform specific variables -->
 
-    <set name="ANDROID_PLATFORM" value="android-9"/>
     <set name="ANDROID_ARCH" value="arch-arm" unless="HXCPP_ARMV7"/>
     <set name="ANDROID_ARCH" value="arch-arm" if="HXCPP_ARMV7"/>
+    <set name="ANDROID_PLATFORM" value="android-9"/>
+
+    <set name="TOOLCHAIN_VERSION" value="4.6" if="android"/>
+    <set name="PLATFORM" value="${ANDROID_PLATFORM}" if="android"/>
+    <set name="NDKV8" value="1" if="android"/>
+
+    <!-- Build file for the Haxe wrapper of gameplay3d -->
+    <!-- Install hxcpp and run with 'haxelib run hxcpp Build.xml' -->
+
+    <include name="${HXCPP}/build-tool/BuildCommon.xml"/>
 
     <!-- Specify the list of files to be compiled and the compile options. -->
 
@@ -59,7 +62,7 @@
         <compilerflag value="-DWIN32" if="windows"/>
         <compilerflag value="-std=c++0x" if="linux"/>
         <compilerflag value="-std=gnu++0x" if="android"/>
-        
+
         <file name="src/HaxeAPI.cpp"/>
         <file name="src/setup_android.cpp" if="android"/>
         <file name="src/AbsoluteLayout.cpp"/>
@@ -275,14 +278,14 @@
         <lib name="libvorbis.lib" if="windows"/>
         <lib name="libvorbisfile.lib" if="windows"/>
 
-        <lib name="-lopenal" if="android"/>
+        <lib name="-lOpenAL" if="android"/>
         <lib name="-lopenal" if="linux"/>
         <lib name="openal32.lib" if="windows"/>
 
         <lib name="-lpcre" if="macos"/>
         <lib name="-lpcrecpp" if="macos"/>
 
-        <lib name="-lrecast" if="android"/>
+        <lib name="-lRecast" if="android"/>
         <lib name="-lrecast" if="blackberry"/>
         <lib name="${LIB_DIR}${GAMEPLAY_DIR}/external-deps/recast/lib/windows/recast.lib" if="windows"/>
 

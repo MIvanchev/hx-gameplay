@@ -107,7 +107,7 @@ struct Binder
     template<typename T>
     T callBinder() const
     {
-        T (*_converter) (value) = static_cast<T (*)(value)>(converter);
+        T (*_converter) (value) = (T (*)(value)) converter;
         val_call0(func.get());
         return _converter(val_call0(func.get()));
     }
